@@ -1,0 +1,24 @@
+{
+  "_fv": 79,
+  "_type": "particle",
+  "definition": {
+    "texture": "fumacinha1.png",
+    "animate": true,
+    "frameDuration": 1,
+    "width": 0.2,
+    "height": 0.2,
+    "scale": {
+      "fixedValue": 1.5
+    },
+    "speedFactor": 0.1,
+    "gravity": 0.0,
+    "maxAge": 10,
+    "maxAgeDiff": 0,
+    "angularVelocity": 0.0,
+    "angularAcceleration": 0.0,
+    "canCollide": true,
+    "alwaysShow": false,
+    "emissiveRendering": false,
+    "renderType": "TRANSLUCENT"
+  }
+}

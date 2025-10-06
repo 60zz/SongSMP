@@ -1,0 +1,16 @@
+{
+  "_fv": 79,
+  "_type": "villagerprofession",
+  "definition": {
+    "displayName": "Mestre da Mantra",
+    "pointOfInterest": {
+      "value": "Blocks.COMMAND_BLOCK"
+    },
+    "actionSound": {
+      "value": "entity.villager.work_librarian"
+    },
+    "hat": "None",
+    "professionTextureFile": "mestremantra.png",
+    "zombifiedProfessionTextureFile": "mestremantra.png"
+  }
+}

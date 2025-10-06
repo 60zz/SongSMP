@@ -1,0 +1,13 @@
+{
+  "parent": "block/cube",
+  "textures": {
+    "down": "vl_abyss:block/abyssionrawblock",
+    "up": "vl_abyss:block/abyssionrawblock",
+    "north": "vl_abyss:block/abyssionrawblock",
+    "east": "vl_abyss:block/abyssionrawblock",
+    "south": "vl_abyss:block/abyssionrawblock",
+    "west": "vl_abyss:block/abyssionrawblock",
+    "particle": "vl_abyss:block/abyssionrawblock"
+  },
+  "render_type": "solid"
+}

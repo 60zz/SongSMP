@@ -1,0 +1,217 @@
+{
+  "_fv": 79,
+  "_type": "blockstates",
+  "definition": {
+    "block": "TombstoneAbyss",
+    "blockstateList": [
+      {
+        "texture": "ativo",
+        "textureTop": "",
+        "textureLeft": "",
+        "textureFront": "",
+        "textureRight": "",
+        "textureBack": "",
+        "particleTexture": "",
+        "renderType": 2,
+        "customModelName": "tombstone_abyss:default",
+        "luminance": 0,
+        "boundingBoxes": [
+          {
+            "mx": 4.0,
+            "my": 0.0,
+            "mz": -2.0,
+            "Mx": 12.0,
+            "My": 2.0,
+            "Mz": 18.0,
+            "subtract": false
+          },
+          {
+            "mx": 5.0,
+            "my": 1.0,
+            "mz": -1.0,
+            "Mx": 11.0,
+            "My": 23.0,
+            "Mz": 1.0,
+            "subtract": false
+          },
+          {
+            "mx": 7.0,
+            "my": 1.0,
+            "mz": 0.0,
+            "Mx": 9.0,
+            "My": 22.0,
+            "Mz": 16.0,
+            "subtract": false
+          },
+          {
+            "mx": 5.0,
+            "my": 22.0,
+            "mz": 1.0,
+            "Mx": 11.0,
+            "My": 23.0,
+            "Mz": 6.0,
+            "subtract": false
+          },
+          {
+            "mx": 5.0,
+            "my": 23.0,
+            "mz": 1.0,
+            "Mx": 11.0,
+            "My": 24.0,
+            "Mz": 6.0,
+            "subtract": false
+          },
+          {
+            "mx": 5.0,
+            "my": 23.0,
+            "mz": 6.0,
+            "Mx": 11.0,
+            "My": 25.0,
+            "Mz": 7.0,
+            "subtract": false
+          },
+          {
+            "mx": 5.0,
+            "my": 23.0,
+            "mz": 10.0,
+            "Mx": 11.0,
+            "My": 25.0,
+            "Mz": 11.0,
+            "subtract": false
+          },
+          {
+            "mx": 5.0,
+            "my": 23.0,
+            "mz": 11.0,
+            "Mx": 11.0,
+            "My": 24.0,
+            "Mz": 15.0,
+            "subtract": false
+          },
+          {
+            "mx": 5.0,
+            "my": 22.0,
+            "mz": 11.0,
+            "Mx": 11.0,
+            "My": 23.0,
+            "Mz": 15.0,
+            "subtract": false
+          },
+          {
+            "mx": 5.0,
+            "my": 1.0,
+            "mz": 15.0,
+            "Mx": 11.0,
+            "My": 23.0,
+            "Mz": 17.0,
+            "subtract": false
+          }
+        ]
+      },
+      {
+        "texture": "desativado",
+        "textureTop": "",
+        "textureLeft": "",
+        "textureFront": "",
+        "textureRight": "",
+        "textureBack": "",
+        "particleTexture": "",
+        "renderType": 2,
+        "customModelName": "tombstone_abyss:desativo",
+        "luminance": 0,
+        "boundingBoxes": [
+          {
+            "mx": 4.0,
+            "my": 0.0,
+            "mz": -2.0,
+            "Mx": 12.0,
+            "My": 2.0,
+            "Mz": 18.0,
+            "subtract": false
+          },
+          {
+            "mx": 5.0,
+            "my": 1.0,
+            "mz": -1.0,
+            "Mx": 11.0,
+            "My": 23.0,
+            "Mz": 1.0,
+            "subtract": false
+          },
+          {
+            "mx": 7.0,
+            "my": 1.0,
+            "mz": 0.0,
+            "Mx": 9.0,
+            "My": 22.0,
+            "Mz": 16.0,
+            "subtract": false
+          },
+          {
+            "mx": 5.0,
+            "my": 22.0,
+            "mz": 1.0,
+            "Mx": 11.0,
+            "My": 23.0,
+            "Mz": 6.0,
+            "subtract": false
+          },
+          {
+            "mx": 5.0,
+            "my": 23.0,
+            "mz": 1.0,
+            "Mx": 11.0,
+            "My": 24.0,
+            "Mz": 6.0,
+            "subtract": false
+          },
+          {
+            "mx": 5.0,
+            "my": 23.0,
+            "mz": 6.0,
+            "Mx": 11.0,
+            "My": 25.0,
+            "Mz": 7.0,
+            "subtract": false
+          },
+          {
+            "mx": 5.0,
+            "my": 23.0,
+            "mz": 10.0,
+            "Mx": 11.0,
+            "My": 25.0,
+            "Mz": 11.0,
+            "subtract": false
+          },
+          {
+            "mx": 5.0,
+            "my": 23.0,
+            "mz": 11.0,
+            "Mx": 11.0,
+            "My": 24.0,
+            "Mz": 15.0,
+            "subtract": false
+          },
+          {
+            "mx": 5.0,
+            "my": 22.0,
+            "mz": 11.0,
+            "Mx": 11.0,
+            "My": 23.0,
+            "Mz": 15.0,
+            "subtract": false
+          },
+          {
+            "mx": 5.0,
+            "my": 1.0,
+            "mz": 15.0,
+            "Mx": 11.0,
+            "My": 23.0,
+            "Mz": 17.0,
+            "subtract": false
+          }
+        ]
+      }
+    ]
+  }
+}

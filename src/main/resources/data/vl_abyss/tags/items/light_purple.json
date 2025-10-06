@@ -1,0 +1,10 @@
+{
+  "replace": false,
+  "values": [
+    "vl_abyss:fragmento_primordial",
+    "vl_abyss:pocao_vida_extra",
+    "vl_abyss:pocao_resistencia_eterna",
+    "vl_abyss:liberacao_mantra",
+    "vl_abyss:pocao_renascimento"
+  ]
+}

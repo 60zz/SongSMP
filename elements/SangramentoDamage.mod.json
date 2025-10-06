@@ -1,0 +1,12 @@
+{
+  "_fv": 79,
+  "_type": "damagetype",
+  "definition": {
+    "exhaustion": 4.0,
+    "scaling": "never",
+    "effects": "hurt",
+    "normalDeathMessage": "%1$s morreu por sangramento",
+    "itemDeathMessage": "%1$s foi morto sangrando por %2$s usando %3$s",
+    "playerDeathMessage": "%1$s morreu enquanto sangrava fugindo de %2$s"
+  }
+}

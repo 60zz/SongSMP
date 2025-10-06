@@ -1,0 +1,63 @@
+{
+  "has_precipitation": false,
+  "temperature": 0.1,
+  "downfall": 0.0,
+  "effects": {
+    "foliage_color": 1513239,
+    "grass_color": 1381653,
+    "sky_color": 1315860,
+    "fog_color": 1052688,
+    "water_color": 1644825,
+    "water_fog_color": 855309,
+    "mood_sound": {
+      "sound": "minecraft:ambient.cave",
+      "tick_delay": 6000,
+      "offset": 2.0,
+      "block_search_extent": 8
+    },
+    "additions_sound": {
+      "sound": "minecraft:ambient.soul_sand_valley.mood",
+      "tick_chance": 0.0111
+    },
+    "music": {
+      "sound": "minecraft:music.nether.nether_wastes",
+      "min_delay": 12000,
+      "max_delay": 24000,
+      "replace_current_music": false
+    },
+    "ambient_sound": "minecraft:ambient.soul_sand_valley.loop",
+    "particle": {
+      "options": {
+        "type": "minecraft:ash"
+      },
+      "probability": 0.118093334
+    }
+  },
+  "spawners": {
+    "monster": [],
+    "creature": [],
+    "ambient": [],
+    "axolotls": [],
+    "underground_water_creature": [],
+    "water_creature": [],
+    "water_ambient": [],
+    "misc": []
+  },
+  "spawn_costs": {},
+  "carvers": {},
+  "features": [
+    [],
+    [],
+    [],
+    [],
+    [],
+    [],
+    [],
+    [],
+    [],
+    [
+      "vl_abyss:the_abyss_tree"
+    ],
+    []
+  ]
+}

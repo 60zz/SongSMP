@@ -1,0 +1,49 @@
+{
+  "_fv": 79,
+  "_type": "recipe",
+  "definition": {
+    "recipeType": "Crafting",
+    "recipeRetstackSize": 1,
+    "group": "",
+    "unlockingItems": [],
+    "cookingBookCategory": "MISC",
+    "xpReward": 0.0,
+    "cookingTime": 200,
+    "craftingBookCategory": "MISC",
+    "recipeShapeless": false,
+    "recipeSlots": [
+      {
+        "value": ""
+      },
+      {
+        "value": "CUSTOM:EssenciaAbismo"
+      },
+      {
+        "value": ""
+      },
+      {
+        "value": "CUSTOM:EssenciaAbismo"
+      },
+      {
+        "value": "Items.BUNDLE"
+      },
+      {
+        "value": "CUSTOM:EssenciaAbismo"
+      },
+      {
+        "value": ""
+      },
+      {
+        "value": "CUSTOM:EssenciaAbismo"
+      },
+      {
+        "value": ""
+      }
+    ],
+    "recipeReturnStack": {
+      "value": "Items.BUNDLE"
+    },
+    "name": "essencia_abismo",
+    "namespace": "mod"
+  }
+}

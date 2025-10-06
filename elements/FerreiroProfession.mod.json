@@ -1,0 +1,16 @@
+{
+  "_fv": 79,
+  "_type": "villagerprofession",
+  "definition": {
+    "displayName": "Ferreiro",
+    "pointOfInterest": {
+      "value": "Blocks.BARRIER"
+    },
+    "actionSound": {
+      "value": "entity.villager.work_weaponsmith"
+    },
+    "hat": "None",
+    "professionTextureFile": "ferreiro.png",
+    "zombifiedProfessionTextureFile": "ferreiro.png"
+  }
+}

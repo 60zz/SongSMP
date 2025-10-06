@@ -1,0 +1,11 @@
+mixin {
+    add sourceSets.main, 'mixins.vl_abyss.refmap.json'
+
+    config 'mixins.vl_abyss.json'
+}
+
+jar {
+    manifest.attributes([
+            "MixinConfigs": "mixins.mymod.json"
+    ])
+}

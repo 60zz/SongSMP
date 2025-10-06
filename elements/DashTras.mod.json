@@ -1,0 +1,12 @@
+{
+  "_fv": 79,
+  "_type": "keybind",
+  "definition": {
+    "triggerKey": "S",
+    "keyBindingName": "Dash Tras",
+    "keyBindingCategoryKey": "geral",
+    "onKeyPressed": {
+      "name": "DashTrasOnKeyPressed"
+    }
+  }
+}

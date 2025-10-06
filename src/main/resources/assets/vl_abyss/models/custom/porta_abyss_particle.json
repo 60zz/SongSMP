@@ -1,0 +1,7 @@
+
+{
+  "parent": "vl_abyss:displaysettings/portaozika",
+  "textures": {
+    "particle": "vl_abyss:block/porta"
+  }
+}

@@ -1,0 +1,258 @@
+{
+  "parry": {
+    "sounds": [
+      {
+        "name": "vl_abyss:parry",
+        "stream": false
+      }
+    ]
+  },
+  "parry_hands": {
+    "sounds": [
+      {
+        "name": "vl_abyss:parry_hands",
+        "stream": false
+      }
+    ]
+  },
+  "insanidade_relogio": {
+    "sounds": [
+      {
+        "name": "vl_abyss:relogio",
+        "stream": false
+      }
+    ]
+  },
+  "coracao_lento": {
+    "sounds": [
+      {
+        "name": "vl_abyss:coracao_lento",
+        "stream": false
+      }
+    ]
+  },
+  "coracao_rapido": {
+    "sounds": [
+      {
+        "name": "vl_abyss:coracao_rapido",
+        "stream": false
+      }
+    ]
+  },
+  "insanidade_som_medo": {
+    "sounds": [
+      {
+        "name": "vl_abyss:som_medo",
+        "stream": false
+      }
+    ]
+  },
+  "dash_som": {
+    "sounds": [
+      {
+        "name": "vl_abyss:dash",
+        "stream": false
+      }
+    ]
+  },
+  "almaspawn": {
+    "sounds": [
+      {
+        "name": "vl_abyss:almaspawn",
+        "stream": false
+      }
+    ]
+  },
+  "almacoletada2": {
+    "sounds": [
+      {
+        "name": "vl_abyss:almacoletada2",
+        "stream": false
+      }
+    ]
+  },
+  "almacoletada": {
+    "sounds": [
+      {
+        "name": "vl_abyss:almacoletada",
+        "stream": false
+      }
+    ]
+  },
+  "mapaabyss": {
+    "sounds": [
+      {
+        "name": "vl_abyss:mapaabyss",
+        "stream": false
+      }
+    ]
+  },
+  "selecionarmantra": {
+    "sounds": [
+      {
+        "name": "vl_abyss:mantrapegou",
+        "stream": false
+      }
+    ]
+  },
+  "mantramenu": {
+    "sounds": [
+      {
+        "name": "vl_abyss:mantraescolheu",
+        "stream": false
+      }
+    ]
+  },
+  "almanaocoletada": {
+    "sounds": [
+      {
+        "name": "vl_abyss:mantrarecusa",
+        "stream": false
+      }
+    ]
+  },
+  "queimapapel": {
+    "sounds": [
+      {
+        "name": "vl_abyss:papelqueima",
+        "stream": false
+      }
+    ]
+  },
+  "spawnou": {
+    "sounds": [
+      {
+        "name": "vl_abyss:spawnou",
+        "stream": false
+      }
+    ]
+  },
+  "respiro_hab1": {
+    "sounds": [
+      {
+        "name": "vl_abyss:respiro_hab1",
+        "stream": false
+      }
+    ]
+  },
+  "respiro_hab1_2": {
+    "sounds": [
+      {
+        "name": "vl_abyss:respiro_hab1_2",
+        "stream": false
+      }
+    ]
+  },
+  "respiro_hab1_1": {
+    "sounds": [
+      {
+        "name": "vl_abyss:respiro_hab1_1",
+        "stream": false
+      }
+    ]
+  },
+  "transformando_ingot": {
+    "sounds": [
+      {
+        "name": "vl_abyss:transformando_item",
+        "stream": false
+      }
+    ]
+  },
+  "ingot_transformado": {
+    "sounds": [
+      {
+        "name": "vl_abyss:obtem_item",
+        "stream": false
+      }
+    ]
+  },
+  "copy_ativa": {
+    "sounds": [
+      {
+        "name": "vl_abyss:ativa_manto",
+        "stream": false
+      }
+    ]
+  },
+  "copy_dano": {
+    "sounds": [
+      {
+        "name": "vl_abyss:dano_manto",
+        "stream": false
+      }
+    ]
+  },
+  "copy_tempo": {
+    "sounds": [
+      {
+        "name": "vl_abyss:tempo_manto",
+        "stream": false
+      }
+    ]
+  },
+  "invocacao_iniciada": {
+    "sounds": [
+      {
+        "name": "vl_abyss:invocacao_iniciada",
+        "stream": false
+      }
+    ]
+  },
+  "invocacao_finalizada": {
+    "sounds": [
+      {
+        "name": "vl_abyss:invocacao_finalizada",
+        "stream": false
+      }
+    ]
+  },
+  "batida_cavaleiro_alado": {
+    "sounds": [
+      {
+        "name": "vl_abyss:batida_cavaleiro_alado",
+        "stream": false
+      }
+    ]
+  },
+  "portao_abyss_abre": {
+    "sounds": [
+      {
+        "name": "vl_abyss:portao_abre",
+        "stream": false
+      }
+    ]
+  },
+  "portao_abyss_fecha": {
+    "sounds": [
+      {
+        "name": "vl_abyss:portao_fecha",
+        "stream": false
+      }
+    ]
+  },
+  "atingemagialuzum": {
+    "sounds": [
+      {
+        "name": "vl_abyss:atingemantraluz",
+        "stream": false
+      }
+    ]
+  },
+  "usamantraluzum": {
+    "sounds": [
+      {
+        "name": "vl_abyss:usamantraluzum",
+        "stream": false
+      }
+    ]
+  },
+  "sem_ethir_som": {
+    "sounds": [
+      {
+        "name": "vl_abyss:sem_ethir",
+        "stream": false
+      }
+    ]
+  }
+}

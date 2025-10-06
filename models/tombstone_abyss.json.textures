@@ -1,0 +1,16 @@
+{
+  "mappings": {
+    "default": {
+      "map": {
+        "1": "ativo"
+      },
+      "name": "default"
+    },
+    "desativo": {
+      "map": {
+        "1": "desativado"
+      },
+      "name": "desativo"
+    }
+  }
+}

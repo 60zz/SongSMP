@@ -1,0 +1,7 @@
+{
+  "variants": {
+    "": {
+      "model": "vl_abyss:block/abyssion_ore"
+    }
+  }
+}

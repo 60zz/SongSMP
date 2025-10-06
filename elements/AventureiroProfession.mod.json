@@ -1,0 +1,16 @@
+{
+  "_fv": 79,
+  "_type": "villagerprofession",
+  "definition": {
+    "displayName": "Aventureiro",
+    "pointOfInterest": {
+      "value": "Blocks.BEDROCK"
+    },
+    "actionSound": {
+      "value": "entity.villager.work_toolsmith"
+    },
+    "hat": "None",
+    "professionTextureFile": "aventureiro.png",
+    "zombifiedProfessionTextureFile": "aventureiro.png"
+  }
+}

@@ -1,0 +1,8 @@
+{
+  "_fv": 79,
+  "_type": "procedure",
+  "definition": {
+    "procedurexml": "<?xml version=\"1.0\" encoding=\"UTF-8\" standalone=\"no\"?><xml xmlns=\"https://developers.google.com/blockly/xml\"><block deletable=\"false\" type=\"event_trigger\" x=\"40\" y=\"40\"><field name=\"trigger\">graphic_setup_dimensions</field><next><block type=\"graphic_setup_dimensioneffects\"><field name=\"reference\">OVERWORLD</field><value name=\"effects\"><block type=\"get_dimensionid\"><field name=\"dimension\">Surface</field></block></value><value name=\"fog\"><block type=\"logic_boolean\"><field name=\"BOOL\">FALSE</field></block></value><next><block type=\"graphic_setup_dimensioneffects\"><field name=\"reference\">OVERWORLD</field><value name=\"effects\"><block type=\"get_dimensionid\"><field name=\"dimension\">CUSTOM:Abismo</field></block></value><value name=\"fog\"><block type=\"logic_boolean\"><field name=\"BOOL\">FALSE</field></block></value></block></next></block></next></block></xml>",
+    "skipDependencyNullCheck": false
+  }
+}

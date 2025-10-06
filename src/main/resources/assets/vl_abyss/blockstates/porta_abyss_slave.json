@@ -1,0 +1,7 @@
+{
+  "variants": {
+    "": {
+      "model": "vl_abyss:block/porta_abyss_slave"
+    }
+  }
+}

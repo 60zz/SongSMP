@@ -1,0 +1,225 @@
+{
+  "_fv": 79,
+  "_type": "config",
+  "definition": {
+    "pools": [
+      {
+        "category": "Winged Knight",
+        "entries": [
+          {
+            "item": {
+              "value": ""
+            },
+            "silkTouchMode": 1,
+            "block": {
+              "value": ""
+            },
+            "logicField": 0,
+            "numberField": 150.0,
+            "textDefault": "",
+            "comment": "Vai alterar a mantra total do Cavaleiro Alado",
+            "vardisplay": "Mantra Total que o Cavaleiro Alado vai possuir",
+            "varname": "TotalMantraWingedKnight",
+            "enablecomment": true,
+            "stringlist": []
+          },
+          {
+            "item": {
+              "value": ""
+            },
+            "silkTouchMode": 1,
+            "block": {
+              "value": ""
+            },
+            "logicField": 0,
+            "numberField": 4.0,
+            "textDefault": "",
+            "comment": "Irá alterar o dano total causado pelo Cavaleiro Alado. Ele causará dano verdadeiro",
+            "vardisplay": "Dano base do Cavaleiro Alado",
+            "varname": "WingedKnightTotalDamage",
+            "enablecomment": true,
+            "stringlist": []
+          },
+          {
+            "item": {
+              "value": ""
+            },
+            "silkTouchMode": 1,
+            "block": {
+              "value": ""
+            },
+            "logicField": 0,
+            "numberField": 8.0,
+            "textDefault": "",
+            "comment": "Dano causado pelo ataque de acertar o machado no chão do Cavaleiro Alado",
+            "vardisplay": "Dano do Ataque de Machado contra o chão do Cavaleiro Alado",
+            "varname": "WingedKnightGroundAxeAttackDamage",
+            "enablecomment": true,
+            "stringlist": []
+          },
+          {
+            "item": {
+              "value": ""
+            },
+            "silkTouchMode": 1,
+            "block": {
+              "value": ""
+            },
+            "logicField": 0,
+            "numberField": 12.0,
+            "textDefault": "",
+            "comment": "Dano causado pelo ataque de voar e acertar o ataque no chão do Cavaleiro Alado",
+            "vardisplay": "Dano do Ataque especial do Cavaleiro Alado",
+            "varname": "WingedKnightFlyingAxeGroundAttackDamage",
+            "enablecomment": true,
+            "stringlist": []
+          }
+        ]
+      },
+      {
+        "category": "Artefatos",
+        "entries": [
+          {
+            "item": {
+              "value": ""
+            },
+            "silkTouchMode": 1,
+            "block": {
+              "value": ""
+            },
+            "logicField": 0,
+            "numberField": 2.0,
+            "textDefault": "",
+            "comment": "Adicional de Inteligência por raça. Padrão 2",
+            "vardisplay": "Capuz Esquecido Config",
+            "varname": "CapuzEsquecidoConfig",
+            "enablecomment": true,
+            "stringlist": []
+          },
+          {
+            "item": {
+              "value": ""
+            },
+            "silkTouchMode": 1,
+            "block": {
+              "value": ""
+            },
+            "logicField": 0,
+            "numberField": -2.0,
+            "textDefault": "",
+            "comment": "Perca de vida por artefato equipado. Padrão -2",
+            "vardisplay": "Capuz Esquecido Debuff Config",
+            "varname": "CapuzEsquecidoConfig2",
+            "enablecomment": true,
+            "stringlist": []
+          },
+          {
+            "item": {
+              "value": ""
+            },
+            "silkTouchMode": 1,
+            "block": {
+              "value": ""
+            },
+            "logicField": 0,
+            "numberField": 1.2,
+            "textDefault": "",
+            "comment": "Dano corpo a corpo reduzido. Padrão 1.2 (20%)",
+            "vardisplay": "Voto Silencioso Dano Reduzido",
+            "varname": "ColarVotoSilenciosoConfig",
+            "enablecomment": true,
+            "stringlist": []
+          },
+          {
+            "item": {
+              "value": ""
+            },
+            "silkTouchMode": 1,
+            "block": {
+              "value": ""
+            },
+            "logicField": 0,
+            "numberField": 10.0,
+            "textDefault": "",
+            "comment": "Vida recuperada pós hit. Padrão (c/ raça): 10",
+            "vardisplay": "Amuleto de Sangue Config",
+            "varname": "AmuletoSangueConfig",
+            "enablecomment": true,
+            "stringlist": []
+          },
+          {
+            "item": {
+              "value": ""
+            },
+            "silkTouchMode": 1,
+            "block": {
+              "value": ""
+            },
+            "logicField": 0,
+            "numberField": 7.0,
+            "textDefault": "",
+            "comment": "Vida recuperada pós hit. Padrão (s/ raça): 7",
+            "vardisplay": "Amuleto de Sangue s/raça Config",
+            "varname": "AmuletoSangueConfig2",
+            "enablecomment": true,
+            "stringlist": []
+          },
+          {
+            "item": {
+              "value": ""
+            },
+            "silkTouchMode": 1,
+            "block": {
+              "value": ""
+            },
+            "logicField": 0,
+            "numberField": 1.0,
+            "textDefault": "",
+            "comment": "Inteligência adicional Faixa Acólito. Padrão: 1",
+            "vardisplay": "Artefato Faixa Acólito",
+            "varname": "FaixaAcolitoConfig",
+            "enablecomment": true,
+            "stringlist": []
+          },
+          {
+            "item": {
+              "value": ""
+            },
+            "silkTouchMode": 1,
+            "block": {
+              "value": ""
+            },
+            "logicField": 0,
+            "numberField": 0.025,
+            "textDefault": "",
+            "comment": "Velocidade das Botas (s/raça): 0.025 (25%)",
+            "vardisplay": "Botas Vazio Abyssal Velocidade (s/raça)",
+            "varname": "BotasVazioAbyssalConfig",
+            "enablecomment": true,
+            "stringlist": []
+          },
+          {
+            "item": {
+              "value": ""
+            },
+            "silkTouchMode": 1,
+            "block": {
+              "value": ""
+            },
+            "logicField": 0,
+            "numberField": 0.04,
+            "textDefault": "",
+            "comment": "Velocidade das Botas (c/raça): 0.04 (40%)",
+            "vardisplay": "Botas Vazio Abyssal Velocidade (c/raça)",
+            "varname": "BotasVazioAbyssalConfig2",
+            "enablecomment": true,
+            "stringlist": []
+          }
+        ]
+      }
+    ],
+    "file": "ssmp-common",
+    "configType": 0,
+    "defining": false
+  }
+}

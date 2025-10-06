@@ -1,0 +1,8 @@
+{
+  "_fv": 79,
+  "_type": "procedure",
+  "definition": {
+    "procedurexml": "<?xml version=\"1.0\" encoding=\"UTF-8\" standalone=\"no\"?><xml xmlns=\"https://developers.google.com/blockly/xml\"><block deletable=\"false\" type=\"event_trigger\" x=\"40\" y=\"40\"><field name=\"trigger\">entity_pre_hurt</field><next><block type=\"controls_if\"><value name=\"IF0\"><block type=\"is_equipped\"><value name=\"entity\"><block type=\"entity_from_deps\"/></value><value name=\"item\"><block type=\"mcitem_all\"><field name=\"value\">CUSTOM:VotoSilencioso</field></block></value></block></value><statement name=\"DO0\"><block type=\"set_damage\"><value name=\"dmg\"><block type=\"math_dual_ops\"><field name=\"OP\">DIVIDE</field><value name=\"A\"><block type=\"additions_get_attackdamage\"><value name=\"entity\"><block type=\"source_entity_from_deps\"/></value></block></value><value name=\"B\"><block type=\"number_variable\"><field name=\"variable\">ColarVotoSilenciosoConfig</field><field name=\"config\">CUSTOM:Ssmp</field></block></value></block></value></block></statement></block></next></block></xml>",
+    "skipDependencyNullCheck": false
+  }
+}

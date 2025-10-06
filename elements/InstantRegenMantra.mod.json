@@ -1,0 +1,24 @@
+{
+  "_fv": 79,
+  "_type": "potioneffect",
+  "definition": {
+    "effectName": "Instant Regen Mantra",
+    "icon": "cooldown_respiro.png",
+    "color": {
+      "value": -16777216,
+      "falpha": 0.0
+    },
+    "isInstant": false,
+    "mobEffectCategory": "BENEFICIAL",
+    "renderStatusInInventory": true,
+    "renderStatusInHUD": true,
+    "isCuredbyHoney": false,
+    "modifiers": [],
+    "onStarted": {
+      "name": "InstantRegenMantraEffectStartedapplied"
+    },
+    "onExpired": {
+      "name": "InstantRegenMantraEffectExpires"
+    }
+  }
+}

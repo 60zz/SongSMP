@@ -1,0 +1,211 @@
+{
+  "_fv": 79,
+  "_type": "gui",
+  "definition": {
+    "type": 0,
+    "width": 176,
+    "height": 166,
+    "inventoryOffsetX": 0,
+    "inventoryOffsetY": 0,
+    "renderBgLayer": false,
+    "doesPauseGame": false,
+    "components": [
+      {
+        "type": "imagebutton",
+        "data": {
+          "name": "imagebutton_coracao",
+          "image": "coracao.png",
+          "hoveredImage": "",
+          "onClick": {
+            "name": "LuzBotaoClicou"
+          },
+          "x": 177,
+          "y": 107,
+          "locked": false
+        }
+      },
+      {
+        "type": "imagebutton",
+        "data": {
+          "name": "imagebutton_coracao1",
+          "image": "coracao.png",
+          "hoveredImage": "",
+          "onClick": {
+            "name": "TempestadeBotaoClicou"
+          },
+          "x": 123,
+          "y": 107,
+          "locked": false
+        }
+      },
+      {
+        "type": "imagebutton",
+        "data": {
+          "name": "imagebutton_coracao2",
+          "image": "coracao.png",
+          "hoveredImage": "",
+          "onClick": {
+            "name": "NevascaBotaoClicou"
+          },
+          "x": 231,
+          "y": 107,
+          "locked": false
+        }
+      },
+      {
+        "type": "imagebutton",
+        "data": {
+          "name": "imagebutton_coracao3",
+          "image": "coracao.png",
+          "hoveredImage": "",
+          "onClick": {
+            "name": "RespiroBotaoClicou"
+          },
+          "x": 285,
+          "y": 107,
+          "locked": false
+        }
+      },
+      {
+        "type": "imagebutton",
+        "data": {
+          "name": "imagebutton_coracao4",
+          "image": "coracao.png",
+          "hoveredImage": "",
+          "onClick": {
+            "name": "ChamaBotaoClicou"
+          },
+          "x": 63,
+          "y": 107,
+          "locked": false
+        }
+      },
+      {
+        "type": "imagebutton",
+        "data": {
+          "name": "imagebutton_coracao5",
+          "image": "coracao.png",
+          "hoveredImage": "",
+          "onClick": {
+            "name": "EscuridaoBotaoClicou"
+          },
+          "x": 339,
+          "y": 107,
+          "locked": false
+        }
+      },
+      {
+        "type": "label",
+        "data": {
+          "name": "label_chama",
+          "text": {
+            "fixedValue": "Chama"
+          },
+          "color": {
+            "value": -1,
+            "falpha": 0.0
+          },
+          "x": 63,
+          "y": 90,
+          "locked": false
+        }
+      },
+      {
+        "type": "label",
+        "data": {
+          "name": "label_tempestade",
+          "text": {
+            "fixedValue": "Tempestade"
+          },
+          "color": {
+            "value": -1,
+            "falpha": 0.0
+          },
+          "x": 114,
+          "y": 89,
+          "locked": false
+        }
+      },
+      {
+        "type": "label",
+        "data": {
+          "name": "label_luz",
+          "text": {
+            "fixedValue": "Luz"
+          },
+          "color": {
+            "value": -1,
+            "falpha": 0.0
+          },
+          "x": 183,
+          "y": 88,
+          "locked": false
+        }
+      },
+      {
+        "type": "label",
+        "data": {
+          "name": "label_nevasca",
+          "text": {
+            "fixedValue": "Nevasca"
+          },
+          "color": {
+            "value": -1,
+            "falpha": 0.0
+          },
+          "x": 228,
+          "y": 89,
+          "locked": false
+        }
+      },
+      {
+        "type": "label",
+        "data": {
+          "name": "label_respiro",
+          "text": {
+            "fixedValue": "Respiro"
+          },
+          "color": {
+            "value": -1,
+            "falpha": 0.0
+          },
+          "x": 285,
+          "y": 88,
+          "locked": false
+        }
+      },
+      {
+        "type": "label",
+        "data": {
+          "name": "label_escuridao",
+          "text": {
+            "fixedValue": "Escuridão"
+          },
+          "color": {
+            "value": -1,
+            "falpha": 0.0
+          },
+          "x": 334,
+          "y": 88,
+          "locked": false
+        }
+      }
+    ],
+    "onOpen": {
+      "name": "JThisGUIIsOpenedSound"
+    },
+    "onTick": {
+      "name": "JThisGUIIsOpened"
+    },
+    "onClosed": {
+      "name": "JThisGUIIsClosed"
+    },
+    "gridSettings": {
+      "sx": 18,
+      "sy": 18,
+      "ox": 11,
+      "oy": 15,
+      "snapOnGrid": false
+    }
+  }
+}

@@ -1,0 +1,9 @@
+{
+  "parent": "vl_abyss:custom/tombstone_abyss",
+  "textures": {
+    "all": "vl_abyss:block/desativado",
+    "particle": "vl_abyss:block/ativo",
+    "1": "vl_abyss:block/desativado"
+  },
+  "render_type": "cutout_mipped"
+}

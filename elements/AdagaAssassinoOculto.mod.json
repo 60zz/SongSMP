@@ -1,0 +1,12 @@
+{
+  "_fv": 79,
+  "_type": "damagetype",
+  "definition": {
+    "exhaustion": 0.1,
+    "scaling": "never",
+    "effects": "hurt",
+    "normalDeathMessage": "Desconhecido morreu",
+    "itemDeathMessage": "%1$s foi morto por ??? usando ???",
+    "playerDeathMessage": "%1$s morreu tentando escapar de ???"
+  }
+}

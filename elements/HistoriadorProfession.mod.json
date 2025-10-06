@@ -1,0 +1,16 @@
+{
+  "_fv": 79,
+  "_type": "villagerprofession",
+  "definition": {
+    "displayName": "Historiador",
+    "pointOfInterest": {
+      "value": "Blocks.END_PORTAL_FRAME"
+    },
+    "actionSound": {
+      "value": "entity.villager.work_cartographer"
+    },
+    "hat": "None",
+    "professionTextureFile": "historiador.png",
+    "zombifiedProfessionTextureFile": "historiador.png"
+  }
+}

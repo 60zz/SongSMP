@@ -1,0 +1,9 @@
+{
+  "replace": false,
+  "values": [
+    "vl_abyss:danoabismoboss",
+    "vl_abyss:absorve_alma_damage",
+    "vl_abyss:sangramento_damage",
+    "vl_abyss:mantra_damage"
+  ]
+}

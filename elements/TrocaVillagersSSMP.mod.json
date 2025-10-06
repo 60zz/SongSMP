@@ -1,0 +1,76 @@
+{
+  "_fv": 79,
+  "_type": "villagertrade",
+  "definition": {
+    "tradeEntries": [
+      {
+        "villagerProfession": {
+          "value": "CUSTOM:AventureiroProfession"
+        },
+        "entries": [
+          {
+            "price1": {
+              "value": "Items.PAPER"
+            },
+            "countPrice1": 1,
+            "price2": {
+              "value": "Items.DIAMOND"
+            },
+            "countPrice2": 24,
+            "offer": {
+              "value": "CUSTOM:MapaAbyss"
+            },
+            "countOffer": 1,
+            "level": 1,
+            "maxTrades": 10,
+            "xp": 5,
+            "priceMultiplier": 0.05
+          },
+          {
+            "price1": {
+              "value": "CUSTOM:AbyssionIngot"
+            },
+            "countPrice1": 8,
+            "price2": {
+              "value": "Items.NETHERITE_INGOT"
+            },
+            "countPrice2": 24,
+            "offer": {
+              "value": "CUSTOM:DesbloqueioEsquiva"
+            },
+            "countOffer": 1,
+            "level": 2,
+            "maxTrades": 5,
+            "xp": 30,
+            "priceMultiplier": 0.05
+          }
+        ]
+      },
+      {
+        "villagerProfession": {
+          "value": "CUSTOM:MestreMantraProfession"
+        },
+        "entries": [
+          {
+            "price1": {
+              "value": "Items.NETHER_STAR"
+            },
+            "countPrice1": 8,
+            "price2": {
+              "value": "CUSTOM:AbyssionIngot"
+            },
+            "countPrice2": 12,
+            "offer": {
+              "value": "CUSTOM:LiberacaoMantra"
+            },
+            "countOffer": 1,
+            "level": 1,
+            "maxTrades": 3,
+            "xp": 5,
+            "priceMultiplier": 0.05
+          }
+        ]
+      }
+    ]
+  }
+}

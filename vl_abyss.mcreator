@@ -1,0 +1,5816 @@
+{
+  "mod_elements": [
+    {
+      "name": "VLMPBcastProcedure",
+      "type": "procedure",
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "vlmp_bcast_procedure",
+      "metadata": {
+        "files": [
+          "src/main/java/net/mcreator/vlabyss/procedures/VLMPBcastProcedureProcedure.java"
+        ],
+        "dependencies": [
+          {
+            "name": "arguments",
+            "type": "cmdcontext"
+          }
+        ]
+      },
+      "path": "~/Plugins/BroadcastVLMP"
+    },
+    {
+      "name": "VLMPBcast",
+      "type": "command",
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "vlmp_bcast",
+      "metadata": {
+        "files": [
+          "src/main/java/net/mcreator/vlabyss/command/VLMPBcastCommand.java"
+        ]
+      },
+      "path": "~/Plugins/BroadcastVLMP"
+    },
+    {
+      "name": "MudaSol",
+      "type": "procedure",
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "muda_sol",
+      "metadata": {
+        "files": [
+          "src/main/java/net/mcreator/vlabyss/procedures/MudaSolProcedure.java"
+        ],
+        "dependencies": [
+          {
+            "name": "dimension",
+            "type": "dimensiontype"
+          }
+        ]
+      },
+      "path": "~/VL1_Abyss/Sol e Lua"
+    },
+    {
+      "name": "ConfiguraSolLua",
+      "type": "procedure",
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "configura_sol_lua",
+      "metadata": {
+        "files": [
+          "src/main/java/net/mcreator/vlabyss/procedures/ConfiguraSolLuaProcedure.java"
+        ],
+        "dependencies": []
+      },
+      "path": "~/VL1_Abyss/Sol e Lua"
+    },
+    {
+      "name": "MudaLua",
+      "type": "procedure",
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "muda_lua",
+      "metadata": {
+        "files": [
+          "src/main/java/net/mcreator/vlabyss/procedures/MudaLuaProcedure.java"
+        ],
+        "dependencies": [
+          {
+            "name": "dimension",
+            "type": "dimensiontype"
+          }
+        ]
+      },
+      "path": "~/VL1_Abyss/Sol e Lua"
+    },
+    {
+      "name": "SetupAnimations",
+      "type": "procedure",
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "setup_animations",
+      "metadata": {
+        "files": [
+          "src/main/java/net/mcreator/vlabyss/procedures/SetupAnimationsProcedure.java"
+        ],
+        "dependencies": []
+      },
+      "path": "~/VL1_Abyss/PlayerAnimatorSetup"
+    },
+    {
+      "name": "Inteligencia",
+      "type": "attribute",
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "inteligencia",
+      "metadata": {
+        "files": []
+      },
+      "path": "~/VL1_Abyss/Classes"
+    },
+    {
+      "name": "MapaabyssalDisplayOverlayIngame",
+      "type": "procedure",
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "mapaabyssal_display_overlay_ingame",
+      "metadata": {
+        "return_type": "logic",
+        "files": [
+          "src/main/java/net/mcreator/vlabyss/procedures/MapaabyssalDisplayOverlayIngameProcedure.java"
+        ],
+        "dependencies": [
+          {
+            "name": "entity",
+            "type": "entity"
+          }
+        ]
+      },
+      "path": "~/VL1_Abyss/MapaAbyssal/Procedure"
+    },
+    {
+      "name": "Mapaabyssal",
+      "type": "overlay",
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "mapaabyssal",
+      "metadata": {
+        "files": [
+          "src/main/java/net/mcreator/vlabyss/client/screens/MapaabyssalOverlay.java"
+        ]
+      },
+      "path": "~/VL1_Abyss/MapaAbyssal"
+    },
+    {
+      "name": "Morreudeutp",
+      "type": "procedure",
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "morreudeutp",
+      "metadata": {
+        "files": [
+          "src/main/java/net/mcreator/vlabyss/procedures/MorreudeutpProcedure.java"
+        ],
+        "dependencies": [
+          {
+            "name": "damagesource",
+            "type": "damagesource"
+          },
+          {
+            "name": "entity",
+            "type": "entity"
+          },
+          {
+            "name": "sourceentity",
+            "type": "entity"
+          }
+        ]
+      },
+      "path": "~/VL1_Abyss/Vidas"
+    },
+    {
+      "name": "ContadorVidas",
+      "type": "procedure",
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "contador_vidas",
+      "metadata": {
+        "files": [
+          "src/main/java/net/mcreator/vlabyss/procedures/ContadorVidasProcedure.java"
+        ],
+        "dependencies": [
+          {
+            "name": "arguments",
+            "type": "cmdcontext"
+          },
+          {
+            "name": "entity",
+            "type": "entity"
+          }
+        ]
+      },
+      "path": "~/VL1_Abyss/Vidas"
+    },
+    {
+      "name": "ContadorVidasStaff",
+      "type": "procedure",
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "contador_vidas_staff",
+      "metadata": {
+        "files": [
+          "src/main/java/net/mcreator/vlabyss/procedures/ContadorVidasStaffProcedure.java"
+        ],
+        "dependencies": [
+          {
+            "name": "arguments",
+            "type": "cmdcontext"
+          },
+          {
+            "name": "entity",
+            "type": "entity"
+          }
+        ]
+      },
+      "path": "~/VL1_Abyss/Vidas"
+    },
+    {
+      "name": "PlayerDeuRespawn",
+      "type": "procedure",
+      "compiles": true,
+      "locked_code": true,
+      "registry_name": "player_deu_respawn",
+      "metadata": {
+        "files": [
+          "src/main/java/net/mcreator/vlabyss/procedures/PlayerDeuRespawnProcedure.java"
+        ],
+        "dependencies": [
+          {
+            "name": "entity",
+            "type": "entity"
+          }
+        ]
+      },
+      "path": "~/VL1_Abyss/Vidas"
+    },
+    {
+      "name": "VLVidas",
+      "type": "command",
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "vl_vidas",
+      "metadata": {
+        "files": [
+          "src/main/java/net/mcreator/vlabyss/command/VLVidasCommand.java"
+        ]
+      },
+      "path": "~/VL1_Abyss/Vidas/Comandos"
+    },
+    {
+      "name": "VLVidasADM",
+      "type": "command",
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "vl_vidas_adm",
+      "metadata": {
+        "files": [
+          "src/main/java/net/mcreator/vlabyss/command/VLVidasADMCommand.java"
+        ]
+      },
+      "path": "~/VL1_Abyss/Vidas/Comandos"
+    },
+    {
+      "name": "VLSpy",
+      "type": "command",
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "vl_spy",
+      "metadata": {
+        "files": [
+          "src/main/java/net/mcreator/vlabyss/command/VLSpyCommand.java"
+        ]
+      },
+      "path": "~/Plugins/IconicSpy"
+    },
+    {
+      "name": "ProcedureIconicSpy",
+      "type": "procedure",
+      "compiles": true,
+      "locked_code": true,
+      "registry_name": "procedure_iconic_spy",
+      "metadata": {
+        "files": [
+          "src/main/java/net/mcreator/vlabyss/procedures/ProcedureIconicSpyProcedure.java"
+        ],
+        "dependencies": [
+          {
+            "name": "entity",
+            "type": "entity"
+          }
+        ]
+      },
+      "path": "~/Plugins/IconicSpy"
+    },
+    {
+      "name": "ProcedureVLSpy",
+      "type": "procedure",
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "procedure_vl_spy",
+      "metadata": {
+        "files": [
+          "src/main/java/net/mcreator/vlabyss/procedures/ProcedureVLSpyProcedure.java"
+        ],
+        "dependencies": [
+          {
+            "name": "arguments",
+            "type": "cmdcontext"
+          },
+          {
+            "name": "entity",
+            "type": "entity"
+          }
+        ]
+      },
+      "path": "~/Plugins/IconicSpy"
+    },
+    {
+      "name": "MapaAbyss",
+      "type": "item",
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "mapa_abyss",
+      "metadata": {
+        "files": [
+          "src/main/resources/assets/vl_abyss/models/item/mapa_abyss.json",
+          "src/main/java/net/mcreator/vlabyss/item/MapaAbyssItem.java"
+        ]
+      },
+      "path": "~/VL1_Abyss/MapaAbyssal/Item"
+    },
+    {
+      "name": "VlAbyss",
+      "type": "tab",
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "vl_abyss",
+      "metadata": {
+        "files": []
+      },
+      "path": "~/CreativeTab"
+    },
+    {
+      "name": "InfoMapaAbyssal",
+      "type": "procedure",
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "info_mapa_abyssal",
+      "metadata": {
+        "files": [
+          "src/main/java/net/mcreator/vlabyss/procedures/InfoMapaAbyssalProcedure.java"
+        ],
+        "dependencies": [
+          {
+            "name": "itemstack",
+            "type": "itemstack"
+          },
+          {
+            "name": "tooltip",
+            "type": "tooltip"
+          }
+        ]
+      },
+      "path": "~/VL1_Abyss/MapaAbyssal/Procedure"
+    },
+    {
+      "name": "TomouHitParry",
+      "type": "procedure",
+      "compiles": false,
+      "locked_code": false,
+      "registry_name": "tomou_hit_parry",
+      "metadata": {
+        "files": [
+          "src/main/java/net/mcreator/vlabyss/procedures/TomouHitParryProcedure.java"
+        ],
+        "dependencies": [
+          {
+            "name": "entity",
+            "type": "entity"
+          },
+          {
+            "name": "sourceentity",
+            "type": "entity"
+          },
+          {
+            "name": "x",
+            "type": "number"
+          },
+          {
+            "name": "y",
+            "type": "number"
+          },
+          {
+            "name": "z",
+            "type": "number"
+          },
+          {
+            "name": "world",
+            "type": "world"
+          }
+        ]
+      },
+      "path": "~/VL1_Abyss/Parry"
+    },
+    {
+      "name": "ParryOnKeyPressed",
+      "type": "procedure",
+      "compiles": false,
+      "locked_code": false,
+      "registry_name": "parry_on_key_pressed",
+      "metadata": {
+        "files": [
+          "src/main/java/net/mcreator/vlabyss/procedures/ParryOnKeyPressedProcedure.java"
+        ],
+        "dependencies": [
+          {
+            "name": "entity",
+            "type": "entity"
+          },
+          {
+            "name": "world",
+            "type": "world"
+          }
+        ]
+      },
+      "path": "~/VL1_Abyss/Parry/Key"
+    },
+    {
+      "name": "Parry",
+      "type": "keybind",
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "parry",
+      "metadata": {
+        "files": [
+          "src/main/java/net/mcreator/vlabyss/network/ParryMessage.java"
+        ]
+      },
+      "path": "~/VL1_Abyss/Parry/Key"
+    },
+    {
+      "name": "ParryDeuCerto",
+      "type": "particle",
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "parry_deu_certo",
+      "metadata": {
+        "files": [
+          "src/main/java/net/mcreator/vlabyss/client/particle/ParryDeuCertoParticle.java",
+          "src/main/resources/assets/vl_abyss/particles/parry_deu_certo.json"
+        ]
+      },
+      "path": "~/VL1_Abyss/Parry"
+    },
+    {
+      "name": "PoucaVidaSom",
+      "type": "procedure",
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "pouca_vida_som",
+      "metadata": {
+        "files": [
+          "src/main/java/net/mcreator/vlabyss/procedures/PoucaVidaSomProcedure.java"
+        ],
+        "dependencies": [
+          {
+            "name": "entity",
+            "type": "entity"
+          }
+        ]
+      },
+      "path": "~/VL1_Abyss/CoracaoTela"
+    },
+    {
+      "name": "TocaSom",
+      "type": "procedure",
+      "compiles": true,
+      "locked_code": true,
+      "registry_name": "toca_som",
+      "metadata": {
+        "files": [
+          "src/main/java/net/mcreator/vlabyss/procedures/TocaSomProcedure.java"
+        ],
+        "dependencies": [
+          {
+            "name": "entity",
+            "type": "entity"
+          },
+          {
+            "name": "x",
+            "type": "number"
+          },
+          {
+            "name": "y",
+            "type": "number"
+          },
+          {
+            "name": "z",
+            "type": "number"
+          },
+          {
+            "name": "world",
+            "type": "world"
+          }
+        ]
+      },
+      "path": "~/VL1_Abyss/CoracaoTela"
+    },
+    {
+      "name": "MorreuSanidade",
+      "type": "procedure",
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "morreu_sanidade",
+      "metadata": {
+        "files": [
+          "src/main/java/net/mcreator/vlabyss/procedures/MorreuSanidadeProcedure.java"
+        ],
+        "dependencies": [
+          {
+            "name": "entity",
+            "type": "entity"
+          },
+          {
+            "name": "x",
+            "type": "number"
+          },
+          {
+            "name": "y",
+            "type": "number"
+          },
+          {
+            "name": "z",
+            "type": "number"
+          },
+          {
+            "name": "world",
+            "type": "world"
+          }
+        ]
+      },
+      "path": "~/VL1_Abyss/Insanidade"
+    },
+    {
+      "name": "JEIMapa",
+      "type": "jeiinformation",
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "jei_mapa",
+      "metadata": {
+        "files": []
+      },
+      "path": "~/VL1_Abyss/MapaAbyssal/JER"
+    },
+    {
+      "name": "AddVidas",
+      "type": "command",
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "add_vidas",
+      "metadata": {
+        "files": [
+          "src/main/java/net/mcreator/vlabyss/command/AddVidasCommand.java"
+        ]
+      },
+      "path": "~/VL1_Abyss/Vidas/Comandos"
+    },
+    {
+      "name": "AdicionarVidasVL",
+      "type": "procedure",
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "adicionar_vidas_vl",
+      "metadata": {
+        "files": [
+          "src/main/java/net/mcreator/vlabyss/procedures/AdicionarVidasVLProcedure.java"
+        ],
+        "dependencies": [
+          {
+            "name": "arguments",
+            "type": "cmdcontext"
+          },
+          {
+            "name": "entity",
+            "type": "entity"
+          }
+        ]
+      },
+      "path": "~/VL1_Abyss/Vidas"
+    },
+    {
+      "name": "ValmirianoClasse",
+      "type": "procedure",
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "valmiriano_classe",
+      "metadata": {
+        "files": [
+          "src/main/java/net/mcreator/vlabyss/procedures/ValmirianoClasseProcedure.java"
+        ],
+        "dependencies": [
+          {
+            "name": "arguments",
+            "type": "cmdcontext"
+          },
+          {
+            "name": "entity",
+            "type": "entity"
+          }
+        ]
+      },
+      "path": "~/VL1_Abyss/Classes/Comando"
+    },
+    {
+      "name": "ArkanthiClasse",
+      "type": "procedure",
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "arkanthi_classe",
+      "metadata": {
+        "files": [
+          "src/main/java/net/mcreator/vlabyss/procedures/ArkanthiClasseProcedure.java"
+        ],
+        "dependencies": [
+          {
+            "name": "arguments",
+            "type": "cmdcontext"
+          },
+          {
+            "name": "entity",
+            "type": "entity"
+          }
+        ]
+      },
+      "path": "~/VL1_Abyss/Classes/Comando"
+    },
+    {
+      "name": "VesperianClasse",
+      "type": "procedure",
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "vesperian_classe",
+      "metadata": {
+        "files": [
+          "src/main/java/net/mcreator/vlabyss/procedures/VesperianClasseProcedure.java"
+        ],
+        "dependencies": [
+          {
+            "name": "arguments",
+            "type": "cmdcontext"
+          },
+          {
+            "name": "entity",
+            "type": "entity"
+          }
+        ]
+      },
+      "path": "~/VL1_Abyss/Classes/Comando"
+    },
+    {
+      "name": "NimrenClasse",
+      "type": "procedure",
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "nimren_classe",
+      "metadata": {
+        "files": [
+          "src/main/java/net/mcreator/vlabyss/procedures/NimrenClasseProcedure.java"
+        ],
+        "dependencies": [
+          {
+            "name": "arguments",
+            "type": "cmdcontext"
+          },
+          {
+            "name": "entity",
+            "type": "entity"
+          }
+        ]
+      },
+      "path": "~/VL1_Abyss/Classes/Comando"
+    },
+    {
+      "name": "VLSetClasse",
+      "type": "command",
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "vl_set_classe",
+      "metadata": {
+        "files": [
+          "src/main/java/net/mcreator/vlabyss/command/VLSetClasseCommand.java"
+        ]
+      },
+      "path": "~/VL1_Abyss/Classes/Comando"
+    },
+    {
+      "name": "SimikariClasse",
+      "type": "procedure",
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "simikari_classe",
+      "metadata": {
+        "files": [
+          "src/main/java/net/mcreator/vlabyss/procedures/SimikariClasseProcedure.java"
+        ],
+        "dependencies": [
+          {
+            "name": "arguments",
+            "type": "cmdcontext"
+          },
+          {
+            "name": "entity",
+            "type": "entity"
+          }
+        ]
+      },
+      "path": "~/VL1_Abyss/Classes/Comando"
+    },
+    {
+      "name": "ScribariClasse",
+      "type": "procedure",
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "scribari_classe",
+      "metadata": {
+        "files": [
+          "src/main/java/net/mcreator/vlabyss/procedures/ScribariClasseProcedure.java"
+        ],
+        "dependencies": [
+          {
+            "name": "arguments",
+            "type": "cmdcontext"
+          },
+          {
+            "name": "entity",
+            "type": "entity"
+          }
+        ]
+      },
+      "path": "~/VL1_Abyss/Classes/Comando"
+    },
+    {
+      "name": "CapidrelClasse",
+      "type": "procedure",
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "capidrel_classe",
+      "metadata": {
+        "files": [
+          "src/main/java/net/mcreator/vlabyss/procedures/CapidrelClasseProcedure.java"
+        ],
+        "dependencies": [
+          {
+            "name": "arguments",
+            "type": "cmdcontext"
+          },
+          {
+            "name": "entity",
+            "type": "entity"
+          }
+        ]
+      },
+      "path": "~/VL1_Abyss/Classes/Comando"
+    },
+    {
+      "name": "LumivivoClasse",
+      "type": "procedure",
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "lumivivo_classe",
+      "metadata": {
+        "files": [
+          "src/main/java/net/mcreator/vlabyss/procedures/LumivivoClasseProcedure.java"
+        ],
+        "dependencies": [
+          {
+            "name": "arguments",
+            "type": "cmdcontext"
+          },
+          {
+            "name": "entity",
+            "type": "entity"
+          }
+        ]
+      },
+      "path": "~/VL1_Abyss/Classes/Comando"
+    },
+    {
+      "name": "MantraSoul",
+      "type": "animatedentity",
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "mantra_soul",
+      "metadata": {
+        "files": [
+          "src/main/java/net/mcreator/vlabyss/entity/model/MantraSoulModel.java",
+          "src/main/java/net/mcreator/vlabyss/client/renderer/MantraSoulRenderer.java",
+          "src/main/java/net/mcreator/vlabyss/entity/MantraSoulEntity.java"
+        ]
+      },
+      "path": "~/VL1_Abyss/Alma/Alma"
+    },
+    {
+      "name": "AbsorverAlmaOnKeyPressed",
+      "type": "procedure",
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "absorver_alma_on_key_pressed",
+      "metadata": {
+        "files": [
+          "src/main/java/net/mcreator/vlabyss/procedures/AbsorverAlmaOnKeyPressedProcedure.java"
+        ],
+        "dependencies": [
+          {
+            "name": "entity",
+            "type": "entity"
+          },
+          {
+            "name": "x",
+            "type": "number"
+          },
+          {
+            "name": "y",
+            "type": "number"
+          },
+          {
+            "name": "z",
+            "type": "number"
+          },
+          {
+            "name": "world",
+            "type": "world"
+          }
+        ]
+      },
+      "path": "~/VL1_Abyss/Alma/Spawn"
+    },
+    {
+      "name": "MantraSoulOnInitialEntitySpawn",
+      "type": "procedure",
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "mantra_soul_on_initial_entity_spawn",
+      "metadata": {
+        "files": [
+          "src/main/java/net/mcreator/vlabyss/procedures/MantraSoulOnInitialEntitySpawnProcedure.java"
+        ],
+        "dependencies": [
+          {
+            "name": "entity",
+            "type": "entity"
+          },
+          {
+            "name": "x",
+            "type": "number"
+          },
+          {
+            "name": "y",
+            "type": "number"
+          },
+          {
+            "name": "z",
+            "type": "number"
+          },
+          {
+            "name": "world",
+            "type": "world"
+          }
+        ]
+      },
+      "path": "~/VL1_Abyss/Alma/Alma"
+    },
+    {
+      "name": "AbsorveAlmaDamage",
+      "type": "damagetype",
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "absorve_alma_damage",
+      "metadata": {
+        "files": [
+          "src/main/resources/data/vl_abyss/damage_type/absorve_alma_damage.json"
+        ]
+      },
+      "path": "~/VL1_Abyss/Alma/Dano"
+    },
+    {
+      "name": "MantraSoulRightClickedOnEntity",
+      "type": "procedure",
+      "compiles": false,
+      "locked_code": false,
+      "registry_name": "mantra_soul_right_clicked_on_entity",
+      "metadata": {
+        "files": [
+          "src/main/java/net/mcreator/vlabyss/procedures/MantraSoulRightClickedOnEntityProcedure.java"
+        ],
+        "dependencies": [
+          {
+            "name": "entity",
+            "type": "entity"
+          },
+          {
+            "name": "sourceentity",
+            "type": "entity"
+          },
+          {
+            "name": "x",
+            "type": "number"
+          },
+          {
+            "name": "y",
+            "type": "number"
+          },
+          {
+            "name": "z",
+            "type": "number"
+          },
+          {
+            "name": "world",
+            "type": "world"
+          }
+        ]
+      },
+      "path": "~/VL1_Abyss/Alma/Alma"
+    },
+    {
+      "name": "CapuzEsquecido",
+      "type": "curiosbauble",
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "capuz_esquecido",
+      "metadata": {
+        "files": [
+          "src/main/java/net/mcreator/vlabyss/item/CapuzEsquecidoItem.java",
+          "src/main/resources/assets/vl_abyss/models/item/capuz_esquecido.json"
+        ]
+      },
+      "path": "~/VL1_Abyss/Artefatos"
+    },
+    {
+      "name": "CapuzEsquecidoBaubleIsEquipped",
+      "type": "procedure",
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "capuz_esquecido_bauble_is_equipped",
+      "metadata": {
+        "files": [
+          "src/main/java/net/mcreator/vlabyss/procedures/CapuzEsquecidoBaubleIsEquippedProcedure.java"
+        ],
+        "dependencies": [
+          {
+            "name": "entity",
+            "type": "entity"
+          }
+        ]
+      },
+      "path": "~/VL1_Abyss/Artefatos/Procedure"
+    },
+    {
+      "name": "CapuzEsquecidoBaubleIsUnequipped",
+      "type": "procedure",
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "capuz_esquecido_bauble_is_unequipped",
+      "metadata": {
+        "files": [
+          "src/main/java/net/mcreator/vlabyss/procedures/CapuzEsquecidoBaubleIsUnequippedProcedure.java"
+        ],
+        "dependencies": [
+          {
+            "name": "entity",
+            "type": "entity"
+          },
+          {
+            "name": "world",
+            "type": "world"
+          }
+        ]
+      },
+      "path": "~/VL1_Abyss/Artefatos/Procedure"
+    },
+    {
+      "name": "VotoSilencioso",
+      "type": "curiosbauble",
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "voto_silencioso",
+      "metadata": {
+        "files": [
+          "src/main/resources/assets/vl_abyss/models/item/voto_silencioso.json",
+          "src/main/java/net/mcreator/vlabyss/item/VotoSilenciosoItem.java"
+        ]
+      },
+      "path": "~/VL1_Abyss/Artefatos"
+    },
+    {
+      "name": "VotoSilenciosoHittado",
+      "type": "procedure",
+      "compiles": false,
+      "locked_code": false,
+      "registry_name": "voto_silencioso_hittado",
+      "metadata": {
+        "files": [
+          "src/main/java/net/mcreator/vlabyss/procedures/VotoSilenciosoHittadoProcedure.java"
+        ],
+        "dependencies": [
+          {
+            "name": "entity",
+            "type": "entity"
+          }
+        ]
+      },
+      "path": "~/VL1_Abyss/Artefatos/Procedure"
+    },
+    {
+      "name": "AmuletoVesperian",
+      "type": "curiosbauble",
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "amuleto_vesperian",
+      "metadata": {
+        "files": [
+          "src/main/resources/assets/vl_abyss/models/item/amuleto_vesperian.json",
+          "src/main/java/net/mcreator/vlabyss/item/AmuletoVesperianItem.java"
+        ]
+      },
+      "path": "~/VL1_Abyss/Artefatos"
+    },
+    {
+      "name": "AmuletoVesperianWhileBaubleIsEquippedTick",
+      "type": "procedure",
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "amuleto_vesperian_while_bauble_is_equipped_tick",
+      "metadata": {
+        "files": [
+          "src/main/java/net/mcreator/vlabyss/procedures/AmuletoVesperianWhileBaubleIsEquippedTickProcedure.java"
+        ],
+        "dependencies": [
+          {
+            "name": "entity",
+            "type": "entity"
+          }
+        ]
+      },
+      "path": "~/VL1_Abyss/Artefatos/Procedure"
+    },
+    {
+      "name": "AmuletoSangue",
+      "type": "curiosbauble",
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "amuleto_sangue",
+      "metadata": {
+        "files": [
+          "src/main/resources/assets/vl_abyss/models/item/amuleto_sangue.json",
+          "src/main/java/net/mcreator/vlabyss/item/AmuletoSangueItem.java"
+        ]
+      },
+      "path": "~/VL1_Abyss/Artefatos"
+    },
+    {
+      "name": "SangramentoDamage",
+      "type": "damagetype",
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "sangramento_damage",
+      "metadata": {
+        "files": [
+          "src/main/resources/data/vl_abyss/damage_type/sangramento_damage.json"
+        ]
+      },
+      "path": "~/VL1_Abyss/Sangramento/DamageType"
+    },
+    {
+      "name": "SangrandoOnEffectActiveTick",
+      "type": "procedure",
+      "compiles": false,
+      "locked_code": false,
+      "registry_name": "sangrando_on_effect_active_tick",
+      "metadata": {
+        "files": [
+          "src/main/java/net/mcreator/vlabyss/procedures/SangrandoOnEffectActiveTickProcedure.java"
+        ],
+        "dependencies": [
+          {
+            "name": "entity",
+            "type": "entity"
+          },
+          {
+            "name": "world",
+            "type": "world"
+          }
+        ]
+      },
+      "path": "~/VL1_Abyss/Sangramento/Procedure"
+    },
+    {
+      "name": "Sangrando",
+      "type": "potioneffect",
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "sangrando",
+      "metadata": {
+        "files": [
+          "src/main/java/net/mcreator/vlabyss/potion/SangrandoMobEffect.java"
+        ]
+      },
+      "path": "~/VL1_Abyss/Sangramento"
+    },
+    {
+      "name": "AcertouComAmuletoSangue",
+      "type": "procedure",
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "acertou_com_amuleto_sangue",
+      "metadata": {
+        "files": [
+          "src/main/java/net/mcreator/vlabyss/procedures/AcertouComAmuletoSangueProcedure.java"
+        ],
+        "dependencies": [
+          {
+            "name": "entity",
+            "type": "entity"
+          },
+          {
+            "name": "sourceentity",
+            "type": "entity"
+          }
+        ]
+      },
+      "path": "~/VL1_Abyss/Artefatos/Procedure"
+    },
+    {
+      "name": "InfoArtefatosAbyssal",
+      "type": "procedure",
+      "compiles": false,
+      "locked_code": false,
+      "registry_name": "info_artefatos_abyssal",
+      "metadata": {
+        "files": [
+          "src/main/java/net/mcreator/vlabyss/procedures/InfoArtefatosAbyssalProcedure.java"
+        ],
+        "dependencies": [
+          {
+            "name": "itemstack",
+            "type": "itemstack"
+          },
+          {
+            "name": "tooltip",
+            "type": "tooltip"
+          }
+        ]
+      },
+      "path": "~/VL1_Abyss/Artefatos/InfoAmuletos"
+    },
+    {
+      "name": "AbyssionOre",
+      "type": "block",
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "abyssion_ore",
+      "metadata": {
+        "files": [
+          "src/main/resources/data/vl_abyss/worldgen/configured_feature/abyssion_ore.json",
+          "src/main/resources/data/vl_abyss/worldgen/placed_feature/abyssion_ore.json",
+          "src/main/java/net/mcreator/vlabyss/block/AbyssionOreBlock.java",
+          "src/main/resources/data/vl_abyss/forge/biome_modifier/abyssion_ore_biome_modifier.json",
+          "src/main/resources/assets/vl_abyss/models/item/abyssion_ore.json",
+          "src/main/resources/assets/vl_abyss/blockstates/abyssion_ore.json",
+          "src/main/resources/assets/vl_abyss/models/block/abyssion_ore.json"
+        ]
+      },
+      "path": "~/VL1_Abyss/Abyssion"
+    },
+    {
+      "name": "RawAbyssion",
+      "type": "item",
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "raw_abyssion",
+      "metadata": {
+        "files": [
+          "src/main/java/net/mcreator/vlabyss/item/RawAbyssionItem.java",
+          "src/main/resources/assets/vl_abyss/models/item/raw_abyssion.json"
+        ]
+      },
+      "path": "~/VL1_Abyss/Abyssion"
+    },
+    {
+      "name": "AbyssionOreLootTable",
+      "type": "loottable",
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "abyssion_ore_loot_table",
+      "metadata": {
+        "files": [
+          "src/main/resources/data/vl_abyss/loot_tables/blocks/abyssion_ore.json"
+        ]
+      },
+      "path": "~/VL1_Abyss/Abyssion"
+    },
+    {
+      "name": "AbyssionIngot",
+      "type": "item",
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "abyssion_ingot",
+      "metadata": {
+        "files": [
+          "src/main/resources/assets/vl_abyss/models/item/abyssion_ingot.json",
+          "src/main/java/net/mcreator/vlabyss/item/AbyssionIngotItem.java"
+        ]
+      },
+      "path": "~/VL1_Abyss/Abyssion"
+    },
+    {
+      "name": "AbyssionNugget",
+      "type": "item",
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "abyssion_nugget",
+      "metadata": {
+        "files": [
+          "src/main/java/net/mcreator/vlabyss/item/AbyssionNuggetItem.java",
+          "src/main/resources/assets/vl_abyss/models/item/abyssion_nugget.json"
+        ]
+      },
+      "path": "~/VL1_Abyss/Abyssion"
+    },
+    {
+      "name": "JEIAbyssion",
+      "type": "jeiinformation",
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "jei_abyssion",
+      "metadata": {
+        "files": []
+      },
+      "path": "~/VL1_Abyss/Abyssion/JER"
+    },
+    {
+      "name": "DashFrenteOnKeyPressed",
+      "type": "procedure",
+      "compiles": false,
+      "locked_code": false,
+      "registry_name": "dash_frente_on_key_pressed",
+      "metadata": {
+        "files": [
+          "src/main/java/net/mcreator/vlabyss/procedures/DashFrenteOnKeyPressedProcedure.java"
+        ],
+        "dependencies": [
+          {
+            "name": "entity",
+            "type": "entity"
+          },
+          {
+            "name": "x",
+            "type": "number"
+          },
+          {
+            "name": "y",
+            "type": "number"
+          },
+          {
+            "name": "z",
+            "type": "number"
+          },
+          {
+            "name": "world",
+            "type": "world"
+          }
+        ]
+      },
+      "path": "~/VL1_Abyss/Dash/Procedure"
+    },
+    {
+      "name": "RawAbyssionBlock",
+      "type": "block",
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "raw_abyssion_block",
+      "metadata": {
+        "files": [
+          "src/main/resources/data/vl_abyss/loot_tables/blocks/raw_abyssion_block.json",
+          "src/main/resources/assets/vl_abyss/models/item/raw_abyssion_block.json",
+          "src/main/resources/assets/vl_abyss/models/block/raw_abyssion_block.json",
+          "src/main/java/net/mcreator/vlabyss/block/RawAbyssionBlockBlock.java",
+          "src/main/resources/assets/vl_abyss/blockstates/raw_abyssion_block.json"
+        ]
+      },
+      "path": "~/VL1_Abyss/Abyssion"
+    },
+    {
+      "name": "AbyssionIngotBlock",
+      "type": "block",
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "abyssion_ingot_block",
+      "metadata": {
+        "files": [
+          "src/main/resources/assets/vl_abyss/models/item/abyssion_ingot_block.json",
+          "src/main/resources/assets/vl_abyss/blockstates/abyssion_ingot_block.json",
+          "src/main/resources/data/vl_abyss/loot_tables/blocks/abyssion_ingot_block.json",
+          "src/main/resources/assets/vl_abyss/models/block/abyssion_ingot_block.json",
+          "src/main/java/net/mcreator/vlabyss/block/AbyssionIngotBlockBlock.java"
+        ]
+      },
+      "path": "~/VL1_Abyss/Abyssion"
+    },
+    {
+      "name": "AtivaArtefatos",
+      "type": "keybind",
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "ativa_artefatos",
+      "metadata": {
+        "files": [
+          "src/main/java/net/mcreator/vlabyss/network/AtivaArtefatosMessage.java"
+        ]
+      },
+      "path": "~/VL1_Abyss/Artefatos/Key"
+    },
+    {
+      "name": "AtivaArtefatosOnKeyPressed",
+      "type": "procedure",
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "ativa_artefatos_on_key_pressed",
+      "metadata": {
+        "files": [
+          "src/main/java/net/mcreator/vlabyss/procedures/AtivaArtefatosOnKeyPressedProcedure.java"
+        ],
+        "dependencies": [
+          {
+            "name": "entity",
+            "type": "entity"
+          },
+          {
+            "name": "world",
+            "type": "world"
+          }
+        ]
+      },
+      "path": "~/VL1_Abyss/Artefatos/Key"
+    },
+    {
+      "name": "LuvasIronsing",
+      "type": "curiosbauble",
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "luvas_ironsing",
+      "metadata": {
+        "files": [
+          "src/main/resources/assets/vl_abyss/models/item/luvas_ironsing.json",
+          "src/main/java/net/mcreator/vlabyss/item/LuvasIronsingItem.java"
+        ]
+      },
+      "path": "~/VL1_Abyss/Artefatos"
+    },
+    {
+      "name": "LuvasLuaSangrenta",
+      "type": "curiosbauble",
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "luvas_lua_sangrenta",
+      "metadata": {
+        "files": [
+          "src/main/resources/assets/vl_abyss/models/item/luvas_lua_sangrenta.json",
+          "src/main/java/net/mcreator/vlabyss/item/LuvasLuaSangrentaItem.java"
+        ]
+      },
+      "path": "~/VL1_Abyss/Artefatos"
+    },
+    {
+      "name": "AcertouComLuvaSangrenta",
+      "type": "procedure",
+      "compiles": false,
+      "locked_code": false,
+      "registry_name": "acertou_com_luva_sangrenta",
+      "metadata": {
+        "files": [
+          "src/main/java/net/mcreator/vlabyss/procedures/AcertouComLuvaSangrentaProcedure.java"
+        ],
+        "dependencies": [
+          {
+            "name": "entity",
+            "type": "entity"
+          },
+          {
+            "name": "sourceentity",
+            "type": "entity"
+          }
+        ]
+      },
+      "path": "~/VL1_Abyss/Artefatos/Procedure"
+    },
+    {
+      "name": "AnelEnferrujado",
+      "type": "curiosbauble",
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "anel_enferrujado",
+      "metadata": {
+        "files": [
+          "src/main/resources/assets/vl_abyss/models/item/anel_enferrujado.json",
+          "src/main/java/net/mcreator/vlabyss/item/AnelEnferrujadoItem.java"
+        ]
+      },
+      "path": "~/VL1_Abyss/Artefatos"
+    },
+    {
+      "name": "AnelEnferrujadoBaubleIsEquipped",
+      "type": "procedure",
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "anel_enferrujado_bauble_is_equipped",
+      "metadata": {
+        "files": [
+          "src/main/java/net/mcreator/vlabyss/procedures/AnelEnferrujadoBaubleIsEquippedProcedure.java"
+        ],
+        "dependencies": [
+          {
+            "name": "entity",
+            "type": "entity"
+          }
+        ]
+      },
+      "path": "~/VL1_Abyss/Artefatos/Procedure"
+    },
+    {
+      "name": "AnelEnferrujadoBaubleIsUnequipped",
+      "type": "procedure",
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "anel_enferrujado_bauble_is_unequipped",
+      "metadata": {
+        "files": [
+          "src/main/java/net/mcreator/vlabyss/procedures/AnelEnferrujadoBaubleIsUnequippedProcedure.java"
+        ],
+        "dependencies": [
+          {
+            "name": "entity",
+            "type": "entity"
+          }
+        ]
+      },
+      "path": "~/VL1_Abyss/Artefatos/Procedure"
+    },
+    {
+      "name": "CortaRegen",
+      "type": "potioneffect",
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "corta_regen",
+      "metadata": {
+        "files": [
+          "src/main/java/net/mcreator/vlabyss/potion/CortaRegenMobEffect.java"
+        ]
+      },
+      "path": "~/VL1_Abyss/Artefatos/Efeito"
+    },
+    {
+      "name": "CortaCuraEfeito",
+      "type": "procedure",
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "corta_cura_efeito",
+      "metadata": {
+        "files": [
+          "src/main/java/net/mcreator/vlabyss/procedures/CortaCuraEfeitoProcedure.java"
+        ],
+        "dependencies": [
+          {
+            "name": "entity",
+            "type": "entity"
+          }
+        ]
+      },
+      "path": "~/VL1_Abyss/Artefatos/Efeito"
+    },
+    {
+      "name": "AcertouComAnelEnferrujado",
+      "type": "procedure",
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "acertou_com_anel_enferrujado",
+      "metadata": {
+        "files": [
+          "src/main/java/net/mcreator/vlabyss/procedures/AcertouComAnelEnferrujadoProcedure.java"
+        ],
+        "dependencies": [
+          {
+            "name": "entity",
+            "type": "entity"
+          },
+          {
+            "name": "sourceentity",
+            "type": "entity"
+          }
+        ]
+      },
+      "path": "~/VL1_Abyss/Artefatos/Procedure"
+    },
+    {
+      "name": "CintoDosEcos",
+      "type": "curiosbauble",
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "cinto_dos_ecos",
+      "metadata": {
+        "files": [
+          "src/main/resources/assets/vl_abyss/models/item/cinto_dos_ecos.json",
+          "src/main/java/net/mcreator/vlabyss/item/CintoDosEcosItem.java"
+        ]
+      },
+      "path": "~/VL1_Abyss/Artefatos"
+    },
+    {
+      "name": "AcertouComBelt",
+      "type": "procedure",
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "acertou_com_belt",
+      "metadata": {
+        "files": [
+          "src/main/java/net/mcreator/vlabyss/procedures/AcertouComBeltProcedure.java"
+        ],
+        "dependencies": [
+          {
+            "name": "entity",
+            "type": "entity"
+          },
+          {
+            "name": "sourceentity",
+            "type": "entity"
+          },
+          {
+            "name": "originaldamagemodifier",
+            "type": "number"
+          },
+          {
+            "name": "world",
+            "type": "world"
+          }
+        ]
+      },
+      "path": "~/VL1_Abyss/Artefatos/Procedure"
+    },
+    {
+      "name": "FaixaAcolito",
+      "type": "curiosbauble",
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "faixa_acolito",
+      "metadata": {
+        "files": [
+          "src/main/java/net/mcreator/vlabyss/item/FaixaAcolitoItem.java",
+          "src/main/resources/assets/vl_abyss/models/item/faixa_acolito.json"
+        ]
+      },
+      "path": "~/VL1_Abyss/Artefatos"
+    },
+    {
+      "name": "FaixaAcolitoBaubleIsEquipped",
+      "type": "procedure",
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "faixa_acolito_bauble_is_equipped",
+      "metadata": {
+        "files": [
+          "src/main/java/net/mcreator/vlabyss/procedures/FaixaAcolitoBaubleIsEquippedProcedure.java"
+        ],
+        "dependencies": [
+          {
+            "name": "entity",
+            "type": "entity"
+          }
+        ]
+      },
+      "path": "~/VL1_Abyss/Artefatos/Procedure"
+    },
+    {
+      "name": "FaixaAcolitoBaubleIsUnequipped",
+      "type": "procedure",
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "faixa_acolito_bauble_is_unequipped",
+      "metadata": {
+        "files": [
+          "src/main/java/net/mcreator/vlabyss/procedures/FaixaAcolitoBaubleIsUnequippedProcedure.java"
+        ],
+        "dependencies": [
+          {
+            "name": "entity",
+            "type": "entity"
+          }
+        ]
+      },
+      "path": "~/VL1_Abyss/Artefatos/Procedure"
+    },
+    {
+      "name": "Feet",
+      "type": "curiosslot",
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "feet",
+      "metadata": {
+        "files": [
+          "src/main/resources/data/curios/tags/items/feet.json"
+        ]
+      },
+      "path": "~/VL1_Abyss/Artefatos/CuriosSlot"
+    },
+    {
+      "name": "BotasVazioAbyssal",
+      "type": "curiosbauble",
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "botas_vazio_abyssal",
+      "metadata": {
+        "files": [
+          "src/main/java/net/mcreator/vlabyss/item/BotasVazioAbyssalItem.java",
+          "src/main/resources/assets/vl_abyss/models/item/botas_vazio_abyssal.json"
+        ]
+      },
+      "path": "~/VL1_Abyss/Artefatos"
+    },
+    {
+      "name": "BotasVazioAbyssalBaubleIsEquipped",
+      "type": "procedure",
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "botas_vazio_abyssal_bauble_is_equipped",
+      "metadata": {
+        "files": [
+          "src/main/java/net/mcreator/vlabyss/procedures/BotasVazioAbyssalBaubleIsEquippedProcedure.java"
+        ],
+        "dependencies": [
+          {
+            "name": "entity",
+            "type": "entity"
+          }
+        ]
+      },
+      "path": "~/VL1_Abyss/Artefatos/Procedure"
+    },
+    {
+      "name": "BotasVazioAbyssalBaubleIsUnequipped",
+      "type": "procedure",
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "botas_vazio_abyssal_bauble_is_unequipped",
+      "metadata": {
+        "files": [
+          "src/main/java/net/mcreator/vlabyss/procedures/BotasVazioAbyssalBaubleIsUnequippedProcedure.java"
+        ],
+        "dependencies": [
+          {
+            "name": "entity",
+            "type": "entity"
+          }
+        ]
+      },
+      "path": "~/VL1_Abyss/Artefatos/Procedure"
+    },
+    {
+      "name": "Soul",
+      "type": "curiosslot",
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "soul",
+      "metadata": {
+        "files": [
+          "src/main/resources/data/curios/tags/items/soul.json"
+        ]
+      },
+      "path": "~/VL1_Abyss/Artefatos/CuriosSlot"
+    },
+    {
+      "name": "FragmentoPrimordial",
+      "type": "curiosbauble",
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "fragmento_primordial",
+      "metadata": {
+        "files": [
+          "src/main/resources/assets/vl_abyss/models/item/fragmento_primordial.json",
+          "src/main/java/net/mcreator/vlabyss/item/FragmentoPrimordialItem.java"
+        ]
+      },
+      "path": "~/VL1_Abyss/Artefatos"
+    },
+    {
+      "name": "Hands",
+      "type": "curiosslot",
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "hands",
+      "metadata": {
+        "files": [
+          "src/main/resources/data/curios/tags/items/hands.json"
+        ]
+      },
+      "path": "~/VL1_Abyss/Artefatos/CuriosSlot"
+    },
+    {
+      "name": "AventureiroProfession",
+      "type": "villagerprofession",
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "aventureiro_profession",
+      "metadata": {
+        "files": []
+      },
+      "path": "~/VL1_Abyss/Villagers"
+    },
+    {
+      "name": "FerreiroProfession",
+      "type": "villagerprofession",
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "ferreiro_profession",
+      "metadata": {
+        "files": []
+      },
+      "path": "~/VL1_Abyss/Villagers"
+    },
+    {
+      "name": "HistoriadorProfession",
+      "type": "villagerprofession",
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "historiador_profession",
+      "metadata": {
+        "files": []
+      },
+      "path": "~/VL1_Abyss/Villagers"
+    },
+    {
+      "name": "MestreMantraProfession",
+      "type": "villagerprofession",
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "mestre_mantra_profession",
+      "metadata": {
+        "files": []
+      },
+      "path": "~/VL1_Abyss/Villagers"
+    },
+    {
+      "name": "TrocaVillagersSSMP",
+      "type": "villagertrade",
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "troca_villagers_ssmp",
+      "metadata": {
+        "files": []
+      },
+      "path": "~/VL1_Abyss/Villagers/Trocas"
+    },
+    {
+      "name": "J",
+      "type": "gui",
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "j",
+      "metadata": {
+        "files": [
+          "src/main/java/net/mcreator/vlabyss/world/inventory/JMenu.java",
+          "src/main/java/net/mcreator/vlabyss/network/JButtonMessage.java",
+          "src/main/java/net/mcreator/vlabyss/client/gui/JScreen.java"
+        ]
+      },
+      "path": "~/VL1_Abyss/Alma/Mantra"
+    },
+    {
+      "name": "JThisGUIIsOpened",
+      "type": "procedure",
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "j_this_gui_is_opened",
+      "metadata": {
+        "files": [
+          "src/main/java/net/mcreator/vlabyss/procedures/JThisGUIIsOpenedProcedure.java"
+        ],
+        "dependencies": [
+          {
+            "name": "entity",
+            "type": "entity"
+          }
+        ]
+      },
+      "path": "~/VL1_Abyss/Alma/Mantra/Procedure"
+    },
+    {
+      "name": "ChamaBotaoClicou",
+      "type": "procedure",
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "chama_botao_clicou",
+      "metadata": {
+        "files": [
+          "src/main/java/net/mcreator/vlabyss/procedures/ChamaBotaoClicouProcedure.java"
+        ],
+        "dependencies": [
+          {
+            "name": "entity",
+            "type": "entity"
+          },
+          {
+            "name": "x",
+            "type": "number"
+          },
+          {
+            "name": "y",
+            "type": "number"
+          },
+          {
+            "name": "z",
+            "type": "number"
+          },
+          {
+            "name": "world",
+            "type": "world"
+          }
+        ]
+      },
+      "path": "~/VL1_Abyss/Alma/Mantra/Procedure"
+    },
+    {
+      "name": "TempestadeBotaoClicou",
+      "type": "procedure",
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "tempestade_botao_clicou",
+      "metadata": {
+        "files": [
+          "src/main/java/net/mcreator/vlabyss/procedures/TempestadeBotaoClicouProcedure.java"
+        ],
+        "dependencies": [
+          {
+            "name": "entity",
+            "type": "entity"
+          },
+          {
+            "name": "x",
+            "type": "number"
+          },
+          {
+            "name": "y",
+            "type": "number"
+          },
+          {
+            "name": "z",
+            "type": "number"
+          },
+          {
+            "name": "world",
+            "type": "world"
+          }
+        ]
+      },
+      "path": "~/VL1_Abyss/Alma/Mantra/Procedure"
+    },
+    {
+      "name": "LuzBotaoClicou",
+      "type": "procedure",
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "luz_botao_clicou",
+      "metadata": {
+        "files": [
+          "src/main/java/net/mcreator/vlabyss/procedures/LuzBotaoClicouProcedure.java"
+        ],
+        "dependencies": [
+          {
+            "name": "entity",
+            "type": "entity"
+          },
+          {
+            "name": "x",
+            "type": "number"
+          },
+          {
+            "name": "y",
+            "type": "number"
+          },
+          {
+            "name": "z",
+            "type": "number"
+          },
+          {
+            "name": "world",
+            "type": "world"
+          }
+        ]
+      },
+      "path": "~/VL1_Abyss/Alma/Mantra/Procedure"
+    },
+    {
+      "name": "NevascaBotaoClicou",
+      "type": "procedure",
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "nevasca_botao_clicou",
+      "metadata": {
+        "files": [
+          "src/main/java/net/mcreator/vlabyss/procedures/NevascaBotaoClicouProcedure.java"
+        ],
+        "dependencies": [
+          {
+            "name": "entity",
+            "type": "entity"
+          },
+          {
+            "name": "x",
+            "type": "number"
+          },
+          {
+            "name": "y",
+            "type": "number"
+          },
+          {
+            "name": "z",
+            "type": "number"
+          },
+          {
+            "name": "world",
+            "type": "world"
+          }
+        ]
+      },
+      "path": "~/VL1_Abyss/Alma/Mantra/Procedure"
+    },
+    {
+      "name": "RespiroBotaoClicou",
+      "type": "procedure",
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "respiro_botao_clicou",
+      "metadata": {
+        "files": [
+          "src/main/java/net/mcreator/vlabyss/procedures/RespiroBotaoClicouProcedure.java"
+        ],
+        "dependencies": [
+          {
+            "name": "entity",
+            "type": "entity"
+          },
+          {
+            "name": "x",
+            "type": "number"
+          },
+          {
+            "name": "y",
+            "type": "number"
+          },
+          {
+            "name": "z",
+            "type": "number"
+          },
+          {
+            "name": "world",
+            "type": "world"
+          }
+        ]
+      },
+      "path": "~/VL1_Abyss/Alma/Mantra/Procedure"
+    },
+    {
+      "name": "EscuridaoBotaoClicou",
+      "type": "procedure",
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "escuridao_botao_clicou",
+      "metadata": {
+        "files": [
+          "src/main/java/net/mcreator/vlabyss/procedures/EscuridaoBotaoClicouProcedure.java"
+        ],
+        "dependencies": [
+          {
+            "name": "entity",
+            "type": "entity"
+          },
+          {
+            "name": "x",
+            "type": "number"
+          },
+          {
+            "name": "y",
+            "type": "number"
+          },
+          {
+            "name": "z",
+            "type": "number"
+          },
+          {
+            "name": "world",
+            "type": "world"
+          }
+        ]
+      },
+      "path": "~/VL1_Abyss/Alma/Mantra/Procedure"
+    },
+    {
+      "name": "SetAlmasProcedure",
+      "type": "procedure",
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "set_almas_procedure",
+      "metadata": {
+        "files": [
+          "src/main/java/net/mcreator/vlabyss/procedures/SetAlmasProcedureProcedure.java"
+        ],
+        "dependencies": [
+          {
+            "name": "arguments",
+            "type": "cmdcontext"
+          }
+        ]
+      },
+      "path": "~/VL1_Abyss/Alma/Comando"
+    },
+    {
+      "name": "Vlsetalmas",
+      "type": "command",
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "vlsetalmas",
+      "metadata": {
+        "files": [
+          "src/main/java/net/mcreator/vlabyss/command/VlsetalmasCommand.java"
+        ]
+      },
+      "path": "~/VL1_Abyss/Alma/Comando"
+    },
+    {
+      "name": "ResetMantraProcedure",
+      "type": "procedure",
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "reset_mantra_procedure",
+      "metadata": {
+        "files": [
+          "src/main/java/net/mcreator/vlabyss/procedures/ResetMantraProcedureProcedure.java"
+        ],
+        "dependencies": [
+          {
+            "name": "arguments",
+            "type": "cmdcontext"
+          },
+          {
+            "name": "entity",
+            "type": "entity"
+          }
+        ]
+      },
+      "path": "~/VL1_Abyss/Alma/Comando"
+    },
+    {
+      "name": "ResetMantra",
+      "type": "command",
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "reset_mantra",
+      "metadata": {
+        "files": [
+          "src/main/java/net/mcreator/vlabyss/command/ResetMantraCommand.java"
+        ]
+      },
+      "path": "~/VL1_Abyss/Alma/Comando"
+    },
+    {
+      "name": "JThisGUIIsOpenedSound",
+      "type": "procedure",
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "j_this_gui_is_opened_sound",
+      "metadata": {
+        "files": [
+          "src/main/java/net/mcreator/vlabyss/procedures/JThisGUIIsOpenedSoundProcedure.java"
+        ],
+        "dependencies": [
+          {
+            "name": "x",
+            "type": "number"
+          },
+          {
+            "name": "y",
+            "type": "number"
+          },
+          {
+            "name": "z",
+            "type": "number"
+          },
+          {
+            "name": "world",
+            "type": "world"
+          }
+        ]
+      },
+      "path": "~/VL1_Abyss/Alma/Mantra/Procedure"
+    },
+    {
+      "name": "LiberacaoMantra",
+      "type": "item",
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "liberacao_mantra",
+      "metadata": {
+        "files": [
+          "src/main/resources/assets/vl_abyss/models/item/liberacao_mantra.json",
+          "src/main/java/net/mcreator/vlabyss/item/LiberacaoMantraItem.java"
+        ]
+      },
+      "path": "~/VL1_Abyss/LiberacaoMantra"
+    },
+    {
+      "name": "LiberacaoMantraRightclicked",
+      "type": "procedure",
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "liberacao_mantra_rightclicked",
+      "metadata": {
+        "files": [
+          "src/main/java/net/mcreator/vlabyss/procedures/LiberacaoMantraRightclickedProcedure.java"
+        ],
+        "dependencies": [
+          {
+            "name": "entity",
+            "type": "entity"
+          },
+          {
+            "name": "x",
+            "type": "number"
+          },
+          {
+            "name": "y",
+            "type": "number"
+          },
+          {
+            "name": "z",
+            "type": "number"
+          },
+          {
+            "name": "world",
+            "type": "world"
+          }
+        ]
+      },
+      "path": "~/VL1_Abyss/LiberacaoMantra/Procedure"
+    },
+    {
+      "name": "JThisGUIIsClosed",
+      "type": "procedure",
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "j_this_gui_is_closed",
+      "metadata": {
+        "files": [
+          "src/main/java/net/mcreator/vlabyss/procedures/JThisGUIIsClosedProcedure.java"
+        ],
+        "dependencies": [
+          {
+            "name": "entity",
+            "type": "entity"
+          },
+          {
+            "name": "x",
+            "type": "number"
+          },
+          {
+            "name": "y",
+            "type": "number"
+          },
+          {
+            "name": "z",
+            "type": "number"
+          },
+          {
+            "name": "world",
+            "type": "world"
+          }
+        ]
+      },
+      "path": "~/VL1_Abyss/Alma/Mantra/Procedure"
+    },
+    {
+      "name": "JEILiberacaoMantra",
+      "type": "jeiinformation",
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "jei_liberacao_mantra",
+      "metadata": {
+        "files": []
+      },
+      "path": "~/VL1_Abyss/LiberacaoMantra/JER"
+    },
+    {
+      "name": "CancelaPortalNetherProcedure",
+      "type": "procedure",
+      "compiles": true,
+      "locked_code": true,
+      "registry_name": "cancela_portal_nether_procedure",
+      "metadata": {
+        "files": [
+          "src/main/java/net/mcreator/vlabyss/procedures/CancelaPortalNetherProcedureProcedure.java"
+        ],
+        "dependencies": []
+      },
+      "path": "~/VL1_Abyss/CancelaPortalNether"
+    },
+    {
+      "name": "LogsEntrouServer",
+      "type": "procedure",
+      "compiles": true,
+      "locked_code": true,
+      "registry_name": "logs_entrou_server",
+      "metadata": {
+        "files": [
+          "src/main/java/net/mcreator/vlabyss/procedures/LogsEntrouServerProcedure.java"
+        ],
+        "dependencies": []
+      },
+      "path": "~/DiscordLogs"
+    },
+    {
+      "name": "LogsSaiuServer",
+      "type": "procedure",
+      "compiles": true,
+      "locked_code": true,
+      "registry_name": "logs_saiu_server",
+      "metadata": {
+        "files": [
+          "src/main/java/net/mcreator/vlabyss/procedures/LogsSaiuServerProcedure.java"
+        ],
+        "dependencies": []
+      },
+      "path": "~/DiscordLogs"
+    },
+    {
+      "name": "LogsEnviouMensagemProcedure",
+      "type": "procedure",
+      "compiles": true,
+      "locked_code": true,
+      "registry_name": "logs_enviou_mensagem_procedure",
+      "metadata": {
+        "files": [
+          "src/main/java/net/mcreator/vlabyss/procedures/LogsEnviouMensagemProcedureProcedure.java"
+        ],
+        "dependencies": []
+      },
+      "path": "~/DiscordLogs"
+    },
+    {
+      "name": "LogsMorreuProcedure",
+      "type": "procedure",
+      "compiles": true,
+      "locked_code": true,
+      "registry_name": "logs_morreu_procedure",
+      "metadata": {
+        "files": [
+          "src/main/java/net/mcreator/vlabyss/procedures/LogsMorreuProcedureProcedure.java"
+        ],
+        "dependencies": []
+      },
+      "path": "~/DiscordLogs"
+    },
+    {
+      "name": "Quebra",
+      "type": "potioneffect",
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "quebra",
+      "metadata": {
+        "files": [
+          "src/main/java/net/mcreator/vlabyss/potion/QuebraMobEffect.java"
+        ]
+      },
+      "path": "~/VL1_Abyss/Parry/Efeitos"
+    },
+    {
+      "name": "ResistenciaQuebrada",
+      "type": "potioneffect",
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "resistencia_quebrada",
+      "metadata": {
+        "files": [
+          "src/main/java/net/mcreator/vlabyss/potion/ResistenciaQuebradaMobEffect.java"
+        ]
+      },
+      "path": "~/VL1_Abyss/Parry/Efeitos"
+    },
+    {
+      "name": "MorreuComArtefatoPrimordial",
+      "type": "procedure",
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "morreu_com_artefato_primordial",
+      "metadata": {
+        "files": [
+          "src/main/java/net/mcreator/vlabyss/procedures/MorreuComArtefatoPrimordialProcedure.java"
+        ],
+        "dependencies": [
+          {
+            "name": "entity",
+            "type": "entity"
+          },
+          {
+            "name": "x",
+            "type": "number"
+          },
+          {
+            "name": "y",
+            "type": "number"
+          },
+          {
+            "name": "z",
+            "type": "number"
+          },
+          {
+            "name": "world",
+            "type": "world"
+          }
+        ]
+      },
+      "path": "~/VL1_Abyss/Artefatos/Procedure"
+    },
+    {
+      "name": "DesbloqueioEsquiva",
+      "type": "item",
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "desbloqueio_esquiva",
+      "metadata": {
+        "files": [
+          "src/main/resources/assets/vl_abyss/models/item/desbloqueio_esquiva.json",
+          "src/main/java/net/mcreator/vlabyss/item/DesbloqueioEsquivaItem.java"
+        ]
+      },
+      "path": "~/VL1_Abyss/Dash/Item"
+    },
+    {
+      "name": "DesbloqueioEsquivaRightclicked",
+      "type": "procedure",
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "desbloqueio_esquiva_rightclicked",
+      "metadata": {
+        "files": [
+          "src/main/java/net/mcreator/vlabyss/procedures/DesbloqueioEsquivaRightclickedProcedure.java"
+        ],
+        "dependencies": [
+          {
+            "name": "entity",
+            "type": "entity"
+          },
+          {
+            "name": "itemstack",
+            "type": "itemstack"
+          },
+          {
+            "name": "x",
+            "type": "number"
+          },
+          {
+            "name": "y",
+            "type": "number"
+          },
+          {
+            "name": "z",
+            "type": "number"
+          },
+          {
+            "name": "world",
+            "type": "world"
+          }
+        ]
+      },
+      "path": "~/VL1_Abyss/Dash/Procedure"
+    },
+    {
+      "name": "InformacaoDesviar1",
+      "type": "jeiinformation",
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "informacao_desviar_1",
+      "metadata": {
+        "files": []
+      },
+      "path": "~/VL1_Abyss/Dash/JER"
+    },
+    {
+      "name": "ResistenciaQuebradaEffectStartedapplied",
+      "type": "procedure",
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "resistencia_quebrada_effect_startedapplied",
+      "metadata": {
+        "files": [
+          "src/main/java/net/mcreator/vlabyss/procedures/ResistenciaQuebradaEffectStartedappliedProcedure.java"
+        ],
+        "dependencies": [
+          {
+            "name": "entity",
+            "type": "entity"
+          }
+        ]
+      },
+      "path": "~/VL1_Abyss/Parry/Efeitos/Procedure"
+    },
+    {
+      "name": "LogsQuebrouBloco",
+      "type": "procedure",
+      "compiles": true,
+      "locked_code": true,
+      "registry_name": "logs_quebrou_bloco",
+      "metadata": {
+        "files": [
+          "src/main/java/net/mcreator/vlabyss/procedures/LogsQuebrouBlocoProcedure.java"
+        ],
+        "dependencies": []
+      },
+      "path": "~/DiscordLogs"
+    },
+    {
+      "name": "LogsBotouBloco",
+      "type": "procedure",
+      "compiles": true,
+      "locked_code": true,
+      "registry_name": "logs_botou_bloco",
+      "metadata": {
+        "files": [
+          "src/main/java/net/mcreator/vlabyss/procedures/LogsBotouBlocoProcedure.java"
+        ],
+        "dependencies": []
+      },
+      "path": "~/DiscordLogs"
+    },
+    {
+      "name": "TheAbyss",
+      "type": "biome",
+      "compiles": true,
+      "locked_code": true,
+      "registry_name": "the_abyss",
+      "metadata": {
+        "files": [
+          "src/main/resources/data/vl_abyss/worldgen/configured_feature/the_abyss_tree.json",
+          "src/main/resources/data/vl_abyss/worldgen/biome/the_abyss.json",
+          "src/main/resources/data/vl_abyss/worldgen/placed_feature/the_abyss_tree.json"
+        ]
+      },
+      "path": "~/VL1_Abyss/DimensaoAbismo"
+    },
+    {
+      "name": "Abismo",
+      "type": "dimension",
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "abismo",
+      "metadata": {
+        "files": [
+          "src/main/resources/data/vl_abyss/dimension/abismo.json",
+          "src/main/resources/data/vl_abyss/dimension_type/abismo.json",
+          "src/main/java/net/mcreator/vlabyss/world/dimension/AbismoDimension.java"
+        ]
+      },
+      "path": "~/VL1_Abyss/DimensaoAbismo"
+    },
+    {
+      "name": "TpDimensaoComando",
+      "type": "procedure",
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "tp_dimensao_comando",
+      "metadata": {
+        "files": [
+          "src/main/java/net/mcreator/vlabyss/procedures/TpDimensaoComandoProcedure.java"
+        ],
+        "dependencies": [
+          {
+            "name": "arguments",
+            "type": "cmdcontext"
+          }
+        ]
+      },
+      "path": "~/VL1_Abyss/DimensaoAbismo/Comando"
+    },
+    {
+      "name": "TpDimensaoComando2",
+      "type": "procedure",
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "tp_dimensao_comando_2",
+      "metadata": {
+        "files": [
+          "src/main/java/net/mcreator/vlabyss/procedures/TpDimensaoComando2Procedure.java"
+        ],
+        "dependencies": [
+          {
+            "name": "arguments",
+            "type": "cmdcontext"
+          }
+        ]
+      },
+      "path": "~/VL1_Abyss/DimensaoAbismo/Comando"
+    },
+    {
+      "name": "TpDimensao",
+      "type": "command",
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "tp_dimensao",
+      "metadata": {
+        "files": [
+          "src/main/java/net/mcreator/vlabyss/command/TpDimensaoCommand.java"
+        ]
+      },
+      "path": "~/VL1_Abyss/DimensaoAbismo/Comando"
+    },
+    {
+      "name": "TpDimensao3",
+      "type": "procedure",
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "tp_dimensao_3",
+      "metadata": {
+        "files": [
+          "src/main/java/net/mcreator/vlabyss/procedures/TpDimensao3Procedure.java"
+        ],
+        "dependencies": [
+          {
+            "name": "arguments",
+            "type": "cmdcontext"
+          }
+        ]
+      },
+      "path": "~/VL1_Abyss/DimensaoAbismo/Comando"
+    },
+    {
+      "name": "EntrouRemoveCooldown",
+      "type": "procedure",
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "entrou_remove_cooldown",
+      "metadata": {
+        "files": [
+          "src/main/java/net/mcreator/vlabyss/procedures/EntrouRemoveCooldownProcedure.java"
+        ],
+        "dependencies": [
+          {
+            "name": "entity",
+            "type": "entity"
+          }
+        ]
+      },
+      "path": "~/VL1_Abyss/Parry"
+    },
+    {
+      "name": "InfoPergaminhoDash",
+      "type": "procedure",
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "info_pergaminho_dash",
+      "metadata": {
+        "files": [
+          "src/main/java/net/mcreator/vlabyss/procedures/InfoPergaminhoDashProcedure.java"
+        ],
+        "dependencies": [
+          {
+            "name": "itemstack",
+            "type": "itemstack"
+          },
+          {
+            "name": "tooltip",
+            "type": "tooltip"
+          }
+        ]
+      },
+      "path": "~/VL1_Abyss/Dash/Procedure"
+    },
+    {
+      "name": "InfoLiberacaoMantra",
+      "type": "procedure",
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "info_liberacao_mantra",
+      "metadata": {
+        "files": [
+          "src/main/java/net/mcreator/vlabyss/procedures/InfoLiberacaoMantraProcedure.java"
+        ],
+        "dependencies": [
+          {
+            "name": "itemstack",
+            "type": "itemstack"
+          },
+          {
+            "name": "tooltip",
+            "type": "tooltip"
+          }
+        ]
+      },
+      "path": "~/VL1_Abyss/LiberacaoMantra/Procedure"
+    },
+    {
+      "name": "MorreuFezParticula",
+      "type": "procedure",
+      "compiles": true,
+      "locked_code": true,
+      "registry_name": "morreu_fez_particula",
+      "metadata": {
+        "files": [
+          "src/main/java/net/mcreator/vlabyss/procedures/MorreuFezParticulaProcedure.java"
+        ],
+        "dependencies": [
+          {
+            "name": "entity",
+            "type": "entity"
+          }
+        ]
+      },
+      "path": "~/VL1_Abyss/Morreu/Morreu"
+    },
+    {
+      "name": "Particulamorreu1",
+      "type": "particle",
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "particulamorreu_1",
+      "metadata": {
+        "files": [
+          "src/main/java/net/mcreator/vlabyss/client/particle/Particulamorreu1Particle.java",
+          "src/main/resources/assets/vl_abyss/particles/particulamorreu_1.json"
+        ]
+      },
+      "path": "~/VL1_Abyss/Morreu/Particula"
+    },
+    {
+      "name": "Particulamorreu2",
+      "type": "particle",
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "particulamorreu_2",
+      "metadata": {
+        "files": [
+          "src/main/resources/assets/vl_abyss/particles/particulamorreu_2.json",
+          "src/main/java/net/mcreator/vlabyss/client/particle/Particulamorreu2Particle.java"
+        ]
+      },
+      "path": "~/VL1_Abyss/Morreu/Particula"
+    },
+    {
+      "name": "PlayerRenasceu",
+      "type": "procedure",
+      "compiles": true,
+      "locked_code": true,
+      "registry_name": "player_renasceu",
+      "metadata": {
+        "files": [
+          "src/main/java/net/mcreator/vlabyss/procedures/PlayerRenasceuProcedure.java"
+        ],
+        "dependencies": [
+          {
+            "name": "entity",
+            "type": "entity"
+          },
+          {
+            "name": "x",
+            "type": "number"
+          },
+          {
+            "name": "y",
+            "type": "number"
+          },
+          {
+            "name": "z",
+            "type": "number"
+          },
+          {
+            "name": "world",
+            "type": "world"
+          }
+        ]
+      },
+      "path": "~/VL1_Abyss/Morreu/Reviveu"
+    },
+    {
+      "name": "DashTrasOnKeyPressed",
+      "type": "procedure",
+      "compiles": true,
+      "locked_code": true,
+      "registry_name": "dash_tras_on_key_pressed",
+      "metadata": {
+        "files": [
+          "src/main/java/net/mcreator/vlabyss/procedures/DashTrasOnKeyPressedProcedure.java"
+        ],
+        "dependencies": [
+          {
+            "name": "entity",
+            "type": "entity"
+          },
+          {
+            "name": "x",
+            "type": "number"
+          },
+          {
+            "name": "y",
+            "type": "number"
+          },
+          {
+            "name": "z",
+            "type": "number"
+          },
+          {
+            "name": "world",
+            "type": "world"
+          }
+        ]
+      },
+      "path": "~/VL1_Abyss/Dash/Procedure"
+    },
+    {
+      "name": "DashTras",
+      "type": "keybind",
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "dash_tras",
+      "metadata": {
+        "files": [
+          "src/main/java/net/mcreator/vlabyss/network/DashTrasMessage.java"
+        ]
+      },
+      "path": "~/VL1_Abyss/Dash/Key"
+    },
+    {
+      "name": "CoracaoScreen",
+      "type": "overlay",
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "coracao_screen",
+      "metadata": {
+        "files": [
+          "src/main/java/net/mcreator/vlabyss/client/screens/CoracaoScreenOverlay.java"
+        ]
+      },
+      "path": "~/VL1_Abyss/CoracaoTela"
+    },
+    {
+      "name": "CoracaoScreenDisplayOverlayIngame",
+      "type": "procedure",
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "coracao_screen_display_overlay_ingame",
+      "metadata": {
+        "return_type": "logic",
+        "files": [
+          "src/main/java/net/mcreator/vlabyss/procedures/CoracaoScreenDisplayOverlayIngameProcedure.java"
+        ],
+        "dependencies": [
+          {
+            "name": "entity",
+            "type": "entity"
+          }
+        ]
+      },
+      "path": "~/VL1_Abyss/CoracaoTela"
+    },
+    {
+      "name": "PlanarOnKeyPressed",
+      "type": "procedure",
+      "compiles": false,
+      "locked_code": false,
+      "registry_name": "planar_on_key_pressed",
+      "metadata": {
+        "files": [
+          "src/main/java/net/mcreator/vlabyss/procedures/PlanarOnKeyPressedProcedure.java"
+        ],
+        "dependencies": [
+          {
+            "name": "entity",
+            "type": "entity"
+          }
+        ]
+      },
+      "path": "~/VL1_Abyss/Mantras/Respiro/Procedure"
+    },
+    {
+      "name": "PlanarOnKeyReleased",
+      "type": "procedure",
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "planar_on_key_released",
+      "metadata": {
+        "files": [
+          "src/main/java/net/mcreator/vlabyss/procedures/PlanarOnKeyReleasedProcedure.java"
+        ],
+        "dependencies": [
+          {
+            "name": "entity",
+            "type": "entity"
+          }
+        ]
+      },
+      "path": "~/VL1_Abyss/Mantras/Respiro/Procedure"
+    },
+    {
+      "name": "Planar",
+      "type": "keybind",
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "planar",
+      "metadata": {
+        "files": [
+          "src/main/java/net/mcreator/vlabyss/network/PlanarMessage.java"
+        ]
+      },
+      "path": "~/VL1_Abyss/Mantras/Respiro/Key"
+    },
+    {
+      "name": "PlayerTick",
+      "type": "procedure",
+      "compiles": false,
+      "locked_code": false,
+      "registry_name": "player_tick",
+      "metadata": {
+        "files": [
+          "src/main/java/net/mcreator/vlabyss/procedures/PlayerTickProcedure.java"
+        ],
+        "dependencies": [
+          {
+            "name": "entity",
+            "type": "entity"
+          }
+        ]
+      },
+      "path": "~/VL1_Abyss/Mantras/Chama"
+    },
+    {
+      "name": "CooldownRespiro",
+      "type": "potioneffect",
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "cooldown_respiro",
+      "metadata": {
+        "files": [
+          "src/main/java/net/mcreator/vlabyss/potion/CooldownRespiroMobEffect.java"
+        ]
+      },
+      "path": "~/VL1_Abyss/Mantras/Respiro/Efeitos"
+    },
+    {
+      "name": "HabilidadePrimariaOnKeyPressed",
+      "type": "procedure",
+      "compiles": false,
+      "locked_code": false,
+      "registry_name": "habilidade_primaria_on_key_pressed",
+      "metadata": {
+        "files": [
+          "src/main/java/net/mcreator/vlabyss/procedures/HabilidadePrimariaOnKeyPressedProcedure.java"
+        ],
+        "dependencies": [
+          {
+            "name": "entity",
+            "type": "entity"
+          },
+          {
+            "name": "x",
+            "type": "number"
+          },
+          {
+            "name": "y",
+            "type": "number"
+          },
+          {
+            "name": "z",
+            "type": "number"
+          },
+          {
+            "name": "world",
+            "type": "world"
+          }
+        ]
+      },
+      "path": "~/VL1_Abyss/Mantras/MantraKeyAtivacao"
+    },
+    {
+      "name": "HabilidadePrimaria",
+      "type": "keybind",
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "habilidade_primaria",
+      "metadata": {
+        "files": [
+          "src/main/java/net/mcreator/vlabyss/network/HabilidadePrimariaMessage.java"
+        ]
+      },
+      "path": "~/VL1_Abyss/Mantras/MantraKeyAtivacao"
+    },
+    {
+      "name": "VentoParticula2",
+      "type": "particle",
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "vento_particula_2",
+      "metadata": {
+        "files": [
+          "src/main/java/net/mcreator/vlabyss/client/particle/VentoParticula2Particle.java",
+          "src/main/resources/assets/vl_abyss/particles/vento_particula_2.json"
+        ]
+      },
+      "path": "~/VL1_Abyss/Mantras/Respiro/Particulas"
+    },
+    {
+      "name": "VentoParticula1",
+      "type": "particle",
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "vento_particula_1",
+      "metadata": {
+        "files": [
+          "src/main/resources/assets/vl_abyss/particles/vento_particula_1.json",
+          "src/main/java/net/mcreator/vlabyss/client/particle/VentoParticula1Particle.java"
+        ]
+      },
+      "path": "~/VL1_Abyss/Mantras/Respiro/Particulas"
+    },
+    {
+      "name": "CooldownRespiroOnEffectActiveTick",
+      "type": "procedure",
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "cooldown_respiro_on_effect_active_tick",
+      "metadata": {
+        "files": [
+          "src/main/java/net/mcreator/vlabyss/procedures/CooldownRespiroOnEffectActiveTickProcedure.java"
+        ],
+        "dependencies": [
+          {
+            "name": "x",
+            "type": "number"
+          },
+          {
+            "name": "y",
+            "type": "number"
+          },
+          {
+            "name": "z",
+            "type": "number"
+          },
+          {
+            "name": "world",
+            "type": "world"
+          }
+        ]
+      },
+      "path": "~/VL1_Abyss/Mantras/Respiro/Efeitos"
+    },
+    {
+      "name": "RespiroPrimariaWhileProjectileFlyingTick",
+      "type": "procedure",
+      "compiles": false,
+      "locked_code": false,
+      "registry_name": "respiro_primaria_while_projectile_flying_tick",
+      "metadata": {
+        "files": [
+          "src/main/java/net/mcreator/vlabyss/procedures/RespiroPrimariaWhileProjectileFlyingTickProcedure.java"
+        ],
+        "dependencies": [
+          {
+            "name": "immediatesourceentity",
+            "type": "entity"
+          },
+          {
+            "name": "x",
+            "type": "number"
+          },
+          {
+            "name": "y",
+            "type": "number"
+          },
+          {
+            "name": "z",
+            "type": "number"
+          },
+          {
+            "name": "world",
+            "type": "world"
+          }
+        ]
+      },
+      "path": "~/VL1_Abyss/Mantras/Respiro/Projetil"
+    },
+    {
+      "name": "RespiroPrimaria",
+      "type": "projectile",
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "respiro_primaria",
+      "metadata": {
+        "files": [
+          "src/main/java/net/mcreator/vlabyss/entity/RespiroPrimariaEntity.java"
+        ]
+      },
+      "path": "~/VL1_Abyss/Mantras/Respiro/Projetil"
+    },
+    {
+      "name": "AdagaAssassinos",
+      "type": "animateditem",
+      "compiles": true,
+      "locked_code": true,
+      "registry_name": "adaga_assassinos",
+      "metadata": {
+        "files": [
+          "src/main/java/net/mcreator/vlabyss/item/model/AdagaAssassinosItemModel.java",
+          "src/main/java/net/mcreator/vlabyss/item/AdagaAssassinosItem.java",
+          "src/main/resources/assets/vl_abyss/models/item/adaga_assassinos.json",
+          "src/main/java/net/mcreator/vlabyss/item/renderer/AdagaAssassinosItemRenderer.java"
+        ]
+      },
+      "path": "~/VL1_Abyss/Armas/AdagaAssassinos"
+    },
+    {
+      "name": "AdagaAssassinoOculto",
+      "type": "damagetype",
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "adaga_assassino_oculto",
+      "metadata": {
+        "files": [
+          "src/main/resources/data/vl_abyss/damage_type/adaga_assassino_oculto.json"
+        ]
+      },
+      "path": "~/VL1_Abyss/Armas/AdagaAssassinos/Morte"
+    },
+    {
+      "name": "AdagaAssassinoBateu",
+      "type": "procedure",
+      "compiles": false,
+      "locked_code": false,
+      "registry_name": "adaga_assassino_bateu",
+      "metadata": {
+        "files": [
+          "src/main/java/net/mcreator/vlabyss/procedures/AdagaAssassinoBateuProcedure.java"
+        ],
+        "dependencies": [
+          {
+            "name": "entity",
+            "type": "entity"
+          },
+          {
+            "name": "sourceentity",
+            "type": "entity"
+          },
+          {
+            "name": "world",
+            "type": "world"
+          }
+        ]
+      },
+      "path": "~/VL1_Abyss/Armas/AdagaAssassinos/Procedure"
+    },
+    {
+      "name": "InfoAssassinoArma",
+      "type": "procedure",
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "info_assassino_arma",
+      "metadata": {
+        "files": [
+          "src/main/java/net/mcreator/vlabyss/procedures/InfoAssassinoArmaProcedure.java"
+        ],
+        "dependencies": [
+          {
+            "name": "itemstack",
+            "type": "itemstack"
+          },
+          {
+            "name": "tooltip",
+            "type": "tooltip"
+          }
+        ]
+      },
+      "path": "~/VL1_Abyss/Armas/AdagaAssassinos/Info"
+    },
+    {
+      "name": "VlAbyssArmas",
+      "type": "tab",
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "vl_abyss_armas",
+      "metadata": {
+        "files": []
+      },
+      "path": "~/CreativeTab"
+    },
+    {
+      "name": "MantraDamage",
+      "type": "damagetype",
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "mantra_damage",
+      "metadata": {
+        "files": [
+          "src/main/resources/data/vl_abyss/damage_type/mantra_damage.json"
+        ]
+      },
+      "path": "~/VL1_Abyss/Mantras/Dano"
+    },
+    {
+      "name": "RecarregaMantra",
+      "type": "procedure",
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "recarrega_mantra",
+      "metadata": {
+        "files": [
+          "src/main/java/net/mcreator/vlabyss/procedures/RecarregaMantraProcedure.java"
+        ],
+        "dependencies": [
+          {
+            "name": "entity",
+            "type": "entity"
+          }
+        ]
+      },
+      "path": "~/VL1_Abyss/Mantras/RecarregaMantra/Procedure"
+    },
+    {
+      "name": "EthirQuantia",
+      "type": "overlay",
+      "compiles": true,
+      "locked_code": true,
+      "registry_name": "ethir_quantia",
+      "metadata": {
+        "files": [
+          "src/main/java/net/mcreator/vlabyss/client/screens/EthirQuantiaOverlay.java"
+        ]
+      },
+      "path": "~/VL1_Abyss/Mantras/RecarregaMantra"
+    },
+    {
+      "name": "DashFrente",
+      "type": "keybind",
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "dash_frente",
+      "metadata": {
+        "files": [
+          "src/main/java/net/mcreator/vlabyss/network/DashFrenteMessage.java"
+        ]
+      },
+      "path": "~/VL1_Abyss/Dash/Key"
+    },
+    {
+      "name": "Insano",
+      "type": "potioneffect",
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "insano",
+      "metadata": {
+        "files": [
+          "src/main/java/net/mcreator/vlabyss/potion/InsanoMobEffect.java"
+        ]
+      },
+      "path": "~/VL1_Abyss/CoracaoTela/Efeito"
+    },
+    {
+      "name": "PocaoRejuvenescimentoPlayerFinishesUsingItem",
+      "type": "procedure",
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "pocao_rejuvenescimento_player_finishes_using_item",
+      "metadata": {
+        "files": [
+          "src/main/java/net/mcreator/vlabyss/procedures/PocaoRejuvenescimentoPlayerFinishesUsingItemProcedure.java"
+        ],
+        "dependencies": [
+          {
+            "name": "entity",
+            "type": "entity"
+          }
+        ]
+      },
+      "path": "~/VL1_Abyss/Pocoes/Procedure"
+    },
+    {
+      "name": "PocaoRejuvenescimento",
+      "type": "item",
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "pocao_rejuvenescimento",
+      "metadata": {
+        "files": [
+          "src/main/java/net/mcreator/vlabyss/item/PocaoRejuvenescimentoItem.java",
+          "src/main/resources/assets/vl_abyss/models/item/pocao_rejuvenescimento.json"
+        ]
+      },
+      "path": "~/VL1_Abyss/Pocoes/Item"
+    },
+    {
+      "name": "PocaoResistenciaEternaPlayerFinishesUsingItem",
+      "type": "procedure",
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "pocao_resistencia_eterna_player_finishes_using_item",
+      "metadata": {
+        "files": [
+          "src/main/java/net/mcreator/vlabyss/procedures/PocaoResistenciaEternaPlayerFinishesUsingItemProcedure.java"
+        ],
+        "dependencies": [
+          {
+            "name": "entity",
+            "type": "entity"
+          }
+        ]
+      },
+      "path": "~/VL1_Abyss/Pocoes/Procedure"
+    },
+    {
+      "name": "PocaoResistenciaEterna",
+      "type": "item",
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "pocao_resistencia_eterna",
+      "metadata": {
+        "files": [
+          "src/main/java/net/mcreator/vlabyss/item/PocaoResistenciaEternaItem.java",
+          "src/main/resources/assets/vl_abyss/models/item/pocao_resistencia_eterna.json"
+        ]
+      },
+      "path": "~/VL1_Abyss/Pocoes/Item"
+    },
+    {
+      "name": "PocaoVidaExtra",
+      "type": "item",
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "pocao_vida_extra",
+      "metadata": {
+        "files": [
+          "src/main/java/net/mcreator/vlabyss/item/PocaoVidaExtraItem.java",
+          "src/main/resources/assets/vl_abyss/models/item/pocao_vida_extra.json"
+        ]
+      },
+      "path": "~/VL1_Abyss/Pocoes/Item"
+    },
+    {
+      "name": "PocaoVidaExtraPlayerFinishesUsingItem",
+      "type": "procedure",
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "pocao_vida_extra_player_finishes_using_item",
+      "metadata": {
+        "files": [
+          "src/main/java/net/mcreator/vlabyss/procedures/PocaoVidaExtraPlayerFinishesUsingItemProcedure.java"
+        ],
+        "dependencies": [
+          {
+            "name": "entity",
+            "type": "entity"
+          }
+        ]
+      },
+      "path": "~/VL1_Abyss/Pocoes/Procedure"
+    },
+    {
+      "name": "PocaoRenascimento",
+      "type": "item",
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "pocao_renascimento",
+      "metadata": {
+        "files": [
+          "src/main/resources/assets/vl_abyss/models/item/pocao_renascimento.json",
+          "src/main/java/net/mcreator/vlabyss/item/PocaoRenascimentoItem.java"
+        ]
+      },
+      "path": "~/VL1_Abyss/Pocoes/Item"
+    },
+    {
+      "name": "PocaoRenascimentoPlayerFinishesUsingItem",
+      "type": "procedure",
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "pocao_renascimento_player_finishes_using_item",
+      "metadata": {
+        "files": [
+          "src/main/java/net/mcreator/vlabyss/procedures/PocaoRenascimentoPlayerFinishesUsingItemProcedure.java"
+        ],
+        "dependencies": [
+          {
+            "name": "entity",
+            "type": "entity"
+          }
+        ]
+      },
+      "path": "~/VL1_Abyss/Pocoes/Procedure"
+    },
+    {
+      "name": "ItemBorderProcedure",
+      "type": "procedure",
+      "compiles": true,
+      "locked_code": true,
+      "registry_name": "item_border_procedure",
+      "metadata": {
+        "files": [
+          "src/main/java/net/mcreator/vlabyss/procedures/ItemBorderProcedureProcedure.java"
+        ],
+        "dependencies": []
+      },
+      "path": "~/VL1_Abyss/BordasItens"
+    },
+    {
+      "name": "InfoPocoes",
+      "type": "procedure",
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "info_pocoes",
+      "metadata": {
+        "files": [
+          "src/main/java/net/mcreator/vlabyss/procedures/InfoPocoesProcedure.java"
+        ],
+        "dependencies": [
+          {
+            "name": "itemstack",
+            "type": "itemstack"
+          },
+          {
+            "name": "tooltip",
+            "type": "tooltip"
+          }
+        ]
+      },
+      "path": "~/VL1_Abyss/Pocoes/InfoPocoes"
+    },
+    {
+      "name": "AcertouComIronSing",
+      "type": "procedure",
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "acertou_com_iron_sing",
+      "metadata": {
+        "files": [
+          "src/main/java/net/mcreator/vlabyss/procedures/AcertouComIronSingProcedure.java"
+        ],
+        "dependencies": [
+          {
+            "name": "entity",
+            "type": "entity"
+          },
+          {
+            "name": "sourceentity",
+            "type": "entity"
+          }
+        ]
+      },
+      "path": "~/VL1_Abyss/Artefatos/Procedure"
+    },
+    {
+      "name": "SistemaReputacao",
+      "type": "procedure",
+      "compiles": false,
+      "locked_code": false,
+      "registry_name": "sistema_reputacao",
+      "metadata": {
+        "files": [
+          "src/main/java/net/mcreator/vlabyss/procedures/SistemaReputacaoProcedure.java"
+        ],
+        "dependencies": [
+          {
+            "name": "entity",
+            "type": "entity"
+          },
+          {
+            "name": "sourceentity",
+            "type": "entity"
+          }
+        ]
+      },
+      "path": "~/VL1_Abyss/Reputation"
+    },
+    {
+      "name": "MatouCriaturaInogt",
+      "type": "procedure",
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "matou_criatura_inogt",
+      "metadata": {
+        "files": [
+          "src/main/java/net/mcreator/vlabyss/procedures/MatouCriaturaInogtProcedure.java"
+        ],
+        "dependencies": [
+          {
+            "name": "sourceentity",
+            "type": "entity"
+          },
+          {
+            "name": "x",
+            "type": "number"
+          },
+          {
+            "name": "y",
+            "type": "number"
+          },
+          {
+            "name": "z",
+            "type": "number"
+          },
+          {
+            "name": "world",
+            "type": "world"
+          }
+        ]
+      },
+      "path": "~/VL1_Abyss/Abyssion/IngotTransform"
+    },
+    {
+      "name": "ReputacaoProcedure",
+      "type": "procedure",
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "reputacao_procedure",
+      "metadata": {
+        "files": [
+          "src/main/java/net/mcreator/vlabyss/procedures/ReputacaoProcedureProcedure.java"
+        ],
+        "dependencies": [
+          {
+            "name": "arguments",
+            "type": "cmdcontext"
+          }
+        ]
+      },
+      "path": "~/VL1_Abyss/Reputation"
+    },
+    {
+      "name": "DetemReputacao",
+      "type": "command",
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "detem_reputacao",
+      "metadata": {
+        "files": [
+          "src/main/java/net/mcreator/vlabyss/command/DetemReputacaoCommand.java"
+        ]
+      },
+      "path": "~/VL1_Abyss/Reputation"
+    },
+    {
+      "name": "PlayerTickReputacao",
+      "type": "procedure",
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "player_tick_reputacao",
+      "metadata": {
+        "files": [
+          "src/main/java/net/mcreator/vlabyss/procedures/PlayerTickReputacaoProcedure.java"
+        ],
+        "dependencies": [
+          {
+            "name": "entity",
+            "type": "entity"
+          }
+        ]
+      },
+      "path": "~/VL1_Abyss/Reputation"
+    },
+    {
+      "name": "PortaAbyss",
+      "type": "animatedblock",
+      "compiles": true,
+      "locked_code": true,
+      "registry_name": "porta_abyss",
+      "metadata": {
+        "files": [
+          "src/main/java/net/mcreator/vlabyss/block/PortaAbyssBlock.java",
+          "src/main/resources/assets/vl_abyss/models/item/porta_abyss.json",
+          "src/main/java/net/mcreator/vlabyss/block/model/PortaAbyssDisplayModel.java",
+          "src/main/java/net/mcreator/vlabyss/block/display/PortaAbyssDisplayItem.java",
+          "src/main/java/net/mcreator/vlabyss/block/entity/PortaAbyssTileEntity.java",
+          "src/main/java/net/mcreator/vlabyss/block/renderer/PortaAbyssTileRenderer.java",
+          "src/main/java/net/mcreator/vlabyss/block/renderer/PortaAbyssDisplayItemRenderer.java",
+          "src/main/resources/assets/vl_abyss/models/custom/porta_abyss_particle.json",
+          "src/main/java/net/mcreator/vlabyss/block/model/PortaAbyssBlockModel.java",
+          "src/main/resources/assets/vl_abyss/blockstates/porta_abyss.json"
+        ]
+      },
+      "path": "~/VL1_Abyss/PortaSelamento"
+    },
+    {
+      "name": "PortaAbyssOnBlockRightClicked",
+      "type": "procedure",
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "porta_abyss_on_block_right_clicked",
+      "metadata": {
+        "files": [
+          "src/main/java/net/mcreator/vlabyss/procedures/PortaAbyssOnBlockRightClickedProcedure.java"
+        ],
+        "dependencies": [
+          {
+            "name": "entity",
+            "type": "entity"
+          },
+          {
+            "name": "x",
+            "type": "number"
+          },
+          {
+            "name": "y",
+            "type": "number"
+          },
+          {
+            "name": "z",
+            "type": "number"
+          },
+          {
+            "name": "world",
+            "type": "world"
+          }
+        ]
+      },
+      "path": "~/VL1_Abyss/PortaSelamento/Procedure"
+    },
+    {
+      "name": "ShadowCopy",
+      "type": "potioneffect",
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "shadow_copy",
+      "metadata": {
+        "files": [
+          "src/main/java/net/mcreator/vlabyss/potion/ShadowCopyMobEffect.java"
+        ]
+      },
+      "path": "~/VL1_Abyss/Mantras/Escuridao/Efeito"
+    },
+    {
+      "name": "ShadowCopyEffectStartedapplied",
+      "type": "procedure",
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "shadow_copy_effect_startedapplied",
+      "metadata": {
+        "files": [
+          "src/main/java/net/mcreator/vlabyss/procedures/ShadowCopyEffectStartedappliedProcedure.java"
+        ],
+        "dependencies": [
+          {
+            "name": "x",
+            "type": "number"
+          },
+          {
+            "name": "y",
+            "type": "number"
+          },
+          {
+            "name": "z",
+            "type": "number"
+          },
+          {
+            "name": "world",
+            "type": "world"
+          }
+        ]
+      },
+      "path": "~/VL1_Abyss/Mantras/Escuridao/Efeito/Procedure"
+    },
+    {
+      "name": "ShadowCopyEffectExpires",
+      "type": "procedure",
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "shadow_copy_effect_expires",
+      "metadata": {
+        "files": [
+          "src/main/java/net/mcreator/vlabyss/procedures/ShadowCopyEffectExpiresProcedure.java"
+        ],
+        "dependencies": [
+          {
+            "name": "entity",
+            "type": "entity"
+          },
+          {
+            "name": "x",
+            "type": "number"
+          },
+          {
+            "name": "y",
+            "type": "number"
+          },
+          {
+            "name": "z",
+            "type": "number"
+          },
+          {
+            "name": "world",
+            "type": "world"
+          }
+        ]
+      },
+      "path": "~/VL1_Abyss/Mantras/Escuridao/Efeito/Procedure"
+    },
+    {
+      "name": "TomouHitShadowCopy",
+      "type": "procedure",
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "tomou_hit_shadow_copy",
+      "metadata": {
+        "files": [
+          "src/main/java/net/mcreator/vlabyss/procedures/TomouHitShadowCopyProcedure.java"
+        ],
+        "dependencies": [
+          {
+            "name": "entity",
+            "type": "entity"
+          },
+          {
+            "name": "x",
+            "type": "number"
+          },
+          {
+            "name": "y",
+            "type": "number"
+          },
+          {
+            "name": "z",
+            "type": "number"
+          },
+          {
+            "name": "world",
+            "type": "world"
+          }
+        ]
+      },
+      "path": "~/VL1_Abyss/Mantras/Escuridao/Efeito/Procedure"
+    },
+    {
+      "name": "InstantRegenMantra",
+      "type": "potioneffect",
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "instant_regen_mantra",
+      "metadata": {
+        "files": [
+          "src/main/java/net/mcreator/vlabyss/potion/InstantRegenMantraMobEffect.java"
+        ]
+      },
+      "path": "~/VL1_Abyss/Mantras/InstantRegenMantra"
+    },
+    {
+      "name": "InstantRegenMantraEffectExpires",
+      "type": "procedure",
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "instant_regen_mantra_effect_expires",
+      "metadata": {
+        "files": [
+          "src/main/java/net/mcreator/vlabyss/procedures/InstantRegenMantraEffectExpiresProcedure.java"
+        ],
+        "dependencies": [
+          {
+            "name": "entity",
+            "type": "entity"
+          }
+        ]
+      },
+      "path": "~/VL1_Abyss/Mantras/InstantRegenMantra/Procedure"
+    },
+    {
+      "name": "InstantRegenMantraEffectStartedapplied",
+      "type": "procedure",
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "instant_regen_mantra_effect_startedapplied",
+      "metadata": {
+        "files": [
+          "src/main/java/net/mcreator/vlabyss/procedures/InstantRegenMantraEffectStartedappliedProcedure.java"
+        ],
+        "dependencies": [
+          {
+            "name": "entity",
+            "type": "entity"
+          },
+          {
+            "name": "world",
+            "type": "world"
+          }
+        ]
+      },
+      "path": "~/VL1_Abyss/Mantras/InstantRegenMantra/Procedure"
+    },
+    {
+      "name": "VisivelMantraEscuridao",
+      "type": "procedure",
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "visivel_mantra_escuridao",
+      "metadata": {
+        "return_type": "logic",
+        "files": [
+          "src/main/java/net/mcreator/vlabyss/procedures/VisivelMantraEscuridaoProcedure.java"
+        ],
+        "dependencies": [
+          {
+            "name": "entity",
+            "type": "entity"
+          }
+        ]
+      },
+      "path": "~/VL1_Abyss/Mantras/RecarregaMantra/Procedure"
+    },
+    {
+      "name": "VisivelMantraFogo",
+      "type": "procedure",
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "visivel_mantra_fogo",
+      "metadata": {
+        "return_type": "logic",
+        "files": [
+          "src/main/java/net/mcreator/vlabyss/procedures/VisivelMantraFogoProcedure.java"
+        ],
+        "dependencies": [
+          {
+            "name": "entity",
+            "type": "entity"
+          }
+        ]
+      },
+      "path": "~/VL1_Abyss/Mantras/RecarregaMantra/Procedure"
+    },
+    {
+      "name": "VisivelMantraVento",
+      "type": "procedure",
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "visivel_mantra_vento",
+      "metadata": {
+        "return_type": "logic",
+        "files": [
+          "src/main/java/net/mcreator/vlabyss/procedures/VisivelMantraVentoProcedure.java"
+        ],
+        "dependencies": [
+          {
+            "name": "entity",
+            "type": "entity"
+          }
+        ]
+      },
+      "path": "~/VL1_Abyss/Mantras/RecarregaMantra/Procedure"
+    },
+    {
+      "name": "VisivelMantraLuz",
+      "type": "procedure",
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "visivel_mantra_luz",
+      "metadata": {
+        "return_type": "logic",
+        "files": [
+          "src/main/java/net/mcreator/vlabyss/procedures/VisivelMantraLuzProcedure.java"
+        ],
+        "dependencies": [
+          {
+            "name": "entity",
+            "type": "entity"
+          }
+        ]
+      },
+      "path": "~/VL1_Abyss/Mantras/RecarregaMantra/Procedure"
+    },
+    {
+      "name": "VisivelMantraRaio",
+      "type": "procedure",
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "visivel_mantra_raio",
+      "metadata": {
+        "return_type": "logic",
+        "files": [
+          "src/main/java/net/mcreator/vlabyss/procedures/VisivelMantraRaioProcedure.java"
+        ],
+        "dependencies": [
+          {
+            "name": "entity",
+            "type": "entity"
+          }
+        ]
+      },
+      "path": "~/VL1_Abyss/Mantras/RecarregaMantra/Procedure"
+    },
+    {
+      "name": "VisivelMantraGelo",
+      "type": "procedure",
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "visivel_mantra_gelo",
+      "metadata": {
+        "return_type": "logic",
+        "files": [
+          "src/main/java/net/mcreator/vlabyss/procedures/VisivelMantraGeloProcedure.java"
+        ],
+        "dependencies": [
+          {
+            "name": "entity",
+            "type": "entity"
+          }
+        ]
+      },
+      "path": "~/VL1_Abyss/Mantras/RecarregaMantra/Procedure"
+    },
+    {
+      "name": "VisivelBarraMantra",
+      "type": "procedure",
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "visivel_barra_mantra",
+      "metadata": {
+        "return_type": "logic",
+        "files": [
+          "src/main/java/net/mcreator/vlabyss/procedures/VisivelBarraMantraProcedure.java"
+        ],
+        "dependencies": [
+          {
+            "name": "entity",
+            "type": "entity"
+          }
+        ]
+      },
+      "path": "~/VL1_Abyss/Mantras/RecarregaMantra/Procedure"
+    },
+    {
+      "name": "RunasPropertyValueProvider",
+      "type": "procedure",
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "runas_property_value_provider",
+      "metadata": {
+        "return_type": "number",
+        "files": [
+          "src/main/java/net/mcreator/vlabyss/procedures/RunasPropertyValueProviderProcedure.java"
+        ],
+        "dependencies": [
+          {
+            "name": "itemstack",
+            "type": "itemstack"
+          }
+        ]
+      },
+      "path": "~/VL1_Abyss/PortaSelamento/Procedure"
+    },
+    {
+      "name": "RunasPropertyValueProvider2",
+      "type": "procedure",
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "runas_property_value_provider_2",
+      "metadata": {
+        "return_type": "number",
+        "files": [
+          "src/main/java/net/mcreator/vlabyss/procedures/RunasPropertyValueProvider2Procedure.java"
+        ],
+        "dependencies": [
+          {
+            "name": "itemstack",
+            "type": "itemstack"
+          }
+        ]
+      },
+      "path": "~/VL1_Abyss/PortaSelamento/Procedure"
+    },
+    {
+      "name": "RunasPropertyValueProvider3",
+      "type": "procedure",
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "runas_property_value_provider_3",
+      "metadata": {
+        "return_type": "number",
+        "files": [
+          "src/main/java/net/mcreator/vlabyss/procedures/RunasPropertyValueProvider3Procedure.java"
+        ],
+        "dependencies": [
+          {
+            "name": "itemstack",
+            "type": "itemstack"
+          }
+        ]
+      },
+      "path": "~/VL1_Abyss/PortaSelamento/Procedure"
+    },
+    {
+      "name": "RunasPropertyValueProvider4",
+      "type": "procedure",
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "runas_property_value_provider_4",
+      "metadata": {
+        "return_type": "number",
+        "files": [
+          "src/main/java/net/mcreator/vlabyss/procedures/RunasPropertyValueProvider4Procedure.java"
+        ],
+        "dependencies": [
+          {
+            "name": "itemstack",
+            "type": "itemstack"
+          }
+        ]
+      },
+      "path": "~/VL1_Abyss/PortaSelamento/Procedure"
+    },
+    {
+      "name": "RunasPropertyValueProvider5",
+      "type": "procedure",
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "runas_property_value_provider_5",
+      "metadata": {
+        "return_type": "number",
+        "files": [
+          "src/main/java/net/mcreator/vlabyss/procedures/RunasPropertyValueProvider5Procedure.java"
+        ],
+        "dependencies": [
+          {
+            "name": "itemstack",
+            "type": "itemstack"
+          }
+        ]
+      },
+      "path": "~/VL1_Abyss/PortaSelamento/Procedure"
+    },
+    {
+      "name": "RunasPropertyValueProvider6",
+      "type": "procedure",
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "runas_property_value_provider_6",
+      "metadata": {
+        "return_type": "number",
+        "files": [
+          "src/main/java/net/mcreator/vlabyss/procedures/RunasPropertyValueProvider6Procedure.java"
+        ],
+        "dependencies": [
+          {
+            "name": "itemstack",
+            "type": "itemstack"
+          }
+        ]
+      },
+      "path": "~/VL1_Abyss/PortaSelamento/Procedure"
+    },
+    {
+      "name": "RunasPropertyValueProvider7",
+      "type": "procedure",
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "runas_property_value_provider_7",
+      "metadata": {
+        "return_type": "number",
+        "files": [
+          "src/main/java/net/mcreator/vlabyss/procedures/RunasPropertyValueProvider7Procedure.java"
+        ],
+        "dependencies": [
+          {
+            "name": "itemstack",
+            "type": "itemstack"
+          }
+        ]
+      },
+      "path": "~/VL1_Abyss/PortaSelamento/Procedure"
+    },
+    {
+      "name": "Runas",
+      "type": "item",
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "runas",
+      "metadata": {
+        "files": [
+          "src/main/resources/assets/vl_abyss/models/item/runas_4.json",
+          "src/main/resources/assets/vl_abyss/models/item/runas_6.json",
+          "src/main/resources/assets/vl_abyss/models/item/runas_1.json",
+          "src/main/java/net/mcreator/vlabyss/item/RunasItem.java",
+          "src/main/resources/assets/vl_abyss/models/item/runas_0.json",
+          "src/main/resources/assets/vl_abyss/models/item/runas_2.json",
+          "src/main/resources/assets/vl_abyss/models/item/runas_5.json",
+          "src/main/resources/assets/vl_abyss/models/item/runas.json",
+          "src/main/resources/assets/vl_abyss/models/item/runas_3.json"
+        ]
+      },
+      "path": "~/VL1_Abyss/PortaSelamento/Runas"
+    },
+    {
+      "name": "RunasItemInInventoryTick",
+      "type": "procedure",
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "runas_item_in_inventory_tick",
+      "metadata": {
+        "files": [
+          "src/main/java/net/mcreator/vlabyss/procedures/RunasItemInInventoryTickProcedure.java"
+        ],
+        "dependencies": [
+          {
+            "name": "itemstack",
+            "type": "itemstack"
+          }
+        ]
+      },
+      "path": "~/VL1_Abyss/PortaSelamento/Procedure"
+    },
+    {
+      "name": "RunasInfo",
+      "type": "jeiinformation",
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "runas_info",
+      "metadata": {
+        "files": []
+      },
+      "path": "~/VL1_Abyss/PortaSelamento/Runas/JER"
+    },
+    {
+      "name": "SetNBT",
+      "type": "command",
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "set_nbt",
+      "metadata": {
+        "files": [
+          "src/main/java/net/mcreator/vlabyss/command/SetNBTCommand.java"
+        ]
+      },
+      "path": "~/ComandosStaff/SetNBT"
+    },
+    {
+      "name": "SetNbtProcedure",
+      "type": "procedure",
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "set_nbt_procedure",
+      "metadata": {
+        "files": [
+          "src/main/java/net/mcreator/vlabyss/procedures/SetNbtProcedureProcedure.java"
+        ],
+        "dependencies": [
+          {
+            "name": "arguments",
+            "type": "cmdcontext"
+          }
+        ]
+      },
+      "path": "~/ComandosStaff/SetNBT"
+    },
+    {
+      "name": "RemoveNbtProcedure",
+      "type": "procedure",
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "remove_nbt_procedure",
+      "metadata": {
+        "files": [
+          "src/main/java/net/mcreator/vlabyss/procedures/RemoveNbtProcedureProcedure.java"
+        ],
+        "dependencies": []
+      },
+      "path": "~/ComandosStaff/SetNBT"
+    },
+    {
+      "name": "SetNbtBlockProcedure",
+      "type": "procedure",
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "set_nbt_block_procedure",
+      "metadata": {
+        "files": [
+          "src/main/java/net/mcreator/vlabyss/procedures/SetNbtBlockProcedureProcedure.java"
+        ],
+        "dependencies": [
+          {
+            "name": "arguments",
+            "type": "cmdcontext"
+          },
+          {
+            "name": "world",
+            "type": "world"
+          }
+        ]
+      },
+      "path": "~/ComandosStaff/SetNBT"
+    },
+    {
+      "name": "RemoveNbtBlockProcedure",
+      "type": "procedure",
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "remove_nbt_block_procedure",
+      "metadata": {
+        "files": [
+          "src/main/java/net/mcreator/vlabyss/procedures/RemoveNbtBlockProcedureProcedure.java"
+        ],
+        "dependencies": []
+      },
+      "path": "~/ComandosStaff/SetNBT"
+    },
+    {
+      "name": "CavaleiroAlado",
+      "type": "animatedentity",
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "cavaleiro_alado",
+      "metadata": {
+        "files": [
+          "src/main/java/net/mcreator/vlabyss/client/renderer/CavaleiroAladoRenderer.java",
+          "src/main/java/net/mcreator/vlabyss/entity/CavaleiroAladoEntity.java",
+          "src/main/resources/assets/vl_abyss/models/item/cavaleiro_alado_spawn_egg.json",
+          "src/main/java/net/mcreator/vlabyss/entity/model/CavaleiroAladoModel.java"
+        ]
+      },
+      "path": "~/VL1_Abyss/AbismoBosses/CavaleiroAlado"
+    },
+    {
+      "name": "Danoabismoboss",
+      "type": "damagetype",
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "danoabismoboss",
+      "metadata": {
+        "files": [
+          "src/main/resources/data/vl_abyss/damage_type/danoabismoboss.json"
+        ]
+      },
+      "path": "~/VL1_Abyss/AbismoBosses/CavaleiroAlado/Dano"
+    },
+    {
+      "name": "TombstoneAbyssOnBlockRightClicked",
+      "type": "procedure",
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "tombstone_abyss_on_block_right_clicked",
+      "metadata": {
+        "files": [
+          "src/main/java/net/mcreator/vlabyss/procedures/TombstoneAbyssOnBlockRightClickedProcedure.java"
+        ],
+        "dependencies": [
+          {
+            "name": "entity",
+            "type": "entity"
+          },
+          {
+            "name": "x",
+            "type": "number"
+          },
+          {
+            "name": "y",
+            "type": "number"
+          },
+          {
+            "name": "z",
+            "type": "number"
+          },
+          {
+            "name": "world",
+            "type": "world"
+          }
+        ]
+      },
+      "path": "~/VL1_Abyss/AbismoBosses/BlocoInvocacao/Procedure"
+    },
+    {
+      "name": "EssenciaAbismo",
+      "type": "item",
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "essencia_abismo",
+      "metadata": {
+        "files": [
+          "src/main/resources/assets/vl_abyss/models/item/essencia_abismo.json",
+          "src/main/java/net/mcreator/vlabyss/item/EssenciaAbismoItem.java"
+        ]
+      },
+      "path": "~/VL1_Abyss/AbismoBosses/DropAbismoCriaturas"
+    },
+    {
+      "name": "CavaleiroAladoOnInitialEntitySpawn",
+      "type": "procedure",
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "cavaleiro_alado_on_initial_entity_spawn",
+      "metadata": {
+        "files": [
+          "src/main/java/net/mcreator/vlabyss/procedures/CavaleiroAladoOnInitialEntitySpawnProcedure.java"
+        ],
+        "dependencies": [
+          {
+            "name": "entity",
+            "type": "entity"
+          }
+        ]
+      },
+      "path": "~/VL1_Abyss/AbismoBosses/CavaleiroAlado/Procedure"
+    },
+    {
+      "name": "CavaleiroAladoOnEntityTickUpdate",
+      "type": "procedure",
+      "compiles": false,
+      "locked_code": false,
+      "registry_name": "cavaleiro_alado_on_entity_tick_update",
+      "metadata": {
+        "files": [
+          "src/main/java/net/mcreator/vlabyss/procedures/CavaleiroAladoOnEntityTickUpdateProcedure.java"
+        ],
+        "dependencies": [
+          {
+            "name": "entity",
+            "type": "entity"
+          },
+          {
+            "name": "x",
+            "type": "number"
+          },
+          {
+            "name": "y",
+            "type": "number"
+          },
+          {
+            "name": "z",
+            "type": "number"
+          },
+          {
+            "name": "world",
+            "type": "world"
+          }
+        ]
+      },
+      "path": "~/VL1_Abyss/AbismoBosses/CavaleiroAlado/Procedure"
+    },
+    {
+      "name": "Essenciaabismocraft",
+      "type": "recipe",
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "essenciaabismocraft",
+      "metadata": {
+        "files": [
+          "src/main/resources/data/vl_abyss/recipes/essencia_abismo.json"
+        ]
+      },
+      "path": "~/VL1_Abyss/AbismoBosses/DropAbismoCriaturas/Craft"
+    },
+    {
+      "name": "PortaAbyssSlave",
+      "type": "block",
+      "compiles": true,
+      "locked_code": true,
+      "registry_name": "porta_abyss_slave",
+      "metadata": {
+        "files": [
+          "src/main/resources/data/vl_abyss/loot_tables/blocks/porta_abyss_slave.json",
+          "src/main/java/net/mcreator/vlabyss/block/entity/PortaAbyssSlaveBlockEntity.java",
+          "src/main/resources/assets/vl_abyss/models/block/porta_abyss_slave.json",
+          "src/main/resources/assets/vl_abyss/models/item/porta_abyss_slave.json",
+          "src/main/java/net/mcreator/vlabyss/block/PortaAbyssSlaveBlock.java",
+          "src/main/resources/assets/vl_abyss/blockstates/porta_abyss_slave.json"
+        ]
+      },
+      "path": "~/VL1_Abyss/PortaSelamento"
+    },
+    {
+      "name": "PortaAbyssMultiblockHelper",
+      "type": "code",
+      "compiles": true,
+      "locked_code": true,
+      "registry_name": "porta_abyss_multiblock_helper",
+      "metadata": {
+        "files": [
+          "src/main/java/net/mcreator/vlabyss/PortaAbyssMultiblockHelper.java"
+        ]
+      },
+      "path": "~/VL1_Abyss/PortaSelamento"
+    },
+    {
+      "name": "UsouComandoLogs",
+      "type": "procedure",
+      "compiles": true,
+      "locked_code": true,
+      "registry_name": "usou_comando_logs",
+      "metadata": {
+        "files": [
+          "src/main/java/net/mcreator/vlabyss/procedures/UsouComandoLogsProcedure.java"
+        ],
+        "dependencies": []
+      },
+      "path": "~/DiscordLogs"
+    },
+    {
+      "name": "CavaleiroAladoAtacou",
+      "type": "procedure",
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "cavaleiro_alado_atacou",
+      "metadata": {
+        "files": [
+          "src/main/java/net/mcreator/vlabyss/procedures/CavaleiroAladoAtacouProcedure.java"
+        ],
+        "dependencies": [
+          {
+            "name": "entity",
+            "type": "entity"
+          },
+          {
+            "name": "sourceentity",
+            "type": "entity"
+          },
+          {
+            "name": "world",
+            "type": "world"
+          }
+        ]
+      },
+      "path": "~/VL1_Abyss/AbismoBosses/CavaleiroAlado/Procedure"
+    },
+    {
+      "name": "MorreuVoltaBuffs",
+      "type": "procedure",
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "morreu_volta_buffs",
+      "metadata": {
+        "files": [
+          "src/main/java/net/mcreator/vlabyss/procedures/MorreuVoltaBuffsProcedure.java"
+        ],
+        "dependencies": [
+          {
+            "name": "entity",
+            "type": "entity"
+          }
+        ]
+      },
+      "path": "~/VL1_Abyss/Classes/Procedure"
+    },
+    {
+      "name": "MorreuVoltaBuffsPocao",
+      "type": "procedure",
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "morreu_volta_buffs_pocao",
+      "metadata": {
+        "files": [
+          "src/main/java/net/mcreator/vlabyss/procedures/MorreuVoltaBuffsPocaoProcedure.java"
+        ],
+        "dependencies": [
+          {
+            "name": "entity",
+            "type": "entity"
+          }
+        ]
+      },
+      "path": "~/VL1_Abyss/Pocoes/Procedure"
+    },
+    {
+      "name": "TombstoneAbyss",
+      "type": "block",
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "tombstone_abyss",
+      "metadata": {
+        "files": [
+          "src/main/resources/assets/vl_abyss/models/item/tombstone_abyss.json",
+          "src/main/java/net/mcreator/vlabyss/block/TombstoneAbyssBlock.java",
+          "src/main/resources/data/vl_abyss/loot_tables/blocks/tombstone_abyss.json",
+          "src/main/resources/assets/vl_abyss/blockstates/tombstone_abyss.json",
+          "src/main/resources/assets/vl_abyss/models/block/tombstone_abyss.json",
+          "src/main/java/net/mcreator/vlabyss/block/entity/TombstoneAbyssBlockEntity.java"
+        ]
+      },
+      "path": "~/VL1_Abyss/AbismoBosses/BlocoInvocacao"
+    },
+    {
+      "name": "MetalForja",
+      "type": "gui",
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "metal_forja",
+      "metadata": {
+        "files": [
+          "src/main/java/net/mcreator/vlabyss/client/gui/MetalForjaScreen.java",
+          "src/main/java/net/mcreator/vlabyss/world/inventory/MetalForjaMenu.java"
+        ]
+      },
+      "path": "~/VL1_Abyss/Forja"
+    },
+    {
+      "name": "MetalForging",
+      "type": "block",
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "metal_forging",
+      "metadata": {
+        "files": [
+          "src/main/java/net/mcreator/vlabyss/block/MetalForgingBlock.java",
+          "src/main/resources/assets/vl_abyss/models/item/metal_forging.json",
+          "src/main/java/net/mcreator/vlabyss/block/entity/MetalForgingBlockEntity.java",
+          "src/main/resources/assets/vl_abyss/blockstates/metal_forging.json",
+          "src/main/resources/assets/vl_abyss/models/block/metal_forging.json",
+          "src/main/resources/data/vl_abyss/loot_tables/blocks/metal_forging.json"
+        ]
+      },
+      "path": "~/VL1_Abyss/Forja"
+    },
+    {
+      "name": "MetalForgingBlockAdded",
+      "type": "procedure",
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "metal_forging_block_added",
+      "metadata": {
+        "files": [
+          "src/main/java/net/mcreator/vlabyss/procedures/MetalForgingBlockAddedProcedure.java"
+        ],
+        "dependencies": [
+          {
+            "name": "x",
+            "type": "number"
+          },
+          {
+            "name": "y",
+            "type": "number"
+          },
+          {
+            "name": "z",
+            "type": "number"
+          },
+          {
+            "name": "world",
+            "type": "world"
+          }
+        ]
+      },
+      "path": "~/VL1_Abyss/Forja/Procedure"
+    },
+    {
+      "name": "MelhoraIngotAbyssion",
+      "type": "procedure",
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "melhora_ingot_abyssion",
+      "metadata": {
+        "files": [
+          "src/main/java/net/mcreator/vlabyss/procedures/MelhoraIngotAbyssionProcedure.java"
+        ],
+        "dependencies": [
+          {
+            "name": "entity",
+            "type": "entity"
+          },
+          {
+            "name": "x",
+            "type": "number"
+          },
+          {
+            "name": "y",
+            "type": "number"
+          },
+          {
+            "name": "z",
+            "type": "number"
+          },
+          {
+            "name": "world",
+            "type": "world"
+          }
+        ]
+      },
+      "path": "~/VL1_Abyss/Forja/Procedure"
+    },
+    {
+      "name": "MetalForgingOnTickUpdate",
+      "type": "procedure",
+      "compiles": false,
+      "locked_code": false,
+      "registry_name": "metal_forging_on_tick_update",
+      "metadata": {
+        "files": [
+          "src/main/java/net/mcreator/vlabyss/procedures/MetalForgingOnTickUpdateProcedure.java"
+        ],
+        "dependencies": [
+          {
+            "name": "x",
+            "type": "number"
+          },
+          {
+            "name": "y",
+            "type": "number"
+          },
+          {
+            "name": "z",
+            "type": "number"
+          },
+          {
+            "name": "world",
+            "type": "world"
+          }
+        ]
+      },
+      "path": "~/VL1_Abyss/Forja/Procedure"
+    },
+    {
+      "name": "Ssmp",
+      "type": "config",
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "ssmp",
+      "metadata": {
+        "files": [
+          "src/main/java/net/mcreator/vlabyss/configuration/SsmpConfiguration.java"
+        ]
+      },
+      "path": "~/Configuracao"
+    },
+    {
+      "name": "HabilidadeSecundaria",
+      "type": "keybind",
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "habilidade_secundaria",
+      "metadata": {
+        "files": [
+          "src/main/java/net/mcreator/vlabyss/network/HabilidadeSecundariaMessage.java"
+        ]
+      },
+      "path": "~/VL1_Abyss/Mantras/MantraKeyAtivacao"
+    },
+    {
+      "name": "HabilidadeSecundariaOnKeyPressed",
+      "type": "procedure",
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "habilidade_secundaria_on_key_pressed",
+      "metadata": {
+        "files": [
+          "src/main/java/net/mcreator/vlabyss/procedures/HabilidadeSecundariaOnKeyPressedProcedure.java"
+        ],
+        "dependencies": []
+      },
+      "path": "~/VL1_Abyss/Mantras/MantraKeyAtivacao"
+    },
+    {
+      "name": "Tombstone",
+      "type": "blockstates",
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "tombstone",
+      "metadata": {
+        "files": [
+          "src/main/resources/assets/vl_abyss/models/block/tombstone_blockstate_1.json",
+          "src/main/resources/assets/vl_abyss/models/block/tombstone_blockstate_0.json"
+        ]
+      },
+      "path": "~/VL1_Abyss/AbismoBosses/BlocoInvocacao"
+    }
+  ],
+  "variable_elements": [
+    {
+      "name": "mapa",
+      "type": "logic",
+      "scope": "player_persistent",
+      "value": "false"
+    },
+    {
+      "name": "almas",
+      "type": "number",
+      "scope": "player_persistent",
+      "value": "0"
+    },
+    {
+      "name": "Valmiriano",
+      "type": "logic",
+      "scope": "player_persistent",
+      "value": "false"
+    },
+    {
+      "name": "Arkanthi",
+      "type": "logic",
+      "scope": "player_persistent",
+      "value": "false"
+    },
+    {
+      "name": "Vesperian",
+      "type": "logic",
+      "scope": "player_persistent",
+      "value": "false"
+    },
+    {
+      "name": "Nimren",
+      "type": "logic",
+      "scope": "player_persistent",
+      "value": "false"
+    },
+    {
+      "name": "Simikari",
+      "type": "logic",
+      "scope": "player_persistent",
+      "value": "false"
+    },
+    {
+      "name": "Scribari",
+      "type": "logic",
+      "scope": "player_persistent",
+      "value": "false"
+    },
+    {
+      "name": "Capridel",
+      "type": "logic",
+      "scope": "player_persistent",
+      "value": "false"
+    },
+    {
+      "name": "Lumivivo",
+      "type": "logic",
+      "scope": "player_persistent",
+      "value": "false"
+    },
+    {
+      "name": "VL_Spy",
+      "type": "logic",
+      "scope": "player_persistent",
+      "value": "false"
+    },
+    {
+      "name": "insanidade",
+      "type": "number",
+      "scope": "player_persistent",
+      "value": "0"
+    },
+    {
+      "name": "vidas",
+      "type": "number",
+      "scope": "player_persistent",
+      "value": "5.0"
+    },
+    {
+      "name": "dash",
+      "type": "logic",
+      "scope": "player_persistent",
+      "value": "false"
+    },
+    {
+      "name": "Songs",
+      "type": "logic",
+      "scope": "player_persistent",
+      "value": "false"
+    },
+    {
+      "name": "Chama",
+      "type": "number",
+      "scope": "player_persistent",
+      "value": "0"
+    },
+    {
+      "name": "Respiro",
+      "type": "number",
+      "scope": "player_persistent",
+      "value": "0"
+    },
+    {
+      "name": "Nevasca",
+      "type": "number",
+      "scope": "player_persistent",
+      "value": "0"
+    },
+    {
+      "name": "Tempestade",
+      "type": "number",
+      "scope": "player_persistent",
+      "value": "0"
+    },
+    {
+      "name": "Escuridao",
+      "type": "number",
+      "scope": "player_persistent",
+      "value": "0"
+    },
+    {
+      "name": "Luz",
+      "type": "number",
+      "scope": "player_persistent",
+      "value": "0"
+    },
+    {
+      "name": "MantraRegistrada",
+      "type": "logic",
+      "scope": "player_persistent",
+      "value": "false"
+    },
+    {
+      "name": "dash_reto",
+      "type": "logic",
+      "scope": "player_persistent",
+      "value": "false"
+    },
+    {
+      "name": "Ethir",
+      "type": "number",
+      "scope": "player_persistent",
+      "value": "100.0"
+    },
+    {
+      "name": "Assassino",
+      "type": "logic",
+      "scope": "player_persistent",
+      "value": "false"
+    },
+    {
+      "name": "Guerreiro",
+      "type": "logic",
+      "scope": "player_persistent",
+      "value": "false"
+    },
+    {
+      "name": "Berserker",
+      "type": "logic",
+      "scope": "player_persistent",
+      "value": "false"
+    },
+    {
+      "name": "Tanque",
+      "type": "logic",
+      "scope": "player_persistent",
+      "value": "false"
+    },
+    {
+      "name": "pocaoreju",
+      "type": "logic",
+      "scope": "player_persistent",
+      "value": "false"
+    },
+    {
+      "name": "pocaoresis",
+      "type": "logic",
+      "scope": "player_persistent",
+      "value": "false"
+    },
+    {
+      "name": "pocaoextravida",
+      "type": "logic",
+      "scope": "player_persistent",
+      "value": "false"
+    },
+    {
+      "name": "pocaorenas",
+      "type": "logic",
+      "scope": "player_persistent",
+      "value": "false"
+    },
+    {
+      "name": "reputacao",
+      "type": "number",
+      "scope": "player_persistent",
+      "value": "0"
+    },
+    {
+      "name": "MaxEthir",
+      "type": "number",
+      "scope": "player_persistent",
+      "value": "100.0"
+    },
+    {
+      "name": "ManaRegenTimer",
+      "type": "number",
+      "scope": "player_persistent",
+      "value": "0"
+    },
+    {
+      "name": "fase",
+      "type": "number",
+      "scope": "player_persistent",
+      "value": "1.0"
+    }
+  ],
+  "sound_elements": [
+    {
+      "name": "parry",
+      "files": [
+        "parry"
+      ],
+      "category": "master",
+      "subtitle": ""
+    },
+    {
+      "name": "parry_hands",
+      "files": [
+        "parry_hands"
+      ],
+      "category": "master",
+      "subtitle": ""
+    },
+    {
+      "name": "insanidade_relogio",
+      "files": [
+        "relogio"
+      ],
+      "category": "master",
+      "subtitle": ""
+    },
+    {
+      "name": "coracao_lento",
+      "files": [
+        "coracao_lento"
+      ],
+      "category": "master",
+      "subtitle": ""
+    },
+    {
+      "name": "coracao_rapido",
+      "files": [
+        "coracao_rapido"
+      ],
+      "category": "master",
+      "subtitle": ""
+    },
+    {
+      "name": "insanidade_som_medo",
+      "files": [
+        "som_medo"
+      ],
+      "category": "master",
+      "subtitle": ""
+    },
+    {
+      "name": "dash_som",
+      "files": [
+        "dash"
+      ],
+      "category": "player",
+      "subtitle": ""
+    },
+    {
+      "name": "almaspawn",
+      "files": [
+        "almaspawn"
+      ],
+      "category": "master",
+      "subtitle": ""
+    },
+    {
+      "name": "almacoletada2",
+      "files": [
+        "almacoletada2"
+      ],
+      "category": "master",
+      "subtitle": ""
+    },
+    {
+      "name": "almacoletada",
+      "files": [
+        "almacoletada"
+      ],
+      "category": "master",
+      "subtitle": ""
+    },
+    {
+      "name": "mapaabyss",
+      "files": [
+        "mapaabyss"
+      ],
+      "category": "master",
+      "subtitle": ""
+    },
+    {
+      "name": "selecionarmantra",
+      "files": [
+        "mantrapegou"
+      ],
+      "category": "master",
+      "subtitle": ""
+    },
+    {
+      "name": "mantramenu",
+      "files": [
+        "mantraescolheu"
+      ],
+      "category": "master",
+      "subtitle": ""
+    },
+    {
+      "name": "almanaocoletada",
+      "files": [
+        "mantrarecusa"
+      ],
+      "category": "master",
+      "subtitle": ""
+    },
+    {
+      "name": "queimapapel",
+      "files": [
+        "papelqueima"
+      ],
+      "category": "master",
+      "subtitle": ""
+    },
+    {
+      "name": "spawnou",
+      "files": [
+        "spawnou"
+      ],
+      "category": "master",
+      "subtitle": ""
+    },
+    {
+      "name": "respiro_hab1",
+      "files": [
+        "respiro_hab1"
+      ],
+      "category": "master",
+      "subtitle": ""
+    },
+    {
+      "name": "respiro_hab1_2",
+      "files": [
+        "respiro_hab1_2"
+      ],
+      "category": "master",
+      "subtitle": ""
+    },
+    {
+      "name": "respiro_hab1_1",
+      "files": [
+        "respiro_hab1_1"
+      ],
+      "category": "master",
+      "subtitle": ""
+    },
+    {
+      "name": "transformando_ingot",
+      "files": [
+        "transformando_item"
+      ],
+      "category": "master",
+      "subtitle": ""
+    },
+    {
+      "name": "ingot_transformado",
+      "files": [
+        "obtem_item"
+      ],
+      "category": "master",
+      "subtitle": ""
+    },
+    {
+      "name": "copy_ativa",
+      "files": [
+        "ativa_manto"
+      ],
+      "category": "master",
+      "subtitle": ""
+    },
+    {
+      "name": "copy_dano",
+      "files": [
+        "dano_manto"
+      ],
+      "category": "master",
+      "subtitle": ""
+    },
+    {
+      "name": "copy_tempo",
+      "files": [
+        "tempo_manto"
+      ],
+      "category": "master",
+      "subtitle": ""
+    },
+    {
+      "name": "invocacao_iniciada",
+      "files": [
+        "invocacao_iniciada"
+      ],
+      "category": "master",
+      "subtitle": ""
+    },
+    {
+      "name": "invocacao_finalizada",
+      "files": [
+        "invocacao_finalizada"
+      ],
+      "category": "master",
+      "subtitle": ""
+    },
+    {
+      "name": "batida_cavaleiro_alado",
+      "files": [
+        "batida_cavaleiro_alado"
+      ],
+      "category": "master",
+      "subtitle": ""
+    },
+    {
+      "name": "portao_abyss_abre",
+      "files": [
+        "portao_abre"
+      ],
+      "category": "master",
+      "subtitle": ""
+    },
+    {
+      "name": "portao_abyss_fecha",
+      "files": [
+        "portao_fecha"
+      ],
+      "category": "master",
+      "subtitle": ""
+    },
+    {
+      "name": "atingemagialuzum",
+      "files": [
+        "atingemantraluz"
+      ],
+      "category": "master",
+      "subtitle": ""
+    },
+    {
+      "name": "usamantraluzum",
+      "files": [
+        "usamantraluzum"
+      ],
+      "category": "master",
+      "subtitle": ""
+    },
+    {
+      "name": "sem_ethir_som",
+      "files": [
+        "sem_ethir"
+      ],
+      "category": "master",
+      "subtitle": ""
+    }
+  ],
+  "tag_elements": {
+    "ITEMS:vl_abyss:cyan": [
+      "CUSTOM:PocaoRejuvenescimento",
+      "CUSTOM:RawAbyssion",
+      "CUSTOM:AbyssionIngot",
+      "CUSTOM:AbyssionNugget"
+    ],
+    "DAMAGE_TYPES:minecraft:bypasses_enchantments": [
+      "CUSTOM:AbsorveAlmaDamage",
+      "CUSTOM:SangramentoDamage",
+      "CUSTOM:MantraDamage",
+      "CUSTOM:Danoabismoboss"
+    ],
+    "DAMAGE_TYPES:minecraft:bypasses_armor": [
+      "CUSTOM:AbsorveAlmaDamage",
+      "CUSTOM:SangramentoDamage",
+      "CUSTOM:MantraDamage",
+      "CUSTOM:Danoabismoboss"
+    ],
+    "ITEMS:vl_abyss:light_purple": [
+      "CUSTOM:FragmentoPrimordial",
+      "CUSTOM:PocaoResistenciaEterna",
+      "CUSTOM:PocaoVidaExtra",
+      "CUSTOM:PocaoRenascimento",
+      "CUSTOM:LiberacaoMantra"
+    ],
+    "BLOCKS:minecraft:overworld_carver_replaceables": [
+      "~Blocks.AIR"
+    ],
+    "DAMAGE_TYPES:minecraft:bypasses_effects": [
+      "CUSTOM:AbsorveAlmaDamage",
+      "CUSTOM:SangramentoDamage",
+      "CUSTOM:Danoabismoboss"
+    ],
+    "ITEMS:minecraft:tools": [
+      "CUSTOM:AdagaAssassinos"
+    ],
+    "ITEMS:minecraft:piglin_loved": [
+      "CUSTOM:RawAbyssion",
+      "CUSTOM:AbyssionIngot"
+    ],
+    "ITEMS:vl_abyss:yellow": [
+      "CUSTOM:CapuzEsquecido",
+      "CUSTOM:VotoSilencioso",
+      "CUSTOM:AmuletoVesperian",
+      "CUSTOM:AmuletoSangue",
+      "CUSTOM:LuvasIronsing",
+      "CUSTOM:LuvasLuaSangrenta",
+      "CUSTOM:AnelEnferrujado",
+      "CUSTOM:CintoDosEcos",
+      "CUSTOM:FaixaAcolito",
+      "CUSTOM:BotasVazioAbyssal",
+      "CUSTOM:MapaAbyss",
+      "CUSTOM:DesbloqueioEsquiva"
+    ],
+    "BLOCKS:minecraft:mineable/pickaxe": [
+      "~CUSTOM:MetalForging",
+      "~CUSTOM:AbyssionIngotBlock",
+      "~CUSTOM:RawAbyssionBlock",
+      "~CUSTOM:AbyssionOre"
+    ],
+    "BLOCKS:minecraft:needs_stone_tool": [
+      "~CUSTOM:MetalForging"
+    ],
+    "ITEMS:vl_abyss:white": [
+      "CUSTOM:EssenciaAbismo",
+      "CUSTOM:Runas"
+    ],
+    "ITEMS:minecraft:swords": [
+      "CUSTOM:AdagaAssassinos"
+    ],
+    "DAMAGE_TYPES:minecraft:bypasses_shield": [
+      "CUSTOM:AbsorveAlmaDamage",
+      "CUSTOM:SangramentoDamage",
+      "CUSTOM:MantraDamage",
+      "CUSTOM:Danoabismoboss"
+    ],
+    "BLOCKS:forge:needs_netherite_tool": [],
+    "ITEMS:minecraft:fishes": [
+      "CUSTOM:AnelEnferrujado"
+    ],
+    "ITEMS:vl_abyss:dark_purple": [
+      "CUSTOM:AdagaAssassinos"
+    ],
+    "BLOCKS:minecraft:needs_diamond_tool": [
+      "~CUSTOM:AbyssionIngotBlock",
+      "~CUSTOM:RawAbyssionBlock",
+      "~CUSTOM:AbyssionOre"
+    ]
+  },
+  "tab_element_order": {},
+  "language_map": {
+    "en_us": {
+      "entity.minecraft.villager.vl_abyss.ferreiro_profession": "Ferreiro",
+      "entity.minecraft.villager.vl_abyss.historiador_profession": "Historiador",
+      "entity.minecraft.villager.vl_abyss.aventureiro_profession": "Aventureiro",
+      "death.attack.adaga_assassino_oculto.player": "%1$s morreu tentando escapar de ???",
+      "subtitles.dash_som": "",
+      "death.attack.sangramento_damage.item": "%1$s foi morto sangrando por %2$s usando %3$s",
+      "effect.vl_abyss.insano": "Insanidade",
+      "gui.vl_abyss.j.label_tempestade": "Tempestade",
+      "curios.identifier.hands": "Hands",
+      "subtitles.insanidade_som_medo": "",
+      "item.vl_abyss.botas_vazio_abyssal": "Botas do Vazio Abyssal",
+      "effect.vl_abyss.sangrando": "§4Sangrando§r",
+      "gui.vl_abyss.ethir_quantia.label_ethir": "Ethir: ",
+      "item.vl_abyss.mantra_soul_spawn_egg": "Mantra Spawn Egg",
+      "item.vl_abyss.mapa_abyss": "Mapa de Abyss",
+      "jei.vl_abyss.jei_abyssion": "- O minério de Abyssion é um recurso raro, utilizado por ferreiros para criar armas muito resistentes e fortes... Esse minério só pode ser encontrado nas camas mais baixas do mundo",
+      "subtitles.coracao_rapido": "",
+      "subtitles.insanidade_relogio": "",
+      "item.vl_abyss.abyssion_nugget": "Abyssion Nugget",
+      "entity.vl_abyss.mantra_soul": "Mantra",
+      "item.vl_abyss.abyssion_ingot": "Abyssion Ingot",
+      "key.vl_abyss.parry": "Defesa",
+      "subtitles.almaspawn": "",
+      "item.vl_abyss.voto_silencioso": "Colar do Voto Silencioso",
+      "death.attack.absorve_alma_damage": "%1$s morreu tentando absorver uma alma",
+      "death.attack.sangramento_damage.player": "%1$s morreu enquanto sangrava fugindo de %2$s",
+      "key.vl_abyss.ativa_artefatos": "Active Artifacts",
+      "item_group.vl_abyss.vl_abyss_armas": "§5SSMP | ARMAS",
+      "subtitles.copy_ativa": "",
+      "item.vl_abyss.pocao_rejuvenescimento": "Poção do Rejuvenescimento",
+      "block.vl_abyss.raw_abyssion_block": "Raw Abyssion Block",
+      "gui.vl_abyss.j.label_nevasca": "Nevasca",
+      "jei.vl_abyss.runas_info": "- As runas são como \"Maldições\"... Você não sabe o que elas podem fazer com quem as detém, mas sua função real? Ninguém sabe...",
+      "subtitles.invocacao_iniciada": "",
+      "block.vl_abyss.porta_abyss_slave": "???",
+      "item.vl_abyss.runas": "§fRuna Vazia",
+      "block.vl_abyss.porta_abyss": "???",
+      "gui.vl_abyss.j.label_chama": "Chama",
+      "subtitles.almacoletada2": "",
+      "key.categories.artefatos": "Song SMP - Artefatos",
+      "biome.vl_abyss.the_abyss": "The Abyss",
+      "item.vl_abyss.cavaleiro_alado_spawn_egg": "Cavaleiro Alado Spawn Egg",
+      "block.vl_abyss.abyssion_ingot_block": "Abyssion Ingot Block",
+      "jei.vl_abyss.jei_mapa": "- O mapa de Abyss é como diz seu nome, um mapa de cada local importante desse nosso reino. Nele, você poderá se guiar para encontrar os grandes reinos que existem nesse mundo, porém, há coisas além desse mapa que NUNCA devem ser acessadas...",
+      "gui.vl_abyss.metal_forja.label_inventario": "Inventário",
+      "gui.vl_abyss.j.label_escuridao": "Escuridão",
+      "gui.vl_abyss.j.label_respiro": "Respiro",
+      "key.vl_abyss.habilidade_primaria": "Mantra Primária",
+      "jei.vl_abyss.informacao_desviar_1": "- O pergaminho irá conceder ao usuário, o aprendizado para aplicar \"desvios\" ou \"dashs\" para utilizar durante a luta ou em momentos oportunos ",
+      "gui.vl_abyss.metal_forja.label_menu_da_forja": "Menu da Forja",
+      "subtitles.transformando_ingot": "",
+      "key.categories.mantra": "Song SMP - Mantra",
+      "subtitles.copy_dano": "",
+      "item.vl_abyss.faixa_acolito": "Faixa de Acólito",
+      "entity.vl_abyss.cavaleiro_alado": "Cavaleiro Alado",
+      "subtitles.parry_hands": "",
+      "death.attack.sangramento_damage": "%1$s morreu por sangramento",
+      "effect.vl_abyss.corta_regen": "Corta Cura",
+      "gui.vl_abyss.j.label_luz": "Luz",
+      "effect.vl_abyss.shadow_copy": "Cópia das Sombras",
+      "item.vl_abyss.fragmento_primordial": "Fragmento de Primordial",
+      "subtitles.spawnou": "",
+      "subtitles.ingot_transformado": "",
+      "subtitles.mantramenu": "",
+      "item.vl_abyss.desbloqueio_esquiva": "Desbloqueio Esquiva",
+      "item.vl_abyss.liberacao_mantra": "Liberação de Mantra",
+      "death.attack.adaga_assassino_oculto.item": "%1$s foi morto por ??? usando ???",
+      "curios.identifier.soul": "Soul",
+      "effect.vl_abyss.quebra": "Quebra",
+      "subtitles.portao_abyss_fecha": "",
+      "item.vl_abyss.amuleto_sangue": "Amuleto de Sangue",
+      "death.attack.danoabismoboss": "%1$s morreu lutando contra criaturas do abismo",
+      "death.attack.absorve_alma_damage.item": "%1$s foi morto por %2$s usando %3$s enquanto absorvia uma alma",
+      "jei.vl_abyss.jei_liberacao_mantra": "- A liberação da mantra pode ser uma escolha difícil... Cada uma tem uma habilidade única e especial, tudo vai variar de acordo com o desejo da pessoa. Para despertar essa liberação, é necessário atingir um pico de almas, e logo em seguida, obter a \"LIBERAÇÃO DA MANTRA\" através de compras com comerciantes que trabalham com a Mantra",
+      "death.attack.mantra_damage": "%1$s morreu para mantra",
+      "death.attack.danoabismoboss.item": "%1$s foi morto pela criatura %2$s usando %3$s",
+      "subtitles.copy_tempo": "",
+      "item.vl_abyss.pocao_vida_extra": "Poção de Vida extra",
+      "item.vl_abyss.pocao_resistencia_eterna": "Poção de Resistência Eterna",
+      "subtitles.respiro_hab1": "",
+      "item.vl_abyss.luvas_ironsing": "Luvas de Ironsing",
+      "subtitles.almanaocoletada": "",
+      "subtitles.sem_ethir_som": "",
+      "death.attack.danoabismoboss.player": "%1$s morreu tentando escapar da criatura %2$s",
+      "death.attack.mantra_damage.item": "%1$s matou %2$s usando %3$s depois de um ataque de mantra",
+      "block.vl_abyss.abyssion_ore": "Abyssion Ore",
+      "item.vl_abyss.anel_enferrujado": "Anel do Enferrujado",
+      "subtitles.portao_abyss_abre": "",
+      "curios.identifier.feet": "Feet",
+      "subtitles.selecionarmantra": "",
+      "death.attack.mantra_damage.player": "%1$s morreu tentando escapar de um ataque de mantra %2$s",
+      "key.categories.geral": "Song SMP - Geral",
+      "item.vl_abyss.raw_abyssion": "Abyssion Cru",
+      "subtitles.respiro_hab1_1": "",
+      "subtitles.respiro_hab1_2": "",
+      "subtitles.atingemagialuzum": "",
+      "item.vl_abyss.essencia_abismo": "§fEssência do Abismo",
+      "block.vl_abyss.tombstone_abyss": "§5Tumba do Abismo",
+      "subtitles.usamantraluzum": "",
+      "subtitles.coracao_lento": "",
+      "subtitles.batida_cavaleiro_alado": "",
+      "effect.vl_abyss.cooldown_respiro": "Wind Blade",
+      "entity.minecraft.villager.vl_abyss.mestre_mantra_profession": "Mestre da Mantra",
+      "item_group.vl_abyss.vl_abyss": "§5SSMP | S1",
+      "item.vl_abyss.capuz_esquecido": "Capuz do Esquecido",
+      "item.vl_abyss.amuleto_vesperian": "Amuleto de Vesperian",
+      "block.vl_abyss.metal_forging": "Forjador de Metais",
+      "key.vl_abyss.habilidade_secundaria": "Mantra Secundária",
+      "item.vl_abyss.adaga_assassinos": "Adaga dos Assassinos",
+      "effect.vl_abyss.resistencia_quebrada": "Resistência Quebrada",
+      "key.vl_abyss.planar": "Planar",
+      "death.attack.adaga_assassino_oculto": "Desconhecido morreu",
+      "effect.vl_abyss.instant_regen_mantra": "Instant Regen Mantra",
+      "key.vl_abyss.dash_frente": "Dash Frente",
+      "subtitles.invocacao_finalizada": "",
+      "death.attack.absorve_alma_damage.player": "%1$s morreu tentando escapar de %2$s enquanto absorvia uma alma",
+      "subtitles.almacoletada": "",
+      "subtitles.queimapapel": "",
+      "subtitles.parry": "",
+      "key.vl_abyss.dash_tras": "Dash Tras",
+      "item.vl_abyss.cinto_dos_ecos": "Cinto dos Ecos",
+      "subtitles.mapaabyss": "",
+      "item.vl_abyss.luvas_lua_sangrenta": "Luvas da Lua Sangrenta",
+      "item.vl_abyss.pocao_renascimento": "Poção do Renascimento"
+    }
+  },
+  "metadata": {
+    "files": [
+      "src/main/resources/META-INF/mods.toml",
+      "src/main/java/net/mcreator/vlabyss/init/VlAbyssModTabs.java",
+      "src/main/java/net/mcreator/vlabyss/network/VlAbyssModVariables.java",
+      "src/main/resources/pack.mcmeta",
+      "src/main/resources/META-INF/accesstransformer.cfg",
+      "src/main/java/net/mcreator/vlabyss/VlAbyssMod.java",
+      "src/main/java/net/mcreator/vlabyss/init/VlAbyssModSounds.java",
+      "src/main/resources/assets/vl_abyss/sounds.json",
+      "src/main/resources/mixins.vl_abyss.json",
+      "src/main/java/net/mcreator/vlabyss/block/listener/ClientListener.java",
+      "src/main/java/net/mcreator/vlabyss/init/EntityAnimationFactory.java",
+      "src/main/java/net/mcreator/vlabyss/init/ItemAnimationFactory.java",
+      "src/main/java/net/mcreator/vlabyss/utils/AnimUtils.java",
+      "src/main/java/net/mcreator/vlabyss/init/VlAbyssModAttributes.java",
+      "src/main/java/net/mcreator/vlabyss/init/VlAbyssModConfigs.java",
+      "src/main/java/net/mcreator/vlabyss/init/VlAbyssModCuriosRenderers.java",
+      "src/main/resources/data/curios/tags/items/head.json",
+      "src/main/resources/data/curios/tags/items/ring.json",
+      "src/main/resources/data/curios/tags/items/hands.json",
+      "src/main/resources/data/curios/tags/items/belt.json",
+      "src/main/java/net/mcreator/vlabyss/init/VlAbyssModLayerDefinitions.java",
+      "src/main/java/net/mcreator/vlabyss/init/VlAbyssModCuriosSlots.java",
+      "src/main/resources/data/curios/tags/items/necklace.json",
+      "src/main/java/net/mcreator/vlabyss/init/VlAbyssModCuriosProperties.java",
+      "src/main/java/net/mcreator/vlabyss/init/VlAbyssModCustomCuriosSlots.java",
+      "src/main/java/net/mcreator/vlabyss/init/VlAbyssModMenus.java",
+      "src/main/java/net/mcreator/vlabyss/init/VlAbyssModScreens.java",
+      "src/main/java/net/mcreator/vlabyss/network/MenuStateUpdateMessage.java",
+      "src/main/java/net/mcreator/vlabyss/init/VlAbyssModJeiInformation.java",
+      "src/main/java/net/mcreator/vlabyss/init/VlAbyssModKeyMappings.java",
+      "src/main/java/net/mcreator/vlabyss/init/VlAbyssModParticleTypes.java",
+      "src/main/java/net/mcreator/vlabyss/init/VlAbyssModParticles.java",
+      "src/main/java/net/mcreator/vlabyss/init/VlAbyssModMobEffects.java",
+      "src/main/java/net/mcreator/vlabyss/init/VlAbyssModBrewingRecipes.java",
+      "src/main/java/net/mcreator/vlabyss/init/VlAbyssModVillagerProfessions.java",
+      "src/main/resources/data/minecraft/tags/point_of_interest_type/acquirable_job_site.json",
+      "src/main/java/net/mcreator/vlabyss/init/VlAbyssModTrades.java",
+      "src/main/java/net/mcreator/vlabyss/init/VlAbyssModBlocks.java",
+      "src/main/java/net/mcreator/vlabyss/init/VlAbyssModBlockEntities.java",
+      "src/main/java/net/mcreator/vlabyss/init/VlAbyssModItems.java",
+      "src/main/java/net/mcreator/vlabyss/init/VlAbyssModEntityRenderers.java",
+      "src/main/java/net/mcreator/vlabyss/init/VlAbyssModEntities.java"
+    ]
+  },
+  "foldersRoot": {
+    "name": "~",
+    "children": [
+      {
+        "name": "VL1_Abyss",
+        "children": [
+          {
+            "name": "Sol e Lua",
+            "children": []
+          },
+          {
+            "name": "PlayerAnimatorSetup",
+            "children": []
+          },
+          {
+            "name": "Classes",
+            "children": [
+              {
+                "name": "Comando",
+                "children": []
+              },
+              {
+                "name": "Procedure",
+                "children": []
+              }
+            ]
+          },
+          {
+            "name": "MapaAbyssal",
+            "children": [
+              {
+                "name": "Procedure",
+                "children": []
+              },
+              {
+                "name": "Item",
+                "children": []
+              },
+              {
+                "name": "JER",
+                "children": []
+              }
+            ]
+          },
+          {
+            "name": "Vidas",
+            "children": [
+              {
+                "name": "Comandos",
+                "children": []
+              }
+            ]
+          },
+          {
+            "name": "Parry",
+            "children": [
+              {
+                "name": "Key",
+                "children": []
+              },
+              {
+                "name": "Efeitos",
+                "children": [
+                  {
+                    "name": "Procedure",
+                    "children": []
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "name": "CoracaoTela",
+            "children": [
+              {
+                "name": "Efeito",
+                "children": []
+              }
+            ]
+          },
+          {
+            "name": "Insanidade",
+            "children": []
+          },
+          {
+            "name": "Alma",
+            "children": [
+              {
+                "name": "Alma",
+                "children": []
+              },
+              {
+                "name": "Spawn",
+                "children": []
+              },
+              {
+                "name": "Dano",
+                "children": []
+              },
+              {
+                "name": "Mantra",
+                "children": [
+                  {
+                    "name": "Procedure",
+                    "children": []
+                  },
+                  {
+                    "name": "OverlayMantra",
+                    "children": []
+                  }
+                ]
+              },
+              {
+                "name": "Comando",
+                "children": []
+              }
+            ]
+          },
+          {
+            "name": "Abyssion",
+            "children": [
+              {
+                "name": "JER",
+                "children": []
+              },
+              {
+                "name": "IngotTransform",
+                "children": []
+              }
+            ]
+          },
+          {
+            "name": "Artefatos",
+            "children": [
+              {
+                "name": "Procedure",
+                "children": []
+              },
+              {
+                "name": "InfoAmuletos",
+                "children": []
+              },
+              {
+                "name": "Key",
+                "children": []
+              },
+              {
+                "name": "Efeito",
+                "children": []
+              },
+              {
+                "name": "CuriosSlot",
+                "children": []
+              }
+            ]
+          },
+          {
+            "name": "Sangramento",
+            "children": [
+              {
+                "name": "DamageType",
+                "children": []
+              },
+              {
+                "name": "Procedure",
+                "children": []
+              }
+            ]
+          },
+          {
+            "name": "Dash",
+            "children": [
+              {
+                "name": "Item",
+                "children": []
+              },
+              {
+                "name": "Procedure",
+                "children": []
+              },
+              {
+                "name": "Key",
+                "children": []
+              },
+              {
+                "name": "JER",
+                "children": []
+              }
+            ]
+          },
+          {
+            "name": "Villagers",
+            "children": [
+              {
+                "name": "Trocas",
+                "children": []
+              }
+            ]
+          },
+          {
+            "name": "LiberacaoMantra",
+            "children": [
+              {
+                "name": "Procedure",
+                "children": []
+              },
+              {
+                "name": "JER",
+                "children": []
+              }
+            ]
+          },
+          {
+            "name": "CancelaPortalNether",
+            "children": []
+          },
+          {
+            "name": "DimensaoAbismo",
+            "children": [
+              {
+                "name": "Comando",
+                "children": []
+              }
+            ]
+          },
+          {
+            "name": "Morreu",
+            "children": [
+              {
+                "name": "Morreu",
+                "children": []
+              },
+              {
+                "name": "Particula",
+                "children": []
+              },
+              {
+                "name": "Reviveu",
+                "children": []
+              }
+            ]
+          },
+          {
+            "name": "Mantras",
+            "children": [
+              {
+                "name": "Respiro",
+                "children": [
+                  {
+                    "name": "Procedure",
+                    "children": []
+                  },
+                  {
+                    "name": "Key",
+                    "children": []
+                  },
+                  {
+                    "name": "Efeitos",
+                    "children": []
+                  },
+                  {
+                    "name": "Particulas",
+                    "children": []
+                  },
+                  {
+                    "name": "Projetil",
+                    "children": []
+                  }
+                ]
+              },
+              {
+                "name": "Chama",
+                "children": []
+              },
+              {
+                "name": "MantraKeyAtivacao",
+                "children": []
+              },
+              {
+                "name": "Dano",
+                "children": []
+              },
+              {
+                "name": "RecarregaMantra",
+                "children": [
+                  {
+                    "name": "Procedure",
+                    "children": []
+                  }
+                ]
+              },
+              {
+                "name": "Escuridao",
+                "children": [
+                  {
+                    "name": "Efeito",
+                    "children": [
+                      {
+                        "name": "Procedure",
+                        "children": []
+                      }
+                    ]
+                  }
+                ]
+              },
+              {
+                "name": "InstantRegenMantra",
+                "children": [
+                  {
+                    "name": "Procedure",
+                    "children": []
+                  }
+                ]
+              },
+              {
+                "name": "Luz",
+                "children": []
+              }
+            ]
+          },
+          {
+            "name": "ClassesArmas",
+            "children": []
+          },
+          {
+            "name": "Armas",
+            "children": [
+              {
+                "name": "AdagaAssassinos",
+                "children": [
+                  {
+                    "name": "Procedure",
+                    "children": []
+                  },
+                  {
+                    "name": "Info",
+                    "children": []
+                  },
+                  {
+                    "name": "Morte",
+                    "children": []
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "name": "Pocoes",
+            "children": [
+              {
+                "name": "Item",
+                "children": []
+              },
+              {
+                "name": "Procedure",
+                "children": []
+              },
+              {
+                "name": "InfoPocoes",
+                "children": []
+              }
+            ]
+          },
+          {
+            "name": "BordasItens",
+            "children": []
+          },
+          {
+            "name": "Reputation",
+            "children": []
+          },
+          {
+            "name": "PortaSelamento",
+            "children": [
+              {
+                "name": "Procedure",
+                "children": []
+              },
+              {
+                "name": "Runas",
+                "children": [
+                  {
+                    "name": "JER",
+                    "children": []
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "name": "AbismoBosses",
+            "children": [
+              {
+                "name": "CavaleiroAlado",
+                "children": [
+                  {
+                    "name": "Dano",
+                    "children": []
+                  },
+                  {
+                    "name": "Procedure",
+                    "children": []
+                  }
+                ]
+              },
+              {
+                "name": "BlocoInvocacao",
+                "children": [
+                  {
+                    "name": "Procedure",
+                    "children": []
+                  }
+                ]
+              },
+              {
+                "name": "DropAbismoCriaturas",
+                "children": [
+                  {
+                    "name": "Craft",
+                    "children": []
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "name": "Forja",
+            "children": [
+              {
+                "name": "Procedure",
+                "children": []
+              }
+            ]
+          },
+          {
+            "name": "Adoracao",
+            "children": []
+          },
+          {
+            "name": "Medo",
+            "children": []
+          }
+        ]
+      },
+      {
+        "name": "CreativeTab",
+        "children": []
+      },
+      {
+        "name": "Plugins",
+        "children": [
+          {
+            "name": "BroadcastVLMP",
+            "children": []
+          },
+          {
+            "name": "IconicSpy",
+            "children": []
+          }
+        ]
+      },
+      {
+        "name": "DiscordLogs",
+        "children": []
+      },
+      {
+        "name": "ComandosStaff",
+        "children": [
+          {
+            "name": "SetNBT",
+            "children": []
+          },
+          {
+            "name": "RemoveNBT",
+            "children": []
+          }
+        ]
+      },
+      {
+        "name": "Configuracao",
+        "children": []
+      }
+    ]
+  },
+  "workspaceSettings": {
+    "modid": "vl_abyss",
+    "modName": "SSMP | S1",
+    "version": "1.2.0",
+    "author": "SSMP | S1",
+    "websiteURL": "https://discord.gg/vlmp",
+    "license": "All Rights Reserved",
+    "serverSideOnly": false,
+    "modPicture": "logo",
+    "requiredMods": [],
+    "dependencies": [],
+    "dependants": [],
+    "mcreatorDependencies": [
+      "use_compiled_mods",
+      "curios_api",
+      "patchouli",
+      "geckolib",
+      "playeranimator",
+      "jei"
+    ],
+    "currentGenerator": "forge-1.20.1",
+    "credits": "https://discord.gg/vlmp",
+    "modElementsPackage": "net.mcreator.vlabyss"
+  },
+  "mcreatorVersion": 202500227613
+}

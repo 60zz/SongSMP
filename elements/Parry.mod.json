@@ -1,0 +1,12 @@
+{
+  "_fv": 79,
+  "_type": "keybind",
+  "definition": {
+    "triggerKey": "F",
+    "keyBindingName": "Defesa",
+    "keyBindingCategoryKey": "geral",
+    "onKeyPressed": {
+      "name": "ParryOnKeyPressed"
+    }
+  }
+}

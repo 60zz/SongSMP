@@ -1,0 +1,9 @@
+{
+  "replace": false,
+  "values": [
+    "vl_abyss:aventureiro_profession",
+    "vl_abyss:ferreiro_profession",
+    "vl_abyss:historiador_profession",
+    "vl_abyss:mestre_mantra_profession"
+  ]
+}

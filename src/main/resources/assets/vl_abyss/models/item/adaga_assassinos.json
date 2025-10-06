@@ -1,0 +1,15 @@
+{
+  "parent": "minecraft:item/handheld",
+  "loader": "forge:separate_transforms",
+  "base": {
+    "parent": "vl_abyss:displaysettings/adaga_assassina",
+  "textures": {
+    "layer0": "vl_abyss:item/adagaassassinotxt"
+  }
+},
+  "perspectives": {
+    "gui": {
+      "parent": "vl_abyss:item/gui/adaga_assassinos"
+    }
+  }
+}

@@ -1,0 +1,19 @@
+{
+  "variants": {
+    "facing=north": {
+      "model": "vl_abyss:custom/porta_abyss_particle"
+    },
+    "facing=east": {
+      "model": "vl_abyss:custom/porta_abyss_particle",
+      "y": 90
+    },
+    "facing=south": {
+      "model": "vl_abyss:custom/porta_abyss_particle",
+      "y": 180
+    },
+    "facing=west": {
+      "model": "vl_abyss:custom/porta_abyss_particle",
+      "y": 270
+    }
+  }
+}

@@ -1,0 +1,50 @@
+{
+  "parent": "item/generated",
+  "textures": {
+    "layer0": "vl_abyss:item/runavaziabranca"
+  },
+  "overrides": [
+    {
+      "predicate": {
+        "vl_abyss:runas_runaazul": 1
+      },
+      "model": "vl_abyss:item/runas_0"
+    },
+    {
+      "predicate": {
+        "vl_abyss:runas_runaroxa": 1
+      },
+      "model": "vl_abyss:item/runas_1"
+    },
+    {
+      "predicate": {
+        "vl_abyss:runas_runavermelha": 1
+      },
+      "model": "vl_abyss:item/runas_2"
+    },
+    {
+      "predicate": {
+        "vl_abyss:runas_runaverde": 1
+      },
+      "model": "vl_abyss:item/runas_3"
+    },
+    {
+      "predicate": {
+        "vl_abyss:runas_runaamarela": 1
+      },
+      "model": "vl_abyss:item/runas_4"
+    },
+    {
+      "predicate": {
+        "vl_abyss:runas_runapreta": 1
+      },
+      "model": "vl_abyss:item/runas_5"
+    },
+    {
+      "predicate": {
+        "vl_abyss:runas_runaciana": 1
+      },
+      "model": "vl_abyss:item/runas_6"
+    }
+  ]
+}

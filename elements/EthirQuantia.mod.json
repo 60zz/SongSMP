@@ -1,0 +1,116 @@
+{
+  "_fv": 79,
+  "_type": "overlay",
+  "definition": {
+    "priority": "HIGHEST",
+    "components": [
+      {
+        "type": "image",
+        "data": {
+          "image": "barra_vazia.png",
+          "use1Xscale": true,
+          "displayCondition": {
+            "name": "VisivelBarraMantra"
+          },
+          "anchorPoint": "CENTER",
+          "x": 141,
+          "y": 179,
+          "locked": false
+        }
+      },
+      {
+        "type": "image",
+        "data": {
+          "image": "barra_cheia.png",
+          "use1Xscale": true,
+          "displayCondition": {
+            "name": "VisivelMantraEscuridao"
+          },
+          "anchorPoint": "CENTER",
+          "x": 141,
+          "y": 179,
+          "locked": false
+        }
+      },
+      {
+        "type": "image",
+        "data": {
+          "image": "laranja.png",
+          "use1Xscale": true,
+          "displayCondition": {
+            "name": "VisivelMantraFogo"
+          },
+          "anchorPoint": "CENTER",
+          "x": 141,
+          "y": 179,
+          "locked": false
+        }
+      },
+      {
+        "type": "image",
+        "data": {
+          "image": "verde_azulado.png",
+          "use1Xscale": true,
+          "displayCondition": {
+            "name": "VisivelMantraVento"
+          },
+          "anchorPoint": "CENTER",
+          "x": 141,
+          "y": 179,
+          "locked": false
+        }
+      },
+      {
+        "type": "image",
+        "data": {
+          "image": "branco.png",
+          "use1Xscale": true,
+          "displayCondition": {
+            "name": "VisivelMantraLuz"
+          },
+          "anchorPoint": "CENTER",
+          "x": 141,
+          "y": 179,
+          "locked": false
+        }
+      },
+      {
+        "type": "image",
+        "data": {
+          "image": "azul.png",
+          "use1Xscale": true,
+          "displayCondition": {
+            "name": "VisivelMantraRaio"
+          },
+          "anchorPoint": "CENTER",
+          "x": 141,
+          "y": 179,
+          "locked": false
+        }
+      },
+      {
+        "type": "image",
+        "data": {
+          "image": "ciano.png",
+          "use1Xscale": true,
+          "displayCondition": {
+            "name": "VisivelMantraGelo"
+          },
+          "anchorPoint": "CENTER",
+          "x": 141,
+          "y": 179,
+          "locked": false
+        }
+      }
+    ],
+    "baseTexture": "",
+    "overlayTarget": "Ingame",
+    "gridSettings": {
+      "sx": 18,
+      "sy": 18,
+      "ox": 11,
+      "oy": 15,
+      "snapOnGrid": true
+    }
+  }
+}
