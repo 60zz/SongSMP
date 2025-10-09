@@ -20,6 +20,7 @@ public class AcertouComIronSingProcedure {
 			if (entity.getPersistentData().getBoolean("criticairons_s")) {
 				if (entity instanceof LivingEntity _entity && !_entity.level().isClientSide())
 					_entity.addEffect(new MobEffectInstance(VlAbyssModMobEffects.SANGRANDO.get(), 80, 0));
+				entity.getPersistentData().remove("criticairons_s");
 			} else if (entity.getPersistentData().getBoolean("criticairons")) {
 				{
 					Entity _ent = entity;
@@ -28,6 +29,7 @@ public class AcertouComIronSingProcedure {
 								_ent.getName().getString(), _ent.getDisplayName(), _ent.level().getServer(), _ent), "minecraft:effect give @s alexscaves:stunned 4 0 true");
 					}
 				}
+				entity.getPersistentData().remove("criticairons");
 			}
 		}
 	}

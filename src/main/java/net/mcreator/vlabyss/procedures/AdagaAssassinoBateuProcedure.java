@@ -30,15 +30,14 @@ public class AdagaAssassinoBateuProcedure {
 		execute(null, world, entity, sourceentity);
 	}
 
-private static void execute(
-@Nullable Event event,
-LevelAccessor world,
-Entity entity,
-Entity sourceentity ) {
-if (
-entity == null ||
-sourceentity == null ) return ;
-if ((sourceentity instanceof LivingEntity _livEnt ? _livEnt.getMainHandItem():ItemStack.EMPTY).getItem() == VlAbyssModItems.ADAGA_ASSASSINOS.get()) {if ((sourceentity.getCapability(VlAbyssModVariables.PLAYER_VARIABLES_CAPABILITY, null)
-.orElse(new VlAbyssModVariables.PlayerVariables())).Assassino==true) {entity.hurt(new DamageSource(world.registryAccess().registryOrThrow(Registries.DAMAGE_TYPE).getHolderOrThrow(ResourceKey.create(Registries.DAMAGE_TYPE, ResourceLocation.parse("vl_abyss:adaga_assassino_oculto")))), (float));}}
-}
+	private static void execute(@Nullable Event event, LevelAccessor world, Entity entity, Entity sourceentity) {
+		if (entity == null || sourceentity == null)
+			return;
+		if ((sourceentity instanceof LivingEntity _livEnt ? _livEnt.getMainHandItem() : ItemStack.EMPTY).getItem() == VlAbyssModItems.ADAGA_ASSASSINOS.get()) {
+			if ((sourceentity.getCapability(VlAbyssModVariables.PLAYER_VARIABLES_CAPABILITY, null).orElse(new VlAbyssModVariables.PlayerVariables())).Assassino == true) {
+				entity.hurt(new DamageSource(world.registryAccess().registryOrThrow(Registries.DAMAGE_TYPE).getHolderOrThrow(ResourceKey.create(Registries.DAMAGE_TYPE, ResourceLocation.parse("vl_abyss:adaga_assassino_oculto")))),
+						(float) (sourceentity instanceof LivingEntity _attributeContext ? _attributeContext.getAttributeValue(net.minecraft.world.entity.ai.attributes.Attributes.ATTACK_DAMAGE) : 0.0D));
+			}
+		}
+	}
 }

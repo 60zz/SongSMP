@@ -38,6 +38,28 @@ public class TombstoneAbyssOnBlockRightClickedProcedure {
 					if (_bs.getBlock().getStateDefinition().getProperty("blockstate") instanceof IntegerProperty _integerProp && _integerProp.getPossibleValues().contains(_value))
 						world.setBlock(_pos, _bs.setValue(_integerProp, _value), 3);
 				}
+				if (world instanceof net.minecraft.server.level.ServerLevel) {
+					net.minecraft.server.level.ServerLevel _level = (net.minecraft.server.level.ServerLevel) world;
+					int particleCount = (int) 40;
+					double centerX = x;
+					double centerY = y;
+					double centerZ = z;
+					double particleSpeed = 0.8;
+					net.minecraft.core.particles.ParticleOptions particleType = net.minecraft.core.particles.ParticleTypes.GLOW_SQUID_INK;
+					for (int i = 0; i < particleCount; i++) {
+						double u = Math.random();
+						double v = Math.random();
+						double theta = 2 * Math.PI * u;
+						double phi = Math.acos(2 * v - 1);
+						double directionX = Math.sin(phi) * Math.cos(theta);
+						double directionY = Math.cos(phi);
+						double directionZ = Math.sin(phi) * Math.sin(theta);
+						double velocityX = directionX * particleSpeed;
+						double velocityY = directionY * particleSpeed;
+						double velocityZ = directionZ * particleSpeed;
+						_level.sendParticles(particleType, centerX, centerY, centerZ, 0, velocityX, velocityY, velocityZ, particleSpeed);
+					}
+				}
 				if (!world.isClientSide()) {
 					BlockPos _bp = BlockPos.containing(x, y, z);
 					BlockEntity _blockEntity = world.getBlockEntity(_bp);
@@ -53,6 +75,17 @@ public class TombstoneAbyssOnBlockRightClickedProcedure {
 					}
 				}
 				VlAbyssMod.queueServerWork(12000, () -> {
+					if (!world.isClientSide()) {
+						BlockPos _blockPos = BlockPos.containing(x, y, z);
+						BlockEntity _blockEntity = world.getBlockEntity(_blockPos);
+						if (_blockEntity != null) {
+							_blockEntity.getPersistentData().remove("recarregando");
+							if (world instanceof Level _level) {
+								BlockState _blockState = _level.getBlockState(_blockPos);
+								_level.sendBlockUpdated(_blockPos, _blockState, _blockState, 3);
+							}
+						}
+					}
 					{
 						int _value = 1;
 						BlockPos _pos = BlockPos.containing(x, y, z);
@@ -69,6 +102,28 @@ public class TombstoneAbyssOnBlockRightClickedProcedure {
 					if (_bs.getBlock().getStateDefinition().getProperty("blockstate") instanceof IntegerProperty _integerProp && _integerProp.getPossibleValues().contains(_value))
 						world.setBlock(_pos, _bs.setValue(_integerProp, _value), 3);
 				}
+				if (world instanceof net.minecraft.server.level.ServerLevel) {
+					net.minecraft.server.level.ServerLevel _level = (net.minecraft.server.level.ServerLevel) world;
+					int particleCount = (int) 40;
+					double centerX = x;
+					double centerY = y;
+					double centerZ = z;
+					double particleSpeed = 0.8;
+					net.minecraft.core.particles.ParticleOptions particleType = net.minecraft.core.particles.ParticleTypes.GLOW_SQUID_INK;
+					for (int i = 0; i < particleCount; i++) {
+						double u = Math.random();
+						double v = Math.random();
+						double theta = 2 * Math.PI * u;
+						double phi = Math.acos(2 * v - 1);
+						double directionX = Math.sin(phi) * Math.cos(theta);
+						double directionY = Math.cos(phi);
+						double directionZ = Math.sin(phi) * Math.sin(theta);
+						double velocityX = directionX * particleSpeed;
+						double velocityY = directionY * particleSpeed;
+						double velocityZ = directionZ * particleSpeed;
+						_level.sendParticles(particleType, centerX, centerY, centerZ, 0, velocityX, velocityY, velocityZ, particleSpeed);
+					}
+				}
 				if (!world.isClientSide()) {
 					BlockPos _bp = BlockPos.containing(x, y, z);
 					BlockEntity _blockEntity = world.getBlockEntity(_bp);
@@ -79,6 +134,17 @@ public class TombstoneAbyssOnBlockRightClickedProcedure {
 						_level.sendBlockUpdated(_bp, _bs, _bs, 3);
 				}
 				VlAbyssMod.queueServerWork(12000, () -> {
+					if (!world.isClientSide()) {
+						BlockPos _blockPos = BlockPos.containing(x, y, z);
+						BlockEntity _blockEntity = world.getBlockEntity(_blockPos);
+						if (_blockEntity != null) {
+							_blockEntity.getPersistentData().remove("recarregando");
+							if (world instanceof Level _level) {
+								BlockState _blockState = _level.getBlockState(_blockPos);
+								_level.sendBlockUpdated(_blockPos, _blockState, _blockState, 3);
+							}
+						}
+					}
 					{
 						int _value = 1;
 						BlockPos _pos = BlockPos.containing(x, y, z);
@@ -95,6 +161,28 @@ public class TombstoneAbyssOnBlockRightClickedProcedure {
 					if (_bs.getBlock().getStateDefinition().getProperty("blockstate") instanceof IntegerProperty _integerProp && _integerProp.getPossibleValues().contains(_value))
 						world.setBlock(_pos, _bs.setValue(_integerProp, _value), 3);
 				}
+				if (world instanceof net.minecraft.server.level.ServerLevel) {
+					net.minecraft.server.level.ServerLevel _level = (net.minecraft.server.level.ServerLevel) world;
+					int particleCount = (int) 40;
+					double centerX = x;
+					double centerY = y;
+					double centerZ = z;
+					double particleSpeed = 0.8;
+					net.minecraft.core.particles.ParticleOptions particleType = net.minecraft.core.particles.ParticleTypes.GLOW_SQUID_INK;
+					for (int i = 0; i < particleCount; i++) {
+						double u = Math.random();
+						double v = Math.random();
+						double theta = 2 * Math.PI * u;
+						double phi = Math.acos(2 * v - 1);
+						double directionX = Math.sin(phi) * Math.cos(theta);
+						double directionY = Math.cos(phi);
+						double directionZ = Math.sin(phi) * Math.sin(theta);
+						double velocityX = directionX * particleSpeed;
+						double velocityY = directionY * particleSpeed;
+						double velocityZ = directionZ * particleSpeed;
+						_level.sendParticles(particleType, centerX, centerY, centerZ, 0, velocityX, velocityY, velocityZ, particleSpeed);
+					}
+				}
 				if (!world.isClientSide()) {
 					BlockPos _bp = BlockPos.containing(x, y, z);
 					BlockEntity _blockEntity = world.getBlockEntity(_bp);
@@ -105,6 +193,17 @@ public class TombstoneAbyssOnBlockRightClickedProcedure {
 						_level.sendBlockUpdated(_bp, _bs, _bs, 3);
 				}
 				VlAbyssMod.queueServerWork(12000, () -> {
+					if (!world.isClientSide()) {
+						BlockPos _blockPos = BlockPos.containing(x, y, z);
+						BlockEntity _blockEntity = world.getBlockEntity(_blockPos);
+						if (_blockEntity != null) {
+							_blockEntity.getPersistentData().remove("recarregando");
+							if (world instanceof Level _level) {
+								BlockState _blockState = _level.getBlockState(_blockPos);
+								_level.sendBlockUpdated(_blockPos, _blockState, _blockState, 3);
+							}
+						}
+					}
 					{
 						int _value = 1;
 						BlockPos _pos = BlockPos.containing(x, y, z);
@@ -121,6 +220,28 @@ public class TombstoneAbyssOnBlockRightClickedProcedure {
 					if (_bs.getBlock().getStateDefinition().getProperty("blockstate") instanceof IntegerProperty _integerProp && _integerProp.getPossibleValues().contains(_value))
 						world.setBlock(_pos, _bs.setValue(_integerProp, _value), 3);
 				}
+				if (world instanceof net.minecraft.server.level.ServerLevel) {
+					net.minecraft.server.level.ServerLevel _level = (net.minecraft.server.level.ServerLevel) world;
+					int particleCount = (int) 40;
+					double centerX = x;
+					double centerY = y;
+					double centerZ = z;
+					double particleSpeed = 0.8;
+					net.minecraft.core.particles.ParticleOptions particleType = net.minecraft.core.particles.ParticleTypes.GLOW_SQUID_INK;
+					for (int i = 0; i < particleCount; i++) {
+						double u = Math.random();
+						double v = Math.random();
+						double theta = 2 * Math.PI * u;
+						double phi = Math.acos(2 * v - 1);
+						double directionX = Math.sin(phi) * Math.cos(theta);
+						double directionY = Math.cos(phi);
+						double directionZ = Math.sin(phi) * Math.sin(theta);
+						double velocityX = directionX * particleSpeed;
+						double velocityY = directionY * particleSpeed;
+						double velocityZ = directionZ * particleSpeed;
+						_level.sendParticles(particleType, centerX, centerY, centerZ, 0, velocityX, velocityY, velocityZ, particleSpeed);
+					}
+				}
 				if (!world.isClientSide()) {
 					BlockPos _bp = BlockPos.containing(x, y, z);
 					BlockEntity _blockEntity = world.getBlockEntity(_bp);
@@ -131,6 +252,17 @@ public class TombstoneAbyssOnBlockRightClickedProcedure {
 						_level.sendBlockUpdated(_bp, _bs, _bs, 3);
 				}
 				VlAbyssMod.queueServerWork(12000, () -> {
+					if (!world.isClientSide()) {
+						BlockPos _blockPos = BlockPos.containing(x, y, z);
+						BlockEntity _blockEntity = world.getBlockEntity(_blockPos);
+						if (_blockEntity != null) {
+							_blockEntity.getPersistentData().remove("recarregando");
+							if (world instanceof Level _level) {
+								BlockState _blockState = _level.getBlockState(_blockPos);
+								_level.sendBlockUpdated(_blockPos, _blockState, _blockState, 3);
+							}
+						}
+					}
 					{
 						int _value = 1;
 						BlockPos _pos = BlockPos.containing(x, y, z);
@@ -157,6 +289,17 @@ public class TombstoneAbyssOnBlockRightClickedProcedure {
 						return false;
 					}
 				}.getValue(world, BlockPos.containing(x, y, z), "recarregando")) {
+					if (!world.isClientSide()) {
+						BlockPos _blockPos = BlockPos.containing(x, y, z);
+						BlockEntity _blockEntity = world.getBlockEntity(_blockPos);
+						if (_blockEntity != null) {
+							_blockEntity.getPersistentData().remove("recarregando");
+							if (world instanceof Level _level) {
+								BlockState _blockState = _level.getBlockState(_blockPos);
+								_level.sendBlockUpdated(_blockPos, _blockState, _blockState, 3);
+							}
+						}
+					}
 					{
 						int _value = 1;
 						BlockPos _pos = BlockPos.containing(x, y, z);

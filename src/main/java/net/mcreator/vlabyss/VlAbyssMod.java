@@ -43,13 +43,12 @@ public class VlAbyssMod {
 	public static final Logger LOGGER = LogManager.getLogger(VlAbyssMod.class);
 	public static final String MODID = "vl_abyss";
 
-	public VlAbyssMod() {
+	public VlAbyssMod(FMLJavaModLoadingContext context) {
 		// Start of user code block mod constructor
 		// End of user code block mod constructor
 		MinecraftForge.EVENT_BUS.register(this);
-		IEventBus bus = FMLJavaModLoadingContext.get().getModEventBus();
+		IEventBus bus = context.getModEventBus();
 		VlAbyssModSounds.REGISTRY.register(bus);
-		VlAbyssModAttributes.REGISTRY.register(bus);
 		VlAbyssModBlocks.REGISTRY.register(bus);
 		VlAbyssModBlockEntities.REGISTRY.register(bus);
 		VlAbyssModItems.REGISTRY.register(bus);
@@ -62,7 +61,7 @@ public class VlAbyssMod {
 		VlAbyssModParticleTypes.REGISTRY.register(bus);
 		VlAbyssModVillagerProfessions.PROFESSIONS.register(bus);
 		VlAbyssModMenus.REGISTRY.register(bus);
-
+		VlAbyssModAttributes.REGISTRY.register(bus);
 		// Start of user code block mod init
 		// End of user code block mod init
 	}
@@ -70,7 +69,7 @@ public class VlAbyssMod {
 	// Start of user code block mod methods
 	// End of user code block mod methods
 	private static final String PROTOCOL_VERSION = "1";
-	public static final SimpleChannel PACKET_HANDLER = NetworkRegistry.newSimpleChannel(new ResourceLocation(MODID, MODID), () -> PROTOCOL_VERSION, PROTOCOL_VERSION::equals, PROTOCOL_VERSION::equals);
+	public static final SimpleChannel PACKET_HANDLER = NetworkRegistry.newSimpleChannel(ResourceLocation.fromNamespaceAndPath(MODID, MODID), () -> PROTOCOL_VERSION, PROTOCOL_VERSION::equals, PROTOCOL_VERSION::equals);
 	private static int messageID = 0;
 
 	public static <T> void addNetworkMessage(Class<T> messageType, BiConsumer<T, FriendlyByteBuf> encoder, Function<FriendlyByteBuf, T> decoder, BiConsumer<T, Supplier<NetworkEvent.Context>> messageConsumer) {

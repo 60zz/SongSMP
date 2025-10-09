@@ -2,19 +2,13 @@
   "_fv": 79,
   "_type": "attribute",
   "definition": {
+    "name": "Inteligencia",
     "minValue": 0.0,
-    "maxValue": 100.0,
+    "maxValue": 10.0,
     "defaultValue": 0.0,
     "sentiment": "POSITIVE",
     "addToAllEntities": false,
-    "addToPlayers": false,
-    "entities": [
-      {
-        "value": "EntityPlayer"
-      },
-      {
-        "value": "EntityPlayerMP"
-      }
-    ]
+    "addToPlayers": true,
+    "entities": []
   }
 }

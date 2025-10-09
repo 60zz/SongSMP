@@ -10,13 +10,13 @@ import net.mcreator.vlabyss.procedures.ShadowCopyEffectExpiresProcedure;
 
 public class ShadowCopyMobEffect extends MobEffect {
 	public ShadowCopyMobEffect() {
-		super(MobEffectCategory.NEUTRAL, -16777216);
+		super(MobEffectCategory.BENEFICIAL, -16777216);
 	}
 
 	@Override
 	public void addAttributeModifiers(LivingEntity entity, AttributeMap attributeMap, int amplifier) {
 		super.addAttributeModifiers(entity, attributeMap, amplifier);
-		ShadowCopyEffectStartedappliedProcedure.execute(entity.level(), entity.getX(), entity.getY(), entity.getZ());
+		ShadowCopyEffectStartedappliedProcedure.execute(entity.level(), entity.getX(), entity.getY(), entity.getZ(), entity);
 	}
 
 	@Override

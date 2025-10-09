@@ -1,12 +1,17 @@
 package net.mcreator.vlabyss.procedures;
 
 import net.minecraft.world.entity.player.Player;
+import net.minecraft.world.entity.ai.attributes.AttributeModifier;
+import net.minecraft.world.entity.LivingEntity;
 import net.minecraft.world.entity.Entity;
 import net.minecraft.network.chat.Component;
 import net.minecraft.commands.arguments.EntityArgument;
 import net.minecraft.commands.CommandSourceStack;
 
 import net.mcreator.vlabyss.network.VlAbyssModVariables;
+import net.mcreator.vlabyss.init.VlAbyssModAttributes;
+
+import java.util.UUID;
 
 import com.mojang.brigadier.exceptions.CommandSyntaxException;
 import com.mojang.brigadier.context.CommandContext;
@@ -26,6 +31,10 @@ public class LumivivoClasseProcedure {
 							capability.syncPlayerVariables(entityiterator);
 						});
 					}
+					if (!(((LivingEntity) entityiterator).getAttribute(VlAbyssModAttributes.INTELIGENCIA.get())
+							.hasModifier((new AttributeModifier(UUID.fromString("61fbe6c9-72e2-4647-8c8e-723c03bb58ab"), "lumivivo", 2, AttributeModifier.Operation.ADDITION)))))
+						((LivingEntity) entityiterator).getAttribute(VlAbyssModAttributes.INTELIGENCIA.get())
+								.addPermanentModifier((new AttributeModifier(UUID.fromString("61fbe6c9-72e2-4647-8c8e-723c03bb58ab"), "lumivivo", 2, AttributeModifier.Operation.ADDITION)));
 					if (entityiterator instanceof Player _player && !_player.level().isClientSide())
 						_player.displayClientMessage(Component.literal("\u00A7bVoc\u00EA agora est\u00E1 na classe \u00A73LUMIVIVO"), false);
 					if (entity instanceof Player _player && !_player.level().isClientSide())
@@ -42,6 +51,8 @@ public class LumivivoClasseProcedure {
 						_player.displayClientMessage(Component.literal("\u00A7bVoc\u00EA foi removido da classe \u00A73LUMIVIVO"), false);
 					if (entity instanceof Player _player && !_player.level().isClientSide())
 						_player.displayClientMessage(Component.literal(("\u00A7bVoc\u00EA removeu " + entityiterator.getDisplayName().getString() + " na classe \u00A73LUMIVIVO")), false);
+					((LivingEntity) entityiterator).getAttribute(VlAbyssModAttributes.INTELIGENCIA.get())
+							.removePermanentModifier((new AttributeModifier(UUID.fromString("61fbe6c9-72e2-4647-8c8e-723c03bb58ab"), "lumivivo", 2, AttributeModifier.Operation.ADDITION)).getId());
 				}
 			}
 		} catch (CommandSyntaxException e) {

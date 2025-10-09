@@ -52,7 +52,7 @@ public class PlanarMessage {
 			return;
 		if (type == 0) {
 
-			PlanarOnKeyPressedProcedure.execute(entity);
+			PlanarOnKeyPressedProcedure.execute(world, x, y, z, entity);
 		}
 		if (type == 1) {
 

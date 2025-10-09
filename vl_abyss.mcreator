@@ -99,17 +99,6 @@
       "path": "~/VL1_Abyss/PlayerAnimatorSetup"
     },
     {
-      "name": "Inteligencia",
-      "type": "attribute",
-      "compiles": true,
-      "locked_code": false,
-      "registry_name": "inteligencia",
-      "metadata": {
-        "files": []
-      },
-      "path": "~/VL1_Abyss/Classes"
-    },
-    {
       "name": "MapaabyssalDisplayOverlayIngame",
       "type": "procedure",
       "compiles": true,
@@ -366,7 +355,7 @@
     {
       "name": "TomouHitParry",
       "type": "procedure",
-      "compiles": false,
+      "compiles": true,
       "locked_code": false,
       "registry_name": "tomou_hit_parry",
       "metadata": {
@@ -401,29 +390,6 @@
         ]
       },
       "path": "~/VL1_Abyss/Parry"
-    },
-    {
-      "name": "ParryOnKeyPressed",
-      "type": "procedure",
-      "compiles": false,
-      "locked_code": false,
-      "registry_name": "parry_on_key_pressed",
-      "metadata": {
-        "files": [
-          "src/main/java/net/mcreator/vlabyss/procedures/ParryOnKeyPressedProcedure.java"
-        ],
-        "dependencies": [
-          {
-            "name": "entity",
-            "type": "entity"
-          },
-          {
-            "name": "world",
-            "type": "world"
-          }
-        ]
-      },
-      "path": "~/VL1_Abyss/Parry/Key"
     },
     {
       "name": "Parry",
@@ -884,45 +850,6 @@
       "path": "~/VL1_Abyss/Alma/Dano"
     },
     {
-      "name": "MantraSoulRightClickedOnEntity",
-      "type": "procedure",
-      "compiles": false,
-      "locked_code": false,
-      "registry_name": "mantra_soul_right_clicked_on_entity",
-      "metadata": {
-        "files": [
-          "src/main/java/net/mcreator/vlabyss/procedures/MantraSoulRightClickedOnEntityProcedure.java"
-        ],
-        "dependencies": [
-          {
-            "name": "entity",
-            "type": "entity"
-          },
-          {
-            "name": "sourceentity",
-            "type": "entity"
-          },
-          {
-            "name": "x",
-            "type": "number"
-          },
-          {
-            "name": "y",
-            "type": "number"
-          },
-          {
-            "name": "z",
-            "type": "number"
-          },
-          {
-            "name": "world",
-            "type": "world"
-          }
-        ]
-      },
-      "path": "~/VL1_Abyss/Alma/Alma"
-    },
-    {
       "name": "CapuzEsquecido",
       "type": "curiosbauble",
       "compiles": true,
@@ -995,7 +922,7 @@
     {
       "name": "VotoSilenciosoHittado",
       "type": "procedure",
-      "compiles": false,
+      "compiles": true,
       "locked_code": false,
       "registry_name": "voto_silencioso_hittado",
       "metadata": {
@@ -1005,6 +932,10 @@
         "dependencies": [
           {
             "name": "entity",
+            "type": "entity"
+          },
+          {
+            "name": "sourceentity",
             "type": "entity"
           }
         ]
@@ -1074,7 +1005,7 @@
     {
       "name": "SangrandoOnEffectActiveTick",
       "type": "procedure",
-      "compiles": false,
+      "compiles": true,
       "locked_code": false,
       "registry_name": "sangrando_on_effect_active_tick",
       "metadata": {
@@ -1133,7 +1064,7 @@
     {
       "name": "InfoArtefatosAbyssal",
       "type": "procedure",
-      "compiles": false,
+      "compiles": true,
       "locked_code": false,
       "registry_name": "info_artefatos_abyssal",
       "metadata": {
@@ -1241,7 +1172,7 @@
     {
       "name": "DashFrenteOnKeyPressed",
       "type": "procedure",
-      "compiles": false,
+      "compiles": true,
       "locked_code": false,
       "registry_name": "dash_frente_on_key_pressed",
       "metadata": {
@@ -1370,29 +1301,6 @@
         ]
       },
       "path": "~/VL1_Abyss/Artefatos"
-    },
-    {
-      "name": "AcertouComLuvaSangrenta",
-      "type": "procedure",
-      "compiles": false,
-      "locked_code": false,
-      "registry_name": "acertou_com_luva_sangrenta",
-      "metadata": {
-        "files": [
-          "src/main/java/net/mcreator/vlabyss/procedures/AcertouComLuvaSangrentaProcedure.java"
-        ],
-        "dependencies": [
-          {
-            "name": "entity",
-            "type": "entity"
-          },
-          {
-            "name": "sourceentity",
-            "type": "entity"
-          }
-        ]
-      },
-      "path": "~/VL1_Abyss/Artefatos/Procedure"
     },
     {
       "name": "AnelEnferrujado",
@@ -1535,7 +1443,7 @@
             "type": "entity"
           },
           {
-            "name": "originaldamagemodifier",
+            "name": "damagemodifier",
             "type": "number"
           },
           {
@@ -2769,7 +2677,7 @@
     {
       "name": "PlanarOnKeyPressed",
       "type": "procedure",
-      "compiles": false,
+      "compiles": true,
       "locked_code": false,
       "registry_name": "planar_on_key_pressed",
       "metadata": {
@@ -2780,6 +2688,22 @@
           {
             "name": "entity",
             "type": "entity"
+          },
+          {
+            "name": "x",
+            "type": "number"
+          },
+          {
+            "name": "y",
+            "type": "number"
+          },
+          {
+            "name": "z",
+            "type": "number"
+          },
+          {
+            "name": "world",
+            "type": "world"
           }
         ]
       },
@@ -2820,7 +2744,7 @@
     {
       "name": "PlayerTick",
       "type": "procedure",
-      "compiles": false,
+      "compiles": true,
       "locked_code": false,
       "registry_name": "player_tick",
       "metadata": {
@@ -2852,7 +2776,7 @@
     {
       "name": "HabilidadePrimariaOnKeyPressed",
       "type": "procedure",
-      "compiles": false,
+      "compiles": true,
       "locked_code": false,
       "registry_name": "habilidade_primaria_on_key_pressed",
       "metadata": {
@@ -2959,7 +2883,7 @@
     {
       "name": "RespiroPrimariaWhileProjectileFlyingTick",
       "type": "procedure",
-      "compiles": false,
+      "compiles": true,
       "locked_code": false,
       "registry_name": "respiro_primaria_while_projectile_flying_tick",
       "metadata": {
@@ -3036,7 +2960,7 @@
     {
       "name": "AdagaAssassinoBateu",
       "type": "procedure",
-      "compiles": false,
+      "compiles": true,
       "locked_code": false,
       "registry_name": "adaga_assassino_bateu",
       "metadata": {
@@ -3360,7 +3284,7 @@
     {
       "name": "SistemaReputacao",
       "type": "procedure",
-      "compiles": false,
+      "compiles": true,
       "locked_code": false,
       "registry_name": "sistema_reputacao",
       "metadata": {
@@ -3547,6 +3471,10 @@
           "src/main/java/net/mcreator/vlabyss/procedures/ShadowCopyEffectStartedappliedProcedure.java"
         ],
         "dependencies": [
+          {
+            "name": "entity",
+            "type": "entity"
+          },
           {
             "name": "x",
             "type": "number"
@@ -4065,7 +3993,12 @@
         "files": [
           "src/main/java/net/mcreator/vlabyss/procedures/RemoveNbtProcedureProcedure.java"
         ],
-        "dependencies": []
+        "dependencies": [
+          {
+            "name": "arguments",
+            "type": "cmdcontext"
+          }
+        ]
       },
       "path": "~/ComandosStaff/SetNBT"
     },
@@ -4102,7 +4035,16 @@
         "files": [
           "src/main/java/net/mcreator/vlabyss/procedures/RemoveNbtBlockProcedureProcedure.java"
         ],
-        "dependencies": []
+        "dependencies": [
+          {
+            "name": "arguments",
+            "type": "cmdcontext"
+          },
+          {
+            "name": "world",
+            "type": "world"
+          }
+        ]
       },
       "path": "~/ComandosStaff/SetNBT"
     },
@@ -4206,7 +4148,7 @@
     {
       "name": "CavaleiroAladoOnEntityTickUpdate",
       "type": "procedure",
-      "compiles": false,
+      "compiles": true,
       "locked_code": false,
       "registry_name": "cavaleiro_alado_on_entity_tick_update",
       "metadata": {
@@ -4480,7 +4422,7 @@
     {
       "name": "MetalForgingOnTickUpdate",
       "type": "procedure",
-      "compiles": false,
+      "compiles": true,
       "locked_code": false,
       "registry_name": "metal_forging_on_tick_update",
       "metadata": {
@@ -4561,6 +4503,98 @@
         ]
       },
       "path": "~/VL1_Abyss/AbismoBosses/BlocoInvocacao"
+    },
+    {
+      "name": "AcertouComLuvaSangrenta",
+      "type": "procedure",
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "acertou_com_luva_sangrenta",
+      "metadata": {
+        "dependencies": [
+          {
+            "name": "sourceentity",
+            "type": "entity"
+          }
+        ],
+        "files": [
+          "src/main/java/net/mcreator/vlabyss/procedures/AcertouComLuvaSangrentaProcedure.java"
+        ]
+      },
+      "path": "~/VL1_Abyss/Artefatos/Procedure"
+    },
+    {
+      "name": "ParryOnKeyPressed",
+      "type": "procedure",
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "parry_on_key_pressed",
+      "metadata": {
+        "dependencies": [
+          {
+            "name": "entity",
+            "type": "entity"
+          },
+          {
+            "name": "world",
+            "type": "world"
+          }
+        ],
+        "files": [
+          "src/main/java/net/mcreator/vlabyss/procedures/ParryOnKeyPressedProcedure.java"
+        ]
+      },
+      "path": "~/VL1_Abyss/Parry/Key"
+    },
+    {
+      "name": "MantraSoulRightClickedOnEntity",
+      "type": "procedure",
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "mantra_soul_right_clicked_on_entity",
+      "metadata": {
+        "dependencies": [
+          {
+            "name": "entity",
+            "type": "entity"
+          },
+          {
+            "name": "sourceentity",
+            "type": "entity"
+          },
+          {
+            "name": "x",
+            "type": "number"
+          },
+          {
+            "name": "y",
+            "type": "number"
+          },
+          {
+            "name": "z",
+            "type": "number"
+          },
+          {
+            "name": "world",
+            "type": "world"
+          }
+        ],
+        "files": [
+          "src/main/java/net/mcreator/vlabyss/procedures/MantraSoulRightClickedOnEntityProcedure.java"
+        ]
+      },
+      "path": "~/VL1_Abyss/Alma/Alma"
+    },
+    {
+      "name": "Inteligencia",
+      "type": "attribute",
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "inteligencia",
+      "metadata": {
+        "files": []
+      },
+      "path": "~/VL1_Abyss/Classes/Comando"
     }
   ],
   "variable_elements": [
@@ -5255,7 +5289,8 @@
       "item.vl_abyss.cinto_dos_ecos": "Cinto dos Ecos",
       "subtitles.mapaabyss": "",
       "item.vl_abyss.luvas_lua_sangrenta": "Luvas da Lua Sangrenta",
-      "item.vl_abyss.pocao_renascimento": "Poção do Renascimento"
+      "item.vl_abyss.pocao_renascimento": "Poção do Renascimento",
+      "attribute.vl_abyss.inteligencia": "Inteligencia"
     }
   },
   "metadata": {
@@ -5812,5 +5847,5 @@
     "credits": "https://discord.gg/vlmp",
     "modElementsPackage": "net.mcreator.vlabyss"
   },
-  "mcreatorVersion": 202500227613
+  "mcreatorVersion": 202500228610
 }

@@ -27,15 +27,17 @@ public class PlayerTickProcedure {
 		execute(null, entity);
 	}
 
-private static void execute(
-@Nullable Event event,
-Entity entity ) {
-if (
-entity == null ) return ;
-if ((entity.getCapability(VlAbyssModVariables.PLAYER_VARIABLES_CAPABILITY, null)
-.orElse(new VlAbyssModVariables.PlayerVariables())).Chama>=1&&(entity.getCapability(VlAbyssModVariables.PLAYER_VARIABLES_CAPABILITY, null)
-.orElse(new VlAbyssModVariables.PlayerVariables())).MantraRegistrada==true) {if (||entity.isInLava()) {if(entity instanceof LivingEntity _entity && !_entity.level().isClientSide())
-_entity.addEffect(new MobEffectInstance(MobEffects.FIRE_RESISTANCE,400,4));if(entity instanceof LivingEntity _entity && !_entity.level().isClientSide())
-_entity.addEffect(new MobEffectInstance(MobEffects.REGENERATION,20,0));}}
-}
+	private static void execute(@Nullable Event event, Entity entity) {
+		if (entity == null)
+			return;
+		if ((entity.getCapability(VlAbyssModVariables.PLAYER_VARIABLES_CAPABILITY, null).orElse(new VlAbyssModVariables.PlayerVariables())).Chama >= 1
+				&& (entity.getCapability(VlAbyssModVariables.PLAYER_VARIABLES_CAPABILITY, null).orElse(new VlAbyssModVariables.PlayerVariables())).MantraRegistrada == true) {
+			if (entity.isOnFire() || entity.isInLava()) {
+				if (entity instanceof LivingEntity _entity && !_entity.level().isClientSide())
+					_entity.addEffect(new MobEffectInstance(MobEffects.FIRE_RESISTANCE, 400, 4));
+				if (entity instanceof LivingEntity _entity && !_entity.level().isClientSide())
+					_entity.addEffect(new MobEffectInstance(MobEffects.REGENERATION, 20, 0));
+			}
+		}
+	}
 }

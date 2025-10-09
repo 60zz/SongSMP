@@ -27,6 +27,17 @@ public class MelhoraIngotAbyssionProcedure {
 					_level.sendBlockUpdated(_bp, _bs, _bs, 3);
 			}
 		} else {
+			if (!world.isClientSide()) {
+				BlockPos _blockPos = BlockPos.containing(x, y, z);
+				BlockEntity _blockEntity = world.getBlockEntity(_blockPos);
+				if (_blockEntity != null) {
+					_blockEntity.getPersistentData().remove("max_item");
+					if (world instanceof Level _level) {
+						BlockState _blockState = _level.getBlockState(_blockPos);
+						_level.sendBlockUpdated(_blockPos, _blockState, _blockState, 3);
+					}
+				}
+			}
 		}
 	}
 }

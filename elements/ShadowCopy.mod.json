@@ -3,13 +3,16 @@
   "_type": "potioneffect",
   "definition": {
     "effectName": "Cópia das Sombras",
-    "icon": "escuridao.png",
+    "icon": "escuridao",
     "color": {
       "value": -16777216,
       "falpha": 0.0
     },
+    "onAddedSound": {
+      "value": ""
+    },
     "isInstant": false,
-    "mobEffectCategory": "NEUTRAL",
+    "mobEffectCategory": "BENEFICIAL",
     "renderStatusInInventory": true,
     "renderStatusInHUD": true,
     "isCuredbyHoney": false,

@@ -24,10 +24,13 @@ public class EntrouRemoveCooldownProcedure {
 		if (entity == null)
 			return;
 		if (entity.getPersistentData().getBoolean("cooldown")) {
+			entity.getPersistentData().remove("cooldown");
 		}
 		if (entity.getPersistentData().getBoolean("perry")) {
+			entity.getPersistentData().remove("perry");
 		}
 		if (entity.getPersistentData().getBoolean("hitado")) {
+			entity.getPersistentData().remove("hitado");
 		}
 	}
 }

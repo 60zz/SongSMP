@@ -70,7 +70,7 @@ public class SetNBTCommand {
 					if (entity != null)
 						direction = entity.getDirection();
 
-					RemoveNbtProcedureProcedure.execute();
+					RemoveNbtProcedureProcedure.execute(arguments);
 					return 0;
 				})))).then(Commands.literal("block").then(Commands.argument("blockentity", BlockPosArgument.blockPos()).then(Commands.argument("nbt", MessageArgument.message()).executes(arguments -> {
 					Level world = arguments.getSource().getUnsidedLevel();
@@ -84,7 +84,7 @@ public class SetNBTCommand {
 					if (entity != null)
 						direction = entity.getDirection();
 
-					RemoveNbtBlockProcedureProcedure.execute();
+					RemoveNbtBlockProcedureProcedure.execute(world, arguments);
 					return 0;
 				}))))));
 	}

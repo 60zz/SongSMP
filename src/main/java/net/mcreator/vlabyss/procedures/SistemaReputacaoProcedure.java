@@ -6,6 +6,8 @@ import net.minecraftforge.eventbus.api.Event;
 import net.minecraftforge.event.entity.living.LivingDeathEvent;
 
 import net.minecraft.world.entity.player.Player;
+import net.minecraft.world.entity.npc.AbstractVillager;
+import net.minecraft.world.entity.Mob;
 import net.minecraft.world.entity.Entity;
 
 import net.mcreator.vlabyss.network.VlAbyssModVariables;
@@ -25,69 +27,67 @@ public class SistemaReputacaoProcedure {
 		execute(null, entity, sourceentity);
 	}
 
-private static void execute(
-@Nullable Event event,
-Entity entity,
-Entity sourceentity ) {
-if (
-entity == null ||
-sourceentity == null ) return ;
-if () {if (!((sourceentity.getCapability(VlAbyssModVariables.PLAYER_VARIABLES_CAPABILITY, null)
-.orElse(new VlAbyssModVariables.PlayerVariables())).reputacao==-5)) {{
-double _setval = (sourceentity.getCapability(VlAbyssModVariables.PLAYER_VARIABLES_CAPABILITY, null)
-.orElse(new VlAbyssModVariables.PlayerVariables())).reputacao-1;
-sourceentity.getCapability(VlAbyssModVariables.PLAYER_VARIABLES_CAPABILITY, null).ifPresent(capability -> {
-capability.reputacao = _setval;
-capability.syncPlayerVariables(sourceentity);
-});
-}
-}}else if (entity instanceof Player&&(entity.getCapability(VlAbyssModVariables.PLAYER_VARIABLES_CAPABILITY, null)
-.orElse(new VlAbyssModVariables.PlayerVariables())).reputacao<0) {if (!((sourceentity.getCapability(VlAbyssModVariables.PLAYER_VARIABLES_CAPABILITY, null)
-.orElse(new VlAbyssModVariables.PlayerVariables())).reputacao==10)) {{
-double _setval = (sourceentity.getCapability(VlAbyssModVariables.PLAYER_VARIABLES_CAPABILITY, null)
-.orElse(new VlAbyssModVariables.PlayerVariables())).reputacao+2;
-sourceentity.getCapability(VlAbyssModVariables.PLAYER_VARIABLES_CAPABILITY, null).ifPresent(capability -> {
-capability.reputacao = _setval;
-capability.syncPlayerVariables(sourceentity);
-});
-}
-}else if ((sourceentity.getCapability(VlAbyssModVariables.PLAYER_VARIABLES_CAPABILITY, null)
-.orElse(new VlAbyssModVariables.PlayerVariables())).reputacao==9) {{
-double _setval = (sourceentity.getCapability(VlAbyssModVariables.PLAYER_VARIABLES_CAPABILITY, null)
-.orElse(new VlAbyssModVariables.PlayerVariables())).reputacao+1;
-sourceentity.getCapability(VlAbyssModVariables.PLAYER_VARIABLES_CAPABILITY, null).ifPresent(capability -> {
-capability.reputacao = _setval;
-capability.syncPlayerVariables(sourceentity);
-});
-}
-}}else if (entity instanceof Player&&(entity.getCapability(VlAbyssModVariables.PLAYER_VARIABLES_CAPABILITY, null)
-.orElse(new VlAbyssModVariables.PlayerVariables())).reputacao>=0) {if (!((sourceentity.getCapability(VlAbyssModVariables.PLAYER_VARIABLES_CAPABILITY, null)
-.orElse(new VlAbyssModVariables.PlayerVariables())).reputacao==-5)) {{
-double _setval = (sourceentity.getCapability(VlAbyssModVariables.PLAYER_VARIABLES_CAPABILITY, null)
-.orElse(new VlAbyssModVariables.PlayerVariables())).reputacao-2;
-sourceentity.getCapability(VlAbyssModVariables.PLAYER_VARIABLES_CAPABILITY, null).ifPresent(capability -> {
-capability.reputacao = _setval;
-capability.syncPlayerVariables(sourceentity);
-});
-}
-}else if ((sourceentity.getCapability(VlAbyssModVariables.PLAYER_VARIABLES_CAPABILITY, null)
-.orElse(new VlAbyssModVariables.PlayerVariables())).reputacao==-4) {{
-double _setval = (sourceentity.getCapability(VlAbyssModVariables.PLAYER_VARIABLES_CAPABILITY, null)
-.orElse(new VlAbyssModVariables.PlayerVariables())).reputacao-(-1);
-sourceentity.getCapability(VlAbyssModVariables.PLAYER_VARIABLES_CAPABILITY, null).ifPresent(capability -> {
-capability.reputacao = _setval;
-capability.syncPlayerVariables(sourceentity);
-});
-}
-}}else if () {if (Math.random()>=0.8) {if (!((sourceentity.getCapability(VlAbyssModVariables.PLAYER_VARIABLES_CAPABILITY, null)
-.orElse(new VlAbyssModVariables.PlayerVariables())).reputacao==10)) {{
-double _setval = (sourceentity.getCapability(VlAbyssModVariables.PLAYER_VARIABLES_CAPABILITY, null)
-.orElse(new VlAbyssModVariables.PlayerVariables())).reputacao+1;
-sourceentity.getCapability(VlAbyssModVariables.PLAYER_VARIABLES_CAPABILITY, null).ifPresent(capability -> {
-capability.reputacao = _setval;
-capability.syncPlayerVariables(sourceentity);
-});
-}
-}}}
-}
+	private static void execute(@Nullable Event event, Entity entity, Entity sourceentity) {
+		if (entity == null || sourceentity == null)
+			return;
+		if (entity instanceof AbstractVillager) {
+			if (!((sourceentity.getCapability(VlAbyssModVariables.PLAYER_VARIABLES_CAPABILITY, null).orElse(new VlAbyssModVariables.PlayerVariables())).reputacao == -5)) {
+				{
+					double _setval = (sourceentity.getCapability(VlAbyssModVariables.PLAYER_VARIABLES_CAPABILITY, null).orElse(new VlAbyssModVariables.PlayerVariables())).reputacao - 1;
+					sourceentity.getCapability(VlAbyssModVariables.PLAYER_VARIABLES_CAPABILITY, null).ifPresent(capability -> {
+						capability.reputacao = _setval;
+						capability.syncPlayerVariables(sourceentity);
+					});
+				}
+			}
+		} else if (entity instanceof Player && (entity.getCapability(VlAbyssModVariables.PLAYER_VARIABLES_CAPABILITY, null).orElse(new VlAbyssModVariables.PlayerVariables())).reputacao < 0) {
+			if (!((sourceentity.getCapability(VlAbyssModVariables.PLAYER_VARIABLES_CAPABILITY, null).orElse(new VlAbyssModVariables.PlayerVariables())).reputacao == 10)) {
+				{
+					double _setval = (sourceentity.getCapability(VlAbyssModVariables.PLAYER_VARIABLES_CAPABILITY, null).orElse(new VlAbyssModVariables.PlayerVariables())).reputacao + 2;
+					sourceentity.getCapability(VlAbyssModVariables.PLAYER_VARIABLES_CAPABILITY, null).ifPresent(capability -> {
+						capability.reputacao = _setval;
+						capability.syncPlayerVariables(sourceentity);
+					});
+				}
+			} else if ((sourceentity.getCapability(VlAbyssModVariables.PLAYER_VARIABLES_CAPABILITY, null).orElse(new VlAbyssModVariables.PlayerVariables())).reputacao == 9) {
+				{
+					double _setval = (sourceentity.getCapability(VlAbyssModVariables.PLAYER_VARIABLES_CAPABILITY, null).orElse(new VlAbyssModVariables.PlayerVariables())).reputacao + 1;
+					sourceentity.getCapability(VlAbyssModVariables.PLAYER_VARIABLES_CAPABILITY, null).ifPresent(capability -> {
+						capability.reputacao = _setval;
+						capability.syncPlayerVariables(sourceentity);
+					});
+				}
+			}
+		} else if (entity instanceof Player && (entity.getCapability(VlAbyssModVariables.PLAYER_VARIABLES_CAPABILITY, null).orElse(new VlAbyssModVariables.PlayerVariables())).reputacao >= 0) {
+			if (!((sourceentity.getCapability(VlAbyssModVariables.PLAYER_VARIABLES_CAPABILITY, null).orElse(new VlAbyssModVariables.PlayerVariables())).reputacao == -5)) {
+				{
+					double _setval = (sourceentity.getCapability(VlAbyssModVariables.PLAYER_VARIABLES_CAPABILITY, null).orElse(new VlAbyssModVariables.PlayerVariables())).reputacao - 2;
+					sourceentity.getCapability(VlAbyssModVariables.PLAYER_VARIABLES_CAPABILITY, null).ifPresent(capability -> {
+						capability.reputacao = _setval;
+						capability.syncPlayerVariables(sourceentity);
+					});
+				}
+			} else if ((sourceentity.getCapability(VlAbyssModVariables.PLAYER_VARIABLES_CAPABILITY, null).orElse(new VlAbyssModVariables.PlayerVariables())).reputacao == -4) {
+				{
+					double _setval = (sourceentity.getCapability(VlAbyssModVariables.PLAYER_VARIABLES_CAPABILITY, null).orElse(new VlAbyssModVariables.PlayerVariables())).reputacao - (-1);
+					sourceentity.getCapability(VlAbyssModVariables.PLAYER_VARIABLES_CAPABILITY, null).ifPresent(capability -> {
+						capability.reputacao = _setval;
+						capability.syncPlayerVariables(sourceentity);
+					});
+				}
+			}
+		} else if (entity instanceof Mob) {
+			if (Math.random() >= 0.8) {
+				if (!((sourceentity.getCapability(VlAbyssModVariables.PLAYER_VARIABLES_CAPABILITY, null).orElse(new VlAbyssModVariables.PlayerVariables())).reputacao == 10)) {
+					{
+						double _setval = (sourceentity.getCapability(VlAbyssModVariables.PLAYER_VARIABLES_CAPABILITY, null).orElse(new VlAbyssModVariables.PlayerVariables())).reputacao + 1;
+						sourceentity.getCapability(VlAbyssModVariables.PLAYER_VARIABLES_CAPABILITY, null).ifPresent(capability -> {
+							capability.reputacao = _setval;
+							capability.syncPlayerVariables(sourceentity);
+						});
+					}
+				}
+			}
+		}
+	}
 }

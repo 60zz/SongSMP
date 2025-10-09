@@ -50,10 +50,12 @@ public class PoucaVidaSomProcedure {
 				} else if ((entity instanceof LivingEntity _livEnt ? _livEnt.getHealth() : -1) >= 10) {
 					if (entity instanceof LivingEntity _entity)
 						_entity.removeEffect(VlAbyssModMobEffects.INSANO.get());
+					entity.getPersistentData().remove("insanidade");
 				}
 			} else {
 				if (entity instanceof LivingEntity _entity)
 					_entity.removeEffect(VlAbyssModMobEffects.INSANO.get());
+				entity.getPersistentData().remove("insanidade");
 			}
 		}
 	}

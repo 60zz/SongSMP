@@ -11,6 +11,7 @@ import net.minecraftforge.event.entity.living.LivingDeathEvent;
 import net.minecraft.world.level.LevelAccessor;
 import net.minecraft.world.level.Level;
 import net.minecraft.world.entity.player.Player;
+import net.minecraft.world.entity.ai.attributes.AttributeModifier;
 import net.minecraft.world.entity.LivingEntity;
 import net.minecraft.world.entity.Entity;
 import net.minecraft.world.effect.MobEffects;
@@ -24,6 +25,8 @@ import net.mcreator.vlabyss.init.VlAbyssModItems;
 import net.mcreator.vlabyss.VlAbyssMod;
 
 import javax.annotation.Nullable;
+
+import java.util.UUID;
 
 @Mod.EventBusSubscriber
 public class MorreuComArtefatoPrimordialProcedure {
@@ -52,25 +55,31 @@ public class MorreuComArtefatoPrimordialProcedure {
 						_level.playLocalSound(x, y, z, ForgeRegistries.SOUND_EVENTS.getValue(ResourceLocation.parse("item.totem.use")), SoundSource.MASTER, 1, 1, false);
 					}
 				}
+				if (!(((LivingEntity) entity).getAttribute(net.minecraft.world.entity.ai.attributes.Attributes.MAX_HEALTH)
+						.hasModifier((new AttributeModifier(UUID.fromString("d91e77f4-2bb8-4dc6-b7ae-e9d794b5adba"), "vidaprimordial", (-5), AttributeModifier.Operation.ADDITION)))))
+					((LivingEntity) entity).getAttribute(net.minecraft.world.entity.ai.attributes.Attributes.MAX_HEALTH)
+							.addTransientModifier((new AttributeModifier(UUID.fromString("d91e77f4-2bb8-4dc6-b7ae-e9d794b5adba"), "vidaprimordial", (-5), AttributeModifier.Operation.ADDITION)));
 				if ((entity.getCapability(VlAbyssModVariables.PLAYER_VARIABLES_CAPABILITY, null).orElse(new VlAbyssModVariables.PlayerVariables())).Lumivivo == true) {
 					if (entity instanceof LivingEntity _entity && !_entity.level().isClientSide())
 						_entity.addEffect(new MobEffectInstance(MobEffects.HUNGER, 1200, 3));
 					if (entity instanceof LivingEntity _entity && !_entity.level().isClientSide())
 						_entity.addEffect(new MobEffectInstance(MobEffects.ABSORPTION, 400, 4));
 					VlAbyssMod.queueServerWork(1200, () -> {
+						((LivingEntity) entity).getAttribute(net.minecraft.world.entity.ai.attributes.Attributes.MAX_HEALTH)
+								.removeModifier((new AttributeModifier(UUID.fromString("d91e77f4-2bb8-4dc6-b7ae-e9d794b5adba"), "vidaprimordial", (-5), AttributeModifier.Operation.ADDITION)));
 					});
 				} else {
 					if (entity instanceof LivingEntity _entity && !_entity.level().isClientSide())
 						_entity.addEffect(new MobEffectInstance(MobEffects.HUNGER, 3600, 3));
 					VlAbyssMod.queueServerWork(3600, () -> {
+						((LivingEntity) entity).getAttribute(net.minecraft.world.entity.ai.attributes.Attributes.MAX_HEALTH)
+								.removeModifier((new AttributeModifier(UUID.fromString("d91e77f4-2bb8-4dc6-b7ae-e9d794b5adba"), "vidaprimordial", (-5), AttributeModifier.Operation.ADDITION)));
 					});
 				}
 				if (entity instanceof Player _player)
 					_player.getCooldowns().addCooldown(VlAbyssModItems.FRAGMENTO_PRIMORDIAL.get(), 72000);
 				if (event != null && event.isCancelable()) {
 					event.setCanceled(true);
-				} else if (event != null && event.hasResult()) {
-					event.setResult(Event.Result.DENY);
 				}
 			}
 		}

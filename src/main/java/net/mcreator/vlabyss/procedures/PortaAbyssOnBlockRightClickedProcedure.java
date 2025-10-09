@@ -69,6 +69,17 @@ public class PortaAbyssOnBlockRightClickedProcedure {
 									if (_bs.getBlock().getStateDefinition().getProperty("animation") instanceof IntegerProperty _integerProp && _integerProp.getPossibleValues().contains(_value))
 										world.setBlock(_pos, _bs.setValue(_integerProp, _value), 3);
 								}
+								if (!world.isClientSide()) {
+									BlockPos _blockPos = BlockPos.containing(x, y, z);
+									BlockEntity _blockEntity = world.getBlockEntity(_blockPos);
+									if (_blockEntity != null) {
+										_blockEntity.getPersistentData().remove("aberto");
+										if (world instanceof Level _level) {
+											BlockState _blockState = _level.getBlockState(_blockPos);
+											_level.sendBlockUpdated(_blockPos, _blockState, _blockState, 3);
+										}
+									}
+								}
 								if (world instanceof Level _level) {
 									if (!_level.isClientSide()) {
 										_level.playSound(null, BlockPos.containing(x, y, z), ForgeRegistries.SOUND_EVENTS.getValue(ResourceLocation.parse("vl_abyss:portao_abyss_fecha")), SoundSource.MASTER, 1, 1);
@@ -175,6 +186,17 @@ public class PortaAbyssOnBlockRightClickedProcedure {
 									BlockState _bs = world.getBlockState(_pos);
 									if (_bs.getBlock().getStateDefinition().getProperty("animation") instanceof IntegerProperty _integerProp && _integerProp.getPossibleValues().contains(_value))
 										world.setBlock(_pos, _bs.setValue(_integerProp, _value), 3);
+								}
+								if (!world.isClientSide()) {
+									BlockPos _blockPos = BlockPos.containing(x, y, z);
+									BlockEntity _blockEntity = world.getBlockEntity(_blockPos);
+									if (_blockEntity != null) {
+										_blockEntity.getPersistentData().remove("aberto");
+										if (world instanceof Level _level) {
+											BlockState _blockState = _level.getBlockState(_blockPos);
+											_level.sendBlockUpdated(_blockPos, _blockState, _blockState, 3);
+										}
+									}
 								}
 								if (world instanceof Level _level) {
 									if (!_level.isClientSide()) {
@@ -283,6 +305,17 @@ public class PortaAbyssOnBlockRightClickedProcedure {
 									if (_bs.getBlock().getStateDefinition().getProperty("animation") instanceof IntegerProperty _integerProp && _integerProp.getPossibleValues().contains(_value))
 										world.setBlock(_pos, _bs.setValue(_integerProp, _value), 3);
 								}
+								if (!world.isClientSide()) {
+									BlockPos _blockPos = BlockPos.containing(x, y, z);
+									BlockEntity _blockEntity = world.getBlockEntity(_blockPos);
+									if (_blockEntity != null) {
+										_blockEntity.getPersistentData().remove("aberto");
+										if (world instanceof Level _level) {
+											BlockState _blockState = _level.getBlockState(_blockPos);
+											_level.sendBlockUpdated(_blockPos, _blockState, _blockState, 3);
+										}
+									}
+								}
 								if (world instanceof Level _level) {
 									if (!_level.isClientSide()) {
 										_level.playSound(null, BlockPos.containing(x, y, z), ForgeRegistries.SOUND_EVENTS.getValue(ResourceLocation.parse("vl_abyss:portao_abyss_fecha")), SoundSource.MASTER, 1, 1);
@@ -389,6 +422,17 @@ public class PortaAbyssOnBlockRightClickedProcedure {
 									BlockState _bs = world.getBlockState(_pos);
 									if (_bs.getBlock().getStateDefinition().getProperty("animation") instanceof IntegerProperty _integerProp && _integerProp.getPossibleValues().contains(_value))
 										world.setBlock(_pos, _bs.setValue(_integerProp, _value), 3);
+								}
+								if (!world.isClientSide()) {
+									BlockPos _blockPos = BlockPos.containing(x, y, z);
+									BlockEntity _blockEntity = world.getBlockEntity(_blockPos);
+									if (_blockEntity != null) {
+										_blockEntity.getPersistentData().remove("aberto");
+										if (world instanceof Level _level) {
+											BlockState _blockState = _level.getBlockState(_blockPos);
+											_level.sendBlockUpdated(_blockPos, _blockState, _blockState, 3);
+										}
+									}
 								}
 								if (world instanceof Level _level) {
 									if (!_level.isClientSide()) {
@@ -497,6 +541,17 @@ public class PortaAbyssOnBlockRightClickedProcedure {
 									if (_bs.getBlock().getStateDefinition().getProperty("animation") instanceof IntegerProperty _integerProp && _integerProp.getPossibleValues().contains(_value))
 										world.setBlock(_pos, _bs.setValue(_integerProp, _value), 3);
 								}
+								if (!world.isClientSide()) {
+									BlockPos _blockPos = BlockPos.containing(x, y, z);
+									BlockEntity _blockEntity = world.getBlockEntity(_blockPos);
+									if (_blockEntity != null) {
+										_blockEntity.getPersistentData().remove("aberto");
+										if (world instanceof Level _level) {
+											BlockState _blockState = _level.getBlockState(_blockPos);
+											_level.sendBlockUpdated(_blockPos, _blockState, _blockState, 3);
+										}
+									}
+								}
 								if (world instanceof Level _level) {
 									if (!_level.isClientSide()) {
 										_level.playSound(null, BlockPos.containing(x, y, z), ForgeRegistries.SOUND_EVENTS.getValue(ResourceLocation.parse("vl_abyss:portao_abyss_fecha")), SoundSource.MASTER, 1, 1);
@@ -604,6 +659,17 @@ public class PortaAbyssOnBlockRightClickedProcedure {
 									if (_bs.getBlock().getStateDefinition().getProperty("animation") instanceof IntegerProperty _integerProp && _integerProp.getPossibleValues().contains(_value))
 										world.setBlock(_pos, _bs.setValue(_integerProp, _value), 3);
 								}
+								if (!world.isClientSide()) {
+									BlockPos _blockPos = BlockPos.containing(x, y, z);
+									BlockEntity _blockEntity = world.getBlockEntity(_blockPos);
+									if (_blockEntity != null) {
+										_blockEntity.getPersistentData().remove("aberto");
+										if (world instanceof Level _level) {
+											BlockState _blockState = _level.getBlockState(_blockPos);
+											_level.sendBlockUpdated(_blockPos, _blockState, _blockState, 3);
+										}
+									}
+								}
 								if (world instanceof Level _level) {
 									if (!_level.isClientSide()) {
 										_level.playSound(null, BlockPos.containing(x, y, z), ForgeRegistries.SOUND_EVENTS.getValue(ResourceLocation.parse("vl_abyss:portao_abyss_fecha")), SoundSource.MASTER, 1, 1);
@@ -710,6 +776,17 @@ public class PortaAbyssOnBlockRightClickedProcedure {
 									BlockState _bs = world.getBlockState(_pos);
 									if (_bs.getBlock().getStateDefinition().getProperty("animation") instanceof IntegerProperty _integerProp && _integerProp.getPossibleValues().contains(_value))
 										world.setBlock(_pos, _bs.setValue(_integerProp, _value), 3);
+								}
+								if (!world.isClientSide()) {
+									BlockPos _blockPos = BlockPos.containing(x, y, z);
+									BlockEntity _blockEntity = world.getBlockEntity(_blockPos);
+									if (_blockEntity != null) {
+										_blockEntity.getPersistentData().remove("aberto");
+										if (world instanceof Level _level) {
+											BlockState _blockState = _level.getBlockState(_blockPos);
+											_level.sendBlockUpdated(_blockPos, _blockState, _blockState, 3);
+										}
+									}
 								}
 								if (world instanceof Level _level) {
 									if (!_level.isClientSide()) {

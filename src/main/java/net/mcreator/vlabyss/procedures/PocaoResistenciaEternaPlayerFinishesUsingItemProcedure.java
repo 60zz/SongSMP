@@ -3,6 +3,7 @@ package net.mcreator.vlabyss.procedures;
 import net.minecraft.world.level.GameType;
 import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.entity.player.Player;
+import net.minecraft.world.entity.ai.attributes.AttributeModifier;
 import net.minecraft.world.entity.LivingEntity;
 import net.minecraft.world.entity.Entity;
 import net.minecraft.world.InteractionHand;
@@ -12,11 +13,17 @@ import net.minecraft.client.Minecraft;
 import net.mcreator.vlabyss.network.VlAbyssModVariables;
 import net.mcreator.vlabyss.init.VlAbyssModItems;
 
+import java.util.UUID;
+
 public class PocaoResistenciaEternaPlayerFinishesUsingItemProcedure {
 	public static void execute(Entity entity) {
 		if (entity == null)
 			return;
 		if ((entity.getCapability(VlAbyssModVariables.PLAYER_VARIABLES_CAPABILITY, null).orElse(new VlAbyssModVariables.PlayerVariables())).pocaoresis == false) {
+			if (!(((LivingEntity) entity).getAttribute(net.minecraft.world.entity.ai.attributes.Attributes.MAX_HEALTH)
+					.hasModifier((new AttributeModifier(UUID.fromString("9a2d30d1-2344-4af4-94ef-f4c7374adef9"), "vidaextra", 10, AttributeModifier.Operation.ADDITION)))))
+				((LivingEntity) entity).getAttribute(net.minecraft.world.entity.ai.attributes.Attributes.MAX_HEALTH)
+						.addPermanentModifier((new AttributeModifier(UUID.fromString("9a2d30d1-2344-4af4-94ef-f4c7374adef9"), "vidaextra", 10, AttributeModifier.Operation.ADDITION)));
 			if (entity instanceof Player _player) {
 				ItemStack _stktoremove = new ItemStack(VlAbyssModItems.POCAO_RESISTENCIA_ETERNA.get());
 				_player.getInventory().clearOrCountMatchingItems(p -> _stktoremove.getItem() == p.getItem(), 1, _player.inventoryMenu.getCraftSlots());

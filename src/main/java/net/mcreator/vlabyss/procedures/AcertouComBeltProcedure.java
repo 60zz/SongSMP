@@ -22,21 +22,23 @@ import javax.annotation.Nullable;
 public class AcertouComBeltProcedure {
 	@SubscribeEvent
 	public static void onPlayerCriticalHit(CriticalHitEvent event) {
-		execute(event, event.getEntity().level(), event.getTarget(), event.getEntity());
+		execute(event, event.getEntity().level(), event.getTarget(), event.getEntity(), event.getDamageModifier());
 	}
 
-	public static void execute(LevelAccessor world, Entity entity, Entity sourceentity, double originaldamagemodifier) {
-		execute(null, world, entity, sourceentity, originaldamagemodifier);
+	public static void execute(LevelAccessor world, Entity entity, Entity sourceentity, double damagemodifier) {
+		execute(null, world, entity, sourceentity, damagemodifier);
 	}
 
-	private static void execute(@Nullable Event event, LevelAccessor world, Entity entity, Entity sourceentity, double originaldamagemodifier) {
+	private static void execute(@Nullable Event event, LevelAccessor world, Entity entity, Entity sourceentity, double damagemodifier) {
 		if (entity == null || sourceentity == null)
 			return;
 		if (sourceentity instanceof LivingEntity lv ? CuriosApi.getCuriosHelper().findEquippedCurio(VlAbyssModItems.CINTO_DOS_ECOS.get(), lv).isPresent() : false) {
 			if (entity.getPersistentData().getBoolean("criticonormal")) {
-				entity.hurt(new DamageSource(world.registryAccess().registryOrThrow(Registries.DAMAGE_TYPE).getHolderOrThrow(DamageTypes.GENERIC)), (float) (originaldamagemodifier + originaldamagemodifier * 0.25));
+				entity.hurt(new DamageSource(world.registryAccess().registryOrThrow(Registries.DAMAGE_TYPE).getHolderOrThrow(DamageTypes.GENERIC)), (float) (damagemodifier + damagemodifier * 0.25));
+				entity.getPersistentData().remove("criticonormal");
 			} else if (entity.getPersistentData().getBoolean("criticosong")) {
-				entity.hurt(new DamageSource(world.registryAccess().registryOrThrow(Registries.DAMAGE_TYPE).getHolderOrThrow(DamageTypes.GENERIC)), (float) (originaldamagemodifier + originaldamagemodifier * 0.3));
+				entity.hurt(new DamageSource(world.registryAccess().registryOrThrow(Registries.DAMAGE_TYPE).getHolderOrThrow(DamageTypes.GENERIC)), (float) (damagemodifier + damagemodifier * 0.3));
+				entity.getPersistentData().remove("criticosong");
 			}
 		}
 	}
