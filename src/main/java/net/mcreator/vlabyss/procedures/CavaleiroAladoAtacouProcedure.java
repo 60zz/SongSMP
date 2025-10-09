@@ -6,6 +6,7 @@ import net.minecraftforge.eventbus.api.Event;
 import net.minecraftforge.event.entity.living.LivingAttackEvent;
 
 import net.minecraft.world.level.LevelAccessor;
+import net.minecraft.world.entity.player.Player;
 import net.minecraft.world.entity.Entity;
 import net.minecraft.world.damagesource.DamageSource;
 import net.minecraft.resources.ResourceLocation;
@@ -36,6 +37,13 @@ public class CavaleiroAladoAtacouProcedure {
 		if (sourceentity instanceof CavaleiroAladoEntity) {
 			entity.hurt(new DamageSource(world.registryAccess().registryOrThrow(Registries.DAMAGE_TYPE).getHolderOrThrow(ResourceKey.create(Registries.DAMAGE_TYPE, ResourceLocation.parse("vl_abyss:danoabismoboss")))),
 					(float) (double) SsmpConfiguration.WINGEDKNIGHTTOTALDAMAGE.get());
+		} else if (entity instanceof Player) {
+			if ((sourceentity instanceof CavaleiroAladoEntity _datEntL5 && _datEntL5.getEntityData().get(CavaleiroAladoEntity.DATA_invocadordefinido)) == false) {
+				if (sourceentity instanceof CavaleiroAladoEntity _datEntSetS)
+					_datEntSetS.getEntityData().set(CavaleiroAladoEntity.DATA_invocador, (entity.getDisplayName().getString()));
+				if (sourceentity instanceof CavaleiroAladoEntity _datEntSetL)
+					_datEntSetL.getEntityData().set(CavaleiroAladoEntity.DATA_invocadordefinido, true);
+			}
 		}
 	}
 }

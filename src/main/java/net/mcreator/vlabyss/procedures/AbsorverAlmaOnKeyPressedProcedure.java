@@ -14,6 +14,7 @@ import net.minecraft.core.BlockPos;
 
 import net.mcreator.vlabyss.init.VlAbyssModEntities;
 import net.mcreator.vlabyss.entity.MantraSoulEntity;
+import net.mcreator.vlabyss.entity.CavaleiroAladoEntity;
 
 import javax.annotation.Nullable;
 
@@ -33,7 +34,7 @@ public class AbsorverAlmaOnKeyPressedProcedure {
 	private static void execute(@Nullable Event event, LevelAccessor world, double x, double y, double z, Entity entity) {
 		if (entity == null)
 			return;
-		if (!(entity instanceof MantraSoulEntity)) {
+		if (!(entity instanceof MantraSoulEntity) || !(entity instanceof CavaleiroAladoEntity)) {
 			if (Math.random() > 0.95) {
 				if ((world.getBlockState(BlockPos.containing(x, y + 1, z))).getBlock() == Blocks.AIR) {
 					if (world instanceof ServerLevel _level) {

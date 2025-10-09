@@ -47,6 +47,7 @@ public class VlAbyssModTabs {
 				tabData.accept(VlAbyssModItems.POCAO_VIDA_EXTRA.get());
 				tabData.accept(VlAbyssModItems.POCAO_RENASCIMENTO.get());
 				tabData.accept(VlAbyssModItems.RUNAS.get());
+				tabData.accept(VlAbyssModItems.CAVALEIRO_ALADO_SPAWN_EGG.get());
 				tabData.accept(VlAbyssModItems.ESSENCIA_ABISMO.get());
 				tabData.accept(VlAbyssModBlocks.TOMBSTONE_ABYSS.get().asItem());
 				tabData.accept(VlAbyssModBlocks.METAL_FORGING.get().asItem());
@@ -60,8 +61,6 @@ public class VlAbyssModTabs {
 	public static void buildTabContentsVanilla(BuildCreativeModeTabContentsEvent tabData) {
 		if (tabData.getTabKey() == CreativeModeTabs.BUILDING_BLOCKS) {
 			tabData.accept(VlAbyssModBlocks.PORTA_ABYSS.get().asItem());
-		} else if (tabData.getTabKey() == CreativeModeTabs.SPAWN_EGGS) {
-			tabData.accept(VlAbyssModItems.CAVALEIRO_ALADO_SPAWN_EGG.get());
 		}
 	}
 }

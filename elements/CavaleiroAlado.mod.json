@@ -22,6 +22,16 @@
         "name": "ataquevoador",
         "type": "logic",
         "value": false
+      },
+      {
+        "name": "invocador",
+        "type": "string",
+        "value": ""
+      },
+      {
+        "name": "invocadordefinido",
+        "type": "logic",
+        "value": false
       }
     ],
     "modelWidth": 1.0,
@@ -38,10 +48,11 @@
       "value": -6710887,
       "falpha": 0.0
     },
-    "creativeTab": {
-      "value": "MISC"
-    },
-    "creativeTabs": [],
+    "creativeTabs": [
+      {
+        "value": "CUSTOM:VlAbyss"
+      }
+    ],
     "isBoss": true,
     "bossBarColor": "WHITE",
     "bossBarType": "PROGRESS",
@@ -113,6 +124,12 @@
     "stepSound": {
       "value": ""
     },
+    "raidCelebrationSound": {
+      "value": ""
+    },
+    "whenMobDies": {
+      "name": "CavaleiroAladoEntityDies"
+    },
     "onMobTickUpdate": {
       "name": "CavaleiroAladoOnEntityTickUpdate"
     },
@@ -121,7 +138,7 @@
     },
     "hasAI": true,
     "aiBase": "(none)",
-    "aixml": "<xml xmlns=\"https://developers.google.com/blockly/xml\"><block type=\"aitasks_container\" deletable=\"false\" x=\"40\" y=\"40\"><next><block type=\"attack_on_collide\"><field name=\"speed\">1.2</field><field name=\"longmemory\">FALSE</field><field name=\"condition\">null,null</field><next><block type=\"wander\"><field name=\"speed\">1</field><field name=\"condition\">null,null</field><next><block type=\"attack_action\"><field name=\"callhelp\">FALSE</field><field name=\"condition\">null,null</field><next><block type=\"look_around\"><field name=\"condition\">null,null</field><next><block type=\"swim_in_water\"><field name=\"condition\">null,null</field></block></next></block></next></block></next></block></next></block></next></block></xml>",
+    "aixml": "<xml xmlns=\"https://developers.google.com/blockly/xml\"><block type=\"aitasks_container\" deletable=\"false\" x=\"40\" y=\"40\"><next><block type=\"attack_on_collide\"><field name=\"speed\">1.2</field><field name=\"longmemory\">FALSE</field><field name=\"condition\">null,null</field><next><block type=\"wander\"><field name=\"speed\">1</field><field name=\"condition\">null,null</field><next><block type=\"attack_action\"><field name=\"callhelp\">FALSE</field><field name=\"condition\">null,null</field><next><block type=\"look_around\"><field name=\"condition\">null,null</field><next><block type=\"swim_in_water\"><field name=\"condition\">null,null</field><next><block type=\"climb_powder_snow\"><field name=\"condition\">null,null</field></block></next></block></next></block></next></block></next></block></next></block></next></block></xml>",
     "model": "cavaleiro_alado.geo.json",
     "groupName": "",
     "animation1": "animation.model.standing",

@@ -4606,6 +4606,41 @@
         "files": []
       },
       "path": "~/VL1_Abyss/Painting"
+    },
+    {
+      "name": "CavaleiroAladoEntityDies",
+      "type": "procedure",
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "cavaleiro_alado_entity_dies",
+      "metadata": {
+        "dependencies": [
+          {
+            "name": "entity",
+            "type": "entity"
+          },
+          {
+            "name": "x",
+            "type": "number"
+          },
+          {
+            "name": "y",
+            "type": "number"
+          },
+          {
+            "name": "z",
+            "type": "number"
+          },
+          {
+            "name": "world",
+            "type": "world"
+          }
+        ],
+        "files": [
+          "src/main/java/net/mcreator/vlabyss/procedures/CavaleiroAladoEntityDiesProcedure.java"
+        ]
+      },
+      "path": "~/VL1_Abyss/AbismoBosses/CavaleiroAlado/Procedure"
     }
   ],
   "variable_elements": [
@@ -5173,7 +5208,14 @@
     ],
     "BLOCKS:minecraft:needs_iron_tool": [
       "~CUSTOM:MetalForging"
-    ]
+    ],
+    "BLOCKS:minecraft:dirt": [],
+    "BLOCKS:minecraft:sand": [],
+    "BLOCKS:minecraft:logs": [],
+    "ENTITIES:minecraft:powder_snow_walkable_mobs": [
+      "CUSTOM:CavaleiroAlado"
+    ],
+    "BIOMES:minecraft:is_overworld": []
   },
   "tab_element_order": {},
   "language_map": {

@@ -22,6 +22,7 @@ import net.minecraft.world.entity.ai.goal.RandomStrollGoal;
 import net.minecraft.world.entity.ai.goal.RandomLookAroundGoal;
 import net.minecraft.world.entity.ai.goal.MeleeAttackGoal;
 import net.minecraft.world.entity.ai.goal.FloatGoal;
+import net.minecraft.world.entity.ai.goal.ClimbOnTopOfPowderSnowGoal;
 import net.minecraft.world.entity.ai.attributes.Attributes;
 import net.minecraft.world.entity.ai.attributes.AttributeSupplier;
 import net.minecraft.world.entity.SpawnGroupData;
@@ -49,6 +50,7 @@ import net.minecraft.nbt.CompoundTag;
 
 import net.mcreator.vlabyss.procedures.CavaleiroAladoOnInitialEntitySpawnProcedure;
 import net.mcreator.vlabyss.procedures.CavaleiroAladoOnEntityTickUpdateProcedure;
+import net.mcreator.vlabyss.procedures.CavaleiroAladoEntityDiesProcedure;
 import net.mcreator.vlabyss.init.VlAbyssModEntities;
 
 import javax.annotation.Nullable;
@@ -59,6 +61,8 @@ public class CavaleiroAladoEntity extends Monster implements GeoEntity {
 	public static final EntityDataAccessor<String> TEXTURE = SynchedEntityData.defineId(CavaleiroAladoEntity.class, EntityDataSerializers.STRING);
 	public static final EntityDataAccessor<Boolean> DATA_ataquechao = SynchedEntityData.defineId(CavaleiroAladoEntity.class, EntityDataSerializers.BOOLEAN);
 	public static final EntityDataAccessor<Boolean> DATA_ataquevoador = SynchedEntityData.defineId(CavaleiroAladoEntity.class, EntityDataSerializers.BOOLEAN);
+	public static final EntityDataAccessor<String> DATA_invocador = SynchedEntityData.defineId(CavaleiroAladoEntity.class, EntityDataSerializers.STRING);
+	public static final EntityDataAccessor<Boolean> DATA_invocadordefinido = SynchedEntityData.defineId(CavaleiroAladoEntity.class, EntityDataSerializers.BOOLEAN);
 	private final AnimatableInstanceCache cache = GeckoLibUtil.createInstanceCache(this);
 	private boolean swinging;
 	private boolean lastloop;
@@ -86,6 +90,8 @@ public class CavaleiroAladoEntity extends Monster implements GeoEntity {
 		this.entityData.define(TEXTURE, "cavaleiroalado");
 		this.entityData.define(DATA_ataquechao, false);
 		this.entityData.define(DATA_ataquevoador, false);
+		this.entityData.define(DATA_invocador, "");
+		this.entityData.define(DATA_invocadordefinido, false);
 	}
 
 	public void setTexture(String texture) {
@@ -114,6 +120,7 @@ public class CavaleiroAladoEntity extends Monster implements GeoEntity {
 		this.targetSelector.addGoal(3, new HurtByTargetGoal(this));
 		this.goalSelector.addGoal(4, new RandomLookAroundGoal(this));
 		this.goalSelector.addGoal(5, new FloatGoal(this));
+		this.goalSelector.addGoal(6, new ClimbOnTopOfPowderSnowGoal(this, this.level()));
 	}
 
 	@Override
@@ -166,6 +173,12 @@ public class CavaleiroAladoEntity extends Monster implements GeoEntity {
 	}
 
 	@Override
+	public void die(DamageSource source) {
+		super.die(source);
+		CavaleiroAladoEntityDiesProcedure.execute(this.level(), this.getX(), this.getY(), this.getZ(), this);
+	}
+
+	@Override
 	public SpawnGroupData finalizeSpawn(ServerLevelAccessor world, DifficultyInstance difficulty, MobSpawnType reason, @Nullable SpawnGroupData livingdata, @Nullable CompoundTag tag) {
 		SpawnGroupData retval = super.finalizeSpawn(world, difficulty, reason, livingdata, tag);
 		CavaleiroAladoOnInitialEntitySpawnProcedure.execute(this);
@@ -178,6 +191,8 @@ public class CavaleiroAladoEntity extends Monster implements GeoEntity {
 		compound.putString("Texture", this.getTexture());
 		compound.putBoolean("Dataataquechao", this.entityData.get(DATA_ataquechao));
 		compound.putBoolean("Dataataquevoador", this.entityData.get(DATA_ataquevoador));
+		compound.putString("Datainvocador", this.entityData.get(DATA_invocador));
+		compound.putBoolean("Datainvocadordefinido", this.entityData.get(DATA_invocadordefinido));
 	}
 
 	@Override
@@ -189,6 +204,10 @@ public class CavaleiroAladoEntity extends Monster implements GeoEntity {
 			this.entityData.set(DATA_ataquechao, compound.getBoolean("Dataataquechao"));
 		if (compound.contains("Dataataquevoador"))
 			this.entityData.set(DATA_ataquevoador, compound.getBoolean("Dataataquevoador"));
+		if (compound.contains("Datainvocador"))
+			this.entityData.set(DATA_invocador, compound.getString("Datainvocador"));
+		if (compound.contains("Datainvocadordefinido"))
+			this.entityData.set(DATA_invocadordefinido, compound.getBoolean("Datainvocadordefinido"));
 	}
 
 	@Override
