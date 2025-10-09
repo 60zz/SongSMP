@@ -9,7 +9,7 @@
     ],
     "worldGenType": "End like gen",
     "mainFillerBlock": {
-      "value": "Blocks.AIR"
+      "value": "Blocks.BEDROCK"
     },
     "fluidBlock": {
       "value": "Blocks.AIR"
@@ -23,15 +23,15 @@
     "useCustomEffects": true,
     "hasClouds": false,
     "cloudHeight": 192.0,
-    "skyType": "NONE",
+    "skyType": "NORMAL",
     "sunHeightAffectsFog": false,
     "canRespawnHere": false,
     "hasFog": true,
     "ambientLight": 0.5,
     "doesWaterVaporize": false,
-    "hasFixedTime": false,
-    "fixedTimeValue": 0,
-    "coordinateScale": 1.0,
+    "hasFixedTime": true,
+    "fixedTimeValue": 18000,
+    "coordinateScale": 16.0,
     "infiniburnTag": "minecraft:infiniburn_overworld",
     "bedWorks": false,
     "hasSkyLight": true,

@@ -123,5 +123,7 @@
   "subtitles.mapaabyss": "",
   "item.vl_abyss.luvas_lua_sangrenta": "Luvas da Lua Sangrenta",
   "item.vl_abyss.pocao_renascimento": "Poção do Renascimento",
-  "attribute.vl_abyss.inteligencia": "Inteligencia"
+  "attribute.vl_abyss.inteligencia": "Inteligencia",
+  "painting.vl_abyss.abyss_painting.title": "Abyss Painting",
+  "painting.vl_abyss.abyss_painting.author": "@sophii1105"
 }

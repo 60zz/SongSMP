@@ -4595,6 +4595,17 @@
         "files": []
       },
       "path": "~/VL1_Abyss/Classes/Comando"
+    },
+    {
+      "name": "AbyssPainting",
+      "type": "painting",
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "abyss_painting",
+      "metadata": {
+        "files": []
+      },
+      "path": "~/VL1_Abyss/Painting"
     }
   ],
   "variable_elements": [
@@ -5100,6 +5111,7 @@
       "CUSTOM:LiberacaoMantra"
     ],
     "BLOCKS:minecraft:overworld_carver_replaceables": [
+      "~Blocks.BEDROCK",
       "~Blocks.AIR"
     ],
     "DAMAGE_TYPES:minecraft:bypasses_effects": [
@@ -5134,9 +5146,6 @@
       "~CUSTOM:RawAbyssionBlock",
       "~CUSTOM:AbyssionOre"
     ],
-    "BLOCKS:minecraft:needs_stone_tool": [
-      "~CUSTOM:MetalForging"
-    ],
     "ITEMS:vl_abyss:white": [
       "CUSTOM:EssenciaAbismo",
       "CUSTOM:Runas"
@@ -5161,6 +5170,9 @@
       "~CUSTOM:AbyssionIngotBlock",
       "~CUSTOM:RawAbyssionBlock",
       "~CUSTOM:AbyssionOre"
+    ],
+    "BLOCKS:minecraft:needs_iron_tool": [
+      "~CUSTOM:MetalForging"
     ]
   },
   "tab_element_order": {},
@@ -5290,7 +5302,9 @@
       "subtitles.mapaabyss": "",
       "item.vl_abyss.luvas_lua_sangrenta": "Luvas da Lua Sangrenta",
       "item.vl_abyss.pocao_renascimento": "Poção do Renascimento",
-      "attribute.vl_abyss.inteligencia": "Inteligencia"
+      "attribute.vl_abyss.inteligencia": "Inteligencia",
+      "painting.vl_abyss.abyss_painting.title": "Abyss Painting",
+      "painting.vl_abyss.abyss_painting.author": "@sophii1105"
     }
   },
   "metadata": {
@@ -5325,6 +5339,8 @@
       "src/main/java/net/mcreator/vlabyss/network/MenuStateUpdateMessage.java",
       "src/main/java/net/mcreator/vlabyss/init/VlAbyssModJeiInformation.java",
       "src/main/java/net/mcreator/vlabyss/init/VlAbyssModKeyMappings.java",
+      "src/main/java/net/mcreator/vlabyss/init/VlAbyssModPaintings.java",
+      "src/main/resources/data/minecraft/tags/painting_variant/placeable.json",
       "src/main/java/net/mcreator/vlabyss/init/VlAbyssModParticleTypes.java",
       "src/main/java/net/mcreator/vlabyss/init/VlAbyssModParticles.java",
       "src/main/java/net/mcreator/vlabyss/init/VlAbyssModMobEffects.java",
@@ -5779,6 +5795,10 @@
           },
           {
             "name": "Medo",
+            "children": []
+          },
+          {
+            "name": "Painting",
             "children": []
           }
         ]

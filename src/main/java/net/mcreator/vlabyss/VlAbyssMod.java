@@ -21,6 +21,7 @@ import net.mcreator.vlabyss.init.VlAbyssModVillagerProfessions;
 import net.mcreator.vlabyss.init.VlAbyssModTabs;
 import net.mcreator.vlabyss.init.VlAbyssModSounds;
 import net.mcreator.vlabyss.init.VlAbyssModParticleTypes;
+import net.mcreator.vlabyss.init.VlAbyssModPaintings;
 import net.mcreator.vlabyss.init.VlAbyssModMobEffects;
 import net.mcreator.vlabyss.init.VlAbyssModMenus;
 import net.mcreator.vlabyss.init.VlAbyssModItems;
@@ -58,6 +59,7 @@ public class VlAbyssMod {
 
 		VlAbyssModMobEffects.REGISTRY.register(bus);
 
+		VlAbyssModPaintings.REGISTRY.register(bus);
 		VlAbyssModParticleTypes.REGISTRY.register(bus);
 		VlAbyssModVillagerProfessions.PROFESSIONS.register(bus);
 		VlAbyssModMenus.REGISTRY.register(bus);
