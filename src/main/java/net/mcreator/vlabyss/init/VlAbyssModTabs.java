@@ -23,7 +23,6 @@ public class VlAbyssModTabs {
 	public static final RegistryObject<CreativeModeTab> VL_ABYSS = REGISTRY.register("vl_abyss",
 			() -> CreativeModeTab.builder().title(Component.translatable("item_group.vl_abyss.vl_abyss")).icon(() -> new ItemStack(VlAbyssModItems.MAPA_ABYSS.get())).displayItems((parameters, tabData) -> {
 				tabData.accept(VlAbyssModItems.MAPA_ABYSS.get());
-				tabData.accept(VlAbyssModItems.CAPUZ_ESQUECIDO.get());
 				tabData.accept(VlAbyssModItems.VOTO_SILENCIOSO.get());
 				tabData.accept(VlAbyssModItems.AMULETO_VESPERIAN.get());
 				tabData.accept(VlAbyssModItems.AMULETO_SANGUE.get());
@@ -33,6 +32,7 @@ public class VlAbyssModTabs {
 				tabData.accept(VlAbyssModItems.ABYSSION_NUGGET.get());
 				tabData.accept(VlAbyssModBlocks.RAW_ABYSSION_BLOCK.get().asItem());
 				tabData.accept(VlAbyssModBlocks.ABYSSION_INGOT_BLOCK.get().asItem());
+				tabData.accept(VlAbyssModItems.CAPUZ_ESQUECIDO.get());
 				tabData.accept(VlAbyssModItems.LUVAS_IRONSING.get());
 				tabData.accept(VlAbyssModItems.LUVAS_LUA_SANGRENTA.get());
 				tabData.accept(VlAbyssModItems.ANEL_ENFERRUJADO.get());
@@ -51,6 +51,7 @@ public class VlAbyssModTabs {
 				tabData.accept(VlAbyssModItems.ESSENCIA_ABISMO.get());
 				tabData.accept(VlAbyssModBlocks.TOMBSTONE_ABYSS.get().asItem());
 				tabData.accept(VlAbyssModBlocks.METAL_FORGING.get().asItem());
+				tabData.accept(VlAbyssModItems.ARTIFACTS_BUNDLE.get());
 			}).build());
 	public static final RegistryObject<CreativeModeTab> VL_ABYSS_ARMAS = REGISTRY.register("vl_abyss_armas",
 			() -> CreativeModeTab.builder().title(Component.translatable("item_group.vl_abyss.vl_abyss_armas")).icon(() -> new ItemStack(VlAbyssModItems.ADAGA_ASSASSINOS.get())).displayItems((parameters, tabData) -> {

@@ -102,6 +102,9 @@ public class VlAbyssModVariables {
 			clone.MaxEthir = original.MaxEthir;
 			clone.ManaRegenTimer = original.ManaRegenTimer;
 			clone.fase = original.fase;
+			clone.desligadash = original.desligadash;
+			clone.mantra1_cooldown = original.mantra1_cooldown;
+			clone.mantra2_cooldown = original.mantra2_cooldown;
 			if (!event.isWasDeath()) {
 			}
 		}
@@ -174,6 +177,9 @@ public class VlAbyssModVariables {
 		public double MaxEthir = 100.0;
 		public double ManaRegenTimer = 0;
 		public double fase = 1.0;
+		public boolean desligadash = false;
+		public double mantra1_cooldown = 0;
+		public double mantra2_cooldown = 0;
 
 		public void syncPlayerVariables(Entity entity) {
 			if (entity instanceof ServerPlayer serverPlayer)
@@ -218,6 +224,9 @@ public class VlAbyssModVariables {
 			nbt.putDouble("MaxEthir", MaxEthir);
 			nbt.putDouble("ManaRegenTimer", ManaRegenTimer);
 			nbt.putDouble("fase", fase);
+			nbt.putBoolean("desligadash", desligadash);
+			nbt.putDouble("mantra1_cooldown", mantra1_cooldown);
+			nbt.putDouble("mantra2_cooldown", mantra2_cooldown);
 			return nbt;
 		}
 
@@ -259,6 +268,9 @@ public class VlAbyssModVariables {
 			MaxEthir = nbt.getDouble("MaxEthir");
 			ManaRegenTimer = nbt.getDouble("ManaRegenTimer");
 			fase = nbt.getDouble("fase");
+			desligadash = nbt.getBoolean("desligadash");
+			mantra1_cooldown = nbt.getDouble("mantra1_cooldown");
+			mantra2_cooldown = nbt.getDouble("mantra2_cooldown");
 		}
 	}
 
@@ -319,6 +331,9 @@ public class VlAbyssModVariables {
 					variables.MaxEthir = message.data.MaxEthir;
 					variables.ManaRegenTimer = message.data.ManaRegenTimer;
 					variables.fase = message.data.fase;
+					variables.desligadash = message.data.desligadash;
+					variables.mantra1_cooldown = message.data.mantra1_cooldown;
+					variables.mantra2_cooldown = message.data.mantra2_cooldown;
 				}
 			});
 			context.setPacketHandled(true);

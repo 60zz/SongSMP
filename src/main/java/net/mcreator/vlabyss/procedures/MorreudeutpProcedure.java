@@ -23,7 +23,6 @@ import net.minecraft.commands.CommandSourceStack;
 import net.minecraft.commands.CommandSource;
 
 import net.mcreator.vlabyss.network.VlAbyssModVariables;
-import net.mcreator.vlabyss.entity.CavaleiroAladoEntity;
 
 import javax.annotation.Nullable;
 
@@ -32,18 +31,18 @@ public class MorreudeutpProcedure {
 	@SubscribeEvent
 	public static void onEntityDeath(LivingDeathEvent event) {
 		if (event != null && event.getEntity() != null) {
-			execute(event, event.getSource(), event.getEntity(), event.getSource().getEntity());
+			execute(event, event.getSource(), event.getEntity());
 		}
 	}
 
-	public static void execute(DamageSource damagesource, Entity entity, Entity sourceentity) {
-		execute(null, damagesource, entity, sourceentity);
+	public static void execute(DamageSource damagesource, Entity entity) {
+		execute(null, damagesource, entity);
 	}
 
-	private static void execute(@Nullable Event event, DamageSource damagesource, Entity entity, Entity sourceentity) {
-		if (damagesource == null || entity == null || sourceentity == null)
+	private static void execute(@Nullable Event event, DamageSource damagesource, Entity entity) {
+		if (damagesource == null || entity == null)
 			return;
-		if (sourceentity instanceof CavaleiroAladoEntity || damagesource.is(ResourceKey.create(Registries.DAMAGE_TYPE, ResourceLocation.parse("vl_abyss:danoabismoboss")))) {
+		if (damagesource.is(ResourceKey.create(Registries.DAMAGE_TYPE, ResourceLocation.parse("vl_abyss:danoabismoboss")))) {
 			if ((entity.getCapability(VlAbyssModVariables.PLAYER_VARIABLES_CAPABILITY, null).orElse(new VlAbyssModVariables.PlayerVariables())).vidas >= 2) {
 				{
 					double _setval = (entity.getCapability(VlAbyssModVariables.PLAYER_VARIABLES_CAPABILITY, null).orElse(new VlAbyssModVariables.PlayerVariables())).vidas - 1;

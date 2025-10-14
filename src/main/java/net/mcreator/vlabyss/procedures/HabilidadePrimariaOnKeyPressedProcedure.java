@@ -10,16 +10,20 @@ import net.minecraft.world.phys.AABB;
 import net.minecraft.world.level.LevelAccessor;
 import net.minecraft.world.level.Level;
 import net.minecraft.world.level.ClipContext;
+import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.entity.projectile.Projectile;
 import net.minecraft.world.entity.projectile.AbstractArrow;
 import net.minecraft.world.entity.player.Player;
 import net.minecraft.world.entity.monster.Monster;
 import net.minecraft.world.entity.PathfinderMob;
+import net.minecraft.world.entity.MobSpawnType;
 import net.minecraft.world.entity.Mob;
 import net.minecraft.world.entity.LivingEntity;
+import net.minecraft.world.entity.HumanoidArm;
 import net.minecraft.world.entity.Entity;
 import net.minecraft.world.effect.MobEffects;
 import net.minecraft.world.effect.MobEffectInstance;
+import net.minecraft.tags.ItemTags;
 import net.minecraft.sounds.SoundSource;
 import net.minecraft.server.level.ServerLevel;
 import net.minecraft.resources.ResourceLocation;
@@ -48,7 +52,7 @@ public class HabilidadePrimariaOnKeyPressedProcedure {
 		Entity target = null;
 		if ((entity.getCapability(VlAbyssModVariables.PLAYER_VARIABLES_CAPABILITY, null).orElse(new VlAbyssModVariables.PlayerVariables())).Respiro >= 1
 				&& (entity.getCapability(VlAbyssModVariables.PLAYER_VARIABLES_CAPABILITY, null).orElse(new VlAbyssModVariables.PlayerVariables())).MantraRegistrada == true) {
-			if (!(entity instanceof LivingEntity _livEnt0 && _livEnt0.hasEffect(VlAbyssModMobEffects.COOLDOWN_RESPIRO.get()))) {
+			if ((entity.getCapability(VlAbyssModVariables.PLAYER_VARIABLES_CAPABILITY, null).orElse(new VlAbyssModVariables.PlayerVariables())).mantra1_cooldown < 1) {
 				if ((entity.getCapability(VlAbyssModVariables.PLAYER_VARIABLES_CAPABILITY, null).orElse(new VlAbyssModVariables.PlayerVariables())).Ethir >= 40) {
 					{
 						double _setval = (entity.getCapability(VlAbyssModVariables.PLAYER_VARIABLES_CAPABILITY, null).orElse(new VlAbyssModVariables.PlayerVariables())).Ethir - 40;
@@ -57,8 +61,13 @@ public class HabilidadePrimariaOnKeyPressedProcedure {
 							capability.syncPlayerVariables(entity);
 						});
 					}
-					if (entity instanceof LivingEntity _entity && !_entity.level().isClientSide())
-						_entity.addEffect(new MobEffectInstance(VlAbyssModMobEffects.COOLDOWN_RESPIRO.get(), 200, 0));
+					{
+						double _setval = 10;
+						entity.getCapability(VlAbyssModVariables.PLAYER_VARIABLES_CAPABILITY, null).ifPresent(capability -> {
+							capability.mantra1_cooldown = _setval;
+							capability.syncPlayerVariables(entity);
+						});
+					}
 					if (world instanceof Level _level) {
 						if (!_level.isClientSide()) {
 							_level.playSound(null, BlockPos.containing(x, y, z), ForgeRegistries.SOUND_EVENTS.getValue(ResourceLocation.parse("vl_abyss:respiro_hab1")), SoundSource.MASTER, 1, 1);
@@ -233,10 +242,20 @@ public class HabilidadePrimariaOnKeyPressedProcedure {
 						}
 					}
 				}
+			} else {
+				if (entity instanceof Player _player && !_player.level().isClientSide())
+					_player.displayClientMessage(Component.literal("\u00A7cHabilidade em recarga"), true);
+				if (world instanceof Level _level) {
+					if (!_level.isClientSide()) {
+						_level.playSound(null, BlockPos.containing(x, y, z), ForgeRegistries.SOUND_EVENTS.getValue(ResourceLocation.parse("vl_abyss:sem_ethir_som")), SoundSource.MASTER, 1, 1);
+					} else {
+						_level.playLocalSound(x, y, z, ForgeRegistries.SOUND_EVENTS.getValue(ResourceLocation.parse("vl_abyss:sem_ethir_som")), SoundSource.MASTER, 1, 1, false);
+					}
+				}
 			}
 		} else if ((entity.getCapability(VlAbyssModVariables.PLAYER_VARIABLES_CAPABILITY, null).orElse(new VlAbyssModVariables.PlayerVariables())).Escuridao >= 1
 				&& (entity.getCapability(VlAbyssModVariables.PLAYER_VARIABLES_CAPABILITY, null).orElse(new VlAbyssModVariables.PlayerVariables())).MantraRegistrada == true) {
-			if (!(entity instanceof LivingEntity _livEnt20 && _livEnt20.hasEffect(VlAbyssModMobEffects.COOLDOWN_RESPIRO.get()))) {
+			if ((entity.getCapability(VlAbyssModVariables.PLAYER_VARIABLES_CAPABILITY, null).orElse(new VlAbyssModVariables.PlayerVariables())).mantra1_cooldown < 1) {
 				if ((entity.getCapability(VlAbyssModVariables.PLAYER_VARIABLES_CAPABILITY, null).orElse(new VlAbyssModVariables.PlayerVariables())).Ethir >= 85) {
 					{
 						double _setval = (entity.getCapability(VlAbyssModVariables.PLAYER_VARIABLES_CAPABILITY, null).orElse(new VlAbyssModVariables.PlayerVariables())).Ethir - 85;
@@ -247,8 +266,13 @@ public class HabilidadePrimariaOnKeyPressedProcedure {
 					}
 					if (entity instanceof LivingEntity _entity && !_entity.level().isClientSide())
 						_entity.addEffect(new MobEffectInstance(VlAbyssModMobEffects.SHADOW_COPY.get(), 1200, 0));
-					if (entity instanceof LivingEntity _entity && !_entity.level().isClientSide())
-						_entity.addEffect(new MobEffectInstance(VlAbyssModMobEffects.COOLDOWN_RESPIRO.get(), 3600, 0));
+					{
+						double _setval = 180;
+						entity.getCapability(VlAbyssModVariables.PLAYER_VARIABLES_CAPABILITY, null).ifPresent(capability -> {
+							capability.mantra1_cooldown = _setval;
+							capability.syncPlayerVariables(entity);
+						});
+					}
 					if (world.isClientSide()) {
 						SetupAnimationsProcedure.setAnimationClientside((Player) entity, "shadowcopy", false);
 					}
@@ -284,10 +308,20 @@ public class HabilidadePrimariaOnKeyPressedProcedure {
 						}
 					}
 				}
+			} else {
+				if (entity instanceof Player _player && !_player.level().isClientSide())
+					_player.displayClientMessage(Component.literal("\u00A7cHabilidade em recarga"), true);
+				if (world instanceof Level _level) {
+					if (!_level.isClientSide()) {
+						_level.playSound(null, BlockPos.containing(x, y, z), ForgeRegistries.SOUND_EVENTS.getValue(ResourceLocation.parse("vl_abyss:sem_ethir_som")), SoundSource.MASTER, 1, 1);
+					} else {
+						_level.playLocalSound(x, y, z, ForgeRegistries.SOUND_EVENTS.getValue(ResourceLocation.parse("vl_abyss:sem_ethir_som")), SoundSource.MASTER, 1, 1, false);
+					}
+				}
 			}
 		} else if ((entity.getCapability(VlAbyssModVariables.PLAYER_VARIABLES_CAPABILITY, null).orElse(new VlAbyssModVariables.PlayerVariables())).Luz >= 1
 				&& (entity.getCapability(VlAbyssModVariables.PLAYER_VARIABLES_CAPABILITY, null).orElse(new VlAbyssModVariables.PlayerVariables())).MantraRegistrada == true) {
-			if (!(entity instanceof LivingEntity _livEnt27 && _livEnt27.hasEffect(VlAbyssModMobEffects.COOLDOWN_RESPIRO.get()))) {
+			if ((entity.getCapability(VlAbyssModVariables.PLAYER_VARIABLES_CAPABILITY, null).orElse(new VlAbyssModVariables.PlayerVariables())).mantra1_cooldown < 1) {
 				if ((entity.getCapability(VlAbyssModVariables.PLAYER_VARIABLES_CAPABILITY, null).orElse(new VlAbyssModVariables.PlayerVariables())).Ethir >= 95) {
 					if (!world.getEntitiesOfClass(Player.class, AABB.ofSize(
 							new Vec3((entity.level().clip(new ClipContext(entity.getEyePosition(1f), entity.getEyePosition(1f).add(entity.getViewVector(1f).scale(5)), ClipContext.Block.OUTLINE, ClipContext.Fluid.NONE, entity)).getBlockPos().getX()),
@@ -315,8 +349,13 @@ public class HabilidadePrimariaOnKeyPressedProcedure {
 								_entity.setHealth((target instanceof LivingEntity _livEnt ? _livEnt.getHealth() : -1) + 10);
 							if (target instanceof LivingEntity _entity && !_entity.level().isClientSide())
 								_entity.addEffect(new MobEffectInstance(MobEffects.REGENERATION, 160, 1));
-							if (entity instanceof LivingEntity _entity && !_entity.level().isClientSide())
-								_entity.addEffect(new MobEffectInstance(VlAbyssModMobEffects.COOLDOWN_RESPIRO.get(), 6000, 0));
+							{
+								double _setval = 300;
+								entity.getCapability(VlAbyssModVariables.PLAYER_VARIABLES_CAPABILITY, null).ifPresent(capability -> {
+									capability.mantra1_cooldown = _setval;
+									capability.syncPlayerVariables(entity);
+								});
+							}
 							if (world.isClientSide()) {
 								SetupAnimationsProcedure.setAnimationClientside((Player) entity, "luzprimeira", false);
 							}
@@ -479,8 +518,6 @@ public class HabilidadePrimariaOnKeyPressedProcedure {
 												.getZ())))
 								.findFirst().orElse(null);
 						if (!(target == null)) {
-							if (entity instanceof LivingEntity _entity && !_entity.level().isClientSide())
-								_entity.addEffect(new MobEffectInstance(VlAbyssModMobEffects.COOLDOWN_RESPIRO.get(), 6000, 0));
 							if (world.isClientSide()) {
 								SetupAnimationsProcedure.setAnimationClientside((Player) entity, "luzprimeira", false);
 							}
@@ -539,6 +576,13 @@ public class HabilidadePrimariaOnKeyPressedProcedure {
 										_mob.setNoAi(false);
 									}
 								}
+							}
+							{
+								double _setval = 300;
+								entity.getCapability(VlAbyssModVariables.PLAYER_VARIABLES_CAPABILITY, null).ifPresent(capability -> {
+									capability.mantra1_cooldown = _setval;
+									capability.syncPlayerVariables(entity);
+								});
 							}
 							if (world instanceof Level _level) {
 								if (!_level.isClientSide()) {
@@ -651,10 +695,15 @@ public class HabilidadePrimariaOnKeyPressedProcedure {
 						if (!(target == null)) {
 							if (target instanceof LivingEntity _entity)
 								_entity.setHealth((entity instanceof LivingEntity _livEnt ? _livEnt.getHealth() : -1) + 10);
+							{
+								double _setval = 300;
+								entity.getCapability(VlAbyssModVariables.PLAYER_VARIABLES_CAPABILITY, null).ifPresent(capability -> {
+									capability.mantra1_cooldown = _setval;
+									capability.syncPlayerVariables(entity);
+								});
+							}
 							if (target instanceof LivingEntity _entity && !_entity.level().isClientSide())
 								_entity.addEffect(new MobEffectInstance(MobEffects.REGENERATION, 160, 1));
-							if (entity instanceof LivingEntity _entity && !_entity.level().isClientSide())
-								_entity.addEffect(new MobEffectInstance(VlAbyssModMobEffects.COOLDOWN_RESPIRO.get(), 6000, 0));
 							if (world.isClientSide()) {
 								SetupAnimationsProcedure.setAnimationClientside((Player) entity, "luzprimeira", false);
 							}
@@ -805,6 +854,442 @@ public class HabilidadePrimariaOnKeyPressedProcedure {
 						} else {
 							_level.playLocalSound(x, y, z, ForgeRegistries.SOUND_EVENTS.getValue(ResourceLocation.parse("vl_abyss:sem_ethir_som")), SoundSource.MASTER, 1, 1, false);
 						}
+					}
+				}
+			} else {
+				if (entity instanceof Player _player && !_player.level().isClientSide())
+					_player.displayClientMessage(Component.literal("\u00A7cHabilidade em recarga"), true);
+				if (world instanceof Level _level) {
+					if (!_level.isClientSide()) {
+						_level.playSound(null, BlockPos.containing(x, y, z), ForgeRegistries.SOUND_EVENTS.getValue(ResourceLocation.parse("vl_abyss:sem_ethir_som")), SoundSource.MASTER, 1, 1);
+					} else {
+						_level.playLocalSound(x, y, z, ForgeRegistries.SOUND_EVENTS.getValue(ResourceLocation.parse("vl_abyss:sem_ethir_som")), SoundSource.MASTER, 1, 1, false);
+					}
+				}
+			}
+		} else if ((entity.getCapability(VlAbyssModVariables.PLAYER_VARIABLES_CAPABILITY, null).orElse(new VlAbyssModVariables.PlayerVariables())).Chama >= 1
+				&& (entity.getCapability(VlAbyssModVariables.PLAYER_VARIABLES_CAPABILITY, null).orElse(new VlAbyssModVariables.PlayerVariables())).MantraRegistrada == true) {
+			if ((entity.getCapability(VlAbyssModVariables.PLAYER_VARIABLES_CAPABILITY, null).orElse(new VlAbyssModVariables.PlayerVariables())).mantra1_cooldown < 1) {
+				if (!((entity instanceof LivingEntity _livEnt ? _livEnt.getOffhandItem() : ItemStack.EMPTY).getItem() == ItemStack.EMPTY.getItem())
+						&& !((entity instanceof LivingEntity _livEnt ? _livEnt.getMainHandItem() : ItemStack.EMPTY).getItem() == ItemStack.EMPTY.getItem())) {
+					if ((entity instanceof LivingEntity _livEnt ? _livEnt.getMainHandItem() : ItemStack.EMPTY).is(ItemTags.create(ResourceLocation.parse("minecraft:swords")))
+							|| (entity instanceof LivingEntity _livEnt ? _livEnt.getOffhandItem() : ItemStack.EMPTY).is(ItemTags.create(ResourceLocation.parse("minecraft:swords")))
+							|| (entity instanceof LivingEntity _livEnt ? _livEnt.getMainHandItem() : ItemStack.EMPTY).is(ItemTags.create(ResourceLocation.parse("minecraft:axes")))
+							|| (entity instanceof LivingEntity _livEnt ? _livEnt.getOffhandItem() : ItemStack.EMPTY).is(ItemTags.create(ResourceLocation.parse("minecraft:axes")))) {
+						if ((entity.getCapability(VlAbyssModVariables.PLAYER_VARIABLES_CAPABILITY, null).orElse(new VlAbyssModVariables.PlayerVariables())).Ethir >= 100) {
+							{
+								double _setval = (entity.getCapability(VlAbyssModVariables.PLAYER_VARIABLES_CAPABILITY, null).orElse(new VlAbyssModVariables.PlayerVariables())).Ethir - 100;
+								entity.getCapability(VlAbyssModVariables.PLAYER_VARIABLES_CAPABILITY, null).ifPresent(capability -> {
+									capability.Ethir = _setval;
+									capability.syncPlayerVariables(entity);
+								});
+							}
+							{
+								double _setval = 40;
+								entity.getCapability(VlAbyssModVariables.PLAYER_VARIABLES_CAPABILITY, null).ifPresent(capability -> {
+									capability.mantra1_cooldown = _setval;
+									capability.syncPlayerVariables(entity);
+								});
+							}
+							if (entity instanceof LivingEntity _entMainHand109 && _entMainHand109.getMainArm() == HumanoidArm.LEFT) {
+								if (world.isClientSide()) {
+									SetupAnimationsProcedure.setAnimationClientside((Player) entity, "mantrarespiro1", false);
+								}
+								if (!world.isClientSide()) {
+									if (entity instanceof Player && world instanceof ServerLevel srvLvl_) {
+										List<Connection> connections = srvLvl_.getServer().getConnection().getConnections();
+										synchronized (connections) {
+											Iterator<Connection> iterator = connections.iterator();
+											while (iterator.hasNext()) {
+												Connection connection = iterator.next();
+												if (!connection.isConnecting() && connection.isConnected())
+													VlAbyssMod.PACKET_HANDLER.sendTo(new SetupAnimationsProcedure.VlAbyssModAnimationMessage(Component.literal("mantrarespiro1"), entity.getId(), false), connection, NetworkDirection.PLAY_TO_CLIENT);
+											}
+										}
+									}
+								}
+								if (world instanceof net.minecraft.server.level.ServerLevel) {
+									net.minecraft.server.level.ServerLevel _level = (net.minecraft.server.level.ServerLevel) world;
+									int particleCount = (int) 30;
+									double centerX = x;
+									double centerY = y;
+									double centerZ = z;
+									double particleSpeed = 0.6;
+									net.minecraft.core.particles.ParticleOptions particleType = net.minecraft.core.particles.ParticleTypes.FLAME;
+									double initialRadius = 4.0;
+									for (int i = 0; i < particleCount; i++) {
+										double u = Math.random();
+										double v = Math.random();
+										double theta = 2 * Math.PI * u;
+										double phi = Math.acos(2 * v - 1);
+										double startX = centerX + initialRadius * Math.sin(phi) * Math.cos(theta);
+										double startY = centerY + initialRadius * Math.cos(phi);
+										double startZ = centerZ + initialRadius * Math.sin(phi) * Math.sin(theta);
+										double deltaX = centerX - startX;
+										double deltaY = centerY - startY;
+										double deltaZ = centerZ - startZ;
+										double distance = Math.sqrt(deltaX * deltaX + deltaY * deltaY + deltaZ * deltaZ);
+										double velocityX = (deltaX / distance) * particleSpeed;
+										double velocityY = (deltaY / distance) * particleSpeed;
+										double velocityZ = (deltaZ / distance) * particleSpeed;
+										_level.sendParticles(particleType, startX, startY, startZ, 0, velocityX, velocityY, velocityZ, particleSpeed);
+									}
+								}
+								if (world instanceof ServerLevel _level) {
+									Entity entityToSpawn = VlAbyssModEntities.CORTE_CHAMA_RETO.get().spawn(_level, BlockPos.containing(x, y, z), MobSpawnType.MOB_SUMMONED);
+									if (entityToSpawn != null) {
+										entityToSpawn.setYRot(entity.getYRot());
+										entityToSpawn.setYBodyRot(entity.getYRot());
+										entityToSpawn.setYHeadRot(entity.getYRot());
+										entityToSpawn.setXRot(entity.getXRot());
+									}
+								}
+							} else if (entity instanceof LivingEntity _entMainHand115 && _entMainHand115.getMainArm() == HumanoidArm.RIGHT) {
+								if (world.isClientSide()) {
+									SetupAnimationsProcedure.setAnimationClientside((Player) entity, "mantrarespiro1", false);
+								}
+								if (!world.isClientSide()) {
+									if (entity instanceof Player && world instanceof ServerLevel srvLvl_) {
+										List<Connection> connections = srvLvl_.getServer().getConnection().getConnections();
+										synchronized (connections) {
+											Iterator<Connection> iterator = connections.iterator();
+											while (iterator.hasNext()) {
+												Connection connection = iterator.next();
+												if (!connection.isConnecting() && connection.isConnected())
+													VlAbyssMod.PACKET_HANDLER.sendTo(new SetupAnimationsProcedure.VlAbyssModAnimationMessage(Component.literal("mantrarespiro1"), entity.getId(), false), connection, NetworkDirection.PLAY_TO_CLIENT);
+											}
+										}
+									}
+								}
+								if (world instanceof net.minecraft.server.level.ServerLevel) {
+									net.minecraft.server.level.ServerLevel _level = (net.minecraft.server.level.ServerLevel) world;
+									int particleCount = (int) 30;
+									double centerX = x;
+									double centerY = y;
+									double centerZ = z;
+									double particleSpeed = 0.6;
+									net.minecraft.core.particles.ParticleOptions particleType = net.minecraft.core.particles.ParticleTypes.FLAME;
+									double initialRadius = 4.0;
+									for (int i = 0; i < particleCount; i++) {
+										double u = Math.random();
+										double v = Math.random();
+										double theta = 2 * Math.PI * u;
+										double phi = Math.acos(2 * v - 1);
+										double startX = centerX + initialRadius * Math.sin(phi) * Math.cos(theta);
+										double startY = centerY + initialRadius * Math.cos(phi);
+										double startZ = centerZ + initialRadius * Math.sin(phi) * Math.sin(theta);
+										double deltaX = centerX - startX;
+										double deltaY = centerY - startY;
+										double deltaZ = centerZ - startZ;
+										double distance = Math.sqrt(deltaX * deltaX + deltaY * deltaY + deltaZ * deltaZ);
+										double velocityX = (deltaX / distance) * particleSpeed;
+										double velocityY = (deltaY / distance) * particleSpeed;
+										double velocityZ = (deltaZ / distance) * particleSpeed;
+										_level.sendParticles(particleType, startX, startY, startZ, 0, velocityX, velocityY, velocityZ, particleSpeed);
+									}
+								}
+								if (world instanceof ServerLevel _level) {
+									Entity entityToSpawn = VlAbyssModEntities.CORTE_CHAMA_RETO.get().spawn(_level, BlockPos.containing(x, y, z), MobSpawnType.MOB_SUMMONED);
+									if (entityToSpawn != null) {
+										entityToSpawn.setYRot(entity.getYRot());
+										entityToSpawn.setYBodyRot(entity.getYRot());
+										entityToSpawn.setYHeadRot(entity.getYRot());
+										entityToSpawn.setXRot(entity.getXRot());
+									}
+								}
+							}
+						} else {
+							if (entity instanceof Player _player && !_player.level().isClientSide())
+								_player.displayClientMessage(Component.literal("\u00A7cSem \"ETHIR\" o suficiente"), true);
+							if (world instanceof Level _level) {
+								if (!_level.isClientSide()) {
+									_level.playSound(null, BlockPos.containing(x, y, z), ForgeRegistries.SOUND_EVENTS.getValue(ResourceLocation.parse("vl_abyss:sem_ethir_som")), SoundSource.MASTER, 1, 1);
+								} else {
+									_level.playLocalSound(x, y, z, ForgeRegistries.SOUND_EVENTS.getValue(ResourceLocation.parse("vl_abyss:sem_ethir_som")), SoundSource.MASTER, 1, 1, false);
+								}
+							}
+						}
+					}
+				} else if ((entity instanceof LivingEntity _livEnt ? _livEnt.getMainHandItem() : ItemStack.EMPTY).is(ItemTags.create(ResourceLocation.parse("minecraft:swords")))
+						|| (entity instanceof LivingEntity _livEnt ? _livEnt.getOffhandItem() : ItemStack.EMPTY).is(ItemTags.create(ResourceLocation.parse("minecraft:swords")))
+						|| (entity instanceof LivingEntity _livEnt ? _livEnt.getMainHandItem() : ItemStack.EMPTY).is(ItemTags.create(ResourceLocation.parse("minecraft:axes")))
+						|| (entity instanceof LivingEntity _livEnt ? _livEnt.getOffhandItem() : ItemStack.EMPTY).is(ItemTags.create(ResourceLocation.parse("minecraft:axes")))) {
+					if ((entity.getCapability(VlAbyssModVariables.PLAYER_VARIABLES_CAPABILITY, null).orElse(new VlAbyssModVariables.PlayerVariables())).Ethir >= 70) {
+						{
+							double _setval = (entity.getCapability(VlAbyssModVariables.PLAYER_VARIABLES_CAPABILITY, null).orElse(new VlAbyssModVariables.PlayerVariables())).Ethir - 70;
+							entity.getCapability(VlAbyssModVariables.PLAYER_VARIABLES_CAPABILITY, null).ifPresent(capability -> {
+								capability.Ethir = _setval;
+								capability.syncPlayerVariables(entity);
+							});
+						}
+						{
+							double _setval = 20;
+							entity.getCapability(VlAbyssModVariables.PLAYER_VARIABLES_CAPABILITY, null).ifPresent(capability -> {
+								capability.mantra1_cooldown = _setval;
+								capability.syncPlayerVariables(entity);
+							});
+						}
+						if (entity instanceof LivingEntity _entMainHand125 && _entMainHand125.getMainArm() == HumanoidArm.LEFT) {
+							if (world.isClientSide()) {
+								SetupAnimationsProcedure.setAnimationClientside((Player) entity, "mantrarespiro1", false);
+							}
+							if (!world.isClientSide()) {
+								if (entity instanceof Player && world instanceof ServerLevel srvLvl_) {
+									List<Connection> connections = srvLvl_.getServer().getConnection().getConnections();
+									synchronized (connections) {
+										Iterator<Connection> iterator = connections.iterator();
+										while (iterator.hasNext()) {
+											Connection connection = iterator.next();
+											if (!connection.isConnecting() && connection.isConnected())
+												VlAbyssMod.PACKET_HANDLER.sendTo(new SetupAnimationsProcedure.VlAbyssModAnimationMessage(Component.literal("mantrarespiro1"), entity.getId(), false), connection, NetworkDirection.PLAY_TO_CLIENT);
+										}
+									}
+								}
+							}
+							if (world instanceof net.minecraft.server.level.ServerLevel) {
+								net.minecraft.server.level.ServerLevel _level = (net.minecraft.server.level.ServerLevel) world;
+								int particleCount = (int) 30;
+								double centerX = x;
+								double centerY = y;
+								double centerZ = z;
+								double particleSpeed = 0.6;
+								net.minecraft.core.particles.ParticleOptions particleType = net.minecraft.core.particles.ParticleTypes.FLAME;
+								double initialRadius = 4.0;
+								for (int i = 0; i < particleCount; i++) {
+									double u = Math.random();
+									double v = Math.random();
+									double theta = 2 * Math.PI * u;
+									double phi = Math.acos(2 * v - 1);
+									double startX = centerX + initialRadius * Math.sin(phi) * Math.cos(theta);
+									double startY = centerY + initialRadius * Math.cos(phi);
+									double startZ = centerZ + initialRadius * Math.sin(phi) * Math.sin(theta);
+									double deltaX = centerX - startX;
+									double deltaY = centerY - startY;
+									double deltaZ = centerZ - startZ;
+									double distance = Math.sqrt(deltaX * deltaX + deltaY * deltaY + deltaZ * deltaZ);
+									double velocityX = (deltaX / distance) * particleSpeed;
+									double velocityY = (deltaY / distance) * particleSpeed;
+									double velocityZ = (deltaZ / distance) * particleSpeed;
+									_level.sendParticles(particleType, startX, startY, startZ, 0, velocityX, velocityY, velocityZ, particleSpeed);
+								}
+							}
+							if (world instanceof ServerLevel _level) {
+								Entity entityToSpawn = VlAbyssModEntities.CORTE_CHAMA_RETO.get().spawn(_level, BlockPos.containing(x, y, z), MobSpawnType.MOB_SUMMONED);
+								if (entityToSpawn != null) {
+									entityToSpawn.setYRot(entity.getYRot());
+									entityToSpawn.setYBodyRot(entity.getYRot());
+									entityToSpawn.setYHeadRot(entity.getYRot());
+									entityToSpawn.setXRot(entity.getXRot());
+								}
+							}
+						} else if (entity instanceof LivingEntity _entMainHand131 && _entMainHand131.getMainArm() == HumanoidArm.RIGHT) {
+							if (world.isClientSide()) {
+								SetupAnimationsProcedure.setAnimationClientside((Player) entity, "mantrarespiro1", false);
+							}
+							if (!world.isClientSide()) {
+								if (entity instanceof Player && world instanceof ServerLevel srvLvl_) {
+									List<Connection> connections = srvLvl_.getServer().getConnection().getConnections();
+									synchronized (connections) {
+										Iterator<Connection> iterator = connections.iterator();
+										while (iterator.hasNext()) {
+											Connection connection = iterator.next();
+											if (!connection.isConnecting() && connection.isConnected())
+												VlAbyssMod.PACKET_HANDLER.sendTo(new SetupAnimationsProcedure.VlAbyssModAnimationMessage(Component.literal("mantrarespiro1"), entity.getId(), false), connection, NetworkDirection.PLAY_TO_CLIENT);
+										}
+									}
+								}
+							}
+							if (world instanceof net.minecraft.server.level.ServerLevel) {
+								net.minecraft.server.level.ServerLevel _level = (net.minecraft.server.level.ServerLevel) world;
+								int particleCount = (int) 30;
+								double centerX = x;
+								double centerY = y;
+								double centerZ = z;
+								double particleSpeed = 0.6;
+								net.minecraft.core.particles.ParticleOptions particleType = net.minecraft.core.particles.ParticleTypes.FLAME;
+								double initialRadius = 4.0;
+								for (int i = 0; i < particleCount; i++) {
+									double u = Math.random();
+									double v = Math.random();
+									double theta = 2 * Math.PI * u;
+									double phi = Math.acos(2 * v - 1);
+									double startX = centerX + initialRadius * Math.sin(phi) * Math.cos(theta);
+									double startY = centerY + initialRadius * Math.cos(phi);
+									double startZ = centerZ + initialRadius * Math.sin(phi) * Math.sin(theta);
+									double deltaX = centerX - startX;
+									double deltaY = centerY - startY;
+									double deltaZ = centerZ - startZ;
+									double distance = Math.sqrt(deltaX * deltaX + deltaY * deltaY + deltaZ * deltaZ);
+									double velocityX = (deltaX / distance) * particleSpeed;
+									double velocityY = (deltaY / distance) * particleSpeed;
+									double velocityZ = (deltaZ / distance) * particleSpeed;
+									_level.sendParticles(particleType, startX, startY, startZ, 0, velocityX, velocityY, velocityZ, particleSpeed);
+								}
+							}
+							if (world instanceof ServerLevel _level) {
+								Entity entityToSpawn = VlAbyssModEntities.CORTE_CHAMA_RETO.get().spawn(_level, BlockPos.containing(x, y, z), MobSpawnType.MOB_SUMMONED);
+								if (entityToSpawn != null) {
+									entityToSpawn.setYRot(entity.getYRot());
+									entityToSpawn.setYBodyRot(entity.getYRot());
+									entityToSpawn.setYHeadRot(entity.getYRot());
+									entityToSpawn.setXRot(entity.getXRot());
+								}
+							}
+						}
+					} else {
+						if (entity instanceof Player _player && !_player.level().isClientSide())
+							_player.displayClientMessage(Component.literal("\u00A7cSem \"ETHIR\" o suficiente"), true);
+						if (world instanceof Level _level) {
+							if (!_level.isClientSide()) {
+								_level.playSound(null, BlockPos.containing(x, y, z), ForgeRegistries.SOUND_EVENTS.getValue(ResourceLocation.parse("vl_abyss:sem_ethir_som")), SoundSource.MASTER, 1, 1);
+							} else {
+								_level.playLocalSound(x, y, z, ForgeRegistries.SOUND_EVENTS.getValue(ResourceLocation.parse("vl_abyss:sem_ethir_som")), SoundSource.MASTER, 1, 1, false);
+							}
+						}
+					}
+				} else {
+					if ((entity.getCapability(VlAbyssModVariables.PLAYER_VARIABLES_CAPABILITY, null).orElse(new VlAbyssModVariables.PlayerVariables())).Ethir >= 50) {
+						{
+							double _setval = (entity.getCapability(VlAbyssModVariables.PLAYER_VARIABLES_CAPABILITY, null).orElse(new VlAbyssModVariables.PlayerVariables())).Ethir - 50;
+							entity.getCapability(VlAbyssModVariables.PLAYER_VARIABLES_CAPABILITY, null).ifPresent(capability -> {
+								capability.Ethir = _setval;
+								capability.syncPlayerVariables(entity);
+							});
+						}
+						{
+							double _setval = 10;
+							entity.getCapability(VlAbyssModVariables.PLAYER_VARIABLES_CAPABILITY, null).ifPresent(capability -> {
+								capability.mantra1_cooldown = _setval;
+								capability.syncPlayerVariables(entity);
+							});
+						}
+						if (entity instanceof LivingEntity _entMainHand139 && _entMainHand139.getMainArm() == HumanoidArm.LEFT) {
+							if (world.isClientSide()) {
+								SetupAnimationsProcedure.setAnimationClientside((Player) entity, "mantrarespiro1", false);
+							}
+							if (!world.isClientSide()) {
+								if (entity instanceof Player && world instanceof ServerLevel srvLvl_) {
+									List<Connection> connections = srvLvl_.getServer().getConnection().getConnections();
+									synchronized (connections) {
+										Iterator<Connection> iterator = connections.iterator();
+										while (iterator.hasNext()) {
+											Connection connection = iterator.next();
+											if (!connection.isConnecting() && connection.isConnected())
+												VlAbyssMod.PACKET_HANDLER.sendTo(new SetupAnimationsProcedure.VlAbyssModAnimationMessage(Component.literal("mantrarespiro1"), entity.getId(), false), connection, NetworkDirection.PLAY_TO_CLIENT);
+										}
+									}
+								}
+							}
+							if (world instanceof net.minecraft.server.level.ServerLevel) {
+								net.minecraft.server.level.ServerLevel _level = (net.minecraft.server.level.ServerLevel) world;
+								int particleCount = (int) 30;
+								double centerX = x;
+								double centerY = y;
+								double centerZ = z;
+								double particleSpeed = 0.6;
+								net.minecraft.core.particles.ParticleOptions particleType = net.minecraft.core.particles.ParticleTypes.FLAME;
+								double initialRadius = 4.0;
+								for (int i = 0; i < particleCount; i++) {
+									double u = Math.random();
+									double v = Math.random();
+									double theta = 2 * Math.PI * u;
+									double phi = Math.acos(2 * v - 1);
+									double startX = centerX + initialRadius * Math.sin(phi) * Math.cos(theta);
+									double startY = centerY + initialRadius * Math.cos(phi);
+									double startZ = centerZ + initialRadius * Math.sin(phi) * Math.sin(theta);
+									double deltaX = centerX - startX;
+									double deltaY = centerY - startY;
+									double deltaZ = centerZ - startZ;
+									double distance = Math.sqrt(deltaX * deltaX + deltaY * deltaY + deltaZ * deltaZ);
+									double velocityX = (deltaX / distance) * particleSpeed;
+									double velocityY = (deltaY / distance) * particleSpeed;
+									double velocityZ = (deltaZ / distance) * particleSpeed;
+									_level.sendParticles(particleType, startX, startY, startZ, 0, velocityX, velocityY, velocityZ, particleSpeed);
+								}
+							}
+							if (world instanceof ServerLevel _level) {
+								Entity entityToSpawn = VlAbyssModEntities.CORTE_CHAMA_RETO.get().spawn(_level, BlockPos.containing(x, y, z), MobSpawnType.MOB_SUMMONED);
+								if (entityToSpawn != null) {
+									entityToSpawn.setYRot(entity.getYRot());
+									entityToSpawn.setYBodyRot(entity.getYRot());
+									entityToSpawn.setYHeadRot(entity.getYRot());
+									entityToSpawn.setXRot(entity.getXRot());
+								}
+							}
+						} else if (entity instanceof LivingEntity _entMainHand145 && _entMainHand145.getMainArm() == HumanoidArm.RIGHT) {
+							if (world.isClientSide()) {
+								SetupAnimationsProcedure.setAnimationClientside((Player) entity, "mantrarespiro1", false);
+							}
+							if (!world.isClientSide()) {
+								if (entity instanceof Player && world instanceof ServerLevel srvLvl_) {
+									List<Connection> connections = srvLvl_.getServer().getConnection().getConnections();
+									synchronized (connections) {
+										Iterator<Connection> iterator = connections.iterator();
+										while (iterator.hasNext()) {
+											Connection connection = iterator.next();
+											if (!connection.isConnecting() && connection.isConnected())
+												VlAbyssMod.PACKET_HANDLER.sendTo(new SetupAnimationsProcedure.VlAbyssModAnimationMessage(Component.literal("mantrarespiro1"), entity.getId(), false), connection, NetworkDirection.PLAY_TO_CLIENT);
+										}
+									}
+								}
+							}
+							if (world instanceof net.minecraft.server.level.ServerLevel) {
+								net.minecraft.server.level.ServerLevel _level = (net.minecraft.server.level.ServerLevel) world;
+								int particleCount = (int) 30;
+								double centerX = x;
+								double centerY = y;
+								double centerZ = z;
+								double particleSpeed = 0.6;
+								net.minecraft.core.particles.ParticleOptions particleType = net.minecraft.core.particles.ParticleTypes.FLAME;
+								double initialRadius = 4.0;
+								for (int i = 0; i < particleCount; i++) {
+									double u = Math.random();
+									double v = Math.random();
+									double theta = 2 * Math.PI * u;
+									double phi = Math.acos(2 * v - 1);
+									double startX = centerX + initialRadius * Math.sin(phi) * Math.cos(theta);
+									double startY = centerY + initialRadius * Math.cos(phi);
+									double startZ = centerZ + initialRadius * Math.sin(phi) * Math.sin(theta);
+									double deltaX = centerX - startX;
+									double deltaY = centerY - startY;
+									double deltaZ = centerZ - startZ;
+									double distance = Math.sqrt(deltaX * deltaX + deltaY * deltaY + deltaZ * deltaZ);
+									double velocityX = (deltaX / distance) * particleSpeed;
+									double velocityY = (deltaY / distance) * particleSpeed;
+									double velocityZ = (deltaZ / distance) * particleSpeed;
+									_level.sendParticles(particleType, startX, startY, startZ, 0, velocityX, velocityY, velocityZ, particleSpeed);
+								}
+							}
+							if (world instanceof ServerLevel _level) {
+								Entity entityToSpawn = VlAbyssModEntities.CORTE_CHAMA_RETO.get().spawn(_level, BlockPos.containing(x, y, z), MobSpawnType.MOB_SUMMONED);
+								if (entityToSpawn != null) {
+									entityToSpawn.setYRot(entity.getYRot());
+									entityToSpawn.setYBodyRot(entity.getYRot());
+									entityToSpawn.setYHeadRot(entity.getYRot());
+									entityToSpawn.setXRot(entity.getXRot());
+								}
+							}
+						}
+					} else {
+						if (entity instanceof Player _player && !_player.level().isClientSide())
+							_player.displayClientMessage(Component.literal("\u00A7cSem \"ETHIR\" o suficiente"), true);
+						if (world instanceof Level _level) {
+							if (!_level.isClientSide()) {
+								_level.playSound(null, BlockPos.containing(x, y, z), ForgeRegistries.SOUND_EVENTS.getValue(ResourceLocation.parse("vl_abyss:sem_ethir_som")), SoundSource.MASTER, 1, 1);
+							} else {
+								_level.playLocalSound(x, y, z, ForgeRegistries.SOUND_EVENTS.getValue(ResourceLocation.parse("vl_abyss:sem_ethir_som")), SoundSource.MASTER, 1, 1, false);
+							}
+						}
+					}
+				}
+			} else {
+				if (entity instanceof Player _player && !_player.level().isClientSide())
+					_player.displayClientMessage(Component.literal("\u00A7cHabilidade em recarga"), true);
+				if (world instanceof Level _level) {
+					if (!_level.isClientSide()) {
+						_level.playSound(null, BlockPos.containing(x, y, z), ForgeRegistries.SOUND_EVENTS.getValue(ResourceLocation.parse("vl_abyss:sem_ethir_som")), SoundSource.MASTER, 1, 1);
+					} else {
+						_level.playLocalSound(x, y, z, ForgeRegistries.SOUND_EVENTS.getValue(ResourceLocation.parse("vl_abyss:sem_ethir_som")), SoundSource.MASTER, 1, 1, false);
 					}
 				}
 			}

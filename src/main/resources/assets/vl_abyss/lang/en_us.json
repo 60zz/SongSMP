@@ -103,7 +103,6 @@
   "effect.vl_abyss.cooldown_respiro": "Wind Blade",
   "entity.minecraft.villager.vl_abyss.mestre_mantra_profession": "Mestre da Mantra",
   "item_group.vl_abyss.vl_abyss": "§5SSMP | S1",
-  "item.vl_abyss.capuz_esquecido": "Capuz do Esquecido",
   "item.vl_abyss.amuleto_vesperian": "Amuleto de Vesperian",
   "block.vl_abyss.metal_forging": "Forjador de Metais",
   "key.vl_abyss.habilidade_secundaria": "Mantra Secundária",
@@ -125,5 +124,11 @@
   "item.vl_abyss.pocao_renascimento": "Poção do Renascimento",
   "attribute.vl_abyss.inteligencia": "Inteligencia",
   "painting.vl_abyss.abyss_painting.title": "Abyss Painting",
-  "painting.vl_abyss.abyss_painting.author": "@sophii1105"
+  "painting.vl_abyss.abyss_painting.author": "@sophii1105",
+  "item.vl_abyss.capuz_esquecido": "Capuz Esquecido",
+  "item.vl_abyss.artifacts_bundle": "Pacote de Artefatos",
+  "item.vl_abyss.corte_chama_reto_spawn_egg": "Slash Attack Spawn Egg",
+  "entity.vl_abyss.corte_chama_reto": "Slash Attack",
+  "key.vl_abyss.desliga_dash": "Desliga Dash",
+  "effect.vl_abyss.regen_mantra": "Regen Mantra"
 }

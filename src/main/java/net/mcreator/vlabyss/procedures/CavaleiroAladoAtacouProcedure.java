@@ -37,12 +37,10 @@ public class CavaleiroAladoAtacouProcedure {
 		if (sourceentity instanceof CavaleiroAladoEntity) {
 			entity.hurt(new DamageSource(world.registryAccess().registryOrThrow(Registries.DAMAGE_TYPE).getHolderOrThrow(ResourceKey.create(Registries.DAMAGE_TYPE, ResourceLocation.parse("vl_abyss:danoabismoboss")))),
 					(float) (double) SsmpConfiguration.WINGEDKNIGHTTOTALDAMAGE.get());
-		} else if (entity instanceof Player) {
-			if ((sourceentity instanceof CavaleiroAladoEntity _datEntL5 && _datEntL5.getEntityData().get(CavaleiroAladoEntity.DATA_invocadordefinido)) == false) {
-				if (sourceentity instanceof CavaleiroAladoEntity _datEntSetS)
-					_datEntSetS.getEntityData().set(CavaleiroAladoEntity.DATA_invocador, (entity.getDisplayName().getString()));
-				if (sourceentity instanceof CavaleiroAladoEntity _datEntSetL)
-					_datEntSetL.getEntityData().set(CavaleiroAladoEntity.DATA_invocadordefinido, true);
+		} else if (sourceentity instanceof Player) {
+			if (!entity.getPersistentData().getBoolean("invocadordefinido")) {
+				entity.getPersistentData().putString("invocador", (sourceentity.getDisplayName().getString()));
+				entity.getPersistentData().putBoolean("invocadordefinido", true);
 			}
 		}
 	}

@@ -3,12 +3,15 @@
   "_type": "potioneffect",
   "definition": {
     "effectName": "Instant Regen Mantra",
-    "icon": "cooldown_respiro.png",
+    "icon": "insta-regen",
     "color": {
       "value": -16777216,
       "falpha": 0.0
     },
-    "isInstant": false,
+    "onAddedSound": {
+      "value": ""
+    },
+    "isInstant": true,
     "mobEffectCategory": "BENEFICIAL",
     "renderStatusInInventory": true,
     "renderStatusInHUD": true,

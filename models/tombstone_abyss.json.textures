@@ -6,11 +6,11 @@
       },
       "name": "default"
     },
-    "desativo": {
+    "desativado": {
       "map": {
         "1": "desativado"
       },
-      "name": "desativo"
+      "name": "desativado"
     }
   }
 }

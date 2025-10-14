@@ -12,6 +12,7 @@ import net.minecraft.world.effect.MobEffect;
 import net.mcreator.vlabyss.potion.ShadowCopyMobEffect;
 import net.mcreator.vlabyss.potion.SangrandoMobEffect;
 import net.mcreator.vlabyss.potion.ResistenciaQuebradaMobEffect;
+import net.mcreator.vlabyss.potion.RegenMantraMobEffect;
 import net.mcreator.vlabyss.potion.QuebraMobEffect;
 import net.mcreator.vlabyss.potion.InstantRegenMantraMobEffect;
 import net.mcreator.vlabyss.potion.InsanoMobEffect;
@@ -29,4 +30,5 @@ public class VlAbyssModMobEffects {
 	public static final RegistryObject<MobEffect> INSANO = REGISTRY.register("insano", () -> new InsanoMobEffect());
 	public static final RegistryObject<MobEffect> SHADOW_COPY = REGISTRY.register("shadow_copy", () -> new ShadowCopyMobEffect());
 	public static final RegistryObject<MobEffect> INSTANT_REGEN_MANTRA = REGISTRY.register("instant_regen_mantra", () -> new InstantRegenMantraMobEffect());
+	public static final RegistryObject<MobEffect> REGEN_MANTRA = REGISTRY.register("regen_mantra", () -> new RegenMantraMobEffect());
 }

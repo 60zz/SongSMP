@@ -61,8 +61,6 @@ public class CavaleiroAladoEntity extends Monster implements GeoEntity {
 	public static final EntityDataAccessor<String> TEXTURE = SynchedEntityData.defineId(CavaleiroAladoEntity.class, EntityDataSerializers.STRING);
 	public static final EntityDataAccessor<Boolean> DATA_ataquechao = SynchedEntityData.defineId(CavaleiroAladoEntity.class, EntityDataSerializers.BOOLEAN);
 	public static final EntityDataAccessor<Boolean> DATA_ataquevoador = SynchedEntityData.defineId(CavaleiroAladoEntity.class, EntityDataSerializers.BOOLEAN);
-	public static final EntityDataAccessor<String> DATA_invocador = SynchedEntityData.defineId(CavaleiroAladoEntity.class, EntityDataSerializers.STRING);
-	public static final EntityDataAccessor<Boolean> DATA_invocadordefinido = SynchedEntityData.defineId(CavaleiroAladoEntity.class, EntityDataSerializers.BOOLEAN);
 	private final AnimatableInstanceCache cache = GeckoLibUtil.createInstanceCache(this);
 	private boolean swinging;
 	private boolean lastloop;
@@ -90,8 +88,6 @@ public class CavaleiroAladoEntity extends Monster implements GeoEntity {
 		this.entityData.define(TEXTURE, "cavaleiroalado");
 		this.entityData.define(DATA_ataquechao, false);
 		this.entityData.define(DATA_ataquevoador, false);
-		this.entityData.define(DATA_invocador, "");
-		this.entityData.define(DATA_invocadordefinido, false);
 	}
 
 	public void setTexture(String texture) {
@@ -110,7 +106,7 @@ public class CavaleiroAladoEntity extends Monster implements GeoEntity {
 	@Override
 	protected void registerGoals() {
 		super.registerGoals();
-		this.goalSelector.addGoal(1, new MeleeAttackGoal(this, 1.2, false) {
+		this.goalSelector.addGoal(1, new MeleeAttackGoal(this, 1, false) {
 			@Override
 			protected double getAttackReachSqr(LivingEntity entity) {
 				return this.mob.getBbWidth() * this.mob.getBbWidth() + entity.getBbWidth();
@@ -175,7 +171,7 @@ public class CavaleiroAladoEntity extends Monster implements GeoEntity {
 	@Override
 	public void die(DamageSource source) {
 		super.die(source);
-		CavaleiroAladoEntityDiesProcedure.execute(this.level(), this.getX(), this.getY(), this.getZ(), this);
+		CavaleiroAladoEntityDiesProcedure.execute(this);
 	}
 
 	@Override
@@ -191,8 +187,6 @@ public class CavaleiroAladoEntity extends Monster implements GeoEntity {
 		compound.putString("Texture", this.getTexture());
 		compound.putBoolean("Dataataquechao", this.entityData.get(DATA_ataquechao));
 		compound.putBoolean("Dataataquevoador", this.entityData.get(DATA_ataquevoador));
-		compound.putString("Datainvocador", this.entityData.get(DATA_invocador));
-		compound.putBoolean("Datainvocadordefinido", this.entityData.get(DATA_invocadordefinido));
 	}
 
 	@Override
@@ -204,10 +198,6 @@ public class CavaleiroAladoEntity extends Monster implements GeoEntity {
 			this.entityData.set(DATA_ataquechao, compound.getBoolean("Dataataquechao"));
 		if (compound.contains("Dataataquevoador"))
 			this.entityData.set(DATA_ataquevoador, compound.getBoolean("Dataataquevoador"));
-		if (compound.contains("Datainvocador"))
-			this.entityData.set(DATA_invocador, compound.getString("Datainvocador"));
-		if (compound.contains("Datainvocadordefinido"))
-			this.entityData.set(DATA_invocadordefinido, compound.getBoolean("Datainvocadordefinido"));
 	}
 
 	@Override
@@ -253,7 +243,7 @@ public class CavaleiroAladoEntity extends Monster implements GeoEntity {
 		builder = builder.add(Attributes.MOVEMENT_SPEED, 0.3);
 		builder = builder.add(Attributes.MAX_HEALTH, 250);
 		builder = builder.add(Attributes.ARMOR, 40);
-		builder = builder.add(Attributes.ATTACK_DAMAGE, 1);
+		builder = builder.add(Attributes.ATTACK_DAMAGE, 0);
 		builder = builder.add(Attributes.FOLLOW_RANGE, 16);
 		builder = builder.add(Attributes.KNOCKBACK_RESISTANCE, 100);
 		builder = builder.add(Attributes.ATTACK_KNOCKBACK, 1);

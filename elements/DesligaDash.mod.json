@@ -1,0 +1,12 @@
+{
+  "_fv": 79,
+  "_type": "keybind",
+  "definition": {
+    "triggerKey": "G",
+    "keyBindingName": "Desliga Dash",
+    "keyBindingCategoryKey": "geral",
+    "onKeyPressed": {
+      "name": "DesligaDashOnKeyPressed"
+    }
+  }
+}

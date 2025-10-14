@@ -43,6 +43,7 @@ import net.mcreator.vlabyss.item.DesbloqueioEsquivaItem;
 import net.mcreator.vlabyss.item.CintoDosEcosItem;
 import net.mcreator.vlabyss.item.CapuzEsquecidoItem;
 import net.mcreator.vlabyss.item.BotasVazioAbyssalItem;
+import net.mcreator.vlabyss.item.ArtifactsBundleItem;
 import net.mcreator.vlabyss.item.AnelEnferrujadoItem;
 import net.mcreator.vlabyss.item.AmuletoVesperianItem;
 import net.mcreator.vlabyss.item.AmuletoSangueItem;
@@ -56,7 +57,6 @@ import net.mcreator.vlabyss.VlAbyssMod;
 public class VlAbyssModItems {
 	public static final DeferredRegister<Item> REGISTRY = DeferredRegister.create(ForgeRegistries.ITEMS, VlAbyssMod.MODID);
 	public static final RegistryObject<Item> MAPA_ABYSS = REGISTRY.register("mapa_abyss", () -> new MapaAbyssItem());
-	public static final RegistryObject<Item> CAPUZ_ESQUECIDO = REGISTRY.register("capuz_esquecido", () -> new CapuzEsquecidoItem());
 	public static final RegistryObject<Item> VOTO_SILENCIOSO = REGISTRY.register("voto_silencioso", () -> new VotoSilenciosoItem());
 	public static final RegistryObject<Item> AMULETO_VESPERIAN = REGISTRY.register("amuleto_vesperian", () -> new AmuletoVesperianItem());
 	public static final RegistryObject<Item> AMULETO_SANGUE = REGISTRY.register("amuleto_sangue", () -> new AmuletoSangueItem());
@@ -87,6 +87,8 @@ public class VlAbyssModItems {
 	public static final RegistryObject<Item> PORTA_ABYSS_SLAVE = block(VlAbyssModBlocks.PORTA_ABYSS_SLAVE);
 	public static final RegistryObject<Item> TOMBSTONE_ABYSS = block(VlAbyssModBlocks.TOMBSTONE_ABYSS);
 	public static final RegistryObject<Item> METAL_FORGING = block(VlAbyssModBlocks.METAL_FORGING);
+	public static final RegistryObject<Item> CAPUZ_ESQUECIDO = REGISTRY.register("capuz_esquecido", () -> new CapuzEsquecidoItem());
+	public static final RegistryObject<Item> ARTIFACTS_BUNDLE = REGISTRY.register("artifacts_bundle", () -> new ArtifactsBundleItem());
 
 	// Start of user code block custom items
 	// End of user code block custom items

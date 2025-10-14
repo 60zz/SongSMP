@@ -149,10 +149,6 @@
           {
             "name": "entity",
             "type": "entity"
-          },
-          {
-            "name": "sourceentity",
-            "type": "entity"
           }
         ]
       },
@@ -848,20 +844,6 @@
         ]
       },
       "path": "~/VL1_Abyss/Alma/Dano"
-    },
-    {
-      "name": "CapuzEsquecido",
-      "type": "curiosbauble",
-      "compiles": true,
-      "locked_code": false,
-      "registry_name": "capuz_esquecido",
-      "metadata": {
-        "files": [
-          "src/main/java/net/mcreator/vlabyss/item/CapuzEsquecidoItem.java",
-          "src/main/resources/assets/vl_abyss/models/item/capuz_esquecido.json"
-        ]
-      },
-      "path": "~/VL1_Abyss/Artefatos"
     },
     {
       "name": "CapuzEsquecidoBaubleIsEquipped",
@@ -4491,20 +4473,6 @@
       "path": "~/VL1_Abyss/Mantras/MantraKeyAtivacao"
     },
     {
-      "name": "Tombstone",
-      "type": "blockstates",
-      "compiles": true,
-      "locked_code": false,
-      "registry_name": "tombstone",
-      "metadata": {
-        "files": [
-          "src/main/resources/assets/vl_abyss/models/block/tombstone_blockstate_1.json",
-          "src/main/resources/assets/vl_abyss/models/block/tombstone_blockstate_0.json"
-        ]
-      },
-      "path": "~/VL1_Abyss/AbismoBosses/BlocoInvocacao"
-    },
-    {
       "name": "AcertouComLuvaSangrenta",
       "type": "procedure",
       "compiles": true,
@@ -4618,6 +4586,67 @@
           {
             "name": "entity",
             "type": "entity"
+          }
+        ],
+        "files": [
+          "src/main/java/net/mcreator/vlabyss/procedures/CavaleiroAladoEntityDiesProcedure.java"
+        ]
+      },
+      "path": "~/VL1_Abyss/AbismoBosses/CavaleiroAlado/Procedure"
+    },
+    {
+      "name": "TombstoneAbyssBlockstate",
+      "type": "blockstates",
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "tombstone_abyss_blockstate",
+      "metadata": {
+        "files": [
+          "src/main/resources/assets/vl_abyss/models/block/tombstone_abyss_blockstate_blockstate_0.json",
+          "src/main/resources/assets/vl_abyss/models/block/tombstone_abyss_blockstate_blockstate_1.json"
+        ]
+      },
+      "path": "~/VL1_Abyss/AbismoBosses/BlocoInvocacao"
+    },
+    {
+      "name": "CapuzEsquecido",
+      "type": "curiosbauble",
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "capuz_esquecido",
+      "metadata": {
+        "files": [
+          "src/main/java/net/mcreator/vlabyss/item/CapuzEsquecidoItem.java",
+          "src/main/resources/assets/vl_abyss/models/item/capuz_esquecido.json"
+        ]
+      },
+      "path": "~/VL1_Abyss/Artefatos"
+    },
+    {
+      "name": "ArtifactsBundle",
+      "type": "item",
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "artifacts_bundle",
+      "metadata": {
+        "files": [
+          "src/main/java/net/mcreator/vlabyss/item/ArtifactsBundleItem.java",
+          "src/main/resources/assets/vl_abyss/models/item/artifacts_bundle.json"
+        ]
+      },
+      "path": "~/VL1_Abyss/AbismoBosses/DropAbismoCriaturas"
+    },
+    {
+      "name": "ArtifactsBundleRightclicked",
+      "type": "procedure",
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "artifacts_bundle_rightclicked",
+      "metadata": {
+        "dependencies": [
+          {
+            "name": "entity",
+            "type": "entity"
           },
           {
             "name": "x",
@@ -4637,10 +4666,144 @@
           }
         ],
         "files": [
-          "src/main/java/net/mcreator/vlabyss/procedures/CavaleiroAladoEntityDiesProcedure.java"
+          "src/main/java/net/mcreator/vlabyss/procedures/ArtifactsBundleRightclickedProcedure.java"
         ]
       },
-      "path": "~/VL1_Abyss/AbismoBosses/CavaleiroAlado/Procedure"
+      "path": "~/VL1_Abyss/AbismoBosses/DropAbismoCriaturas/Procedure"
+    },
+    {
+      "name": "CorteChamaRetoPlayerCollidesWithThisEntity",
+      "type": "procedure",
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "corte_chama_reto_player_collides_with_this_entity",
+      "metadata": {
+        "dependencies": [
+          {
+            "name": "entity",
+            "type": "entity"
+          },
+          {
+            "name": "x",
+            "type": "number"
+          },
+          {
+            "name": "y",
+            "type": "number"
+          },
+          {
+            "name": "z",
+            "type": "number"
+          },
+          {
+            "name": "world",
+            "type": "world"
+          }
+        ],
+        "files": [
+          "src/main/java/net/mcreator/vlabyss/procedures/CorteChamaRetoPlayerCollidesWithThisEntityProcedure.java"
+        ]
+      },
+      "path": "~/VL1_Abyss/Mantras/Chama/Corte"
+    },
+    {
+      "name": "CorteChamaReto",
+      "type": "animatedentity",
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "corte_chama_reto",
+      "metadata": {
+        "files": [
+          "src/main/java/net/mcreator/vlabyss/entity/model/CorteChamaRetoModel.java",
+          "src/main/java/net/mcreator/vlabyss/client/renderer/CorteChamaRetoRenderer.java",
+          "src/main/java/net/mcreator/vlabyss/entity/CorteChamaRetoEntity.java",
+          "src/main/resources/data/vl_abyss/forge/biome_modifier/corte_chama_reto_biome_modifier.json"
+        ]
+      },
+      "path": "~/VL1_Abyss/Mantras/Chama/Corte"
+    },
+    {
+      "name": "DesligaDash",
+      "type": "keybind",
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "desliga_dash",
+      "metadata": {
+        "files": [
+          "src/main/java/net/mcreator/vlabyss/network/DesligaDashMessage.java"
+        ]
+      },
+      "path": "~/VL1_Abyss/Dash/Key"
+    },
+    {
+      "name": "DesligaDashOnKeyPressed",
+      "type": "procedure",
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "desliga_dash_on_key_pressed",
+      "metadata": {
+        "dependencies": [
+          {
+            "name": "entity",
+            "type": "entity"
+          }
+        ],
+        "files": [
+          "src/main/java/net/mcreator/vlabyss/procedures/DesligaDashOnKeyPressedProcedure.java"
+        ]
+      },
+      "path": "~/VL1_Abyss/Dash/Procedure"
+    },
+    {
+      "name": "RegenMantra",
+      "type": "potioneffect",
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "regen_mantra",
+      "metadata": {
+        "files": [
+          "src/main/java/net/mcreator/vlabyss/potion/RegenMantraMobEffect.java"
+        ]
+      },
+      "path": "~/VL1_Abyss/Mantras/InstantRegenMantra"
+    },
+    {
+      "name": "RegenMantraOnEffectActiveTick",
+      "type": "procedure",
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "regen_mantra_on_effect_active_tick",
+      "metadata": {
+        "dependencies": [
+          {
+            "name": "entity",
+            "type": "entity"
+          }
+        ],
+        "files": [
+          "src/main/java/net/mcreator/vlabyss/procedures/RegenMantraOnEffectActiveTickProcedure.java"
+        ]
+      },
+      "path": "~/VL1_Abyss/Mantras/InstantRegenMantra/Procedure"
+    },
+    {
+      "name": "RecarregaMantra1",
+      "type": "procedure",
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "recarrega_mantra_1",
+      "metadata": {
+        "dependencies": [
+          {
+            "name": "entity",
+            "type": "entity"
+          }
+        ],
+        "files": [
+          "src/main/java/net/mcreator/vlabyss/procedures/RecarregaMantra1Procedure.java"
+        ]
+      },
+      "path": "~/VL1_Abyss/Mantras/TempoRecargaMantra"
     }
   ],
   "variable_elements": [
@@ -4859,6 +5022,24 @@
       "type": "number",
       "scope": "player_persistent",
       "value": "1.0"
+    },
+    {
+      "name": "desligadash",
+      "type": "logic",
+      "scope": "player_persistent",
+      "value": "false"
+    },
+    {
+      "name": "mantra1_cooldown",
+      "type": "number",
+      "scope": "player_persistent",
+      "value": "0"
+    },
+    {
+      "name": "mantra2_cooldown",
+      "type": "number",
+      "scope": "player_persistent",
+      "value": "0"
     }
   ],
   "sound_elements": [
@@ -5217,7 +5398,40 @@
     ],
     "BIOMES:minecraft:is_overworld": []
   },
-  "tab_element_order": {},
+  "tab_element_order": {
+    "CUSTOM:VlAbyss": [
+      "MapaAbyss",
+      "VotoSilencioso",
+      "AmuletoVesperian",
+      "AmuletoSangue",
+      "AbyssionOre",
+      "RawAbyssion",
+      "AbyssionIngot",
+      "AbyssionNugget",
+      "RawAbyssionBlock",
+      "AbyssionIngotBlock",
+      "CapuzEsquecido",
+      "LuvasIronsing",
+      "LuvasLuaSangrenta",
+      "AnelEnferrujado",
+      "CintoDosEcos",
+      "FaixaAcolito",
+      "BotasVazioAbyssal",
+      "FragmentoPrimordial",
+      "LiberacaoMantra",
+      "DesbloqueioEsquiva",
+      "PocaoRejuvenescimento",
+      "PocaoResistenciaEterna",
+      "PocaoVidaExtra",
+      "PocaoRenascimento",
+      "Runas",
+      "CavaleiroAlado",
+      "EssenciaAbismo",
+      "TombstoneAbyss",
+      "MetalForging",
+      "ArtifactsBundle"
+    ]
+  },
   "language_map": {
     "en_us": {
       "entity.minecraft.villager.vl_abyss.ferreiro_profession": "Ferreiro",
@@ -5324,7 +5538,6 @@
       "effect.vl_abyss.cooldown_respiro": "Wind Blade",
       "entity.minecraft.villager.vl_abyss.mestre_mantra_profession": "Mestre da Mantra",
       "item_group.vl_abyss.vl_abyss": "§5SSMP | S1",
-      "item.vl_abyss.capuz_esquecido": "Capuz do Esquecido",
       "item.vl_abyss.amuleto_vesperian": "Amuleto de Vesperian",
       "block.vl_abyss.metal_forging": "Forjador de Metais",
       "key.vl_abyss.habilidade_secundaria": "Mantra Secundária",
@@ -5346,7 +5559,13 @@
       "item.vl_abyss.pocao_renascimento": "Poção do Renascimento",
       "attribute.vl_abyss.inteligencia": "Inteligencia",
       "painting.vl_abyss.abyss_painting.title": "Abyss Painting",
-      "painting.vl_abyss.abyss_painting.author": "@sophii1105"
+      "painting.vl_abyss.abyss_painting.author": "@sophii1105",
+      "item.vl_abyss.capuz_esquecido": "Capuz Esquecido",
+      "item.vl_abyss.artifacts_bundle": "Pacote de Artefatos",
+      "item.vl_abyss.corte_chama_reto_spawn_egg": "Slash Attack Spawn Egg",
+      "entity.vl_abyss.corte_chama_reto": "Slash Attack",
+      "key.vl_abyss.desliga_dash": "Desliga Dash",
+      "effect.vl_abyss.regen_mantra": "Regen Mantra"
     }
   },
   "metadata": {
@@ -5669,7 +5888,12 @@
               },
               {
                 "name": "Chama",
-                "children": []
+                "children": [
+                  {
+                    "name": "Corte",
+                    "children": []
+                  }
+                ]
               },
               {
                 "name": "MantraKeyAtivacao",
@@ -5713,6 +5937,10 @@
               },
               {
                 "name": "Luz",
+                "children": []
+              },
+              {
+                "name": "TempoRecargaMantra",
                 "children": []
               }
             ]
@@ -5816,6 +6044,10 @@
                 "children": [
                   {
                     "name": "Craft",
+                    "children": []
+                  },
+                  {
+                    "name": "Procedure",
                     "children": []
                   }
                 ]

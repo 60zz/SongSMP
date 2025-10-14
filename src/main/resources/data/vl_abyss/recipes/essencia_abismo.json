@@ -11,11 +11,11 @@
       "item": "vl_abyss:essencia_abismo"
     },
     "b": {
-      "item": "minecraft:bundle"
+      "item": "minecraft:leather"
     }
   },
   "result": {
-    "item": "minecraft:bundle",
+    "item": "vl_abyss:artifacts_bundle",
     "count": 1
   }
 }

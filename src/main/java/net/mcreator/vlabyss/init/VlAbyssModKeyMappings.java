@@ -18,6 +18,7 @@ import net.mcreator.vlabyss.network.PlanarMessage;
 import net.mcreator.vlabyss.network.ParryMessage;
 import net.mcreator.vlabyss.network.HabilidadeSecundariaMessage;
 import net.mcreator.vlabyss.network.HabilidadePrimariaMessage;
+import net.mcreator.vlabyss.network.DesligaDashMessage;
 import net.mcreator.vlabyss.network.DashTrasMessage;
 import net.mcreator.vlabyss.network.DashFrenteMessage;
 import net.mcreator.vlabyss.network.AtivaArtefatosMessage;
@@ -121,6 +122,19 @@ public class VlAbyssModKeyMappings {
 			isDownOld = isDown;
 		}
 	};
+	public static final KeyMapping DESLIGA_DASH = new KeyMapping("key.vl_abyss.desliga_dash", GLFW.GLFW_KEY_G, "key.categories.geral") {
+		private boolean isDownOld = false;
+
+		@Override
+		public void setDown(boolean isDown) {
+			super.setDown(isDown);
+			if (isDownOld != isDown && isDown) {
+				VlAbyssMod.PACKET_HANDLER.sendToServer(new DesligaDashMessage(0, 0));
+				DesligaDashMessage.pressAction(Minecraft.getInstance().player, 0, 0);
+			}
+			isDownOld = isDown;
+		}
+	};
 	private static long PLANAR_LASTPRESS = 0;
 
 	@SubscribeEvent
@@ -132,6 +146,7 @@ public class VlAbyssModKeyMappings {
 		event.register(HABILIDADE_PRIMARIA);
 		event.register(DASH_FRENTE);
 		event.register(HABILIDADE_SECUNDARIA);
+		event.register(DESLIGA_DASH);
 	}
 
 	@Mod.EventBusSubscriber({Dist.CLIENT})
@@ -146,6 +161,7 @@ public class VlAbyssModKeyMappings {
 				HABILIDADE_PRIMARIA.consumeClick();
 				DASH_FRENTE.consumeClick();
 				HABILIDADE_SECUNDARIA.consumeClick();
+				DESLIGA_DASH.consumeClick();
 			}
 		}
 	}
