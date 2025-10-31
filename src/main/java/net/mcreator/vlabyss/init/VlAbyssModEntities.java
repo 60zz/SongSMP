@@ -17,7 +17,7 @@ import net.minecraft.world.entity.Entity;
 
 import net.mcreator.vlabyss.entity.RespiroPrimariaEntity;
 import net.mcreator.vlabyss.entity.MantraSoulEntity;
-import net.mcreator.vlabyss.entity.CorteChamaRetoEntity;
+import net.mcreator.vlabyss.entity.MantraSoulCorrompidaEntity;
 import net.mcreator.vlabyss.entity.CavaleiroAladoEntity;
 import net.mcreator.vlabyss.VlAbyssMod;
 
@@ -30,8 +30,8 @@ public class VlAbyssModEntities {
 			.setCustomClientFactory(RespiroPrimariaEntity::new).setShouldReceiveVelocityUpdates(true).setTrackingRange(64).setUpdateInterval(1).sized(0.5f, 0.5f));
 	public static final RegistryObject<EntityType<CavaleiroAladoEntity>> CAVALEIRO_ALADO = register("cavaleiro_alado", EntityType.Builder.<CavaleiroAladoEntity>of(CavaleiroAladoEntity::new, MobCategory.MONSTER).setShouldReceiveVelocityUpdates(true)
 			.setTrackingRange(64).setUpdateInterval(3).setCustomClientFactory(CavaleiroAladoEntity::new).fireImmune().sized(1f, 3f));
-	public static final RegistryObject<EntityType<CorteChamaRetoEntity>> CORTE_CHAMA_RETO = register("corte_chama_reto", EntityType.Builder.<CorteChamaRetoEntity>of(CorteChamaRetoEntity::new, MobCategory.MONSTER).setShouldReceiveVelocityUpdates(true)
-			.setTrackingRange(64).setUpdateInterval(3).setCustomClientFactory(CorteChamaRetoEntity::new).fireImmune().sized(2f, 2f));
+	public static final RegistryObject<EntityType<MantraSoulCorrompidaEntity>> MANTRA_SOUL_CORROMPIDA = register("mantra_soul_corrompida", EntityType.Builder.<MantraSoulCorrompidaEntity>of(MantraSoulCorrompidaEntity::new, MobCategory.MONSTER)
+			.setShouldReceiveVelocityUpdates(true).setTrackingRange(1).setUpdateInterval(3).setCustomClientFactory(MantraSoulCorrompidaEntity::new).fireImmune().sized(0.2f, 0.5f));
 
 	// Start of user code block custom entities
 	// End of user code block custom entities
@@ -44,7 +44,7 @@ public class VlAbyssModEntities {
 		event.enqueueWork(() -> {
 			MantraSoulEntity.init();
 			CavaleiroAladoEntity.init();
-			CorteChamaRetoEntity.init();
+			MantraSoulCorrompidaEntity.init();
 		});
 	}
 
@@ -52,6 +52,6 @@ public class VlAbyssModEntities {
 	public static void registerAttributes(EntityAttributeCreationEvent event) {
 		event.put(MANTRA_SOUL.get(), MantraSoulEntity.createAttributes().build());
 		event.put(CAVALEIRO_ALADO.get(), CavaleiroAladoEntity.createAttributes().build());
-		event.put(CORTE_CHAMA_RETO.get(), CorteChamaRetoEntity.createAttributes().build());
+		event.put(MANTRA_SOUL_CORROMPIDA.get(), MantraSoulCorrompidaEntity.createAttributes().build());
 	}
 }

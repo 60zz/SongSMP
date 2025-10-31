@@ -1,13 +1,6 @@
 {
-  "parent": "block/cube",
+  "parent": "minecraft:item/handheld",
   "textures": {
-    "down": "vl_abyss:block/nada",
-    "up": "vl_abyss:block/nada",
-    "north": "vl_abyss:block/nada",
-    "east": "vl_abyss:block/nada",
-    "south": "vl_abyss:block/nada",
-    "west": "vl_abyss:block/nada",
-    "particle": "vl_abyss:block/nada"
-  },
-  "render_type": "solid"
+    "layer0": "vl_abyss:item/iconeportaselamento"
+  }
 }

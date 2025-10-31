@@ -19,4 +19,5 @@ public class VlAbyssModParticleTypes {
 	public static final RegistryObject<SimpleParticleType> PARTICULAMORREU_2 = REGISTRY.register("particulamorreu_2", () -> new SimpleParticleType(false));
 	public static final RegistryObject<SimpleParticleType> VENTO_PARTICULA_2 = REGISTRY.register("vento_particula_2", () -> new SimpleParticleType(false));
 	public static final RegistryObject<SimpleParticleType> VENTO_PARTICULA_1 = REGISTRY.register("vento_particula_1", () -> new SimpleParticleType(false));
+	public static final RegistryObject<SimpleParticleType> FLAMING_SLASH = REGISTRY.register("flaming_slash", () -> new SimpleParticleType(false));
 }

@@ -25,6 +25,7 @@ import net.minecraft.core.BlockPos;
 import net.minecraft.commands.arguments.EntityAnchorArgument;
 
 import net.mcreator.vlabyss.network.VlAbyssModVariables;
+import net.mcreator.vlabyss.init.VlAbyssModAttributes;
 import net.mcreator.vlabyss.VlAbyssMod;
 
 import java.util.List;
@@ -81,6 +82,47 @@ public class MantraSoulRightClickedOnEntityProcedure {
 							_level.playSound(null, BlockPos.containing(x, y, z), ForgeRegistries.SOUND_EVENTS.getValue(ResourceLocation.parse("vl_abyss:almacoletada2")), SoundSource.MASTER, 1, 1);
 						} else {
 							_level.playLocalSound(x, y, z, ForgeRegistries.SOUND_EVENTS.getValue(ResourceLocation.parse("vl_abyss:almacoletada2")), SoundSource.MASTER, 1, 1, false);
+						}
+					}
+					if (((LivingEntity) sourceentity).getAttribute(VlAbyssModAttributes.INTELIGENCIA.get()).getBaseValue() == 0) {
+						{
+							double _setval = (sourceentity.getCapability(VlAbyssModVariables.PLAYER_VARIABLES_CAPABILITY, null).orElse(new VlAbyssModVariables.PlayerVariables())).almas + 1;
+							sourceentity.getCapability(VlAbyssModVariables.PLAYER_VARIABLES_CAPABILITY, null).ifPresent(capability -> {
+								capability.almas = _setval;
+								capability.syncPlayerVariables(sourceentity);
+							});
+						}
+					} else if (((LivingEntity) sourceentity).getAttribute(VlAbyssModAttributes.INTELIGENCIA.get()).getBaseValue() == 1) {
+						{
+							double _setval = (sourceentity.getCapability(VlAbyssModVariables.PLAYER_VARIABLES_CAPABILITY, null).orElse(new VlAbyssModVariables.PlayerVariables())).almas + 2;
+							sourceentity.getCapability(VlAbyssModVariables.PLAYER_VARIABLES_CAPABILITY, null).ifPresent(capability -> {
+								capability.almas = _setval;
+								capability.syncPlayerVariables(sourceentity);
+							});
+						}
+					} else if (((LivingEntity) sourceentity).getAttribute(VlAbyssModAttributes.INTELIGENCIA.get()).getBaseValue() == 2) {
+						{
+							double _setval = (sourceentity.getCapability(VlAbyssModVariables.PLAYER_VARIABLES_CAPABILITY, null).orElse(new VlAbyssModVariables.PlayerVariables())).almas + 3;
+							sourceentity.getCapability(VlAbyssModVariables.PLAYER_VARIABLES_CAPABILITY, null).ifPresent(capability -> {
+								capability.almas = _setval;
+								capability.syncPlayerVariables(sourceentity);
+							});
+						}
+					} else if (((LivingEntity) sourceentity).getAttribute(VlAbyssModAttributes.INTELIGENCIA.get()).getBaseValue() == 3) {
+						{
+							double _setval = (sourceentity.getCapability(VlAbyssModVariables.PLAYER_VARIABLES_CAPABILITY, null).orElse(new VlAbyssModVariables.PlayerVariables())).almas + 4;
+							sourceentity.getCapability(VlAbyssModVariables.PLAYER_VARIABLES_CAPABILITY, null).ifPresent(capability -> {
+								capability.almas = _setval;
+								capability.syncPlayerVariables(sourceentity);
+							});
+						}
+					} else if (((LivingEntity) sourceentity).getAttribute(VlAbyssModAttributes.INTELIGENCIA.get()).getBaseValue() >= 4) {
+						{
+							double _setval = (sourceentity.getCapability(VlAbyssModVariables.PLAYER_VARIABLES_CAPABILITY, null).orElse(new VlAbyssModVariables.PlayerVariables())).almas + 5;
+							sourceentity.getCapability(VlAbyssModVariables.PLAYER_VARIABLES_CAPABILITY, null).ifPresent(capability -> {
+								capability.almas = _setval;
+								capability.syncPlayerVariables(sourceentity);
+							});
 						}
 					}
 				} else {

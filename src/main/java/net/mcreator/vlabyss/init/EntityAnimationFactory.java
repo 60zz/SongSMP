@@ -5,7 +5,7 @@ import net.minecraftforge.eventbus.api.SubscribeEvent;
 import net.minecraftforge.event.entity.living.LivingEvent;
 
 import net.mcreator.vlabyss.entity.MantraSoulEntity;
-import net.mcreator.vlabyss.entity.CorteChamaRetoEntity;
+import net.mcreator.vlabyss.entity.MantraSoulCorrompidaEntity;
 import net.mcreator.vlabyss.entity.CavaleiroAladoEntity;
 
 @Mod.EventBusSubscriber
@@ -27,7 +27,7 @@ public class EntityAnimationFactory {
 					syncable.animationprocedure = animation;
 				}
 			}
-			if (event.getEntity() instanceof CorteChamaRetoEntity syncable) {
+			if (event.getEntity() instanceof MantraSoulCorrompidaEntity syncable) {
 				String animation = syncable.getSyncedAnimation();
 				if (!animation.equals("undefined")) {
 					syncable.setAnimation("undefined");

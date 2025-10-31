@@ -774,6 +774,10 @@
         ],
         "dependencies": [
           {
+            "name": "damagesource",
+            "type": "damagesource"
+          },
+          {
             "name": "entity",
             "type": "entity"
           },
@@ -2689,7 +2693,7 @@
           }
         ]
       },
-      "path": "~/VL1_Abyss/Mantras/Respiro/Procedure"
+      "path": "~/VL1_Abyss/Mantras/MantrasPrincipais/Respiro/Procedure"
     },
     {
       "name": "PlanarOnKeyReleased",
@@ -2708,7 +2712,7 @@
           }
         ]
       },
-      "path": "~/VL1_Abyss/Mantras/Respiro/Procedure"
+      "path": "~/VL1_Abyss/Mantras/MantrasPrincipais/Respiro/Procedure"
     },
     {
       "name": "Planar",
@@ -2721,7 +2725,7 @@
           "src/main/java/net/mcreator/vlabyss/network/PlanarMessage.java"
         ]
       },
-      "path": "~/VL1_Abyss/Mantras/Respiro/Key"
+      "path": "~/VL1_Abyss/Mantras/MantrasPrincipais/Respiro/Key"
     },
     {
       "name": "PlayerTick",
@@ -2740,20 +2744,7 @@
           }
         ]
       },
-      "path": "~/VL1_Abyss/Mantras/Chama"
-    },
-    {
-      "name": "CooldownRespiro",
-      "type": "potioneffect",
-      "compiles": true,
-      "locked_code": false,
-      "registry_name": "cooldown_respiro",
-      "metadata": {
-        "files": [
-          "src/main/java/net/mcreator/vlabyss/potion/CooldownRespiroMobEffect.java"
-        ]
-      },
-      "path": "~/VL1_Abyss/Mantras/Respiro/Efeitos"
+      "path": "~/VL1_Abyss/Mantras/MantrasPrincipais/Chama"
     },
     {
       "name": "HabilidadePrimariaOnKeyPressed",
@@ -2815,7 +2806,7 @@
           "src/main/resources/assets/vl_abyss/particles/vento_particula_2.json"
         ]
       },
-      "path": "~/VL1_Abyss/Mantras/Respiro/Particulas"
+      "path": "~/VL1_Abyss/Mantras/MantrasPrincipais/Respiro/Particulas"
     },
     {
       "name": "VentoParticula1",
@@ -2829,38 +2820,7 @@
           "src/main/java/net/mcreator/vlabyss/client/particle/VentoParticula1Particle.java"
         ]
       },
-      "path": "~/VL1_Abyss/Mantras/Respiro/Particulas"
-    },
-    {
-      "name": "CooldownRespiroOnEffectActiveTick",
-      "type": "procedure",
-      "compiles": true,
-      "locked_code": false,
-      "registry_name": "cooldown_respiro_on_effect_active_tick",
-      "metadata": {
-        "files": [
-          "src/main/java/net/mcreator/vlabyss/procedures/CooldownRespiroOnEffectActiveTickProcedure.java"
-        ],
-        "dependencies": [
-          {
-            "name": "x",
-            "type": "number"
-          },
-          {
-            "name": "y",
-            "type": "number"
-          },
-          {
-            "name": "z",
-            "type": "number"
-          },
-          {
-            "name": "world",
-            "type": "world"
-          }
-        ]
-      },
-      "path": "~/VL1_Abyss/Mantras/Respiro/Efeitos"
+      "path": "~/VL1_Abyss/Mantras/MantrasPrincipais/Respiro/Particulas"
     },
     {
       "name": "RespiroPrimariaWhileProjectileFlyingTick",
@@ -2895,7 +2855,7 @@
           }
         ]
       },
-      "path": "~/VL1_Abyss/Mantras/Respiro/Projetil"
+      "path": "~/VL1_Abyss/Mantras/MantrasPrincipais/Respiro/Projetil"
     },
     {
       "name": "RespiroPrimaria",
@@ -2908,7 +2868,7 @@
           "src/main/java/net/mcreator/vlabyss/entity/RespiroPrimariaEntity.java"
         ]
       },
-      "path": "~/VL1_Abyss/Mantras/Respiro/Projetil"
+      "path": "~/VL1_Abyss/Mantras/MantrasPrincipais/Respiro/Projetil"
     },
     {
       "name": "AdagaAssassinos",
@@ -3440,7 +3400,7 @@
           "src/main/java/net/mcreator/vlabyss/potion/ShadowCopyMobEffect.java"
         ]
       },
-      "path": "~/VL1_Abyss/Mantras/Escuridao/Efeito"
+      "path": "~/VL1_Abyss/Mantras/MantrasPrincipais/Escuridao/Efeito"
     },
     {
       "name": "ShadowCopyEffectStartedapplied",
@@ -3475,7 +3435,7 @@
           }
         ]
       },
-      "path": "~/VL1_Abyss/Mantras/Escuridao/Efeito/Procedure"
+      "path": "~/VL1_Abyss/Mantras/MantrasPrincipais/Escuridao/Efeito/Procedure"
     },
     {
       "name": "ShadowCopyEffectExpires",
@@ -3510,7 +3470,7 @@
           }
         ]
       },
-      "path": "~/VL1_Abyss/Mantras/Escuridao/Efeito/Procedure"
+      "path": "~/VL1_Abyss/Mantras/MantrasPrincipais/Escuridao/Efeito/Procedure"
     },
     {
       "name": "TomouHitShadowCopy",
@@ -3545,7 +3505,7 @@
           }
         ]
       },
-      "path": "~/VL1_Abyss/Mantras/Escuridao/Efeito/Procedure"
+      "path": "~/VL1_Abyss/Mantras/MantrasPrincipais/Escuridao/Efeito/Procedure"
     },
     {
       "name": "InstantRegenMantra",
@@ -4672,57 +4632,6 @@
       "path": "~/VL1_Abyss/AbismoBosses/DropAbismoCriaturas/Procedure"
     },
     {
-      "name": "CorteChamaRetoPlayerCollidesWithThisEntity",
-      "type": "procedure",
-      "compiles": true,
-      "locked_code": false,
-      "registry_name": "corte_chama_reto_player_collides_with_this_entity",
-      "metadata": {
-        "dependencies": [
-          {
-            "name": "entity",
-            "type": "entity"
-          },
-          {
-            "name": "x",
-            "type": "number"
-          },
-          {
-            "name": "y",
-            "type": "number"
-          },
-          {
-            "name": "z",
-            "type": "number"
-          },
-          {
-            "name": "world",
-            "type": "world"
-          }
-        ],
-        "files": [
-          "src/main/java/net/mcreator/vlabyss/procedures/CorteChamaRetoPlayerCollidesWithThisEntityProcedure.java"
-        ]
-      },
-      "path": "~/VL1_Abyss/Mantras/Chama/Corte"
-    },
-    {
-      "name": "CorteChamaReto",
-      "type": "animatedentity",
-      "compiles": true,
-      "locked_code": false,
-      "registry_name": "corte_chama_reto",
-      "metadata": {
-        "files": [
-          "src/main/java/net/mcreator/vlabyss/entity/model/CorteChamaRetoModel.java",
-          "src/main/java/net/mcreator/vlabyss/client/renderer/CorteChamaRetoRenderer.java",
-          "src/main/java/net/mcreator/vlabyss/entity/CorteChamaRetoEntity.java",
-          "src/main/resources/data/vl_abyss/forge/biome_modifier/corte_chama_reto_biome_modifier.json"
-        ]
-      },
-      "path": "~/VL1_Abyss/Mantras/Chama/Corte"
-    },
-    {
       "name": "DesligaDash",
       "type": "keybind",
       "compiles": true,
@@ -4804,6 +4713,100 @@
         ]
       },
       "path": "~/VL1_Abyss/Mantras/TempoRecargaMantra"
+    },
+    {
+      "name": "FlamingSlash",
+      "type": "particle",
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "flaming_slash",
+      "metadata": {
+        "files": [
+          "src/main/resources/assets/vl_abyss/particles/flaming_slash.json",
+          "src/main/java/net/mcreator/vlabyss/client/particle/FlamingSlashParticle.java"
+        ]
+      },
+      "path": "~/VL1_Abyss/Mantras/MantrasPrincipais/Chama/Corte"
+    },
+    {
+      "name": "FlamingCut",
+      "type": "potioneffect",
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "flaming_cut",
+      "metadata": {
+        "files": [
+          "src/main/java/net/mcreator/vlabyss/potion/FlamingCutMobEffect.java"
+        ]
+      },
+      "path": "~/VL1_Abyss/Mantras/MantrasPrincipais/Chama/Efeito"
+    },
+    {
+      "name": "DeuCriticoComFlamingCut",
+      "type": "procedure",
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "deu_critico_com_flaming_cut",
+      "metadata": {
+        "dependencies": [
+          {
+            "name": "entity",
+            "type": "entity"
+          },
+          {
+            "name": "sourceentity",
+            "type": "entity"
+          },
+          {
+            "name": "x",
+            "type": "number"
+          },
+          {
+            "name": "y",
+            "type": "number"
+          },
+          {
+            "name": "z",
+            "type": "number"
+          },
+          {
+            "name": "world",
+            "type": "world"
+          }
+        ],
+        "files": [
+          "src/main/java/net/mcreator/vlabyss/procedures/DeuCriticoComFlamingCutProcedure.java"
+        ]
+      },
+      "path": "~/VL1_Abyss/Mantras/MantrasPrincipais/Chama/Efeito/Procedure"
+    },
+    {
+      "name": "MantraSoulCorrompida",
+      "type": "animatedentity",
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "mantra_soul_corrompida",
+      "metadata": {
+        "files": [
+          "src/main/java/net/mcreator/vlabyss/entity/model/MantraSoulCorrompidaModel.java",
+          "src/main/java/net/mcreator/vlabyss/entity/MantraSoulCorrompidaEntity.java",
+          "src/main/java/net/mcreator/vlabyss/client/renderer/MantraSoulCorrompidaRenderer.java"
+        ]
+      },
+      "path": "~/VL1_Abyss/Alma/Alma"
+    },
+    {
+      "name": "BurnSoul",
+      "type": "potioneffect",
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "burn_soul",
+      "metadata": {
+        "files": [
+          "src/main/java/net/mcreator/vlabyss/potion/BurnSoulMobEffect.java"
+        ]
+      },
+      "path": "~/VL1_Abyss/Mantras/MantrasPrincipais/Chama/Efeito"
     }
   ],
   "variable_elements": [
@@ -5037,6 +5040,12 @@
     },
     {
       "name": "mantra2_cooldown",
+      "type": "number",
+      "scope": "player_persistent",
+      "value": "0"
+    },
+    {
+      "name": "almas_corrompidas",
       "type": "number",
       "scope": "player_persistent",
       "value": "0"
@@ -5298,6 +5307,30 @@
       ],
       "category": "master",
       "subtitle": ""
+    },
+    {
+      "name": "ativahab_chama",
+      "files": [
+        "ativa_hab_chama"
+      ],
+      "category": "master",
+      "subtitle": ""
+    },
+    {
+      "name": "chama_blade",
+      "files": [
+        "fireblade"
+      ],
+      "category": "master",
+      "subtitle": ""
+    },
+    {
+      "name": "chama_soco",
+      "files": [
+        "soco_fogo"
+      ],
+      "category": "master",
+      "subtitle": ""
     }
   ],
   "tag_elements": {
@@ -5535,7 +5568,6 @@
       "subtitles.usamantraluzum": "",
       "subtitles.coracao_lento": "",
       "subtitles.batida_cavaleiro_alado": "",
-      "effect.vl_abyss.cooldown_respiro": "Wind Blade",
       "entity.minecraft.villager.vl_abyss.mestre_mantra_profession": "Mestre da Mantra",
       "item_group.vl_abyss.vl_abyss": "§5SSMP | S1",
       "item.vl_abyss.amuleto_vesperian": "Amuleto de Vesperian",
@@ -5562,10 +5594,15 @@
       "painting.vl_abyss.abyss_painting.author": "@sophii1105",
       "item.vl_abyss.capuz_esquecido": "Capuz Esquecido",
       "item.vl_abyss.artifacts_bundle": "Pacote de Artefatos",
-      "item.vl_abyss.corte_chama_reto_spawn_egg": "Slash Attack Spawn Egg",
-      "entity.vl_abyss.corte_chama_reto": "Slash Attack",
       "key.vl_abyss.desliga_dash": "Desliga Dash",
-      "effect.vl_abyss.regen_mantra": "Regen Mantra"
+      "effect.vl_abyss.regen_mantra": "Regen Mantra",
+      "effect.vl_abyss.flaming_cut": "Flaming Cut",
+      "entity.vl_abyss.mantra_soul_corrompida": "Mantra Corrompida",
+      "item.vl_abyss.mantra_soul_corrompida_spawn_egg": "Mantra Corrompida Spawn Egg",
+      "effect.vl_abyss.burn_soul": "Burn Soul",
+      "subtitles.ativahab_chama": "",
+      "subtitles.chama_blade": "",
+      "subtitles.chama_soco": ""
     }
   },
   "metadata": {
@@ -5862,40 +5899,6 @@
             "name": "Mantras",
             "children": [
               {
-                "name": "Respiro",
-                "children": [
-                  {
-                    "name": "Procedure",
-                    "children": []
-                  },
-                  {
-                    "name": "Key",
-                    "children": []
-                  },
-                  {
-                    "name": "Efeitos",
-                    "children": []
-                  },
-                  {
-                    "name": "Particulas",
-                    "children": []
-                  },
-                  {
-                    "name": "Projetil",
-                    "children": []
-                  }
-                ]
-              },
-              {
-                "name": "Chama",
-                "children": [
-                  {
-                    "name": "Corte",
-                    "children": []
-                  }
-                ]
-              },
-              {
                 "name": "MantraKeyAtivacao",
                 "children": []
               },
@@ -5913,20 +5916,6 @@
                 ]
               },
               {
-                "name": "Escuridao",
-                "children": [
-                  {
-                    "name": "Efeito",
-                    "children": [
-                      {
-                        "name": "Procedure",
-                        "children": []
-                      }
-                    ]
-                  }
-                ]
-              },
-              {
                 "name": "InstantRegenMantra",
                 "children": [
                   {
@@ -5936,12 +5925,74 @@
                 ]
               },
               {
-                "name": "Luz",
+                "name": "TempoRecargaMantra",
                 "children": []
               },
               {
-                "name": "TempoRecargaMantra",
-                "children": []
+                "name": "MantrasPrincipais",
+                "children": [
+                  {
+                    "name": "Respiro",
+                    "children": [
+                      {
+                        "name": "Procedure",
+                        "children": []
+                      },
+                      {
+                        "name": "Key",
+                        "children": []
+                      },
+                      {
+                        "name": "Efeitos",
+                        "children": []
+                      },
+                      {
+                        "name": "Particulas",
+                        "children": []
+                      },
+                      {
+                        "name": "Projetil",
+                        "children": []
+                      }
+                    ]
+                  },
+                  {
+                    "name": "Chama",
+                    "children": [
+                      {
+                        "name": "Corte",
+                        "children": []
+                      },
+                      {
+                        "name": "Efeito",
+                        "children": [
+                          {
+                            "name": "Procedure",
+                            "children": []
+                          }
+                        ]
+                      }
+                    ]
+                  },
+                  {
+                    "name": "Luz",
+                    "children": []
+                  },
+                  {
+                    "name": "Escuridao",
+                    "children": [
+                      {
+                        "name": "Efeito",
+                        "children": [
+                          {
+                            "name": "Procedure",
+                            "children": []
+                          }
+                        ]
+                      }
+                    ]
+                  }
+                ]
               }
             ]
           },

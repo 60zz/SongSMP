@@ -22,7 +22,7 @@ public class MantraSoulOnInitialEntitySpawnProcedure {
 				_level.playLocalSound(x, y, z, ForgeRegistries.SOUND_EVENTS.getValue(ResourceLocation.parse("vl_abyss:almaspawn")), SoundSource.MASTER, 1, 1, false);
 			}
 		}
-		VlAbyssMod.queueServerWork(1200, () -> {
+		VlAbyssMod.queueServerWork(600, () -> {
 			if (!entity.level().isClientSide())
 				entity.discard();
 		});

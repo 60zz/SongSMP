@@ -2,19 +2,19 @@
   "_fv": 79,
   "_type": "animatedentity",
   "definition": {
-    "mobName": "Slash Attack",
+    "mobName": "Mantra Corrompida",
     "mobLabel": "",
-    "mobModelTexture": "cortereto.png",
+    "mobModelTexture": "almacorrompida.png",
     "mobModelGlowTexture": "",
     "visualScale": {
-      "fixedValue": 1.0
+      "fixedValue": 2.0
     },
     "boundingBoxScale": {
       "fixedValue": 1.0
     },
     "entityDataEntries": [],
-    "modelWidth": 2.0,
-    "modelHeight": 2.0,
+    "modelWidth": 0.2,
+    "modelHeight": 0.5,
     "modelShadowSize": 0.0,
     "mountedYOffset": 0.0,
     "stepHeight": 0.0,
@@ -56,7 +56,7 @@
     "knockbackResistance": 0.0,
     "movementSpeed": 0.0,
     "armorBaseValue": 0.0,
-    "trackingRange": 64,
+    "trackingRange": 1,
     "followRange": 0,
     "health": 0,
     "xpAmount": 0,
@@ -67,7 +67,7 @@
     "inventoryStackSize": 64,
     "deathTime": 20,
     "lerp": 4,
-    "disableCollisions": false,
+    "disableCollisions": true,
     "ridable": false,
     "canControlForward": false,
     "canControlStrafe": false,
@@ -102,15 +102,18 @@
     "raidCelebrationSound": {
       "value": ""
     },
-    "onMobTickUpdate": {
-      "name": "CorteChamaRetoPlayerCollidesWithThisEntity"
+    "onRightClickedOn": {
+      "name": "MantraSoulRightClickedOnEntity"
     },
-    "hasAI": true,
+    "onInitialSpawn": {
+      "name": "MantraSoulOnInitialEntitySpawn"
+    },
+    "hasAI": false,
     "aiBase": "(none)",
     "aixml": "<xml xmlns=\"https://developers.google.com/blockly/xml\"><block type=\"aitasks_container\" deletable=\"false\" x=\"40\" y=\"40\"></block></xml>",
-    "model": "corte_reto.geo.json",
+    "model": "alma.geo.json",
     "groupName": "",
-    "animation1": "animation.model.0",
+    "animation1": "giragira",
     "animation2": "",
     "animation3": "",
     "animation4": "",
@@ -153,8 +156,8 @@
       4,
       2
     ],
-    "spawnThisMob": true,
-    "doesDespawnWhenIdle": true,
+    "spawnThisMob": false,
+    "doesDespawnWhenIdle": false,
     "spawningProbability": 20,
     "mobSpawningType": "monster",
     "minNumberOfMobsPerGroup": 4,

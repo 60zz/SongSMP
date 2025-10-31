@@ -33,7 +33,7 @@ public class RecarregaMantra1Procedure {
 			}
 			if (entity.getPersistentData().getDouble("mantra1cooldown_timer") >= 20) {
 				{
-					double _setval = (entity.getCapability(VlAbyssModVariables.PLAYER_VARIABLES_CAPABILITY, null).orElse(new VlAbyssModVariables.PlayerVariables())).mantra1_cooldown - 0;
+					double _setval = (entity.getCapability(VlAbyssModVariables.PLAYER_VARIABLES_CAPABILITY, null).orElse(new VlAbyssModVariables.PlayerVariables())).mantra1_cooldown - 1;
 					entity.getCapability(VlAbyssModVariables.PLAYER_VARIABLES_CAPABILITY, null).ifPresent(capability -> {
 						capability.mantra1_cooldown = _setval;
 						capability.syncPlayerVariables(entity);
@@ -48,7 +48,7 @@ public class RecarregaMantra1Procedure {
 			}
 			if (entity.getPersistentData().getDouble("mantra2cooldown_timer") >= 20) {
 				{
-					double _setval = (entity.getCapability(VlAbyssModVariables.PLAYER_VARIABLES_CAPABILITY, null).orElse(new VlAbyssModVariables.PlayerVariables())).mantra1_cooldown - 0;
+					double _setval = (entity.getCapability(VlAbyssModVariables.PLAYER_VARIABLES_CAPABILITY, null).orElse(new VlAbyssModVariables.PlayerVariables())).mantra1_cooldown - 1;
 					entity.getCapability(VlAbyssModVariables.PLAYER_VARIABLES_CAPABILITY, null).ifPresent(capability -> {
 						capability.mantra1_cooldown = _setval;
 						capability.syncPlayerVariables(entity);

@@ -100,7 +100,6 @@
   "subtitles.usamantraluzum": "",
   "subtitles.coracao_lento": "",
   "subtitles.batida_cavaleiro_alado": "",
-  "effect.vl_abyss.cooldown_respiro": "Wind Blade",
   "entity.minecraft.villager.vl_abyss.mestre_mantra_profession": "Mestre da Mantra",
   "item_group.vl_abyss.vl_abyss": "§5SSMP | S1",
   "item.vl_abyss.amuleto_vesperian": "Amuleto de Vesperian",
@@ -127,8 +126,13 @@
   "painting.vl_abyss.abyss_painting.author": "@sophii1105",
   "item.vl_abyss.capuz_esquecido": "Capuz Esquecido",
   "item.vl_abyss.artifacts_bundle": "Pacote de Artefatos",
-  "item.vl_abyss.corte_chama_reto_spawn_egg": "Slash Attack Spawn Egg",
-  "entity.vl_abyss.corte_chama_reto": "Slash Attack",
   "key.vl_abyss.desliga_dash": "Desliga Dash",
-  "effect.vl_abyss.regen_mantra": "Regen Mantra"
+  "effect.vl_abyss.regen_mantra": "Regen Mantra",
+  "effect.vl_abyss.flaming_cut": "Flaming Cut",
+  "entity.vl_abyss.mantra_soul_corrompida": "Mantra Corrompida",
+  "item.vl_abyss.mantra_soul_corrompida_spawn_egg": "Mantra Corrompida Spawn Egg",
+  "effect.vl_abyss.burn_soul": "Burn Soul",
+  "subtitles.ativahab_chama": "",
+  "subtitles.chama_blade": "",
+  "subtitles.chama_soco": ""
 }

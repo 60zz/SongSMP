@@ -20,13 +20,13 @@ import net.mcreator.vlabyss.VlAbyssMod;
 
 public class VlAbyssModBlocks {
 	public static final DeferredRegister<Block> REGISTRY = DeferredRegister.create(ForgeRegistries.BLOCKS, VlAbyssMod.MODID);
-	public static final RegistryObject<Block> ABYSSION_ORE = REGISTRY.register("abyssion_ore", () -> new AbyssionOreBlock());
-	public static final RegistryObject<Block> RAW_ABYSSION_BLOCK = REGISTRY.register("raw_abyssion_block", () -> new RawAbyssionBlockBlock());
-	public static final RegistryObject<Block> ABYSSION_INGOT_BLOCK = REGISTRY.register("abyssion_ingot_block", () -> new AbyssionIngotBlockBlock());
-	public static final RegistryObject<Block> PORTA_ABYSS = REGISTRY.register("porta_abyss", () -> new PortaAbyssBlock());
-	public static final RegistryObject<Block> PORTA_ABYSS_SLAVE = REGISTRY.register("porta_abyss_slave", () -> new PortaAbyssSlaveBlock());
-	public static final RegistryObject<Block> TOMBSTONE_ABYSS = REGISTRY.register("tombstone_abyss", () -> new TombstoneAbyssBlock());
-	public static final RegistryObject<Block> METAL_FORGING = REGISTRY.register("metal_forging", () -> new MetalForgingBlock());
+	public static final RegistryObject<Block> ABYSSION_ORE = REGISTRY.register("abyssion_ore", AbyssionOreBlock::new);
+	public static final RegistryObject<Block> RAW_ABYSSION_BLOCK = REGISTRY.register("raw_abyssion_block", RawAbyssionBlockBlock::new);
+	public static final RegistryObject<Block> ABYSSION_INGOT_BLOCK = REGISTRY.register("abyssion_ingot_block", AbyssionIngotBlockBlock::new);
+	public static final RegistryObject<Block> PORTA_ABYSS = REGISTRY.register("porta_abyss", PortaAbyssBlock::new);
+	public static final RegistryObject<Block> PORTA_ABYSS_SLAVE = REGISTRY.register("porta_abyss_slave", PortaAbyssSlaveBlock::new);
+	public static final RegistryObject<Block> TOMBSTONE_ABYSS = REGISTRY.register("tombstone_abyss", TombstoneAbyssBlock::new);
+	public static final RegistryObject<Block> METAL_FORGING = REGISTRY.register("metal_forging", MetalForgingBlock::new);
 	// Start of user code block custom blocks
 	// End of user code block custom blocks
 }

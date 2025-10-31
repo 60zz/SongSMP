@@ -46,26 +46,26 @@ public class VlAbyssModVariables {
 		@SubscribeEvent
 		public static void onPlayerLoggedInSyncPlayerVariables(PlayerEvent.PlayerLoggedInEvent event) {
 			if (!event.getEntity().level().isClientSide())
-				((PlayerVariables) event.getEntity().getCapability(PLAYER_VARIABLES_CAPABILITY, null).orElse(new PlayerVariables())).syncPlayerVariables(event.getEntity());
+				((PlayerVariables) event.getEntity().getCapability(PLAYER_VARIABLES_CAPABILITY, null).orElseGet(PlayerVariables::new)).syncPlayerVariables(event.getEntity());
 		}
 
 		@SubscribeEvent
 		public static void onPlayerRespawnedSyncPlayerVariables(PlayerEvent.PlayerRespawnEvent event) {
 			if (!event.getEntity().level().isClientSide())
-				((PlayerVariables) event.getEntity().getCapability(PLAYER_VARIABLES_CAPABILITY, null).orElse(new PlayerVariables())).syncPlayerVariables(event.getEntity());
+				((PlayerVariables) event.getEntity().getCapability(PLAYER_VARIABLES_CAPABILITY, null).orElseGet(PlayerVariables::new)).syncPlayerVariables(event.getEntity());
 		}
 
 		@SubscribeEvent
 		public static void onPlayerChangedDimensionSyncPlayerVariables(PlayerEvent.PlayerChangedDimensionEvent event) {
 			if (!event.getEntity().level().isClientSide())
-				((PlayerVariables) event.getEntity().getCapability(PLAYER_VARIABLES_CAPABILITY, null).orElse(new PlayerVariables())).syncPlayerVariables(event.getEntity());
+				((PlayerVariables) event.getEntity().getCapability(PLAYER_VARIABLES_CAPABILITY, null).orElseGet(PlayerVariables::new)).syncPlayerVariables(event.getEntity());
 		}
 
 		@SubscribeEvent
 		public static void clonePlayer(PlayerEvent.Clone event) {
 			event.getOriginal().revive();
-			PlayerVariables original = ((PlayerVariables) event.getOriginal().getCapability(PLAYER_VARIABLES_CAPABILITY, null).orElse(new PlayerVariables()));
-			PlayerVariables clone = ((PlayerVariables) event.getEntity().getCapability(PLAYER_VARIABLES_CAPABILITY, null).orElse(new PlayerVariables()));
+			PlayerVariables original = ((PlayerVariables) event.getOriginal().getCapability(PLAYER_VARIABLES_CAPABILITY, null).orElseGet(PlayerVariables::new));
+			PlayerVariables clone = ((PlayerVariables) event.getEntity().getCapability(PLAYER_VARIABLES_CAPABILITY, null).orElseGet(PlayerVariables::new));
 			clone.mapa = original.mapa;
 			clone.almas = original.almas;
 			clone.Valmiriano = original.Valmiriano;
@@ -105,6 +105,7 @@ public class VlAbyssModVariables {
 			clone.desligadash = original.desligadash;
 			clone.mantra1_cooldown = original.mantra1_cooldown;
 			clone.mantra2_cooldown = original.mantra2_cooldown;
+			clone.almas_corrompidas = original.almas_corrompidas;
 			if (!event.isWasDeath()) {
 			}
 		}
@@ -180,6 +181,7 @@ public class VlAbyssModVariables {
 		public boolean desligadash = false;
 		public double mantra1_cooldown = 0;
 		public double mantra2_cooldown = 0;
+		public double almas_corrompidas = 0;
 
 		public void syncPlayerVariables(Entity entity) {
 			if (entity instanceof ServerPlayer serverPlayer)
@@ -227,6 +229,7 @@ public class VlAbyssModVariables {
 			nbt.putBoolean("desligadash", desligadash);
 			nbt.putDouble("mantra1_cooldown", mantra1_cooldown);
 			nbt.putDouble("mantra2_cooldown", mantra2_cooldown);
+			nbt.putDouble("almas_corrompidas", almas_corrompidas);
 			return nbt;
 		}
 
@@ -271,6 +274,7 @@ public class VlAbyssModVariables {
 			desligadash = nbt.getBoolean("desligadash");
 			mantra1_cooldown = nbt.getDouble("mantra1_cooldown");
 			mantra2_cooldown = nbt.getDouble("mantra2_cooldown");
+			almas_corrompidas = nbt.getDouble("almas_corrompidas");
 		}
 	}
 
@@ -294,7 +298,7 @@ public class VlAbyssModVariables {
 			NetworkEvent.Context context = contextSupplier.get();
 			context.enqueueWork(() -> {
 				if (!context.getDirection().getReceptionSide().isServer()) {
-					PlayerVariables variables = ((PlayerVariables) Minecraft.getInstance().player.getCapability(PLAYER_VARIABLES_CAPABILITY, null).orElse(new PlayerVariables()));
+					PlayerVariables variables = ((PlayerVariables) Minecraft.getInstance().player.getCapability(PLAYER_VARIABLES_CAPABILITY, null).orElseGet(PlayerVariables::new));
 					variables.mapa = message.data.mapa;
 					variables.almas = message.data.almas;
 					variables.Valmiriano = message.data.Valmiriano;
@@ -334,6 +338,7 @@ public class VlAbyssModVariables {
 					variables.desligadash = message.data.desligadash;
 					variables.mantra1_cooldown = message.data.mantra1_cooldown;
 					variables.mantra2_cooldown = message.data.mantra2_cooldown;
+					variables.almas_corrompidas = message.data.almas_corrompidas;
 				}
 			});
 			context.setPacketHandled(true);

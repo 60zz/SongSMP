@@ -2,11 +2,9 @@ package net.mcreator.vlabyss.potion;
 
 import net.minecraft.world.entity.ai.attributes.AttributeMap;
 import net.minecraft.world.entity.LivingEntity;
-import net.minecraft.world.entity.Entity;
 import net.minecraft.world.effect.MobEffectCategory;
 import net.minecraft.world.effect.MobEffect;
 
-import net.mcreator.vlabyss.procedures.InstantRegenMantraEffectStartedappliedProcedure;
 import net.mcreator.vlabyss.procedures.InstantRegenMantraEffectExpiresProcedure;
 
 public class InstantRegenMantraMobEffect extends MobEffect {
@@ -17,11 +15,6 @@ public class InstantRegenMantraMobEffect extends MobEffect {
 	@Override
 	public boolean isInstantenous() {
 		return true;
-	}
-
-	@Override
-	public void applyInstantenousEffect(Entity source, Entity indirectSource, LivingEntity entity, int amplifier, double health) {
-		InstantRegenMantraEffectStartedappliedProcedure.execute(entity.level(), entity);
 	}
 
 	@Override

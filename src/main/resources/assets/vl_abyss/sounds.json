@@ -254,5 +254,29 @@
         "stream": false
       }
     ]
+  },
+  "ativahab_chama": {
+    "sounds": [
+      {
+        "name": "vl_abyss:ativa_hab_chama",
+        "stream": false
+      }
+    ]
+  },
+  "chama_blade": {
+    "sounds": [
+      {
+        "name": "vl_abyss:fireblade",
+        "stream": false
+      }
+    ]
+  },
+  "chama_soco": {
+    "sounds": [
+      {
+        "name": "vl_abyss:soco_fogo",
+        "stream": false
+      }
+    ]
   }
 }

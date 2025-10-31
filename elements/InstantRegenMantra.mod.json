@@ -17,9 +17,6 @@
     "renderStatusInHUD": true,
     "isCuredbyHoney": false,
     "modifiers": [],
-    "onStarted": {
-      "name": "InstantRegenMantraEffectStartedapplied"
-    },
     "onExpired": {
       "name": "InstantRegenMantraEffectExpires"
     }

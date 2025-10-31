@@ -15,7 +15,7 @@ public class RegenMantraOnEffectActiveTickProcedure {
 			if (!((entity.getCapability(VlAbyssModVariables.PLAYER_VARIABLES_CAPABILITY, null).orElse(new VlAbyssModVariables.PlayerVariables())).Ethir == (entity.getCapability(VlAbyssModVariables.PLAYER_VARIABLES_CAPABILITY, null)
 					.orElse(new VlAbyssModVariables.PlayerVariables())).MaxEthir)) {
 				{
-					double _setval = (entity.getCapability(VlAbyssModVariables.PLAYER_VARIABLES_CAPABILITY, null).orElse(new VlAbyssModVariables.PlayerVariables())).Ethir + 5;
+					double _setval = (entity.getCapability(VlAbyssModVariables.PLAYER_VARIABLES_CAPABILITY, null).orElse(new VlAbyssModVariables.PlayerVariables())).Ethir + 1;
 					entity.getCapability(VlAbyssModVariables.PLAYER_VARIABLES_CAPABILITY, null).ifPresent(capability -> {
 						capability.Ethir = _setval;
 						capability.syncPlayerVariables(entity);

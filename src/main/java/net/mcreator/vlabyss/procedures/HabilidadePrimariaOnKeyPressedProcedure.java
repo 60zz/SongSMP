@@ -16,7 +16,6 @@ import net.minecraft.world.entity.projectile.AbstractArrow;
 import net.minecraft.world.entity.player.Player;
 import net.minecraft.world.entity.monster.Monster;
 import net.minecraft.world.entity.PathfinderMob;
-import net.minecraft.world.entity.MobSpawnType;
 import net.minecraft.world.entity.Mob;
 import net.minecraft.world.entity.LivingEntity;
 import net.minecraft.world.entity.HumanoidArm;
@@ -50,12 +49,12 @@ public class HabilidadePrimariaOnKeyPressedProcedure {
 		if (entity == null)
 			return;
 		Entity target = null;
-		if ((entity.getCapability(VlAbyssModVariables.PLAYER_VARIABLES_CAPABILITY, null).orElse(new VlAbyssModVariables.PlayerVariables())).Respiro >= 1
-				&& (entity.getCapability(VlAbyssModVariables.PLAYER_VARIABLES_CAPABILITY, null).orElse(new VlAbyssModVariables.PlayerVariables())).MantraRegistrada == true) {
-			if ((entity.getCapability(VlAbyssModVariables.PLAYER_VARIABLES_CAPABILITY, null).orElse(new VlAbyssModVariables.PlayerVariables())).mantra1_cooldown < 1) {
-				if ((entity.getCapability(VlAbyssModVariables.PLAYER_VARIABLES_CAPABILITY, null).orElse(new VlAbyssModVariables.PlayerVariables())).Ethir >= 40) {
+		if ((entity.getCapability(VlAbyssModVariables.PLAYER_VARIABLES_CAPABILITY, null).orElseGet(VlAbyssModVariables.PlayerVariables::new)).Respiro >= 1
+				&& (entity.getCapability(VlAbyssModVariables.PLAYER_VARIABLES_CAPABILITY, null).orElseGet(VlAbyssModVariables.PlayerVariables::new)).MantraRegistrada == true) {
+			if ((entity.getCapability(VlAbyssModVariables.PLAYER_VARIABLES_CAPABILITY, null).orElseGet(VlAbyssModVariables.PlayerVariables::new)).mantra1_cooldown < 1) {
+				if ((entity.getCapability(VlAbyssModVariables.PLAYER_VARIABLES_CAPABILITY, null).orElseGet(VlAbyssModVariables.PlayerVariables::new)).Ethir >= 40) {
 					{
-						double _setval = (entity.getCapability(VlAbyssModVariables.PLAYER_VARIABLES_CAPABILITY, null).orElse(new VlAbyssModVariables.PlayerVariables())).Ethir - 40;
+						double _setval = (entity.getCapability(VlAbyssModVariables.PLAYER_VARIABLES_CAPABILITY, null).orElseGet(VlAbyssModVariables.PlayerVariables::new)).Ethir - 40;
 						entity.getCapability(VlAbyssModVariables.PLAYER_VARIABLES_CAPABILITY, null).ifPresent(capability -> {
 							capability.Ethir = _setval;
 							capability.syncPlayerVariables(entity);
@@ -146,16 +145,8 @@ public class HabilidadePrimariaOnKeyPressedProcedure {
 								Entity _shootFrom = entity;
 								Level projectileLevel = _shootFrom.level();
 								if (!projectileLevel.isClientSide()) {
-									Projectile _entityToSpawn = new Object() {
-										public Projectile getArrow(Level level, Entity shooter, float damage, int knockback) {
-											AbstractArrow entityToSpawn = new RespiroPrimariaEntity(VlAbyssModEntities.RESPIRO_PRIMARIA.get(), level);
-											entityToSpawn.setOwner(shooter);
-											entityToSpawn.setBaseDamage(damage);
-											entityToSpawn.setKnockback(knockback);
-											entityToSpawn.setSilent(true);
-											return entityToSpawn;
-										}
-									}.getArrow(projectileLevel, entity, 12, 1);
+									Projectile _entityToSpawn = initArrowProjectile(createArrowWeaponItemStack(new RespiroPrimariaEntity(VlAbyssModEntities.RESPIRO_PRIMARIA.get(), 0, 0, 0, projectileLevel), 1, (byte) 0), entity, 12, true, false,
+											false, AbstractArrow.Pickup.DISALLOWED);
 									_entityToSpawn.setPos(_shootFrom.getX(), _shootFrom.getEyeY() - 0.1, _shootFrom.getZ());
 									_entityToSpawn.shoot(_shootFrom.getLookAngle().x, _shootFrom.getLookAngle().y, _shootFrom.getLookAngle().z, 1, 0);
 									projectileLevel.addFreshEntity(_entityToSpawn);
@@ -166,16 +157,8 @@ public class HabilidadePrimariaOnKeyPressedProcedure {
 								Entity _shootFrom = entity;
 								Level projectileLevel = _shootFrom.level();
 								if (!projectileLevel.isClientSide()) {
-									Projectile _entityToSpawn = new Object() {
-										public Projectile getArrow(Level level, Entity shooter, float damage, int knockback) {
-											AbstractArrow entityToSpawn = new RespiroPrimariaEntity(VlAbyssModEntities.RESPIRO_PRIMARIA.get(), level);
-											entityToSpawn.setOwner(shooter);
-											entityToSpawn.setBaseDamage(damage);
-											entityToSpawn.setKnockback(knockback);
-											entityToSpawn.setSilent(true);
-											return entityToSpawn;
-										}
-									}.getArrow(projectileLevel, entity, 8, 1);
+									Projectile _entityToSpawn = initArrowProjectile(createArrowWeaponItemStack(new RespiroPrimariaEntity(VlAbyssModEntities.RESPIRO_PRIMARIA.get(), 0, 0, 0, projectileLevel), 1, (byte) 0), entity, 8, true, false,
+											false, AbstractArrow.Pickup.DISALLOWED);
 									_entityToSpawn.setPos(_shootFrom.getX(), _shootFrom.getEyeY() - 0.1, _shootFrom.getZ());
 									_entityToSpawn.shoot(_shootFrom.getLookAngle().x, _shootFrom.getLookAngle().y, _shootFrom.getLookAngle().z, 1, 0);
 									projectileLevel.addFreshEntity(_entityToSpawn);
@@ -253,12 +236,12 @@ public class HabilidadePrimariaOnKeyPressedProcedure {
 					}
 				}
 			}
-		} else if ((entity.getCapability(VlAbyssModVariables.PLAYER_VARIABLES_CAPABILITY, null).orElse(new VlAbyssModVariables.PlayerVariables())).Escuridao >= 1
-				&& (entity.getCapability(VlAbyssModVariables.PLAYER_VARIABLES_CAPABILITY, null).orElse(new VlAbyssModVariables.PlayerVariables())).MantraRegistrada == true) {
-			if ((entity.getCapability(VlAbyssModVariables.PLAYER_VARIABLES_CAPABILITY, null).orElse(new VlAbyssModVariables.PlayerVariables())).mantra1_cooldown < 1) {
-				if ((entity.getCapability(VlAbyssModVariables.PLAYER_VARIABLES_CAPABILITY, null).orElse(new VlAbyssModVariables.PlayerVariables())).Ethir >= 85) {
+		} else if ((entity.getCapability(VlAbyssModVariables.PLAYER_VARIABLES_CAPABILITY, null).orElseGet(VlAbyssModVariables.PlayerVariables::new)).Escuridao >= 1
+				&& (entity.getCapability(VlAbyssModVariables.PLAYER_VARIABLES_CAPABILITY, null).orElseGet(VlAbyssModVariables.PlayerVariables::new)).MantraRegistrada == true) {
+			if ((entity.getCapability(VlAbyssModVariables.PLAYER_VARIABLES_CAPABILITY, null).orElseGet(VlAbyssModVariables.PlayerVariables::new)).mantra1_cooldown < 1) {
+				if ((entity.getCapability(VlAbyssModVariables.PLAYER_VARIABLES_CAPABILITY, null).orElseGet(VlAbyssModVariables.PlayerVariables::new)).Ethir >= 85) {
 					{
-						double _setval = (entity.getCapability(VlAbyssModVariables.PLAYER_VARIABLES_CAPABILITY, null).orElse(new VlAbyssModVariables.PlayerVariables())).Ethir - 85;
+						double _setval = (entity.getCapability(VlAbyssModVariables.PLAYER_VARIABLES_CAPABILITY, null).orElseGet(VlAbyssModVariables.PlayerVariables::new)).Ethir - 85;
 						entity.getCapability(VlAbyssModVariables.PLAYER_VARIABLES_CAPABILITY, null).ifPresent(capability -> {
 							capability.Ethir = _setval;
 							capability.syncPlayerVariables(entity);
@@ -319,31 +302,21 @@ public class HabilidadePrimariaOnKeyPressedProcedure {
 					}
 				}
 			}
-		} else if ((entity.getCapability(VlAbyssModVariables.PLAYER_VARIABLES_CAPABILITY, null).orElse(new VlAbyssModVariables.PlayerVariables())).Luz >= 1
-				&& (entity.getCapability(VlAbyssModVariables.PLAYER_VARIABLES_CAPABILITY, null).orElse(new VlAbyssModVariables.PlayerVariables())).MantraRegistrada == true) {
-			if ((entity.getCapability(VlAbyssModVariables.PLAYER_VARIABLES_CAPABILITY, null).orElse(new VlAbyssModVariables.PlayerVariables())).mantra1_cooldown < 1) {
-				if ((entity.getCapability(VlAbyssModVariables.PLAYER_VARIABLES_CAPABILITY, null).orElse(new VlAbyssModVariables.PlayerVariables())).Ethir >= 95) {
-					if (!world.getEntitiesOfClass(Player.class, AABB.ofSize(
-							new Vec3((entity.level().clip(new ClipContext(entity.getEyePosition(1f), entity.getEyePosition(1f).add(entity.getViewVector(1f).scale(5)), ClipContext.Block.OUTLINE, ClipContext.Fluid.NONE, entity)).getBlockPos().getX()),
+		} else if ((entity.getCapability(VlAbyssModVariables.PLAYER_VARIABLES_CAPABILITY, null).orElseGet(VlAbyssModVariables.PlayerVariables::new)).Luz >= 1
+				&& (entity.getCapability(VlAbyssModVariables.PLAYER_VARIABLES_CAPABILITY, null).orElseGet(VlAbyssModVariables.PlayerVariables::new)).MantraRegistrada == true) {
+			if ((entity.getCapability(VlAbyssModVariables.PLAYER_VARIABLES_CAPABILITY, null).orElseGet(VlAbyssModVariables.PlayerVariables::new)).mantra1_cooldown < 1) {
+				if ((entity.getCapability(VlAbyssModVariables.PLAYER_VARIABLES_CAPABILITY, null).orElseGet(VlAbyssModVariables.PlayerVariables::new)).Ethir >= 95) {
+					if (!world.getEntitiesOfClass(Player.class,
+							new AABB(Vec3.ZERO, Vec3.ZERO).move(new Vec3(
+									(entity.level().clip(new ClipContext(entity.getEyePosition(1f), entity.getEyePosition(1f).add(entity.getViewVector(1f).scale(5)), ClipContext.Block.OUTLINE, ClipContext.Fluid.NONE, entity)).getBlockPos().getX()),
 									(entity.level().clip(new ClipContext(entity.getEyePosition(1f), entity.getEyePosition(1f).add(entity.getViewVector(1f).scale(5)), ClipContext.Block.OUTLINE, ClipContext.Fluid.NONE, entity)).getBlockPos().getY()),
-									(entity.level().clip(new ClipContext(entity.getEyePosition(1f), entity.getEyePosition(1f).add(entity.getViewVector(1f).scale(5)), ClipContext.Block.OUTLINE, ClipContext.Fluid.NONE, entity)).getBlockPos().getZ())),
-							3, 3, 3), e -> true).isEmpty()) {
-						target = (Entity) world.getEntitiesOfClass(Player.class, AABB.ofSize(new Vec3(
+									(entity.level().clip(new ClipContext(entity.getEyePosition(1f), entity.getEyePosition(1f).add(entity.getViewVector(1f).scale(5)), ClipContext.Block.OUTLINE, ClipContext.Fluid.NONE, entity)).getBlockPos().getZ())))
+									.inflate(3 / 2d),
+							e -> true).isEmpty()) {
+						target = findEntityInWorldRange(world, Player.class,
 								(entity.level().clip(new ClipContext(entity.getEyePosition(1f), entity.getEyePosition(1f).add(entity.getViewVector(1f).scale(5)), ClipContext.Block.OUTLINE, ClipContext.Fluid.NONE, entity)).getBlockPos().getX()),
 								(entity.level().clip(new ClipContext(entity.getEyePosition(1f), entity.getEyePosition(1f).add(entity.getViewVector(1f).scale(5)), ClipContext.Block.OUTLINE, ClipContext.Fluid.NONE, entity)).getBlockPos().getY()),
-								(entity.level().clip(new ClipContext(entity.getEyePosition(1f), entity.getEyePosition(1f).add(entity.getViewVector(1f).scale(5)), ClipContext.Block.OUTLINE, ClipContext.Fluid.NONE, entity)).getBlockPos().getZ())), 3,
-								3, 3), e -> true).stream().sorted(new Object() {
-									Comparator<Entity> compareDistOf(double _x, double _y, double _z) {
-										return Comparator.comparingDouble(_entcnd -> _entcnd.distanceToSqr(_x, _y, _z));
-									}
-								}.compareDistOf(
-										(entity.level().clip(new ClipContext(entity.getEyePosition(1f), entity.getEyePosition(1f).add(entity.getViewVector(1f).scale(5)), ClipContext.Block.OUTLINE, ClipContext.Fluid.NONE, entity)).getBlockPos()
-												.getX()),
-										(entity.level().clip(new ClipContext(entity.getEyePosition(1f), entity.getEyePosition(1f).add(entity.getViewVector(1f).scale(5)), ClipContext.Block.OUTLINE, ClipContext.Fluid.NONE, entity)).getBlockPos()
-												.getY()),
-										(entity.level().clip(new ClipContext(entity.getEyePosition(1f), entity.getEyePosition(1f).add(entity.getViewVector(1f).scale(5)), ClipContext.Block.OUTLINE, ClipContext.Fluid.NONE, entity)).getBlockPos()
-												.getZ())))
-								.findFirst().orElse(null);
+								(entity.level().clip(new ClipContext(entity.getEyePosition(1f), entity.getEyePosition(1f).add(entity.getViewVector(1f).scale(5)), ClipContext.Block.OUTLINE, ClipContext.Fluid.NONE, entity)).getBlockPos().getZ()), 3);
 						if (!(target == null)) {
 							if (target instanceof LivingEntity _entity)
 								_entity.setHealth((target instanceof LivingEntity _livEnt ? _livEnt.getHealth() : -1) + 10);
@@ -489,34 +462,24 @@ public class HabilidadePrimariaOnKeyPressedProcedure {
 								}
 							});
 							{
-								double _setval = (entity.getCapability(VlAbyssModVariables.PLAYER_VARIABLES_CAPABILITY, null).orElse(new VlAbyssModVariables.PlayerVariables())).Ethir - 95;
+								double _setval = (entity.getCapability(VlAbyssModVariables.PLAYER_VARIABLES_CAPABILITY, null).orElseGet(VlAbyssModVariables.PlayerVariables::new)).Ethir - 95;
 								entity.getCapability(VlAbyssModVariables.PLAYER_VARIABLES_CAPABILITY, null).ifPresent(capability -> {
 									capability.Ethir = _setval;
 									capability.syncPlayerVariables(entity);
 								});
 							}
 						}
-					} else if (!world.getEntitiesOfClass(Monster.class, AABB.ofSize(
-							new Vec3((entity.level().clip(new ClipContext(entity.getEyePosition(1f), entity.getEyePosition(1f).add(entity.getViewVector(1f).scale(5)), ClipContext.Block.OUTLINE, ClipContext.Fluid.NONE, entity)).getBlockPos().getX()),
+					} else if (!world.getEntitiesOfClass(Monster.class,
+							new AABB(Vec3.ZERO, Vec3.ZERO).move(new Vec3(
+									(entity.level().clip(new ClipContext(entity.getEyePosition(1f), entity.getEyePosition(1f).add(entity.getViewVector(1f).scale(5)), ClipContext.Block.OUTLINE, ClipContext.Fluid.NONE, entity)).getBlockPos().getX()),
 									(entity.level().clip(new ClipContext(entity.getEyePosition(1f), entity.getEyePosition(1f).add(entity.getViewVector(1f).scale(5)), ClipContext.Block.OUTLINE, ClipContext.Fluid.NONE, entity)).getBlockPos().getY()),
-									(entity.level().clip(new ClipContext(entity.getEyePosition(1f), entity.getEyePosition(1f).add(entity.getViewVector(1f).scale(5)), ClipContext.Block.OUTLINE, ClipContext.Fluid.NONE, entity)).getBlockPos().getZ())),
-							3, 3, 3), e -> true).isEmpty()) {
-						target = (Entity) world.getEntitiesOfClass(Monster.class, AABB.ofSize(new Vec3(
+									(entity.level().clip(new ClipContext(entity.getEyePosition(1f), entity.getEyePosition(1f).add(entity.getViewVector(1f).scale(5)), ClipContext.Block.OUTLINE, ClipContext.Fluid.NONE, entity)).getBlockPos().getZ())))
+									.inflate(3 / 2d),
+							e -> true).isEmpty()) {
+						target = findEntityInWorldRange(world, Monster.class,
 								(entity.level().clip(new ClipContext(entity.getEyePosition(1f), entity.getEyePosition(1f).add(entity.getViewVector(1f).scale(5)), ClipContext.Block.OUTLINE, ClipContext.Fluid.NONE, entity)).getBlockPos().getX()),
 								(entity.level().clip(new ClipContext(entity.getEyePosition(1f), entity.getEyePosition(1f).add(entity.getViewVector(1f).scale(5)), ClipContext.Block.OUTLINE, ClipContext.Fluid.NONE, entity)).getBlockPos().getY()),
-								(entity.level().clip(new ClipContext(entity.getEyePosition(1f), entity.getEyePosition(1f).add(entity.getViewVector(1f).scale(5)), ClipContext.Block.OUTLINE, ClipContext.Fluid.NONE, entity)).getBlockPos().getZ())), 3,
-								3, 3), e -> true).stream().sorted(new Object() {
-									Comparator<Entity> compareDistOf(double _x, double _y, double _z) {
-										return Comparator.comparingDouble(_entcnd -> _entcnd.distanceToSqr(_x, _y, _z));
-									}
-								}.compareDistOf(
-										(entity.level().clip(new ClipContext(entity.getEyePosition(1f), entity.getEyePosition(1f).add(entity.getViewVector(1f).scale(5)), ClipContext.Block.OUTLINE, ClipContext.Fluid.NONE, entity)).getBlockPos()
-												.getX()),
-										(entity.level().clip(new ClipContext(entity.getEyePosition(1f), entity.getEyePosition(1f).add(entity.getViewVector(1f).scale(5)), ClipContext.Block.OUTLINE, ClipContext.Fluid.NONE, entity)).getBlockPos()
-												.getY()),
-										(entity.level().clip(new ClipContext(entity.getEyePosition(1f), entity.getEyePosition(1f).add(entity.getViewVector(1f).scale(5)), ClipContext.Block.OUTLINE, ClipContext.Fluid.NONE, entity)).getBlockPos()
-												.getZ())))
-								.findFirst().orElse(null);
+								(entity.level().clip(new ClipContext(entity.getEyePosition(1f), entity.getEyePosition(1f).add(entity.getViewVector(1f).scale(5)), ClipContext.Block.OUTLINE, ClipContext.Fluid.NONE, entity)).getBlockPos().getZ()), 3);
 						if (!(target == null)) {
 							if (world.isClientSide()) {
 								SetupAnimationsProcedure.setAnimationClientside((Player) entity, "luzprimeira", false);
@@ -664,34 +627,24 @@ public class HabilidadePrimariaOnKeyPressedProcedure {
 							if (target instanceof LivingEntity _entity && !_entity.level().isClientSide())
 								_entity.addEffect(new MobEffectInstance(VlAbyssModMobEffects.CORTA_REGEN.get(), 200, 0));
 							{
-								double _setval = (entity.getCapability(VlAbyssModVariables.PLAYER_VARIABLES_CAPABILITY, null).orElse(new VlAbyssModVariables.PlayerVariables())).Ethir - 95;
+								double _setval = (entity.getCapability(VlAbyssModVariables.PLAYER_VARIABLES_CAPABILITY, null).orElseGet(VlAbyssModVariables.PlayerVariables::new)).Ethir - 95;
 								entity.getCapability(VlAbyssModVariables.PLAYER_VARIABLES_CAPABILITY, null).ifPresent(capability -> {
 									capability.Ethir = _setval;
 									capability.syncPlayerVariables(entity);
 								});
 							}
 						}
-					} else if (!world.getEntitiesOfClass(PathfinderMob.class, AABB.ofSize(
-							new Vec3((entity.level().clip(new ClipContext(entity.getEyePosition(1f), entity.getEyePosition(1f).add(entity.getViewVector(1f).scale(5)), ClipContext.Block.OUTLINE, ClipContext.Fluid.NONE, entity)).getBlockPos().getX()),
+					} else if (!world.getEntitiesOfClass(PathfinderMob.class,
+							new AABB(Vec3.ZERO, Vec3.ZERO).move(new Vec3(
+									(entity.level().clip(new ClipContext(entity.getEyePosition(1f), entity.getEyePosition(1f).add(entity.getViewVector(1f).scale(5)), ClipContext.Block.OUTLINE, ClipContext.Fluid.NONE, entity)).getBlockPos().getX()),
 									(entity.level().clip(new ClipContext(entity.getEyePosition(1f), entity.getEyePosition(1f).add(entity.getViewVector(1f).scale(5)), ClipContext.Block.OUTLINE, ClipContext.Fluid.NONE, entity)).getBlockPos().getY()),
-									(entity.level().clip(new ClipContext(entity.getEyePosition(1f), entity.getEyePosition(1f).add(entity.getViewVector(1f).scale(5)), ClipContext.Block.OUTLINE, ClipContext.Fluid.NONE, entity)).getBlockPos().getZ())),
-							3, 3, 3), e -> true).isEmpty()) {
-						target = (Entity) world.getEntitiesOfClass(PathfinderMob.class, AABB.ofSize(new Vec3(
+									(entity.level().clip(new ClipContext(entity.getEyePosition(1f), entity.getEyePosition(1f).add(entity.getViewVector(1f).scale(5)), ClipContext.Block.OUTLINE, ClipContext.Fluid.NONE, entity)).getBlockPos().getZ())))
+									.inflate(3 / 2d),
+							e -> true).isEmpty()) {
+						target = findEntityInWorldRange(world, PathfinderMob.class,
 								(entity.level().clip(new ClipContext(entity.getEyePosition(1f), entity.getEyePosition(1f).add(entity.getViewVector(1f).scale(5)), ClipContext.Block.OUTLINE, ClipContext.Fluid.NONE, entity)).getBlockPos().getX()),
 								(entity.level().clip(new ClipContext(entity.getEyePosition(1f), entity.getEyePosition(1f).add(entity.getViewVector(1f).scale(5)), ClipContext.Block.OUTLINE, ClipContext.Fluid.NONE, entity)).getBlockPos().getY()),
-								(entity.level().clip(new ClipContext(entity.getEyePosition(1f), entity.getEyePosition(1f).add(entity.getViewVector(1f).scale(5)), ClipContext.Block.OUTLINE, ClipContext.Fluid.NONE, entity)).getBlockPos().getZ())), 3,
-								3, 3), e -> true).stream().sorted(new Object() {
-									Comparator<Entity> compareDistOf(double _x, double _y, double _z) {
-										return Comparator.comparingDouble(_entcnd -> _entcnd.distanceToSqr(_x, _y, _z));
-									}
-								}.compareDistOf(
-										(entity.level().clip(new ClipContext(entity.getEyePosition(1f), entity.getEyePosition(1f).add(entity.getViewVector(1f).scale(5)), ClipContext.Block.OUTLINE, ClipContext.Fluid.NONE, entity)).getBlockPos()
-												.getX()),
-										(entity.level().clip(new ClipContext(entity.getEyePosition(1f), entity.getEyePosition(1f).add(entity.getViewVector(1f).scale(5)), ClipContext.Block.OUTLINE, ClipContext.Fluid.NONE, entity)).getBlockPos()
-												.getY()),
-										(entity.level().clip(new ClipContext(entity.getEyePosition(1f), entity.getEyePosition(1f).add(entity.getViewVector(1f).scale(5)), ClipContext.Block.OUTLINE, ClipContext.Fluid.NONE, entity)).getBlockPos()
-												.getZ())))
-								.findFirst().orElse(null);
+								(entity.level().clip(new ClipContext(entity.getEyePosition(1f), entity.getEyePosition(1f).add(entity.getViewVector(1f).scale(5)), ClipContext.Block.OUTLINE, ClipContext.Fluid.NONE, entity)).getBlockPos().getZ()), 3);
 						if (!(target == null)) {
 							if (target instanceof LivingEntity _entity)
 								_entity.setHealth((entity instanceof LivingEntity _livEnt ? _livEnt.getHealth() : -1) + 10);
@@ -837,7 +790,7 @@ public class HabilidadePrimariaOnKeyPressedProcedure {
 								}
 							});
 							{
-								double _setval = (entity.getCapability(VlAbyssModVariables.PLAYER_VARIABLES_CAPABILITY, null).orElse(new VlAbyssModVariables.PlayerVariables())).Ethir - 95;
+								double _setval = (entity.getCapability(VlAbyssModVariables.PLAYER_VARIABLES_CAPABILITY, null).orElseGet(VlAbyssModVariables.PlayerVariables::new)).Ethir - 95;
 								entity.getCapability(VlAbyssModVariables.PLAYER_VARIABLES_CAPABILITY, null).ifPresent(capability -> {
 									capability.Ethir = _setval;
 									capability.syncPlayerVariables(entity);
@@ -867,18 +820,18 @@ public class HabilidadePrimariaOnKeyPressedProcedure {
 					}
 				}
 			}
-		} else if ((entity.getCapability(VlAbyssModVariables.PLAYER_VARIABLES_CAPABILITY, null).orElse(new VlAbyssModVariables.PlayerVariables())).Chama >= 1
-				&& (entity.getCapability(VlAbyssModVariables.PLAYER_VARIABLES_CAPABILITY, null).orElse(new VlAbyssModVariables.PlayerVariables())).MantraRegistrada == true) {
-			if ((entity.getCapability(VlAbyssModVariables.PLAYER_VARIABLES_CAPABILITY, null).orElse(new VlAbyssModVariables.PlayerVariables())).mantra1_cooldown < 1) {
+		} else if ((entity.getCapability(VlAbyssModVariables.PLAYER_VARIABLES_CAPABILITY, null).orElseGet(VlAbyssModVariables.PlayerVariables::new)).Chama >= 1
+				&& (entity.getCapability(VlAbyssModVariables.PLAYER_VARIABLES_CAPABILITY, null).orElseGet(VlAbyssModVariables.PlayerVariables::new)).MantraRegistrada == true) {
+			if ((entity.getCapability(VlAbyssModVariables.PLAYER_VARIABLES_CAPABILITY, null).orElseGet(VlAbyssModVariables.PlayerVariables::new)).mantra1_cooldown < 1) {
 				if (!((entity instanceof LivingEntity _livEnt ? _livEnt.getOffhandItem() : ItemStack.EMPTY).getItem() == ItemStack.EMPTY.getItem())
 						&& !((entity instanceof LivingEntity _livEnt ? _livEnt.getMainHandItem() : ItemStack.EMPTY).getItem() == ItemStack.EMPTY.getItem())) {
 					if ((entity instanceof LivingEntity _livEnt ? _livEnt.getMainHandItem() : ItemStack.EMPTY).is(ItemTags.create(ResourceLocation.parse("minecraft:swords")))
 							|| (entity instanceof LivingEntity _livEnt ? _livEnt.getOffhandItem() : ItemStack.EMPTY).is(ItemTags.create(ResourceLocation.parse("minecraft:swords")))
 							|| (entity instanceof LivingEntity _livEnt ? _livEnt.getMainHandItem() : ItemStack.EMPTY).is(ItemTags.create(ResourceLocation.parse("minecraft:axes")))
 							|| (entity instanceof LivingEntity _livEnt ? _livEnt.getOffhandItem() : ItemStack.EMPTY).is(ItemTags.create(ResourceLocation.parse("minecraft:axes")))) {
-						if ((entity.getCapability(VlAbyssModVariables.PLAYER_VARIABLES_CAPABILITY, null).orElse(new VlAbyssModVariables.PlayerVariables())).Ethir >= 100) {
+						if ((entity.getCapability(VlAbyssModVariables.PLAYER_VARIABLES_CAPABILITY, null).orElseGet(VlAbyssModVariables.PlayerVariables::new)).Ethir >= 100) {
 							{
-								double _setval = (entity.getCapability(VlAbyssModVariables.PLAYER_VARIABLES_CAPABILITY, null).orElse(new VlAbyssModVariables.PlayerVariables())).Ethir - 100;
+								double _setval = (entity.getCapability(VlAbyssModVariables.PLAYER_VARIABLES_CAPABILITY, null).orElseGet(VlAbyssModVariables.PlayerVariables::new)).Ethir - 100;
 								entity.getCapability(VlAbyssModVariables.PLAYER_VARIABLES_CAPABILITY, null).ifPresent(capability -> {
 									capability.Ethir = _setval;
 									capability.syncPlayerVariables(entity);
@@ -893,7 +846,7 @@ public class HabilidadePrimariaOnKeyPressedProcedure {
 							}
 							if (entity instanceof LivingEntity _entMainHand109 && _entMainHand109.getMainArm() == HumanoidArm.LEFT) {
 								if (world.isClientSide()) {
-									SetupAnimationsProcedure.setAnimationClientside((Player) entity, "mantrarespiro1", false);
+									SetupAnimationsProcedure.setAnimationClientside((Player) entity, "mantrachama1", false);
 								}
 								if (!world.isClientSide()) {
 									if (entity instanceof Player && world instanceof ServerLevel srvLvl_) {
@@ -903,7 +856,7 @@ public class HabilidadePrimariaOnKeyPressedProcedure {
 											while (iterator.hasNext()) {
 												Connection connection = iterator.next();
 												if (!connection.isConnecting() && connection.isConnected())
-													VlAbyssMod.PACKET_HANDLER.sendTo(new SetupAnimationsProcedure.VlAbyssModAnimationMessage(Component.literal("mantrarespiro1"), entity.getId(), false), connection, NetworkDirection.PLAY_TO_CLIENT);
+													VlAbyssMod.PACKET_HANDLER.sendTo(new SetupAnimationsProcedure.VlAbyssModAnimationMessage(Component.literal("mantrachama1"), entity.getId(), false), connection, NetworkDirection.PLAY_TO_CLIENT);
 											}
 										}
 									}
@@ -935,18 +888,11 @@ public class HabilidadePrimariaOnKeyPressedProcedure {
 										_level.sendParticles(particleType, startX, startY, startZ, 0, velocityX, velocityY, velocityZ, particleSpeed);
 									}
 								}
-								if (world instanceof ServerLevel _level) {
-									Entity entityToSpawn = VlAbyssModEntities.CORTE_CHAMA_RETO.get().spawn(_level, BlockPos.containing(x, y, z), MobSpawnType.MOB_SUMMONED);
-									if (entityToSpawn != null) {
-										entityToSpawn.setYRot(entity.getYRot());
-										entityToSpawn.setYBodyRot(entity.getYRot());
-										entityToSpawn.setYHeadRot(entity.getYRot());
-										entityToSpawn.setXRot(entity.getXRot());
-									}
-								}
-							} else if (entity instanceof LivingEntity _entMainHand115 && _entMainHand115.getMainArm() == HumanoidArm.RIGHT) {
+								if (entity instanceof LivingEntity _entity && !_entity.level().isClientSide())
+									_entity.addEffect(new MobEffectInstance(VlAbyssModMobEffects.FLAMING_CUT.get(), 100, 2));
+							} else if (entity instanceof LivingEntity _entMainHand113 && _entMainHand113.getMainArm() == HumanoidArm.RIGHT) {
 								if (world.isClientSide()) {
-									SetupAnimationsProcedure.setAnimationClientside((Player) entity, "mantrarespiro1", false);
+									SetupAnimationsProcedure.setAnimationClientside((Player) entity, "mantrachama1", false);
 								}
 								if (!world.isClientSide()) {
 									if (entity instanceof Player && world instanceof ServerLevel srvLvl_) {
@@ -956,7 +902,7 @@ public class HabilidadePrimariaOnKeyPressedProcedure {
 											while (iterator.hasNext()) {
 												Connection connection = iterator.next();
 												if (!connection.isConnecting() && connection.isConnected())
-													VlAbyssMod.PACKET_HANDLER.sendTo(new SetupAnimationsProcedure.VlAbyssModAnimationMessage(Component.literal("mantrarespiro1"), entity.getId(), false), connection, NetworkDirection.PLAY_TO_CLIENT);
+													VlAbyssMod.PACKET_HANDLER.sendTo(new SetupAnimationsProcedure.VlAbyssModAnimationMessage(Component.literal("mantrachama1"), entity.getId(), false), connection, NetworkDirection.PLAY_TO_CLIENT);
 											}
 										}
 									}
@@ -988,15 +934,8 @@ public class HabilidadePrimariaOnKeyPressedProcedure {
 										_level.sendParticles(particleType, startX, startY, startZ, 0, velocityX, velocityY, velocityZ, particleSpeed);
 									}
 								}
-								if (world instanceof ServerLevel _level) {
-									Entity entityToSpawn = VlAbyssModEntities.CORTE_CHAMA_RETO.get().spawn(_level, BlockPos.containing(x, y, z), MobSpawnType.MOB_SUMMONED);
-									if (entityToSpawn != null) {
-										entityToSpawn.setYRot(entity.getYRot());
-										entityToSpawn.setYBodyRot(entity.getYRot());
-										entityToSpawn.setYHeadRot(entity.getYRot());
-										entityToSpawn.setXRot(entity.getXRot());
-									}
-								}
+								if (entity instanceof LivingEntity _entity && !_entity.level().isClientSide())
+									_entity.addEffect(new MobEffectInstance(VlAbyssModMobEffects.FLAMING_CUT.get(), 100, 2));
 							}
 						} else {
 							if (entity instanceof Player _player && !_player.level().isClientSide())
@@ -1014,9 +953,9 @@ public class HabilidadePrimariaOnKeyPressedProcedure {
 						|| (entity instanceof LivingEntity _livEnt ? _livEnt.getOffhandItem() : ItemStack.EMPTY).is(ItemTags.create(ResourceLocation.parse("minecraft:swords")))
 						|| (entity instanceof LivingEntity _livEnt ? _livEnt.getMainHandItem() : ItemStack.EMPTY).is(ItemTags.create(ResourceLocation.parse("minecraft:axes")))
 						|| (entity instanceof LivingEntity _livEnt ? _livEnt.getOffhandItem() : ItemStack.EMPTY).is(ItemTags.create(ResourceLocation.parse("minecraft:axes")))) {
-					if ((entity.getCapability(VlAbyssModVariables.PLAYER_VARIABLES_CAPABILITY, null).orElse(new VlAbyssModVariables.PlayerVariables())).Ethir >= 70) {
+					if ((entity.getCapability(VlAbyssModVariables.PLAYER_VARIABLES_CAPABILITY, null).orElseGet(VlAbyssModVariables.PlayerVariables::new)).Ethir >= 70) {
 						{
-							double _setval = (entity.getCapability(VlAbyssModVariables.PLAYER_VARIABLES_CAPABILITY, null).orElse(new VlAbyssModVariables.PlayerVariables())).Ethir - 70;
+							double _setval = (entity.getCapability(VlAbyssModVariables.PLAYER_VARIABLES_CAPABILITY, null).orElseGet(VlAbyssModVariables.PlayerVariables::new)).Ethir - 70;
 							entity.getCapability(VlAbyssModVariables.PLAYER_VARIABLES_CAPABILITY, null).ifPresent(capability -> {
 								capability.Ethir = _setval;
 								capability.syncPlayerVariables(entity);
@@ -1029,9 +968,9 @@ public class HabilidadePrimariaOnKeyPressedProcedure {
 								capability.syncPlayerVariables(entity);
 							});
 						}
-						if (entity instanceof LivingEntity _entMainHand125 && _entMainHand125.getMainArm() == HumanoidArm.LEFT) {
+						if (entity instanceof LivingEntity _entMainHand121 && _entMainHand121.getMainArm() == HumanoidArm.LEFT) {
 							if (world.isClientSide()) {
-								SetupAnimationsProcedure.setAnimationClientside((Player) entity, "mantrarespiro1", false);
+								SetupAnimationsProcedure.setAnimationClientside((Player) entity, "mantrachama1", false);
 							}
 							if (!world.isClientSide()) {
 								if (entity instanceof Player && world instanceof ServerLevel srvLvl_) {
@@ -1041,7 +980,7 @@ public class HabilidadePrimariaOnKeyPressedProcedure {
 										while (iterator.hasNext()) {
 											Connection connection = iterator.next();
 											if (!connection.isConnecting() && connection.isConnected())
-												VlAbyssMod.PACKET_HANDLER.sendTo(new SetupAnimationsProcedure.VlAbyssModAnimationMessage(Component.literal("mantrarespiro1"), entity.getId(), false), connection, NetworkDirection.PLAY_TO_CLIENT);
+												VlAbyssMod.PACKET_HANDLER.sendTo(new SetupAnimationsProcedure.VlAbyssModAnimationMessage(Component.literal("mantrachama1"), entity.getId(), false), connection, NetworkDirection.PLAY_TO_CLIENT);
 										}
 									}
 								}
@@ -1073,18 +1012,11 @@ public class HabilidadePrimariaOnKeyPressedProcedure {
 									_level.sendParticles(particleType, startX, startY, startZ, 0, velocityX, velocityY, velocityZ, particleSpeed);
 								}
 							}
-							if (world instanceof ServerLevel _level) {
-								Entity entityToSpawn = VlAbyssModEntities.CORTE_CHAMA_RETO.get().spawn(_level, BlockPos.containing(x, y, z), MobSpawnType.MOB_SUMMONED);
-								if (entityToSpawn != null) {
-									entityToSpawn.setYRot(entity.getYRot());
-									entityToSpawn.setYBodyRot(entity.getYRot());
-									entityToSpawn.setYHeadRot(entity.getYRot());
-									entityToSpawn.setXRot(entity.getXRot());
-								}
-							}
-						} else if (entity instanceof LivingEntity _entMainHand131 && _entMainHand131.getMainArm() == HumanoidArm.RIGHT) {
+							if (entity instanceof LivingEntity _entity && !_entity.level().isClientSide())
+								_entity.addEffect(new MobEffectInstance(VlAbyssModMobEffects.FLAMING_CUT.get(), 100, 1));
+						} else if (entity instanceof LivingEntity _entMainHand125 && _entMainHand125.getMainArm() == HumanoidArm.RIGHT) {
 							if (world.isClientSide()) {
-								SetupAnimationsProcedure.setAnimationClientside((Player) entity, "mantrarespiro1", false);
+								SetupAnimationsProcedure.setAnimationClientside((Player) entity, "mantrachama1", false);
 							}
 							if (!world.isClientSide()) {
 								if (entity instanceof Player && world instanceof ServerLevel srvLvl_) {
@@ -1094,7 +1026,7 @@ public class HabilidadePrimariaOnKeyPressedProcedure {
 										while (iterator.hasNext()) {
 											Connection connection = iterator.next();
 											if (!connection.isConnecting() && connection.isConnected())
-												VlAbyssMod.PACKET_HANDLER.sendTo(new SetupAnimationsProcedure.VlAbyssModAnimationMessage(Component.literal("mantrarespiro1"), entity.getId(), false), connection, NetworkDirection.PLAY_TO_CLIENT);
+												VlAbyssMod.PACKET_HANDLER.sendTo(new SetupAnimationsProcedure.VlAbyssModAnimationMessage(Component.literal("mantrachama1"), entity.getId(), false), connection, NetworkDirection.PLAY_TO_CLIENT);
 										}
 									}
 								}
@@ -1126,15 +1058,8 @@ public class HabilidadePrimariaOnKeyPressedProcedure {
 									_level.sendParticles(particleType, startX, startY, startZ, 0, velocityX, velocityY, velocityZ, particleSpeed);
 								}
 							}
-							if (world instanceof ServerLevel _level) {
-								Entity entityToSpawn = VlAbyssModEntities.CORTE_CHAMA_RETO.get().spawn(_level, BlockPos.containing(x, y, z), MobSpawnType.MOB_SUMMONED);
-								if (entityToSpawn != null) {
-									entityToSpawn.setYRot(entity.getYRot());
-									entityToSpawn.setYBodyRot(entity.getYRot());
-									entityToSpawn.setYHeadRot(entity.getYRot());
-									entityToSpawn.setXRot(entity.getXRot());
-								}
-							}
+							if (entity instanceof LivingEntity _entity && !_entity.level().isClientSide())
+								_entity.addEffect(new MobEffectInstance(VlAbyssModMobEffects.FLAMING_CUT.get(), 100, 1));
 						}
 					} else {
 						if (entity instanceof Player _player && !_player.level().isClientSide())
@@ -1148,9 +1073,9 @@ public class HabilidadePrimariaOnKeyPressedProcedure {
 						}
 					}
 				} else {
-					if ((entity.getCapability(VlAbyssModVariables.PLAYER_VARIABLES_CAPABILITY, null).orElse(new VlAbyssModVariables.PlayerVariables())).Ethir >= 50) {
+					if ((entity.getCapability(VlAbyssModVariables.PLAYER_VARIABLES_CAPABILITY, null).orElseGet(VlAbyssModVariables.PlayerVariables::new)).Ethir >= 50) {
 						{
-							double _setval = (entity.getCapability(VlAbyssModVariables.PLAYER_VARIABLES_CAPABILITY, null).orElse(new VlAbyssModVariables.PlayerVariables())).Ethir - 50;
+							double _setval = (entity.getCapability(VlAbyssModVariables.PLAYER_VARIABLES_CAPABILITY, null).orElseGet(VlAbyssModVariables.PlayerVariables::new)).Ethir - 50;
 							entity.getCapability(VlAbyssModVariables.PLAYER_VARIABLES_CAPABILITY, null).ifPresent(capability -> {
 								capability.Ethir = _setval;
 								capability.syncPlayerVariables(entity);
@@ -1163,9 +1088,9 @@ public class HabilidadePrimariaOnKeyPressedProcedure {
 								capability.syncPlayerVariables(entity);
 							});
 						}
-						if (entity instanceof LivingEntity _entMainHand139 && _entMainHand139.getMainArm() == HumanoidArm.LEFT) {
+						if (entity instanceof LivingEntity _entMainHand131 && _entMainHand131.getMainArm() == HumanoidArm.LEFT) {
 							if (world.isClientSide()) {
-								SetupAnimationsProcedure.setAnimationClientside((Player) entity, "mantrarespiro1", false);
+								SetupAnimationsProcedure.setAnimationClientside((Player) entity, "mantrachama1", false);
 							}
 							if (!world.isClientSide()) {
 								if (entity instanceof Player && world instanceof ServerLevel srvLvl_) {
@@ -1175,7 +1100,7 @@ public class HabilidadePrimariaOnKeyPressedProcedure {
 										while (iterator.hasNext()) {
 											Connection connection = iterator.next();
 											if (!connection.isConnecting() && connection.isConnected())
-												VlAbyssMod.PACKET_HANDLER.sendTo(new SetupAnimationsProcedure.VlAbyssModAnimationMessage(Component.literal("mantrarespiro1"), entity.getId(), false), connection, NetworkDirection.PLAY_TO_CLIENT);
+												VlAbyssMod.PACKET_HANDLER.sendTo(new SetupAnimationsProcedure.VlAbyssModAnimationMessage(Component.literal("mantrachama1"), entity.getId(), false), connection, NetworkDirection.PLAY_TO_CLIENT);
 										}
 									}
 								}
@@ -1207,18 +1132,11 @@ public class HabilidadePrimariaOnKeyPressedProcedure {
 									_level.sendParticles(particleType, startX, startY, startZ, 0, velocityX, velocityY, velocityZ, particleSpeed);
 								}
 							}
-							if (world instanceof ServerLevel _level) {
-								Entity entityToSpawn = VlAbyssModEntities.CORTE_CHAMA_RETO.get().spawn(_level, BlockPos.containing(x, y, z), MobSpawnType.MOB_SUMMONED);
-								if (entityToSpawn != null) {
-									entityToSpawn.setYRot(entity.getYRot());
-									entityToSpawn.setYBodyRot(entity.getYRot());
-									entityToSpawn.setYHeadRot(entity.getYRot());
-									entityToSpawn.setXRot(entity.getXRot());
-								}
-							}
-						} else if (entity instanceof LivingEntity _entMainHand145 && _entMainHand145.getMainArm() == HumanoidArm.RIGHT) {
+							if (entity instanceof LivingEntity _entity && !_entity.level().isClientSide())
+								_entity.addEffect(new MobEffectInstance(VlAbyssModMobEffects.FLAMING_CUT.get(), 100, 0));
+						} else if (entity instanceof LivingEntity _entMainHand135 && _entMainHand135.getMainArm() == HumanoidArm.RIGHT) {
 							if (world.isClientSide()) {
-								SetupAnimationsProcedure.setAnimationClientside((Player) entity, "mantrarespiro1", false);
+								SetupAnimationsProcedure.setAnimationClientside((Player) entity, "mantrachama1", false);
 							}
 							if (!world.isClientSide()) {
 								if (entity instanceof Player && world instanceof ServerLevel srvLvl_) {
@@ -1228,7 +1146,7 @@ public class HabilidadePrimariaOnKeyPressedProcedure {
 										while (iterator.hasNext()) {
 											Connection connection = iterator.next();
 											if (!connection.isConnecting() && connection.isConnected())
-												VlAbyssMod.PACKET_HANDLER.sendTo(new SetupAnimationsProcedure.VlAbyssModAnimationMessage(Component.literal("mantrarespiro1"), entity.getId(), false), connection, NetworkDirection.PLAY_TO_CLIENT);
+												VlAbyssMod.PACKET_HANDLER.sendTo(new SetupAnimationsProcedure.VlAbyssModAnimationMessage(Component.literal("mantrachama1"), entity.getId(), false), connection, NetworkDirection.PLAY_TO_CLIENT);
 										}
 									}
 								}
@@ -1260,15 +1178,8 @@ public class HabilidadePrimariaOnKeyPressedProcedure {
 									_level.sendParticles(particleType, startX, startY, startZ, 0, velocityX, velocityY, velocityZ, particleSpeed);
 								}
 							}
-							if (world instanceof ServerLevel _level) {
-								Entity entityToSpawn = VlAbyssModEntities.CORTE_CHAMA_RETO.get().spawn(_level, BlockPos.containing(x, y, z), MobSpawnType.MOB_SUMMONED);
-								if (entityToSpawn != null) {
-									entityToSpawn.setYRot(entity.getYRot());
-									entityToSpawn.setYBodyRot(entity.getYRot());
-									entityToSpawn.setYHeadRot(entity.getYRot());
-									entityToSpawn.setXRot(entity.getXRot());
-								}
-							}
+							if (entity instanceof LivingEntity _entity && !_entity.level().isClientSide())
+								_entity.addEffect(new MobEffectInstance(VlAbyssModMobEffects.FLAMING_CUT.get(), 100, 0));
 						}
 					} else {
 						if (entity instanceof Player _player && !_player.level().isClientSide())
@@ -1294,5 +1205,30 @@ public class HabilidadePrimariaOnKeyPressedProcedure {
 				}
 			}
 		}
+	}
+
+	private static AbstractArrow initArrowProjectile(AbstractArrow entityToSpawn, Entity shooter, float damage, boolean silent, boolean fire, boolean particles, AbstractArrow.Pickup pickup) {
+		entityToSpawn.setOwner(shooter);
+		entityToSpawn.setBaseDamage(damage);
+		if (silent)
+			entityToSpawn.setSilent(true);
+		if (fire)
+			entityToSpawn.setSecondsOnFire(100);
+		if (particles)
+			entityToSpawn.setCritArrow(true);
+		entityToSpawn.pickup = pickup;
+		return entityToSpawn;
+	}
+
+	private static AbstractArrow createArrowWeaponItemStack(AbstractArrow entityToSpawn, int knockback, byte piercing) {
+		if (knockback > 0)
+			entityToSpawn.setKnockback(knockback);
+		if (piercing > 0)
+			entityToSpawn.setPierceLevel(piercing);
+		return entityToSpawn;
+	}
+
+	private static Entity findEntityInWorldRange(LevelAccessor world, Class<? extends Entity> clazz, double x, double y, double z, double range) {
+		return (Entity) world.getEntitiesOfClass(clazz, AABB.ofSize(new Vec3(x, y, z), range, range, range), e -> true).stream().sorted(Comparator.comparingDouble(e -> e.distanceToSqr(x, y, z))).findFirst().orElse(null);
 	}
 }

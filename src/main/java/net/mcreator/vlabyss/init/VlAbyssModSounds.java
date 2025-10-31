@@ -46,4 +46,7 @@ public class VlAbyssModSounds {
 	public static final RegistryObject<SoundEvent> ATINGEMAGIALUZUM = REGISTRY.register("atingemagialuzum", () -> SoundEvent.createVariableRangeEvent(ResourceLocation.fromNamespaceAndPath("vl_abyss", "atingemagialuzum")));
 	public static final RegistryObject<SoundEvent> USAMANTRALUZUM = REGISTRY.register("usamantraluzum", () -> SoundEvent.createVariableRangeEvent(ResourceLocation.fromNamespaceAndPath("vl_abyss", "usamantraluzum")));
 	public static final RegistryObject<SoundEvent> SEM_ETHIR_SOM = REGISTRY.register("sem_ethir_som", () -> SoundEvent.createVariableRangeEvent(ResourceLocation.fromNamespaceAndPath("vl_abyss", "sem_ethir_som")));
+	public static final RegistryObject<SoundEvent> ATIVAHAB_CHAMA = REGISTRY.register("ativahab_chama", () -> SoundEvent.createVariableRangeEvent(ResourceLocation.fromNamespaceAndPath("vl_abyss", "ativahab_chama")));
+	public static final RegistryObject<SoundEvent> CHAMA_BLADE = REGISTRY.register("chama_blade", () -> SoundEvent.createVariableRangeEvent(ResourceLocation.fromNamespaceAndPath("vl_abyss", "chama_blade")));
+	public static final RegistryObject<SoundEvent> CHAMA_SOCO = REGISTRY.register("chama_soco", () -> SoundEvent.createVariableRangeEvent(ResourceLocation.fromNamespaceAndPath("vl_abyss", "chama_soco")));
 }

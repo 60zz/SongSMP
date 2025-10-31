@@ -2,20 +2,20 @@
   "_fv": 79,
   "_type": "potioneffect",
   "definition": {
-    "effectName": "Wind Blade",
-    "icon": "vento.png",
+    "effectName": "Flaming Cut",
+    "icon": "chama",
     "color": {
-      "value": -16777216,
+      "value": -1,
       "falpha": 0.0
     },
+    "onAddedSound": {
+      "value": "CUSTOM:ativahab_chama"
+    },
     "isInstant": false,
-    "mobEffectCategory": "NEUTRAL",
+    "mobEffectCategory": "BENEFICIAL",
     "renderStatusInInventory": true,
     "renderStatusInHUD": true,
     "isCuredbyHoney": false,
-    "modifiers": [],
-    "onActiveTick": {
-      "name": "CooldownRespiroOnEffectActiveTick"
-    }
+    "modifiers": []
   }
 }
