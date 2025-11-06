@@ -782,6 +782,10 @@
             "type": "entity"
           },
           {
+            "name": "sourceentity",
+            "type": "entity"
+          },
+          {
             "name": "x",
             "type": "number"
           },
@@ -1665,7 +1669,7 @@
           "src/main/java/net/mcreator/vlabyss/client/gui/JScreen.java"
         ]
       },
-      "path": "~/VL1_Abyss/Alma/Mantra"
+      "path": "~/VL1_Abyss/Alma/Mantra/DesbloqueiaMantra"
     },
     {
       "name": "JThisGUIIsOpened",
@@ -1684,7 +1688,7 @@
           }
         ]
       },
-      "path": "~/VL1_Abyss/Alma/Mantra/Procedure"
+      "path": "~/VL1_Abyss/Alma/Mantra/DesbloqueiaMantra/Procedure"
     },
     {
       "name": "ChamaBotaoClicou",
@@ -1719,7 +1723,7 @@
           }
         ]
       },
-      "path": "~/VL1_Abyss/Alma/Mantra/Procedure"
+      "path": "~/VL1_Abyss/Alma/Mantra/DesbloqueiaMantra/Procedure"
     },
     {
       "name": "TempestadeBotaoClicou",
@@ -1754,7 +1758,7 @@
           }
         ]
       },
-      "path": "~/VL1_Abyss/Alma/Mantra/Procedure"
+      "path": "~/VL1_Abyss/Alma/Mantra/DesbloqueiaMantra/Procedure"
     },
     {
       "name": "LuzBotaoClicou",
@@ -1789,7 +1793,7 @@
           }
         ]
       },
-      "path": "~/VL1_Abyss/Alma/Mantra/Procedure"
+      "path": "~/VL1_Abyss/Alma/Mantra/DesbloqueiaMantra/Procedure"
     },
     {
       "name": "NevascaBotaoClicou",
@@ -1824,7 +1828,7 @@
           }
         ]
       },
-      "path": "~/VL1_Abyss/Alma/Mantra/Procedure"
+      "path": "~/VL1_Abyss/Alma/Mantra/DesbloqueiaMantra/Procedure"
     },
     {
       "name": "RespiroBotaoClicou",
@@ -1859,7 +1863,7 @@
           }
         ]
       },
-      "path": "~/VL1_Abyss/Alma/Mantra/Procedure"
+      "path": "~/VL1_Abyss/Alma/Mantra/DesbloqueiaMantra/Procedure"
     },
     {
       "name": "EscuridaoBotaoClicou",
@@ -1894,7 +1898,7 @@
           }
         ]
       },
-      "path": "~/VL1_Abyss/Alma/Mantra/Procedure"
+      "path": "~/VL1_Abyss/Alma/Mantra/DesbloqueiaMantra/Procedure"
     },
     {
       "name": "SetAlmasProcedure",
@@ -1993,7 +1997,7 @@
           }
         ]
       },
-      "path": "~/VL1_Abyss/Alma/Mantra/Procedure"
+      "path": "~/VL1_Abyss/Alma/Mantra/DesbloqueiaMantra/Procedure"
     },
     {
       "name": "LiberacaoMantra",
@@ -2077,7 +2081,7 @@
           }
         ]
       },
-      "path": "~/VL1_Abyss/Alma/Mantra/Procedure"
+      "path": "~/VL1_Abyss/Alma/Mantra/DesbloqueiaMantra/Procedure"
     },
     {
       "name": "JEILiberacaoMantra",
@@ -2693,7 +2697,7 @@
           }
         ]
       },
-      "path": "~/VL1_Abyss/Mantras/MantrasPrincipais/Respiro/Procedure"
+      "path": "~/VL1_Abyss/Mantras/MantrasPrincipais/Respiro/AstralWind/Procedure"
     },
     {
       "name": "PlanarOnKeyReleased",
@@ -2712,7 +2716,7 @@
           }
         ]
       },
-      "path": "~/VL1_Abyss/Mantras/MantrasPrincipais/Respiro/Procedure"
+      "path": "~/VL1_Abyss/Mantras/MantrasPrincipais/Respiro/AstralWind/Procedure"
     },
     {
       "name": "Planar",
@@ -2725,7 +2729,7 @@
           "src/main/java/net/mcreator/vlabyss/network/PlanarMessage.java"
         ]
       },
-      "path": "~/VL1_Abyss/Mantras/MantrasPrincipais/Respiro/Key"
+      "path": "~/VL1_Abyss/Mantras/MantrasPrincipais/Respiro/AstralWind/Key"
     },
     {
       "name": "PlayerTick",
@@ -2779,7 +2783,7 @@
           }
         ]
       },
-      "path": "~/VL1_Abyss/Mantras/MantraKeyAtivacao"
+      "path": "~/VL1_Abyss/Mantras/MantraKeyAtivacao/ProcedureKey"
     },
     {
       "name": "HabilidadePrimaria",
@@ -2792,7 +2796,7 @@
           "src/main/java/net/mcreator/vlabyss/network/HabilidadePrimariaMessage.java"
         ]
       },
-      "path": "~/VL1_Abyss/Mantras/MantraKeyAtivacao"
+      "path": "~/VL1_Abyss/Mantras/MantraKeyAtivacao/Key"
     },
     {
       "name": "VentoParticula2",
@@ -2806,7 +2810,7 @@
           "src/main/resources/assets/vl_abyss/particles/vento_particula_2.json"
         ]
       },
-      "path": "~/VL1_Abyss/Mantras/MantrasPrincipais/Respiro/Particulas"
+      "path": "~/VL1_Abyss/Mantras/MantrasPrincipais/Respiro/AstralWind/Particulas"
     },
     {
       "name": "VentoParticula1",
@@ -2820,7 +2824,7 @@
           "src/main/java/net/mcreator/vlabyss/client/particle/VentoParticula1Particle.java"
         ]
       },
-      "path": "~/VL1_Abyss/Mantras/MantrasPrincipais/Respiro/Particulas"
+      "path": "~/VL1_Abyss/Mantras/MantrasPrincipais/Respiro/AstralWind/Particulas"
     },
     {
       "name": "RespiroPrimariaWhileProjectileFlyingTick",
@@ -2855,7 +2859,7 @@
           }
         ]
       },
-      "path": "~/VL1_Abyss/Mantras/MantrasPrincipais/Respiro/Projetil"
+      "path": "~/VL1_Abyss/Mantras/MantrasPrincipais/Respiro/AstralWind/Projetil"
     },
     {
       "name": "RespiroPrimaria",
@@ -2868,7 +2872,7 @@
           "src/main/java/net/mcreator/vlabyss/entity/RespiroPrimariaEntity.java"
         ]
       },
-      "path": "~/VL1_Abyss/Mantras/MantrasPrincipais/Respiro/Projetil"
+      "path": "~/VL1_Abyss/Mantras/MantrasPrincipais/Respiro/AstralWind/Projetil"
     },
     {
       "name": "AdagaAssassinos",
@@ -4406,33 +4410,6 @@
       "path": "~/Configuracao"
     },
     {
-      "name": "HabilidadeSecundaria",
-      "type": "keybind",
-      "compiles": true,
-      "locked_code": false,
-      "registry_name": "habilidade_secundaria",
-      "metadata": {
-        "files": [
-          "src/main/java/net/mcreator/vlabyss/network/HabilidadeSecundariaMessage.java"
-        ]
-      },
-      "path": "~/VL1_Abyss/Mantras/MantraKeyAtivacao"
-    },
-    {
-      "name": "HabilidadeSecundariaOnKeyPressed",
-      "type": "procedure",
-      "compiles": true,
-      "locked_code": false,
-      "registry_name": "habilidade_secundaria_on_key_pressed",
-      "metadata": {
-        "files": [
-          "src/main/java/net/mcreator/vlabyss/procedures/HabilidadeSecundariaOnKeyPressedProcedure.java"
-        ],
-        "dependencies": []
-      },
-      "path": "~/VL1_Abyss/Mantras/MantraKeyAtivacao"
-    },
-    {
       "name": "AcertouComLuvaSangrenta",
       "type": "procedure",
       "compiles": true,
@@ -4807,15 +4784,432 @@
         ]
       },
       "path": "~/VL1_Abyss/Mantras/MantrasPrincipais/Chama/Efeito"
+    },
+    {
+      "name": "MantraCorrompidaSoulRightClickedOnEntity",
+      "type": "procedure",
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "mantra_corrompida_soul_right_clicked_on_entity",
+      "metadata": {
+        "dependencies": [
+          {
+            "name": "entity",
+            "type": "entity"
+          },
+          {
+            "name": "sourceentity",
+            "type": "entity"
+          },
+          {
+            "name": "x",
+            "type": "number"
+          },
+          {
+            "name": "y",
+            "type": "number"
+          },
+          {
+            "name": "z",
+            "type": "number"
+          },
+          {
+            "name": "world",
+            "type": "world"
+          }
+        ],
+        "files": [
+          "src/main/java/net/mcreator/vlabyss/procedures/MantraCorrompidaSoulRightClickedOnEntityProcedure.java"
+        ]
+      },
+      "path": "~/VL1_Abyss/Alma/Alma"
+    },
+    {
+      "name": "WindVortex",
+      "type": "animatedentity",
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "wind_vortex",
+      "metadata": {
+        "files": [
+          "src/main/java/net/mcreator/vlabyss/client/renderer/WindVortexRenderer.java",
+          "src/main/java/net/mcreator/vlabyss/entity/WindVortexEntity.java",
+          "src/main/java/net/mcreator/vlabyss/entity/model/WindVortexModel.java"
+        ]
+      },
+      "path": "~/VL1_Abyss/Mantras/MantrasPrincipais/Respiro/WindVortex/Vortex"
+    },
+    {
+      "name": "WindVortexOnEntityTickUpdate",
+      "type": "procedure",
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "wind_vortex_on_entity_tick_update",
+      "metadata": {
+        "dependencies": [
+          {
+            "name": "entity",
+            "type": "entity"
+          },
+          {
+            "name": "x",
+            "type": "number"
+          },
+          {
+            "name": "y",
+            "type": "number"
+          },
+          {
+            "name": "z",
+            "type": "number"
+          },
+          {
+            "name": "world",
+            "type": "world"
+          }
+        ],
+        "files": [
+          "src/main/java/net/mcreator/vlabyss/procedures/WindVortexOnEntityTickUpdateProcedure.java"
+        ]
+      },
+      "path": "~/VL1_Abyss/Mantras/MantrasPrincipais/Respiro/WindVortex/Procedure"
+    },
+    {
+      "name": "WindVortexOnInitialEntitySpawn",
+      "type": "procedure",
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "wind_vortex_on_initial_entity_spawn",
+      "metadata": {
+        "dependencies": [
+          {
+            "name": "entity",
+            "type": "entity"
+          },
+          {
+            "name": "x",
+            "type": "number"
+          },
+          {
+            "name": "y",
+            "type": "number"
+          },
+          {
+            "name": "z",
+            "type": "number"
+          },
+          {
+            "name": "world",
+            "type": "world"
+          }
+        ],
+        "files": [
+          "src/main/java/net/mcreator/vlabyss/procedures/WindVortexOnInitialEntitySpawnProcedure.java"
+        ]
+      },
+      "path": "~/VL1_Abyss/Mantras/MantrasPrincipais/Respiro/WindVortex/Procedure"
+    },
+    {
+      "name": "Enfraquecido",
+      "type": "potioneffect",
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "enfraquecido",
+      "metadata": {
+        "files": [
+          "src/main/java/net/mcreator/vlabyss/potion/EnfraquecidoMobEffect.java"
+        ]
+      },
+      "path": "~/VL1_Abyss/Mantras/MantrasPrincipais/Respiro/Efeito"
+    },
+    {
+      "name": "PlayerTickDesbloqueiaMantra",
+      "type": "procedure",
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "player_tick_desbloqueia_mantra",
+      "metadata": {
+        "dependencies": [
+          {
+            "name": "entity",
+            "type": "entity"
+          }
+        ],
+        "files": [
+          "src/main/java/net/mcreator/vlabyss/procedures/PlayerTickDesbloqueiaMantraProcedure.java"
+        ]
+      },
+      "path": "~/VL1_Abyss/Alma/Mantra/DesbloqueiaHabilidades"
+    },
+    {
+      "name": "SetAlmasCorrompidasProcedure",
+      "type": "procedure",
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "set_almas_corrompidas_procedure",
+      "metadata": {
+        "dependencies": [
+          {
+            "name": "arguments",
+            "type": "cmdcontext"
+          }
+        ],
+        "files": [
+          "src/main/java/net/mcreator/vlabyss/procedures/SetAlmasCorrompidasProcedureProcedure.java"
+        ]
+      },
+      "path": "~/VL1_Abyss/Alma/Comando"
+    },
+    {
+      "name": "Vlsetalmascorrompidas",
+      "type": "command",
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "vlsetalmascorrompidas",
+      "metadata": {
+        "files": [
+          "src/main/java/net/mcreator/vlabyss/command/VlsetalmascorrompidasCommand.java"
+        ]
+      },
+      "path": "~/VL1_Abyss/Alma/Comando"
+    },
+    {
+      "name": "SelecionaMantraRapidoOnKeyPressed",
+      "type": "procedure",
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "seleciona_mantra_rapido_on_key_pressed",
+      "metadata": {
+        "dependencies": [
+          {
+            "name": "entity",
+            "type": "entity"
+          }
+        ],
+        "files": [
+          "src/main/java/net/mcreator/vlabyss/procedures/SelecionaMantraRapidoOnKeyPressedProcedure.java"
+        ]
+      },
+      "path": "~/VL1_Abyss/Mantras/MantraKeyAtivacao/ProcedureKey"
+    },
+    {
+      "name": "SelecionaMantraRapido",
+      "type": "keybind",
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "seleciona_mantra_rapido",
+      "metadata": {
+        "files": [
+          "src/main/java/net/mcreator/vlabyss/network/SelecionaMantraRapidoMessage.java"
+        ]
+      },
+      "path": "~/VL1_Abyss/Mantras/MantraKeyAtivacao/Key"
+    },
+    {
+      "name": "ChamaPrimeiraHabilidade",
+      "type": "procedure",
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "chama_primeira_habilidade",
+      "metadata": {
+        "dependencies": [
+          {
+            "name": "entity",
+            "type": "entity"
+          },
+          {
+            "name": "x",
+            "type": "number"
+          },
+          {
+            "name": "y",
+            "type": "number"
+          },
+          {
+            "name": "z",
+            "type": "number"
+          },
+          {
+            "name": "world",
+            "type": "world"
+          }
+        ],
+        "files": [
+          "src/main/java/net/mcreator/vlabyss/procedures/ChamaPrimeiraHabilidadeProcedure.java"
+        ]
+      },
+      "path": "~/VL1_Abyss/Mantras/MantraKeyAtivacao/MantrasProcedure/PrimeiraHabilidade"
+    },
+    {
+      "name": "RespiroPrimeiraHabilidade",
+      "type": "procedure",
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "respiro_primeira_habilidade",
+      "metadata": {
+        "dependencies": [
+          {
+            "name": "entity",
+            "type": "entity"
+          },
+          {
+            "name": "x",
+            "type": "number"
+          },
+          {
+            "name": "y",
+            "type": "number"
+          },
+          {
+            "name": "z",
+            "type": "number"
+          },
+          {
+            "name": "world",
+            "type": "world"
+          }
+        ],
+        "files": [
+          "src/main/java/net/mcreator/vlabyss/procedures/RespiroPrimeiraHabilidadeProcedure.java"
+        ]
+      },
+      "path": "~/VL1_Abyss/Mantras/MantraKeyAtivacao/MantrasProcedure/PrimeiraHabilidade"
+    },
+    {
+      "name": "EscuridaoPrimeiraHabilidade",
+      "type": "procedure",
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "escuridao_primeira_habilidade",
+      "metadata": {
+        "dependencies": [
+          {
+            "name": "entity",
+            "type": "entity"
+          },
+          {
+            "name": "x",
+            "type": "number"
+          },
+          {
+            "name": "y",
+            "type": "number"
+          },
+          {
+            "name": "z",
+            "type": "number"
+          },
+          {
+            "name": "world",
+            "type": "world"
+          }
+        ],
+        "files": [
+          "src/main/java/net/mcreator/vlabyss/procedures/EscuridaoPrimeiraHabilidadeProcedure.java"
+        ]
+      },
+      "path": "~/VL1_Abyss/Mantras/MantraKeyAtivacao/MantrasProcedure/PrimeiraHabilidade"
+    },
+    {
+      "name": "LuzPrimeiraHabilidade",
+      "type": "procedure",
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "luz_primeira_habilidade",
+      "metadata": {
+        "dependencies": [
+          {
+            "name": "entity",
+            "type": "entity"
+          },
+          {
+            "name": "x",
+            "type": "number"
+          },
+          {
+            "name": "y",
+            "type": "number"
+          },
+          {
+            "name": "z",
+            "type": "number"
+          },
+          {
+            "name": "world",
+            "type": "world"
+          }
+        ],
+        "files": [
+          "src/main/java/net/mcreator/vlabyss/procedures/LuzPrimeiraHabilidadeProcedure.java"
+        ]
+      },
+      "path": "~/VL1_Abyss/Mantras/MantraKeyAtivacao/MantrasProcedure/PrimeiraHabilidade"
+    },
+    {
+      "name": "TempestadePrimeiraHabilidade",
+      "type": "procedure",
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "tempestade_primeira_habilidade",
+      "metadata": {
+        "dependencies": [],
+        "files": [
+          "src/main/java/net/mcreator/vlabyss/procedures/TempestadePrimeiraHabilidadeProcedure.java"
+        ]
+      },
+      "path": "~/VL1_Abyss/Mantras/MantraKeyAtivacao/MantrasProcedure/PrimeiraHabilidade"
+    },
+    {
+      "name": "NevascaPrimeiraHabilidade",
+      "type": "procedure",
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "nevasca_primeira_habilidade",
+      "metadata": {
+        "dependencies": [],
+        "files": [
+          "src/main/java/net/mcreator/vlabyss/procedures/NevascaPrimeiraHabilidadeProcedure.java"
+        ]
+      },
+      "path": "~/VL1_Abyss/Mantras/MantraKeyAtivacao/MantrasProcedure/PrimeiraHabilidade"
+    },
+    {
+      "name": "RespiroSegundaHabilidade",
+      "type": "procedure",
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "respiro_segunda_habilidade",
+      "metadata": {
+        "dependencies": [
+          {
+            "name": "entity",
+            "type": "entity"
+          },
+          {
+            "name": "x",
+            "type": "number"
+          },
+          {
+            "name": "y",
+            "type": "number"
+          },
+          {
+            "name": "z",
+            "type": "number"
+          },
+          {
+            "name": "world",
+            "type": "world"
+          }
+        ],
+        "files": [
+          "src/main/java/net/mcreator/vlabyss/procedures/RespiroSegundaHabilidadeProcedure.java"
+        ]
+      },
+      "path": "~/VL1_Abyss/Mantras/MantraKeyAtivacao/MantrasProcedure/SegundaHabilidade"
     }
   ],
   "variable_elements": [
-    {
-      "name": "mapa",
-      "type": "logic",
-      "scope": "player_persistent",
-      "value": "false"
-    },
     {
       "name": "almas",
       "type": "number",
@@ -4823,10 +5217,10 @@
       "value": "0"
     },
     {
-      "name": "Valmiriano",
-      "type": "logic",
+      "name": "almas_corrompidas",
+      "type": "number",
       "scope": "player_persistent",
-      "value": "false"
+      "value": "0.0"
     },
     {
       "name": "Arkanthi",
@@ -4835,133 +5229,7 @@
       "value": "false"
     },
     {
-      "name": "Vesperian",
-      "type": "logic",
-      "scope": "player_persistent",
-      "value": "false"
-    },
-    {
-      "name": "Nimren",
-      "type": "logic",
-      "scope": "player_persistent",
-      "value": "false"
-    },
-    {
-      "name": "Simikari",
-      "type": "logic",
-      "scope": "player_persistent",
-      "value": "false"
-    },
-    {
-      "name": "Scribari",
-      "type": "logic",
-      "scope": "player_persistent",
-      "value": "false"
-    },
-    {
-      "name": "Capridel",
-      "type": "logic",
-      "scope": "player_persistent",
-      "value": "false"
-    },
-    {
-      "name": "Lumivivo",
-      "type": "logic",
-      "scope": "player_persistent",
-      "value": "false"
-    },
-    {
-      "name": "VL_Spy",
-      "type": "logic",
-      "scope": "player_persistent",
-      "value": "false"
-    },
-    {
-      "name": "insanidade",
-      "type": "number",
-      "scope": "player_persistent",
-      "value": "0"
-    },
-    {
-      "name": "vidas",
-      "type": "number",
-      "scope": "player_persistent",
-      "value": "5.0"
-    },
-    {
-      "name": "dash",
-      "type": "logic",
-      "scope": "player_persistent",
-      "value": "false"
-    },
-    {
-      "name": "Songs",
-      "type": "logic",
-      "scope": "player_persistent",
-      "value": "false"
-    },
-    {
-      "name": "Chama",
-      "type": "number",
-      "scope": "player_persistent",
-      "value": "0"
-    },
-    {
-      "name": "Respiro",
-      "type": "number",
-      "scope": "player_persistent",
-      "value": "0"
-    },
-    {
-      "name": "Nevasca",
-      "type": "number",
-      "scope": "player_persistent",
-      "value": "0"
-    },
-    {
-      "name": "Tempestade",
-      "type": "number",
-      "scope": "player_persistent",
-      "value": "0"
-    },
-    {
-      "name": "Escuridao",
-      "type": "number",
-      "scope": "player_persistent",
-      "value": "0"
-    },
-    {
-      "name": "Luz",
-      "type": "number",
-      "scope": "player_persistent",
-      "value": "0"
-    },
-    {
-      "name": "MantraRegistrada",
-      "type": "logic",
-      "scope": "player_persistent",
-      "value": "false"
-    },
-    {
-      "name": "dash_reto",
-      "type": "logic",
-      "scope": "player_persistent",
-      "value": "false"
-    },
-    {
-      "name": "Ethir",
-      "type": "number",
-      "scope": "player_persistent",
-      "value": "100.0"
-    },
-    {
       "name": "Assassino",
-      "type": "logic",
-      "scope": "player_persistent",
-      "value": "false"
-    },
-    {
-      "name": "Guerreiro",
       "type": "logic",
       "scope": "player_persistent",
       "value": "false"
@@ -4973,19 +5241,187 @@
       "value": "false"
     },
     {
-      "name": "Tanque",
+      "name": "Capridel",
       "type": "logic",
       "scope": "player_persistent",
       "value": "false"
     },
     {
-      "name": "pocaoreju",
+      "name": "Chama",
+      "type": "number",
+      "scope": "player_persistent",
+      "value": "0.0"
+    },
+    {
+      "name": "dash",
       "type": "logic",
       "scope": "player_persistent",
       "value": "false"
     },
     {
-      "name": "pocaoresis",
+      "name": "dash_reto",
+      "type": "logic",
+      "scope": "player_persistent",
+      "value": "false"
+    },
+    {
+      "name": "desligadash",
+      "type": "logic",
+      "scope": "player_persistent",
+      "value": "false"
+    },
+    {
+      "name": "Escuridao",
+      "type": "number",
+      "scope": "player_persistent",
+      "value": "0.0"
+    },
+    {
+      "name": "Ethir",
+      "type": "number",
+      "scope": "player_persistent",
+      "value": "100.0"
+    },
+    {
+      "name": "fase",
+      "type": "number",
+      "scope": "player_persistent",
+      "value": "1.0"
+    },
+    {
+      "name": "Guerreiro",
+      "type": "logic",
+      "scope": "player_persistent",
+      "value": "false"
+    },
+    {
+      "name": "hab1_nivel",
+      "type": "number",
+      "scope": "player_persistent",
+      "value": "1.0"
+    },
+    {
+      "name": "hab2_nivel",
+      "type": "number",
+      "scope": "player_persistent",
+      "value": "1.0"
+    },
+    {
+      "name": "hab3_nivel",
+      "type": "number",
+      "scope": "player_persistent",
+      "value": "1.0"
+    },
+    {
+      "name": "habilidade1",
+      "type": "logic",
+      "scope": "player_persistent",
+      "value": "false"
+    },
+    {
+      "name": "habilidade2",
+      "type": "logic",
+      "scope": "player_persistent",
+      "value": "false"
+    },
+    {
+      "name": "habilidade3",
+      "type": "logic",
+      "scope": "player_persistent",
+      "value": "false"
+    },
+    {
+      "name": "habilidade4",
+      "type": "logic",
+      "scope": "player_persistent",
+      "value": "false"
+    },
+    {
+      "name": "habilidade5",
+      "type": "logic",
+      "scope": "player_persistent",
+      "value": "false"
+    },
+    {
+      "name": "insanidade",
+      "type": "number",
+      "scope": "player_persistent",
+      "value": "0"
+    },
+    {
+      "name": "Lumivivo",
+      "type": "logic",
+      "scope": "player_persistent",
+      "value": "false"
+    },
+    {
+      "name": "Luz",
+      "type": "number",
+      "scope": "player_persistent",
+      "value": "0.0"
+    },
+    {
+      "name": "ManaRegenTimer",
+      "type": "number",
+      "scope": "player_persistent",
+      "value": "0.0"
+    },
+    {
+      "name": "mantra1_cooldown",
+      "type": "number",
+      "scope": "player_persistent",
+      "value": "0.0"
+    },
+    {
+      "name": "mantra2_cooldown",
+      "type": "number",
+      "scope": "player_persistent",
+      "value": "0.0"
+    },
+    {
+      "name": "mantra3_cooldown",
+      "type": "number",
+      "scope": "player_persistent",
+      "value": "0.0"
+    },
+    {
+      "name": "mantra4_cooldown",
+      "type": "number",
+      "scope": "player_persistent",
+      "value": "0.0"
+    },
+    {
+      "name": "mantra5_cooldown",
+      "type": "number",
+      "scope": "player_persistent",
+      "value": "0.0"
+    },
+    {
+      "name": "MantraRegistrada",
+      "type": "logic",
+      "scope": "player_persistent",
+      "value": "false"
+    },
+    {
+      "name": "mapa",
+      "type": "logic",
+      "scope": "player_persistent",
+      "value": "false"
+    },
+    {
+      "name": "MaxEthir",
+      "type": "number",
+      "scope": "player_persistent",
+      "value": "100.0"
+    },
+    {
+      "name": "Nevasca",
+      "type": "number",
+      "scope": "player_persistent",
+      "value": "0.0"
+    },
+    {
+      "name": "Nimren",
       "type": "logic",
       "scope": "player_persistent",
       "value": "false"
@@ -4997,7 +5433,19 @@
       "value": "false"
     },
     {
+      "name": "pocaoreju",
+      "type": "logic",
+      "scope": "player_persistent",
+      "value": "false"
+    },
+    {
       "name": "pocaorenas",
+      "type": "logic",
+      "scope": "player_persistent",
+      "value": "false"
+    },
+    {
+      "name": "pocaoresis",
       "type": "logic",
       "scope": "player_persistent",
       "value": "false"
@@ -5006,49 +5454,73 @@
       "name": "reputacao",
       "type": "number",
       "scope": "player_persistent",
-      "value": "0"
+      "value": "0.0"
     },
     {
-      "name": "MaxEthir",
+      "name": "Respiro",
       "type": "number",
       "scope": "player_persistent",
-      "value": "100.0"
+      "value": "0.0"
     },
     {
-      "name": "ManaRegenTimer",
-      "type": "number",
-      "scope": "player_persistent",
-      "value": "0"
-    },
-    {
-      "name": "fase",
-      "type": "number",
-      "scope": "player_persistent",
-      "value": "1.0"
-    },
-    {
-      "name": "desligadash",
+      "name": "Scribari",
       "type": "logic",
       "scope": "player_persistent",
       "value": "false"
     },
     {
-      "name": "mantra1_cooldown",
-      "type": "number",
+      "name": "Simikari",
+      "type": "logic",
       "scope": "player_persistent",
-      "value": "0"
+      "value": "false"
     },
     {
-      "name": "mantra2_cooldown",
-      "type": "number",
+      "name": "Songs",
+      "type": "logic",
       "scope": "player_persistent",
-      "value": "0"
+      "value": "false"
     },
     {
-      "name": "almas_corrompidas",
+      "name": "Tanque",
+      "type": "logic",
+      "scope": "player_persistent",
+      "value": "false"
+    },
+    {
+      "name": "Tempestade",
       "type": "number",
       "scope": "player_persistent",
-      "value": "0"
+      "value": "0.0"
+    },
+    {
+      "name": "Valmiriano",
+      "type": "logic",
+      "scope": "player_persistent",
+      "value": "false"
+    },
+    {
+      "name": "Vesperian",
+      "type": "logic",
+      "scope": "player_persistent",
+      "value": "false"
+    },
+    {
+      "name": "vidas",
+      "type": "number",
+      "scope": "player_persistent",
+      "value": "5.0"
+    },
+    {
+      "name": "VL_Spy",
+      "type": "logic",
+      "scope": "player_persistent",
+      "value": "false"
+    },
+    {
+      "name": "hab_selecionada",
+      "type": "number",
+      "scope": "player_persistent",
+      "value": "1.0"
     }
   ],
   "sound_elements": [
@@ -5572,7 +6044,6 @@
       "item_group.vl_abyss.vl_abyss": "§5SSMP | S1",
       "item.vl_abyss.amuleto_vesperian": "Amuleto de Vesperian",
       "block.vl_abyss.metal_forging": "Forjador de Metais",
-      "key.vl_abyss.habilidade_secundaria": "Mantra Secundária",
       "item.vl_abyss.adaga_assassinos": "Adaga dos Assassinos",
       "effect.vl_abyss.resistencia_quebrada": "Resistência Quebrada",
       "key.vl_abyss.planar": "Planar",
@@ -5602,7 +6073,11 @@
       "effect.vl_abyss.burn_soul": "Burn Soul",
       "subtitles.ativahab_chama": "",
       "subtitles.chama_blade": "",
-      "subtitles.chama_soco": ""
+      "subtitles.chama_soco": "",
+      "item.vl_abyss.wind_vortex_spawn_egg": "Wind Vortex Spawn Egg",
+      "entity.vl_abyss.wind_vortex": "Wind Vortex",
+      "effect.vl_abyss.enfraquecido": "Enfraquecido",
+      "key.vl_abyss.seleciona_mantra_rapido": "Troca de Mantra Rápida"
     }
   },
   "metadata": {
@@ -5756,11 +6231,20 @@
                 "name": "Mantra",
                 "children": [
                   {
-                    "name": "Procedure",
-                    "children": []
+                    "name": "DesbloqueiaMantra",
+                    "children": [
+                      {
+                        "name": "OverlayMantra",
+                        "children": []
+                      },
+                      {
+                        "name": "Procedure",
+                        "children": []
+                      }
+                    ]
                   },
                   {
-                    "name": "OverlayMantra",
+                    "name": "DesbloqueiaHabilidades",
                     "children": []
                   }
                 ]
@@ -5900,7 +6384,29 @@
             "children": [
               {
                 "name": "MantraKeyAtivacao",
-                "children": []
+                "children": [
+                  {
+                    "name": "MantrasProcedure",
+                    "children": [
+                      {
+                        "name": "PrimeiraHabilidade",
+                        "children": []
+                      },
+                      {
+                        "name": "SegundaHabilidade",
+                        "children": []
+                      }
+                    ]
+                  },
+                  {
+                    "name": "Key",
+                    "children": []
+                  },
+                  {
+                    "name": "ProcedureKey",
+                    "children": []
+                  }
+                ]
               },
               {
                 "name": "Dano",
@@ -5935,23 +6441,45 @@
                     "name": "Respiro",
                     "children": [
                       {
-                        "name": "Procedure",
-                        "children": []
+                        "name": "AstralWind",
+                        "children": [
+                          {
+                            "name": "Projetil",
+                            "children": []
+                          },
+                          {
+                            "name": "Procedure",
+                            "children": []
+                          },
+                          {
+                            "name": "Efeitos",
+                            "children": []
+                          },
+                          {
+                            "name": "Particulas",
+                            "children": []
+                          },
+                          {
+                            "name": "Key",
+                            "children": []
+                          }
+                        ]
                       },
                       {
-                        "name": "Key",
-                        "children": []
+                        "name": "WindVortex",
+                        "children": [
+                          {
+                            "name": "Vortex",
+                            "children": []
+                          },
+                          {
+                            "name": "Procedure",
+                            "children": []
+                          }
+                        ]
                       },
                       {
-                        "name": "Efeitos",
-                        "children": []
-                      },
-                      {
-                        "name": "Particulas",
-                        "children": []
-                      },
-                      {
-                        "name": "Projetil",
+                        "name": "Efeito",
                         "children": []
                       }
                     ]
@@ -6124,6 +6652,14 @@
           },
           {
             "name": "Painting",
+            "children": []
+          },
+          {
+            "name": "Banners",
+            "children": []
+          },
+          {
+            "name": "Banners_Escudo",
             "children": []
           }
         ]

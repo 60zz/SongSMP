@@ -73,9 +73,8 @@ public class MantraSoulEntity extends PathfinderMob implements GeoEntity {
 	public MantraSoulEntity(EntityType<MantraSoulEntity> type, Level world) {
 		super(type, world);
 		xpReward = 0;
-		setNoAi(true);
+		setNoAi(false);
 		setMaxUpStep(0f);
-		setPersistenceRequired();
 		this.moveControl = new FlyingMoveControl(this, 10, true);
 	}
 
@@ -106,13 +105,14 @@ public class MantraSoulEntity extends PathfinderMob implements GeoEntity {
 	}
 
 	@Override
-	public MobType getMobType() {
-		return MobType.UNDEFINED;
+	protected void registerGoals() {
+		super.registerGoals();
+
 	}
 
 	@Override
-	public boolean removeWhenFarAway(double distanceToClosestPlayer) {
-		return false;
+	public MobType getMobType() {
+		return MobType.UNDEFINED;
 	}
 
 	@Override

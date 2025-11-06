@@ -17,6 +17,7 @@ import net.mcreator.vlabyss.potion.QuebraMobEffect;
 import net.mcreator.vlabyss.potion.InstantRegenMantraMobEffect;
 import net.mcreator.vlabyss.potion.InsanoMobEffect;
 import net.mcreator.vlabyss.potion.FlamingCutMobEffect;
+import net.mcreator.vlabyss.potion.EnfraquecidoMobEffect;
 import net.mcreator.vlabyss.potion.CortaRegenMobEffect;
 import net.mcreator.vlabyss.potion.BurnSoulMobEffect;
 import net.mcreator.vlabyss.VlAbyssMod;
@@ -33,4 +34,5 @@ public class VlAbyssModMobEffects {
 	public static final RegistryObject<MobEffect> REGEN_MANTRA = REGISTRY.register("regen_mantra", () -> new RegenMantraMobEffect());
 	public static final RegistryObject<MobEffect> FLAMING_CUT = REGISTRY.register("flaming_cut", () -> new FlamingCutMobEffect());
 	public static final RegistryObject<MobEffect> BURN_SOUL = REGISTRY.register("burn_soul", () -> new BurnSoulMobEffect());
+	public static final RegistryObject<MobEffect> ENFRAQUECIDO = REGISTRY.register("enfraquecido", () -> new EnfraquecidoMobEffect());
 }

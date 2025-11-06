@@ -103,7 +103,7 @@
       "value": ""
     },
     "onRightClickedOn": {
-      "name": "MantraSoulRightClickedOnEntity"
+      "name": "MantraCorrompidaSoulRightClickedOnEntity"
     },
     "onInitialSpawn": {
       "name": "MantraSoulOnInitialEntitySpawn"
@@ -157,7 +157,7 @@
       2
     ],
     "spawnThisMob": false,
-    "doesDespawnWhenIdle": false,
+    "doesDespawnWhenIdle": true,
     "spawningProbability": 20,
     "mobSpawningType": "monster",
     "minNumberOfMobsPerGroup": 4,

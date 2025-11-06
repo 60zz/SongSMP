@@ -10,6 +10,7 @@ import net.minecraftforge.api.distmarker.Dist;
 
 import net.minecraft.client.renderer.entity.ThrownItemRenderer;
 
+import net.mcreator.vlabyss.client.renderer.WindVortexRenderer;
 import net.mcreator.vlabyss.client.renderer.MantraSoulRenderer;
 import net.mcreator.vlabyss.client.renderer.MantraSoulCorrompidaRenderer;
 import net.mcreator.vlabyss.client.renderer.CavaleiroAladoRenderer;
@@ -22,5 +23,6 @@ public class VlAbyssModEntityRenderers {
 		event.registerEntityRenderer(VlAbyssModEntities.RESPIRO_PRIMARIA.get(), ThrownItemRenderer::new);
 		event.registerEntityRenderer(VlAbyssModEntities.CAVALEIRO_ALADO.get(), CavaleiroAladoRenderer::new);
 		event.registerEntityRenderer(VlAbyssModEntities.MANTRA_SOUL_CORROMPIDA.get(), MantraSoulCorrompidaRenderer::new);
+		event.registerEntityRenderer(VlAbyssModEntities.WIND_VORTEX.get(), WindVortexRenderer::new);
 	}
 }

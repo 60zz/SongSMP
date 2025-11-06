@@ -112,7 +112,7 @@
     "onInitialSpawn": {
       "name": "MantraSoulOnInitialEntitySpawn"
     },
-    "hasAI": false,
+    "hasAI": true,
     "aiBase": "(none)",
     "aixml": "<xml xmlns=\"https://developers.google.com/blockly/xml\"><block type=\"aitasks_container\" deletable=\"false\" x=\"40\" y=\"40\"></block></xml>",
     "model": "alma.geo.json",
@@ -161,7 +161,7 @@
       2
     ],
     "spawnThisMob": false,
-    "doesDespawnWhenIdle": false,
+    "doesDespawnWhenIdle": true,
     "spawningProbability": 20,
     "mobSpawningType": "monster",
     "minNumberOfMobsPerGroup": 4,

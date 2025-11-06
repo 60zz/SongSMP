@@ -104,7 +104,6 @@
   "item_group.vl_abyss.vl_abyss": "§5SSMP | S1",
   "item.vl_abyss.amuleto_vesperian": "Amuleto de Vesperian",
   "block.vl_abyss.metal_forging": "Forjador de Metais",
-  "key.vl_abyss.habilidade_secundaria": "Mantra Secundária",
   "item.vl_abyss.adaga_assassinos": "Adaga dos Assassinos",
   "effect.vl_abyss.resistencia_quebrada": "Resistência Quebrada",
   "key.vl_abyss.planar": "Planar",
@@ -134,5 +133,9 @@
   "effect.vl_abyss.burn_soul": "Burn Soul",
   "subtitles.ativahab_chama": "",
   "subtitles.chama_blade": "",
-  "subtitles.chama_soco": ""
+  "subtitles.chama_soco": "",
+  "item.vl_abyss.wind_vortex_spawn_egg": "Wind Vortex Spawn Egg",
+  "entity.vl_abyss.wind_vortex": "Wind Vortex",
+  "effect.vl_abyss.enfraquecido": "Enfraquecido",
+  "key.vl_abyss.seleciona_mantra_rapido": "Troca de Mantra Rápida"
 }

@@ -16,7 +16,6 @@ import net.minecraft.client.KeyMapping;
 
 import net.mcreator.vlabyss.network.PlanarMessage;
 import net.mcreator.vlabyss.network.ParryMessage;
-import net.mcreator.vlabyss.network.HabilidadeSecundariaMessage;
 import net.mcreator.vlabyss.network.HabilidadePrimariaMessage;
 import net.mcreator.vlabyss.network.DesligaDashMessage;
 import net.mcreator.vlabyss.network.DashTrasMessage;
@@ -109,19 +108,6 @@ public class VlAbyssModKeyMappings {
 			isDownOld = isDown;
 		}
 	};
-	public static final KeyMapping HABILIDADE_SECUNDARIA = new KeyMapping("key.vl_abyss.habilidade_secundaria", GLFW.GLFW_KEY_Z, "key.categories.mantra") {
-		private boolean isDownOld = false;
-
-		@Override
-		public void setDown(boolean isDown) {
-			super.setDown(isDown);
-			if (isDownOld != isDown && isDown) {
-				VlAbyssMod.PACKET_HANDLER.sendToServer(new HabilidadeSecundariaMessage(0, 0));
-				HabilidadeSecundariaMessage.pressAction(Minecraft.getInstance().player, 0, 0);
-			}
-			isDownOld = isDown;
-		}
-	};
 	public static final KeyMapping DESLIGA_DASH = new KeyMapping("key.vl_abyss.desliga_dash", GLFW.GLFW_KEY_G, "key.categories.geral") {
 		private boolean isDownOld = false;
 
@@ -135,6 +121,7 @@ public class VlAbyssModKeyMappings {
 			isDownOld = isDown;
 		}
 	};
+	public static final KeyMapping SELECIONA_MANTRA_RAPIDO = new KeyMapping("key.vl_abyss.seleciona_mantra_rapido", GLFW.GLFW_KEY_LEFT_CONTROL, "key.categories.geral");
 	private static long PLANAR_LASTPRESS = 0;
 
 	@SubscribeEvent
@@ -145,8 +132,8 @@ public class VlAbyssModKeyMappings {
 		event.register(PLANAR);
 		event.register(HABILIDADE_PRIMARIA);
 		event.register(DASH_FRENTE);
-		event.register(HABILIDADE_SECUNDARIA);
 		event.register(DESLIGA_DASH);
+		event.register(SELECIONA_MANTRA_RAPIDO);
 	}
 
 	@Mod.EventBusSubscriber({Dist.CLIENT})
@@ -160,7 +147,6 @@ public class VlAbyssModKeyMappings {
 				PLANAR.consumeClick();
 				HABILIDADE_PRIMARIA.consumeClick();
 				DASH_FRENTE.consumeClick();
-				HABILIDADE_SECUNDARIA.consumeClick();
 				DESLIGA_DASH.consumeClick();
 			}
 		}

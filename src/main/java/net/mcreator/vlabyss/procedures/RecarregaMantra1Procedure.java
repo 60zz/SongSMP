@@ -27,13 +27,13 @@ public class RecarregaMantra1Procedure {
 	private static void execute(@Nullable Event event, Entity entity) {
 		if (entity == null)
 			return;
-		if ((entity.getCapability(VlAbyssModVariables.PLAYER_VARIABLES_CAPABILITY, null).orElse(new VlAbyssModVariables.PlayerVariables())).mantra1_cooldown >= 1) {
+		if ((entity.getCapability(VlAbyssModVariables.PLAYER_VARIABLES_CAPABILITY, null).orElseGet(VlAbyssModVariables.PlayerVariables::new)).mantra1_cooldown >= 1) {
 			if (entity.getPersistentData().getDouble("mantra1cooldown_timer") <= 19) {
 				entity.getPersistentData().putDouble("mantra1cooldown_timer", (entity.getPersistentData().getDouble("mantra1cooldown_timer") + 1));
 			}
 			if (entity.getPersistentData().getDouble("mantra1cooldown_timer") >= 20) {
 				{
-					double _setval = (entity.getCapability(VlAbyssModVariables.PLAYER_VARIABLES_CAPABILITY, null).orElse(new VlAbyssModVariables.PlayerVariables())).mantra1_cooldown - 1;
+					double _setval = (entity.getCapability(VlAbyssModVariables.PLAYER_VARIABLES_CAPABILITY, null).orElseGet(VlAbyssModVariables.PlayerVariables::new)).mantra1_cooldown - 1;
 					entity.getCapability(VlAbyssModVariables.PLAYER_VARIABLES_CAPABILITY, null).ifPresent(capability -> {
 						capability.mantra1_cooldown = _setval;
 						capability.syncPlayerVariables(entity);
@@ -42,19 +42,64 @@ public class RecarregaMantra1Procedure {
 				entity.getPersistentData().putDouble("mantra1cooldown_timer", 0);
 			}
 		}
-		if ((entity.getCapability(VlAbyssModVariables.PLAYER_VARIABLES_CAPABILITY, null).orElse(new VlAbyssModVariables.PlayerVariables())).mantra2_cooldown >= 1) {
+		if ((entity.getCapability(VlAbyssModVariables.PLAYER_VARIABLES_CAPABILITY, null).orElseGet(VlAbyssModVariables.PlayerVariables::new)).mantra2_cooldown >= 1) {
 			if (entity.getPersistentData().getDouble("mantra2cooldown_timer") <= 19) {
 				entity.getPersistentData().putDouble("mantra2cooldown_timer", (entity.getPersistentData().getDouble("mantra2cooldown_timer") + 1));
 			}
 			if (entity.getPersistentData().getDouble("mantra2cooldown_timer") >= 20) {
 				{
-					double _setval = (entity.getCapability(VlAbyssModVariables.PLAYER_VARIABLES_CAPABILITY, null).orElse(new VlAbyssModVariables.PlayerVariables())).mantra1_cooldown - 1;
+					double _setval = (entity.getCapability(VlAbyssModVariables.PLAYER_VARIABLES_CAPABILITY, null).orElseGet(VlAbyssModVariables.PlayerVariables::new)).mantra2_cooldown - 1;
 					entity.getCapability(VlAbyssModVariables.PLAYER_VARIABLES_CAPABILITY, null).ifPresent(capability -> {
-						capability.mantra1_cooldown = _setval;
+						capability.mantra2_cooldown = _setval;
 						capability.syncPlayerVariables(entity);
 					});
 				}
 				entity.getPersistentData().putDouble("mantra2cooldown_timer", 0);
+			}
+		}
+		if ((entity.getCapability(VlAbyssModVariables.PLAYER_VARIABLES_CAPABILITY, null).orElseGet(VlAbyssModVariables.PlayerVariables::new)).mantra3_cooldown >= 1) {
+			if (entity.getPersistentData().getDouble("mantra3cooldown_timer") <= 19) {
+				entity.getPersistentData().putDouble("mantra3cooldown_timer", (entity.getPersistentData().getDouble("mantra3cooldown_timer") + 1));
+			}
+			if (entity.getPersistentData().getDouble("mantra3cooldown_timer") >= 20) {
+				{
+					double _setval = (entity.getCapability(VlAbyssModVariables.PLAYER_VARIABLES_CAPABILITY, null).orElseGet(VlAbyssModVariables.PlayerVariables::new)).mantra3_cooldown - 1;
+					entity.getCapability(VlAbyssModVariables.PLAYER_VARIABLES_CAPABILITY, null).ifPresent(capability -> {
+						capability.mantra3_cooldown = _setval;
+						capability.syncPlayerVariables(entity);
+					});
+				}
+				entity.getPersistentData().putDouble("mantra3cooldown_timer", 0);
+			}
+		}
+		if ((entity.getCapability(VlAbyssModVariables.PLAYER_VARIABLES_CAPABILITY, null).orElseGet(VlAbyssModVariables.PlayerVariables::new)).mantra4_cooldown >= 1) {
+			if (entity.getPersistentData().getDouble("mantra4cooldown_timer") <= 19) {
+				entity.getPersistentData().putDouble("mantra4cooldown_timer", (entity.getPersistentData().getDouble("mantra4cooldown_timer") + 1));
+			}
+			if (entity.getPersistentData().getDouble("mantra4cooldown_timer") >= 20) {
+				{
+					double _setval = (entity.getCapability(VlAbyssModVariables.PLAYER_VARIABLES_CAPABILITY, null).orElseGet(VlAbyssModVariables.PlayerVariables::new)).mantra4_cooldown - 1;
+					entity.getCapability(VlAbyssModVariables.PLAYER_VARIABLES_CAPABILITY, null).ifPresent(capability -> {
+						capability.mantra4_cooldown = _setval;
+						capability.syncPlayerVariables(entity);
+					});
+				}
+				entity.getPersistentData().putDouble("mantra4cooldown_timer", 0);
+			}
+		}
+		if ((entity.getCapability(VlAbyssModVariables.PLAYER_VARIABLES_CAPABILITY, null).orElseGet(VlAbyssModVariables.PlayerVariables::new)).mantra5_cooldown >= 1) {
+			if (entity.getPersistentData().getDouble("mantra5cooldown_timer") <= 19) {
+				entity.getPersistentData().putDouble("mantra5cooldown_timer", (entity.getPersistentData().getDouble("mantra5cooldown_timer") + 1));
+			}
+			if (entity.getPersistentData().getDouble("mantra5cooldown_timer") >= 20) {
+				{
+					double _setval = (entity.getCapability(VlAbyssModVariables.PLAYER_VARIABLES_CAPABILITY, null).orElseGet(VlAbyssModVariables.PlayerVariables::new)).mantra5_cooldown - 1;
+					entity.getCapability(VlAbyssModVariables.PLAYER_VARIABLES_CAPABILITY, null).ifPresent(capability -> {
+						capability.mantra5_cooldown = _setval;
+						capability.syncPlayerVariables(entity);
+					});
+				}
+				entity.getPersistentData().putDouble("mantra5cooldown_timer", 0);
 			}
 		}
 	}

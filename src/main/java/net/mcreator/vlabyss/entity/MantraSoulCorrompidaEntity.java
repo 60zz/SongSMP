@@ -50,8 +50,8 @@ import net.minecraft.network.protocol.Packet;
 import net.minecraft.nbt.CompoundTag;
 import net.minecraft.core.BlockPos;
 
-import net.mcreator.vlabyss.procedures.MantraSoulRightClickedOnEntityProcedure;
 import net.mcreator.vlabyss.procedures.MantraSoulOnInitialEntitySpawnProcedure;
+import net.mcreator.vlabyss.procedures.MantraCorrompidaSoulRightClickedOnEntityProcedure;
 import net.mcreator.vlabyss.init.VlAbyssModEntities;
 
 import javax.annotation.Nullable;
@@ -75,7 +75,6 @@ public class MantraSoulCorrompidaEntity extends PathfinderMob implements GeoEnti
 		xpReward = 0;
 		setNoAi(true);
 		setMaxUpStep(0f);
-		setPersistenceRequired();
 		this.moveControl = new FlyingMoveControl(this, 10, true);
 	}
 
@@ -108,11 +107,6 @@ public class MantraSoulCorrompidaEntity extends PathfinderMob implements GeoEnti
 	@Override
 	public MobType getMobType() {
 		return MobType.UNDEFINED;
-	}
-
-	@Override
-	public boolean removeWhenFarAway(double distanceToClosestPlayer) {
-		return false;
 	}
 
 	@Override
@@ -194,7 +188,7 @@ public class MantraSoulCorrompidaEntity extends PathfinderMob implements GeoEnti
 		Entity entity = this;
 		Level world = this.level();
 
-		MantraSoulRightClickedOnEntityProcedure.execute(world, x, y, z, entity, sourceentity);
+		MantraCorrompidaSoulRightClickedOnEntityProcedure.execute(world, x, y, z, entity, sourceentity);
 		return retval;
 	}
 

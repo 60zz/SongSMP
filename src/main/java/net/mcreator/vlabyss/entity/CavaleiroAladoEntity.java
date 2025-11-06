@@ -77,7 +77,6 @@ public class CavaleiroAladoEntity extends Monster implements GeoEntity {
 		xpReward = 50;
 		setNoAi(false);
 		setMaxUpStep(0.6f);
-		setPersistenceRequired();
 	}
 
 	@Override
@@ -122,11 +121,6 @@ public class CavaleiroAladoEntity extends Monster implements GeoEntity {
 	@Override
 	public MobType getMobType() {
 		return MobType.UNDEFINED;
-	}
-
-	@Override
-	public boolean removeWhenFarAway(double distanceToClosestPlayer) {
-		return false;
 	}
 
 	@Override
