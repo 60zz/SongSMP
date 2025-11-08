@@ -46,7 +46,7 @@
   "gui.vl_abyss.metal_forja.label_inventario": "Inventário",
   "gui.vl_abyss.j.label_escuridao": "Escuridão",
   "gui.vl_abyss.j.label_respiro": "Respiro",
-  "key.vl_abyss.habilidade_primaria": "Mantra Primária",
+  "key.vl_abyss.habilidade_primaria": "Lançar Mantra Selecionada",
   "jei.vl_abyss.informacao_desviar_1": "- O pergaminho irá conceder ao usuário, o aprendizado para aplicar \"desvios\" ou \"dashs\" para utilizar durante a luta ou em momentos oportunos ",
   "gui.vl_abyss.metal_forja.label_menu_da_forja": "Menu da Forja",
   "subtitles.transformando_ingot": "",
@@ -137,5 +137,10 @@
   "item.vl_abyss.wind_vortex_spawn_egg": "Wind Vortex Spawn Egg",
   "entity.vl_abyss.wind_vortex": "Wind Vortex",
   "effect.vl_abyss.enfraquecido": "Enfraquecido",
-  "key.vl_abyss.seleciona_mantra_rapido": "Troca de Mantra Rápida"
+  "key.vl_abyss.seleciona_mantra_rapido": "Troca de Mantra Rápida",
+  "effect.vl_abyss.last_hope": "Última Esperança",
+  "key.vl_abyss.abrir_roda_spells": "Abrir Roda de Magias",
+  "gui.vl_abyss.roda_de_mantras.tooltip_9_damage": "9 Damage",
+  "gui.vl_abyss.roda_de_mantras.tooltip_empty": "Flaming Blade",
+  "gui.vl_abyss.roda_de_mantras.tooltip_90_de_mantra": "90 de MANTRA"
 }

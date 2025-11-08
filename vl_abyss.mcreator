@@ -5207,6 +5207,316 @@
         ]
       },
       "path": "~/VL1_Abyss/Mantras/MantraKeyAtivacao/MantrasProcedure/SegundaHabilidade"
+    },
+    {
+      "name": "LastHopeEffectStartedapplied",
+      "type": "procedure",
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "last_hope_effect_startedapplied",
+      "metadata": {
+        "dependencies": [
+          {
+            "name": "entity",
+            "type": "entity"
+          }
+        ],
+        "files": [
+          "src/main/java/net/mcreator/vlabyss/procedures/LastHopeEffectStartedappliedProcedure.java"
+        ]
+      },
+      "path": "~/VL1_Abyss/Mantras/MantrasPrincipais/Luz/LastHope/Procedure"
+    },
+    {
+      "name": "LastHope",
+      "type": "potioneffect",
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "last_hope",
+      "metadata": {
+        "files": [
+          "src/main/java/net/mcreator/vlabyss/potion/LastHopeMobEffect.java"
+        ]
+      },
+      "path": "~/VL1_Abyss/Mantras/MantrasPrincipais/Luz/LastHope/Effects"
+    },
+    {
+      "name": "LuzSegundaHabilidade",
+      "type": "procedure",
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "luz_segunda_habilidade",
+      "metadata": {
+        "dependencies": [
+          {
+            "name": "entity",
+            "type": "entity"
+          },
+          {
+            "name": "x",
+            "type": "number"
+          },
+          {
+            "name": "y",
+            "type": "number"
+          },
+          {
+            "name": "z",
+            "type": "number"
+          },
+          {
+            "name": "world",
+            "type": "world"
+          }
+        ],
+        "files": [
+          "src/main/java/net/mcreator/vlabyss/procedures/LuzSegundaHabilidadeProcedure.java"
+        ]
+      },
+      "path": "~/VL1_Abyss/Mantras/MantraKeyAtivacao/MantrasProcedure/SegundaHabilidade"
+    },
+    {
+      "name": "EscuridaoSegundaHabilidade",
+      "type": "procedure",
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "escuridao_segunda_habilidade",
+      "metadata": {
+        "dependencies": [],
+        "files": [
+          "src/main/java/net/mcreator/vlabyss/procedures/EscuridaoSegundaHabilidadeProcedure.java"
+        ]
+      },
+      "path": "~/VL1_Abyss/Mantras/MantraKeyAtivacao/MantrasProcedure/SegundaHabilidade"
+    },
+    {
+      "name": "CounterSpellProjectileHitsLivingEntity",
+      "type": "procedure",
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "counter_spell_projectile_hits_living_entity",
+      "metadata": {
+        "dependencies": [
+          {
+            "name": "entity",
+            "type": "entity"
+          },
+          {
+            "name": "world",
+            "type": "world"
+          }
+        ],
+        "files": [
+          "src/main/java/net/mcreator/vlabyss/procedures/CounterSpellProjectileHitsLivingEntityProcedure.java"
+        ]
+      },
+      "path": "~/VL1_Abyss/Mantras/MantrasPrincipais/Luz/CounterSpells"
+    },
+    {
+      "name": "CounterSpell",
+      "type": "projectile",
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "counter_spell",
+      "metadata": {
+        "files": [
+          "src/main/java/net/mcreator/vlabyss/entity/CounterSpellEntity.java"
+        ]
+      },
+      "path": "~/VL1_Abyss/Mantras/MantrasPrincipais/Luz/CounterSpells"
+    },
+    {
+      "name": "AbrirRodaSpells",
+      "type": "keybind",
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "abrir_roda_spells",
+      "metadata": {
+        "files": [
+          "src/main/java/net/mcreator/vlabyss/network/AbrirRodaSpellsMessage.java"
+        ]
+      },
+      "path": "~/VL1_Abyss/Mantras/MantraKeyAtivacao/Key"
+    },
+    {
+      "name": "ClicouNosIcones",
+      "type": "procedure",
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "clicou_nos_icones",
+      "metadata": {
+        "dependencies": [
+          {
+            "name": "entity",
+            "type": "entity"
+          }
+        ],
+        "files": [
+          "src/main/java/net/mcreator/vlabyss/procedures/ClicouNosIconesProcedure.java"
+        ]
+      },
+      "path": "~/VL1_Abyss/Mantras/MantraKeyAtivacao/Gui/Procedure"
+    },
+    {
+      "name": "ApareceInformacoes",
+      "type": "procedure",
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "aparece_informacoes",
+      "metadata": {
+        "dependencies": [
+          {
+            "name": "entity",
+            "type": "entity"
+          }
+        ],
+        "return_type": "logic",
+        "files": [
+          "src/main/java/net/mcreator/vlabyss/procedures/ApareceInformacoesProcedure.java"
+        ]
+      },
+      "path": "~/VL1_Abyss/Mantras/MantraKeyAtivacao/Gui/Procedure"
+    },
+    {
+      "name": "NivelHabilidade1",
+      "type": "procedure",
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "nivel_habilidade_1",
+      "metadata": {
+        "dependencies": [
+          {
+            "name": "entity",
+            "type": "entity"
+          }
+        ],
+        "return_type": "string",
+        "files": [
+          "src/main/java/net/mcreator/vlabyss/procedures/NivelHabilidade1Procedure.java"
+        ]
+      },
+      "path": "~/VL1_Abyss/Mantras/MantraKeyAtivacao/Gui/Niveis"
+    },
+    {
+      "name": "RodaDeMantras",
+      "type": "gui",
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "roda_de_mantras",
+      "metadata": {
+        "files": [
+          "src/main/java/net/mcreator/vlabyss/client/gui/RodaDeMantrasScreen.java",
+          "src/main/java/net/mcreator/vlabyss/network/RodaDeMantrasButtonMessage.java",
+          "src/main/java/net/mcreator/vlabyss/world/inventory/RodaDeMantrasMenu.java"
+        ]
+      },
+      "path": "~/VL1_Abyss/Mantras/MantraKeyAtivacao/Gui"
+    },
+    {
+      "name": "AbrirRodaSpellsOnKeyPressed",
+      "type": "procedure",
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "abrir_roda_spells_on_key_pressed",
+      "metadata": {
+        "dependencies": [
+          {
+            "name": "entity",
+            "type": "entity"
+          },
+          {
+            "name": "x",
+            "type": "number"
+          },
+          {
+            "name": "y",
+            "type": "number"
+          },
+          {
+            "name": "z",
+            "type": "number"
+          },
+          {
+            "name": "world",
+            "type": "world"
+          }
+        ],
+        "files": [
+          "src/main/java/net/mcreator/vlabyss/procedures/AbrirRodaSpellsOnKeyPressedProcedure.java"
+        ]
+      },
+      "path": "~/VL1_Abyss/Mantras/MantraKeyAtivacao/ProcedureKey"
+    },
+    {
+      "name": "TextoDosNomes",
+      "type": "procedure",
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "texto_dos_nomes",
+      "metadata": {
+        "dependencies": [
+          {
+            "name": "entity",
+            "type": "entity"
+          }
+        ],
+        "return_type": "string",
+        "files": [
+          "src/main/java/net/mcreator/vlabyss/procedures/TextoDosNomesProcedure.java"
+        ]
+      },
+      "path": "~/VL1_Abyss/Mantras/MantraKeyAtivacao/Gui/Textos"
+    },
+    {
+      "name": "TextoDoCusto",
+      "type": "procedure",
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "texto_do_custo",
+      "metadata": {
+        "dependencies": [
+          {
+            "name": "entity",
+            "type": "entity"
+          }
+        ],
+        "return_type": "string",
+        "files": [
+          "src/main/java/net/mcreator/vlabyss/procedures/TextoDoCustoProcedure.java"
+        ]
+      },
+      "path": "~/VL1_Abyss/Mantras/MantraKeyAtivacao/Gui/Textos"
+    },
+    {
+      "name": "TextoDoDano",
+      "type": "procedure",
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "texto_do_dano",
+      "metadata": {
+        "dependencies": [
+          {
+            "name": "entity",
+            "type": "entity"
+          }
+        ],
+        "return_type": "string",
+        "files": [
+          "src/main/java/net/mcreator/vlabyss/procedures/TextoDoDanoProcedure.java"
+        ]
+      },
+      "path": "~/VL1_Abyss/Mantras/MantraKeyAtivacao/Gui/Textos"
+    },
+    {
+      "name": "BonusAdditionalDamage",
+      "type": "attribute",
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "bonus_additional_damage",
+      "metadata": {
+        "files": []
+      },
+      "path": "~/VL1_Abyss/Mantras/Atributo"
     }
   ],
   "variable_elements": [
@@ -5906,23 +6216,23 @@
   "tab_element_order": {
     "CUSTOM:VlAbyss": [
       "MapaAbyss",
-      "VotoSilencioso",
-      "AmuletoVesperian",
-      "AmuletoSangue",
-      "AbyssionOre",
-      "RawAbyssion",
-      "AbyssionIngot",
-      "AbyssionNugget",
-      "RawAbyssionBlock",
-      "AbyssionIngotBlock",
       "CapuzEsquecido",
       "LuvasIronsing",
       "LuvasLuaSangrenta",
       "AnelEnferrujado",
       "CintoDosEcos",
       "FaixaAcolito",
+      "VotoSilencioso",
+      "AmuletoVesperian",
+      "AmuletoSangue",
       "BotasVazioAbyssal",
       "FragmentoPrimordial",
+      "AbyssionOre",
+      "RawAbyssion",
+      "AbyssionIngot",
+      "AbyssionNugget",
+      "RawAbyssionBlock",
+      "AbyssionIngotBlock",
       "LiberacaoMantra",
       "DesbloqueioEsquiva",
       "PocaoRejuvenescimento",
@@ -5986,7 +6296,7 @@
       "gui.vl_abyss.metal_forja.label_inventario": "Inventário",
       "gui.vl_abyss.j.label_escuridao": "Escuridão",
       "gui.vl_abyss.j.label_respiro": "Respiro",
-      "key.vl_abyss.habilidade_primaria": "Mantra Primária",
+      "key.vl_abyss.habilidade_primaria": "Lançar Mantra Selecionada",
       "jei.vl_abyss.informacao_desviar_1": "- O pergaminho irá conceder ao usuário, o aprendizado para aplicar \"desvios\" ou \"dashs\" para utilizar durante a luta ou em momentos oportunos ",
       "gui.vl_abyss.metal_forja.label_menu_da_forja": "Menu da Forja",
       "subtitles.transformando_ingot": "",
@@ -6077,7 +6387,12 @@
       "item.vl_abyss.wind_vortex_spawn_egg": "Wind Vortex Spawn Egg",
       "entity.vl_abyss.wind_vortex": "Wind Vortex",
       "effect.vl_abyss.enfraquecido": "Enfraquecido",
-      "key.vl_abyss.seleciona_mantra_rapido": "Troca de Mantra Rápida"
+      "key.vl_abyss.seleciona_mantra_rapido": "Troca de Mantra Rápida",
+      "effect.vl_abyss.last_hope": "Última Esperança",
+      "key.vl_abyss.abrir_roda_spells": "Abrir Roda de Magias",
+      "gui.vl_abyss.roda_de_mantras.tooltip_9_damage": "9 Damage",
+      "gui.vl_abyss.roda_de_mantras.tooltip_empty": "Flaming Blade",
+      "gui.vl_abyss.roda_de_mantras.tooltip_90_de_mantra": "90 de MANTRA"
     }
   },
   "metadata": {
@@ -6395,6 +6710,10 @@
                       {
                         "name": "SegundaHabilidade",
                         "children": []
+                      },
+                      {
+                        "name": "TerceiraHabilidade",
+                        "children": []
                       }
                     ]
                   },
@@ -6405,6 +6724,23 @@
                   {
                     "name": "ProcedureKey",
                     "children": []
+                  },
+                  {
+                    "name": "Gui",
+                    "children": [
+                      {
+                        "name": "Niveis",
+                        "children": []
+                      },
+                      {
+                        "name": "Procedure",
+                        "children": []
+                      },
+                      {
+                        "name": "Textos",
+                        "children": []
+                      }
+                    ]
                   }
                 ]
               },
@@ -6504,7 +6840,25 @@
                   },
                   {
                     "name": "Luz",
-                    "children": []
+                    "children": [
+                      {
+                        "name": "LastHope",
+                        "children": [
+                          {
+                            "name": "Procedure",
+                            "children": []
+                          },
+                          {
+                            "name": "Effects",
+                            "children": []
+                          }
+                        ]
+                      },
+                      {
+                        "name": "CounterSpells",
+                        "children": []
+                      }
+                    ]
                   },
                   {
                     "name": "Escuridao",
@@ -6521,6 +6875,10 @@
                     ]
                   }
                 ]
+              },
+              {
+                "name": "Atributo",
+                "children": []
               }
             ]
           },

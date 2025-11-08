@@ -12,9 +12,6 @@ import net.minecraft.resources.ResourceKey;
 import net.minecraft.core.registries.Registries;
 
 import net.mcreator.vlabyss.init.VlAbyssModMobEffects;
-import net.mcreator.vlabyss.entity.WindVortexEntity;
-import net.mcreator.vlabyss.entity.MantraSoulEntity;
-import net.mcreator.vlabyss.entity.MantraSoulCorrompidaEntity;
 
 import java.util.Comparator;
 
@@ -29,7 +26,7 @@ public class WindVortexOnEntityTickUpdateProcedure {
 		{
 			final Vec3 _center = new Vec3(x, y, z);
 			for (Entity entityiterator : world.getEntitiesOfClass(Entity.class, new AABB(_center, _center).inflate(6 / 2d), e -> true).stream().sorted(Comparator.comparingDouble(_entcnd -> _entcnd.distanceToSqr(_center))).toList()) {
-				if (!(entityiterator instanceof WindVortexEntity) || !(entityiterator instanceof MantraSoulCorrompidaEntity) || !(entityiterator instanceof MantraSoulEntity)) {
+				if (!(entity.getPersistentData().getString("invocador")).equals(entityiterator.getStringUUID())) {
 					dx = entity.getX() - entityiterator.getX();
 					dy = entity.getY() - entityiterator.getY();
 					dz = entity.getZ() - entityiterator.getZ();

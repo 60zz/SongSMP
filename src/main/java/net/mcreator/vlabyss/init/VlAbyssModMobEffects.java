@@ -14,6 +14,7 @@ import net.mcreator.vlabyss.potion.SangrandoMobEffect;
 import net.mcreator.vlabyss.potion.ResistenciaQuebradaMobEffect;
 import net.mcreator.vlabyss.potion.RegenMantraMobEffect;
 import net.mcreator.vlabyss.potion.QuebraMobEffect;
+import net.mcreator.vlabyss.potion.LastHopeMobEffect;
 import net.mcreator.vlabyss.potion.InstantRegenMantraMobEffect;
 import net.mcreator.vlabyss.potion.InsanoMobEffect;
 import net.mcreator.vlabyss.potion.FlamingCutMobEffect;
@@ -35,4 +36,5 @@ public class VlAbyssModMobEffects {
 	public static final RegistryObject<MobEffect> FLAMING_CUT = REGISTRY.register("flaming_cut", () -> new FlamingCutMobEffect());
 	public static final RegistryObject<MobEffect> BURN_SOUL = REGISTRY.register("burn_soul", () -> new BurnSoulMobEffect());
 	public static final RegistryObject<MobEffect> ENFRAQUECIDO = REGISTRY.register("enfraquecido", () -> new EnfraquecidoMobEffect());
+	public static final RegistryObject<MobEffect> LAST_HOPE = REGISTRY.register("last_hope", () -> new LastHopeMobEffect());
 }

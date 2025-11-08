@@ -1,7 +1,5 @@
 package net.mcreator.vlabyss.procedures;
 
-import top.theillusivec4.curios.api.CuriosApi;
-
 import net.minecraftforge.registries.ForgeRegistries;
 import net.minecraftforge.network.NetworkDirection;
 
@@ -22,7 +20,7 @@ import net.minecraft.client.CameraType;
 
 import net.mcreator.vlabyss.network.VlAbyssModVariables;
 import net.mcreator.vlabyss.init.VlAbyssModMobEffects;
-import net.mcreator.vlabyss.init.VlAbyssModItems;
+import net.mcreator.vlabyss.init.VlAbyssModAttributes;
 import net.mcreator.vlabyss.VlAbyssMod;
 
 import java.util.List;
@@ -45,13 +43,6 @@ public class EscuridaoPrimeiraHabilidadeProcedure {
 								capability.syncPlayerVariables(entity);
 							});
 						}
-						if (entity instanceof LivingEntity lv ? CuriosApi.getCuriosHelper().findEquippedCurio(VlAbyssModItems.CAPUZ_ESQUECIDO.get(), lv).isPresent() : false) {
-							if (entity instanceof LivingEntity _entity && !_entity.level().isClientSide())
-								_entity.addEffect(new MobEffectInstance(VlAbyssModMobEffects.SHADOW_COPY.get(), 1600, 0));
-						} else {
-							if (entity instanceof LivingEntity _entity && !_entity.level().isClientSide())
-								_entity.addEffect(new MobEffectInstance(VlAbyssModMobEffects.SHADOW_COPY.get(), 1200, 0));
-						}
 						{
 							double _setval = 180;
 							entity.getCapability(VlAbyssModVariables.PLAYER_VARIABLES_CAPABILITY, null).ifPresent(capability -> {
@@ -59,6 +50,8 @@ public class EscuridaoPrimeiraHabilidadeProcedure {
 								capability.syncPlayerVariables(entity);
 							});
 						}
+						if (entity instanceof LivingEntity _entity && !_entity.level().isClientSide())
+							_entity.addEffect(new MobEffectInstance(VlAbyssModMobEffects.SHADOW_COPY.get(), (int) (((LivingEntity) entity).getAttribute(VlAbyssModAttributes.BONUSADDITIONALDAMAGE.get()).getValue() * 1200), 0));
 						if (world.isClientSide()) {
 							SetupAnimationsProcedure.setAnimationClientside((Player) entity, "shadowcopy", false);
 						}
@@ -103,13 +96,8 @@ public class EscuridaoPrimeiraHabilidadeProcedure {
 								capability.syncPlayerVariables(entity);
 							});
 						}
-						if (entity instanceof LivingEntity lv ? CuriosApi.getCuriosHelper().findEquippedCurio(VlAbyssModItems.CAPUZ_ESQUECIDO.get(), lv).isPresent() : false) {
-							if (entity instanceof LivingEntity _entity && !_entity.level().isClientSide())
-								_entity.addEffect(new MobEffectInstance(VlAbyssModMobEffects.SHADOW_COPY.get(), 2000, 0));
-						} else {
-							if (entity instanceof LivingEntity _entity && !_entity.level().isClientSide())
-								_entity.addEffect(new MobEffectInstance(VlAbyssModMobEffects.SHADOW_COPY.get(), 1600, 0));
-						}
+						if (entity instanceof LivingEntity _entity && !_entity.level().isClientSide())
+							_entity.addEffect(new MobEffectInstance(VlAbyssModMobEffects.SHADOW_COPY.get(), (int) (((LivingEntity) entity).getAttribute(VlAbyssModAttributes.BONUSADDITIONALDAMAGE.get()).getValue() * 1400), 0));
 						{
 							double _setval = 180;
 							entity.getCapability(VlAbyssModVariables.PLAYER_VARIABLES_CAPABILITY, null).ifPresent(capability -> {

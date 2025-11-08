@@ -15,6 +15,7 @@ import net.minecraft.world.entity.player.Player;
 import net.minecraft.server.level.ServerPlayer;
 import net.minecraft.client.Minecraft;
 
+import net.mcreator.vlabyss.world.inventory.RodaDeMantrasMenu;
 import net.mcreator.vlabyss.world.inventory.MetalForjaMenu;
 import net.mcreator.vlabyss.world.inventory.JMenu;
 import net.mcreator.vlabyss.network.MenuStateUpdateMessage;
@@ -26,6 +27,7 @@ public class VlAbyssModMenus {
 	public static final DeferredRegister<MenuType<?>> REGISTRY = DeferredRegister.create(ForgeRegistries.MENU_TYPES, VlAbyssMod.MODID);
 	public static final RegistryObject<MenuType<JMenu>> J = REGISTRY.register("j", () -> IForgeMenuType.create(JMenu::new));
 	public static final RegistryObject<MenuType<MetalForjaMenu>> METAL_FORJA = REGISTRY.register("metal_forja", () -> IForgeMenuType.create(MetalForjaMenu::new));
+	public static final RegistryObject<MenuType<RodaDeMantrasMenu>> RODA_DE_MANTRAS = REGISTRY.register("roda_de_mantras", () -> IForgeMenuType.create(RodaDeMantrasMenu::new));
 
 	public interface MenuAccessor {
 		Map<String, Object> getMenuState();

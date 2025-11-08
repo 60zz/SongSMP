@@ -59,7 +59,7 @@ public class MorreuComArtefatoPrimordialProcedure {
 						.hasModifier((new AttributeModifier(UUID.fromString("d91e77f4-2bb8-4dc6-b7ae-e9d794b5adba"), "vidaprimordial", (-5), AttributeModifier.Operation.ADDITION)))))
 					((LivingEntity) entity).getAttribute(net.minecraft.world.entity.ai.attributes.Attributes.MAX_HEALTH)
 							.addTransientModifier((new AttributeModifier(UUID.fromString("d91e77f4-2bb8-4dc6-b7ae-e9d794b5adba"), "vidaprimordial", (-5), AttributeModifier.Operation.ADDITION)));
-				if ((entity.getCapability(VlAbyssModVariables.PLAYER_VARIABLES_CAPABILITY, null).orElse(new VlAbyssModVariables.PlayerVariables())).Lumivivo == true) {
+				if ((entity.getCapability(VlAbyssModVariables.PLAYER_VARIABLES_CAPABILITY, null).orElseGet(VlAbyssModVariables.PlayerVariables::new)).Lumivivo == true) {
 					if (entity instanceof LivingEntity _entity && !_entity.level().isClientSide())
 						_entity.addEffect(new MobEffectInstance(MobEffects.HUNGER, 1200, 3));
 					if (entity instanceof LivingEntity _entity && !_entity.level().isClientSide())

@@ -17,6 +17,7 @@ public class HabilidadePrimariaOnKeyPressedProcedure {
 			LuzPrimeiraHabilidadeProcedure.execute(world, x, y, z, entity);
 		} else if ((entity.getCapability(VlAbyssModVariables.PLAYER_VARIABLES_CAPABILITY, null).orElseGet(VlAbyssModVariables.PlayerVariables::new)).hab_selecionada == 2) {
 			RespiroSegundaHabilidadeProcedure.execute(world, x, y, z, entity);
+			LuzSegundaHabilidadeProcedure.execute(world, x, y, z, entity);
 		}
 	}
 }

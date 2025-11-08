@@ -22,6 +22,7 @@ import net.minecraft.client.CameraType;
 
 import net.mcreator.vlabyss.network.VlAbyssModVariables;
 import net.mcreator.vlabyss.init.VlAbyssModMobEffects;
+import net.mcreator.vlabyss.init.VlAbyssModAttributes;
 import net.mcreator.vlabyss.VlAbyssMod;
 
 import java.util.List;
@@ -98,7 +99,7 @@ public class ChamaPrimeiraHabilidadeProcedure {
 							}
 						}
 						if (entity instanceof LivingEntity _entity && !_entity.level().isClientSide())
-							_entity.addEffect(new MobEffectInstance(VlAbyssModMobEffects.FLAMING_CUT.get(), 100, 1));
+							_entity.addEffect(new MobEffectInstance(VlAbyssModMobEffects.FLAMING_CUT.get(), (int) (100 * ((LivingEntity) entity).getAttribute(VlAbyssModAttributes.BONUSADDITIONALDAMAGE.get()).getValue()), 1));
 						if (entity instanceof Player _player) {
 							if (_player.level().isClientSide()) {
 								Minecraft _mc = Minecraft.getInstance();
@@ -178,7 +179,7 @@ public class ChamaPrimeiraHabilidadeProcedure {
 							}
 						}
 						if (entity instanceof LivingEntity _entity && !_entity.level().isClientSide())
-							_entity.addEffect(new MobEffectInstance(VlAbyssModMobEffects.FLAMING_CUT.get(), 100, 0));
+							_entity.addEffect(new MobEffectInstance(VlAbyssModMobEffects.FLAMING_CUT.get(), (int) (100 * ((LivingEntity) entity).getAttribute(VlAbyssModAttributes.BONUSADDITIONALDAMAGE.get()).getValue()), 0));
 						if (entity instanceof Player _player) {
 							if (_player.level().isClientSide()) {
 								Minecraft _mc = Minecraft.getInstance();

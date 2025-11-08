@@ -12,6 +12,7 @@ public class SsmpConfiguration {
 	public static final ForgeConfigSpec.ConfigValue<Double> WINGEDKNIGHTFLYINGAXEGROUNDATTACKDAMAGE;
 	public static final ForgeConfigSpec.ConfigValue<Double> CAPUZESQUECIDOCONFIG;
 	public static final ForgeConfigSpec.ConfigValue<Double> CAPUZESQUECIDOCONFIG2;
+	public static final ForgeConfigSpec.ConfigValue<Double> CAPUZESQUECIDOCONFIG3;
 	public static final ForgeConfigSpec.ConfigValue<Double> COLARVOTOSILENCIOSOCONFIG;
 	public static final ForgeConfigSpec.ConfigValue<Double> AMULETOSANGUECONFIG;
 	public static final ForgeConfigSpec.ConfigValue<Double> AMULETOSANGUECONFIG2;
@@ -28,6 +29,7 @@ public class SsmpConfiguration {
 		BUILDER.push("Artefatos");
 		CAPUZESQUECIDOCONFIG = BUILDER.comment("Adicional de Inteligência por raça. Padrão 2").define("Capuz Esquecido Config", (double) 2);
 		CAPUZESQUECIDOCONFIG2 = BUILDER.comment("Perca de vida por artefato equipado. Padrão -2").define("Capuz Esquecido Debuff Config", (double) -2);
+		CAPUZESQUECIDOCONFIG3 = BUILDER.comment("Adicional de bônus nas mantras. Padrão: 0.2 (20%)").define("Capuz Esquecido Bonus", (double) 0.2);
 		COLARVOTOSILENCIOSOCONFIG = BUILDER.comment("Dano corpo a corpo reduzido. Padrão 1.2 (20%)").define("Voto Silencioso Dano Reduzido", (double) 1.2);
 		AMULETOSANGUECONFIG = BUILDER.comment("Vida recuperada pós hit. Padrão (c/ raça): 10").define("Amuleto de Sangue Config", (double) 10);
 		AMULETOSANGUECONFIG2 = BUILDER.comment("Vida recuperada pós hit. Padrão (s/ raça): 7").define("Amuleto de Sangue s/raça Config", (double) 7);

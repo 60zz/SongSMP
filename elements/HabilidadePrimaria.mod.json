@@ -2,8 +2,8 @@
   "_fv": 79,
   "_type": "keybind",
   "definition": {
-    "triggerKey": "X",
-    "keyBindingName": "Mantra Primária",
+    "triggerKey": "V",
+    "keyBindingName": "Lançar Mantra Selecionada",
     "keyBindingCategoryKey": "mantra",
     "onKeyPressed": {
       "name": "HabilidadePrimariaOnKeyPressed"

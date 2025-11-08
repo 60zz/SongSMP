@@ -4,6 +4,6 @@
   "definition": {
     "triggerKey": "LCONTROL",
     "keyBindingName": "Troca de Mantra Rápida",
-    "keyBindingCategoryKey": "geral"
+    "keyBindingCategoryKey": "mantra"
   }
 }

@@ -19,6 +19,7 @@ import net.mcreator.vlabyss.entity.WindVortexEntity;
 import net.mcreator.vlabyss.entity.RespiroPrimariaEntity;
 import net.mcreator.vlabyss.entity.MantraSoulEntity;
 import net.mcreator.vlabyss.entity.MantraSoulCorrompidaEntity;
+import net.mcreator.vlabyss.entity.CounterSpellEntity;
 import net.mcreator.vlabyss.entity.CavaleiroAladoEntity;
 import net.mcreator.vlabyss.VlAbyssMod;
 
@@ -34,7 +35,9 @@ public class VlAbyssModEntities {
 	public static final RegistryObject<EntityType<MantraSoulCorrompidaEntity>> MANTRA_SOUL_CORROMPIDA = register("mantra_soul_corrompida", EntityType.Builder.<MantraSoulCorrompidaEntity>of(MantraSoulCorrompidaEntity::new, MobCategory.MONSTER)
 			.setShouldReceiveVelocityUpdates(true).setTrackingRange(1).setUpdateInterval(3).setCustomClientFactory(MantraSoulCorrompidaEntity::new).fireImmune().sized(0.2f, 0.5f));
 	public static final RegistryObject<EntityType<WindVortexEntity>> WIND_VORTEX = register("wind_vortex", EntityType.Builder.<WindVortexEntity>of(WindVortexEntity::new, MobCategory.MONSTER).setShouldReceiveVelocityUpdates(true).setTrackingRange(1)
-			.setUpdateInterval(3).setCustomClientFactory(WindVortexEntity::new).fireImmune().sized(0.6f, 1.8f));
+			.setUpdateInterval(3).setCustomClientFactory(WindVortexEntity::new).fireImmune().sized(1.5f, 0.5f));
+	public static final RegistryObject<EntityType<CounterSpellEntity>> COUNTER_SPELL = register("counter_spell",
+			EntityType.Builder.<CounterSpellEntity>of(CounterSpellEntity::new, MobCategory.MISC).setCustomClientFactory(CounterSpellEntity::new).setShouldReceiveVelocityUpdates(true).setTrackingRange(64).setUpdateInterval(1).sized(0.5f, 0.5f));
 
 	// Start of user code block custom entities
 	// End of user code block custom entities

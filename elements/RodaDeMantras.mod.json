@@ -1,0 +1,171 @@
+{
+  "_fv": 79,
+  "_type": "gui",
+  "definition": {
+    "type": 0,
+    "width": 176,
+    "height": 166,
+    "inventoryOffsetX": 0,
+    "inventoryOffsetY": 0,
+    "renderBgLayer": false,
+    "doesPauseGame": false,
+    "components": [
+      {
+        "type": "imagebutton",
+        "data": {
+          "name": "imagebutton_coracao",
+          "image": "coracao.png",
+          "hoveredImage": "coracao2.png",
+          "onClick": {
+            "name": "ClicouNosIcones"
+          },
+          "x": 196,
+          "y": 47,
+          "locked": false
+        }
+      },
+      {
+        "type": "imagebutton",
+        "data": {
+          "name": "imagebutton_coracao1",
+          "image": "coracao.png",
+          "hoveredImage": "coracao2.png",
+          "x": 132,
+          "y": 68,
+          "locked": false
+        }
+      },
+      {
+        "type": "imagebutton",
+        "data": {
+          "name": "imagebutton_coracao2",
+          "image": "coracao.png",
+          "hoveredImage": "coracao2.png",
+          "x": 267,
+          "y": 68,
+          "locked": false
+        }
+      },
+      {
+        "type": "imagebutton",
+        "data": {
+          "name": "imagebutton_coracao3",
+          "image": "coracao.png",
+          "hoveredImage": "coracao2.png",
+          "x": 132,
+          "y": 130,
+          "locked": false
+        }
+      },
+      {
+        "type": "imagebutton",
+        "data": {
+          "name": "imagebutton_coracao4",
+          "image": "coracao.png",
+          "hoveredImage": "coracao2.png",
+          "x": 267,
+          "y": 130,
+          "locked": false
+        }
+      },
+      {
+        "type": "imagebutton",
+        "data": {
+          "name": "imagebutton_coracao5",
+          "image": "coracao.png",
+          "hoveredImage": "coracao2.png",
+          "x": 196,
+          "y": 152,
+          "locked": false
+        }
+      },
+      {
+        "type": "label",
+        "data": {
+          "name": "label_proc_nivel_habilidade_1",
+          "text": {
+            "fixedValue": "",
+            "name": "NivelHabilidade1"
+          },
+          "color": {
+            "value": -1,
+            "falpha": 0.0
+          },
+          "displayCondition": {
+            "name": "ApareceInformacoes"
+          },
+          "x": 147,
+          "y": 14,
+          "locked": false
+        }
+      },
+      {
+        "type": "label",
+        "data": {
+          "name": "label_proc_texto_dos_nomes",
+          "text": {
+            "fixedValue": "",
+            "name": "TextoDosNomes"
+          },
+          "color": {
+            "value": -1,
+            "falpha": 0.0
+          },
+          "displayCondition": {
+            "name": "ApareceInformacoes"
+          },
+          "x": 180,
+          "y": 1,
+          "locked": false
+        }
+      },
+      {
+        "type": "label",
+        "data": {
+          "name": "label_proc_texto_do_custo",
+          "text": {
+            "fixedValue": "",
+            "name": "TextoDoCusto"
+          },
+          "color": {
+            "value": -12829636,
+            "falpha": 0.0
+          },
+          "displayCondition": {
+            "name": "ApareceInformacoes"
+          },
+          "x": 147,
+          "y": 24,
+          "locked": false
+        }
+      },
+      {
+        "type": "label",
+        "data": {
+          "name": "label_proc_texto_do_dano",
+          "text": {
+            "fixedValue": "",
+            "name": "TextoDoDano"
+          },
+          "color": {
+            "value": -12829636,
+            "falpha": 0.0
+          },
+          "displayCondition": {
+            "name": "ApareceInformacoes"
+          },
+          "x": 223,
+          "y": 14,
+          "locked": false
+        }
+      }
+    ],
+    "gridSettings": {
+      "sx": 18,
+      "sy": 18,
+      "ox": 11,
+      "oy": 15,
+      "snapOnGrid": false
+    }
+  }
+}

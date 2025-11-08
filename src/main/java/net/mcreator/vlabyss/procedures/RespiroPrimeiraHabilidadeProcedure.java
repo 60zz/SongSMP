@@ -1,7 +1,5 @@
 package net.mcreator.vlabyss.procedures;
 
-import top.theillusivec4.curios.api.CuriosApi;
-
 import net.minecraftforge.registries.ForgeRegistries;
 import net.minecraftforge.network.NetworkDirection;
 
@@ -27,8 +25,8 @@ import net.minecraft.client.Minecraft;
 import net.minecraft.client.CameraType;
 
 import net.mcreator.vlabyss.network.VlAbyssModVariables;
-import net.mcreator.vlabyss.init.VlAbyssModItems;
 import net.mcreator.vlabyss.init.VlAbyssModEntities;
+import net.mcreator.vlabyss.init.VlAbyssModAttributes;
 import net.mcreator.vlabyss.entity.RespiroPrimariaEntity;
 import net.mcreator.vlabyss.VlAbyssMod;
 
@@ -132,29 +130,15 @@ public class RespiroPrimeiraHabilidadeProcedure {
 							}
 						}
 						VlAbyssMod.queueServerWork(20, () -> {
-							if (entity instanceof LivingEntity lv ? CuriosApi.getCuriosHelper().findEquippedCurio(VlAbyssModItems.CAPUZ_ESQUECIDO.get(), lv).isPresent() : false) {
-								{
-									Entity _shootFrom = entity;
-									Level projectileLevel = _shootFrom.level();
-									if (!projectileLevel.isClientSide()) {
-										Projectile _entityToSpawn = initArrowProjectile(createArrowWeaponItemStack(new RespiroPrimariaEntity(VlAbyssModEntities.RESPIRO_PRIMARIA.get(), 0, 0, 0, projectileLevel), 1, (byte) 0), entity, 12, true, false,
-												false, AbstractArrow.Pickup.DISALLOWED);
-										_entityToSpawn.setPos(_shootFrom.getX(), _shootFrom.getEyeY() - 0.1, _shootFrom.getZ());
-										_entityToSpawn.shoot(_shootFrom.getLookAngle().x, _shootFrom.getLookAngle().y, _shootFrom.getLookAngle().z, 1, 0);
-										projectileLevel.addFreshEntity(_entityToSpawn);
-									}
-								}
-							} else {
-								{
-									Entity _shootFrom = entity;
-									Level projectileLevel = _shootFrom.level();
-									if (!projectileLevel.isClientSide()) {
-										Projectile _entityToSpawn = initArrowProjectile(createArrowWeaponItemStack(new RespiroPrimariaEntity(VlAbyssModEntities.RESPIRO_PRIMARIA.get(), 0, 0, 0, projectileLevel), 1, (byte) 0), entity, 8, true, false,
-												false, AbstractArrow.Pickup.DISALLOWED);
-										_entityToSpawn.setPos(_shootFrom.getX(), _shootFrom.getEyeY() - 0.1, _shootFrom.getZ());
-										_entityToSpawn.shoot(_shootFrom.getLookAngle().x, _shootFrom.getLookAngle().y, _shootFrom.getLookAngle().z, 1, 0);
-										projectileLevel.addFreshEntity(_entityToSpawn);
-									}
+							{
+								Entity _shootFrom = entity;
+								Level projectileLevel = _shootFrom.level();
+								if (!projectileLevel.isClientSide()) {
+									Projectile _entityToSpawn = initArrowProjectile(createArrowWeaponItemStack(new RespiroPrimariaEntity(VlAbyssModEntities.RESPIRO_PRIMARIA.get(), 0, 0, 0, projectileLevel), 1, (byte) 0), entity,
+											(float) (8 * ((LivingEntity) entity).getAttribute(VlAbyssModAttributes.BONUSADDITIONALDAMAGE.get()).getValue()), true, false, false, AbstractArrow.Pickup.DISALLOWED);
+									_entityToSpawn.setPos(_shootFrom.getX(), _shootFrom.getEyeY() - 0.1, _shootFrom.getZ());
+									_entityToSpawn.shoot(_shootFrom.getLookAngle().x, _shootFrom.getLookAngle().y, _shootFrom.getLookAngle().z, 1, 0);
+									projectileLevel.addFreshEntity(_entityToSpawn);
 								}
 							}
 							if (entity instanceof LivingEntity _entity) {
@@ -306,29 +290,15 @@ public class RespiroPrimeiraHabilidadeProcedure {
 							}
 						}
 						VlAbyssMod.queueServerWork(20, () -> {
-							if (entity instanceof LivingEntity lv ? CuriosApi.getCuriosHelper().findEquippedCurio(VlAbyssModItems.CAPUZ_ESQUECIDO.get(), lv).isPresent() : false) {
-								{
-									Entity _shootFrom = entity;
-									Level projectileLevel = _shootFrom.level();
-									if (!projectileLevel.isClientSide()) {
-										Projectile _entityToSpawn = initArrowProjectile(createArrowWeaponItemStack(new RespiroPrimariaEntity(VlAbyssModEntities.RESPIRO_PRIMARIA.get(), 0, 0, 0, projectileLevel), 2, (byte) 0), entity, 16, true, false,
-												false, AbstractArrow.Pickup.DISALLOWED);
-										_entityToSpawn.setPos(_shootFrom.getX(), _shootFrom.getEyeY() - 0.1, _shootFrom.getZ());
-										_entityToSpawn.shoot(_shootFrom.getLookAngle().x, _shootFrom.getLookAngle().y, _shootFrom.getLookAngle().z, (float) 1.3, 0);
-										projectileLevel.addFreshEntity(_entityToSpawn);
-									}
-								}
-							} else {
-								{
-									Entity _shootFrom = entity;
-									Level projectileLevel = _shootFrom.level();
-									if (!projectileLevel.isClientSide()) {
-										Projectile _entityToSpawn = initArrowProjectile(createArrowWeaponItemStack(new RespiroPrimariaEntity(VlAbyssModEntities.RESPIRO_PRIMARIA.get(), 0, 0, 0, projectileLevel), 2, (byte) 0), entity, 12, true, false,
-												false, AbstractArrow.Pickup.DISALLOWED);
-										_entityToSpawn.setPos(_shootFrom.getX(), _shootFrom.getEyeY() - 0.1, _shootFrom.getZ());
-										_entityToSpawn.shoot(_shootFrom.getLookAngle().x, _shootFrom.getLookAngle().y, _shootFrom.getLookAngle().z, (float) 1.3, 0);
-										projectileLevel.addFreshEntity(_entityToSpawn);
-									}
+							{
+								Entity _shootFrom = entity;
+								Level projectileLevel = _shootFrom.level();
+								if (!projectileLevel.isClientSide()) {
+									Projectile _entityToSpawn = initArrowProjectile(createArrowWeaponItemStack(new RespiroPrimariaEntity(VlAbyssModEntities.RESPIRO_PRIMARIA.get(), 0, 0, 0, projectileLevel), 2, (byte) 0), entity,
+											(float) (12 * ((LivingEntity) entity).getAttribute(VlAbyssModAttributes.BONUSADDITIONALDAMAGE.get()).getValue()), true, false, false, AbstractArrow.Pickup.DISALLOWED);
+									_entityToSpawn.setPos(_shootFrom.getX(), _shootFrom.getEyeY() - 0.1, _shootFrom.getZ());
+									_entityToSpawn.shoot(_shootFrom.getLookAngle().x, _shootFrom.getLookAngle().y, _shootFrom.getLookAngle().z, (float) 1.3, 0);
+									projectileLevel.addFreshEntity(_entityToSpawn);
 								}
 							}
 							if (entity instanceof LivingEntity _entity) {

@@ -23,23 +23,23 @@ public class VlAbyssModTabs {
 	public static final RegistryObject<CreativeModeTab> VL_ABYSS = REGISTRY.register("vl_abyss",
 			() -> CreativeModeTab.builder().title(Component.translatable("item_group.vl_abyss.vl_abyss")).icon(() -> new ItemStack(VlAbyssModItems.MAPA_ABYSS.get())).displayItems((parameters, tabData) -> {
 				tabData.accept(VlAbyssModItems.MAPA_ABYSS.get());
-				tabData.accept(VlAbyssModItems.VOTO_SILENCIOSO.get());
-				tabData.accept(VlAbyssModItems.AMULETO_VESPERIAN.get());
-				tabData.accept(VlAbyssModItems.AMULETO_SANGUE.get());
-				tabData.accept(VlAbyssModBlocks.ABYSSION_ORE.get().asItem());
-				tabData.accept(VlAbyssModItems.RAW_ABYSSION.get());
-				tabData.accept(VlAbyssModItems.ABYSSION_INGOT.get());
-				tabData.accept(VlAbyssModItems.ABYSSION_NUGGET.get());
-				tabData.accept(VlAbyssModBlocks.RAW_ABYSSION_BLOCK.get().asItem());
-				tabData.accept(VlAbyssModBlocks.ABYSSION_INGOT_BLOCK.get().asItem());
 				tabData.accept(VlAbyssModItems.CAPUZ_ESQUECIDO.get());
 				tabData.accept(VlAbyssModItems.LUVAS_IRONSING.get());
 				tabData.accept(VlAbyssModItems.LUVAS_LUA_SANGRENTA.get());
 				tabData.accept(VlAbyssModItems.ANEL_ENFERRUJADO.get());
 				tabData.accept(VlAbyssModItems.CINTO_DOS_ECOS.get());
 				tabData.accept(VlAbyssModItems.FAIXA_ACOLITO.get());
+				tabData.accept(VlAbyssModItems.VOTO_SILENCIOSO.get());
+				tabData.accept(VlAbyssModItems.AMULETO_VESPERIAN.get());
+				tabData.accept(VlAbyssModItems.AMULETO_SANGUE.get());
 				tabData.accept(VlAbyssModItems.BOTAS_VAZIO_ABYSSAL.get());
 				tabData.accept(VlAbyssModItems.FRAGMENTO_PRIMORDIAL.get());
+				tabData.accept(VlAbyssModBlocks.ABYSSION_ORE.get().asItem());
+				tabData.accept(VlAbyssModItems.RAW_ABYSSION.get());
+				tabData.accept(VlAbyssModItems.ABYSSION_INGOT.get());
+				tabData.accept(VlAbyssModItems.ABYSSION_NUGGET.get());
+				tabData.accept(VlAbyssModBlocks.RAW_ABYSSION_BLOCK.get().asItem());
+				tabData.accept(VlAbyssModBlocks.ABYSSION_INGOT_BLOCK.get().asItem());
 				tabData.accept(VlAbyssModItems.LIBERACAO_MANTRA.get());
 				tabData.accept(VlAbyssModItems.DESBLOQUEIO_ESQUIVA.get());
 				tabData.accept(VlAbyssModItems.POCAO_REJUVENESCIMENTO.get());

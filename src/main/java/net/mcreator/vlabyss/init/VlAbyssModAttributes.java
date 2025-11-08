@@ -19,6 +19,7 @@ import net.mcreator.vlabyss.VlAbyssMod;
 public class VlAbyssModAttributes {
 	public static final DeferredRegister<Attribute> REGISTRY = DeferredRegister.create(ForgeRegistries.ATTRIBUTES, VlAbyssMod.MODID);
 	public static final RegistryObject<Attribute> INTELIGENCIA = REGISTRY.register("inteligencia", () -> (new RangedAttribute("attribute." + VlAbyssMod.MODID + ".inteligencia", 0, 0, 10)).setSyncable(true));
+	public static final RegistryObject<Attribute> BONUSADDITIONALDAMAGE = REGISTRY.register("bonus_additional_damage", () -> (new RangedAttribute("attribute." + VlAbyssMod.MODID + ".bonus_additional_damage", 1, 0, 100)).setSyncable(true));
 
 	@SubscribeEvent
 	public static void addAttributes(EntityAttributeModificationEvent event) {

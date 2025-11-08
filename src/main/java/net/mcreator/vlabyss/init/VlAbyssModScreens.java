@@ -10,6 +10,7 @@ import net.minecraftforge.api.distmarker.Dist;
 
 import net.minecraft.client.gui.screens.MenuScreens;
 
+import net.mcreator.vlabyss.client.gui.RodaDeMantrasScreen;
 import net.mcreator.vlabyss.client.gui.MetalForjaScreen;
 import net.mcreator.vlabyss.client.gui.JScreen;
 
@@ -20,6 +21,7 @@ public class VlAbyssModScreens {
 		event.enqueueWork(() -> {
 			MenuScreens.register(VlAbyssModMenus.J.get(), JScreen::new);
 			MenuScreens.register(VlAbyssModMenus.METAL_FORJA.get(), MetalForjaScreen::new);
+			MenuScreens.register(VlAbyssModMenus.RODA_DE_MANTRAS.get(), RodaDeMantrasScreen::new);
 		});
 	}
 
