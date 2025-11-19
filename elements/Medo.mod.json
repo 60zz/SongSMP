@@ -1,0 +1,52 @@
+{
+  "_fv": 79,
+  "_type": "potioneffect",
+  "definition": {
+    "effectName": "Medo",
+    "icon": "medo",
+    "color": {
+      "value": -16777216,
+      "falpha": 0.0
+    },
+    "onAddedSound": {
+      "value": ""
+    },
+    "isInstant": false,
+    "mobEffectCategory": "HARMFUL",
+    "renderStatusInInventory": true,
+    "renderStatusInHUD": true,
+    "isCuredbyHoney": false,
+    "modifiers": [
+      {
+        "attribute": {
+          "value": "MOVEMENT_SPEED"
+        },
+        "amount": -300.0,
+        "operation": "ADD_VALUE"
+      },
+      {
+        "attribute": {
+          "value": "JUMP_STRENGTH"
+        },
+        "amount": -300.0,
+        "operation": "ADD_VALUE"
+      },
+      {
+        "attribute": {
+          "value": "FLYING_SPEED"
+        },
+        "amount": -300.0,
+        "operation": "ADD_VALUE"
+      }
+    ],
+    "onStarted": {
+      "name": "MedoEffectStartedapplied"
+    },
+    "onActiveTick": {
+      "name": "MedoOnEffectActiveTick"
+    },
+    "onExpired": {
+      "name": "MedoEffectExpires"
+    }
+  }
+}

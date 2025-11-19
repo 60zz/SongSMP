@@ -1,0 +1,10 @@
+{
+  "_fv": 79,
+  "_type": "bannerpattern",
+  "definition": {
+    "texture": "golem",
+    "shieldTexture": "golem_noctharis",
+    "name": "Noctharis",
+    "requireItem": true
+  }
+}

@@ -1,5 +1,7 @@
 package net.mcreator.vlabyss.init;
 
+import net.minecraft.world.item.alchemy.Potions;
+import net.minecraft.world.item.alchemy.PotionUtils;
 import net.minecraft.world.item.Items;
 import net.minecraft.world.item.ItemStack;
 import net.minecraft.resources.ResourceLocation;
@@ -29,6 +31,18 @@ public class VlAbyssModBrewingRecipes implements IModPlugin {
 		ItemStack potion2 = new ItemStack(Items.POTION);
 		List<ItemStack> ingredientStack = new ArrayList<>();
 		List<ItemStack> inputStack = new ArrayList<>();
+		ingredientStack.add(new ItemStack(Items.LAPIS_LAZULI));
+		PotionUtils.setPotion(potion, Potions.LONG_WEAKNESS);
+		brewingRecipes.add(factory.createBrewingRecipe(List.copyOf(ingredientStack), potion.copy(), new ItemStack(VlAbyssModItems.INFINITY_ESSENCE_POTION.get())));
+		ingredientStack.clear();
+		ingredientStack.add(new ItemStack(Items.ECHO_SHARD));
+		PotionUtils.setPotion(potion, Potions.STRONG_STRENGTH);
+		brewingRecipes.add(factory.createBrewingRecipe(List.copyOf(ingredientStack), potion.copy(), new ItemStack(VlAbyssModItems.ARCANE_STRENGTH_POTION.get())));
+		ingredientStack.clear();
+		ingredientStack.add(new ItemStack(Items.PRISMARINE_CRYSTALS));
+		PotionUtils.setPotion(potion, Potions.STRONG_REGENERATION);
+		brewingRecipes.add(factory.createBrewingRecipe(List.copyOf(ingredientStack), potion.copy(), new ItemStack(VlAbyssModItems.SPIRIT_FLOW_POTION.get())));
+		ingredientStack.clear();
 		registration.addRecipes(RecipeTypes.BREWING, brewingRecipes);
 	}
 }

@@ -15,8 +15,7 @@ import net.minecraft.world.entity.player.Player;
 import net.minecraft.server.level.ServerPlayer;
 import net.minecraft.client.Minecraft;
 
-import net.mcreator.vlabyss.world.inventory.RodaDeMantrasMenu;
-import net.mcreator.vlabyss.world.inventory.MetalForjaMenu;
+import net.mcreator.vlabyss.world.inventory.SeletorDeClassesGuiMenu;
 import net.mcreator.vlabyss.world.inventory.JMenu;
 import net.mcreator.vlabyss.network.MenuStateUpdateMessage;
 import net.mcreator.vlabyss.VlAbyssMod;
@@ -26,8 +25,7 @@ import java.util.Map;
 public class VlAbyssModMenus {
 	public static final DeferredRegister<MenuType<?>> REGISTRY = DeferredRegister.create(ForgeRegistries.MENU_TYPES, VlAbyssMod.MODID);
 	public static final RegistryObject<MenuType<JMenu>> J = REGISTRY.register("j", () -> IForgeMenuType.create(JMenu::new));
-	public static final RegistryObject<MenuType<MetalForjaMenu>> METAL_FORJA = REGISTRY.register("metal_forja", () -> IForgeMenuType.create(MetalForjaMenu::new));
-	public static final RegistryObject<MenuType<RodaDeMantrasMenu>> RODA_DE_MANTRAS = REGISTRY.register("roda_de_mantras", () -> IForgeMenuType.create(RodaDeMantrasMenu::new));
+	public static final RegistryObject<MenuType<SeletorDeClassesGuiMenu>> SELETOR_DE_CLASSES_GUI = REGISTRY.register("seletor_de_classes_gui", () -> IForgeMenuType.create(SeletorDeClassesGuiMenu::new));
 
 	public interface MenuAccessor {
 		Map<String, Object> getMenuState();

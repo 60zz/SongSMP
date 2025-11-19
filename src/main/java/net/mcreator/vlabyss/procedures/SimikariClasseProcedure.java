@@ -1,17 +1,21 @@
 package net.mcreator.vlabyss.procedures;
 
+import org.checkerframework.checker.units.qual.m;
+
+import net.minecraftforge.registries.ForgeRegistries;
+
 import net.minecraft.world.entity.player.Player;
 import net.minecraft.world.entity.ai.attributes.AttributeModifier;
+import net.minecraft.world.entity.ai.attributes.AttributeInstance;
+import net.minecraft.world.entity.ai.attributes.Attribute;
 import net.minecraft.world.entity.LivingEntity;
 import net.minecraft.world.entity.Entity;
+import net.minecraft.resources.ResourceLocation;
 import net.minecraft.network.chat.Component;
 import net.minecraft.commands.arguments.EntityArgument;
 import net.minecraft.commands.CommandSourceStack;
 
 import net.mcreator.vlabyss.network.VlAbyssModVariables;
-import net.mcreator.vlabyss.init.VlAbyssModAttributes;
-
-import java.util.UUID;
 
 import com.mojang.brigadier.exceptions.CommandSyntaxException;
 import com.mojang.brigadier.context.CommandContext;
@@ -31,14 +35,40 @@ public class SimikariClasseProcedure {
 							capability.syncPlayerVariables(entityiterator);
 						});
 					}
-					if (!(((LivingEntity) entityiterator).getAttribute(net.minecraft.world.entity.ai.attributes.Attributes.ATTACK_DAMAGE)
-							.hasModifier((new AttributeModifier(UUID.fromString("910c870f-db83-4890-95f1-7f104542e03a"), "simikari", 1, AttributeModifier.Operation.ADDITION)))))
-						((LivingEntity) entityiterator).getAttribute(net.minecraft.world.entity.ai.attributes.Attributes.ATTACK_DAMAGE)
-								.addPermanentModifier((new AttributeModifier(UUID.fromString("910c870f-db83-4890-95f1-7f104542e03a"), "simikari", 1, AttributeModifier.Operation.ADDITION)));
-					if (!(((LivingEntity) entityiterator).getAttribute(VlAbyssModAttributes.INTELIGENCIA.get())
-							.hasModifier((new AttributeModifier(UUID.fromString("67a14d34-7c64-44a5-b9b0-f18445bbb5c4"), "simikari2", 1, AttributeModifier.Operation.ADDITION)))))
-						((LivingEntity) entityiterator).getAttribute(VlAbyssModAttributes.INTELIGENCIA.get())
-								.addPermanentModifier((new AttributeModifier(UUID.fromString("67a14d34-7c64-44a5-b9b0-f18445bbb5c4"), "simikari2", 1, AttributeModifier.Operation.ADDITION)));
+					{
+						Entity _entity = entityiterator;
+						if (_entity instanceof LivingEntity _livingEntity) {
+							Attribute _attribute = ForgeRegistries.ATTRIBUTES.getValue(new ResourceLocation("minecraft:generic.attack_damage"));
+							if (_attribute != null) {
+								AttributeInstance _attr = _livingEntity.getAttribute(_attribute);
+								if (_attr != null) {
+									String _modifierName = "simikari";
+									boolean _hasModifier = _attr.getModifiers().stream().anyMatch(m -> m.getName().equals(_modifierName));
+									if (!_hasModifier) {
+										AttributeModifier _modifier = new AttributeModifier(_modifierName, 1, AttributeModifier.Operation.ADDITION);
+										_attr.addPermanentModifier(_modifier);
+									}
+								}
+							}
+						}
+					}
+					{
+						Entity _entity = entityiterator;
+						if (_entity instanceof LivingEntity _livingEntity) {
+							Attribute _attribute = ForgeRegistries.ATTRIBUTES.getValue(new ResourceLocation("vl_abyss:inteligencia"));
+							if (_attribute != null) {
+								AttributeInstance _attr = _livingEntity.getAttribute(_attribute);
+								if (_attr != null) {
+									String _modifierName = "simikari2";
+									boolean _hasModifier = _attr.getModifiers().stream().anyMatch(m -> m.getName().equals(_modifierName));
+									if (!_hasModifier) {
+										AttributeModifier _modifier = new AttributeModifier(_modifierName, 1, AttributeModifier.Operation.ADDITION);
+										_attr.addPermanentModifier(_modifier);
+									}
+								}
+							}
+						}
+					}
 					if (entityiterator instanceof Player _player && !_player.level().isClientSide())
 						_player.displayClientMessage(Component.literal("\u00A7bVoc\u00EA agora est\u00E1 na classe \u00A73SIMIKARI"), false);
 					if (entity instanceof Player _player && !_player.level().isClientSide())
@@ -55,10 +85,38 @@ public class SimikariClasseProcedure {
 						_player.displayClientMessage(Component.literal("\u00A7bVoc\u00EA foi removido da classe \u00A73SIMIKARI"), false);
 					if (entity instanceof Player _player && !_player.level().isClientSide())
 						_player.displayClientMessage(Component.literal(("\u00A7bVoc\u00EA removeu " + entityiterator.getDisplayName().getString() + " na classe \u00A73SIMIKARI")), false);
-					((LivingEntity) entityiterator).getAttribute(net.minecraft.world.entity.ai.attributes.Attributes.ATTACK_DAMAGE)
-							.removePermanentModifier((new AttributeModifier(UUID.fromString("910c870f-db83-4890-95f1-7f104542e03a"), "simikari", 1, AttributeModifier.Operation.ADDITION)).getId());
-					((LivingEntity) entityiterator).getAttribute(VlAbyssModAttributes.INTELIGENCIA.get())
-							.removePermanentModifier((new AttributeModifier(UUID.fromString("67a14d34-7c64-44a5-b9b0-f18445bbb5c4"), "simikari2", 1, AttributeModifier.Operation.ADDITION)).getId());
+					{
+						Entity _entity = entityiterator;
+						if (_entity instanceof LivingEntity _livingEntity) {
+							Attribute _attribute = ForgeRegistries.ATTRIBUTES.getValue(new ResourceLocation("minecraft:generic.attack_damage"));
+							if (_attribute != null) {
+								AttributeInstance _attr = _livingEntity.getAttribute(_attribute);
+								if (_attr != null) {
+									_attr.getModifiers().forEach((_modifier) -> {
+										if (_modifier.getName().equals("simikari")) {
+											_attr.removeModifier(_modifier);
+										}
+									});
+								}
+							}
+						}
+					}
+					{
+						Entity _entity = entityiterator;
+						if (_entity instanceof LivingEntity _livingEntity) {
+							Attribute _attribute = ForgeRegistries.ATTRIBUTES.getValue(new ResourceLocation("vl_abyss:inteligencia"));
+							if (_attribute != null) {
+								AttributeInstance _attr = _livingEntity.getAttribute(_attribute);
+								if (_attr != null) {
+									_attr.getModifiers().forEach((_modifier) -> {
+										if (_modifier.getName().equals("simikari2")) {
+											_attr.removeModifier(_modifier);
+										}
+									});
+								}
+							}
+						}
+					}
 				}
 			}
 		} catch (CommandSyntaxException e) {

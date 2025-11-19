@@ -278,5 +278,29 @@
         "stream": false
       }
     ]
+  },
+  "vortexmantrasom": {
+    "sounds": [
+      {
+        "name": "vl_abyss:vortex_som",
+        "stream": false
+      }
+    ]
+  },
+  "respirohabilidadedois": {
+    "sounds": [
+      {
+        "name": "vl_abyss:respirohabilidadedois",
+        "stream": false
+      }
+    ]
+  },
+  "entidadegrito": {
+    "sounds": [
+      {
+        "name": "vl_abyss:entidadegrito",
+        "stream": false
+      }
+    ]
   }
 }

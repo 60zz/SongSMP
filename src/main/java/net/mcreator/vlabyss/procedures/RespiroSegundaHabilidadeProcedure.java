@@ -69,7 +69,7 @@ public class RespiroSegundaHabilidadeProcedure {
 							final Vec3 _center = new Vec3(x, y, z);
 							for (Entity entityiterator : world.getEntitiesOfClass(Entity.class, new AABB(_center, _center).inflate(10 / 2d), e -> true).stream().sorted(Comparator.comparingDouble(_entcnd -> _entcnd.distanceToSqr(_center))).toList()) {
 								if (!world.getEntitiesOfClass(WindVortexEntity.class, new AABB(Vec3.ZERO, Vec3.ZERO).move(new Vec3(x, y, z)).inflate(10 / 2d), e -> true).isEmpty()) {
-									entityiterator.getPersistentData().putString("invocador", (entity.getStringUUID()));
+									entityiterator.getPersistentData().putString("invocador", (entity.getDisplayName().getString()));
 								}
 							}
 						}
@@ -82,20 +82,13 @@ public class RespiroSegundaHabilidadeProcedure {
 						}
 						if (world instanceof Level _level) {
 							if (!_level.isClientSide()) {
-								_level.playSound(null, BlockPos.containing(x, y, z), ForgeRegistries.SOUND_EVENTS.getValue(ResourceLocation.parse("vl_abyss:respiro_hab1_1")), SoundSource.MASTER, 1, 1);
+								_level.playSound(null, BlockPos.containing(x, y, z), ForgeRegistries.SOUND_EVENTS.getValue(ResourceLocation.parse("vl_abyss:respirohabilidadedois")), SoundSource.MASTER, 1, 1);
 							} else {
-								_level.playLocalSound(x, y, z, ForgeRegistries.SOUND_EVENTS.getValue(ResourceLocation.parse("vl_abyss:respiro_hab1_1")), SoundSource.MASTER, 1, 1, false);
-							}
-						}
-						if (world instanceof Level _level) {
-							if (!_level.isClientSide()) {
-								_level.playSound(null, BlockPos.containing(x, y, z), ForgeRegistries.SOUND_EVENTS.getValue(ResourceLocation.parse("vl_abyss:respiro_hab1_2")), SoundSource.MASTER, 1, 1);
-							} else {
-								_level.playLocalSound(x, y, z, ForgeRegistries.SOUND_EVENTS.getValue(ResourceLocation.parse("vl_abyss:respiro_hab1_2")), SoundSource.MASTER, 1, 1, false);
+								_level.playLocalSound(x, y, z, ForgeRegistries.SOUND_EVENTS.getValue(ResourceLocation.parse("vl_abyss:respirohabilidadedois")), SoundSource.MASTER, 1, 1, false);
 							}
 						}
 						if (world.isClientSide()) {
-							SetupAnimationsProcedure.setAnimationClientside((Player) entity, "mantrarespiro1", false);
+							SetupAnimationsProcedure.setAnimationClientside((Player) entity, "respirovortex", false);
 						}
 						if (!world.isClientSide()) {
 							if (entity instanceof Player && world instanceof ServerLevel srvLvl_) {
@@ -105,7 +98,7 @@ public class RespiroSegundaHabilidadeProcedure {
 									while (iterator.hasNext()) {
 										Connection connection = iterator.next();
 										if (!connection.isConnecting() && connection.isConnected())
-											VlAbyssMod.PACKET_HANDLER.sendTo(new SetupAnimationsProcedure.VlAbyssModAnimationMessage(Component.literal("mantrarespiro1"), entity.getId(), false), connection, NetworkDirection.PLAY_TO_CLIENT);
+											VlAbyssMod.PACKET_HANDLER.sendTo(new SetupAnimationsProcedure.VlAbyssModAnimationMessage(Component.literal("respirovortex"), entity.getId(), false), connection, NetworkDirection.PLAY_TO_CLIENT);
 									}
 								}
 							}
@@ -120,7 +113,7 @@ public class RespiroSegundaHabilidadeProcedure {
 						}
 					} else {
 						if (entity instanceof Player _player && !_player.level().isClientSide())
-							_player.displayClientMessage(Component.literal("\u00A7cCertifique-se de da habilidade estar pr\u00F3prio para uso!"), true);
+							_player.displayClientMessage(Component.literal("\u00A7cCertifique-se de da habilidade estar apropriada para uso!"), true);
 						if (world instanceof Level _level) {
 							if (!_level.isClientSide()) {
 								_level.playSound(null, BlockPos.containing(x, y, z), ForgeRegistries.SOUND_EVENTS.getValue(ResourceLocation.parse("vl_abyss:sem_ethir_som")), SoundSource.MASTER, 1, 1);

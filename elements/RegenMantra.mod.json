@@ -16,9 +16,14 @@
     "renderStatusInInventory": true,
     "renderStatusInHUD": true,
     "isCuredbyHoney": false,
-    "modifiers": [],
-    "onActiveTick": {
-      "name": "RegenMantraOnEffectActiveTick"
-    }
+    "modifiers": [
+      {
+        "attribute": {
+          "value": "CUSTOM:MantraRegeneration"
+        },
+        "amount": 1.0,
+        "operation": "ADD_VALUE"
+      }
+    ]
   }
 }

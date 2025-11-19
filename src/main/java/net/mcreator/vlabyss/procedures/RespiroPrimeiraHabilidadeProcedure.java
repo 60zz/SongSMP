@@ -135,7 +135,14 @@ public class RespiroPrimeiraHabilidadeProcedure {
 								Level projectileLevel = _shootFrom.level();
 								if (!projectileLevel.isClientSide()) {
 									Projectile _entityToSpawn = initArrowProjectile(createArrowWeaponItemStack(new RespiroPrimariaEntity(VlAbyssModEntities.RESPIRO_PRIMARIA.get(), 0, 0, 0, projectileLevel), 1, (byte) 0), entity,
-											(float) (8 * ((LivingEntity) entity).getAttribute(VlAbyssModAttributes.BONUSADDITIONALDAMAGE.get()).getValue()), true, false, false, AbstractArrow.Pickup.DISALLOWED);
+											(float) (8
+													* (entity instanceof LivingEntity _livingEntity5 && _livingEntity5.getAttributes().hasAttribute(VlAbyssModAttributes.WIND_BONUS.get())
+															? _livingEntity5.getAttribute(VlAbyssModAttributes.WIND_BONUS.get()).getValue()
+															: 0)
+													* (entity instanceof LivingEntity _livingEntity6 && _livingEntity6.getAttributes().hasAttribute(VlAbyssModAttributes.BONUS_ADDITIONAL_DAMAGE.get())
+															? _livingEntity6.getAttribute(VlAbyssModAttributes.BONUS_ADDITIONAL_DAMAGE.get()).getValue()
+															: 0)),
+											true, false, false, AbstractArrow.Pickup.DISALLOWED);
 									_entityToSpawn.setPos(_shootFrom.getX(), _shootFrom.getEyeY() - 0.1, _shootFrom.getZ());
 									_entityToSpawn.shoot(_shootFrom.getLookAngle().x, _shootFrom.getLookAngle().y, _shootFrom.getLookAngle().z, 1, 0);
 									projectileLevel.addFreshEntity(_entityToSpawn);
@@ -295,7 +302,14 @@ public class RespiroPrimeiraHabilidadeProcedure {
 								Level projectileLevel = _shootFrom.level();
 								if (!projectileLevel.isClientSide()) {
 									Projectile _entityToSpawn = initArrowProjectile(createArrowWeaponItemStack(new RespiroPrimariaEntity(VlAbyssModEntities.RESPIRO_PRIMARIA.get(), 0, 0, 0, projectileLevel), 2, (byte) 0), entity,
-											(float) (12 * ((LivingEntity) entity).getAttribute(VlAbyssModAttributes.BONUSADDITIONALDAMAGE.get()).getValue()), true, false, false, AbstractArrow.Pickup.DISALLOWED);
+											(float) (12
+													* (entity instanceof LivingEntity _livingEntity22 && _livingEntity22.getAttributes().hasAttribute(VlAbyssModAttributes.WIND_BONUS.get())
+															? _livingEntity22.getAttribute(VlAbyssModAttributes.WIND_BONUS.get()).getValue()
+															: 0)
+													* (entity instanceof LivingEntity _livingEntity23 && _livingEntity23.getAttributes().hasAttribute(VlAbyssModAttributes.BONUS_ADDITIONAL_DAMAGE.get())
+															? _livingEntity23.getAttribute(VlAbyssModAttributes.BONUS_ADDITIONAL_DAMAGE.get()).getValue()
+															: 0)),
+											true, false, false, AbstractArrow.Pickup.DISALLOWED);
 									_entityToSpawn.setPos(_shootFrom.getX(), _shootFrom.getEyeY() - 0.1, _shootFrom.getZ());
 									_entityToSpawn.shoot(_shootFrom.getLookAngle().x, _shootFrom.getLookAngle().y, _shootFrom.getLookAngle().z, (float) 1.3, 0);
 									projectileLevel.addFreshEntity(_entityToSpawn);

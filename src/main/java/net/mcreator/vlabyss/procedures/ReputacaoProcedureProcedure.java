@@ -17,7 +17,7 @@ public class ReputacaoProcedureProcedure {
 			for (Entity entityiterator : EntityArgument.getEntities(arguments, "entity")) {
 				if (entityiterator instanceof Player _player && !_player.level().isClientSide())
 					_player.displayClientMessage(
-							Component.literal(("\u00A7bPossui: " + (entityiterator.getCapability(VlAbyssModVariables.PLAYER_VARIABLES_CAPABILITY, null).orElse(new VlAbyssModVariables.PlayerVariables())).reputacao + " de reputa\u00E7\u00E3o")),
+							Component.literal(("\u00A7bPossui: " + (entityiterator.getCapability(VlAbyssModVariables.PLAYER_VARIABLES_CAPABILITY, null).orElseGet(VlAbyssModVariables.PlayerVariables::new)).reputacao + " de reputa\u00E7\u00E3o")),
 							false);
 			}
 		} catch (CommandSyntaxException e) {

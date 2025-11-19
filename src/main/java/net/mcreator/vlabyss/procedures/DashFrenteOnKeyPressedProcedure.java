@@ -32,9 +32,9 @@ public class DashFrenteOnKeyPressedProcedure {
 	public static void execute(LevelAccessor world, double x, double y, double z, Entity entity) {
 		if (entity == null)
 			return;
-		if ((entity.getCapability(VlAbyssModVariables.PLAYER_VARIABLES_CAPABILITY, null).orElse(new VlAbyssModVariables.PlayerVariables())).dash_reto == true) {
-			if ((entity.getCapability(VlAbyssModVariables.PLAYER_VARIABLES_CAPABILITY, null).orElse(new VlAbyssModVariables.PlayerVariables())).desligadash == true) {
-				if (!entity.getPersistentData().getBoolean("hitado") && !((entity.getCapability(VlAbyssModVariables.PLAYER_VARIABLES_CAPABILITY, null).orElse(new VlAbyssModVariables.PlayerVariables())).dash == true)) {
+		if ((entity.getCapability(VlAbyssModVariables.PLAYER_VARIABLES_CAPABILITY, null).orElseGet(VlAbyssModVariables.PlayerVariables::new)).dash_reto == true) {
+			if ((entity.getCapability(VlAbyssModVariables.PLAYER_VARIABLES_CAPABILITY, null).orElseGet(VlAbyssModVariables.PlayerVariables::new)).desligadash == true) {
+				if (!entity.getPersistentData().getBoolean("hitado") && !((entity.getCapability(VlAbyssModVariables.PLAYER_VARIABLES_CAPABILITY, null).orElseGet(VlAbyssModVariables.PlayerVariables::new)).dash == true)) {
 					if (!(entity instanceof Player _plrCldCheck1 && _plrCldCheck1.getCooldowns().isOnCooldown(VlAbyssModItems.DESBLOQUEIO_ESQUIVA.get()))) {
 						{
 							boolean _setval = true;
@@ -56,7 +56,7 @@ public class DashFrenteOnKeyPressedProcedure {
 						});
 					}
 				} else if (!(entity instanceof Player _plrCldCheck4 && _plrCldCheck4.getCooldowns().isOnCooldown(VlAbyssModItems.DESBLOQUEIO_ESQUIVA.get()))
-						&& (entity.getCapability(VlAbyssModVariables.PLAYER_VARIABLES_CAPABILITY, null).orElse(new VlAbyssModVariables.PlayerVariables())).dash == true) {
+						&& (entity.getCapability(VlAbyssModVariables.PLAYER_VARIABLES_CAPABILITY, null).orElseGet(VlAbyssModVariables.PlayerVariables::new)).dash == true) {
 					{
 						boolean _setval = false;
 						entity.getCapability(VlAbyssModVariables.PLAYER_VARIABLES_CAPABILITY, null).ifPresent(capability -> {
@@ -91,7 +91,7 @@ public class DashFrenteOnKeyPressedProcedure {
 							entity.setDeltaMovement(new Vec3((entity.getLookAngle().x + 0.25), 0, (entity.getLookAngle().z)));
 						}
 					} else {
-						if ((entity.getCapability(VlAbyssModVariables.PLAYER_VARIABLES_CAPABILITY, null).orElse(new VlAbyssModVariables.PlayerVariables())).Assassino == true) {
+						if ((entity.getCapability(VlAbyssModVariables.PLAYER_VARIABLES_CAPABILITY, null).orElseGet(VlAbyssModVariables.PlayerVariables::new)).Assassino == true) {
 							if ((entity.getDirection()) == Direction.NORTH) {
 								entity.setDeltaMovement(new Vec3((entity.getLookAngle().x), 0, (entity.getLookAngle().z + -0.5)));
 							} else if ((entity.getDirection()) == Direction.SOUTH) {

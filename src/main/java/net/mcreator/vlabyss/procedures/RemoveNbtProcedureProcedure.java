@@ -12,23 +12,24 @@ import com.mojang.brigadier.context.CommandContext;
 
 public class RemoveNbtProcedureProcedure {
 	public static void execute(CommandContext<CommandSourceStack> arguments) {
-		((new Object() {
-			public Entity getEntity() {
-				try {
-					return EntityArgument.getEntity(arguments, "entity");
-				} catch (CommandSyntaxException e) {
-					e.printStackTrace();
-					return null;
-				}
-			}
-		}.getEntity()) instanceof LivingEntity _livEnt ? _livEnt.getMainHandItem() : ItemStack.EMPTY).getOrCreateTag().remove((new Object() {
-			public String getMessage() {
-				try {
-					return MessageArgument.getMessage(arguments, "nbt").getString();
-				} catch (CommandSyntaxException ignored) {
-					return "";
-				}
-			}
-		}).getMessage());
+		((commandParameterEntity(arguments, "entity")) instanceof LivingEntity _livEnt ? _livEnt.getMainHandItem() : ItemStack.EMPTY).getOrCreateTag().remove((commandParameterMessage(arguments, "nbt")));
+	}
+
+	private static String commandParameterMessage(CommandContext<CommandSourceStack> arguments, String parameter) {
+		try {
+			return MessageArgument.getMessage(arguments, parameter).getString();
+		} catch (CommandSyntaxException e) {
+			e.printStackTrace();
+			return "";
+		}
+	}
+
+	private static Entity commandParameterEntity(CommandContext<CommandSourceStack> arguments, String parameter) {
+		try {
+			return EntityArgument.getEntity(arguments, parameter);
+		} catch (CommandSyntaxException e) {
+			e.printStackTrace();
+			return null;
+		}
 	}
 }

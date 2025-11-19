@@ -1,0 +1,10 @@
+{
+  "_fv": 79,
+  "_type": "bannerpattern",
+  "definition": {
+    "texture": "lobo",
+    "shieldTexture": "lobo_velmorra",
+    "name": "Velmorra",
+    "requireItem": true
+  }
+}

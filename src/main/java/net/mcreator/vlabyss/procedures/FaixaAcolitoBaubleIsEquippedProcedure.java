@@ -1,27 +1,44 @@
 package net.mcreator.vlabyss.procedures;
 
+import org.checkerframework.checker.units.qual.m;
+
+import net.minecraftforge.registries.ForgeRegistries;
+
 import net.minecraft.world.entity.ai.attributes.AttributeModifier;
+import net.minecraft.world.entity.ai.attributes.AttributeInstance;
+import net.minecraft.world.entity.ai.attributes.Attribute;
 import net.minecraft.world.entity.LivingEntity;
 import net.minecraft.world.entity.Entity;
 import net.minecraft.server.level.ServerLevel;
+import net.minecraft.resources.ResourceLocation;
 import net.minecraft.commands.CommandSourceStack;
 import net.minecraft.commands.CommandSource;
 
 import net.mcreator.vlabyss.network.VlAbyssModVariables;
-import net.mcreator.vlabyss.init.VlAbyssModAttributes;
 import net.mcreator.vlabyss.configuration.SsmpConfiguration;
-
-import java.util.UUID;
 
 public class FaixaAcolitoBaubleIsEquippedProcedure {
 	public static void execute(Entity entity) {
 		if (entity == null)
 			return;
-		if (!(((LivingEntity) entity).getAttribute(VlAbyssModAttributes.INTELIGENCIA.get())
-				.hasModifier((new AttributeModifier(UUID.fromString("8bbf939c-01ec-4ef7-a4e9-e962821d5407"), "intacolito", ((double) SsmpConfiguration.FAIXAACOLITOCONFIG.get()), AttributeModifier.Operation.ADDITION)))))
-			((LivingEntity) entity).getAttribute(VlAbyssModAttributes.INTELIGENCIA.get())
-					.addTransientModifier((new AttributeModifier(UUID.fromString("8bbf939c-01ec-4ef7-a4e9-e962821d5407"), "intacolito", ((double) SsmpConfiguration.FAIXAACOLITOCONFIG.get()), AttributeModifier.Operation.ADDITION)));
-		if (!((entity.getCapability(VlAbyssModVariables.PLAYER_VARIABLES_CAPABILITY, null).orElse(new VlAbyssModVariables.PlayerVariables())).Valmiriano == true)) {
+		{
+			Entity _entity = entity;
+			if (_entity instanceof LivingEntity _livingEntity) {
+				Attribute _attribute = ForgeRegistries.ATTRIBUTES.getValue(new ResourceLocation("vl_abyss:inteligencia"));
+				if (_attribute != null) {
+					AttributeInstance _attr = _livingEntity.getAttribute(_attribute);
+					if (_attr != null) {
+						String _modifierName = "intacolito";
+						boolean _hasModifier = _attr.getModifiers().stream().anyMatch(m -> m.getName().equals(_modifierName));
+						if (!_hasModifier) {
+							AttributeModifier _modifier = new AttributeModifier(_modifierName, ((double) SsmpConfiguration.FAIXAACOLITOCONFIG.get()), AttributeModifier.Operation.ADDITION);
+							_attr.addPermanentModifier(_modifier);
+						}
+					}
+				}
+			}
+		}
+		if (!((entity.getCapability(VlAbyssModVariables.PLAYER_VARIABLES_CAPABILITY, null).orElseGet(VlAbyssModVariables.PlayerVariables::new)).Valmiriano == true)) {
 			{
 				Entity _ent = entity;
 				if (!_ent.level().isClientSide() && _ent.getServer() != null) {

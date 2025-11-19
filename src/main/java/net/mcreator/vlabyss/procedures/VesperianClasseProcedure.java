@@ -1,16 +1,21 @@
 package net.mcreator.vlabyss.procedures;
 
+import org.checkerframework.checker.units.qual.m;
+
+import net.minecraftforge.registries.ForgeRegistries;
+
 import net.minecraft.world.entity.player.Player;
 import net.minecraft.world.entity.ai.attributes.AttributeModifier;
+import net.minecraft.world.entity.ai.attributes.AttributeInstance;
+import net.minecraft.world.entity.ai.attributes.Attribute;
 import net.minecraft.world.entity.LivingEntity;
 import net.minecraft.world.entity.Entity;
+import net.minecraft.resources.ResourceLocation;
 import net.minecraft.network.chat.Component;
 import net.minecraft.commands.arguments.EntityArgument;
 import net.minecraft.commands.CommandSourceStack;
 
 import net.mcreator.vlabyss.network.VlAbyssModVariables;
-
-import java.util.UUID;
 
 import com.mojang.brigadier.exceptions.CommandSyntaxException;
 import com.mojang.brigadier.context.CommandContext;
@@ -30,14 +35,40 @@ public class VesperianClasseProcedure {
 							capability.syncPlayerVariables(entityiterator);
 						});
 					}
-					if (!(((LivingEntity) entityiterator).getAttribute(net.minecraft.world.entity.ai.attributes.Attributes.ATTACK_DAMAGE)
-							.hasModifier((new AttributeModifier(UUID.fromString("c0911b41-9d4d-43a0-b0a2-3765cf0b2762"), "vesperian_alt", 2, AttributeModifier.Operation.ADDITION)))))
-						((LivingEntity) entityiterator).getAttribute(net.minecraft.world.entity.ai.attributes.Attributes.ATTACK_DAMAGE)
-								.addPermanentModifier((new AttributeModifier(UUID.fromString("c0911b41-9d4d-43a0-b0a2-3765cf0b2762"), "vesperian_alt", 2, AttributeModifier.Operation.ADDITION)));
-					if (!(((LivingEntity) entityiterator).getAttribute(net.minecraft.world.entity.ai.attributes.Attributes.ATTACK_SPEED)
-							.hasModifier((new AttributeModifier(UUID.fromString("33949770-356f-4cba-8e47-5c76bec75423"), "vesperian_alt2", 1, AttributeModifier.Operation.ADDITION)))))
-						((LivingEntity) entityiterator).getAttribute(net.minecraft.world.entity.ai.attributes.Attributes.ATTACK_SPEED)
-								.addPermanentModifier((new AttributeModifier(UUID.fromString("33949770-356f-4cba-8e47-5c76bec75423"), "vesperian_alt2", 1, AttributeModifier.Operation.ADDITION)));
+					{
+						Entity _entity = entityiterator;
+						if (_entity instanceof LivingEntity _livingEntity) {
+							Attribute _attribute = ForgeRegistries.ATTRIBUTES.getValue(new ResourceLocation("minecraft:generic.attack_damage"));
+							if (_attribute != null) {
+								AttributeInstance _attr = _livingEntity.getAttribute(_attribute);
+								if (_attr != null) {
+									String _modifierName = "vesperian_alt";
+									boolean _hasModifier = _attr.getModifiers().stream().anyMatch(m -> m.getName().equals(_modifierName));
+									if (!_hasModifier) {
+										AttributeModifier _modifier = new AttributeModifier(_modifierName, 2, AttributeModifier.Operation.ADDITION);
+										_attr.addPermanentModifier(_modifier);
+									}
+								}
+							}
+						}
+					}
+					{
+						Entity _entity = entityiterator;
+						if (_entity instanceof LivingEntity _livingEntity) {
+							Attribute _attribute = ForgeRegistries.ATTRIBUTES.getValue(new ResourceLocation("minecraft:generic.attack_speed"));
+							if (_attribute != null) {
+								AttributeInstance _attr = _livingEntity.getAttribute(_attribute);
+								if (_attr != null) {
+									String _modifierName = "vesperian_alt2";
+									boolean _hasModifier = _attr.getModifiers().stream().anyMatch(m -> m.getName().equals(_modifierName));
+									if (!_hasModifier) {
+										AttributeModifier _modifier = new AttributeModifier(_modifierName, 1, AttributeModifier.Operation.ADDITION);
+										_attr.addPermanentModifier(_modifier);
+									}
+								}
+							}
+						}
+					}
 					if (entityiterator instanceof Player _player && !_player.level().isClientSide())
 						_player.displayClientMessage(Component.literal("\u00A7bVoc\u00EA agora est\u00E1 na classe \u00A73VESPERIAN"), false);
 					if (entity instanceof Player _player && !_player.level().isClientSide())
@@ -54,10 +85,38 @@ public class VesperianClasseProcedure {
 						_player.displayClientMessage(Component.literal("\u00A7bVoc\u00EA foi removido da classe \u00A73VESPERIAN"), false);
 					if (entity instanceof Player _player && !_player.level().isClientSide())
 						_player.displayClientMessage(Component.literal(("\u00A7bVoc\u00EA removeu " + entityiterator.getDisplayName().getString() + " na classe \u00A73VESPERIAN")), false);
-					((LivingEntity) entityiterator).getAttribute(net.minecraft.world.entity.ai.attributes.Attributes.ATTACK_DAMAGE)
-							.removePermanentModifier((new AttributeModifier(UUID.fromString("c0911b41-9d4d-43a0-b0a2-3765cf0b2762"), "vesperian_alt", 2, AttributeModifier.Operation.ADDITION)).getId());
-					((LivingEntity) entityiterator).getAttribute(net.minecraft.world.entity.ai.attributes.Attributes.ATTACK_SPEED)
-							.removePermanentModifier((new AttributeModifier(UUID.fromString("33949770-356f-4cba-8e47-5c76bec75423"), "vesperian_alt2", 1, AttributeModifier.Operation.ADDITION)).getId());
+					{
+						Entity _entity = entityiterator;
+						if (_entity instanceof LivingEntity _livingEntity) {
+							Attribute _attribute = ForgeRegistries.ATTRIBUTES.getValue(new ResourceLocation("minecraft:generic.attack_damage"));
+							if (_attribute != null) {
+								AttributeInstance _attr = _livingEntity.getAttribute(_attribute);
+								if (_attr != null) {
+									_attr.getModifiers().forEach((_modifier) -> {
+										if (_modifier.getName().equals("vesperian_alt")) {
+											_attr.removeModifier(_modifier);
+										}
+									});
+								}
+							}
+						}
+					}
+					{
+						Entity _entity = entityiterator;
+						if (_entity instanceof LivingEntity _livingEntity) {
+							Attribute _attribute = ForgeRegistries.ATTRIBUTES.getValue(new ResourceLocation("minecraft:generic.attack_speed"));
+							if (_attribute != null) {
+								AttributeInstance _attr = _livingEntity.getAttribute(_attribute);
+								if (_attr != null) {
+									_attr.getModifiers().forEach((_modifier) -> {
+										if (_modifier.getName().equals("vesperian_alt2")) {
+											_attr.removeModifier(_modifier);
+										}
+									});
+								}
+							}
+						}
+					}
 				}
 			}
 		} catch (CommandSyntaxException e) {

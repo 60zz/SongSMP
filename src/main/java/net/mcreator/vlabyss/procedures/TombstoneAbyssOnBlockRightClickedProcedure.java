@@ -22,15 +22,8 @@ public class TombstoneAbyssOnBlockRightClickedProcedure {
 	public static void execute(LevelAccessor world, double x, double y, double z, Entity entity) {
 		if (entity == null)
 			return;
-		if (!(new Object() {
-			public boolean getValue(LevelAccessor world, BlockPos pos, String tag) {
-				BlockEntity blockEntity = world.getBlockEntity(pos);
-				if (blockEntity != null)
-					return blockEntity.getPersistentData().getBoolean(tag);
-				return false;
-			}
-		}.getValue(world, BlockPos.containing(x, y, z), "recarregando"))) {
-			if ((entity.getCapability(VlAbyssModVariables.PLAYER_VARIABLES_CAPABILITY, null).orElse(new VlAbyssModVariables.PlayerVariables())).fase == 1) {
+		if (!getBlockNBTLogic(world, BlockPos.containing(x, y, z), "recarregando")) {
+			if ((entity.getCapability(VlAbyssModVariables.PLAYER_VARIABLES_CAPABILITY, null).orElseGet(VlAbyssModVariables.PlayerVariables::new)).fase == 1) {
 				{
 					int _value = 2;
 					BlockPos _pos = BlockPos.containing(x, y, z);
@@ -94,7 +87,7 @@ public class TombstoneAbyssOnBlockRightClickedProcedure {
 							world.setBlock(_pos, _bs.setValue(_integerProp, _value), 3);
 					}
 				});
-			} else if ((entity.getCapability(VlAbyssModVariables.PLAYER_VARIABLES_CAPABILITY, null).orElse(new VlAbyssModVariables.PlayerVariables())).fase == 2) {
+			} else if ((entity.getCapability(VlAbyssModVariables.PLAYER_VARIABLES_CAPABILITY, null).orElseGet(VlAbyssModVariables.PlayerVariables::new)).fase == 2) {
 				{
 					int _value = 2;
 					BlockPos _pos = BlockPos.containing(x, y, z);
@@ -153,7 +146,7 @@ public class TombstoneAbyssOnBlockRightClickedProcedure {
 							world.setBlock(_pos, _bs.setValue(_integerProp, _value), 3);
 					}
 				});
-			} else if ((entity.getCapability(VlAbyssModVariables.PLAYER_VARIABLES_CAPABILITY, null).orElse(new VlAbyssModVariables.PlayerVariables())).fase == 3) {
+			} else if ((entity.getCapability(VlAbyssModVariables.PLAYER_VARIABLES_CAPABILITY, null).orElseGet(VlAbyssModVariables.PlayerVariables::new)).fase == 3) {
 				{
 					int _value = 2;
 					BlockPos _pos = BlockPos.containing(x, y, z);
@@ -212,7 +205,7 @@ public class TombstoneAbyssOnBlockRightClickedProcedure {
 							world.setBlock(_pos, _bs.setValue(_integerProp, _value), 3);
 					}
 				});
-			} else if ((entity.getCapability(VlAbyssModVariables.PLAYER_VARIABLES_CAPABILITY, null).orElse(new VlAbyssModVariables.PlayerVariables())).fase >= 4) {
+			} else if ((entity.getCapability(VlAbyssModVariables.PLAYER_VARIABLES_CAPABILITY, null).orElseGet(VlAbyssModVariables.PlayerVariables::new)).fase >= 4) {
 				{
 					int _value = 2;
 					BlockPos _pos = BlockPos.containing(x, y, z);
@@ -281,14 +274,7 @@ public class TombstoneAbyssOnBlockRightClickedProcedure {
 			}
 		} else {
 			VlAbyssMod.queueServerWork(12000, () -> {
-				if (new Object() {
-					public boolean getValue(LevelAccessor world, BlockPos pos, String tag) {
-						BlockEntity blockEntity = world.getBlockEntity(pos);
-						if (blockEntity != null)
-							return blockEntity.getPersistentData().getBoolean(tag);
-						return false;
-					}
-				}.getValue(world, BlockPos.containing(x, y, z), "recarregando")) {
+				if (getBlockNBTLogic(world, BlockPos.containing(x, y, z), "recarregando")) {
 					if (!world.isClientSide()) {
 						BlockPos _blockPos = BlockPos.containing(x, y, z);
 						BlockEntity _blockEntity = world.getBlockEntity(_blockPos);
@@ -310,5 +296,12 @@ public class TombstoneAbyssOnBlockRightClickedProcedure {
 				}
 			});
 		}
+	}
+
+	private static boolean getBlockNBTLogic(LevelAccessor world, BlockPos pos, String tag) {
+		BlockEntity blockEntity = world.getBlockEntity(pos);
+		if (blockEntity != null)
+			return blockEntity.getPersistentData().getBoolean(tag);
+		return false;
 	}
 }

@@ -5,6 +5,6 @@ import net.minecraft.world.item.Item;
 
 public class RawAbyssionItem extends Item {
 	public RawAbyssionItem() {
-		super(new Item.Properties().stacksTo(64).rarity(Rarity.RARE));
+		super(new Item.Properties().rarity(Rarity.RARE));
 	}
 }

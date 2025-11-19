@@ -51,7 +51,15 @@ public class EscuridaoPrimeiraHabilidadeProcedure {
 							});
 						}
 						if (entity instanceof LivingEntity _entity && !_entity.level().isClientSide())
-							_entity.addEffect(new MobEffectInstance(VlAbyssModMobEffects.SHADOW_COPY.get(), (int) (((LivingEntity) entity).getAttribute(VlAbyssModAttributes.BONUSADDITIONALDAMAGE.get()).getValue() * 1200), 0));
+							_entity.addEffect(new MobEffectInstance(VlAbyssModMobEffects.SHADOW_COPY.get(),
+									(int) (1200
+											* (entity instanceof LivingEntity _livingEntity0 && _livingEntity0.getAttributes().hasAttribute(VlAbyssModAttributes.BONUS_ADDITIONAL_DAMAGE.get())
+													? _livingEntity0.getAttribute(VlAbyssModAttributes.BONUS_ADDITIONAL_DAMAGE.get()).getValue()
+													: 0)
+											* (entity instanceof LivingEntity _livingEntity1 && _livingEntity1.getAttributes().hasAttribute(VlAbyssModAttributes.DARKNESS_BONUS.get())
+													? _livingEntity1.getAttribute(VlAbyssModAttributes.DARKNESS_BONUS.get()).getValue()
+													: 0)),
+									0));
 						if (world.isClientSide()) {
 							SetupAnimationsProcedure.setAnimationClientside((Player) entity, "shadowcopy", false);
 						}
@@ -97,7 +105,15 @@ public class EscuridaoPrimeiraHabilidadeProcedure {
 							});
 						}
 						if (entity instanceof LivingEntity _entity && !_entity.level().isClientSide())
-							_entity.addEffect(new MobEffectInstance(VlAbyssModMobEffects.SHADOW_COPY.get(), (int) (((LivingEntity) entity).getAttribute(VlAbyssModAttributes.BONUSADDITIONALDAMAGE.get()).getValue() * 1400), 0));
+							_entity.addEffect(new MobEffectInstance(VlAbyssModMobEffects.SHADOW_COPY.get(),
+									(int) (1400
+											* (entity instanceof LivingEntity _livingEntity7 && _livingEntity7.getAttributes().hasAttribute(VlAbyssModAttributes.BONUS_ADDITIONAL_DAMAGE.get())
+													? _livingEntity7.getAttribute(VlAbyssModAttributes.BONUS_ADDITIONAL_DAMAGE.get()).getValue()
+													: 0)
+											* (entity instanceof LivingEntity _livingEntity8 && _livingEntity8.getAttributes().hasAttribute(VlAbyssModAttributes.DARKNESS_BONUS.get())
+													? _livingEntity8.getAttribute(VlAbyssModAttributes.DARKNESS_BONUS.get()).getValue()
+													: 0)),
+									0));
 						{
 							double _setval = 180;
 							entity.getCapability(VlAbyssModVariables.PLAYER_VARIABLES_CAPABILITY, null).ifPresent(capability -> {

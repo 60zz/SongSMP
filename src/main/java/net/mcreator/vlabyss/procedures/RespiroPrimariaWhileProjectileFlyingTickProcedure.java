@@ -13,6 +13,7 @@ import net.minecraft.world.entity.Entity;
 import net.minecraft.world.damagesource.DamageSource;
 import net.minecraft.util.RandomSource;
 import net.minecraft.util.Mth;
+import net.minecraft.tags.TagKey;
 import net.minecraft.server.level.ServerLevel;
 import net.minecraft.resources.ResourceLocation;
 import net.minecraft.resources.ResourceKey;
@@ -21,11 +22,8 @@ import net.minecraft.core.particles.SimpleParticleType;
 import net.minecraft.core.BlockPos;
 
 import net.mcreator.vlabyss.init.VlAbyssModParticleTypes;
-import net.mcreator.vlabyss.entity.RespiroPrimariaEntity;
-import net.mcreator.vlabyss.entity.MantraSoulEntity;
 import net.mcreator.vlabyss.VlAbyssMod;
 
-import java.util.List;
 import java.util.Comparator;
 
 public class RespiroPrimariaWhileProjectileFlyingTickProcedure {
@@ -34,9 +32,8 @@ public class RespiroPrimariaWhileProjectileFlyingTickProcedure {
 			return;
 		{
 			final Vec3 _center = new Vec3(x, y, z);
-			List<Entity> _entfound = world.getEntitiesOfClass(Entity.class, new AABB(_center, _center).inflate(5 / 2d), e -> true).stream().sorted(Comparator.comparingDouble(_entcnd -> _entcnd.distanceToSqr(_center))).toList();
-			for (Entity entityiterator : _entfound) {
-				if (!(entityiterator instanceof MantraSoulEntity) || !(entityiterator instanceof RespiroPrimariaEntity)) {
+			for (Entity entityiterator : world.getEntitiesOfClass(Entity.class, new AABB(_center, _center).inflate(5 / 2d), e -> true).stream().sorted(Comparator.comparingDouble(_entcnd -> _entcnd.distanceToSqr(_center))).toList()) {
+				if (!entityiterator.getType().is(TagKey.create(Registries.ENTITY_TYPE, ResourceLocation.parse("vl_abyss:invencivel")))) {
 					if (!((immediatesourceentity instanceof TraceableEntity _traceableEntity ? _traceableEntity.getOwner() : null) == entityiterator)) {
 						entityiterator.hurt(new DamageSource(world.registryAccess().registryOrThrow(Registries.DAMAGE_TYPE).getHolderOrThrow(ResourceKey.create(Registries.DAMAGE_TYPE, ResourceLocation.parse("vl_abyss:mantra_damage")))),
 								(float) (new Object() {

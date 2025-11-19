@@ -21,7 +21,6 @@ import net.mcreator.vlabyss.network.DesligaDashMessage;
 import net.mcreator.vlabyss.network.DashTrasMessage;
 import net.mcreator.vlabyss.network.DashFrenteMessage;
 import net.mcreator.vlabyss.network.AtivaArtefatosMessage;
-import net.mcreator.vlabyss.network.AbrirRodaSpellsMessage;
 import net.mcreator.vlabyss.VlAbyssMod;
 
 @Mod.EventBusSubscriber(bus = Mod.EventBusSubscriber.Bus.MOD, value = {Dist.CLIENT})
@@ -123,19 +122,6 @@ public class VlAbyssModKeyMappings {
 		}
 	};
 	public static final KeyMapping SELECIONA_MANTRA_RAPIDO = new KeyMapping("key.vl_abyss.seleciona_mantra_rapido", GLFW.GLFW_KEY_LEFT_CONTROL, "key.categories.mantra");
-	public static final KeyMapping ABRIR_RODA_SPELLS = new KeyMapping("key.vl_abyss.abrir_roda_spells", GLFW.GLFW_KEY_R, "key.categories.mantra") {
-		private boolean isDownOld = false;
-
-		@Override
-		public void setDown(boolean isDown) {
-			super.setDown(isDown);
-			if (isDownOld != isDown && isDown) {
-				VlAbyssMod.PACKET_HANDLER.sendToServer(new AbrirRodaSpellsMessage(0, 0));
-				AbrirRodaSpellsMessage.pressAction(Minecraft.getInstance().player, 0, 0);
-			}
-			isDownOld = isDown;
-		}
-	};
 	private static long PLANAR_LASTPRESS = 0;
 
 	@SubscribeEvent
@@ -148,7 +134,6 @@ public class VlAbyssModKeyMappings {
 		event.register(DASH_FRENTE);
 		event.register(DESLIGA_DASH);
 		event.register(SELECIONA_MANTRA_RAPIDO);
-		event.register(ABRIR_RODA_SPELLS);
 	}
 
 	@Mod.EventBusSubscriber({Dist.CLIENT})
@@ -163,7 +148,6 @@ public class VlAbyssModKeyMappings {
 				HABILIDADE_PRIMARIA.consumeClick();
 				DASH_FRENTE.consumeClick();
 				DESLIGA_DASH.consumeClick();
-				ABRIR_RODA_SPELLS.consumeClick();
 			}
 		}
 	}

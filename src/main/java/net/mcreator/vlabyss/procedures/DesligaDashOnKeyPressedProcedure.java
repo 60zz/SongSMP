@@ -1,41 +1,127 @@
 package net.mcreator.vlabyss.procedures;
 
-import net.minecraft.world.entity.player.Player;
+import net.minecraftforge.registries.ForgeRegistries;
+
+import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.entity.Entity;
+import net.minecraft.server.level.ServerPlayer;
+import net.minecraft.resources.ResourceLocation;
+import net.minecraft.network.protocol.game.ClientboundUpdateAdvancementsPacket;
 import net.minecraft.network.chat.Component;
 import net.minecraft.client.Minecraft;
+import net.minecraft.advancements.critereon.ImpossibleTrigger;
+import net.minecraft.advancements.FrameType;
+import net.minecraft.advancements.DisplayInfo;
+import net.minecraft.advancements.AdvancementProgress;
+import net.minecraft.advancements.Advancement;
 
 import net.mcreator.vlabyss.network.VlAbyssModVariables;
+
+import java.util.Set;
+import java.util.Map;
+import java.util.List;
+import java.util.HashMap;
 
 public class DesligaDashOnKeyPressedProcedure {
 	public static void execute(Entity entity) {
 		if (entity == null)
 			return;
-		if (Minecraft.getInstance().options.keyShift.isDown()) {
-			if ((entity.getCapability(VlAbyssModVariables.PLAYER_VARIABLES_CAPABILITY, null).orElse(new VlAbyssModVariables.PlayerVariables())).desligadash == true) {
-				{
-					boolean _setval = false;
-					entity.getCapability(VlAbyssModVariables.PLAYER_VARIABLES_CAPABILITY, null).ifPresent(capability -> {
-						capability.desligadash = _setval;
-						capability.syncPlayerVariables(entity);
-					});
+		if ((entity.getCapability(VlAbyssModVariables.PLAYER_VARIABLES_CAPABILITY, null).orElseGet(VlAbyssModVariables.PlayerVariables::new)).dash_reto == true) {
+			if (Minecraft.getInstance().options.keyShift.isDown()) {
+				if ((entity.getCapability(VlAbyssModVariables.PLAYER_VARIABLES_CAPABILITY, null).orElseGet(VlAbyssModVariables.PlayerVariables::new)).desligadash == true) {
+					{
+						boolean _setval = false;
+						entity.getCapability(VlAbyssModVariables.PLAYER_VARIABLES_CAPABILITY, null).ifPresent(capability -> {
+							capability.desligadash = _setval;
+							capability.syncPlayerVariables(entity);
+						});
+					}
+					{
+						Entity _entity = entity;
+						if (_entity instanceof ServerPlayer _player) {
+							ItemStack _icon = new ItemStack(ForgeRegistries.ITEMS.getValue(ResourceLocation.tryParse("vl_abyss:liberacao_mantra")));
+							Component _title = Component.literal("title");
+							Component _description = Component.literal("Dash Desligado");
+							ResourceLocation _advId = ResourceLocation.tryParse("custom:toast_" + System.currentTimeMillis());
+							DisplayInfo _display = new DisplayInfo(_icon, _description, _title, null, FrameType.TASK, true, true, false);
+							Advancement.Builder _builder = Advancement.Builder.advancement().display(_display).addCriterion("trigger", new ImpossibleTrigger.TriggerInstance());
+							Advancement _adv = _builder.build(_advId);
+							AdvancementProgress _progress = new AdvancementProgress();
+							_progress.update(_adv.getCriteria(), _adv.getRequirements());
+							_progress.grantProgress("trigger");
+							Map<ResourceLocation, AdvancementProgress> _progressMap = new HashMap<>();
+							_progressMap.put(_advId, _progress);
+							_player.connection.send(new ClientboundUpdateAdvancementsPacket(false, List.of(_adv), Set.of(), _progressMap));
+							new Thread(() -> {
+								try {
+									Thread.sleep((long) (40 * 50));
+									_player.connection.send(new ClientboundUpdateAdvancementsPacket(false, List.of(), Set.of(_advId), Map.of()));
+								} catch (Exception e) {
+								}
+							}).start();
+						}
+					}
+				} else {
+					{
+						boolean _setval = true;
+						entity.getCapability(VlAbyssModVariables.PLAYER_VARIABLES_CAPABILITY, null).ifPresent(capability -> {
+							capability.desligadash = _setval;
+							capability.syncPlayerVariables(entity);
+						});
+					}
+					{
+						Entity _entity = entity;
+						if (_entity instanceof ServerPlayer _player) {
+							ItemStack _icon = new ItemStack(ForgeRegistries.ITEMS.getValue(ResourceLocation.tryParse("vl_abyss:liberacao_mantra")));
+							Component _title = Component.literal("title");
+							Component _description = Component.literal("Dash Ligado");
+							ResourceLocation _advId = ResourceLocation.tryParse("custom:toast_" + System.currentTimeMillis());
+							DisplayInfo _display = new DisplayInfo(_icon, _description, _title, null, FrameType.TASK, true, true, false);
+							Advancement.Builder _builder = Advancement.Builder.advancement().display(_display).addCriterion("trigger", new ImpossibleTrigger.TriggerInstance());
+							Advancement _adv = _builder.build(_advId);
+							AdvancementProgress _progress = new AdvancementProgress();
+							_progress.update(_adv.getCriteria(), _adv.getRequirements());
+							_progress.grantProgress("trigger");
+							Map<ResourceLocation, AdvancementProgress> _progressMap = new HashMap<>();
+							_progressMap.put(_advId, _progress);
+							_player.connection.send(new ClientboundUpdateAdvancementsPacket(false, List.of(_adv), Set.of(), _progressMap));
+							new Thread(() -> {
+								try {
+									Thread.sleep((long) (40 * 50));
+									_player.connection.send(new ClientboundUpdateAdvancementsPacket(false, List.of(), Set.of(_advId), Map.of()));
+								} catch (Exception e) {
+								}
+							}).start();
+						}
+					}
 				}
-				if (entity instanceof Player _player && !_player.level().isClientSide())
-					_player.displayClientMessage(Component.literal("\u00A7b[ SYSTEM ] Dash Desligado"), false);
 			} else {
 				{
-					boolean _setval = true;
-					entity.getCapability(VlAbyssModVariables.PLAYER_VARIABLES_CAPABILITY, null).ifPresent(capability -> {
-						capability.desligadash = _setval;
-						capability.syncPlayerVariables(entity);
-					});
+					Entity _entity = entity;
+					if (_entity instanceof ServerPlayer _player) {
+						ItemStack _icon = new ItemStack(ForgeRegistries.ITEMS.getValue(ResourceLocation.tryParse("vl_abyss:liberacao_mantra")));
+						Component _title = Component.literal("title");
+						Component _description = Component.literal("Segure SHIFT para funcionar");
+						ResourceLocation _advId = ResourceLocation.tryParse("custom:toast_" + System.currentTimeMillis());
+						DisplayInfo _display = new DisplayInfo(_icon, _description, _title, null, FrameType.TASK, true, true, false);
+						Advancement.Builder _builder = Advancement.Builder.advancement().display(_display).addCriterion("trigger", new ImpossibleTrigger.TriggerInstance());
+						Advancement _adv = _builder.build(_advId);
+						AdvancementProgress _progress = new AdvancementProgress();
+						_progress.update(_adv.getCriteria(), _adv.getRequirements());
+						_progress.grantProgress("trigger");
+						Map<ResourceLocation, AdvancementProgress> _progressMap = new HashMap<>();
+						_progressMap.put(_advId, _progress);
+						_player.connection.send(new ClientboundUpdateAdvancementsPacket(false, List.of(_adv), Set.of(), _progressMap));
+						new Thread(() -> {
+							try {
+								Thread.sleep((long) (40 * 50));
+								_player.connection.send(new ClientboundUpdateAdvancementsPacket(false, List.of(), Set.of(_advId), Map.of()));
+							} catch (Exception e) {
+							}
+						}).start();
+					}
 				}
-				if (entity instanceof Player _player && !_player.level().isClientSide())
-					_player.displayClientMessage(Component.literal("\u00A7b[ SYSTEM ] Dash Ligado"), false);
 			}
-		} else {
-			if (entity instanceof Player _player && !_player.level().isClientSide())
-				_player.displayClientMessage(Component.literal("\u00A7b[ SYSTEM ] Para desligar o dash, voc\u00EA precisa segurar SHIFT"), false);
 		}
 	}
 }

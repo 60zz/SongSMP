@@ -99,7 +99,15 @@ public class ChamaPrimeiraHabilidadeProcedure {
 							}
 						}
 						if (entity instanceof LivingEntity _entity && !_entity.level().isClientSide())
-							_entity.addEffect(new MobEffectInstance(VlAbyssModMobEffects.FLAMING_CUT.get(), (int) (100 * ((LivingEntity) entity).getAttribute(VlAbyssModAttributes.BONUSADDITIONALDAMAGE.get()).getValue()), 1));
+							_entity.addEffect(new MobEffectInstance(VlAbyssModMobEffects.FLAMING_CUT.get(),
+									(int) (100
+											* (entity instanceof LivingEntity _livingEntity4 && _livingEntity4.getAttributes().hasAttribute(VlAbyssModAttributes.BONUS_ADDITIONAL_DAMAGE.get())
+													? _livingEntity4.getAttribute(VlAbyssModAttributes.BONUS_ADDITIONAL_DAMAGE.get()).getValue()
+													: 0)
+											* (entity instanceof LivingEntity _livingEntity5 && _livingEntity5.getAttributes().hasAttribute(VlAbyssModAttributes.FLAME_BONUS.get())
+													? _livingEntity5.getAttribute(VlAbyssModAttributes.FLAME_BONUS.get()).getValue()
+													: 0)),
+									1));
 						if (entity instanceof Player _player) {
 							if (_player.level().isClientSide()) {
 								Minecraft _mc = Minecraft.getInstance();
@@ -179,7 +187,15 @@ public class ChamaPrimeiraHabilidadeProcedure {
 							}
 						}
 						if (entity instanceof LivingEntity _entity && !_entity.level().isClientSide())
-							_entity.addEffect(new MobEffectInstance(VlAbyssModMobEffects.FLAMING_CUT.get(), (int) (100 * ((LivingEntity) entity).getAttribute(VlAbyssModAttributes.BONUSADDITIONALDAMAGE.get()).getValue()), 0));
+							_entity.addEffect(new MobEffectInstance(VlAbyssModMobEffects.FLAMING_CUT.get(),
+									(int) (100
+											* (entity instanceof LivingEntity _livingEntity12 && _livingEntity12.getAttributes().hasAttribute(VlAbyssModAttributes.BONUS_ADDITIONAL_DAMAGE.get())
+													? _livingEntity12.getAttribute(VlAbyssModAttributes.BONUS_ADDITIONAL_DAMAGE.get()).getValue()
+													: 0)
+											* (entity instanceof LivingEntity _livingEntity13 && _livingEntity13.getAttributes().hasAttribute(VlAbyssModAttributes.FLAME_BONUS.get())
+													? _livingEntity13.getAttribute(VlAbyssModAttributes.FLAME_BONUS.get()).getValue()
+													: 0)),
+									0));
 						if (entity instanceof Player _player) {
 							if (_player.level().isClientSide()) {
 								Minecraft _mc = Minecraft.getInstance();

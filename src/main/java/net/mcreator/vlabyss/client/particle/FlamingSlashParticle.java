@@ -25,8 +25,7 @@ public class FlamingSlashParticle extends TextureSheetParticle {
 		}
 
 		public Particle createParticle(SimpleParticleType typeIn, ClientLevel worldIn, double x, double y, double z, double xSpeed, double ySpeed, double zSpeed) {
-			FlamingSlashParticle particle = new FlamingSlashParticle(worldIn, x, y, z, xSpeed, ySpeed, zSpeed, this.spriteSet);
-			return particle;
+			return new FlamingSlashParticle(worldIn, x, y, z, xSpeed, ySpeed, zSpeed, this.spriteSet);
 		}
 	}
 
@@ -44,6 +43,11 @@ public class FlamingSlashParticle extends TextureSheetParticle {
 		this.yd = vy * 1;
 		this.zd = vz * 1;
 		this.setSpriteFromAge(spriteSet);
+	}
+
+	@Override
+	public int getLightColor(float partialTick) {
+		return 15728880;
 	}
 
 	@Override

@@ -1,17 +1,21 @@
 package net.mcreator.vlabyss.procedures;
 
+import org.checkerframework.checker.units.qual.m;
+
+import net.minecraftforge.registries.ForgeRegistries;
+
 import net.minecraft.world.entity.player.Player;
 import net.minecraft.world.entity.ai.attributes.AttributeModifier;
+import net.minecraft.world.entity.ai.attributes.AttributeInstance;
+import net.minecraft.world.entity.ai.attributes.Attribute;
 import net.minecraft.world.entity.LivingEntity;
 import net.minecraft.world.entity.Entity;
+import net.minecraft.resources.ResourceLocation;
 import net.minecraft.network.chat.Component;
 import net.minecraft.commands.arguments.EntityArgument;
 import net.minecraft.commands.CommandSourceStack;
 
 import net.mcreator.vlabyss.network.VlAbyssModVariables;
-import net.mcreator.vlabyss.init.VlAbyssModAttributes;
-
-import java.util.UUID;
 
 import com.mojang.brigadier.exceptions.CommandSyntaxException;
 import com.mojang.brigadier.context.CommandContext;
@@ -31,10 +35,23 @@ public class NimrenClasseProcedure {
 							capability.syncPlayerVariables(entityiterator);
 						});
 					}
-					if (!(((LivingEntity) entityiterator).getAttribute(VlAbyssModAttributes.INTELIGENCIA.get())
-							.hasModifier((new AttributeModifier(UUID.fromString("50373661-9355-4c8a-bcc7-edb4c72e5280"), "nim'ren_c", 2, AttributeModifier.Operation.ADDITION)))))
-						((LivingEntity) entityiterator).getAttribute(VlAbyssModAttributes.INTELIGENCIA.get())
-								.addPermanentModifier((new AttributeModifier(UUID.fromString("50373661-9355-4c8a-bcc7-edb4c72e5280"), "nim'ren_c", 2, AttributeModifier.Operation.ADDITION)));
+					{
+						Entity _entity = entityiterator;
+						if (_entity instanceof LivingEntity _livingEntity) {
+							Attribute _attribute = ForgeRegistries.ATTRIBUTES.getValue(new ResourceLocation("vl_abyss:inteligencia"));
+							if (_attribute != null) {
+								AttributeInstance _attr = _livingEntity.getAttribute(_attribute);
+								if (_attr != null) {
+									String _modifierName = "nim'ren_c";
+									boolean _hasModifier = _attr.getModifiers().stream().anyMatch(m -> m.getName().equals(_modifierName));
+									if (!_hasModifier) {
+										AttributeModifier _modifier = new AttributeModifier(_modifierName, 2, AttributeModifier.Operation.ADDITION);
+										_attr.addPermanentModifier(_modifier);
+									}
+								}
+							}
+						}
+					}
 					if (entityiterator instanceof Player _player && !_player.level().isClientSide())
 						_player.displayClientMessage(Component.literal("\u00A7bVoc\u00EA agora est\u00E1 na classe \u00A73NIM'REN"), false);
 					if (entity instanceof Player _player && !_player.level().isClientSide())
@@ -51,8 +68,22 @@ public class NimrenClasseProcedure {
 						_player.displayClientMessage(Component.literal("\u00A7bVoc\u00EA foi removido da classe \u00A73NIM'REN"), false);
 					if (entity instanceof Player _player && !_player.level().isClientSide())
 						_player.displayClientMessage(Component.literal(("\u00A7bVoc\u00EA removeu " + entityiterator.getDisplayName().getString() + " na classe \u00A73NIM'REN")), false);
-					((LivingEntity) entityiterator).getAttribute(VlAbyssModAttributes.INTELIGENCIA.get())
-							.removePermanentModifier((new AttributeModifier(UUID.fromString("50373661-9355-4c8a-bcc7-edb4c72e5280"), "nim'ren_c", 2, AttributeModifier.Operation.ADDITION)).getId());
+					{
+						Entity _entity = entityiterator;
+						if (_entity instanceof LivingEntity _livingEntity) {
+							Attribute _attribute = ForgeRegistries.ATTRIBUTES.getValue(new ResourceLocation("vl_abyss:inteligencia"));
+							if (_attribute != null) {
+								AttributeInstance _attr = _livingEntity.getAttribute(_attribute);
+								if (_attr != null) {
+									_attr.getModifiers().forEach((_modifier) -> {
+										if (_modifier.getName().equals("nim'ren_c")) {
+											_attr.removeModifier(_modifier);
+										}
+									});
+								}
+							}
+						}
+					}
 				}
 			}
 		} catch (CommandSyntaxException e) {

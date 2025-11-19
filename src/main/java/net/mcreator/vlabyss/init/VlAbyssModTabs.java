@@ -23,6 +23,7 @@ public class VlAbyssModTabs {
 	public static final RegistryObject<CreativeModeTab> VL_ABYSS = REGISTRY.register("vl_abyss",
 			() -> CreativeModeTab.builder().title(Component.translatable("item_group.vl_abyss.vl_abyss")).icon(() -> new ItemStack(VlAbyssModItems.MAPA_ABYSS.get())).displayItems((parameters, tabData) -> {
 				tabData.accept(VlAbyssModItems.MAPA_ABYSS.get());
+				tabData.accept(VlAbyssModItems.ARTIFACTS_BUNDLE.get());
 				tabData.accept(VlAbyssModItems.CAPUZ_ESQUECIDO.get());
 				tabData.accept(VlAbyssModItems.LUVAS_IRONSING.get());
 				tabData.accept(VlAbyssModItems.LUVAS_LUA_SANGRENTA.get());
@@ -42,21 +43,32 @@ public class VlAbyssModTabs {
 				tabData.accept(VlAbyssModBlocks.ABYSSION_INGOT_BLOCK.get().asItem());
 				tabData.accept(VlAbyssModItems.LIBERACAO_MANTRA.get());
 				tabData.accept(VlAbyssModItems.DESBLOQUEIO_ESQUIVA.get());
+				tabData.accept(VlAbyssModItems.SELETOR_CLASSES.get());
 				tabData.accept(VlAbyssModItems.POCAO_REJUVENESCIMENTO.get());
 				tabData.accept(VlAbyssModItems.POCAO_RESISTENCIA_ETERNA.get());
 				tabData.accept(VlAbyssModItems.POCAO_VIDA_EXTRA.get());
 				tabData.accept(VlAbyssModItems.POCAO_RENASCIMENTO.get());
 				tabData.accept(VlAbyssModItems.RUNAS.get());
-				tabData.accept(VlAbyssModItems.CAVALEIRO_ALADO_SPAWN_EGG.get());
-				tabData.accept(VlAbyssModItems.ESSENCIA_ABISMO.get());
+				tabData.accept(VlAbyssModItems.ABYSS_BANNER_PATTERN.get());
+				tabData.accept(VlAbyssModItems.DEPTHS_BANNER_PATTERN.get());
+				tabData.accept(VlAbyssModItems.WILDERNES_BANNER_PATTERN.get());
+				tabData.accept(VlAbyssModItems.NYVATH_BANNER_PATTERN.get());
+				tabData.accept(VlAbyssModItems.NOCTHARIS_BANNER_PATTERN.get());
+				tabData.accept(VlAbyssModItems.VELMORRA_BANNER_PATTERN.get());
 				tabData.accept(VlAbyssModBlocks.TOMBSTONE_ABYSS.get().asItem());
-				tabData.accept(VlAbyssModBlocks.METAL_FORGING.get().asItem());
-				tabData.accept(VlAbyssModItems.ARTIFACTS_BUNDLE.get());
+				tabData.accept(VlAbyssModItems.ESSENCIA_ABISMO.get());
+				tabData.accept(VlAbyssModItems.CAVALEIRO_ALADO_SPAWN_EGG.get());
 			}).build());
 	public static final RegistryObject<CreativeModeTab> VL_ABYSS_ARMAS = REGISTRY.register("vl_abyss_armas",
 			() -> CreativeModeTab.builder().title(Component.translatable("item_group.vl_abyss.vl_abyss_armas")).icon(() -> new ItemStack(VlAbyssModItems.ADAGA_ASSASSINOS.get())).displayItems((parameters, tabData) -> {
 				tabData.accept(VlAbyssModItems.ADAGA_ASSASSINOS.get());
 			}).withTabsBefore(VL_ABYSS.getId()).build());
+	public static final RegistryObject<CreativeModeTab> VL_ABYSS_POTIONS = REGISTRY.register("vl_abyss_potions",
+			() -> CreativeModeTab.builder().title(Component.translatable("item_group.vl_abyss.vl_abyss_potions")).icon(() -> new ItemStack(VlAbyssModItems.INFINITY_ESSENCE_POTION.get())).displayItems((parameters, tabData) -> {
+				tabData.accept(VlAbyssModItems.INFINITY_ESSENCE_POTION.get());
+				tabData.accept(VlAbyssModItems.ARCANE_STRENGTH_POTION.get());
+				tabData.accept(VlAbyssModItems.SPIRIT_FLOW_POTION.get());
+			}).withTabsBefore(VL_ABYSS_ARMAS.getId()).build());
 
 	@SubscribeEvent
 	public static void buildTabContentsVanilla(BuildCreativeModeTabContentsEvent tabData) {

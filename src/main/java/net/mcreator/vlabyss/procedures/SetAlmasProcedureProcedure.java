@@ -15,7 +15,7 @@ public class SetAlmasProcedureProcedure {
 		try {
 			for (Entity entityiterator : EntityArgument.getEntities(arguments, "entity")) {
 				{
-					double _setval = (entityiterator.getCapability(VlAbyssModVariables.PLAYER_VARIABLES_CAPABILITY, null).orElse(new VlAbyssModVariables.PlayerVariables())).almas + DoubleArgumentType.getDouble(arguments, "value");
+					double _setval = (entityiterator.getCapability(VlAbyssModVariables.PLAYER_VARIABLES_CAPABILITY, null).orElseGet(VlAbyssModVariables.PlayerVariables::new)).almas + DoubleArgumentType.getDouble(arguments, "value");
 					entityiterator.getCapability(VlAbyssModVariables.PLAYER_VARIABLES_CAPABILITY, null).ifPresent(capability -> {
 						capability.almas = _setval;
 						capability.syncPlayerVariables(entityiterator);

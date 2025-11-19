@@ -11,6 +11,7 @@ import net.minecraft.world.entity.MobSpawnType;
 import net.minecraft.world.entity.LivingEntity;
 import net.minecraft.world.entity.Entity;
 import net.minecraft.world.damagesource.DamageSource;
+import net.minecraft.tags.TagKey;
 import net.minecraft.server.level.ServerLevel;
 import net.minecraft.resources.ResourceLocation;
 import net.minecraft.resources.ResourceKey;
@@ -40,8 +41,8 @@ public class AbsorverAlmaOnKeyPressedProcedure {
 	private static void execute(@Nullable Event event, LevelAccessor world, double x, double y, double z, DamageSource damagesource, Entity entity, Entity sourceentity) {
 		if (damagesource == null || entity == null || sourceentity == null)
 			return;
-		if (!(entity instanceof MantraSoulEntity) || !(entity instanceof CavaleiroAladoEntity)) {
-			if (!damagesource.is(ResourceKey.create(Registries.DAMAGE_TYPE, ResourceLocation.parse("vl_abyss:mantra_damage"))) && !(sourceentity instanceof LivingEntity _livEnt3 && _livEnt3.hasEffect(VlAbyssModMobEffects.SHADOW_COPY.get()))) {
+		if (!(entity instanceof MantraSoulEntity) || !(entity instanceof CavaleiroAladoEntity) || !entity.getType().is(TagKey.create(Registries.ENTITY_TYPE, ResourceLocation.parse("vl_abyss:invencivel")))) {
+			if (!damagesource.is(ResourceKey.create(Registries.DAMAGE_TYPE, ResourceLocation.parse("vl_abyss:mantra_damage"))) && !(sourceentity instanceof LivingEntity _livEnt4 && _livEnt4.hasEffect(VlAbyssModMobEffects.SHADOW_COPY.get()))) {
 				if (Math.random() > 0.95) {
 					if ((world.getBlockState(BlockPos.containing(x, y + 1, z))).getBlock() == Blocks.AIR) {
 						if (world instanceof ServerLevel _level) {

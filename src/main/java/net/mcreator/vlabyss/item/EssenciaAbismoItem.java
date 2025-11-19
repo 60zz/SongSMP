@@ -5,6 +5,6 @@ import net.minecraft.world.item.Item;
 
 public class EssenciaAbismoItem extends Item {
 	public EssenciaAbismoItem() {
-		super(new Item.Properties().stacksTo(64).fireResistant().rarity(Rarity.EPIC));
+		super(new Item.Properties().fireResistant().rarity(Rarity.EPIC));
 	}
 }

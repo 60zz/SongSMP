@@ -65,7 +65,3 @@ tasks.withType(JavaCompile).configureEach {
 }
 
 apply from: 'mcreator.gradle'
-
-if (file("mixin.gradle").exists()) {
-    apply from: "mixin.gradle"
-}

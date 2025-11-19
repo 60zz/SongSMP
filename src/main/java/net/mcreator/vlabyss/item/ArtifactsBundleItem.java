@@ -12,7 +12,7 @@ import net.mcreator.vlabyss.procedures.ArtifactsBundleRightclickedProcedure;
 
 public class ArtifactsBundleItem extends Item {
 	public ArtifactsBundleItem() {
-		super(new Item.Properties().stacksTo(64).rarity(Rarity.RARE));
+		super(new Item.Properties().rarity(Rarity.RARE));
 	}
 
 	@Override

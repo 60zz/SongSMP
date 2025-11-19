@@ -9,7 +9,7 @@ public class InstantRegenMantraEffectExpiresProcedure {
 		if (entity == null)
 			return;
 		{
-			double _setval = (entity.getCapability(VlAbyssModVariables.PLAYER_VARIABLES_CAPABILITY, null).orElse(new VlAbyssModVariables.PlayerVariables())).MaxEthir;
+			double _setval = (entity.getCapability(VlAbyssModVariables.PLAYER_VARIABLES_CAPABILITY, null).orElseGet(VlAbyssModVariables.PlayerVariables::new)).MaxEthir;
 			entity.getCapability(VlAbyssModVariables.PLAYER_VARIABLES_CAPABILITY, null).ifPresent(capability -> {
 				capability.Ethir = _setval;
 				capability.syncPlayerVariables(entity);

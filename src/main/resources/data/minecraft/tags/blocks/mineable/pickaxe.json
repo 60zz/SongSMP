@@ -1,7 +1,6 @@
 {
   "replace": false,
   "values": [
-    "vl_abyss:metal_forging",
     "vl_abyss:raw_abyssion_block",
     "vl_abyss:abyssion_ore",
     "vl_abyss:abyssion_ingot_block"

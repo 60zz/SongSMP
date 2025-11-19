@@ -2,7 +2,7 @@
   "_fv": 79,
   "_type": "particle",
   "definition": {
-    "texture": "vento2.png",
+    "texture": "vento2",
     "animate": true,
     "frameDuration": 1,
     "width": 0.2,

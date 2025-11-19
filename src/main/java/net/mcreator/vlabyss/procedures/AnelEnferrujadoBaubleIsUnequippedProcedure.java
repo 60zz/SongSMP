@@ -11,7 +11,7 @@ public class AnelEnferrujadoBaubleIsUnequippedProcedure {
 	public static void execute(Entity entity) {
 		if (entity == null)
 			return;
-		if (!((entity.getCapability(VlAbyssModVariables.PLAYER_VARIABLES_CAPABILITY, null).orElse(new VlAbyssModVariables.PlayerVariables())).Simikari == true)) {
+		if (!((entity.getCapability(VlAbyssModVariables.PLAYER_VARIABLES_CAPABILITY, null).orElseGet(VlAbyssModVariables.PlayerVariables::new)).Simikari == true)) {
 			{
 				Entity _ent = entity;
 				if (!_ent.level().isClientSide() && _ent.getServer() != null) {

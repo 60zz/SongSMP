@@ -2,6 +2,8 @@ package net.mcreator.vlabyss.procedures;
 
 import top.theillusivec4.curios.api.CuriosApi;
 
+import org.checkerframework.checker.units.qual.m;
+
 import net.minecraftforge.registries.ForgeRegistries;
 import net.minecraftforge.fml.common.Mod;
 import net.minecraftforge.eventbus.api.SubscribeEvent;
@@ -12,6 +14,8 @@ import net.minecraft.world.level.LevelAccessor;
 import net.minecraft.world.level.Level;
 import net.minecraft.world.entity.player.Player;
 import net.minecraft.world.entity.ai.attributes.AttributeModifier;
+import net.minecraft.world.entity.ai.attributes.AttributeInstance;
+import net.minecraft.world.entity.ai.attributes.Attribute;
 import net.minecraft.world.entity.LivingEntity;
 import net.minecraft.world.entity.Entity;
 import net.minecraft.world.effect.MobEffects;
@@ -25,8 +29,6 @@ import net.mcreator.vlabyss.init.VlAbyssModItems;
 import net.mcreator.vlabyss.VlAbyssMod;
 
 import javax.annotation.Nullable;
-
-import java.util.UUID;
 
 @Mod.EventBusSubscriber
 public class MorreuComArtefatoPrimordialProcedure {
@@ -55,25 +57,66 @@ public class MorreuComArtefatoPrimordialProcedure {
 						_level.playLocalSound(x, y, z, ForgeRegistries.SOUND_EVENTS.getValue(ResourceLocation.parse("item.totem.use")), SoundSource.MASTER, 1, 1, false);
 					}
 				}
-				if (!(((LivingEntity) entity).getAttribute(net.minecraft.world.entity.ai.attributes.Attributes.MAX_HEALTH)
-						.hasModifier((new AttributeModifier(UUID.fromString("d91e77f4-2bb8-4dc6-b7ae-e9d794b5adba"), "vidaprimordial", (-5), AttributeModifier.Operation.ADDITION)))))
-					((LivingEntity) entity).getAttribute(net.minecraft.world.entity.ai.attributes.Attributes.MAX_HEALTH)
-							.addTransientModifier((new AttributeModifier(UUID.fromString("d91e77f4-2bb8-4dc6-b7ae-e9d794b5adba"), "vidaprimordial", (-5), AttributeModifier.Operation.ADDITION)));
+				{
+					Entity _entity = entity;
+					if (_entity instanceof LivingEntity _livingEntity) {
+						Attribute _attribute = ForgeRegistries.ATTRIBUTES.getValue(new ResourceLocation("minecraft:generic.max_health"));
+						if (_attribute != null) {
+							AttributeInstance _attr = _livingEntity.getAttribute(_attribute);
+							if (_attr != null) {
+								String _modifierName = "vidaprimordial";
+								boolean _hasModifier = _attr.getModifiers().stream().anyMatch(m -> m.getName().equals(_modifierName));
+								if (!_hasModifier) {
+									AttributeModifier _modifier = new AttributeModifier(_modifierName, (-5), AttributeModifier.Operation.ADDITION);
+									_attr.addPermanentModifier(_modifier);
+								}
+							}
+						}
+					}
+				}
 				if ((entity.getCapability(VlAbyssModVariables.PLAYER_VARIABLES_CAPABILITY, null).orElseGet(VlAbyssModVariables.PlayerVariables::new)).Lumivivo == true) {
 					if (entity instanceof LivingEntity _entity && !_entity.level().isClientSide())
 						_entity.addEffect(new MobEffectInstance(MobEffects.HUNGER, 1200, 3));
 					if (entity instanceof LivingEntity _entity && !_entity.level().isClientSide())
 						_entity.addEffect(new MobEffectInstance(MobEffects.ABSORPTION, 400, 4));
 					VlAbyssMod.queueServerWork(1200, () -> {
-						((LivingEntity) entity).getAttribute(net.minecraft.world.entity.ai.attributes.Attributes.MAX_HEALTH)
-								.removeModifier((new AttributeModifier(UUID.fromString("d91e77f4-2bb8-4dc6-b7ae-e9d794b5adba"), "vidaprimordial", (-5), AttributeModifier.Operation.ADDITION)));
+						{
+							Entity _entity = entity;
+							if (_entity instanceof LivingEntity _livingEntity) {
+								Attribute _attribute = ForgeRegistries.ATTRIBUTES.getValue(new ResourceLocation("minecraft:generic.max_health"));
+								if (_attribute != null) {
+									AttributeInstance _attr = _livingEntity.getAttribute(_attribute);
+									if (_attr != null) {
+										_attr.getModifiers().forEach((_modifier) -> {
+											if (_modifier.getName().equals("vidaprimordial")) {
+												_attr.removeModifier(_modifier);
+											}
+										});
+									}
+								}
+							}
+						}
 					});
 				} else {
 					if (entity instanceof LivingEntity _entity && !_entity.level().isClientSide())
 						_entity.addEffect(new MobEffectInstance(MobEffects.HUNGER, 3600, 3));
 					VlAbyssMod.queueServerWork(3600, () -> {
-						((LivingEntity) entity).getAttribute(net.minecraft.world.entity.ai.attributes.Attributes.MAX_HEALTH)
-								.removeModifier((new AttributeModifier(UUID.fromString("d91e77f4-2bb8-4dc6-b7ae-e9d794b5adba"), "vidaprimordial", (-5), AttributeModifier.Operation.ADDITION)));
+						{
+							Entity _entity = entity;
+							if (_entity instanceof LivingEntity _livingEntity) {
+								Attribute _attribute = ForgeRegistries.ATTRIBUTES.getValue(new ResourceLocation("minecraft:generic.max_health"));
+								if (_attribute != null) {
+									AttributeInstance _attr = _livingEntity.getAttribute(_attribute);
+									if (_attr != null) {
+										_attr.getModifiers().forEach((_modifier) -> {
+											if (_modifier.getName().equals("vidaprimordial")) {
+												_attr.removeModifier(_modifier);
+											}
+										});
+									}
+								}
+							}
+						}
 					});
 				}
 				if (entity instanceof Player _player)

@@ -35,7 +35,7 @@ public class AcertouComAmuletoSangueProcedure {
 		if (sourceentity instanceof LivingEntity lv ? CuriosApi.getCuriosHelper().findEquippedCurio(VlAbyssModItems.AMULETO_SANGUE.get(), lv).isPresent() : false) {
 			if (!(sourceentity instanceof Player _plrCldCheck1 && _plrCldCheck1.getCooldowns().isOnCooldown(VlAbyssModItems.AMULETO_SANGUE.get()))) {
 				if (entity instanceof LivingEntity _livEnt2 && _livEnt2.hasEffect(VlAbyssModMobEffects.SANGRANDO.get())) {
-					if ((sourceentity.getCapability(VlAbyssModVariables.PLAYER_VARIABLES_CAPABILITY, null).orElse(new VlAbyssModVariables.PlayerVariables())).Arkanthi == true) {
+					if ((sourceentity.getCapability(VlAbyssModVariables.PLAYER_VARIABLES_CAPABILITY, null).orElseGet(VlAbyssModVariables.PlayerVariables::new)).Arkanthi == true) {
 						if (sourceentity instanceof LivingEntity _entity)
 							_entity.setHealth((float) ((sourceentity instanceof LivingEntity _livEnt ? _livEnt.getHealth() : -1) + (double) SsmpConfiguration.AMULETOSANGUECONFIG.get()));
 					} else {

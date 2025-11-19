@@ -12,6 +12,7 @@ import net.minecraft.world.entity.Entity;
 import net.minecraft.world.effect.MobEffects;
 import net.minecraft.world.effect.MobEffectInstance;
 import net.minecraft.world.damagesource.DamageSource;
+import net.minecraft.tags.TagKey;
 import net.minecraft.sounds.SoundSource;
 import net.minecraft.resources.ResourceLocation;
 import net.minecraft.resources.ResourceKey;
@@ -23,7 +24,6 @@ import net.mcreator.vlabyss.entity.CavaleiroAladoEntity;
 import net.mcreator.vlabyss.configuration.SsmpConfiguration;
 import net.mcreator.vlabyss.VlAbyssMod;
 
-import java.util.List;
 import java.util.Comparator;
 
 public class CavaleiroAladoOnEntityTickUpdateProcedure {
@@ -58,9 +58,9 @@ public class CavaleiroAladoOnEntityTickUpdateProcedure {
 						VlAbyssMod.queueServerWork(305, () -> {
 							{
 								final Vec3 _center = new Vec3(x, y, z);
-								List<Entity> _entfound = world.getEntitiesOfClass(Entity.class, new AABB(_center, _center).inflate(12 / 2d), e -> true).stream().sorted(Comparator.comparingDouble(_entcnd -> _entcnd.distanceToSqr(_center))).toList();
-								for (Entity entityiterator : _entfound) {
-									if (!(entityiterator instanceof CavaleiroAladoEntity)) {
+								for (Entity entityiterator : world.getEntitiesOfClass(Entity.class, new AABB(_center, _center).inflate(12 / 2d), e -> true).stream().sorted(Comparator.comparingDouble(_entcnd -> _entcnd.distanceToSqr(_center)))
+										.toList()) {
+									if (!(entityiterator instanceof CavaleiroAladoEntity) || !entityiterator.getType().is(TagKey.create(Registries.ENTITY_TYPE, ResourceLocation.parse("vl_abyss:invencivel")))) {
 										entityiterator.hurt(
 												new DamageSource(world.registryAccess().registryOrThrow(Registries.DAMAGE_TYPE).getHolderOrThrow(ResourceKey.create(Registries.DAMAGE_TYPE, ResourceLocation.parse("vl_abyss:danoabismoboss"))), entity),
 												(float) (double) SsmpConfiguration.WINGEDKNIGHTFLYINGAXEGROUNDATTACKDAMAGE.get());
@@ -184,8 +184,8 @@ public class CavaleiroAladoOnEntityTickUpdateProcedure {
 				}
 			} else if (Math.random() >= 0.5) {
 				if (entity.getPersistentData().getDouble("mana_atual") >= 80) {
-					if ((entity instanceof CavaleiroAladoEntity _datEntL38 && _datEntL38.getEntityData().get(CavaleiroAladoEntity.DATA_ataquevoador)) == false
-							&& (entity instanceof CavaleiroAladoEntity _datEntL39 && _datEntL39.getEntityData().get(CavaleiroAladoEntity.DATA_ataquechao)) == false) {
+					if ((entity instanceof CavaleiroAladoEntity _datEntL39 && _datEntL39.getEntityData().get(CavaleiroAladoEntity.DATA_ataquevoador)) == false
+							&& (entity instanceof CavaleiroAladoEntity _datEntL40 && _datEntL40.getEntityData().get(CavaleiroAladoEntity.DATA_ataquechao)) == false) {
 						if (entity instanceof CavaleiroAladoEntity) {
 							((CavaleiroAladoEntity) entity).setAnimation("animation.model.ataqueno ch\u00E3o");
 						}
@@ -194,9 +194,9 @@ public class CavaleiroAladoOnEntityTickUpdateProcedure {
 						VlAbyssMod.queueServerWork(75, () -> {
 							{
 								final Vec3 _center = new Vec3(x, y, z);
-								List<Entity> _entfound = world.getEntitiesOfClass(Entity.class, new AABB(_center, _center).inflate(10 / 2d), e -> true).stream().sorted(Comparator.comparingDouble(_entcnd -> _entcnd.distanceToSqr(_center))).toList();
-								for (Entity entityiterator : _entfound) {
-									if (!(entityiterator instanceof CavaleiroAladoEntity)) {
+								for (Entity entityiterator : world.getEntitiesOfClass(Entity.class, new AABB(_center, _center).inflate(10 / 2d), e -> true).stream().sorted(Comparator.comparingDouble(_entcnd -> _entcnd.distanceToSqr(_center)))
+										.toList()) {
+									if (!(entityiterator instanceof CavaleiroAladoEntity) || !entityiterator.getType().is(TagKey.create(Registries.ENTITY_TYPE, ResourceLocation.parse("vl_abyss:invencivel")))) {
 										entityiterator.hurt(
 												new DamageSource(world.registryAccess().registryOrThrow(Registries.DAMAGE_TYPE).getHolderOrThrow(ResourceKey.create(Registries.DAMAGE_TYPE, ResourceLocation.parse("vl_abyss:danoabismoboss"))), entity),
 												(float) (double) SsmpConfiguration.WINGEDKNIGHTGROUNDAXEATTACKDAMAGE.get());

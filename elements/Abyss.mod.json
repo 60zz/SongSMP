@@ -1,0 +1,10 @@
+{
+  "_fv": 79,
+  "_type": "bannerpattern",
+  "definition": {
+    "texture": "fenix",
+    "shieldTexture": "fenix_shield",
+    "name": "Abyss",
+    "requireItem": true
+  }
+}

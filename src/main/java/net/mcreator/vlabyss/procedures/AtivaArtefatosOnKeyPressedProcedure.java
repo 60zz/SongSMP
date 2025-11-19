@@ -30,7 +30,7 @@ public class AtivaArtefatosOnKeyPressedProcedure {
 		if (entity instanceof LivingEntity lv
 				? CuriosApi.getCuriosHelper().findEquippedCurio(VlAbyssModItems.CINTO_DOS_ECOS.get(), lv).isPresent()
 				: false && !(entity instanceof Player _plrCldCheck6 && _plrCldCheck6.getCooldowns().isOnCooldown(VlAbyssModItems.CINTO_DOS_ECOS.get()))) {
-			if (!((entity.getCapability(VlAbyssModVariables.PLAYER_VARIABLES_CAPABILITY, null).orElse(new VlAbyssModVariables.PlayerVariables())).Songs == true)) {
+			if (!((entity.getCapability(VlAbyssModVariables.PLAYER_VARIABLES_CAPABILITY, null).orElseGet(VlAbyssModVariables.PlayerVariables::new)).Songs == true)) {
 				entity.getPersistentData().putBoolean("criticonormal", true);
 			} else {
 				entity.getPersistentData().putBoolean("criticosong", true);
@@ -41,7 +41,7 @@ public class AtivaArtefatosOnKeyPressedProcedure {
 		if (entity instanceof LivingEntity lv
 				? CuriosApi.getCuriosHelper().findEquippedCurio(VlAbyssModItems.LUVAS_IRONSING.get(), lv).isPresent()
 				: false && !(entity instanceof Player _plrCldCheck11 && _plrCldCheck11.getCooldowns().isOnCooldown(VlAbyssModItems.LUVAS_IRONSING.get()))) {
-			if (!((entity.getCapability(VlAbyssModVariables.PLAYER_VARIABLES_CAPABILITY, null).orElse(new VlAbyssModVariables.PlayerVariables())).Scribari == true)) {
+			if (!((entity.getCapability(VlAbyssModVariables.PLAYER_VARIABLES_CAPABILITY, null).orElseGet(VlAbyssModVariables.PlayerVariables::new)).Scribari == true)) {
 				entity.getPersistentData().putBoolean("criticairons_s", true);
 			} else {
 				entity.getPersistentData().putBoolean("criticairons", true);

@@ -118,6 +118,9 @@ public class VlAbyssModVariables {
 			clone.vidas = original.vidas;
 			clone.VL_Spy = original.VL_Spy;
 			clone.hab_selecionada = original.hab_selecionada;
+			clone.posX = original.posX;
+			clone.posY = original.posY;
+			clone.posZ = original.posZ;
 			if (!event.isWasDeath()) {
 			}
 		}
@@ -206,6 +209,9 @@ public class VlAbyssModVariables {
 		public double vidas = 5.0;
 		public boolean VL_Spy = false;
 		public double hab_selecionada = 1.0;
+		public double posX = 0;
+		public double posY = 0;
+		public double posZ = 0;
 
 		public void syncPlayerVariables(Entity entity) {
 			if (entity instanceof ServerPlayer serverPlayer)
@@ -266,6 +272,9 @@ public class VlAbyssModVariables {
 			nbt.putDouble("vidas", vidas);
 			nbt.putBoolean("VL_Spy", VL_Spy);
 			nbt.putDouble("hab_selecionada", hab_selecionada);
+			nbt.putDouble("posX", posX);
+			nbt.putDouble("posY", posY);
+			nbt.putDouble("posZ", posZ);
 			return nbt;
 		}
 
@@ -323,6 +332,9 @@ public class VlAbyssModVariables {
 			vidas = nbt.getDouble("vidas");
 			VL_Spy = nbt.getBoolean("VL_Spy");
 			hab_selecionada = nbt.getDouble("hab_selecionada");
+			posX = nbt.getDouble("posX");
+			posY = nbt.getDouble("posY");
+			posZ = nbt.getDouble("posZ");
 		}
 	}
 
@@ -399,6 +411,9 @@ public class VlAbyssModVariables {
 					variables.vidas = message.data.vidas;
 					variables.VL_Spy = message.data.VL_Spy;
 					variables.hab_selecionada = message.data.hab_selecionada;
+					variables.posX = message.data.posX;
+					variables.posY = message.data.posY;
+					variables.posZ = message.data.posZ;
 				}
 			});
 			context.setPacketHandled(true);

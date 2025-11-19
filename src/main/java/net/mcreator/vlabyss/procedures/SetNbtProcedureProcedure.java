@@ -13,23 +13,25 @@ import com.mojang.brigadier.arguments.BoolArgumentType;
 
 public class SetNbtProcedureProcedure {
 	public static void execute(CommandContext<CommandSourceStack> arguments) {
-		((new Object() {
-			public Entity getEntity() {
-				try {
-					return EntityArgument.getEntity(arguments, "entity");
-				} catch (CommandSyntaxException e) {
-					e.printStackTrace();
-					return null;
-				}
-			}
-		}.getEntity()) instanceof LivingEntity _livEnt ? _livEnt.getMainHandItem() : ItemStack.EMPTY).getOrCreateTag().putBoolean((new Object() {
-			public String getMessage() {
-				try {
-					return MessageArgument.getMessage(arguments, "nbt").getString();
-				} catch (CommandSyntaxException ignored) {
-					return "";
-				}
-			}
-		}).getMessage(), (BoolArgumentType.getBool(arguments, "value")));
+		((commandParameterEntity(arguments, "entity")) instanceof LivingEntity _livEnt ? _livEnt.getMainHandItem() : ItemStack.EMPTY).getOrCreateTag().putBoolean((commandParameterMessage(arguments, "nbt")),
+				(BoolArgumentType.getBool(arguments, "value")));
+	}
+
+	private static String commandParameterMessage(CommandContext<CommandSourceStack> arguments, String parameter) {
+		try {
+			return MessageArgument.getMessage(arguments, parameter).getString();
+		} catch (CommandSyntaxException e) {
+			e.printStackTrace();
+			return "";
+		}
+	}
+
+	private static Entity commandParameterEntity(CommandContext<CommandSourceStack> arguments, String parameter) {
+		try {
+			return EntityArgument.getEntity(arguments, parameter);
+		} catch (CommandSyntaxException e) {
+			e.printStackTrace();
+			return null;
+		}
 	}
 }

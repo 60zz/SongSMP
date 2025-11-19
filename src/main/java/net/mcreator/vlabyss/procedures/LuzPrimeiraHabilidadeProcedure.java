@@ -137,7 +137,7 @@ public class LuzPrimeiraHabilidadeProcedure {
 								net.minecraft.server.level.ServerLevel _level = (net.minecraft.server.level.ServerLevel) world;
 								int particleCount = (int) 40;
 								double centerX = (entity.getX());
-								double centerY = (entity.getY());
+								double centerY = (entity.getY() + 1);
 								double centerZ = (entity.getZ());
 								double particleSpeed = 0.8;
 								net.minecraft.core.particles.ParticleOptions particleType = net.minecraft.core.particles.ParticleTypes.CLOUD;
@@ -296,7 +296,7 @@ public class LuzPrimeiraHabilidadeProcedure {
 								net.minecraft.server.level.ServerLevel _level = (net.minecraft.server.level.ServerLevel) world;
 								int particleCount = (int) 40;
 								double centerX = (entity.getX());
-								double centerY = (entity.getY());
+								double centerY = (entity.getY() + 1);
 								double centerZ = (entity.getZ());
 								double particleSpeed = 0.8;
 								net.minecraft.core.particles.ParticleOptions particleType = net.minecraft.core.particles.ParticleTypes.CLOUD;
@@ -465,7 +465,7 @@ public class LuzPrimeiraHabilidadeProcedure {
 								net.minecraft.server.level.ServerLevel _level = (net.minecraft.server.level.ServerLevel) world;
 								int particleCount = (int) 40;
 								double centerX = (entity.getX());
-								double centerY = (entity.getY());
+								double centerY = (entity.getY() + 1);
 								double centerZ = (entity.getZ());
 								double particleSpeed = 0.8;
 								net.minecraft.core.particles.ParticleOptions particleType = net.minecraft.core.particles.ParticleTypes.CLOUD;

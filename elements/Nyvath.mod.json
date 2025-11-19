@@ -1,0 +1,10 @@
+{
+  "_fv": 79,
+  "_type": "bannerpattern",
+  "definition": {
+    "texture": "dragao_chines",
+    "shieldTexture": "nyvath_dragao",
+    "name": "Nyvath",
+    "requireItem": true
+  }
+}

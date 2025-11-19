@@ -1,0 +1,10 @@
+{
+  "_fv": 79,
+  "_type": "bannerpattern",
+  "definition": {
+    "texture": "coruja",
+    "shieldTexture": "wildernes_coruja",
+    "name": "Wildernes",
+    "requireItem": true
+  }
+}

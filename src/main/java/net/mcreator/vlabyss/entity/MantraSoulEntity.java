@@ -50,7 +50,6 @@ import net.minecraft.network.protocol.Packet;
 import net.minecraft.nbt.CompoundTag;
 import net.minecraft.core.BlockPos;
 
-import net.mcreator.vlabyss.procedures.MantraSoulRightClickedOnEntityProcedure;
 import net.mcreator.vlabyss.procedures.MantraSoulOnInitialEntitySpawnProcedure;
 import net.mcreator.vlabyss.init.VlAbyssModEntities;
 
@@ -181,21 +180,6 @@ public class MantraSoulEntity extends PathfinderMob implements GeoEntity {
 		super.readAdditionalSaveData(compound);
 		if (compound.contains("Texture"))
 			this.setTexture(compound.getString("Texture"));
-	}
-
-	@Override
-	public InteractionResult mobInteract(Player sourceentity, InteractionHand hand) {
-		ItemStack itemstack = sourceentity.getItemInHand(hand);
-		InteractionResult retval = InteractionResult.sidedSuccess(this.level().isClientSide());
-		super.mobInteract(sourceentity, hand);
-		double x = this.getX();
-		double y = this.getY();
-		double z = this.getZ();
-		Entity entity = this;
-		Level world = this.level();
-
-		MantraSoulRightClickedOnEntityProcedure.execute(world, x, y, z, entity, sourceentity);
-		return retval;
 	}
 
 	@Override

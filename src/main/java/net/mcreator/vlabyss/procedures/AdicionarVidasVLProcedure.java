@@ -18,9 +18,9 @@ public class AdicionarVidasVLProcedure {
 			return;
 		try {
 			for (Entity entityiterator : EntityArgument.getEntities(arguments, "entity")) {
-				if (!((entityiterator.getCapability(VlAbyssModVariables.PLAYER_VARIABLES_CAPABILITY, null).orElse(new VlAbyssModVariables.PlayerVariables())).vidas + DoubleArgumentType.getDouble(arguments, "value") > 10)) {
+				if (!((entityiterator.getCapability(VlAbyssModVariables.PLAYER_VARIABLES_CAPABILITY, null).orElseGet(VlAbyssModVariables.PlayerVariables::new)).vidas + DoubleArgumentType.getDouble(arguments, "value") > 10)) {
 					{
-						double _setval = (entityiterator.getCapability(VlAbyssModVariables.PLAYER_VARIABLES_CAPABILITY, null).orElse(new VlAbyssModVariables.PlayerVariables())).vidas + DoubleArgumentType.getDouble(arguments, "value");
+						double _setval = (entityiterator.getCapability(VlAbyssModVariables.PLAYER_VARIABLES_CAPABILITY, null).orElseGet(VlAbyssModVariables.PlayerVariables::new)).vidas + DoubleArgumentType.getDouble(arguments, "value");
 						entityiterator.getCapability(VlAbyssModVariables.PLAYER_VARIABLES_CAPABILITY, null).ifPresent(capability -> {
 							capability.vidas = _setval;
 							capability.syncPlayerVariables(entityiterator);

@@ -17,7 +17,7 @@ import javax.annotation.Nullable;
 
 import java.util.List;
 
-@Mod.EventBusSubscriber
+@Mod.EventBusSubscriber(value = {Dist.CLIENT})
 public class InfoLiberacaoMantraProcedure {
 	@OnlyIn(Dist.CLIENT)
 	@SubscribeEvent

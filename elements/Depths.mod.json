@@ -1,0 +1,10 @@
+{
+  "_fv": 79,
+  "_type": "bannerpattern",
+  "definition": {
+    "texture": "wyvern",
+    "shieldTexture": "depths_wyvern",
+    "name": "Depths",
+    "requireItem": true
+  }
+}

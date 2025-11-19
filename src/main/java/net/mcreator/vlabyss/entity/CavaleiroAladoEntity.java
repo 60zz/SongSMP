@@ -165,7 +165,7 @@ public class CavaleiroAladoEntity extends Monster implements GeoEntity {
 	@Override
 	public void die(DamageSource source) {
 		super.die(source);
-		CavaleiroAladoEntityDiesProcedure.execute(this);
+		CavaleiroAladoEntityDiesProcedure.execute(this.level(), this.getX(), this.getY(), this.getZ(), this);
 	}
 
 	@Override

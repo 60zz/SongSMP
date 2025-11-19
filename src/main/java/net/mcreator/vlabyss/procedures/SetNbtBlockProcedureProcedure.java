@@ -16,48 +16,31 @@ import com.mojang.brigadier.arguments.BoolArgumentType;
 public class SetNbtBlockProcedureProcedure {
 	public static void execute(LevelAccessor world, CommandContext<CommandSourceStack> arguments) {
 		if (!world.isClientSide()) {
-			BlockPos _bp = BlockPos.containing(new Object() {
-				public double getX() {
-					try {
-						return BlockPosArgument.getLoadedBlockPos(arguments, "blockentity").getX();
-					} catch (CommandSyntaxException e) {
-						e.printStackTrace();
-						return 0;
-					}
-				}
-			}.getX(), new Object() {
-				public double getY() {
-					try {
-						return BlockPosArgument.getLoadedBlockPos(arguments, "blockentity").getY();
-					} catch (CommandSyntaxException e) {
-						e.printStackTrace();
-						return 0;
-					}
-				}
-			}.getY(), new Object() {
-				public double getZ() {
-					try {
-						return BlockPosArgument.getLoadedBlockPos(arguments, "blockentity").getZ();
-					} catch (CommandSyntaxException e) {
-						e.printStackTrace();
-						return 0;
-					}
-				}
-			}.getZ());
+			BlockPos _bp = new BlockPos(commandParameterBlockPos(arguments, "blockentity").getX(), commandParameterBlockPos(arguments, "blockentity").getY(), commandParameterBlockPos(arguments, "blockentity").getZ());
 			BlockEntity _blockEntity = world.getBlockEntity(_bp);
 			BlockState _bs = world.getBlockState(_bp);
 			if (_blockEntity != null)
-				_blockEntity.getPersistentData().putBoolean((new Object() {
-					public String getMessage() {
-						try {
-							return MessageArgument.getMessage(arguments, "nbt").getString();
-						} catch (CommandSyntaxException ignored) {
-							return "";
-						}
-					}
-				}).getMessage(), (BoolArgumentType.getBool(arguments, "value")));
+				_blockEntity.getPersistentData().putBoolean((commandParameterMessage(arguments, "nbt")), (BoolArgumentType.getBool(arguments, "value")));
 			if (world instanceof Level _level)
 				_level.sendBlockUpdated(_bp, _bs, _bs, 3);
+		}
+	}
+
+	private static BlockPos commandParameterBlockPos(CommandContext<CommandSourceStack> arguments, String parameter) {
+		try {
+			return BlockPosArgument.getLoadedBlockPos(arguments, parameter);
+		} catch (CommandSyntaxException e) {
+			e.printStackTrace();
+			return new BlockPos(0, 0, 0);
+		}
+	}
+
+	private static String commandParameterMessage(CommandContext<CommandSourceStack> arguments, String parameter) {
+		try {
+			return MessageArgument.getMessage(arguments, parameter).getString();
+		} catch (CommandSyntaxException e) {
+			e.printStackTrace();
+			return "";
 		}
 	}
 }

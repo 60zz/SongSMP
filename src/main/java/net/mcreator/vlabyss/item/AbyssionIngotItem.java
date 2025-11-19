@@ -5,6 +5,6 @@ import net.minecraft.world.item.Item;
 
 public class AbyssionIngotItem extends Item {
 	public AbyssionIngotItem() {
-		super(new Item.Properties().stacksTo(64).rarity(Rarity.RARE));
+		super(new Item.Properties().rarity(Rarity.RARE));
 	}
 }

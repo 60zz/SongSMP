@@ -6,16 +6,35 @@ import net.minecraft.world.level.LevelAccessor;
 import net.minecraft.world.level.Level;
 import net.minecraft.world.entity.Entity;
 import net.minecraft.sounds.SoundSource;
-import net.minecraft.server.level.ServerPlayer;
 import net.minecraft.resources.ResourceLocation;
 import net.minecraft.core.BlockPos;
+
+import net.mcreator.vlabyss.network.VlAbyssModVariables;
 
 public class ShadowCopyEffectStartedappliedProcedure {
 	public static void execute(LevelAccessor world, double x, double y, double z, Entity entity) {
 		if (entity == null)
 			return;
-		if (entity instanceof ServerPlayer _player) {
-			_player.setRespawnPosition(_player.level().dimension(), entity.blockPosition(), 0.0f, true, false);
+		{
+			double _setval = x;
+			entity.getCapability(VlAbyssModVariables.PLAYER_VARIABLES_CAPABILITY, null).ifPresent(capability -> {
+				capability.posX = _setval;
+				capability.syncPlayerVariables(entity);
+			});
+		}
+		{
+			double _setval = y;
+			entity.getCapability(VlAbyssModVariables.PLAYER_VARIABLES_CAPABILITY, null).ifPresent(capability -> {
+				capability.posY = _setval;
+				capability.syncPlayerVariables(entity);
+			});
+		}
+		{
+			double _setval = z;
+			entity.getCapability(VlAbyssModVariables.PLAYER_VARIABLES_CAPABILITY, null).ifPresent(capability -> {
+				capability.posZ = _setval;
+				capability.syncPlayerVariables(entity);
+			});
 		}
 		if (world instanceof Level _level) {
 			if (!_level.isClientSide()) {

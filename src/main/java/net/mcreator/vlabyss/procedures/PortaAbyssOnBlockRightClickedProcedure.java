@@ -24,22 +24,8 @@ public class PortaAbyssOnBlockRightClickedProcedure {
 			return;
 		if ((entity instanceof LivingEntity _livEnt ? _livEnt.getMainHandItem() : ItemStack.EMPTY).getItem() == VlAbyssModItems.RUNAS.get()) {
 			if ((entity instanceof LivingEntity _livEnt ? _livEnt.getMainHandItem() : ItemStack.EMPTY).getOrCreateTag().getBoolean("runavermelha")) {
-				if (new Object() {
-					public boolean getValue(LevelAccessor world, BlockPos pos, String tag) {
-						BlockEntity blockEntity = world.getBlockEntity(pos);
-						if (blockEntity != null)
-							return blockEntity.getPersistentData().getBoolean(tag);
-						return false;
-					}
-				}.getValue(world, BlockPos.containing(x, y, z), "runavermelha")) {
-					if (new Object() {
-						public boolean getValue(LevelAccessor world, BlockPos pos, String tag) {
-							BlockEntity blockEntity = world.getBlockEntity(pos);
-							if (blockEntity != null)
-								return blockEntity.getPersistentData().getBoolean(tag);
-							return false;
-						}
-					}.getValue(world, BlockPos.containing(x, y, z), "aberto")) {
+				if (getBlockNBTLogic(world, BlockPos.containing(x, y, z), "runavermelha")) {
+					if (getBlockNBTLogic(world, BlockPos.containing(x, y, z), "aberto")) {
 						{
 							BlockPos _pos = BlockPos.containing(x, y, z);
 							BlockState _bs = world.getBlockState(_pos);
@@ -142,22 +128,8 @@ public class PortaAbyssOnBlockRightClickedProcedure {
 						_player.getCooldowns().addCooldown((entity instanceof LivingEntity _livEnt ? _livEnt.getMainHandItem() : ItemStack.EMPTY).getItem(), 200);
 				}
 			} else if ((entity instanceof LivingEntity _livEnt ? _livEnt.getMainHandItem() : ItemStack.EMPTY).getOrCreateTag().getBoolean("runaazul")) {
-				if (new Object() {
-					public boolean getValue(LevelAccessor world, BlockPos pos, String tag) {
-						BlockEntity blockEntity = world.getBlockEntity(pos);
-						if (blockEntity != null)
-							return blockEntity.getPersistentData().getBoolean(tag);
-						return false;
-					}
-				}.getValue(world, BlockPos.containing(x, y, z), "runaazul")) {
-					if (new Object() {
-						public boolean getValue(LevelAccessor world, BlockPos pos, String tag) {
-							BlockEntity blockEntity = world.getBlockEntity(pos);
-							if (blockEntity != null)
-								return blockEntity.getPersistentData().getBoolean(tag);
-							return false;
-						}
-					}.getValue(world, BlockPos.containing(x, y, z), "aberto")) {
+				if (getBlockNBTLogic(world, BlockPos.containing(x, y, z), "runaazul")) {
+					if (getBlockNBTLogic(world, BlockPos.containing(x, y, z), "aberto")) {
 						{
 							BlockPos _pos = BlockPos.containing(x, y, z);
 							BlockState _bs = world.getBlockState(_pos);
@@ -260,22 +232,8 @@ public class PortaAbyssOnBlockRightClickedProcedure {
 						_player.getCooldowns().addCooldown((entity instanceof LivingEntity _livEnt ? _livEnt.getMainHandItem() : ItemStack.EMPTY).getItem(), 200);
 				}
 			} else if ((entity instanceof LivingEntity _livEnt ? _livEnt.getMainHandItem() : ItemStack.EMPTY).getOrCreateTag().getBoolean("runaroxa")) {
-				if (new Object() {
-					public boolean getValue(LevelAccessor world, BlockPos pos, String tag) {
-						BlockEntity blockEntity = world.getBlockEntity(pos);
-						if (blockEntity != null)
-							return blockEntity.getPersistentData().getBoolean(tag);
-						return false;
-					}
-				}.getValue(world, BlockPos.containing(x, y, z), "runaroxa")) {
-					if (new Object() {
-						public boolean getValue(LevelAccessor world, BlockPos pos, String tag) {
-							BlockEntity blockEntity = world.getBlockEntity(pos);
-							if (blockEntity != null)
-								return blockEntity.getPersistentData().getBoolean(tag);
-							return false;
-						}
-					}.getValue(world, BlockPos.containing(x, y, z), "aberto")) {
+				if (getBlockNBTLogic(world, BlockPos.containing(x, y, z), "runaroxa")) {
+					if (getBlockNBTLogic(world, BlockPos.containing(x, y, z), "aberto")) {
 						{
 							BlockPos _pos = BlockPos.containing(x, y, z);
 							BlockState _bs = world.getBlockState(_pos);
@@ -378,22 +336,8 @@ public class PortaAbyssOnBlockRightClickedProcedure {
 						_player.getCooldowns().addCooldown((entity instanceof LivingEntity _livEnt ? _livEnt.getMainHandItem() : ItemStack.EMPTY).getItem(), 200);
 				}
 			} else if ((entity instanceof LivingEntity _livEnt ? _livEnt.getMainHandItem() : ItemStack.EMPTY).getOrCreateTag().getBoolean("runaverde")) {
-				if (new Object() {
-					public boolean getValue(LevelAccessor world, BlockPos pos, String tag) {
-						BlockEntity blockEntity = world.getBlockEntity(pos);
-						if (blockEntity != null)
-							return blockEntity.getPersistentData().getBoolean(tag);
-						return false;
-					}
-				}.getValue(world, BlockPos.containing(x, y, z), "runaverde")) {
-					if (new Object() {
-						public boolean getValue(LevelAccessor world, BlockPos pos, String tag) {
-							BlockEntity blockEntity = world.getBlockEntity(pos);
-							if (blockEntity != null)
-								return blockEntity.getPersistentData().getBoolean(tag);
-							return false;
-						}
-					}.getValue(world, BlockPos.containing(x, y, z), "aberto")) {
+				if (getBlockNBTLogic(world, BlockPos.containing(x, y, z), "runaverde")) {
+					if (getBlockNBTLogic(world, BlockPos.containing(x, y, z), "aberto")) {
 						{
 							BlockPos _pos = BlockPos.containing(x, y, z);
 							BlockState _bs = world.getBlockState(_pos);
@@ -496,22 +440,8 @@ public class PortaAbyssOnBlockRightClickedProcedure {
 						_player.getCooldowns().addCooldown((entity instanceof LivingEntity _livEnt ? _livEnt.getMainHandItem() : ItemStack.EMPTY).getItem(), 200);
 				}
 			} else if ((entity instanceof LivingEntity _livEnt ? _livEnt.getMainHandItem() : ItemStack.EMPTY).getOrCreateTag().getBoolean("runaamarela")) {
-				if (new Object() {
-					public boolean getValue(LevelAccessor world, BlockPos pos, String tag) {
-						BlockEntity blockEntity = world.getBlockEntity(pos);
-						if (blockEntity != null)
-							return blockEntity.getPersistentData().getBoolean(tag);
-						return false;
-					}
-				}.getValue(world, BlockPos.containing(x, y, z), "runaamarela")) {
-					if (new Object() {
-						public boolean getValue(LevelAccessor world, BlockPos pos, String tag) {
-							BlockEntity blockEntity = world.getBlockEntity(pos);
-							if (blockEntity != null)
-								return blockEntity.getPersistentData().getBoolean(tag);
-							return false;
-						}
-					}.getValue(world, BlockPos.containing(x, y, z), "aberto")) {
+				if (getBlockNBTLogic(world, BlockPos.containing(x, y, z), "runaamarela")) {
+					if (getBlockNBTLogic(world, BlockPos.containing(x, y, z), "aberto")) {
 						{
 							BlockPos _pos = BlockPos.containing(x, y, z);
 							BlockState _bs = world.getBlockState(_pos);
@@ -614,22 +544,8 @@ public class PortaAbyssOnBlockRightClickedProcedure {
 						_player.getCooldowns().addCooldown((entity instanceof LivingEntity _livEnt ? _livEnt.getMainHandItem() : ItemStack.EMPTY).getItem(), 200);
 				}
 			} else if ((entity instanceof LivingEntity _livEnt ? _livEnt.getMainHandItem() : ItemStack.EMPTY).getOrCreateTag().getBoolean("runapreta")) {
-				if (new Object() {
-					public boolean getValue(LevelAccessor world, BlockPos pos, String tag) {
-						BlockEntity blockEntity = world.getBlockEntity(pos);
-						if (blockEntity != null)
-							return blockEntity.getPersistentData().getBoolean(tag);
-						return false;
-					}
-				}.getValue(world, BlockPos.containing(x, y, z), "runapreta")) {
-					if (new Object() {
-						public boolean getValue(LevelAccessor world, BlockPos pos, String tag) {
-							BlockEntity blockEntity = world.getBlockEntity(pos);
-							if (blockEntity != null)
-								return blockEntity.getPersistentData().getBoolean(tag);
-							return false;
-						}
-					}.getValue(world, BlockPos.containing(x, y, z), "aberto")) {
+				if (getBlockNBTLogic(world, BlockPos.containing(x, y, z), "runapreta")) {
+					if (getBlockNBTLogic(world, BlockPos.containing(x, y, z), "aberto")) {
 						{
 							BlockPos _pos = BlockPos.containing(x, y, z);
 							BlockState _bs = world.getBlockState(_pos);
@@ -732,22 +648,8 @@ public class PortaAbyssOnBlockRightClickedProcedure {
 						_player.getCooldowns().addCooldown((entity instanceof LivingEntity _livEnt ? _livEnt.getMainHandItem() : ItemStack.EMPTY).getItem(), 200);
 				}
 			} else if ((entity instanceof LivingEntity _livEnt ? _livEnt.getMainHandItem() : ItemStack.EMPTY).getOrCreateTag().getBoolean("runaciana")) {
-				if (new Object() {
-					public boolean getValue(LevelAccessor world, BlockPos pos, String tag) {
-						BlockEntity blockEntity = world.getBlockEntity(pos);
-						if (blockEntity != null)
-							return blockEntity.getPersistentData().getBoolean(tag);
-						return false;
-					}
-				}.getValue(world, BlockPos.containing(x, y, z), "runaciana")) {
-					if (new Object() {
-						public boolean getValue(LevelAccessor world, BlockPos pos, String tag) {
-							BlockEntity blockEntity = world.getBlockEntity(pos);
-							if (blockEntity != null)
-								return blockEntity.getPersistentData().getBoolean(tag);
-							return false;
-						}
-					}.getValue(world, BlockPos.containing(x, y, z), "aberto")) {
+				if (getBlockNBTLogic(world, BlockPos.containing(x, y, z), "runaciana")) {
+					if (getBlockNBTLogic(world, BlockPos.containing(x, y, z), "aberto")) {
 						{
 							BlockPos _pos = BlockPos.containing(x, y, z);
 							BlockState _bs = world.getBlockState(_pos);
@@ -851,5 +753,12 @@ public class PortaAbyssOnBlockRightClickedProcedure {
 				}
 			}
 		}
+	}
+
+	private static boolean getBlockNBTLogic(LevelAccessor world, BlockPos pos, String tag) {
+		BlockEntity blockEntity = world.getBlockEntity(pos);
+		if (blockEntity != null)
+			return blockEntity.getPersistentData().getBoolean(tag);
+		return false;
 	}
 }

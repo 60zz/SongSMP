@@ -33,7 +33,7 @@ public class PlayerTickReputacaoProcedure {
 	private static void execute(@Nullable Event event, Entity entity) {
 		if (entity == null)
 			return;
-		if ((entity.getCapability(VlAbyssModVariables.PLAYER_VARIABLES_CAPABILITY, null).orElse(new VlAbyssModVariables.PlayerVariables())).reputacao == 10) {
+		if ((entity.getCapability(VlAbyssModVariables.PLAYER_VARIABLES_CAPABILITY, null).orElseGet(VlAbyssModVariables.PlayerVariables::new)).reputacao == 10) {
 			if (entity instanceof Player _player) {
 				double reputationValue = 2.5;
 				CompoundTag playerData = _player.getPersistentData();
@@ -64,8 +64,8 @@ public class PlayerTickReputacaoProcedure {
 					});
 				}
 			}
-		} else if ((entity.getCapability(VlAbyssModVariables.PLAYER_VARIABLES_CAPABILITY, null).orElse(new VlAbyssModVariables.PlayerVariables())).reputacao > 7
-				&& !((entity.getCapability(VlAbyssModVariables.PLAYER_VARIABLES_CAPABILITY, null).orElse(new VlAbyssModVariables.PlayerVariables())).reputacao >= 10)) {
+		} else if ((entity.getCapability(VlAbyssModVariables.PLAYER_VARIABLES_CAPABILITY, null).orElseGet(VlAbyssModVariables.PlayerVariables::new)).reputacao > 7
+				&& !((entity.getCapability(VlAbyssModVariables.PLAYER_VARIABLES_CAPABILITY, null).orElseGet(VlAbyssModVariables.PlayerVariables::new)).reputacao >= 10)) {
 			if (entity instanceof Player _player) {
 				double reputationValue = 2;
 				CompoundTag playerData = _player.getPersistentData();
@@ -96,8 +96,8 @@ public class PlayerTickReputacaoProcedure {
 					});
 				}
 			}
-		} else if ((entity.getCapability(VlAbyssModVariables.PLAYER_VARIABLES_CAPABILITY, null).orElse(new VlAbyssModVariables.PlayerVariables())).reputacao >= 5
-				&& !((entity.getCapability(VlAbyssModVariables.PLAYER_VARIABLES_CAPABILITY, null).orElse(new VlAbyssModVariables.PlayerVariables())).reputacao >= 7)) {
+		} else if ((entity.getCapability(VlAbyssModVariables.PLAYER_VARIABLES_CAPABILITY, null).orElseGet(VlAbyssModVariables.PlayerVariables::new)).reputacao >= 5
+				&& !((entity.getCapability(VlAbyssModVariables.PLAYER_VARIABLES_CAPABILITY, null).orElseGet(VlAbyssModVariables.PlayerVariables::new)).reputacao >= 7)) {
 			if (entity instanceof Player _player) {
 				double reputationValue = 1.5;
 				CompoundTag playerData = _player.getPersistentData();
@@ -128,8 +128,8 @@ public class PlayerTickReputacaoProcedure {
 					});
 				}
 			}
-		} else if ((entity.getCapability(VlAbyssModVariables.PLAYER_VARIABLES_CAPABILITY, null).orElse(new VlAbyssModVariables.PlayerVariables())).reputacao >= 3
-				&& !((entity.getCapability(VlAbyssModVariables.PLAYER_VARIABLES_CAPABILITY, null).orElse(new VlAbyssModVariables.PlayerVariables())).reputacao >= 5)) {
+		} else if ((entity.getCapability(VlAbyssModVariables.PLAYER_VARIABLES_CAPABILITY, null).orElseGet(VlAbyssModVariables.PlayerVariables::new)).reputacao >= 3
+				&& !((entity.getCapability(VlAbyssModVariables.PLAYER_VARIABLES_CAPABILITY, null).orElseGet(VlAbyssModVariables.PlayerVariables::new)).reputacao >= 5)) {
 			if (entity instanceof Player _player) {
 				double reputationValue = 1;
 				CompoundTag playerData = _player.getPersistentData();
@@ -160,8 +160,8 @@ public class PlayerTickReputacaoProcedure {
 					});
 				}
 			}
-		} else if ((entity.getCapability(VlAbyssModVariables.PLAYER_VARIABLES_CAPABILITY, null).orElse(new VlAbyssModVariables.PlayerVariables())).reputacao > 0
-				&& !((entity.getCapability(VlAbyssModVariables.PLAYER_VARIABLES_CAPABILITY, null).orElse(new VlAbyssModVariables.PlayerVariables())).reputacao >= 3)) {
+		} else if ((entity.getCapability(VlAbyssModVariables.PLAYER_VARIABLES_CAPABILITY, null).orElseGet(VlAbyssModVariables.PlayerVariables::new)).reputacao > 0
+				&& !((entity.getCapability(VlAbyssModVariables.PLAYER_VARIABLES_CAPABILITY, null).orElseGet(VlAbyssModVariables.PlayerVariables::new)).reputacao >= 3)) {
 			if (entity instanceof Player _player) {
 				double reputationValue = 0.5;
 				CompoundTag playerData = _player.getPersistentData();
@@ -192,7 +192,7 @@ public class PlayerTickReputacaoProcedure {
 					});
 				}
 			}
-		} else if ((entity.getCapability(VlAbyssModVariables.PLAYER_VARIABLES_CAPABILITY, null).orElse(new VlAbyssModVariables.PlayerVariables())).reputacao == 0) {
+		} else if ((entity.getCapability(VlAbyssModVariables.PLAYER_VARIABLES_CAPABILITY, null).orElseGet(VlAbyssModVariables.PlayerVariables::new)).reputacao == 0) {
 			if (entity instanceof Player _player) {
 				double reputationValue = 0;
 				CompoundTag playerData = _player.getPersistentData();
@@ -223,7 +223,7 @@ public class PlayerTickReputacaoProcedure {
 					});
 				}
 			}
-		} else if ((entity.getCapability(VlAbyssModVariables.PLAYER_VARIABLES_CAPABILITY, null).orElse(new VlAbyssModVariables.PlayerVariables())).reputacao == -1) {
+		} else if ((entity.getCapability(VlAbyssModVariables.PLAYER_VARIABLES_CAPABILITY, null).orElseGet(VlAbyssModVariables.PlayerVariables::new)).reputacao == -1) {
 			if (entity instanceof Player _player) {
 				double reputationValue = (-2);
 				CompoundTag playerData = _player.getPersistentData();
@@ -254,7 +254,7 @@ public class PlayerTickReputacaoProcedure {
 					});
 				}
 			}
-		} else if ((entity.getCapability(VlAbyssModVariables.PLAYER_VARIABLES_CAPABILITY, null).orElse(new VlAbyssModVariables.PlayerVariables())).reputacao == -2) {
+		} else if ((entity.getCapability(VlAbyssModVariables.PLAYER_VARIABLES_CAPABILITY, null).orElseGet(VlAbyssModVariables.PlayerVariables::new)).reputacao == -2) {
 			if (entity instanceof Player _player) {
 				double reputationValue = (-3);
 				CompoundTag playerData = _player.getPersistentData();
@@ -285,7 +285,7 @@ public class PlayerTickReputacaoProcedure {
 					});
 				}
 			}
-		} else if ((entity.getCapability(VlAbyssModVariables.PLAYER_VARIABLES_CAPABILITY, null).orElse(new VlAbyssModVariables.PlayerVariables())).reputacao == -3) {
+		} else if ((entity.getCapability(VlAbyssModVariables.PLAYER_VARIABLES_CAPABILITY, null).orElseGet(VlAbyssModVariables.PlayerVariables::new)).reputacao == -3) {
 			if (entity instanceof Player _player) {
 				double reputationValue = (-4);
 				CompoundTag playerData = _player.getPersistentData();
@@ -316,7 +316,7 @@ public class PlayerTickReputacaoProcedure {
 					});
 				}
 			}
-		} else if ((entity.getCapability(VlAbyssModVariables.PLAYER_VARIABLES_CAPABILITY, null).orElse(new VlAbyssModVariables.PlayerVariables())).reputacao == -4) {
+		} else if ((entity.getCapability(VlAbyssModVariables.PLAYER_VARIABLES_CAPABILITY, null).orElseGet(VlAbyssModVariables.PlayerVariables::new)).reputacao == -4) {
 			if (entity instanceof Player _player) {
 				double reputationValue = (-6);
 				CompoundTag playerData = _player.getPersistentData();
@@ -347,7 +347,7 @@ public class PlayerTickReputacaoProcedure {
 					});
 				}
 			}
-		} else if ((entity.getCapability(VlAbyssModVariables.PLAYER_VARIABLES_CAPABILITY, null).orElse(new VlAbyssModVariables.PlayerVariables())).reputacao == -5) {
+		} else if ((entity.getCapability(VlAbyssModVariables.PLAYER_VARIABLES_CAPABILITY, null).orElseGet(VlAbyssModVariables.PlayerVariables::new)).reputacao == -5) {
 			if (entity instanceof Player _player) {
 				double reputationValue = (-8);
 				CompoundTag playerData = _player.getPersistentData();

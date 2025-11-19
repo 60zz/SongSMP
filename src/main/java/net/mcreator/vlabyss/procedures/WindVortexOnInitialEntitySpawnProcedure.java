@@ -14,7 +14,7 @@ public class WindVortexOnInitialEntitySpawnProcedure {
 				entity.discard();
 			if (world instanceof net.minecraft.server.level.ServerLevel) {
 				net.minecraft.server.level.ServerLevel _level = (net.minecraft.server.level.ServerLevel) world;
-				int particleCount = (int) 40;
+				int particleCount = (int) 30;
 				double centerX = x;
 				double centerY = y;
 				double centerZ = z;

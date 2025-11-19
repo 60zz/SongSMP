@@ -149,6 +149,10 @@
           {
             "name": "entity",
             "type": "entity"
+          },
+          {
+            "name": "world",
+            "type": "world"
           }
         ]
       },
@@ -308,8 +312,8 @@
       "registry_name": "mapa_abyss",
       "metadata": {
         "files": [
-          "src/main/resources/assets/vl_abyss/models/item/mapa_abyss.json",
-          "src/main/java/net/mcreator/vlabyss/item/MapaAbyssItem.java"
+          "src/main/java/net/mcreator/vlabyss/item/MapaAbyssItem.java",
+          "src/main/resources/assets/vl_abyss/models/item/mapa_abyss.json"
         ]
       },
       "path": "~/VL1_Abyss/MapaAbyssal/Item"
@@ -408,8 +412,8 @@
       "registry_name": "parry_deu_certo",
       "metadata": {
         "files": [
-          "src/main/java/net/mcreator/vlabyss/client/particle/ParryDeuCertoParticle.java",
-          "src/main/resources/assets/vl_abyss/particles/parry_deu_certo.json"
+          "src/main/resources/assets/vl_abyss/particles/parry_deu_certo.json",
+          "src/main/java/net/mcreator/vlabyss/client/particle/ParryDeuCertoParticle.java"
         ]
       },
       "path": "~/VL1_Abyss/Parry"
@@ -751,13 +755,13 @@
       "name": "MantraSoul",
       "type": "animatedentity",
       "compiles": true,
-      "locked_code": false,
+      "locked_code": true,
       "registry_name": "mantra_soul",
       "metadata": {
         "files": [
-          "src/main/java/net/mcreator/vlabyss/entity/model/MantraSoulModel.java",
           "src/main/java/net/mcreator/vlabyss/client/renderer/MantraSoulRenderer.java",
-          "src/main/java/net/mcreator/vlabyss/entity/MantraSoulEntity.java"
+          "src/main/java/net/mcreator/vlabyss/entity/MantraSoulEntity.java",
+          "src/main/java/net/mcreator/vlabyss/entity/model/MantraSoulModel.java"
         ]
       },
       "path": "~/VL1_Abyss/Alma/Alma"
@@ -854,25 +858,6 @@
       "path": "~/VL1_Abyss/Alma/Dano"
     },
     {
-      "name": "CapuzEsquecidoBaubleIsEquipped",
-      "type": "procedure",
-      "compiles": true,
-      "locked_code": false,
-      "registry_name": "capuz_esquecido_bauble_is_equipped",
-      "metadata": {
-        "files": [
-          "src/main/java/net/mcreator/vlabyss/procedures/CapuzEsquecidoBaubleIsEquippedProcedure.java"
-        ],
-        "dependencies": [
-          {
-            "name": "entity",
-            "type": "entity"
-          }
-        ]
-      },
-      "path": "~/VL1_Abyss/Artefatos/Procedure"
-    },
-    {
       "name": "CapuzEsquecidoBaubleIsUnequipped",
       "type": "procedure",
       "compiles": true,
@@ -903,8 +888,8 @@
       "registry_name": "voto_silencioso",
       "metadata": {
         "files": [
-          "src/main/resources/assets/vl_abyss/models/item/voto_silencioso.json",
-          "src/main/java/net/mcreator/vlabyss/item/VotoSilenciosoItem.java"
+          "src/main/java/net/mcreator/vlabyss/item/VotoSilenciosoItem.java",
+          "src/main/resources/assets/vl_abyss/models/item/voto_silencioso.json"
         ]
       },
       "path": "~/VL1_Abyss/Artefatos"
@@ -1082,13 +1067,13 @@
       "registry_name": "abyssion_ore",
       "metadata": {
         "files": [
-          "src/main/resources/data/vl_abyss/worldgen/configured_feature/abyssion_ore.json",
-          "src/main/resources/data/vl_abyss/worldgen/placed_feature/abyssion_ore.json",
           "src/main/java/net/mcreator/vlabyss/block/AbyssionOreBlock.java",
-          "src/main/resources/data/vl_abyss/forge/biome_modifier/abyssion_ore_biome_modifier.json",
+          "src/main/resources/assets/vl_abyss/models/block/abyssion_ore.json",
           "src/main/resources/assets/vl_abyss/models/item/abyssion_ore.json",
+          "src/main/resources/data/vl_abyss/worldgen/placed_feature/abyssion_ore.json",
+          "src/main/resources/data/vl_abyss/worldgen/configured_feature/abyssion_ore.json",
           "src/main/resources/assets/vl_abyss/blockstates/abyssion_ore.json",
-          "src/main/resources/assets/vl_abyss/models/block/abyssion_ore.json"
+          "src/main/resources/data/vl_abyss/forge/biome_modifier/abyssion_ore_biome_modifier.json"
         ]
       },
       "path": "~/VL1_Abyss/Abyssion"
@@ -1101,8 +1086,8 @@
       "registry_name": "raw_abyssion",
       "metadata": {
         "files": [
-          "src/main/java/net/mcreator/vlabyss/item/RawAbyssionItem.java",
-          "src/main/resources/assets/vl_abyss/models/item/raw_abyssion.json"
+          "src/main/resources/assets/vl_abyss/models/item/raw_abyssion.json",
+          "src/main/java/net/mcreator/vlabyss/item/RawAbyssionItem.java"
         ]
       },
       "path": "~/VL1_Abyss/Abyssion"
@@ -1202,10 +1187,10 @@
       "registry_name": "raw_abyssion_block",
       "metadata": {
         "files": [
-          "src/main/resources/data/vl_abyss/loot_tables/blocks/raw_abyssion_block.json",
-          "src/main/resources/assets/vl_abyss/models/item/raw_abyssion_block.json",
           "src/main/resources/assets/vl_abyss/models/block/raw_abyssion_block.json",
           "src/main/java/net/mcreator/vlabyss/block/RawAbyssionBlockBlock.java",
+          "src/main/resources/data/vl_abyss/loot_tables/blocks/raw_abyssion_block.json",
+          "src/main/resources/assets/vl_abyss/models/item/raw_abyssion_block.json",
           "src/main/resources/assets/vl_abyss/blockstates/raw_abyssion_block.json"
         ]
       },
@@ -1219,11 +1204,11 @@
       "registry_name": "abyssion_ingot_block",
       "metadata": {
         "files": [
-          "src/main/resources/assets/vl_abyss/models/item/abyssion_ingot_block.json",
+          "src/main/java/net/mcreator/vlabyss/block/AbyssionIngotBlockBlock.java",
           "src/main/resources/assets/vl_abyss/blockstates/abyssion_ingot_block.json",
           "src/main/resources/data/vl_abyss/loot_tables/blocks/abyssion_ingot_block.json",
           "src/main/resources/assets/vl_abyss/models/block/abyssion_ingot_block.json",
-          "src/main/java/net/mcreator/vlabyss/block/AbyssionIngotBlockBlock.java"
+          "src/main/resources/assets/vl_abyss/models/item/abyssion_ingot_block.json"
         ]
       },
       "path": "~/VL1_Abyss/Abyssion"
@@ -1300,8 +1285,8 @@
       "registry_name": "anel_enferrujado",
       "metadata": {
         "files": [
-          "src/main/resources/assets/vl_abyss/models/item/anel_enferrujado.json",
-          "src/main/java/net/mcreator/vlabyss/item/AnelEnferrujadoItem.java"
+          "src/main/java/net/mcreator/vlabyss/item/AnelEnferrujadoItem.java",
+          "src/main/resources/assets/vl_abyss/models/item/anel_enferrujado.json"
         ]
       },
       "path": "~/VL1_Abyss/Artefatos"
@@ -1407,8 +1392,8 @@
       "registry_name": "cinto_dos_ecos",
       "metadata": {
         "files": [
-          "src/main/resources/assets/vl_abyss/models/item/cinto_dos_ecos.json",
-          "src/main/java/net/mcreator/vlabyss/item/CintoDosEcosItem.java"
+          "src/main/java/net/mcreator/vlabyss/item/CintoDosEcosItem.java",
+          "src/main/resources/assets/vl_abyss/models/item/cinto_dos_ecos.json"
         ]
       },
       "path": "~/VL1_Abyss/Artefatos"
@@ -1517,49 +1502,11 @@
       "registry_name": "botas_vazio_abyssal",
       "metadata": {
         "files": [
-          "src/main/java/net/mcreator/vlabyss/item/BotasVazioAbyssalItem.java",
-          "src/main/resources/assets/vl_abyss/models/item/botas_vazio_abyssal.json"
+          "src/main/resources/assets/vl_abyss/models/item/botas_vazio_abyssal.json",
+          "src/main/java/net/mcreator/vlabyss/item/BotasVazioAbyssalItem.java"
         ]
       },
       "path": "~/VL1_Abyss/Artefatos"
-    },
-    {
-      "name": "BotasVazioAbyssalBaubleIsEquipped",
-      "type": "procedure",
-      "compiles": true,
-      "locked_code": false,
-      "registry_name": "botas_vazio_abyssal_bauble_is_equipped",
-      "metadata": {
-        "files": [
-          "src/main/java/net/mcreator/vlabyss/procedures/BotasVazioAbyssalBaubleIsEquippedProcedure.java"
-        ],
-        "dependencies": [
-          {
-            "name": "entity",
-            "type": "entity"
-          }
-        ]
-      },
-      "path": "~/VL1_Abyss/Artefatos/Procedure"
-    },
-    {
-      "name": "BotasVazioAbyssalBaubleIsUnequipped",
-      "type": "procedure",
-      "compiles": true,
-      "locked_code": false,
-      "registry_name": "botas_vazio_abyssal_bauble_is_unequipped",
-      "metadata": {
-        "files": [
-          "src/main/java/net/mcreator/vlabyss/procedures/BotasVazioAbyssalBaubleIsUnequippedProcedure.java"
-        ],
-        "dependencies": [
-          {
-            "name": "entity",
-            "type": "entity"
-          }
-        ]
-      },
-      "path": "~/VL1_Abyss/Artefatos/Procedure"
     },
     {
       "name": "Soul",
@@ -1582,8 +1529,8 @@
       "registry_name": "fragmento_primordial",
       "metadata": {
         "files": [
-          "src/main/resources/assets/vl_abyss/models/item/fragmento_primordial.json",
-          "src/main/java/net/mcreator/vlabyss/item/FragmentoPrimordialItem.java"
+          "src/main/java/net/mcreator/vlabyss/item/FragmentoPrimordialItem.java",
+          "src/main/resources/assets/vl_abyss/models/item/fragmento_primordial.json"
         ]
       },
       "path": "~/VL1_Abyss/Artefatos"
@@ -1664,9 +1611,9 @@
       "registry_name": "j",
       "metadata": {
         "files": [
-          "src/main/java/net/mcreator/vlabyss/world/inventory/JMenu.java",
           "src/main/java/net/mcreator/vlabyss/network/JButtonMessage.java",
-          "src/main/java/net/mcreator/vlabyss/client/gui/JScreen.java"
+          "src/main/java/net/mcreator/vlabyss/client/gui/JScreen.java",
+          "src/main/java/net/mcreator/vlabyss/world/inventory/JMenu.java"
         ]
       },
       "path": "~/VL1_Abyss/Alma/Mantra/DesbloqueiaMantra"
@@ -2007,8 +1954,8 @@
       "registry_name": "liberacao_mantra",
       "metadata": {
         "files": [
-          "src/main/resources/assets/vl_abyss/models/item/liberacao_mantra.json",
-          "src/main/java/net/mcreator/vlabyss/item/LiberacaoMantraItem.java"
+          "src/main/java/net/mcreator/vlabyss/item/LiberacaoMantraItem.java",
+          "src/main/resources/assets/vl_abyss/models/item/liberacao_mantra.json"
         ]
       },
       "path": "~/VL1_Abyss/LiberacaoMantra"
@@ -2359,8 +2306,8 @@
       "registry_name": "abismo",
       "metadata": {
         "files": [
-          "src/main/resources/data/vl_abyss/dimension/abismo.json",
           "src/main/resources/data/vl_abyss/dimension_type/abismo.json",
+          "src/main/resources/data/vl_abyss/dimension/abismo.json",
           "src/main/java/net/mcreator/vlabyss/world/dimension/AbismoDimension.java"
         ]
       },
@@ -2542,8 +2489,8 @@
       "registry_name": "particulamorreu_2",
       "metadata": {
         "files": [
-          "src/main/resources/assets/vl_abyss/particles/particulamorreu_2.json",
-          "src/main/java/net/mcreator/vlabyss/client/particle/Particulamorreu2Particle.java"
+          "src/main/java/net/mcreator/vlabyss/client/particle/Particulamorreu2Particle.java",
+          "src/main/resources/assets/vl_abyss/particles/particulamorreu_2.json"
         ]
       },
       "path": "~/VL1_Abyss/Morreu/Particula"
@@ -2820,8 +2767,8 @@
       "registry_name": "vento_particula_1",
       "metadata": {
         "files": [
-          "src/main/resources/assets/vl_abyss/particles/vento_particula_1.json",
-          "src/main/java/net/mcreator/vlabyss/client/particle/VentoParticula1Particle.java"
+          "src/main/java/net/mcreator/vlabyss/client/particle/VentoParticula1Particle.java",
+          "src/main/resources/assets/vl_abyss/particles/vento_particula_1.json"
         ]
       },
       "path": "~/VL1_Abyss/Mantras/MantrasPrincipais/Respiro/AstralWind/Particulas"
@@ -2978,25 +2925,6 @@
       "path": "~/VL1_Abyss/Mantras/Dano"
     },
     {
-      "name": "RecarregaMantra",
-      "type": "procedure",
-      "compiles": true,
-      "locked_code": false,
-      "registry_name": "recarrega_mantra",
-      "metadata": {
-        "files": [
-          "src/main/java/net/mcreator/vlabyss/procedures/RecarregaMantraProcedure.java"
-        ],
-        "dependencies": [
-          {
-            "name": "entity",
-            "type": "entity"
-          }
-        ]
-      },
-      "path": "~/VL1_Abyss/Mantras/RecarregaMantra/Procedure"
-    },
-    {
       "name": "EthirQuantia",
       "type": "overlay",
       "compiles": true,
@@ -3062,30 +2990,11 @@
       "registry_name": "pocao_rejuvenescimento",
       "metadata": {
         "files": [
-          "src/main/java/net/mcreator/vlabyss/item/PocaoRejuvenescimentoItem.java",
-          "src/main/resources/assets/vl_abyss/models/item/pocao_rejuvenescimento.json"
+          "src/main/resources/assets/vl_abyss/models/item/pocao_rejuvenescimento.json",
+          "src/main/java/net/mcreator/vlabyss/item/PocaoRejuvenescimentoItem.java"
         ]
       },
       "path": "~/VL1_Abyss/Pocoes/Item"
-    },
-    {
-      "name": "PocaoResistenciaEternaPlayerFinishesUsingItem",
-      "type": "procedure",
-      "compiles": true,
-      "locked_code": false,
-      "registry_name": "pocao_resistencia_eterna_player_finishes_using_item",
-      "metadata": {
-        "files": [
-          "src/main/java/net/mcreator/vlabyss/procedures/PocaoResistenciaEternaPlayerFinishesUsingItemProcedure.java"
-        ],
-        "dependencies": [
-          {
-            "name": "entity",
-            "type": "entity"
-          }
-        ]
-      },
-      "path": "~/VL1_Abyss/Pocoes/Procedure"
     },
     {
       "name": "PocaoResistenciaEterna",
@@ -3095,8 +3004,8 @@
       "registry_name": "pocao_resistencia_eterna",
       "metadata": {
         "files": [
-          "src/main/java/net/mcreator/vlabyss/item/PocaoResistenciaEternaItem.java",
-          "src/main/resources/assets/vl_abyss/models/item/pocao_resistencia_eterna.json"
+          "src/main/resources/assets/vl_abyss/models/item/pocao_resistencia_eterna.json",
+          "src/main/java/net/mcreator/vlabyss/item/PocaoResistenciaEternaItem.java"
         ]
       },
       "path": "~/VL1_Abyss/Pocoes/Item"
@@ -3142,8 +3051,8 @@
       "registry_name": "pocao_renascimento",
       "metadata": {
         "files": [
-          "src/main/resources/assets/vl_abyss/models/item/pocao_renascimento.json",
-          "src/main/java/net/mcreator/vlabyss/item/PocaoRenascimentoItem.java"
+          "src/main/java/net/mcreator/vlabyss/item/PocaoRenascimentoItem.java",
+          "src/main/resources/assets/vl_abyss/models/item/pocao_renascimento.json"
         ]
       },
       "path": "~/VL1_Abyss/Pocoes/Item"
@@ -3249,41 +3158,6 @@
         ]
       },
       "path": "~/VL1_Abyss/Reputation"
-    },
-    {
-      "name": "MatouCriaturaInogt",
-      "type": "procedure",
-      "compiles": true,
-      "locked_code": false,
-      "registry_name": "matou_criatura_inogt",
-      "metadata": {
-        "files": [
-          "src/main/java/net/mcreator/vlabyss/procedures/MatouCriaturaInogtProcedure.java"
-        ],
-        "dependencies": [
-          {
-            "name": "sourceentity",
-            "type": "entity"
-          },
-          {
-            "name": "x",
-            "type": "number"
-          },
-          {
-            "name": "y",
-            "type": "number"
-          },
-          {
-            "name": "z",
-            "type": "number"
-          },
-          {
-            "name": "world",
-            "type": "world"
-          }
-        ]
-      },
-      "path": "~/VL1_Abyss/Abyssion/IngotTransform"
     },
     {
       "name": "ReputacaoProcedure",
@@ -3538,29 +3412,6 @@
           {
             "name": "entity",
             "type": "entity"
-          }
-        ]
-      },
-      "path": "~/VL1_Abyss/Mantras/InstantRegenMantra/Procedure"
-    },
-    {
-      "name": "InstantRegenMantraEffectStartedapplied",
-      "type": "procedure",
-      "compiles": true,
-      "locked_code": false,
-      "registry_name": "instant_regen_mantra_effect_startedapplied",
-      "metadata": {
-        "files": [
-          "src/main/java/net/mcreator/vlabyss/procedures/InstantRegenMantraEffectStartedappliedProcedure.java"
-        ],
-        "dependencies": [
-          {
-            "name": "entity",
-            "type": "entity"
-          },
-          {
-            "name": "world",
-            "type": "world"
           }
         ]
       },
@@ -3854,15 +3705,15 @@
       "registry_name": "runas",
       "metadata": {
         "files": [
-          "src/main/resources/assets/vl_abyss/models/item/runas_4.json",
           "src/main/resources/assets/vl_abyss/models/item/runas_6.json",
-          "src/main/resources/assets/vl_abyss/models/item/runas_1.json",
-          "src/main/java/net/mcreator/vlabyss/item/RunasItem.java",
           "src/main/resources/assets/vl_abyss/models/item/runas_0.json",
-          "src/main/resources/assets/vl_abyss/models/item/runas_2.json",
           "src/main/resources/assets/vl_abyss/models/item/runas_5.json",
+          "src/main/resources/assets/vl_abyss/models/item/runas_1.json",
+          "src/main/resources/assets/vl_abyss/models/item/runas_2.json",
+          "src/main/resources/assets/vl_abyss/models/item/runas_4.json",
           "src/main/resources/assets/vl_abyss/models/item/runas.json",
-          "src/main/resources/assets/vl_abyss/models/item/runas_3.json"
+          "src/main/resources/assets/vl_abyss/models/item/runas_3.json",
+          "src/main/java/net/mcreator/vlabyss/item/RunasItem.java"
         ]
       },
       "path": "~/VL1_Abyss/PortaSelamento/Runas"
@@ -4002,9 +3853,9 @@
       "registry_name": "cavaleiro_alado",
       "metadata": {
         "files": [
+          "src/main/resources/assets/vl_abyss/models/item/cavaleiro_alado_spawn_egg.json",
           "src/main/java/net/mcreator/vlabyss/client/renderer/CavaleiroAladoRenderer.java",
           "src/main/java/net/mcreator/vlabyss/entity/CavaleiroAladoEntity.java",
-          "src/main/resources/assets/vl_abyss/models/item/cavaleiro_alado_spawn_egg.json",
           "src/main/java/net/mcreator/vlabyss/entity/model/CavaleiroAladoModel.java"
         ]
       },
@@ -4212,44 +4063,6 @@
       "path": "~/VL1_Abyss/AbismoBosses/CavaleiroAlado/Procedure"
     },
     {
-      "name": "MorreuVoltaBuffs",
-      "type": "procedure",
-      "compiles": true,
-      "locked_code": false,
-      "registry_name": "morreu_volta_buffs",
-      "metadata": {
-        "files": [
-          "src/main/java/net/mcreator/vlabyss/procedures/MorreuVoltaBuffsProcedure.java"
-        ],
-        "dependencies": [
-          {
-            "name": "entity",
-            "type": "entity"
-          }
-        ]
-      },
-      "path": "~/VL1_Abyss/Classes/Procedure"
-    },
-    {
-      "name": "MorreuVoltaBuffsPocao",
-      "type": "procedure",
-      "compiles": true,
-      "locked_code": false,
-      "registry_name": "morreu_volta_buffs_pocao",
-      "metadata": {
-        "files": [
-          "src/main/java/net/mcreator/vlabyss/procedures/MorreuVoltaBuffsPocaoProcedure.java"
-        ],
-        "dependencies": [
-          {
-            "name": "entity",
-            "type": "entity"
-          }
-        ]
-      },
-      "path": "~/VL1_Abyss/Pocoes/Procedure"
-    },
-    {
       "name": "TombstoneAbyss",
       "type": "block",
       "compiles": true,
@@ -4257,144 +4070,15 @@
       "registry_name": "tombstone_abyss",
       "metadata": {
         "files": [
-          "src/main/resources/assets/vl_abyss/models/item/tombstone_abyss.json",
-          "src/main/java/net/mcreator/vlabyss/block/TombstoneAbyssBlock.java",
-          "src/main/resources/data/vl_abyss/loot_tables/blocks/tombstone_abyss.json",
-          "src/main/resources/assets/vl_abyss/blockstates/tombstone_abyss.json",
+          "src/main/java/net/mcreator/vlabyss/block/entity/TombstoneAbyssBlockEntity.java",
           "src/main/resources/assets/vl_abyss/models/block/tombstone_abyss.json",
-          "src/main/java/net/mcreator/vlabyss/block/entity/TombstoneAbyssBlockEntity.java"
+          "src/main/resources/assets/vl_abyss/models/item/tombstone_abyss.json",
+          "src/main/resources/data/vl_abyss/loot_tables/blocks/tombstone_abyss.json",
+          "src/main/java/net/mcreator/vlabyss/block/TombstoneAbyssBlock.java",
+          "src/main/resources/assets/vl_abyss/blockstates/tombstone_abyss.json"
         ]
       },
       "path": "~/VL1_Abyss/AbismoBosses/BlocoInvocacao"
-    },
-    {
-      "name": "MetalForja",
-      "type": "gui",
-      "compiles": true,
-      "locked_code": false,
-      "registry_name": "metal_forja",
-      "metadata": {
-        "files": [
-          "src/main/java/net/mcreator/vlabyss/client/gui/MetalForjaScreen.java",
-          "src/main/java/net/mcreator/vlabyss/world/inventory/MetalForjaMenu.java"
-        ]
-      },
-      "path": "~/VL1_Abyss/Forja"
-    },
-    {
-      "name": "MetalForging",
-      "type": "block",
-      "compiles": true,
-      "locked_code": false,
-      "registry_name": "metal_forging",
-      "metadata": {
-        "files": [
-          "src/main/java/net/mcreator/vlabyss/block/MetalForgingBlock.java",
-          "src/main/resources/assets/vl_abyss/models/item/metal_forging.json",
-          "src/main/java/net/mcreator/vlabyss/block/entity/MetalForgingBlockEntity.java",
-          "src/main/resources/assets/vl_abyss/blockstates/metal_forging.json",
-          "src/main/resources/assets/vl_abyss/models/block/metal_forging.json",
-          "src/main/resources/data/vl_abyss/loot_tables/blocks/metal_forging.json"
-        ]
-      },
-      "path": "~/VL1_Abyss/Forja"
-    },
-    {
-      "name": "MetalForgingBlockAdded",
-      "type": "procedure",
-      "compiles": true,
-      "locked_code": false,
-      "registry_name": "metal_forging_block_added",
-      "metadata": {
-        "files": [
-          "src/main/java/net/mcreator/vlabyss/procedures/MetalForgingBlockAddedProcedure.java"
-        ],
-        "dependencies": [
-          {
-            "name": "x",
-            "type": "number"
-          },
-          {
-            "name": "y",
-            "type": "number"
-          },
-          {
-            "name": "z",
-            "type": "number"
-          },
-          {
-            "name": "world",
-            "type": "world"
-          }
-        ]
-      },
-      "path": "~/VL1_Abyss/Forja/Procedure"
-    },
-    {
-      "name": "MelhoraIngotAbyssion",
-      "type": "procedure",
-      "compiles": true,
-      "locked_code": false,
-      "registry_name": "melhora_ingot_abyssion",
-      "metadata": {
-        "files": [
-          "src/main/java/net/mcreator/vlabyss/procedures/MelhoraIngotAbyssionProcedure.java"
-        ],
-        "dependencies": [
-          {
-            "name": "entity",
-            "type": "entity"
-          },
-          {
-            "name": "x",
-            "type": "number"
-          },
-          {
-            "name": "y",
-            "type": "number"
-          },
-          {
-            "name": "z",
-            "type": "number"
-          },
-          {
-            "name": "world",
-            "type": "world"
-          }
-        ]
-      },
-      "path": "~/VL1_Abyss/Forja/Procedure"
-    },
-    {
-      "name": "MetalForgingOnTickUpdate",
-      "type": "procedure",
-      "compiles": true,
-      "locked_code": false,
-      "registry_name": "metal_forging_on_tick_update",
-      "metadata": {
-        "files": [
-          "src/main/java/net/mcreator/vlabyss/procedures/MetalForgingOnTickUpdateProcedure.java"
-        ],
-        "dependencies": [
-          {
-            "name": "x",
-            "type": "number"
-          },
-          {
-            "name": "y",
-            "type": "number"
-          },
-          {
-            "name": "z",
-            "type": "number"
-          },
-          {
-            "name": "world",
-            "type": "world"
-          }
-        ]
-      },
-      "path": "~/VL1_Abyss/Forja/Procedure"
     },
     {
       "name": "Ssmp",
@@ -4408,25 +4092,6 @@
         ]
       },
       "path": "~/Configuracao"
-    },
-    {
-      "name": "AcertouComLuvaSangrenta",
-      "type": "procedure",
-      "compiles": true,
-      "locked_code": false,
-      "registry_name": "acertou_com_luva_sangrenta",
-      "metadata": {
-        "dependencies": [
-          {
-            "name": "sourceentity",
-            "type": "entity"
-          }
-        ],
-        "files": [
-          "src/main/java/net/mcreator/vlabyss/procedures/AcertouComLuvaSangrentaProcedure.java"
-        ]
-      },
-      "path": "~/VL1_Abyss/Artefatos/Procedure"
     },
     {
       "name": "ParryOnKeyPressed",
@@ -4450,45 +4115,6 @@
         ]
       },
       "path": "~/VL1_Abyss/Parry/Key"
-    },
-    {
-      "name": "MantraSoulRightClickedOnEntity",
-      "type": "procedure",
-      "compiles": true,
-      "locked_code": false,
-      "registry_name": "mantra_soul_right_clicked_on_entity",
-      "metadata": {
-        "dependencies": [
-          {
-            "name": "entity",
-            "type": "entity"
-          },
-          {
-            "name": "sourceentity",
-            "type": "entity"
-          },
-          {
-            "name": "x",
-            "type": "number"
-          },
-          {
-            "name": "y",
-            "type": "number"
-          },
-          {
-            "name": "z",
-            "type": "number"
-          },
-          {
-            "name": "world",
-            "type": "world"
-          }
-        ],
-        "files": [
-          "src/main/java/net/mcreator/vlabyss/procedures/MantraSoulRightClickedOnEntityProcedure.java"
-        ]
-      },
-      "path": "~/VL1_Abyss/Alma/Alma"
     },
     {
       "name": "Inteligencia",
@@ -4523,6 +4149,22 @@
           {
             "name": "entity",
             "type": "entity"
+          },
+          {
+            "name": "x",
+            "type": "number"
+          },
+          {
+            "name": "y",
+            "type": "number"
+          },
+          {
+            "name": "z",
+            "type": "number"
+          },
+          {
+            "name": "world",
+            "type": "world"
           }
         ],
         "files": [
@@ -4539,8 +4181,8 @@
       "registry_name": "tombstone_abyss_blockstate",
       "metadata": {
         "files": [
-          "src/main/resources/assets/vl_abyss/models/block/tombstone_abyss_blockstate_blockstate_0.json",
-          "src/main/resources/assets/vl_abyss/models/block/tombstone_abyss_blockstate_blockstate_1.json"
+          "src/main/resources/assets/vl_abyss/models/block/tombstone_abyss_blockstate_blockstate_1.json",
+          "src/main/resources/assets/vl_abyss/models/block/tombstone_abyss_blockstate_blockstate_0.json"
         ]
       },
       "path": "~/VL1_Abyss/AbismoBosses/BlocoInvocacao"
@@ -4553,8 +4195,8 @@
       "registry_name": "capuz_esquecido",
       "metadata": {
         "files": [
-          "src/main/java/net/mcreator/vlabyss/item/CapuzEsquecidoItem.java",
-          "src/main/resources/assets/vl_abyss/models/item/capuz_esquecido.json"
+          "src/main/resources/assets/vl_abyss/models/item/capuz_esquecido.json",
+          "src/main/java/net/mcreator/vlabyss/item/CapuzEsquecidoItem.java"
         ]
       },
       "path": "~/VL1_Abyss/Artefatos"
@@ -4654,25 +4296,6 @@
       "path": "~/VL1_Abyss/Mantras/InstantRegenMantra"
     },
     {
-      "name": "RegenMantraOnEffectActiveTick",
-      "type": "procedure",
-      "compiles": true,
-      "locked_code": false,
-      "registry_name": "regen_mantra_on_effect_active_tick",
-      "metadata": {
-        "dependencies": [
-          {
-            "name": "entity",
-            "type": "entity"
-          }
-        ],
-        "files": [
-          "src/main/java/net/mcreator/vlabyss/procedures/RegenMantraOnEffectActiveTickProcedure.java"
-        ]
-      },
-      "path": "~/VL1_Abyss/Mantras/InstantRegenMantra/Procedure"
-    },
-    {
       "name": "RecarregaMantra1",
       "type": "procedure",
       "compiles": true,
@@ -4699,8 +4322,8 @@
       "registry_name": "flaming_slash",
       "metadata": {
         "files": [
-          "src/main/resources/assets/vl_abyss/particles/flaming_slash.json",
-          "src/main/java/net/mcreator/vlabyss/client/particle/FlamingSlashParticle.java"
+          "src/main/java/net/mcreator/vlabyss/client/particle/FlamingSlashParticle.java",
+          "src/main/resources/assets/vl_abyss/particles/flaming_slash.json"
         ]
       },
       "path": "~/VL1_Abyss/Mantras/MantrasPrincipais/Chama/Corte"
@@ -4717,45 +4340,6 @@
         ]
       },
       "path": "~/VL1_Abyss/Mantras/MantrasPrincipais/Chama/Efeito"
-    },
-    {
-      "name": "DeuCriticoComFlamingCut",
-      "type": "procedure",
-      "compiles": true,
-      "locked_code": false,
-      "registry_name": "deu_critico_com_flaming_cut",
-      "metadata": {
-        "dependencies": [
-          {
-            "name": "entity",
-            "type": "entity"
-          },
-          {
-            "name": "sourceentity",
-            "type": "entity"
-          },
-          {
-            "name": "x",
-            "type": "number"
-          },
-          {
-            "name": "y",
-            "type": "number"
-          },
-          {
-            "name": "z",
-            "type": "number"
-          },
-          {
-            "name": "world",
-            "type": "world"
-          }
-        ],
-        "files": [
-          "src/main/java/net/mcreator/vlabyss/procedures/DeuCriticoComFlamingCutProcedure.java"
-        ]
-      },
-      "path": "~/VL1_Abyss/Mantras/MantrasPrincipais/Chama/Efeito/Procedure"
     },
     {
       "name": "MantraSoulCorrompida",
@@ -4832,9 +4416,9 @@
       "registry_name": "wind_vortex",
       "metadata": {
         "files": [
-          "src/main/java/net/mcreator/vlabyss/client/renderer/WindVortexRenderer.java",
           "src/main/java/net/mcreator/vlabyss/entity/WindVortexEntity.java",
-          "src/main/java/net/mcreator/vlabyss/entity/model/WindVortexModel.java"
+          "src/main/java/net/mcreator/vlabyss/entity/model/WindVortexModel.java",
+          "src/main/java/net/mcreator/vlabyss/client/renderer/WindVortexRenderer.java"
         ]
       },
       "path": "~/VL1_Abyss/Mantras/MantrasPrincipais/Respiro/WindVortex/Vortex"
@@ -5006,111 +4590,6 @@
       "path": "~/VL1_Abyss/Mantras/MantraKeyAtivacao/Key"
     },
     {
-      "name": "ChamaPrimeiraHabilidade",
-      "type": "procedure",
-      "compiles": true,
-      "locked_code": false,
-      "registry_name": "chama_primeira_habilidade",
-      "metadata": {
-        "dependencies": [
-          {
-            "name": "entity",
-            "type": "entity"
-          },
-          {
-            "name": "x",
-            "type": "number"
-          },
-          {
-            "name": "y",
-            "type": "number"
-          },
-          {
-            "name": "z",
-            "type": "number"
-          },
-          {
-            "name": "world",
-            "type": "world"
-          }
-        ],
-        "files": [
-          "src/main/java/net/mcreator/vlabyss/procedures/ChamaPrimeiraHabilidadeProcedure.java"
-        ]
-      },
-      "path": "~/VL1_Abyss/Mantras/MantraKeyAtivacao/MantrasProcedure/PrimeiraHabilidade"
-    },
-    {
-      "name": "RespiroPrimeiraHabilidade",
-      "type": "procedure",
-      "compiles": true,
-      "locked_code": false,
-      "registry_name": "respiro_primeira_habilidade",
-      "metadata": {
-        "dependencies": [
-          {
-            "name": "entity",
-            "type": "entity"
-          },
-          {
-            "name": "x",
-            "type": "number"
-          },
-          {
-            "name": "y",
-            "type": "number"
-          },
-          {
-            "name": "z",
-            "type": "number"
-          },
-          {
-            "name": "world",
-            "type": "world"
-          }
-        ],
-        "files": [
-          "src/main/java/net/mcreator/vlabyss/procedures/RespiroPrimeiraHabilidadeProcedure.java"
-        ]
-      },
-      "path": "~/VL1_Abyss/Mantras/MantraKeyAtivacao/MantrasProcedure/PrimeiraHabilidade"
-    },
-    {
-      "name": "EscuridaoPrimeiraHabilidade",
-      "type": "procedure",
-      "compiles": true,
-      "locked_code": false,
-      "registry_name": "escuridao_primeira_habilidade",
-      "metadata": {
-        "dependencies": [
-          {
-            "name": "entity",
-            "type": "entity"
-          },
-          {
-            "name": "x",
-            "type": "number"
-          },
-          {
-            "name": "y",
-            "type": "number"
-          },
-          {
-            "name": "z",
-            "type": "number"
-          },
-          {
-            "name": "world",
-            "type": "world"
-          }
-        ],
-        "files": [
-          "src/main/java/net/mcreator/vlabyss/procedures/EscuridaoPrimeiraHabilidadeProcedure.java"
-        ]
-      },
-      "path": "~/VL1_Abyss/Mantras/MantraKeyAtivacao/MantrasProcedure/PrimeiraHabilidade"
-    },
-    {
       "name": "LuzPrimeiraHabilidade",
       "type": "procedure",
       "compiles": true,
@@ -5247,6 +4726,317 @@
       "locked_code": false,
       "registry_name": "luz_segunda_habilidade",
       "metadata": {
+        "dependencies": [],
+        "files": [
+          "src/main/java/net/mcreator/vlabyss/procedures/LuzSegundaHabilidadeProcedure.java"
+        ]
+      },
+      "path": "~/VL1_Abyss/Mantras/MantraKeyAtivacao/MantrasProcedure/SegundaHabilidade"
+    },
+    {
+      "name": "EscuridaoSegundaHabilidade",
+      "type": "procedure",
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "escuridao_segunda_habilidade",
+      "metadata": {
+        "dependencies": [],
+        "files": [
+          "src/main/java/net/mcreator/vlabyss/procedures/EscuridaoSegundaHabilidadeProcedure.java"
+        ]
+      },
+      "path": "~/VL1_Abyss/Mantras/MantraKeyAtivacao/MantrasProcedure/SegundaHabilidade"
+    },
+    {
+      "name": "CounterSpell",
+      "type": "projectile",
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "counter_spell",
+      "metadata": {
+        "files": [
+          "src/main/java/net/mcreator/vlabyss/entity/CounterSpellEntity.java"
+        ]
+      },
+      "path": "~/VL1_Abyss/Mantras/MantrasPrincipais/Luz/CounterSpells"
+    },
+    {
+      "name": "BonusAdditionalDamage",
+      "type": "attribute",
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "bonus_additional_damage",
+      "metadata": {
+        "files": []
+      },
+      "path": "~/VL1_Abyss/Mantras/Atributo"
+    },
+    {
+      "name": "FlameBonus",
+      "type": "attribute",
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "flame_bonus",
+      "metadata": {
+        "files": []
+      },
+      "path": "~/VL1_Abyss/Mantras/Atributo"
+    },
+    {
+      "name": "BlizzardBonus",
+      "type": "attribute",
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "blizzard_bonus",
+      "metadata": {
+        "files": []
+      },
+      "path": "~/VL1_Abyss/Mantras/Atributo"
+    },
+    {
+      "name": "DarknessBonus",
+      "type": "attribute",
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "darkness_bonus",
+      "metadata": {
+        "files": []
+      },
+      "path": "~/VL1_Abyss/Mantras/Atributo"
+    },
+    {
+      "name": "LightBonus",
+      "type": "attribute",
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "light_bonus",
+      "metadata": {
+        "files": []
+      },
+      "path": "~/VL1_Abyss/Mantras/Atributo"
+    },
+    {
+      "name": "WindBonus",
+      "type": "attribute",
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "wind_bonus",
+      "metadata": {
+        "files": []
+      },
+      "path": "~/VL1_Abyss/Mantras/Atributo"
+    },
+    {
+      "name": "ThunderstormBonus",
+      "type": "attribute",
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "thunderstorm_bonus",
+      "metadata": {
+        "files": []
+      },
+      "path": "~/VL1_Abyss/Mantras/Atributo"
+    },
+    {
+      "name": "MantraRegeneration",
+      "type": "attribute",
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "mantra_regeneration",
+      "metadata": {
+        "files": []
+      },
+      "path": "~/VL1_Abyss/Mantras/Atributo"
+    },
+    {
+      "name": "InfinityEssencePotion",
+      "type": "item",
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "infinity_essence_potion",
+      "metadata": {
+        "files": [
+          "src/main/java/net/mcreator/vlabyss/item/InfinityEssencePotionItem.java",
+          "src/main/resources/assets/vl_abyss/models/item/infinity_essence_potion.json"
+        ]
+      },
+      "path": "~/VL1_Abyss/Mantras/Pocoes"
+    },
+    {
+      "name": "ArcaneStrengthPotion",
+      "type": "item",
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "arcane_strength_potion",
+      "metadata": {
+        "files": [
+          "src/main/java/net/mcreator/vlabyss/item/ArcaneStrengthPotionItem.java",
+          "src/main/resources/assets/vl_abyss/models/item/arcane_strength_potion.json"
+        ]
+      },
+      "path": "~/VL1_Abyss/Mantras/Pocoes"
+    },
+    {
+      "name": "SpiritFlowPotion",
+      "type": "item",
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "spirit_flow_potion",
+      "metadata": {
+        "files": [
+          "src/main/resources/assets/vl_abyss/models/item/spirit_flow_potion.json",
+          "src/main/java/net/mcreator/vlabyss/item/SpiritFlowPotionItem.java"
+        ]
+      },
+      "path": "~/VL1_Abyss/Mantras/Pocoes"
+    },
+    {
+      "name": "SpiritFlowPotionPlayerFinishesUsingItem",
+      "type": "procedure",
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "spirit_flow_potion_player_finishes_using_item",
+      "metadata": {
+        "dependencies": [
+          {
+            "name": "entity",
+            "type": "entity"
+          }
+        ],
+        "files": [
+          "src/main/java/net/mcreator/vlabyss/procedures/SpiritFlowPotionPlayerFinishesUsingItemProcedure.java"
+        ]
+      },
+      "path": "~/VL1_Abyss/Mantras/Pocoes/Procedure"
+    },
+    {
+      "name": "ElixirMantra",
+      "type": "potioneffect",
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "elixir_mantra",
+      "metadata": {
+        "files": [
+          "src/main/java/net/mcreator/vlabyss/potion/ElixirMantraMobEffect.java"
+        ]
+      },
+      "path": "~/VL1_Abyss/Mantras/InstantRegenMantra"
+    },
+    {
+      "name": "ArcaneStrengthPotionPlayerFinishesUsingItem",
+      "type": "procedure",
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "arcane_strength_potion_player_finishes_using_item",
+      "metadata": {
+        "dependencies": [
+          {
+            "name": "entity",
+            "type": "entity"
+          }
+        ],
+        "files": [
+          "src/main/java/net/mcreator/vlabyss/procedures/ArcaneStrengthPotionPlayerFinishesUsingItemProcedure.java"
+        ]
+      },
+      "path": "~/VL1_Abyss/Mantras/Pocoes/Procedure"
+    },
+    {
+      "name": "EssenceMantra",
+      "type": "potioneffect",
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "essence_mantra",
+      "metadata": {
+        "files": [
+          "src/main/java/net/mcreator/vlabyss/potion/EssenceMantraMobEffect.java"
+        ]
+      },
+      "path": "~/VL1_Abyss/Mantras/InstantRegenMantra"
+    },
+    {
+      "name": "EssenceMantraEffectExpires",
+      "type": "procedure",
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "essence_mantra_effect_expires",
+      "metadata": {
+        "dependencies": [
+          {
+            "name": "entity",
+            "type": "entity"
+          }
+        ],
+        "files": [
+          "src/main/java/net/mcreator/vlabyss/procedures/EssenceMantraEffectExpiresProcedure.java"
+        ]
+      },
+      "path": "~/VL1_Abyss/Mantras/InstantRegenMantra/Procedure"
+    },
+    {
+      "name": "EssenceMantraEffectStartedapplied",
+      "type": "procedure",
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "essence_mantra_effect_startedapplied",
+      "metadata": {
+        "dependencies": [
+          {
+            "name": "entity",
+            "type": "entity"
+          }
+        ],
+        "files": [
+          "src/main/java/net/mcreator/vlabyss/procedures/EssenceMantraEffectStartedappliedProcedure.java"
+        ]
+      },
+      "path": "~/VL1_Abyss/Mantras/InstantRegenMantra/Procedure"
+    },
+    {
+      "name": "InfinityEssencePotionPlayerFinishesUsingItem",
+      "type": "procedure",
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "infinity_essence_potion_player_finishes_using_item",
+      "metadata": {
+        "dependencies": [
+          {
+            "name": "entity",
+            "type": "entity"
+          }
+        ],
+        "files": [
+          "src/main/java/net/mcreator/vlabyss/procedures/InfinityEssencePotionPlayerFinishesUsingItemProcedure.java"
+        ]
+      },
+      "path": "~/VL1_Abyss/Mantras/Pocoes/Procedure"
+    },
+    {
+      "name": "RecarregaMantra",
+      "type": "procedure",
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "recarrega_mantra",
+      "metadata": {
+        "dependencies": [
+          {
+            "name": "entity",
+            "type": "entity"
+          }
+        ],
+        "files": [
+          "src/main/java/net/mcreator/vlabyss/procedures/RecarregaMantraProcedure.java"
+        ]
+      },
+      "path": "~/VL1_Abyss/Mantras/RecarregaMantra/Procedure"
+    },
+    {
+      "name": "ChamaPrimeiraHabilidade",
+      "type": "procedure",
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "chama_primeira_habilidade",
+      "metadata": {
         "dependencies": [
           {
             "name": "entity",
@@ -5270,24 +5060,583 @@
           }
         ],
         "files": [
-          "src/main/java/net/mcreator/vlabyss/procedures/LuzSegundaHabilidadeProcedure.java"
+          "src/main/java/net/mcreator/vlabyss/procedures/ChamaPrimeiraHabilidadeProcedure.java"
         ]
       },
-      "path": "~/VL1_Abyss/Mantras/MantraKeyAtivacao/MantrasProcedure/SegundaHabilidade"
+      "path": "~/VL1_Abyss/Mantras/MantraKeyAtivacao/MantrasProcedure/PrimeiraHabilidade"
     },
     {
-      "name": "EscuridaoSegundaHabilidade",
+      "name": "RespiroPrimeiraHabilidade",
       "type": "procedure",
       "compiles": true,
       "locked_code": false,
-      "registry_name": "escuridao_segunda_habilidade",
+      "registry_name": "respiro_primeira_habilidade",
       "metadata": {
-        "dependencies": [],
+        "dependencies": [
+          {
+            "name": "entity",
+            "type": "entity"
+          },
+          {
+            "name": "x",
+            "type": "number"
+          },
+          {
+            "name": "y",
+            "type": "number"
+          },
+          {
+            "name": "z",
+            "type": "number"
+          },
+          {
+            "name": "world",
+            "type": "world"
+          }
+        ],
         "files": [
-          "src/main/java/net/mcreator/vlabyss/procedures/EscuridaoSegundaHabilidadeProcedure.java"
+          "src/main/java/net/mcreator/vlabyss/procedures/RespiroPrimeiraHabilidadeProcedure.java"
         ]
       },
-      "path": "~/VL1_Abyss/Mantras/MantraKeyAtivacao/MantrasProcedure/SegundaHabilidade"
+      "path": "~/VL1_Abyss/Mantras/MantraKeyAtivacao/MantrasProcedure/PrimeiraHabilidade"
+    },
+    {
+      "name": "EscuridaoPrimeiraHabilidade",
+      "type": "procedure",
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "escuridao_primeira_habilidade",
+      "metadata": {
+        "dependencies": [
+          {
+            "name": "entity",
+            "type": "entity"
+          },
+          {
+            "name": "x",
+            "type": "number"
+          },
+          {
+            "name": "y",
+            "type": "number"
+          },
+          {
+            "name": "z",
+            "type": "number"
+          },
+          {
+            "name": "world",
+            "type": "world"
+          }
+        ],
+        "files": [
+          "src/main/java/net/mcreator/vlabyss/procedures/EscuridaoPrimeiraHabilidadeProcedure.java"
+        ]
+      },
+      "path": "~/VL1_Abyss/Mantras/MantraKeyAtivacao/MantrasProcedure/PrimeiraHabilidade"
+    },
+    {
+      "name": "InfinityEssenceBrewing",
+      "type": "recipe",
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "infinity_essence_brewing",
+      "metadata": {
+        "files": [
+          "src/main/java/net/mcreator/vlabyss/recipes/brewing/InfinityEssenceBrewingBrewingRecipe.java"
+        ]
+      },
+      "path": "~/VL1_Abyss/Mantras/Pocoes/Crafts"
+    },
+    {
+      "name": "ArcaneStrengthBrewing",
+      "type": "recipe",
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "arcane_strength_brewing",
+      "metadata": {
+        "files": [
+          "src/main/java/net/mcreator/vlabyss/recipes/brewing/ArcaneStrengthBrewingBrewingRecipe.java"
+        ]
+      },
+      "path": "~/VL1_Abyss/Mantras/Pocoes/Crafts"
+    },
+    {
+      "name": "SpiritFlowBrewing",
+      "type": "recipe",
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "spirit_flow_brewing",
+      "metadata": {
+        "files": [
+          "src/main/java/net/mcreator/vlabyss/recipes/brewing/SpiritFlowBrewingBrewingRecipe.java"
+        ]
+      },
+      "path": "~/VL1_Abyss/Mantras/Pocoes/Crafts"
+    },
+    {
+      "name": "CapuzEsquecidoBaubleIsEquipped",
+      "type": "procedure",
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "capuz_esquecido_bauble_is_equipped",
+      "metadata": {
+        "dependencies": [
+          {
+            "name": "entity",
+            "type": "entity"
+          }
+        ],
+        "files": [
+          "src/main/java/net/mcreator/vlabyss/procedures/CapuzEsquecidoBaubleIsEquippedProcedure.java"
+        ]
+      },
+      "path": "~/VL1_Abyss/Artefatos/Procedure"
+    },
+    {
+      "name": "Abyss",
+      "type": "bannerpattern",
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "abyss",
+      "metadata": {
+        "files": []
+      },
+      "path": "~/VL1_Abyss/Banners_Escudo"
+    },
+    {
+      "name": "Depths",
+      "type": "bannerpattern",
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "depths",
+      "metadata": {
+        "files": []
+      },
+      "path": "~/VL1_Abyss/Banners_Escudo"
+    },
+    {
+      "name": "Wildernes",
+      "type": "bannerpattern",
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "wildernes",
+      "metadata": {
+        "files": []
+      },
+      "path": "~/VL1_Abyss/Banners_Escudo"
+    },
+    {
+      "name": "Nyvath",
+      "type": "bannerpattern",
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "nyvath",
+      "metadata": {
+        "files": []
+      },
+      "path": "~/VL1_Abyss/Banners_Escudo"
+    },
+    {
+      "name": "Noctharis",
+      "type": "bannerpattern",
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "noctharis",
+      "metadata": {
+        "files": []
+      },
+      "path": "~/VL1_Abyss/Banners_Escudo"
+    },
+    {
+      "name": "Velmorra",
+      "type": "bannerpattern",
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "velmorra",
+      "metadata": {
+        "files": []
+      },
+      "path": "~/VL1_Abyss/Banners_Escudo"
+    },
+    {
+      "name": "BotasVazioAbyssalBaubleIsUnequipped",
+      "type": "procedure",
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "botas_vazio_abyssal_bauble_is_unequipped",
+      "metadata": {
+        "dependencies": [
+          {
+            "name": "entity",
+            "type": "entity"
+          }
+        ],
+        "files": [
+          "src/main/java/net/mcreator/vlabyss/procedures/BotasVazioAbyssalBaubleIsUnequippedProcedure.java"
+        ]
+      },
+      "path": "~/VL1_Abyss/Artefatos/Procedure"
+    },
+    {
+      "name": "BotasVazioAbyssalBaubleIsEquipped",
+      "type": "procedure",
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "botas_vazio_abyssal_bauble_is_equipped",
+      "metadata": {
+        "dependencies": [
+          {
+            "name": "entity",
+            "type": "entity"
+          }
+        ],
+        "files": [
+          "src/main/java/net/mcreator/vlabyss/procedures/BotasVazioAbyssalBaubleIsEquippedProcedure.java"
+        ]
+      },
+      "path": "~/VL1_Abyss/Artefatos/Procedure"
+    },
+    {
+      "name": "MorreuVoltaBuffs",
+      "type": "procedure",
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "morreu_volta_buffs",
+      "metadata": {
+        "dependencies": [
+          {
+            "name": "entity",
+            "type": "entity"
+          }
+        ],
+        "files": [
+          "src/main/java/net/mcreator/vlabyss/procedures/MorreuVoltaBuffsProcedure.java"
+        ]
+      },
+      "path": "~/VL1_Abyss/Classes/Procedure"
+    },
+    {
+      "name": "Medo",
+      "type": "potioneffect",
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "medo",
+      "metadata": {
+        "files": [
+          "src/main/java/net/mcreator/vlabyss/potion/MedoMobEffect.java"
+        ]
+      },
+      "path": "~/VL1_Abyss/Medo"
+    },
+    {
+      "name": "MedoEffectStartedapplied",
+      "type": "procedure",
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "medo_effect_startedapplied",
+      "metadata": {
+        "dependencies": [
+          {
+            "name": "entity",
+            "type": "entity"
+          }
+        ],
+        "files": [
+          "src/main/java/net/mcreator/vlabyss/procedures/MedoEffectStartedappliedProcedure.java"
+        ]
+      },
+      "path": "~/VL1_Abyss/Medo/Procedure"
+    },
+    {
+      "name": "MedoEffectExpires",
+      "type": "procedure",
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "medo_effect_expires",
+      "metadata": {
+        "dependencies": [
+          {
+            "name": "entity",
+            "type": "entity"
+          }
+        ],
+        "files": [
+          "src/main/java/net/mcreator/vlabyss/procedures/MedoEffectExpiresProcedure.java"
+        ]
+      },
+      "path": "~/VL1_Abyss/Medo/Procedure"
+    },
+    {
+      "name": "MedoOnEffectActiveTick",
+      "type": "procedure",
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "medo_on_effect_active_tick",
+      "metadata": {
+        "dependencies": [
+          {
+            "name": "entity",
+            "type": "entity"
+          }
+        ],
+        "files": [
+          "src/main/java/net/mcreator/vlabyss/procedures/MedoOnEffectActiveTickProcedure.java"
+        ]
+      },
+      "path": "~/VL1_Abyss/Medo/Procedure"
+    },
+    {
+      "name": "SeletorClasses",
+      "type": "item",
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "seletor_classes",
+      "metadata": {
+        "files": [
+          "src/main/resources/assets/vl_abyss/models/item/seletor_classes.json",
+          "src/main/java/net/mcreator/vlabyss/item/SeletorClassesItem.java"
+        ]
+      },
+      "path": "~/VL1_Abyss/ClassesPersonagens"
+    },
+    {
+      "name": "AssassinoClasseGui",
+      "type": "procedure",
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "assassino_classe_gui",
+      "metadata": {
+        "dependencies": [
+          {
+            "name": "entity",
+            "type": "entity"
+          }
+        ],
+        "files": [
+          "src/main/java/net/mcreator/vlabyss/procedures/AssassinoClasseGuiProcedure.java"
+        ]
+      },
+      "path": "~/VL1_Abyss/ClassesPersonagens/Gui/Procedure"
+    },
+    {
+      "name": "SeletorDeClassesGui",
+      "type": "gui",
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "seletor_de_classes_gui",
+      "metadata": {
+        "files": [
+          "src/main/java/net/mcreator/vlabyss/world/inventory/SeletorDeClassesGuiMenu.java",
+          "src/main/java/net/mcreator/vlabyss/network/SeletorDeClassesGuiButtonMessage.java",
+          "src/main/java/net/mcreator/vlabyss/client/gui/SeletorDeClassesGuiScreen.java"
+        ]
+      },
+      "path": "~/VL1_Abyss/ClassesPersonagens/Gui"
+    },
+    {
+      "name": "TanqueClasseGui",
+      "type": "procedure",
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "tanque_classe_gui",
+      "metadata": {
+        "dependencies": [
+          {
+            "name": "entity",
+            "type": "entity"
+          }
+        ],
+        "files": [
+          "src/main/java/net/mcreator/vlabyss/procedures/TanqueClasseGuiProcedure.java"
+        ]
+      },
+      "path": "~/VL1_Abyss/ClassesPersonagens/Gui/Procedure"
+    },
+    {
+      "name": "GuerreiroClasseGui",
+      "type": "procedure",
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "guerreiro_classe_gui",
+      "metadata": {
+        "dependencies": [
+          {
+            "name": "entity",
+            "type": "entity"
+          }
+        ],
+        "files": [
+          "src/main/java/net/mcreator/vlabyss/procedures/GuerreiroClasseGuiProcedure.java"
+        ]
+      },
+      "path": "~/VL1_Abyss/ClassesPersonagens/Gui/Procedure"
+    },
+    {
+      "name": "BerserkerClasseGui",
+      "type": "procedure",
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "berserker_classe_gui",
+      "metadata": {
+        "dependencies": [
+          {
+            "name": "entity",
+            "type": "entity"
+          }
+        ],
+        "files": [
+          "src/main/java/net/mcreator/vlabyss/procedures/BerserkerClasseGuiProcedure.java"
+        ]
+      },
+      "path": "~/VL1_Abyss/ClassesPersonagens/Gui/Procedure"
+    },
+    {
+      "name": "SeletorClassesRightclicked",
+      "type": "procedure",
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "seletor_classes_rightclicked",
+      "metadata": {
+        "dependencies": [
+          {
+            "name": "entity",
+            "type": "entity"
+          },
+          {
+            "name": "x",
+            "type": "number"
+          },
+          {
+            "name": "y",
+            "type": "number"
+          },
+          {
+            "name": "z",
+            "type": "number"
+          },
+          {
+            "name": "world",
+            "type": "world"
+          }
+        ],
+        "files": [
+          "src/main/java/net/mcreator/vlabyss/procedures/SeletorClassesRightclickedProcedure.java"
+        ]
+      },
+      "path": "~/VL1_Abyss/ClassesPersonagens/Procedure"
+    },
+    {
+      "name": "SeletorDeClassesGuiThisGUIIsClosed",
+      "type": "procedure",
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "seletor_de_classes_gui_this_gui_is_closed",
+      "metadata": {
+        "dependencies": [
+          {
+            "name": "entity",
+            "type": "entity"
+          },
+          {
+            "name": "x",
+            "type": "number"
+          },
+          {
+            "name": "y",
+            "type": "number"
+          },
+          {
+            "name": "z",
+            "type": "number"
+          },
+          {
+            "name": "world",
+            "type": "world"
+          }
+        ],
+        "files": [
+          "src/main/java/net/mcreator/vlabyss/procedures/SeletorDeClassesGuiThisGUIIsClosedProcedure.java"
+        ]
+      },
+      "path": "~/VL1_Abyss/ClassesPersonagens/Procedure"
+    },
+    {
+      "name": "PocaoResistenciaEternaPlayerFinishesUsingItem",
+      "type": "procedure",
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "pocao_resistencia_eterna_player_finishes_using_item",
+      "metadata": {
+        "dependencies": [
+          {
+            "name": "entity",
+            "type": "entity"
+          }
+        ],
+        "files": [
+          "src/main/java/net/mcreator/vlabyss/procedures/PocaoResistenciaEternaPlayerFinishesUsingItemProcedure.java"
+        ]
+      },
+      "path": "~/VL1_Abyss/Pocoes/Procedure"
+    },
+    {
+      "name": "MorreuVoltaBuffsPocao",
+      "type": "procedure",
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "morreu_volta_buffs_pocao",
+      "metadata": {
+        "dependencies": [
+          {
+            "name": "entity",
+            "type": "entity"
+          }
+        ],
+        "files": [
+          "src/main/java/net/mcreator/vlabyss/procedures/MorreuVoltaBuffsPocaoProcedure.java"
+        ]
+      },
+      "path": "~/VL1_Abyss/Pocoes/Procedure"
+    },
+    {
+      "name": "DeuCriticoComFlamingCut",
+      "type": "procedure",
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "deu_critico_com_flaming_cut",
+      "metadata": {
+        "dependencies": [
+          {
+            "name": "entity",
+            "type": "entity"
+          },
+          {
+            "name": "sourceentity",
+            "type": "entity"
+          },
+          {
+            "name": "x",
+            "type": "number"
+          },
+          {
+            "name": "y",
+            "type": "number"
+          },
+          {
+            "name": "z",
+            "type": "number"
+          },
+          {
+            "name": "world",
+            "type": "world"
+          }
+        ],
+        "files": [
+          "src/main/java/net/mcreator/vlabyss/procedures/DeuCriticoComFlamingCutProcedure.java"
+        ]
+      },
+      "path": "~/VL1_Abyss/Mantras/MantrasPrincipais/Chama/Efeito/Procedure"
     },
     {
       "name": "CounterSpellProjectileHitsLivingEntity",
@@ -5313,210 +5662,124 @@
       "path": "~/VL1_Abyss/Mantras/MantrasPrincipais/Luz/CounterSpells"
     },
     {
-      "name": "CounterSpell",
-      "type": "projectile",
+      "name": "AbyssBannerPattern",
+      "type": "item",
       "compiles": true,
       "locked_code": false,
-      "registry_name": "counter_spell",
+      "registry_name": "abyss_banner_pattern",
       "metadata": {
         "files": [
-          "src/main/java/net/mcreator/vlabyss/entity/CounterSpellEntity.java"
+          "src/main/java/net/mcreator/vlabyss/item/AbyssBannerPatternItem.java",
+          "src/main/resources/data/vl_abyss/tags/banner_pattern/pattern_item/abyss_banner_pattern.json",
+          "src/main/resources/assets/vl_abyss/models/item/abyss_banner_pattern.json"
         ]
       },
-      "path": "~/VL1_Abyss/Mantras/MantrasPrincipais/Luz/CounterSpells"
+      "path": "~/VL1_Abyss/Banners_Escudo/Pattern"
     },
     {
-      "name": "AbrirRodaSpells",
-      "type": "keybind",
+      "name": "DepthsBannerPattern",
+      "type": "item",
       "compiles": true,
       "locked_code": false,
-      "registry_name": "abrir_roda_spells",
+      "registry_name": "depths_banner_pattern",
       "metadata": {
         "files": [
-          "src/main/java/net/mcreator/vlabyss/network/AbrirRodaSpellsMessage.java"
+          "src/main/resources/data/vl_abyss/tags/banner_pattern/pattern_item/depths_banner_pattern.json",
+          "src/main/resources/assets/vl_abyss/models/item/depths_banner_pattern.json",
+          "src/main/java/net/mcreator/vlabyss/item/DepthsBannerPatternItem.java"
         ]
       },
-      "path": "~/VL1_Abyss/Mantras/MantraKeyAtivacao/Key"
+      "path": "~/VL1_Abyss/Banners_Escudo/Pattern"
     },
     {
-      "name": "ClicouNosIcones",
-      "type": "procedure",
+      "name": "WildernesBannerPattern",
+      "type": "item",
       "compiles": true,
       "locked_code": false,
-      "registry_name": "clicou_nos_icones",
-      "metadata": {
-        "dependencies": [
-          {
-            "name": "entity",
-            "type": "entity"
-          }
-        ],
-        "files": [
-          "src/main/java/net/mcreator/vlabyss/procedures/ClicouNosIconesProcedure.java"
-        ]
-      },
-      "path": "~/VL1_Abyss/Mantras/MantraKeyAtivacao/Gui/Procedure"
-    },
-    {
-      "name": "ApareceInformacoes",
-      "type": "procedure",
-      "compiles": true,
-      "locked_code": false,
-      "registry_name": "aparece_informacoes",
-      "metadata": {
-        "dependencies": [
-          {
-            "name": "entity",
-            "type": "entity"
-          }
-        ],
-        "return_type": "logic",
-        "files": [
-          "src/main/java/net/mcreator/vlabyss/procedures/ApareceInformacoesProcedure.java"
-        ]
-      },
-      "path": "~/VL1_Abyss/Mantras/MantraKeyAtivacao/Gui/Procedure"
-    },
-    {
-      "name": "NivelHabilidade1",
-      "type": "procedure",
-      "compiles": true,
-      "locked_code": false,
-      "registry_name": "nivel_habilidade_1",
-      "metadata": {
-        "dependencies": [
-          {
-            "name": "entity",
-            "type": "entity"
-          }
-        ],
-        "return_type": "string",
-        "files": [
-          "src/main/java/net/mcreator/vlabyss/procedures/NivelHabilidade1Procedure.java"
-        ]
-      },
-      "path": "~/VL1_Abyss/Mantras/MantraKeyAtivacao/Gui/Niveis"
-    },
-    {
-      "name": "RodaDeMantras",
-      "type": "gui",
-      "compiles": true,
-      "locked_code": false,
-      "registry_name": "roda_de_mantras",
+      "registry_name": "wildernes_banner_pattern",
       "metadata": {
         "files": [
-          "src/main/java/net/mcreator/vlabyss/client/gui/RodaDeMantrasScreen.java",
-          "src/main/java/net/mcreator/vlabyss/network/RodaDeMantrasButtonMessage.java",
-          "src/main/java/net/mcreator/vlabyss/world/inventory/RodaDeMantrasMenu.java"
+          "src/main/resources/data/vl_abyss/tags/banner_pattern/pattern_item/wildernes_banner_pattern.json",
+          "src/main/java/net/mcreator/vlabyss/item/WildernesBannerPatternItem.java",
+          "src/main/resources/assets/vl_abyss/models/item/wildernes_banner_pattern.json"
         ]
       },
-      "path": "~/VL1_Abyss/Mantras/MantraKeyAtivacao/Gui"
+      "path": "~/VL1_Abyss/Banners_Escudo/Pattern"
     },
     {
-      "name": "AbrirRodaSpellsOnKeyPressed",
-      "type": "procedure",
+      "name": "NyvathBannerPattern",
+      "type": "item",
       "compiles": true,
       "locked_code": false,
-      "registry_name": "abrir_roda_spells_on_key_pressed",
+      "registry_name": "nyvath_banner_pattern",
       "metadata": {
-        "dependencies": [
-          {
-            "name": "entity",
-            "type": "entity"
-          },
-          {
-            "name": "x",
-            "type": "number"
-          },
-          {
-            "name": "y",
-            "type": "number"
-          },
-          {
-            "name": "z",
-            "type": "number"
-          },
-          {
-            "name": "world",
-            "type": "world"
-          }
-        ],
         "files": [
-          "src/main/java/net/mcreator/vlabyss/procedures/AbrirRodaSpellsOnKeyPressedProcedure.java"
+          "src/main/java/net/mcreator/vlabyss/item/NyvathBannerPatternItem.java",
+          "src/main/resources/data/vl_abyss/tags/banner_pattern/pattern_item/nyvath_banner_pattern.json",
+          "src/main/resources/assets/vl_abyss/models/item/nyvath_banner_pattern.json"
         ]
       },
-      "path": "~/VL1_Abyss/Mantras/MantraKeyAtivacao/ProcedureKey"
+      "path": "~/VL1_Abyss/Banners_Escudo/Pattern"
     },
     {
-      "name": "TextoDosNomes",
-      "type": "procedure",
+      "name": "NoctharisBannerPattern",
+      "type": "item",
       "compiles": true,
       "locked_code": false,
-      "registry_name": "texto_dos_nomes",
+      "registry_name": "noctharis_banner_pattern",
       "metadata": {
-        "dependencies": [
-          {
-            "name": "entity",
-            "type": "entity"
-          }
-        ],
-        "return_type": "string",
         "files": [
-          "src/main/java/net/mcreator/vlabyss/procedures/TextoDosNomesProcedure.java"
+          "src/main/java/net/mcreator/vlabyss/item/NoctharisBannerPatternItem.java",
+          "src/main/resources/data/vl_abyss/tags/banner_pattern/pattern_item/noctharis_banner_pattern.json",
+          "src/main/resources/assets/vl_abyss/models/item/noctharis_banner_pattern.json"
         ]
       },
-      "path": "~/VL1_Abyss/Mantras/MantraKeyAtivacao/Gui/Textos"
+      "path": "~/VL1_Abyss/Banners_Escudo/Pattern"
     },
     {
-      "name": "TextoDoCusto",
-      "type": "procedure",
+      "name": "VelmorraBannerPattern",
+      "type": "item",
       "compiles": true,
       "locked_code": false,
-      "registry_name": "texto_do_custo",
+      "registry_name": "velmorra_banner_pattern",
       "metadata": {
-        "dependencies": [
-          {
-            "name": "entity",
-            "type": "entity"
-          }
-        ],
-        "return_type": "string",
         "files": [
-          "src/main/java/net/mcreator/vlabyss/procedures/TextoDoCustoProcedure.java"
+          "src/main/java/net/mcreator/vlabyss/item/VelmorraBannerPatternItem.java",
+          "src/main/resources/data/vl_abyss/tags/banner_pattern/pattern_item/velmorra_banner_pattern.json",
+          "src/main/resources/assets/vl_abyss/models/item/velmorra_banner_pattern.json"
         ]
       },
-      "path": "~/VL1_Abyss/Mantras/MantraKeyAtivacao/Gui/Textos"
+      "path": "~/VL1_Abyss/Banners_Escudo/Pattern"
     },
     {
-      "name": "TextoDoDano",
-      "type": "procedure",
+      "name": "VlAbyssPotions",
+      "type": "tab",
       "compiles": true,
       "locked_code": false,
-      "registry_name": "texto_do_dano",
-      "metadata": {
-        "dependencies": [
-          {
-            "name": "entity",
-            "type": "entity"
-          }
-        ],
-        "return_type": "string",
-        "files": [
-          "src/main/java/net/mcreator/vlabyss/procedures/TextoDoDanoProcedure.java"
-        ]
-      },
-      "path": "~/VL1_Abyss/Mantras/MantraKeyAtivacao/Gui/Textos"
-    },
-    {
-      "name": "BonusAdditionalDamage",
-      "type": "attribute",
-      "compiles": true,
-      "locked_code": false,
-      "registry_name": "bonus_additional_damage",
+      "registry_name": "vl_abyss_potions",
       "metadata": {
         "files": []
       },
-      "path": "~/VL1_Abyss/Mantras/Atributo"
+      "path": "~/CreativeTab"
+    },
+    {
+      "name": "MorreuVoltaBuffsClasse",
+      "type": "procedure",
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "morreu_volta_buffs_classe",
+      "metadata": {
+        "dependencies": [
+          {
+            "name": "entity",
+            "type": "entity"
+          }
+        ],
+        "files": [
+          "src/main/java/net/mcreator/vlabyss/procedures/MorreuVoltaBuffsClasseProcedure.java"
+        ]
+      },
+      "path": "~/VL1_Abyss/ClassesPersonagens/Procedure"
     }
   ],
   "variable_elements": [
@@ -5831,6 +6094,24 @@
       "type": "number",
       "scope": "player_persistent",
       "value": "1.0"
+    },
+    {
+      "name": "posX",
+      "type": "number",
+      "scope": "player_persistent",
+      "value": "0"
+    },
+    {
+      "name": "posY",
+      "type": "number",
+      "scope": "player_persistent",
+      "value": "0"
+    },
+    {
+      "name": "posZ",
+      "type": "number",
+      "scope": "player_persistent",
+      "value": "0"
     }
   ],
   "sound_elements": [
@@ -6113,6 +6394,30 @@
       ],
       "category": "master",
       "subtitle": ""
+    },
+    {
+      "name": "vortexmantrasom",
+      "files": [
+        "vortex_som"
+      ],
+      "category": "ambient",
+      "subtitle": ""
+    },
+    {
+      "name": "respirohabilidadedois",
+      "files": [
+        "respirohabilidadedois"
+      ],
+      "category": "master",
+      "subtitle": ""
+    },
+    {
+      "name": "entidadegrito",
+      "files": [
+        "entidadegrito"
+      ],
+      "category": "master",
+      "subtitle": ""
     }
   ],
   "tag_elements": {
@@ -6172,7 +6477,6 @@
       "CUSTOM:DesbloqueioEsquiva"
     ],
     "BLOCKS:minecraft:mineable/pickaxe": [
-      "~CUSTOM:MetalForging",
       "~CUSTOM:AbyssionIngotBlock",
       "~CUSTOM:RawAbyssionBlock",
       "~CUSTOM:AbyssionOre"
@@ -6202,20 +6506,25 @@
       "~CUSTOM:RawAbyssionBlock",
       "~CUSTOM:AbyssionOre"
     ],
-    "BLOCKS:minecraft:needs_iron_tool": [
-      "~CUSTOM:MetalForging"
-    ],
     "BLOCKS:minecraft:dirt": [],
     "BLOCKS:minecraft:sand": [],
     "BLOCKS:minecraft:logs": [],
     "ENTITIES:minecraft:powder_snow_walkable_mobs": [
       "CUSTOM:CavaleiroAlado"
     ],
-    "BIOMES:minecraft:is_overworld": []
+    "BIOMES:minecraft:is_overworld": [],
+    "ENTITIES:vl_abyss:invencivel": [
+      "CUSTOM:MantraSoul",
+      "CUSTOM:RespiroPrimaria",
+      "CUSTOM:MantraSoulCorrompida",
+      "CUSTOM:WindVortex",
+      "CUSTOM:CounterSpell"
+    ]
   },
   "tab_element_order": {
     "CUSTOM:VlAbyss": [
       "MapaAbyss",
+      "ArtifactsBundle",
       "CapuzEsquecido",
       "LuvasIronsing",
       "LuvasLuaSangrenta",
@@ -6235,16 +6544,21 @@
       "AbyssionIngotBlock",
       "LiberacaoMantra",
       "DesbloqueioEsquiva",
+      "SeletorClasses",
       "PocaoRejuvenescimento",
       "PocaoResistenciaEterna",
       "PocaoVidaExtra",
       "PocaoRenascimento",
       "Runas",
-      "CavaleiroAlado",
-      "EssenciaAbismo",
+      "AbyssBannerPattern",
+      "DepthsBannerPattern",
+      "WildernesBannerPattern",
+      "NyvathBannerPattern",
+      "NoctharisBannerPattern",
+      "VelmorraBannerPattern",
       "TombstoneAbyss",
-      "MetalForging",
-      "ArtifactsBundle"
+      "EssenciaAbismo",
+      "CavaleiroAlado"
     ]
   },
   "language_map": {
@@ -6276,7 +6590,7 @@
       "death.attack.absorve_alma_damage": "%1$s morreu tentando absorver uma alma",
       "death.attack.sangramento_damage.player": "%1$s morreu enquanto sangrava fugindo de %2$s",
       "key.vl_abyss.ativa_artefatos": "Active Artifacts",
-      "item_group.vl_abyss.vl_abyss_armas": "§5SSMP | ARMAS",
+      "item_group.vl_abyss.vl_abyss_armas": "Song SMP - Armas",
       "subtitles.copy_ativa": "",
       "item.vl_abyss.pocao_rejuvenescimento": "Poção do Rejuvenescimento",
       "block.vl_abyss.raw_abyssion_block": "Raw Abyssion Block",
@@ -6293,12 +6607,10 @@
       "item.vl_abyss.cavaleiro_alado_spawn_egg": "Cavaleiro Alado Spawn Egg",
       "block.vl_abyss.abyssion_ingot_block": "Abyssion Ingot Block",
       "jei.vl_abyss.jei_mapa": "- O mapa de Abyss é como diz seu nome, um mapa de cada local importante desse nosso reino. Nele, você poderá se guiar para encontrar os grandes reinos que existem nesse mundo, porém, há coisas além desse mapa que NUNCA devem ser acessadas...",
-      "gui.vl_abyss.metal_forja.label_inventario": "Inventário",
       "gui.vl_abyss.j.label_escuridao": "Escuridão",
       "gui.vl_abyss.j.label_respiro": "Respiro",
       "key.vl_abyss.habilidade_primaria": "Lançar Mantra Selecionada",
       "jei.vl_abyss.informacao_desviar_1": "- O pergaminho irá conceder ao usuário, o aprendizado para aplicar \"desvios\" ou \"dashs\" para utilizar durante a luta ou em momentos oportunos ",
-      "gui.vl_abyss.metal_forja.label_menu_da_forja": "Menu da Forja",
       "subtitles.transformando_ingot": "",
       "key.categories.mantra": "Song SMP - Mantra",
       "subtitles.copy_dano": "",
@@ -6351,9 +6663,8 @@
       "subtitles.coracao_lento": "",
       "subtitles.batida_cavaleiro_alado": "",
       "entity.minecraft.villager.vl_abyss.mestre_mantra_profession": "Mestre da Mantra",
-      "item_group.vl_abyss.vl_abyss": "§5SSMP | S1",
+      "item_group.vl_abyss.vl_abyss": "§5Song SMP",
       "item.vl_abyss.amuleto_vesperian": "Amuleto de Vesperian",
-      "block.vl_abyss.metal_forging": "Forjador de Metais",
       "item.vl_abyss.adaga_assassinos": "Adaga dos Assassinos",
       "effect.vl_abyss.resistencia_quebrada": "Resistência Quebrada",
       "key.vl_abyss.planar": "Planar",
@@ -6389,48 +6700,170 @@
       "effect.vl_abyss.enfraquecido": "Enfraquecido",
       "key.vl_abyss.seleciona_mantra_rapido": "Troca de Mantra Rápida",
       "effect.vl_abyss.last_hope": "Última Esperança",
-      "key.vl_abyss.abrir_roda_spells": "Abrir Roda de Magias",
       "gui.vl_abyss.roda_de_mantras.tooltip_9_damage": "9 Damage",
       "gui.vl_abyss.roda_de_mantras.tooltip_empty": "Flaming Blade",
-      "gui.vl_abyss.roda_de_mantras.tooltip_90_de_mantra": "90 de MANTRA"
+      "gui.vl_abyss.roda_de_mantras.tooltip_90_de_mantra": "90 de MANTRA",
+      "item.vl_abyss.infinity_essence_potion": "Potion of Infinity Essence",
+      "item.vl_abyss.arcane_strength_potion": "Potion of Arcane Strength",
+      "item.vl_abyss.spirit_flow_potion": "Potion of Spirit Flow",
+      "effect.vl_abyss.elixir_mantra": "Mantra Arcana",
+      "effect.vl_abyss.essence_mantra": "Essência da Mantra",
+      "item.vl_abyss.infinity_essence_potion.description_0": "§9Essence Mantra (1:00)",
+      "item.vl_abyss.arcane_strength_potion.description_0": "§9Elixir Mantra (1:00)",
+      "item.vl_abyss.spirit_flow_potion.description_0": "§9Mantra Regeneration (1:00)",
+      "block.minecraft.banner.vl_abyss.abyss.lime": "Lime Abyss",
+      "block.minecraft.banner.vl_abyss.abyss.brown": "Brown Abyss",
+      "block.minecraft.banner.vl_abyss.abyss.pink": "Pink Abyss",
+      "block.minecraft.banner.vl_abyss.abyss.green": "Green Abyss",
+      "block.minecraft.banner.vl_abyss.abyss.red": "Red Abyss",
+      "block.minecraft.banner.vl_abyss.abyss.blue": "Blue Abyss",
+      "block.minecraft.banner.vl_abyss.abyss.purple": "Purple Abyss",
+      "block.minecraft.banner.vl_abyss.abyss.light_blue": "Light Blue Abyss",
+      "block.minecraft.banner.vl_abyss.abyss.white": "White Abyss",
+      "block.minecraft.banner.vl_abyss.abyss.gray": "Gray Abyss",
+      "block.minecraft.banner.vl_abyss.abyss.magenta": "Magenta Abyss",
+      "block.minecraft.banner.vl_abyss.abyss.orange": "Orange Abyss",
+      "block.minecraft.banner.vl_abyss.abyss.black": "Black Abyss",
+      "block.minecraft.banner.vl_abyss.abyss.light_gray": "Light Gray Abyss",
+      "block.minecraft.banner.vl_abyss.abyss.yellow": "Yellow Abyss",
+      "block.minecraft.banner.vl_abyss.abyss.cyan": "Cyan Abyss",
+      "block.minecraft.banner.vl_abyss.depths.blue": "Blue Depths",
+      "block.minecraft.banner.vl_abyss.depths.black": "Black Depths",
+      "block.minecraft.banner.vl_abyss.depths.white": "White Depths",
+      "block.minecraft.banner.vl_abyss.depths.yellow": "Yellow Depths",
+      "block.minecraft.banner.vl_abyss.depths.green": "Green Depths",
+      "block.minecraft.banner.vl_abyss.depths.red": "Red Depths",
+      "block.minecraft.banner.vl_abyss.depths.light_blue": "Light Blue Depths",
+      "block.minecraft.banner.vl_abyss.depths.brown": "Brown Depths",
+      "block.minecraft.banner.vl_abyss.depths.orange": "Orange Depths",
+      "block.minecraft.banner.vl_abyss.depths.lime": "Lime Depths",
+      "block.minecraft.banner.vl_abyss.depths.pink": "Pink Depths",
+      "block.minecraft.banner.vl_abyss.depths.purple": "Purple Depths",
+      "block.minecraft.banner.vl_abyss.depths.magenta": "Magenta Depths",
+      "block.minecraft.banner.vl_abyss.depths.gray": "Gray Depths",
+      "block.minecraft.banner.vl_abyss.depths.light_gray": "Light Gray Depths",
+      "block.minecraft.banner.vl_abyss.depths.cyan": "Cyan Depths",
+      "block.minecraft.banner.vl_abyss.wildernes.yellow": "Yellow Wildernes",
+      "block.minecraft.banner.vl_abyss.wildernes.purple": "Purple Wildernes",
+      "block.minecraft.banner.vl_abyss.wildernes.green": "Green Wildernes",
+      "block.minecraft.banner.vl_abyss.wildernes.pink": "Pink Wildernes",
+      "block.minecraft.banner.vl_abyss.wildernes.black": "Black Wildernes",
+      "block.minecraft.banner.vl_abyss.wildernes.orange": "Orange Wildernes",
+      "block.minecraft.banner.vl_abyss.wildernes.magenta": "Magenta Wildernes",
+      "block.minecraft.banner.vl_abyss.wildernes.lime": "Lime Wildernes",
+      "block.minecraft.banner.vl_abyss.wildernes.light_blue": "Light Blue Wildernes",
+      "block.minecraft.banner.vl_abyss.wildernes.blue": "Blue Wildernes",
+      "block.minecraft.banner.vl_abyss.wildernes.light_gray": "Light Gray Wildernes",
+      "block.minecraft.banner.vl_abyss.wildernes.white": "White Wildernes",
+      "block.minecraft.banner.vl_abyss.wildernes.cyan": "Cyan Wildernes",
+      "block.minecraft.banner.vl_abyss.wildernes.brown": "Brown Wildernes",
+      "block.minecraft.banner.vl_abyss.wildernes.gray": "Gray Wildernes",
+      "block.minecraft.banner.vl_abyss.wildernes.red": "Red Wildernes",
+      "block.minecraft.banner.vl_abyss.nyvath.white": "White Nyvath",
+      "block.minecraft.banner.vl_abyss.nyvath.light_blue": "Light Blue Nyvath",
+      "block.minecraft.banner.vl_abyss.nyvath.black": "Black Nyvath",
+      "block.minecraft.banner.vl_abyss.nyvath.magenta": "Magenta Nyvath",
+      "block.minecraft.banner.vl_abyss.nyvath.lime": "Lime Nyvath",
+      "block.minecraft.banner.vl_abyss.nyvath.pink": "Pink Nyvath",
+      "block.minecraft.banner.vl_abyss.nyvath.blue": "Blue Nyvath",
+      "block.minecraft.banner.vl_abyss.nyvath.red": "Red Nyvath",
+      "block.minecraft.banner.vl_abyss.nyvath.purple": "Purple Nyvath",
+      "block.minecraft.banner.vl_abyss.nyvath.brown": "Brown Nyvath",
+      "block.minecraft.banner.vl_abyss.nyvath.green": "Green Nyvath",
+      "block.minecraft.banner.vl_abyss.nyvath.orange": "Orange Nyvath",
+      "block.minecraft.banner.vl_abyss.nyvath.cyan": "Cyan Nyvath",
+      "block.minecraft.banner.vl_abyss.nyvath.gray": "Gray Nyvath",
+      "block.minecraft.banner.vl_abyss.nyvath.yellow": "Yellow Nyvath",
+      "block.minecraft.banner.vl_abyss.nyvath.light_gray": "Light Gray Nyvath",
+      "block.minecraft.banner.vl_abyss.noctharis.red": "Red Noctharis",
+      "block.minecraft.banner.vl_abyss.noctharis.blue": "Blue Noctharis",
+      "block.minecraft.banner.vl_abyss.noctharis.lime": "Lime Noctharis",
+      "block.minecraft.banner.vl_abyss.noctharis.brown": "Brown Noctharis",
+      "block.minecraft.banner.vl_abyss.noctharis.orange": "Orange Noctharis",
+      "block.minecraft.banner.vl_abyss.noctharis.light_blue": "Light Blue Noctharis",
+      "block.minecraft.banner.vl_abyss.noctharis.gray": "Gray Noctharis",
+      "block.minecraft.banner.vl_abyss.noctharis.pink": "Pink Noctharis",
+      "block.minecraft.banner.vl_abyss.noctharis.cyan": "Cyan Noctharis",
+      "block.minecraft.banner.vl_abyss.noctharis.black": "Black Noctharis",
+      "block.minecraft.banner.vl_abyss.noctharis.light_gray": "Light Gray Noctharis",
+      "block.minecraft.banner.vl_abyss.noctharis.yellow": "Yellow Noctharis",
+      "block.minecraft.banner.vl_abyss.noctharis.purple": "Purple Noctharis",
+      "block.minecraft.banner.vl_abyss.noctharis.magenta": "Magenta Noctharis",
+      "block.minecraft.banner.vl_abyss.noctharis.white": "White Noctharis",
+      "block.minecraft.banner.vl_abyss.noctharis.green": "Green Noctharis",
+      "block.minecraft.banner.vl_abyss.velmorra.lime": "Lime Velmorra",
+      "block.minecraft.banner.vl_abyss.velmorra.magenta": "Magenta Velmorra",
+      "block.minecraft.banner.vl_abyss.velmorra.pink": "Pink Velmorra",
+      "block.minecraft.banner.vl_abyss.velmorra.orange": "Orange Velmorra",
+      "block.minecraft.banner.vl_abyss.velmorra.brown": "Brown Velmorra",
+      "block.minecraft.banner.vl_abyss.velmorra.black": "Black Velmorra",
+      "block.minecraft.banner.vl_abyss.velmorra.cyan": "Cyan Velmorra",
+      "block.minecraft.banner.vl_abyss.velmorra.purple": "Purple Velmorra",
+      "block.minecraft.banner.vl_abyss.velmorra.yellow": "Yellow Velmorra",
+      "block.minecraft.banner.vl_abyss.velmorra.gray": "Gray Velmorra",
+      "block.minecraft.banner.vl_abyss.velmorra.light_gray": "Light Gray Velmorra",
+      "block.minecraft.banner.vl_abyss.velmorra.white": "White Velmorra",
+      "block.minecraft.banner.vl_abyss.velmorra.blue": "Blue Velmorra",
+      "block.minecraft.banner.vl_abyss.velmorra.red": "Red Velmorra",
+      "block.minecraft.banner.vl_abyss.velmorra.light_blue": "Light Blue Velmorra",
+      "block.minecraft.banner.vl_abyss.velmorra.green": "Green Velmorra",
+      "effect.vl_abyss.medo": "Medo",
+      "item.vl_abyss.seletor_classes": "Seletor de Classes",
+      "item.vl_abyss.abyss_banner_pattern": "Banner Pattern",
+      "item.vl_abyss.abyss_banner_pattern.patterns": "Abyss",
+      "item.vl_abyss.depths_banner_pattern.patterns": "Depths",
+      "item.vl_abyss.depths_banner_pattern": "Banner Pattern",
+      "item.vl_abyss.wildernes_banner_pattern.patterns": "Wildernes",
+      "item.vl_abyss.wildernes_banner_pattern": "Banner Pattern",
+      "item.vl_abyss.nyvath_banner_pattern.patterns": "Nyvath",
+      "item.vl_abyss.nyvath_banner_pattern": "Banner Pattern",
+      "item.vl_abyss.noctharis_banner_pattern": "Banner Pattern",
+      "item.vl_abyss.noctharis_banner_pattern.patterns": "Noctharis",
+      "item.vl_abyss.velmorra_banner_pattern": "Banner Pattern",
+      "item.vl_abyss.velmorra_banner_pattern.patterns": "Velmorra",
+      "item_group.vl_abyss.vl_abyss_potions": "Song SMP - Potions",
+      "subtitles.vortexmantrasom": "",
+      "subtitles.respirohabilidadedois": "",
+      "subtitles.entidadegrito": ""
     }
   },
   "metadata": {
     "files": [
-      "src/main/resources/META-INF/mods.toml",
+      "src/main/resources/mixins.vl_abyss.json",
       "src/main/java/net/mcreator/vlabyss/init/VlAbyssModTabs.java",
+      "src/main/resources/assets/vl_abyss/sounds.json",
+      "src/main/resources/META-INF/mods.toml",
       "src/main/java/net/mcreator/vlabyss/network/VlAbyssModVariables.java",
-      "src/main/resources/pack.mcmeta",
-      "src/main/resources/META-INF/accesstransformer.cfg",
       "src/main/java/net/mcreator/vlabyss/VlAbyssMod.java",
       "src/main/java/net/mcreator/vlabyss/init/VlAbyssModSounds.java",
-      "src/main/resources/assets/vl_abyss/sounds.json",
-      "src/main/resources/mixins.vl_abyss.json",
+      "src/main/resources/pack.mcmeta",
+      "src/main/resources/META-INF/accesstransformer.cfg",
       "src/main/java/net/mcreator/vlabyss/block/listener/ClientListener.java",
       "src/main/java/net/mcreator/vlabyss/init/EntityAnimationFactory.java",
       "src/main/java/net/mcreator/vlabyss/init/ItemAnimationFactory.java",
       "src/main/java/net/mcreator/vlabyss/utils/AnimUtils.java",
       "src/main/java/net/mcreator/vlabyss/init/VlAbyssModAttributes.java",
+      "src/main/java/net/mcreator/vlabyss/init/VlAbyssModBannerPatterns.java",
       "src/main/java/net/mcreator/vlabyss/init/VlAbyssModConfigs.java",
-      "src/main/java/net/mcreator/vlabyss/init/VlAbyssModCuriosRenderers.java",
+      "src/main/java/net/mcreator/vlabyss/init/VlAbyssModCuriosProperties.java",
+      "src/main/resources/data/curios/tags/items/hands.json",
+      "src/main/java/net/mcreator/vlabyss/init/VlAbyssModCuriosSlots.java",
+      "src/main/java/net/mcreator/vlabyss/init/VlAbyssModLayerDefinitions.java",
       "src/main/resources/data/curios/tags/items/head.json",
       "src/main/resources/data/curios/tags/items/ring.json",
-      "src/main/resources/data/curios/tags/items/hands.json",
+      "src/main/java/net/mcreator/vlabyss/init/VlAbyssModCuriosRenderers.java",
       "src/main/resources/data/curios/tags/items/belt.json",
-      "src/main/java/net/mcreator/vlabyss/init/VlAbyssModLayerDefinitions.java",
-      "src/main/java/net/mcreator/vlabyss/init/VlAbyssModCuriosSlots.java",
       "src/main/resources/data/curios/tags/items/necklace.json",
-      "src/main/java/net/mcreator/vlabyss/init/VlAbyssModCuriosProperties.java",
       "src/main/java/net/mcreator/vlabyss/init/VlAbyssModCustomCuriosSlots.java",
-      "src/main/java/net/mcreator/vlabyss/init/VlAbyssModMenus.java",
       "src/main/java/net/mcreator/vlabyss/init/VlAbyssModScreens.java",
       "src/main/java/net/mcreator/vlabyss/network/MenuStateUpdateMessage.java",
+      "src/main/java/net/mcreator/vlabyss/init/VlAbyssModMenus.java",
       "src/main/java/net/mcreator/vlabyss/init/VlAbyssModJeiInformation.java",
       "src/main/java/net/mcreator/vlabyss/init/VlAbyssModKeyMappings.java",
       "src/main/java/net/mcreator/vlabyss/init/VlAbyssModPaintings.java",
       "src/main/resources/data/minecraft/tags/painting_variant/placeable.json",
-      "src/main/java/net/mcreator/vlabyss/init/VlAbyssModParticleTypes.java",
       "src/main/java/net/mcreator/vlabyss/init/VlAbyssModParticles.java",
+      "src/main/java/net/mcreator/vlabyss/init/VlAbyssModParticleTypes.java",
       "src/main/java/net/mcreator/vlabyss/init/VlAbyssModMobEffects.java",
       "src/main/java/net/mcreator/vlabyss/init/VlAbyssModBrewingRecipes.java",
       "src/main/java/net/mcreator/vlabyss/init/VlAbyssModVillagerProfessions.java",
@@ -6724,23 +7157,6 @@
                   {
                     "name": "ProcedureKey",
                     "children": []
-                  },
-                  {
-                    "name": "Gui",
-                    "children": [
-                      {
-                        "name": "Niveis",
-                        "children": []
-                      },
-                      {
-                        "name": "Procedure",
-                        "children": []
-                      },
-                      {
-                        "name": "Textos",
-                        "children": []
-                      }
-                    ]
                   }
                 ]
               },
@@ -6879,12 +7295,39 @@
               {
                 "name": "Atributo",
                 "children": []
+              },
+              {
+                "name": "Pocoes",
+                "children": [
+                  {
+                    "name": "Procedure",
+                    "children": []
+                  },
+                  {
+                    "name": "Crafts",
+                    "children": []
+                  }
+                ]
               }
             ]
           },
           {
-            "name": "ClassesArmas",
-            "children": []
+            "name": "ClassesPersonagens",
+            "children": [
+              {
+                "name": "Gui",
+                "children": [
+                  {
+                    "name": "Procedure",
+                    "children": []
+                  }
+                ]
+              },
+              {
+                "name": "Procedure",
+                "children": []
+              }
+            ]
           },
           {
             "name": "Armas",
@@ -6992,7 +7435,7 @@
             ]
           },
           {
-            "name": "Forja",
+            "name": "Medo",
             "children": [
               {
                 "name": "Procedure",
@@ -7001,24 +7444,17 @@
             ]
           },
           {
-            "name": "Adoracao",
-            "children": []
-          },
-          {
-            "name": "Medo",
-            "children": []
-          },
-          {
             "name": "Painting",
             "children": []
           },
           {
-            "name": "Banners",
-            "children": []
-          },
-          {
             "name": "Banners_Escudo",
-            "children": []
+            "children": [
+              {
+                "name": "Pattern",
+                "children": []
+              }
+            ]
           }
         ]
       },

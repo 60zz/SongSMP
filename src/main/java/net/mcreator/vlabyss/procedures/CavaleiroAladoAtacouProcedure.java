@@ -39,8 +39,12 @@ public class CavaleiroAladoAtacouProcedure {
 					(float) (double) SsmpConfiguration.WINGEDKNIGHTTOTALDAMAGE.get());
 		} else if (sourceentity instanceof Player) {
 			if (!entity.getPersistentData().getBoolean("invocadordefinido")) {
-				entity.getPersistentData().putString("invocador", (sourceentity.getDisplayName().getString()));
+				entity.getPersistentData().putString("invocador", (sourceentity.getStringUUID()));
 				entity.getPersistentData().putBoolean("invocadordefinido", true);
+			}
+			if (!entity.getPersistentData().getBoolean("invocadordefinido2")) {
+				entity.getPersistentData().putString("invocador2", (sourceentity.getDisplayName().getString()));
+				entity.getPersistentData().putBoolean("invocadordefinido2", true);
 			}
 		}
 	}

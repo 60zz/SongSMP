@@ -35,7 +35,7 @@ public class SsmpConfiguration {
 		AMULETOSANGUECONFIG2 = BUILDER.comment("Vida recuperada pós hit. Padrão (s/ raça): 7").define("Amuleto de Sangue s/raça Config", (double) 7);
 		FAIXAACOLITOCONFIG = BUILDER.comment("Inteligência adicional Faixa Acólito. Padrão: 1").define("Artefato Faixa Acólito", (double) 1);
 		BOTASVAZIOABYSSALCONFIG = BUILDER.comment("Velocidade das Botas (s/raça): 0.025 (25%)").define("Botas Vazio Abyssal Velocidade (s/raça)", (double) 0.025);
-		BOTASVAZIOABYSSALCONFIG2 = BUILDER.comment("Velocidade das Botas (c/raça): 0.04 (40%)").define("Botas Vazio Abyssal Velocidade (c/raça)", (double) 0.04);
+		BOTASVAZIOABYSSALCONFIG2 = BUILDER.comment("Velocidade das Botas (c/raça): 0.04 (40%)").define("Botas Vazio Abyssal Velocidade (c/raça)", (double) 0.03);
 		BUILDER.pop();
 
 		SPEC = BUILDER.build();

@@ -1,29 +1,48 @@
 package net.mcreator.vlabyss.procedures;
 
+import org.checkerframework.checker.units.qual.m;
+
+import net.minecraftforge.registries.ForgeRegistries;
+
 import net.minecraft.world.level.GameType;
 import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.entity.player.Player;
 import net.minecraft.world.entity.ai.attributes.AttributeModifier;
+import net.minecraft.world.entity.ai.attributes.AttributeInstance;
+import net.minecraft.world.entity.ai.attributes.Attribute;
 import net.minecraft.world.entity.LivingEntity;
 import net.minecraft.world.entity.Entity;
 import net.minecraft.world.InteractionHand;
 import net.minecraft.server.level.ServerPlayer;
+import net.minecraft.resources.ResourceLocation;
+import net.minecraft.client.multiplayer.PlayerInfo;
 import net.minecraft.client.Minecraft;
 
 import net.mcreator.vlabyss.network.VlAbyssModVariables;
 import net.mcreator.vlabyss.init.VlAbyssModItems;
 
-import java.util.UUID;
-
 public class PocaoResistenciaEternaPlayerFinishesUsingItemProcedure {
 	public static void execute(Entity entity) {
 		if (entity == null)
 			return;
-		if ((entity.getCapability(VlAbyssModVariables.PLAYER_VARIABLES_CAPABILITY, null).orElse(new VlAbyssModVariables.PlayerVariables())).pocaoresis == false) {
-			if (!(((LivingEntity) entity).getAttribute(net.minecraft.world.entity.ai.attributes.Attributes.MAX_HEALTH)
-					.hasModifier((new AttributeModifier(UUID.fromString("9a2d30d1-2344-4af4-94ef-f4c7374adef9"), "vidaextra", 10, AttributeModifier.Operation.ADDITION)))))
-				((LivingEntity) entity).getAttribute(net.minecraft.world.entity.ai.attributes.Attributes.MAX_HEALTH)
-						.addPermanentModifier((new AttributeModifier(UUID.fromString("9a2d30d1-2344-4af4-94ef-f4c7374adef9"), "vidaextra", 10, AttributeModifier.Operation.ADDITION)));
+		if ((entity.getCapability(VlAbyssModVariables.PLAYER_VARIABLES_CAPABILITY, null).orElseGet(VlAbyssModVariables.PlayerVariables::new)).pocaoresis == false) {
+			{
+				Entity _entity = entity;
+				if (_entity instanceof LivingEntity _livingEntity) {
+					Attribute _attribute = ForgeRegistries.ATTRIBUTES.getValue(new ResourceLocation("minecraft:max_health"));
+					if (_attribute != null) {
+						AttributeInstance _attr = _livingEntity.getAttribute(_attribute);
+						if (_attr != null) {
+							String _modifierName = "vidaextra";
+							boolean _hasModifier = _attr.getModifiers().stream().anyMatch(m -> m.getName().equals(_modifierName));
+							if (!_hasModifier) {
+								AttributeModifier _modifier = new AttributeModifier(_modifierName, 10, AttributeModifier.Operation.ADDITION);
+								_attr.addPermanentModifier(_modifier);
+							}
+						}
+					}
+				}
+			}
 			if (entity instanceof Player _player) {
 				ItemStack _stktoremove = new ItemStack(VlAbyssModItems.POCAO_RESISTENCIA_ETERNA.get());
 				_player.getInventory().clearOrCountMatchingItems(p -> _stktoremove.getItem() == p.getItem(), 1, _player.inventoryMenu.getCraftSlots());
@@ -36,17 +55,7 @@ public class PocaoResistenciaEternaPlayerFinishesUsingItemProcedure {
 				});
 			}
 		} else {
-			if (!(new Object() {
-				public boolean checkGamemode(Entity _ent) {
-					if (_ent instanceof ServerPlayer _serverPlayer) {
-						return _serverPlayer.gameMode.getGameModeForPlayer() == GameType.CREATIVE;
-					} else if (_ent.level().isClientSide() && _ent instanceof Player _player) {
-						return Minecraft.getInstance().getConnection().getPlayerInfo(_player.getGameProfile().getId()) != null
-								&& Minecraft.getInstance().getConnection().getPlayerInfo(_player.getGameProfile().getId()).getGameMode() == GameType.CREATIVE;
-					}
-					return false;
-				}
-			}.checkGamemode(entity))) {
+			if (!(getEntityGameType(entity) == GameType.CREATIVE)) {
 				if (entity instanceof LivingEntity _entity) {
 					ItemStack _setstack = new ItemStack(VlAbyssModItems.POCAO_RESISTENCIA_ETERNA.get()).copy();
 					_setstack.setCount(1);
@@ -56,5 +65,16 @@ public class PocaoResistenciaEternaPlayerFinishesUsingItemProcedure {
 				}
 			}
 		}
+	}
+
+	private static GameType getEntityGameType(Entity entity) {
+		if (entity instanceof ServerPlayer serverPlayer) {
+			return serverPlayer.gameMode.getGameModeForPlayer();
+		} else if (entity instanceof Player player && player.level().isClientSide()) {
+			PlayerInfo playerInfo = Minecraft.getInstance().getConnection().getPlayerInfo(player.getGameProfile().getId());
+			if (playerInfo != null)
+				return playerInfo.getGameMode();
+		}
+		return null;
 	}
 }

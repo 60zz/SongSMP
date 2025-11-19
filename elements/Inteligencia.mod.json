@@ -7,7 +7,7 @@
     "maxValue": 10.0,
     "defaultValue": 0.0,
     "sentiment": "NEUTRAL",
-    "addToAllEntities": true,
+    "addToAllEntities": false,
     "addToPlayers": true,
     "entities": []
   }

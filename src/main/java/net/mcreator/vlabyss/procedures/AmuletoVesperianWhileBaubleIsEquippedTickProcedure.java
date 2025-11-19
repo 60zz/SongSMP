@@ -11,7 +11,7 @@ public class AmuletoVesperianWhileBaubleIsEquippedTickProcedure {
 	public static void execute(Entity entity) {
 		if (entity == null)
 			return;
-		if (!((entity.getCapability(VlAbyssModVariables.PLAYER_VARIABLES_CAPABILITY, null).orElse(new VlAbyssModVariables.PlayerVariables())).Vesperian == true)) {
+		if (!((entity.getCapability(VlAbyssModVariables.PLAYER_VARIABLES_CAPABILITY, null).orElseGet(VlAbyssModVariables.PlayerVariables::new)).Vesperian == true)) {
 			if (entity.isInWater()) {
 				if (entity instanceof LivingEntity _entity && !_entity.level().isClientSide())
 					_entity.addEffect(new MobEffectInstance(MobEffects.REGENERATION, 20, 1));

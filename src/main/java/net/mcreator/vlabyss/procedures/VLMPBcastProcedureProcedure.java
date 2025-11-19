@@ -17,27 +17,20 @@ public class VLMPBcastProcedureProcedure {
 		try {
 			for (Entity entityiterator : EntityArgument.getEntities(arguments, "entity")) {
 				if (entityiterator instanceof Player _player && !_player.level().isClientSide())
-					_player.displayClientMessage(Component.literal(("\u00A7f\u00A7lSSMP \u00A7r\u00A78>> \u00A77" + (new Object() {
-						public String getMessage() {
-							try {
-								return MessageArgument.getMessage(arguments, "message").getString();
-							} catch (CommandSyntaxException ignored) {
-								return "";
-							}
-						}
-					}).getMessage())), false);
+					_player.displayClientMessage(Component.literal(("\u00A7f\u00A7lSSMP \u00A7r\u00A78>> \u00A77" + commandParameterMessage(arguments, "message"))), false);
 			}
 		} catch (CommandSyntaxException e) {
 			e.printStackTrace();
 		}
-		VlAbyssMod.LOGGER.info("\u00A7f\u00A7lSSMP \u00A7r\u00A78>> \u00A77" + (new Object() {
-			public String getMessage() {
-				try {
-					return MessageArgument.getMessage(arguments, "message").getString();
-				} catch (CommandSyntaxException ignored) {
-					return "";
-				}
-			}
-		}).getMessage());
+		VlAbyssMod.LOGGER.info("\u00A7f\u00A7lSSMP \u00A7r\u00A78>> \u00A77" + commandParameterMessage(arguments, "message"));
+	}
+
+	private static String commandParameterMessage(CommandContext<CommandSourceStack> arguments, String parameter) {
+		try {
+			return MessageArgument.getMessage(arguments, parameter).getString();
+		} catch (CommandSyntaxException e) {
+			e.printStackTrace();
+			return "";
+		}
 	}
 }

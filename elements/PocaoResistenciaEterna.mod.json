@@ -5,6 +5,7 @@
     "renderType": 0,
     "texture": "pocaoresistenciaeterna",
     "customModelName": "Normal",
+    "guiTexture": "",
     "customProperties": {},
     "states": [],
     "name": "Poção de Resistência Eterna",
@@ -56,6 +57,10 @@
     "isAlwaysEdible": true,
     "animation": "drink",
     "isMusicDisc": false,
+    "musicDiscMusic": {
+      "value": ""
+    },
+    "musicDiscDescription": "",
     "musicDiscLengthInTicks": 0,
     "musicDiscAnalogOutput": 0,
     "providedBannerPatterns": []
