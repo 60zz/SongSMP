@@ -74,7 +74,7 @@ public class SeletorDeClassesGuiScreen extends AbstractContainerScreen<SeletorDe
 	@Override
 	public void init() {
 		super.init();
-		imagebutton_coracao = new ImageButton(this.leftPos + 33, this.topPos + 61, 32, 32, 0, 0, 32, ResourceLocation.parse("vl_abyss:textures/screens/atlas/imagebutton_coracao.png"), 32, 64, e -> {
+		imagebutton_coracao = new ImageButton(this.leftPos + -12, this.topPos + 7, 100, 150, 0, 0, 150, ResourceLocation.parse("vl_abyss:textures/screens/atlas/imagebutton_coracao.png"), 100, 300, e -> {
 			int x = SeletorDeClassesGuiScreen.this.x;
 			int y = SeletorDeClassesGuiScreen.this.y;
 			if (true) {
@@ -83,7 +83,7 @@ public class SeletorDeClassesGuiScreen extends AbstractContainerScreen<SeletorDe
 			}
 		});
 		this.addRenderableWidget(imagebutton_coracao);
-		imagebutton_coracao1 = new ImageButton(this.leftPos + -66, this.topPos + 61, 32, 32, 0, 0, 32, ResourceLocation.parse("vl_abyss:textures/screens/atlas/imagebutton_coracao1.png"), 32, 64, e -> {
+		imagebutton_coracao1 = new ImageButton(this.leftPos + -111, this.topPos + 7, 100, 150, 0, 0, 150, ResourceLocation.parse("vl_abyss:textures/screens/atlas/imagebutton_coracao1.png"), 100, 300, e -> {
 			int x = SeletorDeClassesGuiScreen.this.x;
 			int y = SeletorDeClassesGuiScreen.this.y;
 			if (true) {
@@ -92,7 +92,7 @@ public class SeletorDeClassesGuiScreen extends AbstractContainerScreen<SeletorDe
 			}
 		});
 		this.addRenderableWidget(imagebutton_coracao1);
-		imagebutton_coracao2 = new ImageButton(this.leftPos + 114, this.topPos + 61, 32, 32, 0, 0, 32, ResourceLocation.parse("vl_abyss:textures/screens/atlas/imagebutton_coracao2.png"), 32, 64, e -> {
+		imagebutton_coracao2 = new ImageButton(this.leftPos + 88, this.topPos + 7, 100, 150, 0, 0, 150, ResourceLocation.parse("vl_abyss:textures/screens/atlas/imagebutton_coracao2.png"), 100, 300, e -> {
 			int x = SeletorDeClassesGuiScreen.this.x;
 			int y = SeletorDeClassesGuiScreen.this.y;
 			if (true) {
@@ -101,7 +101,7 @@ public class SeletorDeClassesGuiScreen extends AbstractContainerScreen<SeletorDe
 			}
 		});
 		this.addRenderableWidget(imagebutton_coracao2);
-		imagebutton_coracao3 = new ImageButton(this.leftPos + 204, this.topPos + 61, 32, 32, 0, 0, 32, ResourceLocation.parse("vl_abyss:textures/screens/atlas/imagebutton_coracao3.png"), 32, 64, e -> {
+		imagebutton_coracao3 = new ImageButton(this.leftPos + 191, this.topPos + 7, 100, 150, 0, 0, 150, ResourceLocation.parse("vl_abyss:textures/screens/atlas/imagebutton_coracao3.png"), 100, 300, e -> {
 			int x = SeletorDeClassesGuiScreen.this.x;
 			int y = SeletorDeClassesGuiScreen.this.y;
 			if (true) {

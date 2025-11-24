@@ -121,6 +121,8 @@ public class VlAbyssModVariables {
 			clone.posX = original.posX;
 			clone.posY = original.posY;
 			clone.posZ = original.posZ;
+			clone.opcao_mantra2 = original.opcao_mantra2;
+			clone.opcao_mantra3 = original.opcao_mantra3;
 			if (!event.isWasDeath()) {
 			}
 		}
@@ -212,6 +214,8 @@ public class VlAbyssModVariables {
 		public double posX = 0;
 		public double posY = 0;
 		public double posZ = 0;
+		public double opcao_mantra2 = 0;
+		public double opcao_mantra3 = 0;
 
 		public void syncPlayerVariables(Entity entity) {
 			if (entity instanceof ServerPlayer serverPlayer)
@@ -275,6 +279,8 @@ public class VlAbyssModVariables {
 			nbt.putDouble("posX", posX);
 			nbt.putDouble("posY", posY);
 			nbt.putDouble("posZ", posZ);
+			nbt.putDouble("opcao_mantra2", opcao_mantra2);
+			nbt.putDouble("opcao_mantra3", opcao_mantra3);
 			return nbt;
 		}
 
@@ -335,6 +341,8 @@ public class VlAbyssModVariables {
 			posX = nbt.getDouble("posX");
 			posY = nbt.getDouble("posY");
 			posZ = nbt.getDouble("posZ");
+			opcao_mantra2 = nbt.getDouble("opcao_mantra2");
+			opcao_mantra3 = nbt.getDouble("opcao_mantra3");
 		}
 	}
 
@@ -414,6 +422,8 @@ public class VlAbyssModVariables {
 					variables.posX = message.data.posX;
 					variables.posY = message.data.posY;
 					variables.posZ = message.data.posZ;
+					variables.opcao_mantra2 = message.data.opcao_mantra2;
+					variables.opcao_mantra3 = message.data.opcao_mantra3;
 				}
 			});
 			context.setPacketHandled(true);

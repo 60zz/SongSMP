@@ -34,7 +34,7 @@ public class TpDimensaoCommand {
 			if (entity != null)
 				direction = entity.getDirection();
 
-			TpDimensaoComando2Procedure.execute(arguments);
+			TpDimensaoComando2Procedure.execute(world, x, y, z, arguments);
 			return 0;
 		})).then(Commands.literal("abyss").executes(arguments -> {
 			Level world = arguments.getSource().getUnsidedLevel();
@@ -48,7 +48,7 @@ public class TpDimensaoCommand {
 			if (entity != null)
 				direction = entity.getDirection();
 
-			TpDimensaoComandoProcedure.execute(arguments);
+			TpDimensaoComandoProcedure.execute(world, x, y, z, arguments);
 			return 0;
 		})).then(Commands.literal("world").executes(arguments -> {
 			Level world = arguments.getSource().getUnsidedLevel();
@@ -62,7 +62,7 @@ public class TpDimensaoCommand {
 			if (entity != null)
 				direction = entity.getDirection();
 
-			TpDimensao3Procedure.execute(arguments);
+			TpDimensao3Procedure.execute(world, x, y, z, arguments);
 			return 0;
 		}))));
 	}

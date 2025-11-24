@@ -25,7 +25,18 @@ public class CavaleiroAladoEntityDiesProcedure {
 		if (entity == null)
 			return;
 		if (entity.getPersistentData().getBoolean("invocadordefinido")) {
-			if ((entity.getCapability(VlAbyssModVariables.PLAYER_VARIABLES_CAPABILITY, null).orElseGet(VlAbyssModVariables.PlayerVariables::new)).fase == 1) {
+			if ((((new BiFunction<LevelAccessor, String, Entity>() {
+				@Override
+				public Entity apply(LevelAccessor levelAccessor, String uuid) {
+					if (levelAccessor instanceof ServerLevel serverLevel) {
+						try {
+							return serverLevel.getEntity(UUID.fromString(uuid));
+						} catch (Exception e) {
+						}
+					}
+					return null;
+				}
+			}).apply(world, (entity.getPersistentData().getString("invocador")))).getCapability(VlAbyssModVariables.PLAYER_VARIABLES_CAPABILITY, null).orElseGet(VlAbyssModVariables.PlayerVariables::new)).fase == 1) {
 				{
 					Entity _ent = entity;
 					if (!_ent.level().isClientSide() && _ent.getServer() != null) {
@@ -62,12 +73,23 @@ public class CavaleiroAladoEntityDiesProcedure {
 						}).apply(world, (entity.getPersistentData().getString("invocador")))));
 					});
 				}
-			} else if ((entity.getCapability(VlAbyssModVariables.PLAYER_VARIABLES_CAPABILITY, null).orElseGet(VlAbyssModVariables.PlayerVariables::new)).fase >= 2) {
+			} else if ((((new BiFunction<LevelAccessor, String, Entity>() {
+				@Override
+				public Entity apply(LevelAccessor levelAccessor, String uuid) {
+					if (levelAccessor instanceof ServerLevel serverLevel) {
+						try {
+							return serverLevel.getEntity(UUID.fromString(uuid));
+						} catch (Exception e) {
+						}
+					}
+					return null;
+				}
+			}).apply(world, (entity.getPersistentData().getString("invocador")))).getCapability(VlAbyssModVariables.PLAYER_VARIABLES_CAPABILITY, null).orElseGet(VlAbyssModVariables.PlayerVariables::new)).fase >= 2) {
 				if (world instanceof Level _level) {
 					if (!_level.isClientSide()) {
-						_level.playSound(null, BlockPos.containing(x, y, z), ForgeRegistries.SOUND_EVENTS.getValue(ResourceLocation.parse("vl_abyss:entidadegrito")), SoundSource.NEUTRAL, 1, 1);
+						_level.playSound(null, BlockPos.containing(x, y, z), ForgeRegistries.SOUND_EVENTS.getValue(ResourceLocation.parse("vl_abyss:entidadegrito")), SoundSource.MASTER, 1, 1);
 					} else {
-						_level.playLocalSound(x, y, z, ForgeRegistries.SOUND_EVENTS.getValue(ResourceLocation.parse("vl_abyss:entidadegrito")), SoundSource.NEUTRAL, 1, 1, false);
+						_level.playLocalSound(x, y, z, ForgeRegistries.SOUND_EVENTS.getValue(ResourceLocation.parse("vl_abyss:entidadegrito")), SoundSource.MASTER, 1, 1, false);
 					}
 				}
 				if (((new BiFunction<LevelAccessor, String, Entity>() {

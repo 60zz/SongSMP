@@ -1,0 +1,50 @@
+{
+  "_fv": 79,
+  "_type": "potioneffect",
+  "definition": {
+    "effectName": "Insanidade",
+    "icon": "insanidade2",
+    "color": {
+      "value": -16777216,
+      "falpha": 0.0
+    },
+    "onAddedSound": {
+      "value": ""
+    },
+    "isInstant": false,
+    "mobEffectCategory": "BENEFICIAL",
+    "renderStatusInInventory": true,
+    "renderStatusInHUD": true,
+    "isCuredbyHoney": false,
+    "modifiers": [
+      {
+        "attribute": {
+          "value": "LUCK"
+        },
+        "amount": -4.0,
+        "operation": "ADD_VALUE"
+      },
+      {
+        "attribute": {
+          "value": "ATTACK_DAMAGE"
+        },
+        "amount": -2.0,
+        "operation": "ADD_VALUE"
+      },
+      {
+        "attribute": {
+          "value": "ARMOR"
+        },
+        "amount": -4.0,
+        "operation": "ADD_VALUE"
+      },
+      {
+        "attribute": {
+          "value": "MOVEMENT_SPEED"
+        },
+        "amount": -0.02,
+        "operation": "ADD_VALUE"
+      }
+    ]
+  }
+}

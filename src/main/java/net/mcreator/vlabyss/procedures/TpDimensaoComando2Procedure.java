@@ -1,5 +1,6 @@
 package net.mcreator.vlabyss.procedures;
 
+import net.minecraft.world.level.LevelAccessor;
 import net.minecraft.world.level.Level;
 import net.minecraft.world.entity.Entity;
 import net.minecraft.world.effect.MobEffectInstance;
@@ -13,13 +14,12 @@ import net.minecraft.network.protocol.game.ClientboundGameEventPacket;
 import net.minecraft.core.BlockPos;
 import net.minecraft.commands.arguments.EntityArgument;
 import net.minecraft.commands.CommandSourceStack;
-import net.minecraft.commands.CommandSource;
 
 import com.mojang.brigadier.exceptions.CommandSyntaxException;
 import com.mojang.brigadier.context.CommandContext;
 
 public class TpDimensaoComando2Procedure {
-	public static void execute(CommandContext<CommandSourceStack> arguments) {
+	public static void execute(LevelAccessor world, double x, double y, double z, CommandContext<CommandSourceStack> arguments) {
 		try {
 			for (Entity entityiterator : EntityArgument.getEntities(arguments, "entity")) {
 				if (entityiterator instanceof ServerPlayer _player && !_player.level().isClientSide()) {
@@ -37,10 +37,19 @@ public class TpDimensaoComando2Procedure {
 					}
 				}
 				{
-					Entity _ent = entityiterator;
-					if (!_ent.level().isClientSide() && _ent.getServer() != null) {
-						_ent.getServer().getCommands().performPrefixedCommand(new CommandSourceStack(CommandSource.NULL, _ent.position(), _ent.getRotationVector(), _ent.level() instanceof ServerLevel ? (ServerLevel) _ent.level() : null, 4,
-								_ent.getName().getString(), _ent.getDisplayName(), _ent.level().getServer(), _ent), "minecraft:tp @s ~ ~100 ~");
+					try {
+						net.minecraft.world.entity.Entity targetEntity = entityiterator;
+						double teleportX = x;
+						double teleportY = (y + 100);
+						double teleportZ = z;
+						if (targetEntity != null) {
+							if (targetEntity instanceof net.minecraft.server.level.ServerPlayer _player && !_player.level().isClientSide()) {
+								_player.connection.teleport(teleportX, teleportY, teleportZ, _player.getYRot(), _player.getXRot());
+							} else {
+								targetEntity.teleportTo(teleportX, teleportY, teleportZ);
+							}
+						}
+					} catch (Exception e) {
 					}
 				}
 			}

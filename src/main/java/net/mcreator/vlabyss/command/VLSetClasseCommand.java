@@ -16,11 +16,15 @@ import net.minecraft.commands.Commands;
 
 import net.mcreator.vlabyss.procedures.VesperianClasseProcedure;
 import net.mcreator.vlabyss.procedures.ValmirianoClasseProcedure;
+import net.mcreator.vlabyss.procedures.TanqueClasseProcedure;
 import net.mcreator.vlabyss.procedures.SimikariClasseProcedure;
 import net.mcreator.vlabyss.procedures.ScribariClasseProcedure;
 import net.mcreator.vlabyss.procedures.NimrenClasseProcedure;
 import net.mcreator.vlabyss.procedures.LumivivoClasseProcedure;
+import net.mcreator.vlabyss.procedures.GuerreiroClasseProcedure;
 import net.mcreator.vlabyss.procedures.CapidrelClasseProcedure;
+import net.mcreator.vlabyss.procedures.BerserkerClasseProcedure;
+import net.mcreator.vlabyss.procedures.AssassinoClasseProcedure;
 import net.mcreator.vlabyss.procedures.ArkanthiClasseProcedure;
 
 import com.mojang.brigadier.arguments.BoolArgumentType;
@@ -30,7 +34,7 @@ public class VLSetClasseCommand {
 	@SubscribeEvent
 	public static void registerCommand(RegisterCommandsEvent event) {
 		event.getDispatcher().register(Commands.literal("setclasse").requires(s -> s.hasPermission(4))
-				.then(Commands.literal("Valmiriano").then(Commands.argument("entity", EntityArgument.players()).then(Commands.argument("value", BoolArgumentType.bool()).executes(arguments -> {
+				.then(Commands.argument("entity", EntityArgument.players()).then(Commands.literal("Racas").then(Commands.literal("Valmiriano").then(Commands.argument("value", BoolArgumentType.bool()).executes(arguments -> {
 					Level world = arguments.getSource().getUnsidedLevel();
 					double x = arguments.getSource().getPosition().x();
 					double y = arguments.getSource().getPosition().y();
@@ -44,7 +48,7 @@ public class VLSetClasseCommand {
 
 					ValmirianoClasseProcedure.execute(arguments, entity);
 					return 0;
-				})))).then(Commands.literal("Arkanthi").then(Commands.argument("entity", EntityArgument.players()).then(Commands.argument("value", BoolArgumentType.bool()).executes(arguments -> {
+				}))).then(Commands.literal("Arkanthi").then(Commands.argument("value", BoolArgumentType.bool()).executes(arguments -> {
 					Level world = arguments.getSource().getUnsidedLevel();
 					double x = arguments.getSource().getPosition().x();
 					double y = arguments.getSource().getPosition().y();
@@ -58,7 +62,7 @@ public class VLSetClasseCommand {
 
 					ArkanthiClasseProcedure.execute(arguments, entity);
 					return 0;
-				})))).then(Commands.literal("Vesperian").then(Commands.argument("entity", EntityArgument.players()).then(Commands.argument("value", BoolArgumentType.bool()).executes(arguments -> {
+				}))).then(Commands.literal("Vesperian").then(Commands.argument("value", BoolArgumentType.bool()).executes(arguments -> {
 					Level world = arguments.getSource().getUnsidedLevel();
 					double x = arguments.getSource().getPosition().x();
 					double y = arguments.getSource().getPosition().y();
@@ -72,7 +76,7 @@ public class VLSetClasseCommand {
 
 					VesperianClasseProcedure.execute(arguments, entity);
 					return 0;
-				})))).then(Commands.literal("Nimren").then(Commands.argument("entity", EntityArgument.players()).then(Commands.argument("value", BoolArgumentType.bool()).executes(arguments -> {
+				}))).then(Commands.literal("Nimren").then(Commands.argument("value", BoolArgumentType.bool()).executes(arguments -> {
 					Level world = arguments.getSource().getUnsidedLevel();
 					double x = arguments.getSource().getPosition().x();
 					double y = arguments.getSource().getPosition().y();
@@ -86,7 +90,7 @@ public class VLSetClasseCommand {
 
 					NimrenClasseProcedure.execute(arguments, entity);
 					return 0;
-				})))).then(Commands.literal("Simikari").then(Commands.argument("entity", EntityArgument.players()).then(Commands.argument("value", BoolArgumentType.bool()).executes(arguments -> {
+				}))).then(Commands.literal("Simikari").then(Commands.argument("value", BoolArgumentType.bool()).executes(arguments -> {
 					Level world = arguments.getSource().getUnsidedLevel();
 					double x = arguments.getSource().getPosition().x();
 					double y = arguments.getSource().getPosition().y();
@@ -100,7 +104,7 @@ public class VLSetClasseCommand {
 
 					SimikariClasseProcedure.execute(arguments, entity);
 					return 0;
-				})))).then(Commands.literal("Scribari").then(Commands.argument("entity", EntityArgument.players()).then(Commands.argument("value", BoolArgumentType.bool()).executes(arguments -> {
+				}))).then(Commands.literal("Scribari").then(Commands.argument("value", BoolArgumentType.bool()).executes(arguments -> {
 					Level world = arguments.getSource().getUnsidedLevel();
 					double x = arguments.getSource().getPosition().x();
 					double y = arguments.getSource().getPosition().y();
@@ -114,7 +118,7 @@ public class VLSetClasseCommand {
 
 					ScribariClasseProcedure.execute(arguments, entity);
 					return 0;
-				})))).then(Commands.literal("Capidrel").then(Commands.argument("entity", EntityArgument.players()).then(Commands.argument("value", BoolArgumentType.bool()).executes(arguments -> {
+				}))).then(Commands.literal("Capidrel").then(Commands.argument("value", BoolArgumentType.bool()).executes(arguments -> {
 					Level world = arguments.getSource().getUnsidedLevel();
 					double x = arguments.getSource().getPosition().x();
 					double y = arguments.getSource().getPosition().y();
@@ -128,7 +132,7 @@ public class VLSetClasseCommand {
 
 					CapidrelClasseProcedure.execute(arguments, entity);
 					return 0;
-				})))).then(Commands.literal("Lumivivo").then(Commands.argument("entity", EntityArgument.players()).then(Commands.argument("value", BoolArgumentType.bool()).executes(arguments -> {
+				}))).then(Commands.literal("Lumivivo").then(Commands.argument("value", BoolArgumentType.bool()).executes(arguments -> {
 					Level world = arguments.getSource().getUnsidedLevel();
 					double x = arguments.getSource().getPosition().x();
 					double y = arguments.getSource().getPosition().y();
@@ -142,7 +146,63 @@ public class VLSetClasseCommand {
 
 					LumivivoClasseProcedure.execute(arguments, entity);
 					return 0;
-				})))));
+				})))).then(Commands.literal("Classes").then(Commands.literal("Guerreiro").then(Commands.argument("value", BoolArgumentType.bool()).executes(arguments -> {
+					Level world = arguments.getSource().getUnsidedLevel();
+					double x = arguments.getSource().getPosition().x();
+					double y = arguments.getSource().getPosition().y();
+					double z = arguments.getSource().getPosition().z();
+					Entity entity = arguments.getSource().getEntity();
+					if (entity == null && world instanceof ServerLevel _servLevel)
+						entity = FakePlayerFactory.getMinecraft(_servLevel);
+					Direction direction = Direction.DOWN;
+					if (entity != null)
+						direction = entity.getDirection();
+
+					GuerreiroClasseProcedure.execute(arguments, entity);
+					return 0;
+				}))).then(Commands.literal("Berserker").then(Commands.argument("value", BoolArgumentType.bool()).executes(arguments -> {
+					Level world = arguments.getSource().getUnsidedLevel();
+					double x = arguments.getSource().getPosition().x();
+					double y = arguments.getSource().getPosition().y();
+					double z = arguments.getSource().getPosition().z();
+					Entity entity = arguments.getSource().getEntity();
+					if (entity == null && world instanceof ServerLevel _servLevel)
+						entity = FakePlayerFactory.getMinecraft(_servLevel);
+					Direction direction = Direction.DOWN;
+					if (entity != null)
+						direction = entity.getDirection();
+
+					BerserkerClasseProcedure.execute(arguments, entity);
+					return 0;
+				}))).then(Commands.literal("Assassino").then(Commands.argument("value", BoolArgumentType.bool()).executes(arguments -> {
+					Level world = arguments.getSource().getUnsidedLevel();
+					double x = arguments.getSource().getPosition().x();
+					double y = arguments.getSource().getPosition().y();
+					double z = arguments.getSource().getPosition().z();
+					Entity entity = arguments.getSource().getEntity();
+					if (entity == null && world instanceof ServerLevel _servLevel)
+						entity = FakePlayerFactory.getMinecraft(_servLevel);
+					Direction direction = Direction.DOWN;
+					if (entity != null)
+						direction = entity.getDirection();
+
+					AssassinoClasseProcedure.execute(arguments, entity);
+					return 0;
+				}))).then(Commands.literal("Tanque").then(Commands.argument("value", BoolArgumentType.bool()).executes(arguments -> {
+					Level world = arguments.getSource().getUnsidedLevel();
+					double x = arguments.getSource().getPosition().x();
+					double y = arguments.getSource().getPosition().y();
+					double z = arguments.getSource().getPosition().z();
+					Entity entity = arguments.getSource().getEntity();
+					if (entity == null && world instanceof ServerLevel _servLevel)
+						entity = FakePlayerFactory.getMinecraft(_servLevel);
+					Direction direction = Direction.DOWN;
+					if (entity != null)
+						direction = entity.getDirection();
+
+					TanqueClasseProcedure.execute(arguments, entity);
+					return 0;
+				}))))));
 	}
 
 }

@@ -7,7 +7,7 @@ import net.minecraftforge.event.entity.living.LivingDeathEvent;
 
 import net.minecraft.world.level.LevelAccessor;
 import net.minecraft.world.level.Level;
-import net.minecraft.world.level.GameRules;
+import net.minecraft.world.entity.LivingEntity;
 import net.minecraft.world.entity.Entity;
 import net.minecraft.world.effect.MobEffectInstance;
 import net.minecraft.world.damagesource.DamageSource;
@@ -34,15 +34,15 @@ public class MorreudeutpProcedure {
 	@SubscribeEvent
 	public static void onEntityDeath(LivingDeathEvent event) {
 		if (event != null && event.getEntity() != null) {
-			execute(event, event.getEntity().level(), event.getSource(), event.getEntity());
+			execute(event, event.getEntity().level(), event.getEntity().getX(), event.getEntity().getY(), event.getEntity().getZ(), event.getSource(), event.getEntity());
 		}
 	}
 
-	public static void execute(LevelAccessor world, DamageSource damagesource, Entity entity) {
-		execute(null, world, damagesource, entity);
+	public static void execute(LevelAccessor world, double x, double y, double z, DamageSource damagesource, Entity entity) {
+		execute(null, world, x, y, z, damagesource, entity);
 	}
 
-	private static void execute(@Nullable Event event, LevelAccessor world, DamageSource damagesource, Entity entity) {
+	private static void execute(@Nullable Event event, LevelAccessor world, double x, double y, double z, DamageSource damagesource, Entity entity) {
 		if (damagesource == null || entity == null)
 			return;
 		if (damagesource.is(ResourceKey.create(Registries.DAMAGE_TYPE, ResourceLocation.parse("vl_abyss:danoabismoboss")))) {
@@ -55,6 +55,11 @@ public class MorreudeutpProcedure {
 					});
 				}
 			} else if ((entity.getCapability(VlAbyssModVariables.PLAYER_VARIABLES_CAPABILITY, null).orElseGet(VlAbyssModVariables.PlayerVariables::new)).vidas == 1) {
+				if (event != null && event.isCancelable()) {
+					event.setCanceled(true);
+				}
+				if (entity instanceof LivingEntity _entity)
+					_entity.setHealth(entity instanceof LivingEntity _livEnt ? _livEnt.getMaxHealth() : -1);
 				{
 					double _setval = 0;
 					entity.getCapability(VlAbyssModVariables.PLAYER_VARIABLES_CAPABILITY, null).ifPresent(capability -> {
@@ -76,16 +81,23 @@ public class MorreudeutpProcedure {
 						_player.connection.send(new ClientboundLevelEventPacket(1032, BlockPos.ZERO, 0, false));
 					}
 				}
-				{
-					Entity _ent = entity;
-					if (!_ent.level().isClientSide() && _ent.getServer() != null) {
-						_ent.getServer().getCommands().performPrefixedCommand(new CommandSourceStack(CommandSource.NULL, _ent.position(), _ent.getRotationVector(), _ent.level() instanceof ServerLevel ? (ServerLevel) _ent.level() : null, 4,
-								_ent.getName().getString(), _ent.getDisplayName(), _ent.level().getServer(), _ent), "minecraft:tp @s ~ ~100 ~");
-					}
-				}
-				world.getLevelData().getGameRules().getRule(GameRules.RULE_KEEPINVENTORY).set(true, world.getServer());
 				VlAbyssMod.queueServerWork(10, () -> {
-					world.getLevelData().getGameRules().getRule(GameRules.RULE_KEEPINVENTORY).set(false, world.getServer());
+					{
+						try {
+							net.minecraft.world.entity.Entity targetEntity = entity;
+							double teleportX = x;
+							double teleportY = (y + 100);
+							double teleportZ = z;
+							if (targetEntity != null) {
+								if (targetEntity instanceof net.minecraft.server.level.ServerPlayer _player && !_player.level().isClientSide()) {
+									_player.connection.teleport(teleportX, teleportY, teleportZ, _player.getYRot(), _player.getXRot());
+								} else {
+									targetEntity.teleportTo(teleportX, teleportY, teleportZ);
+								}
+							}
+						} catch (Exception e) {
+						}
+					}
 				});
 			} else if ((entity.getCapability(VlAbyssModVariables.PLAYER_VARIABLES_CAPABILITY, null).orElseGet(VlAbyssModVariables.PlayerVariables::new)).vidas == 0) {
 				{

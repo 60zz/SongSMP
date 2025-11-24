@@ -302,5 +302,21 @@
         "stream": false
       }
     ]
+  },
+  "mantraescolhida": {
+    "sounds": [
+      {
+        "name": "vl_abyss:seleciona",
+        "stream": false
+      }
+    ]
+  },
+  "abreseletormantras": {
+    "sounds": [
+      {
+        "name": "vl_abyss:abreseletormantras",
+        "stream": false
+      }
+    ]
   }
 }

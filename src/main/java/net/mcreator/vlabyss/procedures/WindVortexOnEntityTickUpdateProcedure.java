@@ -27,16 +27,14 @@ public class WindVortexOnEntityTickUpdateProcedure {
 		{
 			final Vec3 _center = new Vec3(x, y, z);
 			for (Entity entityiterator : world.getEntitiesOfClass(Entity.class, new AABB(_center, _center).inflate(6 / 2d), e -> true).stream().sorted(Comparator.comparingDouble(_entcnd -> _entcnd.distanceToSqr(_center))).toList()) {
-				dx = entity.getX() - entityiterator.getX();
-				dy = entity.getY() - entityiterator.getY();
-				dz = entity.getZ() - entityiterator.getZ();
-				distance = Math.sqrt(dx * dx + dy * dy + dz * dz);
-				if (distance > 0) {
-					if (!(entity.getPersistentData().getString("invocador")).equals(entityiterator.getDisplayName().getString())) {
+				if (!entityiterator.getType().is(TagKey.create(Registries.ENTITY_TYPE, ResourceLocation.parse("vl_abyss:invencivel"))) && !(entity.getPersistentData().getString("invocador")).equals(entityiterator.getDisplayName().getString())) {
+					dx = entity.getX() - entityiterator.getX();
+					dy = entity.getY() - entityiterator.getY();
+					dz = entity.getZ() - entityiterator.getZ();
+					distance = Math.sqrt(dx * dx + dy * dy + dz * dz);
+					if (distance > 0) {
 						entityiterator.setDeltaMovement(new Vec3(((dx / distance) * 0.1), (entityiterator.getY() + 0.1), ((dz / distance) * 0.1)));
-					}
-					if (entityiterator.tickCount - (entityiterator instanceof LivingEntity _livEnt ? _livEnt.getLastHurtByMobTimestamp() : 0) > 10) {
-						if (!entityiterator.getType().is(TagKey.create(Registries.ENTITY_TYPE, ResourceLocation.parse("vl_abyss:invencivel")))) {
+						if (entityiterator.tickCount - (entityiterator instanceof LivingEntity _livEnt ? _livEnt.getLastHurtByMobTimestamp() : 0) > 10) {
 							entityiterator.hurt(new DamageSource(world.registryAccess().registryOrThrow(Registries.DAMAGE_TYPE).getHolderOrThrow(ResourceKey.create(Registries.DAMAGE_TYPE, ResourceLocation.parse("vl_abyss:mantra_damage")))), 1);
 							if (entityiterator instanceof LivingEntity _entity && !_entity.level().isClientSide())
 								_entity.addEffect(new MobEffectInstance(VlAbyssModMobEffects.ENFRAQUECIDO.get(), 10, 0));

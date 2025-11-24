@@ -18,6 +18,7 @@ import net.mcreator.vlabyss.potion.MedoMobEffect;
 import net.mcreator.vlabyss.potion.LastHopeMobEffect;
 import net.mcreator.vlabyss.potion.InstantRegenMantraMobEffect;
 import net.mcreator.vlabyss.potion.InsanoMobEffect;
+import net.mcreator.vlabyss.potion.InsanidadeMobEffect;
 import net.mcreator.vlabyss.potion.FlamingCutMobEffect;
 import net.mcreator.vlabyss.potion.EssenceMantraMobEffect;
 import net.mcreator.vlabyss.potion.EnfraquecidoMobEffect;
@@ -43,4 +44,5 @@ public class VlAbyssModMobEffects {
 	public static final RegistryObject<MobEffect> ELIXIR_MANTRA = REGISTRY.register("elixir_mantra", () -> new ElixirMantraMobEffect());
 	public static final RegistryObject<MobEffect> ESSENCE_MANTRA = REGISTRY.register("essence_mantra", () -> new EssenceMantraMobEffect());
 	public static final RegistryObject<MobEffect> MEDO = REGISTRY.register("medo", () -> new MedoMobEffect());
+	public static final RegistryObject<MobEffect> INSANIDADE = REGISTRY.register("insanidade", () -> new InsanidadeMobEffect());
 }

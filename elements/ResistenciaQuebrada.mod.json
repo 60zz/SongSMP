@@ -3,17 +3,28 @@
   "_type": "potioneffect",
   "definition": {
     "effectName": "Resistência Quebrada",
-    "icon": "escudox.png",
+    "icon": "escudox",
     "color": {
       "value": -16777216,
       "falpha": 0.0
+    },
+    "onAddedSound": {
+      "value": ""
     },
     "isInstant": false,
     "mobEffectCategory": "HARMFUL",
     "renderStatusInInventory": true,
     "renderStatusInHUD": true,
     "isCuredbyHoney": false,
-    "modifiers": [],
+    "modifiers": [
+      {
+        "attribute": {
+          "value": "ARMOR"
+        },
+        "amount": -4.0,
+        "operation": "ADD_VALUE"
+      }
+    ],
     "onActiveTick": {
       "name": "ResistenciaQuebradaEffectStartedapplied"
     }

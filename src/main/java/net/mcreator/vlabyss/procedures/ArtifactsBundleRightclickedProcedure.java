@@ -17,7 +17,7 @@ public class ArtifactsBundleRightclickedProcedure {
 			return;
 		double Random = 0;
 		Random = Math.random();
-		if (Random >= 0.1 && !(Random >= 0.2)) {
+		if (Random >= 0 && !(Random >= 0.2)) {
 			if (world instanceof ServerLevel _level) {
 				ItemEntity entityToSpawn = new ItemEntity(_level, x, y, z, new ItemStack(VlAbyssModItems.VOTO_SILENCIOSO.get()));
 				entityToSpawn.setPickUpDelay(10);
@@ -66,28 +66,28 @@ public class ArtifactsBundleRightclickedProcedure {
 				entityToSpawn.setUnlimitedLifetime();
 				_level.addFreshEntity(entityToSpawn);
 			}
-		} else if (Random >= 0.8 && !(Random >= 0.9)) {
+		} else if (Random >= 0.8 && !(Random >= 0.85)) {
 			if (world instanceof ServerLevel _level) {
 				ItemEntity entityToSpawn = new ItemEntity(_level, x, y, z, new ItemStack(VlAbyssModItems.VOTO_SILENCIOSO.get()));
 				entityToSpawn.setPickUpDelay(10);
 				entityToSpawn.setUnlimitedLifetime();
 				_level.addFreshEntity(entityToSpawn);
 			}
-		} else if (Random >= 0.9 && !(Random >= 0.95)) {
+		} else if (Random >= 0.85 && !(Random >= 0.9)) {
 			if (world instanceof ServerLevel _level) {
 				ItemEntity entityToSpawn = new ItemEntity(_level, x, y, z, new ItemStack(VlAbyssModItems.FAIXA_ACOLITO.get()));
 				entityToSpawn.setPickUpDelay(10);
 				entityToSpawn.setUnlimitedLifetime();
 				_level.addFreshEntity(entityToSpawn);
 			}
-		} else if (Random >= 0.95 && !(Random >= 1)) {
+		} else if (Random >= 0.9 && !(Random >= 0.95)) {
 			if (world instanceof ServerLevel _level) {
 				ItemEntity entityToSpawn = new ItemEntity(_level, x, y, z, new ItemStack(VlAbyssModItems.BOTAS_VAZIO_ABYSSAL.get()));
 				entityToSpawn.setPickUpDelay(10);
 				entityToSpawn.setUnlimitedLifetime();
 				_level.addFreshEntity(entityToSpawn);
 			}
-		} else if (Random >= 1) {
+		} else if (Random >= 0.95) {
 			if (world instanceof ServerLevel _level) {
 				ItemEntity entityToSpawn = new ItemEntity(_level, x, y, z, new ItemStack(VlAbyssModItems.CAPUZ_ESQUECIDO.get()));
 				entityToSpawn.setPickUpDelay(10);

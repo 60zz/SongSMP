@@ -3,10 +3,13 @@
   "_type": "potioneffect",
   "definition": {
     "effectName": "Corta Cura",
-    "icon": "cortaregen.png",
+    "icon": "cortaregen",
     "color": {
       "value": -16777216,
       "falpha": 0.0
+    },
+    "onAddedSound": {
+      "value": ""
     },
     "isInstant": false,
     "mobEffectCategory": "HARMFUL",

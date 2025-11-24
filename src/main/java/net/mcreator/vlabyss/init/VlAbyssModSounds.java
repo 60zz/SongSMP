@@ -52,4 +52,6 @@ public class VlAbyssModSounds {
 	public static final RegistryObject<SoundEvent> VORTEXMANTRASOM = REGISTRY.register("vortexmantrasom", () -> SoundEvent.createVariableRangeEvent(ResourceLocation.fromNamespaceAndPath("vl_abyss", "vortexmantrasom")));
 	public static final RegistryObject<SoundEvent> RESPIROHABILIDADEDOIS = REGISTRY.register("respirohabilidadedois", () -> SoundEvent.createVariableRangeEvent(ResourceLocation.fromNamespaceAndPath("vl_abyss", "respirohabilidadedois")));
 	public static final RegistryObject<SoundEvent> ENTIDADEGRITO = REGISTRY.register("entidadegrito", () -> SoundEvent.createVariableRangeEvent(ResourceLocation.fromNamespaceAndPath("vl_abyss", "entidadegrito")));
+	public static final RegistryObject<SoundEvent> MANTRAESCOLHIDA = REGISTRY.register("mantraescolhida", () -> SoundEvent.createVariableRangeEvent(ResourceLocation.fromNamespaceAndPath("vl_abyss", "mantraescolhida")));
+	public static final RegistryObject<SoundEvent> ABRESELETORMANTRAS = REGISTRY.register("abreseletormantras", () -> SoundEvent.createVariableRangeEvent(ResourceLocation.fromNamespaceAndPath("vl_abyss", "abreseletormantras")));
 }

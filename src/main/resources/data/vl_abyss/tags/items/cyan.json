@@ -3,7 +3,9 @@
   "values": [
     "vl_abyss:pocao_rejuvenescimento",
     "vl_abyss:abyssion_ingot",
+    "vl_abyss:artifacts_bundle",
     "vl_abyss:abyssion_nugget",
+    "vl_abyss:seletor_classes",
     "vl_abyss:raw_abyssion"
   ]
 }

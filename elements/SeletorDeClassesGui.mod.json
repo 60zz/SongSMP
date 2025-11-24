@@ -14,13 +14,13 @@
         "type": "imagebutton",
         "data": {
           "name": "imagebutton_coracao",
-          "image": "coracao.png",
+          "image": "guerreiro.png",
           "hoveredImage": "",
           "onClick": {
             "name": "TanqueClasseGui"
           },
-          "x": 159,
-          "y": 98,
+          "x": 114,
+          "y": 44,
           "locked": false
         }
       },
@@ -28,13 +28,13 @@
         "type": "imagebutton",
         "data": {
           "name": "imagebutton_coracao1",
-          "image": "coracao.png",
+          "image": "guerreiro.png",
           "hoveredImage": "",
           "onClick": {
             "name": "AssassinoClasseGui"
           },
-          "x": 60,
-          "y": 98,
+          "x": 15,
+          "y": 44,
           "locked": false
         }
       },
@@ -42,13 +42,13 @@
         "type": "imagebutton",
         "data": {
           "name": "imagebutton_coracao2",
-          "image": "coracao.png",
+          "image": "guerreiro2.png",
           "hoveredImage": "",
           "onClick": {
             "name": "GuerreiroClasseGui"
           },
-          "x": 240,
-          "y": 98,
+          "x": 214,
+          "y": 44,
           "locked": false
         }
       },
@@ -56,13 +56,13 @@
         "type": "imagebutton",
         "data": {
           "name": "imagebutton_coracao3",
-          "image": "coracao.png",
+          "image": "guerreiro.png",
           "hoveredImage": "",
           "onClick": {
             "name": "BerserkerClasseGui"
           },
-          "x": 330,
-          "y": 98,
+          "x": 317,
+          "y": 44,
           "locked": false
         }
       }
@@ -81,7 +81,7 @@
       "sy": 18,
       "ox": 11,
       "oy": 15,
-      "snapOnGrid": true
+      "snapOnGrid": false
     }
   }
 }

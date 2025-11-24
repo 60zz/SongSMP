@@ -16,6 +16,7 @@ import net.minecraft.server.level.ServerPlayer;
 import net.minecraft.client.Minecraft;
 
 import net.mcreator.vlabyss.world.inventory.SeletorDeClassesGuiMenu;
+import net.mcreator.vlabyss.world.inventory.SegundaHabilidadeMantraMenu;
 import net.mcreator.vlabyss.world.inventory.JMenu;
 import net.mcreator.vlabyss.network.MenuStateUpdateMessage;
 import net.mcreator.vlabyss.VlAbyssMod;
@@ -26,6 +27,7 @@ public class VlAbyssModMenus {
 	public static final DeferredRegister<MenuType<?>> REGISTRY = DeferredRegister.create(ForgeRegistries.MENU_TYPES, VlAbyssMod.MODID);
 	public static final RegistryObject<MenuType<JMenu>> J = REGISTRY.register("j", () -> IForgeMenuType.create(JMenu::new));
 	public static final RegistryObject<MenuType<SeletorDeClassesGuiMenu>> SELETOR_DE_CLASSES_GUI = REGISTRY.register("seletor_de_classes_gui", () -> IForgeMenuType.create(SeletorDeClassesGuiMenu::new));
+	public static final RegistryObject<MenuType<SegundaHabilidadeMantraMenu>> SEGUNDA_HABILIDADE_MANTRA = REGISTRY.register("segunda_habilidade_mantra", () -> IForgeMenuType.create(SegundaHabilidadeMantraMenu::new));
 
 	public interface MenuAccessor {
 		Map<String, Object> getMenuState();
