@@ -31,9 +31,8 @@ import java.util.List;
 public class LogsMorreuProcedureProcedure {
     
     private static final List<String> ALLOWED_SERVERS = Arrays.asList(
-        "vlmpsmp.elgaehost.com.br",
-        "elgae-sp1-08.elgaehost.com.br:25863",
-        "elgae-sp1-08.elgaehost.com.br",
+        "ssmp.redhosting.com.br",
+        "sp-01.redhosting.com.br:25702",
         "127.0.0.1",
         "localhost"
     );

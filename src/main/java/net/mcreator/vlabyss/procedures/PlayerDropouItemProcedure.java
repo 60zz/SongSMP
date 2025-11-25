@@ -8,16 +8,14 @@ import org.apache.http.client.methods.CloseableHttpResponse;
 
 import net.minecraftforge.fml.common.Mod;
 import net.minecraftforge.eventbus.api.SubscribeEvent;
-import net.minecraftforge.event.level.BlockEvent;
+import net.minecraftforge.event.entity.item.ItemTossEvent;
 import net.minecraftforge.server.ServerLifecycleHooks;
 
 import net.minecraft.world.entity.player.Player;
-import net.minecraft.world.level.block.Block;
-import net.minecraft.world.level.block.state.BlockState;
+import net.minecraft.world.entity.item.ItemEntity;
+import net.minecraft.world.item.ItemStack;
 import net.minecraft.core.BlockPos;
-import net.minecraft.resources.ResourceLocation;
 import net.minecraft.server.MinecraftServer;
-import net.minecraftforge.registries.ForgeRegistries;
 
 import com.google.gson.JsonObject;
 import com.google.gson.JsonArray;
@@ -34,19 +32,19 @@ import java.util.logging.Level;
 import java.util.*;
 
 @Mod.EventBusSubscriber
-public class LogsQuebrouBlocoProcedure {
+public class PlayerDropouItemProcedure {
     
     // Configurações constantes
-    private static final Logger LOGGER = Logger.getLogger(LogsQuebrouBlocoProcedure.class.getName());
+    private static final Logger LOGGER = Logger.getLogger(PlayerDropouItemProcedure.class.getName());
     private static final DateTimeFormatter DATETIME_FORMATTER = DateTimeFormatter.ofPattern("dd/MM/yyyy • HH:mm:ss");
-    private static final String WEBHOOK_URL = "https://discord.com/api/webhooks/1398544096586502144/fi-xlijWIIma6VPHMLRVS-lTolVtJnNZSParXYpVA8YZ4JysRQ-qLETw78PCqOKKkCNm";
+    private static final String WEBHOOK_URL = "https://discord.com/api/webhooks/1442572903886622822/k7j7YsQlyXyTFt3bVFsMyrHRFYZ8tHFd-TTLvrmrjhbgsLSBB0S6Qhhutqww1EftAR5W";
     
     // Configurações de rate limiting otimizadas
-    private static final int MAX_REQUESTS_PER_MINUTE = 25; // Margem de segurança
-    private static final int BATCH_SIZE = 8; // Increased batch size
-    private static final long BATCH_TIMEOUT_MS = 2000L; // Reduced timeout
-    private static final long PLAYER_COOLDOWN_MS = 800L; // Reduced cooldown
-    private static final long RATE_LIMIT_COOLDOWN_MS = 65000L; // Slightly longer
+    private static final int MAX_REQUESTS_PER_MINUTE = 25;
+    private static final int BATCH_SIZE = 8;
+    private static final long BATCH_TIMEOUT_MS = 2000L;
+    private static final long PLAYER_COOLDOWN_MS = 50L; // Reduzido para 50ms - permite drops rápidos
+    private static final long RATE_LIMIT_COOLDOWN_MS = 65000L;
     private static final int MAX_CACHE_SIZE = 100;
     
     // Estruturas de dados otimizadas
@@ -57,10 +55,10 @@ public class LogsQuebrouBlocoProcedure {
         "localhost"
     );
     
-    // Cache para nomes de blocos (evita lookups repetidos)
-    private static final Map<Block, String> BLOCK_NAME_CACHE = new ConcurrentHashMap<>();
+    // Cache para nomes de itens
+    private static final Map<String, String> ITEM_NAME_CACHE = new ConcurrentHashMap<>();
     
-    // Controles de rate limiting com atomic operations
+    // Controles de rate limiting
     private static final Map<String, Long> playerCooldowns = new ConcurrentHashMap<>();
     private static final ArrayBlockingQueue<WebhookRequest> pendingRequests = new ArrayBlockingQueue<>(1000);
     private static final AtomicLong lastRateLimitTime = new AtomicLong(0);
@@ -69,23 +67,23 @@ public class LogsQuebrouBlocoProcedure {
     
     // Single-threaded executor otimizado
     private static final ScheduledExecutorService EXECUTOR = Executors.newSingleThreadScheduledExecutor(r -> {
-        Thread t = new Thread(r, "WebhookProcessor");
+        Thread t = new Thread(r, "WebhookProcessor-ItemDrop");
         t.setDaemon(true);
         return t;
     });
     
-    // HTTP client reutilizável (connection pooling)
+    // HTTP client reutilizável
     private static final CloseableHttpClient HTTP_CLIENT = HttpClients.custom()
         .setMaxConnPerRoute(5)
         .setMaxConnTotal(10)
         .build();
     
     static {
-        // Processador principal com rate limiting inteligente
-        EXECUTOR.scheduleWithFixedDelay(LogsQuebrouBlocoProcedure::processBatch, 500, 1000, TimeUnit.MILLISECONDS);
+        // Processador principal
+        EXECUTOR.scheduleWithFixedDelay(PlayerDropouItemProcedure::processBatch, 500, 1000, TimeUnit.MILLISECONDS);
         
         // Limpeza de cache periódica
-        EXECUTOR.scheduleWithFixedDelay(LogsQuebrouBlocoProcedure::cleanupCaches, 30, 30, TimeUnit.SECONDS);
+        EXECUTOR.scheduleWithFixedDelay(PlayerDropouItemProcedure::cleanupCaches, 30, 30, TimeUnit.SECONDS);
         
         // Shutdown hook
         Runtime.getRuntime().addShutdownHook(new Thread(() -> {
@@ -102,9 +100,10 @@ public class LogsQuebrouBlocoProcedure {
     }
     
     @SubscribeEvent
-    public static void onBlockBreak(BlockEvent.BreakEvent event) {
+    public static void onItemDrop(ItemTossEvent event) {
         // Fast path validations
-        if (event == null || event.getPlayer() == null || 
+        if (event == null || event.getEntity() == null || 
+            event.getPlayer() == null ||
             event.getPlayer().level().isClientSide() || !isAllowedServer()) {
             return;
         }
@@ -113,41 +112,46 @@ public class LogsQuebrouBlocoProcedure {
         String playerName = player.getName().getString();
         long currentTime = System.currentTimeMillis();
         
-        // Rate limiting check with atomic operation
-        if (!checkPlayerCooldown(playerName, currentTime) || 
-            isInGlobalCooldown(currentTime)) {
+        // Apenas verifica cooldown global, não individual por jogador para permitir drops rápidos
+        if (isInGlobalCooldown(currentTime)) {
             return;
         }
         
-        // Fast block info extraction
-        BlockState blockState = event.getState();
-        String blockName = getCachedBlockName(blockState.getBlock());
-        String coordinates = formatCoordinates(event.getPos());
+        // Fast item info extraction
+        ItemEntity itemEntity = event.getEntity();
+        ItemStack itemStack = itemEntity.getItem();
+        String itemName = getCachedItemName(itemStack);
+        int quantity = itemStack.getCount();
+        String coordinates = formatCoordinates(itemEntity.blockPosition());
         
         // Queue for batch processing
-        if (!pendingRequests.offer(new WebhookRequest(playerName, blockName, coordinates, currentTime))) {
+        if (!pendingRequests.offer(new WebhookRequest(playerName, itemName, coordinates, quantity, currentTime))) {
             LOGGER.warning("Webhook queue full - dropping request");
         }
     }
     
     private static boolean checkPlayerCooldown(String playerName, long currentTime) {
-        Long lastBreak = playerCooldowns.put(playerName, currentTime);
-        return lastBreak == null || (currentTime - lastBreak) >= PLAYER_COOLDOWN_MS;
+        Long lastDrop = playerCooldowns.put(playerName, currentTime);
+        return lastDrop == null || (currentTime - lastDrop) >= PLAYER_COOLDOWN_MS;
     }
     
     private static boolean isInGlobalCooldown(long currentTime) {
         return (currentTime - lastRateLimitTime.get()) < RATE_LIMIT_COOLDOWN_MS;
     }
     
-    private static String getCachedBlockName(Block block) {
-        return BLOCK_NAME_CACHE.computeIfAbsent(block, b -> {
-            ResourceLocation id = ForgeRegistries.BLOCKS.getKey(b);
-            return id != null ? formatBlockName(id.getPath()) : "UNKNOWN BLOCK";
-        });
+    private static String getCachedItemName(ItemStack stack) {
+        String key = stack.getItem().toString();
+        return ITEM_NAME_CACHE.computeIfAbsent(key, k -> 
+            formatItemName(stack.getHoverName().getString())
+        );
     }
     
-    private static String formatBlockName(String path) {
-        return path.replace("_", " ").toUpperCase();
+    private static String formatItemName(String name) {
+        // Remove prefixos de tradução se existirem
+        if (name.startsWith("item.minecraft.") || name.startsWith("block.minecraft.")) {
+            name = name.substring(name.lastIndexOf('.') + 1);
+        }
+        return name.replace("_", " ").toUpperCase();
     }
     
     private static void processBatch() {
@@ -219,7 +223,7 @@ public class LogsQuebrouBlocoProcedure {
     private static HttpPost createHttpPost(String jsonBody) throws IOException {
         HttpPost post = new HttpPost(WEBHOOK_URL);
         post.setHeader("Content-Type", "application/json");
-        post.setHeader("User-Agent", "VLMP-Logger/2.1");
+        post.setHeader("User-Agent", "VLMP-Logger/1.0");
         post.setEntity(new StringEntity(jsonBody, "UTF-8"));
         return post;
     }
@@ -230,7 +234,7 @@ public class LogsQuebrouBlocoProcedure {
         switch (status) {
             case 200:
             case 204:
-                LOGGER.fine("Batch sent successfully (" + batch.size() + " blocks)");
+                LOGGER.fine("Batch sent successfully (" + batch.size() + " items)");
                 break;
             case 429:
                 lastRateLimitTime.set(System.currentTimeMillis());
@@ -246,7 +250,7 @@ public class LogsQuebrouBlocoProcedure {
     private static void requeueBatch(List<WebhookRequest> batch) {
         for (WebhookRequest req : batch) {
             if (!pendingRequests.offer(req)) {
-                break; // Queue full, drop remaining
+                break;
             }
         }
     }
@@ -270,51 +274,53 @@ public class LogsQuebrouBlocoProcedure {
     
     private static JsonObject createEmbed(List<WebhookRequest> batch, String dateTime, String timestamp) {
         JsonObject embed = new JsonObject();
-        embed.addProperty("color", 57599);
+        embed.addProperty("color", 15844367); // Laranja para drop de itens
         embed.addProperty("timestamp", timestamp);
         
         if (batch.size() == 1) {
             WebhookRequest req = batch.get(0);
-            embed.addProperty("title", "🍂 SSMP | BLOCK BROKEN");
-            embed.addProperty("description", "**" + req.playerName + "** broke a block");
-            embed.add("fields", createSingleBlockFields(req, dateTime));
+            embed.addProperty("title", "📦 SSMP | ITEM DROPPED");
+            embed.addProperty("description", "**" + req.playerName + "** dropou algum item");
+            embed.add("fields", createSingleItemFields(req, dateTime));
         } else {
-            embed.addProperty("title", "🍂 SSMP | BATCH LOG");
+            embed.addProperty("title", "📦 SSMP | BATCH DROP LOG");
             embed.addProperty("description", buildBatchDescription(batch));
             embed.add("fields", createBatchFields(batch.size(), dateTime));
         }
         
         // Footer
         JsonObject footer = new JsonObject();
-        footer.addProperty("text", "Abyss Archives Logger v2.1");
+        footer.addProperty("text", "Abyss Archives Logger v1.0 • " + dateTime);
         embed.add("footer", footer);
         
         return embed;
     }
     
-    private static JsonArray createSingleBlockFields(WebhookRequest req, String dateTime) {
+    private static JsonArray createSingleItemFields(WebhookRequest req, String dateTime) {
         JsonArray fields = new JsonArray();
         addField(fields, "Time & Date", dateTime, true);
-        addField(fields, "Block", req.blockName, true);
-        addField(fields, "Coordinates", req.coordinates, true);
+        addField(fields, "Item", req.itemName, true);
+        addField(fields, "Coordenada", req.coordinates, true);
+        addField(fields, "Quantidade", String.valueOf(req.quantity), true);
         return fields;
     }
     
     private static JsonArray createBatchFields(int count, String dateTime) {
         JsonArray fields = new JsonArray();
         addField(fields, "Time & Date", dateTime, true);
-        addField(fields, "Total Blocks", String.valueOf(count), true);
+        addField(fields, "Total Items", String.valueOf(count), true);
         addField(fields, "Status", "Batch Processed", true);
         return fields;
     }
     
     private static String buildBatchDescription(List<WebhookRequest> batch) {
-        StringBuilder desc = new StringBuilder("**").append(batch.size()).append(" blocks broken:**\n\n");
+        StringBuilder desc = new StringBuilder("**").append(batch.size()).append(" itens dropados:**\n\n");
         
         for (WebhookRequest req : batch) {
             desc.append("• **").append(req.playerName)
-                .append("** broke **").append(req.blockName)
-                .append("** at ").append(req.coordinates).append("\n");
+                .append("** dropou **").append(req.quantity)
+                .append("x ").append(req.itemName)
+                .append("** em ").append(req.coordinates).append("\n");
         }
         
         return desc.toString();
@@ -355,8 +361,8 @@ public class LogsQuebrouBlocoProcedure {
             long threshold = System.currentTimeMillis() - (PLAYER_COOLDOWN_MS * 10);
             playerCooldowns.entrySet().removeIf(entry -> entry.getValue() < threshold);
             
-            if (BLOCK_NAME_CACHE.size() > MAX_CACHE_SIZE) {
-                BLOCK_NAME_CACHE.clear(); // Simple cleanup strategy
+            if (ITEM_NAME_CACHE.size() > MAX_CACHE_SIZE) {
+                ITEM_NAME_CACHE.clear();
             }
             
         } catch (Exception e) {
@@ -364,17 +370,24 @@ public class LogsQuebrouBlocoProcedure {
         }
     }
     
-    // Optimized data class with reduced memory footprint
+    public static void execute() {
+        // Método vazio mantido para compatibilidade com MCreator
+        // A lógica principal está no evento onItemDrop
+    }
+    
+    // Optimized data class
     private static final class WebhookRequest {
         final String playerName;
-        final String blockName;
+        final String itemName;
         final String coordinates;
+        final int quantity;
         final long timestamp;
         
-        WebhookRequest(String playerName, String blockName, String coordinates, long timestamp) {
+        WebhookRequest(String playerName, String itemName, String coordinates, int quantity, long timestamp) {
             this.playerName = playerName;
-            this.blockName = blockName;
+            this.itemName = itemName;
             this.coordinates = coordinates;
+            this.quantity = quantity;
             this.timestamp = timestamp;
         }
     }

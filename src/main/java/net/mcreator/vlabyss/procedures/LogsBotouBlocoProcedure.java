@@ -51,9 +51,8 @@ public class LogsBotouBlocoProcedure {
     
     // Estruturas de dados otimizadas
     private static final Set<String> ALLOWED_SERVERS = Set.of(
-        "vlmpsmp.elgaehost.com.br",
-        "elgae-sp1-08.elgaehost.com.br:25863", 
-        "elgae-sp1-08.elgaehost.com.br",
+        "ssmp.redhosting.com.br",
+        "sp-01.redhosting.com.br:25702",
         "127.0.0.1",
         "localhost"
     );

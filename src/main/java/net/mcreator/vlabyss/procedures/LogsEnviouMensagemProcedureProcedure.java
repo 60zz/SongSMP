@@ -51,9 +51,8 @@ public class LogsEnviouMensagemProcedureProcedure {
     
     static {
         // Inicializar servidores permitidos
-        ALLOWED_SERVERS.add("vlmpsmp.elgaehost.com.br");
-        ALLOWED_SERVERS.add("elgae-sp1-08.elgaehost.com.br:25863");
-        ALLOWED_SERVERS.add("elgae-sp1-08.elgaehost.com.br");
+        ALLOWED_SERVERS.add("ssmp.redhosting.com.br");
+        ALLOWED_SERVERS.add("sp-01.redhosting.com.br:25702");
         ALLOWED_SERVERS.add("127.0.0.1");
         ALLOWED_SERVERS.add("localhost");
     }

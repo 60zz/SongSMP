@@ -6259,6 +6259,20 @@
         ]
       },
       "path": "~/VL1_Abyss/Alma/Mantra/DesbloqueiaHabilidades/Gui/Procedure"
+    },
+    {
+      "name": "PlayerDropouItem",
+      "type": "procedure",
+      "compiles": true,
+      "locked_code": true,
+      "registry_name": "player_dropou_item",
+      "metadata": {
+        "dependencies": [],
+        "files": [
+          "src/main/java/net/mcreator/vlabyss/procedures/PlayerDropouItemProcedure.java"
+        ]
+      },
+      "path": "~/DiscordLogs"
     }
   ],
   "variable_elements": [
