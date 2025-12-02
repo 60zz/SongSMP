@@ -318,5 +318,53 @@
         "stream": false
       }
     ]
+  },
+  "reconjurationimpact": {
+    "sounds": [
+      {
+        "name": "vl_abyss:reconjurationimpact",
+        "stream": false
+      }
+    ]
+  },
+  "impactocyclone": {
+    "sounds": [
+      {
+        "name": "vl_abyss:impactocyclone",
+        "stream": false
+      }
+    ]
+  },
+  "ativacloak_lightning": {
+    "sounds": [
+      {
+        "name": "vl_abyss:ativacloak_lightning",
+        "stream": false
+      }
+    ]
+  },
+  "acabacloak_lightning": {
+    "sounds": [
+      {
+        "name": "vl_abyss:acabacloak_lightning",
+        "stream": false
+      }
+    ]
+  },
+  "dischargespark": {
+    "sounds": [
+      {
+        "name": "vl_abyss:dischargespark",
+        "stream": false
+      }
+    ]
+  },
+  "sparkswap": {
+    "sounds": [
+      {
+        "name": "vl_abyss:spark_swap",
+        "stream": false
+      }
+    ]
   }
 }

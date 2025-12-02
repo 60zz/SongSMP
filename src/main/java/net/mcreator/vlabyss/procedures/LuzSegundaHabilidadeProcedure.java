@@ -23,6 +23,7 @@ import net.minecraft.client.CameraType;
 
 import net.mcreator.vlabyss.network.VlAbyssModVariables;
 import net.mcreator.vlabyss.init.VlAbyssModMobEffects;
+import net.mcreator.vlabyss.init.VlAbyssModAttributes;
 import net.mcreator.vlabyss.VlAbyssMod;
 
 import java.util.List;
@@ -37,7 +38,7 @@ public class LuzSegundaHabilidadeProcedure {
 		if ((entity.getCapability(VlAbyssModVariables.PLAYER_VARIABLES_CAPABILITY, null).orElseGet(VlAbyssModVariables.PlayerVariables::new)).Luz >= 1
 				&& (entity.getCapability(VlAbyssModVariables.PLAYER_VARIABLES_CAPABILITY, null).orElseGet(VlAbyssModVariables.PlayerVariables::new)).MantraRegistrada == true
 				&& (entity.getCapability(VlAbyssModVariables.PLAYER_VARIABLES_CAPABILITY, null).orElseGet(VlAbyssModVariables.PlayerVariables::new)).habilidade2 == true) {
-			if ((entity.getCapability(VlAbyssModVariables.PLAYER_VARIABLES_CAPABILITY, null).orElseGet(VlAbyssModVariables.PlayerVariables::new)).mantra2_cooldown < 1) {
+			if (!((entity.getCapability(VlAbyssModVariables.PLAYER_VARIABLES_CAPABILITY, null).orElseGet(VlAbyssModVariables.PlayerVariables::new)).mantra2_cooldown > 0)) {
 				if ((entity.getCapability(VlAbyssModVariables.PLAYER_VARIABLES_CAPABILITY, null).orElseGet(VlAbyssModVariables.PlayerVariables::new)).Ethir >= 130) {
 					if ((entity.getCapability(VlAbyssModVariables.PLAYER_VARIABLES_CAPABILITY, null).orElseGet(VlAbyssModVariables.PlayerVariables::new)).hab2_nivel == 1) {
 						if (Minecraft.getInstance().options.keyShift.isDown()) {
@@ -58,7 +59,9 @@ public class LuzSegundaHabilidadeProcedure {
 									if (target instanceof LivingEntity _entity && !_entity.level().isClientSide())
 										_entity.addEffect(new MobEffectInstance(VlAbyssModMobEffects.LAST_HOPE.get(), 160, 0));
 									{
-										double _setval = 40;
+										double _setval = Math.round(40 / (entity instanceof LivingEntity _livingEntity11 && _livingEntity11.getAttributes().hasAttribute(VlAbyssModAttributes.ABILITY_COOLDOWN_REDUCTION.get())
+												? _livingEntity11.getAttribute(VlAbyssModAttributes.ABILITY_COOLDOWN_REDUCTION.get()).getValue()
+												: 0));
 										entity.getCapability(VlAbyssModVariables.PLAYER_VARIABLES_CAPABILITY, null).ifPresent(capability -> {
 											capability.mantra2_cooldown = _setval;
 											capability.syncPlayerVariables(entity);
@@ -130,7 +133,9 @@ public class LuzSegundaHabilidadeProcedure {
 							if (entity instanceof LivingEntity _entity && !_entity.level().isClientSide())
 								_entity.addEffect(new MobEffectInstance(VlAbyssModMobEffects.LAST_HOPE.get(), 160, 0));
 							{
-								double _setval = 40;
+								double _setval = Math.round(40 / (entity instanceof LivingEntity _livingEntity20 && _livingEntity20.getAttributes().hasAttribute(VlAbyssModAttributes.ABILITY_COOLDOWN_REDUCTION.get())
+										? _livingEntity20.getAttribute(VlAbyssModAttributes.ABILITY_COOLDOWN_REDUCTION.get()).getValue()
+										: 0));
 								entity.getCapability(VlAbyssModVariables.PLAYER_VARIABLES_CAPABILITY, null).ifPresent(capability -> {
 									capability.mantra2_cooldown = _setval;
 									capability.syncPlayerVariables(entity);
@@ -216,7 +221,9 @@ public class LuzSegundaHabilidadeProcedure {
 									if (target instanceof LivingEntity _entity && !_entity.level().isClientSide())
 										_entity.addEffect(new MobEffectInstance(VlAbyssModMobEffects.LAST_HOPE.get(), 320, 0));
 									{
-										double _setval = 40;
+										double _setval = Math.round(40 / (entity instanceof LivingEntity _livingEntity39 && _livingEntity39.getAttributes().hasAttribute(VlAbyssModAttributes.ABILITY_COOLDOWN_REDUCTION.get())
+												? _livingEntity39.getAttribute(VlAbyssModAttributes.ABILITY_COOLDOWN_REDUCTION.get()).getValue()
+												: 0));
 										entity.getCapability(VlAbyssModVariables.PLAYER_VARIABLES_CAPABILITY, null).ifPresent(capability -> {
 											capability.mantra2_cooldown = _setval;
 											capability.syncPlayerVariables(entity);
@@ -288,7 +295,9 @@ public class LuzSegundaHabilidadeProcedure {
 							if (entity instanceof LivingEntity _entity && !_entity.level().isClientSide())
 								_entity.addEffect(new MobEffectInstance(VlAbyssModMobEffects.LAST_HOPE.get(), 320, 0));
 							{
-								double _setval = 40;
+								double _setval = Math.round(40 / (entity instanceof LivingEntity _livingEntity48 && _livingEntity48.getAttributes().hasAttribute(VlAbyssModAttributes.ABILITY_COOLDOWN_REDUCTION.get())
+										? _livingEntity48.getAttribute(VlAbyssModAttributes.ABILITY_COOLDOWN_REDUCTION.get()).getValue()
+										: 0));
 								entity.getCapability(VlAbyssModVariables.PLAYER_VARIABLES_CAPABILITY, null).ifPresent(capability -> {
 									capability.mantra2_cooldown = _setval;
 									capability.syncPlayerVariables(entity);

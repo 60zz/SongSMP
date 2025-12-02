@@ -42,11 +42,12 @@ public class AbsorverAlmaOnKeyPressedProcedure {
 		if (damagesource == null || entity == null || sourceentity == null)
 			return;
 		if (!(entity instanceof MantraSoulEntity) || !(entity instanceof CavaleiroAladoEntity) || !entity.getType().is(TagKey.create(Registries.ENTITY_TYPE, ResourceLocation.parse("vl_abyss:invencivel")))) {
-			if (!damagesource.is(ResourceKey.create(Registries.DAMAGE_TYPE, ResourceLocation.parse("vl_abyss:mantra_damage"))) && !(sourceentity instanceof LivingEntity _livEnt4 && _livEnt4.hasEffect(VlAbyssModMobEffects.SHADOW_COPY.get()))) {
+			if (!damagesource.is(ResourceKey.create(Registries.DAMAGE_TYPE, ResourceLocation.parse("vl_abyss:mantra_damage"))) && !(sourceentity instanceof LivingEntity _livEnt4 && _livEnt4.hasEffect(VlAbyssModMobEffects.LIGHTNING_CLOAK.get()))
+					&& !(sourceentity instanceof LivingEntity _livEnt5 && _livEnt5.hasEffect(VlAbyssModMobEffects.SHADOW_COPY.get()))) {
 				if (Math.random() > 0.95) {
-					if ((world.getBlockState(BlockPos.containing(x, y + 1, z))).getBlock() == Blocks.AIR) {
+					if ((world.getBlockState(BlockPos.containing(x, y, z))).getBlock() == Blocks.AIR) {
 						if (world instanceof ServerLevel _level) {
-							Entity entityToSpawn = VlAbyssModEntities.MANTRA_SOUL.get().spawn(_level, BlockPos.containing(x, y + 1, z), MobSpawnType.MOB_SUMMONED);
+							Entity entityToSpawn = VlAbyssModEntities.MANTRA_SOUL.get().spawn(_level, BlockPos.containing(x, y, z), MobSpawnType.MOB_SUMMONED);
 							if (entityToSpawn != null) {
 								entityToSpawn.setDeltaMovement(0, 0, 0);
 							}
@@ -55,9 +56,9 @@ public class AbsorverAlmaOnKeyPressedProcedure {
 				}
 			} else {
 				if (Math.random() > 0.97) {
-					if ((world.getBlockState(BlockPos.containing(x, y + 1, z))).getBlock() == Blocks.AIR) {
+					if ((world.getBlockState(BlockPos.containing(x, y, z))).getBlock() == Blocks.AIR) {
 						if (world instanceof ServerLevel _level) {
-							Entity entityToSpawn = VlAbyssModEntities.MANTRA_SOUL_CORROMPIDA.get().spawn(_level, BlockPos.containing(x, y + 1, z), MobSpawnType.MOB_SUMMONED);
+							Entity entityToSpawn = VlAbyssModEntities.MANTRA_SOUL_CORROMPIDA.get().spawn(_level, BlockPos.containing(x, y, z), MobSpawnType.MOB_SUMMONED);
 							if (entityToSpawn != null) {
 								entityToSpawn.setDeltaMovement(0, 0, 0);
 							}

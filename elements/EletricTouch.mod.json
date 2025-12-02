@@ -1,0 +1,32 @@
+{
+  "_fv": 79,
+  "_type": "potioneffect",
+  "definition": {
+    "effectName": "Eletric Touch",
+    "icon": "lightning_cloak",
+    "color": {
+      "value": -16777216,
+      "falpha": 0.0
+    },
+    "onAddedSound": {
+      "value": "CUSTOM:ativacloak_lightning"
+    },
+    "isInstant": false,
+    "mobEffectCategory": "BENEFICIAL",
+    "renderStatusInInventory": true,
+    "renderStatusInHUD": true,
+    "isCuredbyHoney": false,
+    "modifiers": [
+      {
+        "attribute": {
+          "value": "MOVEMENT_SPEED"
+        },
+        "amount": 0.03,
+        "operation": "ADD_VALUE"
+      }
+    ],
+    "onActiveTick": {
+      "name": "EletricTouchOnEffectActiveTick"
+    }
+  }
+}

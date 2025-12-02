@@ -65,7 +65,7 @@
     "health": 0,
     "xpAmount": 0,
     "waterMob": false,
-    "flyingMob": true,
+    "flyingMob": false,
     "guiBoundTo": "<NONE>",
     "inventorySize": 9,
     "inventoryStackSize": 64,
@@ -112,9 +112,9 @@
     "onInitialSpawn": {
       "name": "MantraSoulOnInitialEntitySpawn"
     },
-    "hasAI": true,
+    "hasAI": false,
     "aiBase": "(none)",
-    "aixml": "<xml xmlns=\"https://developers.google.com/blockly/xml\"><block type=\"aitasks_container\" deletable=\"false\" x=\"40\" y=\"40\"></block></xml>",
+    "aixml": "<xml xmlns=\"https://developers.google.com/blockly/xml\"></xml>",
     "model": "alma.geo.json",
     "groupName": "",
     "animation1": "giragira",

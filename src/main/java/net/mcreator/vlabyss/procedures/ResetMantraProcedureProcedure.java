@@ -169,6 +169,20 @@ public class ResetMantraProcedureProcedure {
 						capability.syncPlayerVariables(entity);
 					});
 				}
+				{
+					double _setval = 0;
+					entity.getCapability(VlAbyssModVariables.PLAYER_VARIABLES_CAPABILITY, null).ifPresent(capability -> {
+						capability.opcao_mantra2 = _setval;
+						capability.syncPlayerVariables(entity);
+					});
+				}
+				{
+					double _setval = 0;
+					entity.getCapability(VlAbyssModVariables.PLAYER_VARIABLES_CAPABILITY, null).ifPresent(capability -> {
+						capability.opcao_mantra3 = _setval;
+						capability.syncPlayerVariables(entity);
+					});
+				}
 			}
 		} catch (CommandSyntaxException e) {
 			e.printStackTrace();

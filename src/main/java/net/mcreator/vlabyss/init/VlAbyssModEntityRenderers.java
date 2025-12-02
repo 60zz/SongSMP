@@ -25,5 +25,6 @@ public class VlAbyssModEntityRenderers {
 		event.registerEntityRenderer(VlAbyssModEntities.MANTRA_SOUL_CORROMPIDA.get(), MantraSoulCorrompidaRenderer::new);
 		event.registerEntityRenderer(VlAbyssModEntities.WIND_VORTEX.get(), WindVortexRenderer::new);
 		event.registerEntityRenderer(VlAbyssModEntities.COUNTER_SPELL.get(), ThrownItemRenderer::new);
+		event.registerEntityRenderer(VlAbyssModEntities.RECONJURATION.get(), ThrownItemRenderer::new);
 	}
 }

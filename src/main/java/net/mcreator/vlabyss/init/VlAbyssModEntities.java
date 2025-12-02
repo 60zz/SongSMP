@@ -17,6 +17,7 @@ import net.minecraft.world.entity.Entity;
 
 import net.mcreator.vlabyss.entity.WindVortexEntity;
 import net.mcreator.vlabyss.entity.RespiroPrimariaEntity;
+import net.mcreator.vlabyss.entity.ReconjurationEntity;
 import net.mcreator.vlabyss.entity.MantraSoulEntity;
 import net.mcreator.vlabyss.entity.MantraSoulCorrompidaEntity;
 import net.mcreator.vlabyss.entity.CounterSpellEntity;
@@ -38,6 +39,8 @@ public class VlAbyssModEntities {
 			.setUpdateInterval(3).setCustomClientFactory(WindVortexEntity::new).fireImmune().sized(1.5f, 0.5f));
 	public static final RegistryObject<EntityType<CounterSpellEntity>> COUNTER_SPELL = register("counter_spell",
 			EntityType.Builder.<CounterSpellEntity>of(CounterSpellEntity::new, MobCategory.MISC).setCustomClientFactory(CounterSpellEntity::new).setShouldReceiveVelocityUpdates(true).setTrackingRange(64).setUpdateInterval(1).sized(0.5f, 0.5f));
+	public static final RegistryObject<EntityType<ReconjurationEntity>> RECONJURATION = register("reconjuration",
+			EntityType.Builder.<ReconjurationEntity>of(ReconjurationEntity::new, MobCategory.MISC).setCustomClientFactory(ReconjurationEntity::new).setShouldReceiveVelocityUpdates(true).setTrackingRange(64).setUpdateInterval(1).sized(0.5f, 0.5f));
 
 	// Start of user code block custom entities
 	// End of user code block custom entities

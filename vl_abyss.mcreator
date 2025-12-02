@@ -14,6 +14,10 @@
           {
             "name": "arguments",
             "type": "cmdcontext"
+          },
+          {
+            "name": "world",
+            "type": "world"
           }
         ]
       },
@@ -767,13 +771,13 @@
       "name": "MantraSoul",
       "type": "animatedentity",
       "compiles": true,
-      "locked_code": true,
+      "locked_code": false,
       "registry_name": "mantra_soul",
       "metadata": {
         "files": [
-          "src/main/java/net/mcreator/vlabyss/client/renderer/MantraSoulRenderer.java",
+          "src/main/java/net/mcreator/vlabyss/entity/model/MantraSoulModel.java",
           "src/main/java/net/mcreator/vlabyss/entity/MantraSoulEntity.java",
-          "src/main/java/net/mcreator/vlabyss/entity/model/MantraSoulModel.java"
+          "src/main/java/net/mcreator/vlabyss/client/renderer/MantraSoulRenderer.java"
         ]
       },
       "path": "~/VL1_Abyss/Alma/Alma"
@@ -4476,8 +4480,8 @@
       "registry_name": "wind_vortex",
       "metadata": {
         "files": [
-          "src/main/java/net/mcreator/vlabyss/entity/WindVortexEntity.java",
           "src/main/java/net/mcreator/vlabyss/entity/model/WindVortexModel.java",
+          "src/main/java/net/mcreator/vlabyss/entity/WindVortexEntity.java",
           "src/main/java/net/mcreator/vlabyss/client/renderer/WindVortexRenderer.java"
         ]
       },
@@ -4564,7 +4568,7 @@
           "src/main/java/net/mcreator/vlabyss/potion/EnfraquecidoMobEffect.java"
         ]
       },
-      "path": "~/VL1_Abyss/Mantras/MantrasPrincipais/Respiro/Efeito"
+      "path": "~/VL1_Abyss/Mantras/MantrasPrincipais/Respiro/WindVortex/Efeito"
     },
     {
       "name": "PlayerTickDesbloqueiaMantra",
@@ -4707,7 +4711,28 @@
       "locked_code": false,
       "registry_name": "tempestade_primeira_habilidade",
       "metadata": {
-        "dependencies": [],
+        "dependencies": [
+          {
+            "name": "entity",
+            "type": "entity"
+          },
+          {
+            "name": "x",
+            "type": "number"
+          },
+          {
+            "name": "y",
+            "type": "number"
+          },
+          {
+            "name": "z",
+            "type": "number"
+          },
+          {
+            "name": "world",
+            "type": "world"
+          }
+        ],
         "files": [
           "src/main/java/net/mcreator/vlabyss/procedures/TempestadePrimeiraHabilidadeProcedure.java"
         ]
@@ -6079,9 +6104,9 @@
       "registry_name": "segunda_habilidade_mantra",
       "metadata": {
         "files": [
-          "src/main/java/net/mcreator/vlabyss/client/gui/SegundaHabilidadeMantraScreen.java",
           "src/main/java/net/mcreator/vlabyss/network/SegundaHabilidadeMantraButtonMessage.java",
-          "src/main/java/net/mcreator/vlabyss/world/inventory/SegundaHabilidadeMantraMenu.java"
+          "src/main/java/net/mcreator/vlabyss/world/inventory/SegundaHabilidadeMantraMenu.java",
+          "src/main/java/net/mcreator/vlabyss/client/gui/SegundaHabilidadeMantraScreen.java"
         ]
       },
       "path": "~/VL1_Abyss/Alma/Mantra/DesbloqueiaHabilidades/Gui"
@@ -6273,6 +6298,807 @@
         ]
       },
       "path": "~/DiscordLogs"
+    },
+    {
+      "name": "MantraSoulRightClickedOnEntity",
+      "type": "procedure",
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "mantra_soul_right_clicked_on_entity",
+      "metadata": {
+        "dependencies": [
+          {
+            "name": "entity",
+            "type": "entity"
+          },
+          {
+            "name": "sourceentity",
+            "type": "entity"
+          },
+          {
+            "name": "x",
+            "type": "number"
+          },
+          {
+            "name": "y",
+            "type": "number"
+          },
+          {
+            "name": "z",
+            "type": "number"
+          },
+          {
+            "name": "world",
+            "type": "world"
+          }
+        ],
+        "files": [
+          "src/main/java/net/mcreator/vlabyss/procedures/MantraSoulRightClickedOnEntityProcedure.java"
+        ]
+      },
+      "path": "~/VL1_Abyss/Alma/Alma"
+    },
+    {
+      "name": "Reconjuration",
+      "type": "projectile",
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "reconjuration",
+      "metadata": {
+        "files": [
+          "src/main/java/net/mcreator/vlabyss/entity/ReconjurationEntity.java"
+        ]
+      },
+      "path": "~/VL1_Abyss/Mantras/MantrasPrincipais/Respiro/StormReconjuration/Projectil"
+    },
+    {
+      "name": "ReconjurationProjectileHitsBlock",
+      "type": "procedure",
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "reconjuration_projectile_hits_block",
+      "metadata": {
+        "dependencies": [
+          {
+            "name": "x",
+            "type": "number"
+          },
+          {
+            "name": "y",
+            "type": "number"
+          },
+          {
+            "name": "z",
+            "type": "number"
+          },
+          {
+            "name": "world",
+            "type": "world"
+          }
+        ],
+        "files": [
+          "src/main/java/net/mcreator/vlabyss/procedures/ReconjurationProjectileHitsBlockProcedure.java"
+        ]
+      },
+      "path": "~/VL1_Abyss/Mantras/MantrasPrincipais/Respiro/StormReconjuration/Projectil/Procedure"
+    },
+    {
+      "name": "StormReconjuration",
+      "type": "potioneffect",
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "storm_reconjuration",
+      "metadata": {
+        "files": [
+          "src/main/java/net/mcreator/vlabyss/potion/StormReconjurationMobEffect.java"
+        ]
+      },
+      "path": "~/VL1_Abyss/Mantras/MantrasPrincipais/Respiro/StormReconjuration/Projectil/Effect"
+    },
+    {
+      "name": "ReconjurationProjectileHitsLivingEntity",
+      "type": "procedure",
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "reconjuration_projectile_hits_living_entity",
+      "metadata": {
+        "dependencies": [
+          {
+            "name": "entity",
+            "type": "entity"
+          },
+          {
+            "name": "immediatesourceentity",
+            "type": "entity"
+          },
+          {
+            "name": "x",
+            "type": "number"
+          },
+          {
+            "name": "y",
+            "type": "number"
+          },
+          {
+            "name": "z",
+            "type": "number"
+          },
+          {
+            "name": "world",
+            "type": "world"
+          }
+        ],
+        "files": [
+          "src/main/java/net/mcreator/vlabyss/procedures/ReconjurationProjectileHitsLivingEntityProcedure.java"
+        ]
+      },
+      "path": "~/VL1_Abyss/Mantras/MantrasPrincipais/Respiro/StormReconjuration/Projectil/Procedure"
+    },
+    {
+      "name": "ReconjurationWhileProjectileFlyingTick",
+      "type": "procedure",
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "reconjuration_while_projectile_flying_tick",
+      "metadata": {
+        "dependencies": [
+          {
+            "name": "immediatesourceentity",
+            "type": "entity"
+          },
+          {
+            "name": "x",
+            "type": "number"
+          },
+          {
+            "name": "y",
+            "type": "number"
+          },
+          {
+            "name": "z",
+            "type": "number"
+          },
+          {
+            "name": "world",
+            "type": "world"
+          }
+        ],
+        "files": [
+          "src/main/java/net/mcreator/vlabyss/procedures/ReconjurationWhileProjectileFlyingTickProcedure.java"
+        ]
+      },
+      "path": "~/VL1_Abyss/Mantras/MantrasPrincipais/Respiro/StormReconjuration/Projectil/Procedure"
+    },
+    {
+      "name": "Reconjurar",
+      "type": "potioneffect",
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "reconjurar",
+      "metadata": {
+        "files": [
+          "src/main/java/net/mcreator/vlabyss/potion/ReconjurarMobEffect.java"
+        ]
+      },
+      "path": "~/VL1_Abyss/Mantras/MantrasPrincipais/Respiro/StormReconjuration/Projectil/Effect"
+    },
+    {
+      "name": "RightClickWithReconjurar",
+      "type": "procedure",
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "right_click_with_reconjurar",
+      "metadata": {
+        "dependencies": [
+          {
+            "name": "entity",
+            "type": "entity"
+          },
+          {
+            "name": "x",
+            "type": "number"
+          },
+          {
+            "name": "y",
+            "type": "number"
+          },
+          {
+            "name": "z",
+            "type": "number"
+          },
+          {
+            "name": "world",
+            "type": "world"
+          }
+        ],
+        "files": [
+          "src/main/java/net/mcreator/vlabyss/procedures/RightClickWithReconjurarProcedure.java"
+        ]
+      },
+      "path": "~/VL1_Abyss/Mantras/MantrasPrincipais/Respiro/StormReconjuration/Projectil/Procedure"
+    },
+    {
+      "name": "CriticoComReconjurar",
+      "type": "procedure",
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "critico_com_reconjurar",
+      "metadata": {
+        "dependencies": [
+          {
+            "name": "entity",
+            "type": "entity"
+          },
+          {
+            "name": "sourceentity",
+            "type": "entity"
+          },
+          {
+            "name": "damagemodifier",
+            "type": "number"
+          },
+          {
+            "name": "world",
+            "type": "world"
+          }
+        ],
+        "files": [
+          "src/main/java/net/mcreator/vlabyss/procedures/CriticoComReconjurarProcedure.java"
+        ]
+      },
+      "path": "~/VL1_Abyss/Mantras/MantrasPrincipais/Respiro/StormReconjuration/Projectil/Procedure"
+    },
+    {
+      "name": "LogouCorrigeStep",
+      "type": "procedure",
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "logou_corrige_step",
+      "metadata": {
+        "dependencies": [
+          {
+            "name": "entity",
+            "type": "entity"
+          },
+          {
+            "name": "world",
+            "type": "world"
+          }
+        ],
+        "files": [
+          "src/main/java/net/mcreator/vlabyss/procedures/LogouCorrigeStepProcedure.java"
+        ]
+      },
+      "path": "~/Plugins/ArrumaStepHeight"
+    },
+    {
+      "name": "MorreuRecebeDenovo",
+      "type": "procedure",
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "morreu_recebe_denovo",
+      "metadata": {
+        "dependencies": [
+          {
+            "name": "entity",
+            "type": "entity"
+          },
+          {
+            "name": "world",
+            "type": "world"
+          }
+        ],
+        "files": [
+          "src/main/java/net/mcreator/vlabyss/procedures/MorreuRecebeDenovoProcedure.java"
+        ]
+      },
+      "path": "~/Plugins/ArrumaStepHeight"
+    },
+    {
+      "name": "AbilityCooldownReduction",
+      "type": "attribute",
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "ability_cooldown_reduction",
+      "metadata": {
+        "files": []
+      },
+      "path": "~/VL1_Abyss/Mantras/Atributo"
+    },
+    {
+      "name": "ExplosaoVento",
+      "type": "particle",
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "explosao_vento",
+      "metadata": {
+        "files": [
+          "src/main/resources/assets/vl_abyss/particles/explosao_vento.json",
+          "src/main/java/net/mcreator/vlabyss/client/particle/ExplosaoVentoParticle.java"
+        ]
+      },
+      "path": "~/VL1_Abyss/Mantras/MantrasPrincipais/Respiro/StormReconjuration/Projectil/Particula"
+    },
+    {
+      "name": "SlamCyclone",
+      "type": "particle",
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "slam_cyclone",
+      "metadata": {
+        "files": [
+          "src/main/java/net/mcreator/vlabyss/client/particle/SlamCycloneParticle.java",
+          "src/main/resources/assets/vl_abyss/particles/slam_cyclone.json"
+        ]
+      },
+      "path": "~/VL1_Abyss/Mantras/MantrasPrincipais/Respiro/CycloneSlam"
+    },
+    {
+      "name": "CycloneStorm",
+      "type": "potioneffect",
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "cyclone_storm",
+      "metadata": {
+        "files": [
+          "src/main/java/net/mcreator/vlabyss/potion/CycloneStormMobEffect.java"
+        ]
+      },
+      "path": "~/VL1_Abyss/Mantras/MantrasPrincipais/Respiro/CycloneSlam"
+    },
+    {
+      "name": "CycloneAcertaChao",
+      "type": "procedure",
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "cyclone_acerta_chao",
+      "metadata": {
+        "dependencies": [
+          {
+            "name": "entity",
+            "type": "entity"
+          },
+          {
+            "name": "damagemultiplier",
+            "type": "number"
+          },
+          {
+            "name": "x",
+            "type": "number"
+          },
+          {
+            "name": "y",
+            "type": "number"
+          },
+          {
+            "name": "z",
+            "type": "number"
+          },
+          {
+            "name": "world",
+            "type": "world"
+          }
+        ],
+        "files": [
+          "src/main/java/net/mcreator/vlabyss/procedures/CycloneAcertaChaoProcedure.java"
+        ]
+      },
+      "path": "~/VL1_Abyss/Mantras/MantrasPrincipais/Respiro/CycloneSlam"
+    },
+    {
+      "name": "LightningCloak",
+      "type": "potioneffect",
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "lightning_cloak",
+      "metadata": {
+        "files": [
+          "src/main/java/net/mcreator/vlabyss/potion/LightningCloakMobEffect.java"
+        ]
+      },
+      "path": "~/VL1_Abyss/Mantras/MantrasPrincipais/Tempestade/LightningCloak"
+    },
+    {
+      "name": "DodgeChange",
+      "type": "attribute",
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "dodge_change",
+      "metadata": {
+        "files": []
+      },
+      "path": "~/VL1_Abyss/InteligenciaAtributo"
+    },
+    {
+      "name": "WhiteShock",
+      "type": "particle",
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "white_shock",
+      "metadata": {
+        "files": [
+          "src/main/java/net/mcreator/vlabyss/client/particle/WhiteShockParticle.java",
+          "src/main/resources/assets/vl_abyss/particles/white_shock.json"
+        ]
+      },
+      "path": "~/VL1_Abyss/Mantras/MantrasPrincipais/Tempestade/LightningCloak/Particula"
+    },
+    {
+      "name": "LightningCloakParticle",
+      "type": "particle",
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "lightning_cloak_particle",
+      "metadata": {
+        "files": [
+          "src/main/java/net/mcreator/vlabyss/client/particle/LightningCloakParticleParticle.java",
+          "src/main/resources/assets/vl_abyss/particles/lightning_cloak_particle.json"
+        ]
+      },
+      "path": "~/VL1_Abyss/Mantras/MantrasPrincipais/Tempestade/LightningCloak/Particula"
+    },
+    {
+      "name": "LightningCloakOnEffectActiveTick",
+      "type": "procedure",
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "lightning_cloak_on_effect_active_tick",
+      "metadata": {
+        "dependencies": [
+          {
+            "name": "x",
+            "type": "number"
+          },
+          {
+            "name": "y",
+            "type": "number"
+          },
+          {
+            "name": "z",
+            "type": "number"
+          },
+          {
+            "name": "world",
+            "type": "world"
+          }
+        ],
+        "files": [
+          "src/main/java/net/mcreator/vlabyss/procedures/LightningCloakOnEffectActiveTickProcedure.java"
+        ]
+      },
+      "path": "~/VL1_Abyss/Mantras/MantrasPrincipais/Tempestade/LightningCloak/Procedure"
+    },
+    {
+      "name": "LightningCloakEffectExpires",
+      "type": "procedure",
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "lightning_cloak_effect_expires",
+      "metadata": {
+        "dependencies": [
+          {
+            "name": "x",
+            "type": "number"
+          },
+          {
+            "name": "y",
+            "type": "number"
+          },
+          {
+            "name": "z",
+            "type": "number"
+          },
+          {
+            "name": "world",
+            "type": "world"
+          }
+        ],
+        "files": [
+          "src/main/java/net/mcreator/vlabyss/procedures/LightningCloakEffectExpiresProcedure.java"
+        ]
+      },
+      "path": "~/VL1_Abyss/Mantras/MantrasPrincipais/Tempestade/LightningCloak/Procedure"
+    },
+    {
+      "name": "Paralisado",
+      "type": "potioneffect",
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "paralisado",
+      "metadata": {
+        "files": [
+          "src/main/java/net/mcreator/vlabyss/potion/ParalisadoMobEffect.java"
+        ]
+      },
+      "path": "~/VL1_Abyss/Mantras/MantrasPrincipais/Tempestade/DischargeLightning"
+    },
+    {
+      "name": "ParalisadoOnEffectActiveTick",
+      "type": "procedure",
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "paralisado_on_effect_active_tick",
+      "metadata": {
+        "dependencies": [
+          {
+            "name": "x",
+            "type": "number"
+          },
+          {
+            "name": "y",
+            "type": "number"
+          },
+          {
+            "name": "z",
+            "type": "number"
+          },
+          {
+            "name": "world",
+            "type": "world"
+          }
+        ],
+        "files": [
+          "src/main/java/net/mcreator/vlabyss/procedures/ParalisadoOnEffectActiveTickProcedure.java"
+        ]
+      },
+      "path": "~/VL1_Abyss/Mantras/MantrasPrincipais/Tempestade/DischargeLightning/Procedure"
+    },
+    {
+      "name": "TempestadeSegundaHabilidade",
+      "type": "procedure",
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "tempestade_segunda_habilidade",
+      "metadata": {
+        "dependencies": [
+          {
+            "name": "entity",
+            "type": "entity"
+          },
+          {
+            "name": "x",
+            "type": "number"
+          },
+          {
+            "name": "y",
+            "type": "number"
+          },
+          {
+            "name": "z",
+            "type": "number"
+          },
+          {
+            "name": "world",
+            "type": "world"
+          }
+        ],
+        "files": [
+          "src/main/java/net/mcreator/vlabyss/procedures/TempestadeSegundaHabilidadeProcedure.java"
+        ]
+      },
+      "path": "~/VL1_Abyss/Mantras/MantraKeyAtivacao/MantrasProcedure/SegundaHabilidade/Tempestade"
+    },
+    {
+      "name": "MostraOpcoesTempestade",
+      "type": "procedure",
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "mostra_opcoes_tempestade",
+      "metadata": {
+        "dependencies": [
+          {
+            "name": "entity",
+            "type": "entity"
+          }
+        ],
+        "return_type": "logic",
+        "files": [
+          "src/main/java/net/mcreator/vlabyss/procedures/MostraOpcoesTempestadeProcedure.java"
+        ]
+      },
+      "path": "~/VL1_Abyss/Alma/Mantra/DesbloqueiaHabilidades/Gui/Tempestade"
+    },
+    {
+      "name": "ClicouPrimeiraOpcaoTempestade",
+      "type": "procedure",
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "clicou_primeira_opcao_tempestade",
+      "metadata": {
+        "dependencies": [
+          {
+            "name": "entity",
+            "type": "entity"
+          }
+        ],
+        "files": [
+          "src/main/java/net/mcreator/vlabyss/procedures/ClicouPrimeiraOpcaoTempestadeProcedure.java"
+        ]
+      },
+      "path": "~/VL1_Abyss/Alma/Mantra/DesbloqueiaHabilidades/Gui/Tempestade"
+    },
+    {
+      "name": "ClicouSegundaOpcaoTempestade",
+      "type": "procedure",
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "clicou_segunda_opcao_tempestade",
+      "metadata": {
+        "dependencies": [
+          {
+            "name": "entity",
+            "type": "entity"
+          }
+        ],
+        "files": [
+          "src/main/java/net/mcreator/vlabyss/procedures/ClicouSegundaOpcaoTempestadeProcedure.java"
+        ]
+      },
+      "path": "~/VL1_Abyss/Alma/Mantra/DesbloqueiaHabilidades/Gui/Tempestade"
+    },
+    {
+      "name": "ClicouTerceiraOpcaoTempestade",
+      "type": "procedure",
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "clicou_terceira_opcao_tempestade",
+      "metadata": {
+        "dependencies": [
+          {
+            "name": "entity",
+            "type": "entity"
+          }
+        ],
+        "files": [
+          "src/main/java/net/mcreator/vlabyss/procedures/ClicouTerceiraOpcaoTempestadeProcedure.java"
+        ]
+      },
+      "path": "~/VL1_Abyss/Alma/Mantra/DesbloqueiaHabilidades/Gui/Tempestade"
+    },
+    {
+      "name": "ShockSwapParticle",
+      "type": "particle",
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "shock_swap_particle",
+      "metadata": {
+        "files": [
+          "src/main/java/net/mcreator/vlabyss/client/particle/ShockSwapParticleParticle.java",
+          "src/main/resources/assets/vl_abyss/particles/shock_swap_particle.json"
+        ]
+      },
+      "path": "~/VL1_Abyss/Mantras/MantrasPrincipais/Tempestade/ShockSwap"
+    },
+    {
+      "name": "EletricTouch",
+      "type": "potioneffect",
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "eletric_touch",
+      "metadata": {
+        "files": [
+          "src/main/java/net/mcreator/vlabyss/potion/EletricTouchMobEffect.java"
+        ]
+      },
+      "path": "~/VL1_Abyss/Mantras/MantrasPrincipais/Tempestade/EletricTouch"
+    },
+    {
+      "name": "EletricOrbParticle",
+      "type": "particle",
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "eletric_orb_particle",
+      "metadata": {
+        "files": [
+          "src/main/java/net/mcreator/vlabyss/client/particle/EletricOrbParticleParticle.java",
+          "src/main/resources/assets/vl_abyss/particles/eletric_orb_particle.json"
+        ]
+      },
+      "path": "~/VL1_Abyss/Mantras/MantrasPrincipais/Tempestade/EletricTouch"
+    },
+    {
+      "name": "DeuCriticoEletricTouch",
+      "type": "procedure",
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "deu_critico_eletric_touch",
+      "metadata": {
+        "dependencies": [
+          {
+            "name": "entity",
+            "type": "entity"
+          },
+          {
+            "name": "sourceentity",
+            "type": "entity"
+          },
+          {
+            "name": "world",
+            "type": "world"
+          }
+        ],
+        "files": [
+          "src/main/java/net/mcreator/vlabyss/procedures/DeuCriticoEletricTouchProcedure.java"
+        ]
+      },
+      "path": "~/VL1_Abyss/Mantras/MantrasPrincipais/Tempestade/EletricTouch"
+    },
+    {
+      "name": "EletricTouchOnEffectActiveTick",
+      "type": "procedure",
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "eletric_touch_on_effect_active_tick",
+      "metadata": {
+        "dependencies": [
+          {
+            "name": "x",
+            "type": "number"
+          },
+          {
+            "name": "y",
+            "type": "number"
+          },
+          {
+            "name": "z",
+            "type": "number"
+          },
+          {
+            "name": "world",
+            "type": "world"
+          }
+        ],
+        "files": [
+          "src/main/java/net/mcreator/vlabyss/procedures/EletricTouchOnEffectActiveTickProcedure.java"
+        ]
+      },
+      "path": "~/VL1_Abyss/Mantras/MantrasPrincipais/Tempestade/EletricTouch"
+    },
+    {
+      "name": "InfoSeletorClasses",
+      "type": "procedure",
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "info_seletor_classes",
+      "metadata": {
+        "dependencies": [
+          {
+            "name": "itemstack",
+            "type": "itemstack"
+          },
+          {
+            "name": "tooltip",
+            "type": "tooltip"
+          }
+        ],
+        "files": [
+          "src/main/java/net/mcreator/vlabyss/procedures/InfoSeletorClassesProcedure.java"
+        ]
+      },
+      "path": "~/VL1_Abyss/ClassesPersonagens/Procedure"
+    },
+    {
+      "name": "InfoAbismoDrop",
+      "type": "procedure",
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "info_abismo_drop",
+      "metadata": {
+        "dependencies": [
+          {
+            "name": "itemstack",
+            "type": "itemstack"
+          },
+          {
+            "name": "tooltip",
+            "type": "tooltip"
+          }
+        ],
+        "files": [
+          "src/main/java/net/mcreator/vlabyss/procedures/InfoAbismoDropProcedure.java"
+        ]
+      },
+      "path": "~/VL1_Abyss/AbismoBosses/DropAbismoCriaturas/Procedure"
     }
   ],
   "variable_elements": [
@@ -6939,6 +7765,54 @@
       ],
       "category": "master",
       "subtitle": ""
+    },
+    {
+      "name": "reconjurationimpact",
+      "files": [
+        "reconjurationimpact"
+      ],
+      "category": "master",
+      "subtitle": ""
+    },
+    {
+      "name": "impactocyclone",
+      "files": [
+        "impactocyclone"
+      ],
+      "category": "master",
+      "subtitle": ""
+    },
+    {
+      "name": "ativacloak_lightning",
+      "files": [
+        "ativacloak_lightning"
+      ],
+      "category": "master",
+      "subtitle": ""
+    },
+    {
+      "name": "acabacloak_lightning",
+      "files": [
+        "acabacloak_lightning"
+      ],
+      "category": "master",
+      "subtitle": ""
+    },
+    {
+      "name": "dischargespark",
+      "files": [
+        "dischargespark"
+      ],
+      "category": "master",
+      "subtitle": ""
+    },
+    {
+      "name": "sparkswap",
+      "files": [
+        "spark_swap"
+      ],
+      "category": "master",
+      "subtitle": ""
     }
   ],
   "tag_elements": {
@@ -7041,7 +7915,8 @@
       "CUSTOM:RespiroPrimaria",
       "CUSTOM:MantraSoulCorrompida",
       "CUSTOM:WindVortex",
-      "CUSTOM:CounterSpell"
+      "CUSTOM:CounterSpell",
+      "CUSTOM:Reconjuration"
     ]
   },
   "tab_element_order": {
@@ -7350,56 +8225,68 @@
       "subtitles.entidadegrito": "",
       "effect.vl_abyss.insanidade": "Insanidade",
       "subtitles.mantraescolhida": "",
-      "subtitles.abreseletormantras": ""
+      "subtitles.abreseletormantras": "",
+      "effect.vl_abyss.storm_reconjuration": "Reconjuração da Tempestade",
+      "effect.vl_abyss.reconjurar": "Reconjurar",
+      "subtitles.reconjurationimpact": "",
+      "effect.vl_abyss.cyclone_storm": "Olho do Ciclone",
+      "subtitles.impactocyclone": "",
+      "effect.vl_abyss.lightning_cloak": "Lightning Cloak",
+      "subtitles.ativacloak_lightning": "",
+      "subtitles.acabacloak_lightning": "",
+      "effect.vl_abyss.paralisado": "Paralisado",
+      "subtitles.dischargespark": "",
+      "subtitles.sparkswap": "",
+      "effect.vl_abyss.eletric_touch": "Eletric Touch"
     }
   },
   "metadata": {
     "files": [
-      "src/main/resources/mixins.vl_abyss.json",
-      "src/main/java/net/mcreator/vlabyss/init/VlAbyssModTabs.java",
-      "src/main/resources/assets/vl_abyss/sounds.json",
       "src/main/resources/META-INF/mods.toml",
+      "src/main/resources/assets/vl_abyss/sounds.json",
+      "src/main/java/net/mcreator/vlabyss/init/VlAbyssModTabs.java",
+      "src/main/resources/META-INF/accesstransformer.cfg",
+      "src/main/resources/mixins.vl_abyss.json",
+      "src/main/resources/pack.mcmeta",
       "src/main/java/net/mcreator/vlabyss/network/VlAbyssModVariables.java",
       "src/main/java/net/mcreator/vlabyss/VlAbyssMod.java",
       "src/main/java/net/mcreator/vlabyss/init/VlAbyssModSounds.java",
-      "src/main/resources/pack.mcmeta",
-      "src/main/resources/META-INF/accesstransformer.cfg",
       "src/main/java/net/mcreator/vlabyss/block/listener/ClientListener.java",
       "src/main/java/net/mcreator/vlabyss/init/EntityAnimationFactory.java",
-      "src/main/java/net/mcreator/vlabyss/init/ItemAnimationFactory.java",
       "src/main/java/net/mcreator/vlabyss/utils/AnimUtils.java",
+      "src/main/java/net/mcreator/vlabyss/init/ItemAnimationFactory.java",
       "src/main/java/net/mcreator/vlabyss/init/VlAbyssModAttributes.java",
       "src/main/java/net/mcreator/vlabyss/init/VlAbyssModBannerPatterns.java",
       "src/main/java/net/mcreator/vlabyss/init/VlAbyssModConfigs.java",
+      "src/main/java/net/mcreator/vlabyss/init/VlAbyssModCuriosSlots.java",
+      "src/main/resources/data/curios/tags/items/ring.json",
+      "src/main/resources/data/curios/tags/items/head.json",
+      "src/main/java/net/mcreator/vlabyss/init/VlAbyssModLayerDefinitions.java",
+      "src/main/resources/data/curios/tags/items/belt.json",
       "src/main/java/net/mcreator/vlabyss/init/VlAbyssModCuriosProperties.java",
       "src/main/resources/data/curios/tags/items/hands.json",
-      "src/main/java/net/mcreator/vlabyss/init/VlAbyssModCuriosSlots.java",
-      "src/main/java/net/mcreator/vlabyss/init/VlAbyssModLayerDefinitions.java",
-      "src/main/resources/data/curios/tags/items/head.json",
-      "src/main/resources/data/curios/tags/items/ring.json",
       "src/main/java/net/mcreator/vlabyss/init/VlAbyssModCuriosRenderers.java",
-      "src/main/resources/data/curios/tags/items/belt.json",
       "src/main/resources/data/curios/tags/items/necklace.json",
       "src/main/java/net/mcreator/vlabyss/init/VlAbyssModCustomCuriosSlots.java",
+      "src/main/java/net/mcreator/vlabyss/init/VlAbyssModMenus.java",
       "src/main/java/net/mcreator/vlabyss/init/VlAbyssModScreens.java",
       "src/main/java/net/mcreator/vlabyss/network/MenuStateUpdateMessage.java",
-      "src/main/java/net/mcreator/vlabyss/init/VlAbyssModMenus.java",
       "src/main/java/net/mcreator/vlabyss/init/VlAbyssModJeiInformation.java",
       "src/main/java/net/mcreator/vlabyss/init/VlAbyssModKeyMappings.java",
-      "src/main/java/net/mcreator/vlabyss/init/VlAbyssModPaintings.java",
       "src/main/resources/data/minecraft/tags/painting_variant/placeable.json",
+      "src/main/java/net/mcreator/vlabyss/init/VlAbyssModPaintings.java",
       "src/main/java/net/mcreator/vlabyss/init/VlAbyssModParticles.java",
       "src/main/java/net/mcreator/vlabyss/init/VlAbyssModParticleTypes.java",
       "src/main/java/net/mcreator/vlabyss/init/VlAbyssModMobEffects.java",
       "src/main/java/net/mcreator/vlabyss/init/VlAbyssModBrewingRecipes.java",
-      "src/main/java/net/mcreator/vlabyss/init/VlAbyssModVillagerProfessions.java",
       "src/main/resources/data/minecraft/tags/point_of_interest_type/acquirable_job_site.json",
+      "src/main/java/net/mcreator/vlabyss/init/VlAbyssModVillagerProfessions.java",
       "src/main/java/net/mcreator/vlabyss/init/VlAbyssModTrades.java",
       "src/main/java/net/mcreator/vlabyss/init/VlAbyssModBlocks.java",
       "src/main/java/net/mcreator/vlabyss/init/VlAbyssModBlockEntities.java",
       "src/main/java/net/mcreator/vlabyss/init/VlAbyssModItems.java",
-      "src/main/java/net/mcreator/vlabyss/init/VlAbyssModEntityRenderers.java",
-      "src/main/java/net/mcreator/vlabyss/init/VlAbyssModEntities.java"
+      "src/main/java/net/mcreator/vlabyss/init/VlAbyssModEntities.java",
+      "src/main/java/net/mcreator/vlabyss/init/VlAbyssModEntityRenderers.java"
     ]
   },
   "foldersRoot": {
@@ -7838,15 +8725,37 @@
                           {
                             "name": "Procedure",
                             "children": []
+                          },
+                          {
+                            "name": "Efeito",
+                            "children": []
                           }
                         ]
                       },
                       {
-                        "name": "WindStorm",
-                        "children": []
+                        "name": "StormReconjuration",
+                        "children": [
+                          {
+                            "name": "Projectil",
+                            "children": [
+                              {
+                                "name": "Procedure",
+                                "children": []
+                              },
+                              {
+                                "name": "Effect",
+                                "children": []
+                              },
+                              {
+                                "name": "Particula",
+                                "children": []
+                              }
+                            ]
+                          }
+                        ]
                       },
                       {
-                        "name": "Efeito",
+                        "name": "CycloneSlam",
                         "children": []
                       }
                     ]
@@ -7902,6 +8811,41 @@
                             "children": []
                           }
                         ]
+                      }
+                    ]
+                  },
+                  {
+                    "name": "Tempestade",
+                    "children": [
+                      {
+                        "name": "LightningCloak",
+                        "children": [
+                          {
+                            "name": "Procedure",
+                            "children": []
+                          },
+                          {
+                            "name": "Particula",
+                            "children": []
+                          }
+                        ]
+                      },
+                      {
+                        "name": "DischargeLightning",
+                        "children": [
+                          {
+                            "name": "Procedure",
+                            "children": []
+                          }
+                        ]
+                      },
+                      {
+                        "name": "ShockSwap",
+                        "children": []
+                      },
+                      {
+                        "name": "EletricTouch",
+                        "children": []
                       }
                     ]
                   }
@@ -8107,6 +9051,10 @@
           },
           {
             "name": "IconicSpy",
+            "children": []
+          },
+          {
+            "name": "ArrumaStepHeight",
             "children": []
           }
         ]

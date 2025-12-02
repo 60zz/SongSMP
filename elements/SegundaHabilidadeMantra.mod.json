@@ -111,6 +111,57 @@
           "y": 98,
           "locked": false
         }
+      },
+      {
+        "type": "imagebutton",
+        "data": {
+          "name": "imagebutton_coracao6",
+          "image": "coracao.png",
+          "hoveredImage": "",
+          "onClick": {
+            "name": "ClicouPrimeiraOpcaoTempestade"
+          },
+          "displayCondition": {
+            "name": "MostraOpcoesTempestade"
+          },
+          "x": 105,
+          "y": 98,
+          "locked": false
+        }
+      },
+      {
+        "type": "imagebutton",
+        "data": {
+          "name": "imagebutton_coracao7",
+          "image": "coracao.png",
+          "hoveredImage": "",
+          "onClick": {
+            "name": "ClicouSegundaOpcaoTempestade"
+          },
+          "displayCondition": {
+            "name": "MostraOpcoesTempestade"
+          },
+          "x": 195,
+          "y": 98,
+          "locked": false
+        }
+      },
+      {
+        "type": "imagebutton",
+        "data": {
+          "name": "imagebutton_coracao8",
+          "image": "coracao.png",
+          "hoveredImage": "",
+          "onClick": {
+            "name": "ClicouTerceiraOpcaoTempestade"
+          },
+          "displayCondition": {
+            "name": "MostraOpcoesTempestade"
+          },
+          "x": 285,
+          "y": 98,
+          "locked": false
+        }
       }
     ],
     "onOpen": {

@@ -30,6 +30,8 @@ public class VlAbyssModAttributes {
 	public static final RegistryObject<Attribute> WIND_BONUS = REGISTRY.register("wind_bonus", () -> new RangedAttribute("attribute.vl_abyss.wind_bonus", 1, 0, 10).setSyncable(true));
 	public static final RegistryObject<Attribute> THUNDERSTORM_BONUS = REGISTRY.register("thunderstorm_bonus", () -> new RangedAttribute("attribute.vl_abyss.thunderstorm_bonus", 1, 0, 10).setSyncable(true));
 	public static final RegistryObject<Attribute> MANTRA_REGENERATION = REGISTRY.register("mantra_regeneration", () -> new RangedAttribute("attribute.vl_abyss.mantra_regeneration", 1, -100, 100).setSyncable(true));
+	public static final RegistryObject<Attribute> ABILITY_COOLDOWN_REDUCTION = REGISTRY.register("ability_cooldown_reduction", () -> new RangedAttribute("attribute.vl_abyss.ability_cooldown_reduction", 1, -100, 100).setSyncable(true));
+	public static final RegistryObject<Attribute> DODGE_CHANGE = REGISTRY.register("dodge_change", () -> new RangedAttribute("attribute.vl_abyss.dodge_change", 0, 0, 100).setSyncable(true));
 
 	@SubscribeEvent
 	public static void addAttributes(EntityAttributeModificationEvent event) {
@@ -42,6 +44,8 @@ public class VlAbyssModAttributes {
 		event.add(EntityType.PLAYER, WIND_BONUS.get());
 		event.add(EntityType.PLAYER, THUNDERSTORM_BONUS.get());
 		event.add(EntityType.PLAYER, MANTRA_REGENERATION.get());
+		event.add(EntityType.PLAYER, ABILITY_COOLDOWN_REDUCTION.get());
+		event.add(EntityType.PLAYER, DODGE_CHANGE.get());
 	}
 
 	@Mod.EventBusSubscriber
@@ -59,6 +63,8 @@ public class VlAbyssModAttributes {
 			newPlayer.getAttribute(WIND_BONUS.get()).setBaseValue(oldPlayer.getAttribute(WIND_BONUS.get()).getBaseValue());
 			newPlayer.getAttribute(THUNDERSTORM_BONUS.get()).setBaseValue(oldPlayer.getAttribute(THUNDERSTORM_BONUS.get()).getBaseValue());
 			newPlayer.getAttribute(MANTRA_REGENERATION.get()).setBaseValue(oldPlayer.getAttribute(MANTRA_REGENERATION.get()).getBaseValue());
+			newPlayer.getAttribute(ABILITY_COOLDOWN_REDUCTION.get()).setBaseValue(oldPlayer.getAttribute(ABILITY_COOLDOWN_REDUCTION.get()).getBaseValue());
+			newPlayer.getAttribute(DODGE_CHANGE.get()).setBaseValue(oldPlayer.getAttribute(DODGE_CHANGE.get()).getBaseValue());
 		}
 	}
 }

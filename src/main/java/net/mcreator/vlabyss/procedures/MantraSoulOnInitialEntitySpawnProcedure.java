@@ -1,9 +1,15 @@
 package net.mcreator.vlabyss.procedures;
 
+import org.checkerframework.checker.units.qual.m;
+
 import net.minecraftforge.registries.ForgeRegistries;
 
 import net.minecraft.world.level.LevelAccessor;
 import net.minecraft.world.level.Level;
+import net.minecraft.world.entity.ai.attributes.AttributeModifier;
+import net.minecraft.world.entity.ai.attributes.AttributeInstance;
+import net.minecraft.world.entity.ai.attributes.Attribute;
+import net.minecraft.world.entity.LivingEntity;
 import net.minecraft.world.entity.Entity;
 import net.minecraft.sounds.SoundSource;
 import net.minecraft.resources.ResourceLocation;
@@ -26,5 +32,22 @@ public class MantraSoulOnInitialEntitySpawnProcedure {
 			if (!entity.level().isClientSide())
 				entity.discard();
 		});
+		{
+			Entity _entity = entity;
+			if (_entity instanceof LivingEntity _livingEntity) {
+				Attribute _attribute = ForgeRegistries.ATTRIBUTES.getValue(new ResourceLocation("forge:entity_gravity"));
+				if (_attribute != null) {
+					AttributeInstance _attr = _livingEntity.getAttribute(_attribute);
+					if (_attr != null) {
+						String _modifierName = "mantras";
+						boolean _hasModifier = _attr.getModifiers().stream().anyMatch(m -> m.getName().equals(_modifierName));
+						if (!_hasModifier) {
+							AttributeModifier _modifier = new AttributeModifier(_modifierName, (-0.05), AttributeModifier.Operation.ADDITION);
+							_attr.addPermanentModifier(_modifier);
+						}
+					}
+				}
+			}
+		}
 	}
 }

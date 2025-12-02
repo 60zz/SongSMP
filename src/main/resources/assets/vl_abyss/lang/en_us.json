@@ -263,5 +263,17 @@
   "subtitles.entidadegrito": "",
   "effect.vl_abyss.insanidade": "Insanidade",
   "subtitles.mantraescolhida": "",
-  "subtitles.abreseletormantras": ""
+  "subtitles.abreseletormantras": "",
+  "effect.vl_abyss.storm_reconjuration": "Reconjuração da Tempestade",
+  "effect.vl_abyss.reconjurar": "Reconjurar",
+  "subtitles.reconjurationimpact": "",
+  "effect.vl_abyss.cyclone_storm": "Olho do Ciclone",
+  "subtitles.impactocyclone": "",
+  "effect.vl_abyss.lightning_cloak": "Lightning Cloak",
+  "subtitles.ativacloak_lightning": "",
+  "subtitles.acabacloak_lightning": "",
+  "effect.vl_abyss.paralisado": "Paralisado",
+  "subtitles.dischargespark": "",
+  "subtitles.sparkswap": "",
+  "effect.vl_abyss.eletric_touch": "Eletric Touch"
 }

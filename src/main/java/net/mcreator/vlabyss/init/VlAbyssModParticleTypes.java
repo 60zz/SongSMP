@@ -20,4 +20,10 @@ public class VlAbyssModParticleTypes {
 	public static final RegistryObject<SimpleParticleType> VENTO_PARTICULA_2 = REGISTRY.register("vento_particula_2", () -> new SimpleParticleType(false));
 	public static final RegistryObject<SimpleParticleType> VENTO_PARTICULA_1 = REGISTRY.register("vento_particula_1", () -> new SimpleParticleType(false));
 	public static final RegistryObject<SimpleParticleType> FLAMING_SLASH = REGISTRY.register("flaming_slash", () -> new SimpleParticleType(false));
+	public static final RegistryObject<SimpleParticleType> EXPLOSAO_VENTO = REGISTRY.register("explosao_vento", () -> new SimpleParticleType(false));
+	public static final RegistryObject<SimpleParticleType> SLAM_CYCLONE = REGISTRY.register("slam_cyclone", () -> new SimpleParticleType(false));
+	public static final RegistryObject<SimpleParticleType> WHITE_SHOCK = REGISTRY.register("white_shock", () -> new SimpleParticleType(false));
+	public static final RegistryObject<SimpleParticleType> LIGHTNING_CLOAK_PARTICLE = REGISTRY.register("lightning_cloak_particle", () -> new SimpleParticleType(false));
+	public static final RegistryObject<SimpleParticleType> SHOCK_SWAP_PARTICLE = REGISTRY.register("shock_swap_particle", () -> new SimpleParticleType(false));
+	public static final RegistryObject<SimpleParticleType> ELETRIC_ORB_PARTICLE = REGISTRY.register("eletric_orb_particle", () -> new SimpleParticleType(false));
 }

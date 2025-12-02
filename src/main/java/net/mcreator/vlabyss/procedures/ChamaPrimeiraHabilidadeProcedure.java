@@ -35,7 +35,7 @@ public class ChamaPrimeiraHabilidadeProcedure {
 		if ((entity.getCapability(VlAbyssModVariables.PLAYER_VARIABLES_CAPABILITY, null).orElseGet(VlAbyssModVariables.PlayerVariables::new)).Chama >= 1
 				&& (entity.getCapability(VlAbyssModVariables.PLAYER_VARIABLES_CAPABILITY, null).orElseGet(VlAbyssModVariables.PlayerVariables::new)).MantraRegistrada == true
 				&& (entity.getCapability(VlAbyssModVariables.PLAYER_VARIABLES_CAPABILITY, null).orElseGet(VlAbyssModVariables.PlayerVariables::new)).habilidade1 == true) {
-			if ((entity.getCapability(VlAbyssModVariables.PLAYER_VARIABLES_CAPABILITY, null).orElseGet(VlAbyssModVariables.PlayerVariables::new)).mantra1_cooldown < 1) {
+			if (!((entity.getCapability(VlAbyssModVariables.PLAYER_VARIABLES_CAPABILITY, null).orElseGet(VlAbyssModVariables.PlayerVariables::new)).mantra1_cooldown > 0)) {
 				if ((entity instanceof LivingEntity _livEnt ? _livEnt.getMainHandItem() : ItemStack.EMPTY).is(ItemTags.create(ResourceLocation.parse("minecraft:swords")))
 						|| (entity instanceof LivingEntity _livEnt ? _livEnt.getOffhandItem() : ItemStack.EMPTY).is(ItemTags.create(ResourceLocation.parse("minecraft:swords")))
 						|| (entity instanceof LivingEntity _livEnt ? _livEnt.getMainHandItem() : ItemStack.EMPTY).is(ItemTags.create(ResourceLocation.parse("minecraft:axes")))
@@ -49,7 +49,9 @@ public class ChamaPrimeiraHabilidadeProcedure {
 							});
 						}
 						{
-							double _setval = 20;
+							double _setval = Math.round(20 / (entity instanceof LivingEntity _livingEntity2 && _livingEntity2.getAttributes().hasAttribute(VlAbyssModAttributes.ABILITY_COOLDOWN_REDUCTION.get())
+									? _livingEntity2.getAttribute(VlAbyssModAttributes.ABILITY_COOLDOWN_REDUCTION.get()).getValue()
+									: 0));
 							entity.getCapability(VlAbyssModVariables.PLAYER_VARIABLES_CAPABILITY, null).ifPresent(capability -> {
 								capability.mantra1_cooldown = _setval;
 								capability.syncPlayerVariables(entity);
@@ -101,11 +103,11 @@ public class ChamaPrimeiraHabilidadeProcedure {
 						if (entity instanceof LivingEntity _entity && !_entity.level().isClientSide())
 							_entity.addEffect(new MobEffectInstance(VlAbyssModMobEffects.FLAMING_CUT.get(),
 									(int) (100
-											* (entity instanceof LivingEntity _livingEntity4 && _livingEntity4.getAttributes().hasAttribute(VlAbyssModAttributes.BONUS_ADDITIONAL_DAMAGE.get())
-													? _livingEntity4.getAttribute(VlAbyssModAttributes.BONUS_ADDITIONAL_DAMAGE.get()).getValue()
+											* (entity instanceof LivingEntity _livingEntity5 && _livingEntity5.getAttributes().hasAttribute(VlAbyssModAttributes.BONUS_ADDITIONAL_DAMAGE.get())
+													? _livingEntity5.getAttribute(VlAbyssModAttributes.BONUS_ADDITIONAL_DAMAGE.get()).getValue()
 													: 0)
-											* (entity instanceof LivingEntity _livingEntity5 && _livingEntity5.getAttributes().hasAttribute(VlAbyssModAttributes.FLAME_BONUS.get())
-													? _livingEntity5.getAttribute(VlAbyssModAttributes.FLAME_BONUS.get()).getValue()
+											* (entity instanceof LivingEntity _livingEntity6 && _livingEntity6.getAttributes().hasAttribute(VlAbyssModAttributes.FLAME_BONUS.get())
+													? _livingEntity6.getAttribute(VlAbyssModAttributes.FLAME_BONUS.get()).getValue()
 													: 0)),
 									1));
 						if (entity instanceof Player _player) {
@@ -137,7 +139,9 @@ public class ChamaPrimeiraHabilidadeProcedure {
 							});
 						}
 						{
-							double _setval = 10;
+							double _setval = Math.round(10 / (entity instanceof LivingEntity _livingEntity11 && _livingEntity11.getAttributes().hasAttribute(VlAbyssModAttributes.ABILITY_COOLDOWN_REDUCTION.get())
+									? _livingEntity11.getAttribute(VlAbyssModAttributes.ABILITY_COOLDOWN_REDUCTION.get()).getValue()
+									: 0));
 							entity.getCapability(VlAbyssModVariables.PLAYER_VARIABLES_CAPABILITY, null).ifPresent(capability -> {
 								capability.mantra1_cooldown = _setval;
 								capability.syncPlayerVariables(entity);
@@ -189,11 +193,11 @@ public class ChamaPrimeiraHabilidadeProcedure {
 						if (entity instanceof LivingEntity _entity && !_entity.level().isClientSide())
 							_entity.addEffect(new MobEffectInstance(VlAbyssModMobEffects.FLAMING_CUT.get(),
 									(int) (100
-											* (entity instanceof LivingEntity _livingEntity12 && _livingEntity12.getAttributes().hasAttribute(VlAbyssModAttributes.BONUS_ADDITIONAL_DAMAGE.get())
-													? _livingEntity12.getAttribute(VlAbyssModAttributes.BONUS_ADDITIONAL_DAMAGE.get()).getValue()
+											* (entity instanceof LivingEntity _livingEntity14 && _livingEntity14.getAttributes().hasAttribute(VlAbyssModAttributes.BONUS_ADDITIONAL_DAMAGE.get())
+													? _livingEntity14.getAttribute(VlAbyssModAttributes.BONUS_ADDITIONAL_DAMAGE.get()).getValue()
 													: 0)
-											* (entity instanceof LivingEntity _livingEntity13 && _livingEntity13.getAttributes().hasAttribute(VlAbyssModAttributes.FLAME_BONUS.get())
-													? _livingEntity13.getAttribute(VlAbyssModAttributes.FLAME_BONUS.get()).getValue()
+											* (entity instanceof LivingEntity _livingEntity15 && _livingEntity15.getAttributes().hasAttribute(VlAbyssModAttributes.FLAME_BONUS.get())
+													? _livingEntity15.getAttribute(VlAbyssModAttributes.FLAME_BONUS.get()).getValue()
 													: 0)),
 									0));
 						if (entity instanceof Player _player) {

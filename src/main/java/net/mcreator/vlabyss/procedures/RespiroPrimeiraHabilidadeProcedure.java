@@ -40,7 +40,7 @@ public class RespiroPrimeiraHabilidadeProcedure {
 		if ((entity.getCapability(VlAbyssModVariables.PLAYER_VARIABLES_CAPABILITY, null).orElseGet(VlAbyssModVariables.PlayerVariables::new)).Respiro >= 1
 				&& (entity.getCapability(VlAbyssModVariables.PLAYER_VARIABLES_CAPABILITY, null).orElseGet(VlAbyssModVariables.PlayerVariables::new)).MantraRegistrada == true
 				&& (entity.getCapability(VlAbyssModVariables.PLAYER_VARIABLES_CAPABILITY, null).orElseGet(VlAbyssModVariables.PlayerVariables::new)).habilidade1 == true) {
-			if ((entity.getCapability(VlAbyssModVariables.PLAYER_VARIABLES_CAPABILITY, null).orElseGet(VlAbyssModVariables.PlayerVariables::new)).mantra1_cooldown < 1) {
+			if (!((entity.getCapability(VlAbyssModVariables.PLAYER_VARIABLES_CAPABILITY, null).orElseGet(VlAbyssModVariables.PlayerVariables::new)).mantra1_cooldown > 0)) {
 				if ((entity.getCapability(VlAbyssModVariables.PLAYER_VARIABLES_CAPABILITY, null).orElseGet(VlAbyssModVariables.PlayerVariables::new)).hab1_nivel == 1) {
 					if ((entity.getCapability(VlAbyssModVariables.PLAYER_VARIABLES_CAPABILITY, null).orElseGet(VlAbyssModVariables.PlayerVariables::new)).Ethir >= 40) {
 						{
@@ -51,7 +51,9 @@ public class RespiroPrimeiraHabilidadeProcedure {
 							});
 						}
 						{
-							double _setval = 10;
+							double _setval = Math.round(10 / (entity instanceof LivingEntity _livingEntity0 && _livingEntity0.getAttributes().hasAttribute(VlAbyssModAttributes.ABILITY_COOLDOWN_REDUCTION.get())
+									? _livingEntity0.getAttribute(VlAbyssModAttributes.ABILITY_COOLDOWN_REDUCTION.get()).getValue()
+									: 0));
 							entity.getCapability(VlAbyssModVariables.PLAYER_VARIABLES_CAPABILITY, null).ifPresent(capability -> {
 								capability.mantra1_cooldown = _setval;
 								capability.syncPlayerVariables(entity);
@@ -136,11 +138,11 @@ public class RespiroPrimeiraHabilidadeProcedure {
 								if (!projectileLevel.isClientSide()) {
 									Projectile _entityToSpawn = initArrowProjectile(createArrowWeaponItemStack(new RespiroPrimariaEntity(VlAbyssModEntities.RESPIRO_PRIMARIA.get(), 0, 0, 0, projectileLevel), 1, (byte) 0), entity,
 											(float) (8
-													* (entity instanceof LivingEntity _livingEntity5 && _livingEntity5.getAttributes().hasAttribute(VlAbyssModAttributes.WIND_BONUS.get())
-															? _livingEntity5.getAttribute(VlAbyssModAttributes.WIND_BONUS.get()).getValue()
+													* (entity instanceof LivingEntity _livingEntity6 && _livingEntity6.getAttributes().hasAttribute(VlAbyssModAttributes.WIND_BONUS.get())
+															? _livingEntity6.getAttribute(VlAbyssModAttributes.WIND_BONUS.get()).getValue()
 															: 0)
-													* (entity instanceof LivingEntity _livingEntity6 && _livingEntity6.getAttributes().hasAttribute(VlAbyssModAttributes.BONUS_ADDITIONAL_DAMAGE.get())
-															? _livingEntity6.getAttribute(VlAbyssModAttributes.BONUS_ADDITIONAL_DAMAGE.get()).getValue()
+													* (entity instanceof LivingEntity _livingEntity7 && _livingEntity7.getAttributes().hasAttribute(VlAbyssModAttributes.BONUS_ADDITIONAL_DAMAGE.get())
+															? _livingEntity7.getAttribute(VlAbyssModAttributes.BONUS_ADDITIONAL_DAMAGE.get()).getValue()
 															: 0)),
 											true, false, false, AbstractArrow.Pickup.DISALLOWED);
 									_entityToSpawn.setPos(_shootFrom.getX(), _shootFrom.getEyeY() - 0.1, _shootFrom.getZ());
@@ -218,7 +220,9 @@ public class RespiroPrimeiraHabilidadeProcedure {
 							});
 						}
 						{
-							double _setval = 15;
+							double _setval = Math.round(15 / (entity instanceof LivingEntity _livingEntity18 && _livingEntity18.getAttributes().hasAttribute(VlAbyssModAttributes.ABILITY_COOLDOWN_REDUCTION.get())
+									? _livingEntity18.getAttribute(VlAbyssModAttributes.ABILITY_COOLDOWN_REDUCTION.get()).getValue()
+									: 0));
 							entity.getCapability(VlAbyssModVariables.PLAYER_VARIABLES_CAPABILITY, null).ifPresent(capability -> {
 								capability.mantra1_cooldown = _setval;
 								capability.syncPlayerVariables(entity);
@@ -303,11 +307,11 @@ public class RespiroPrimeiraHabilidadeProcedure {
 								if (!projectileLevel.isClientSide()) {
 									Projectile _entityToSpawn = initArrowProjectile(createArrowWeaponItemStack(new RespiroPrimariaEntity(VlAbyssModEntities.RESPIRO_PRIMARIA.get(), 0, 0, 0, projectileLevel), 2, (byte) 0), entity,
 											(float) (12
-													* (entity instanceof LivingEntity _livingEntity22 && _livingEntity22.getAttributes().hasAttribute(VlAbyssModAttributes.WIND_BONUS.get())
-															? _livingEntity22.getAttribute(VlAbyssModAttributes.WIND_BONUS.get()).getValue()
+													* (entity instanceof LivingEntity _livingEntity24 && _livingEntity24.getAttributes().hasAttribute(VlAbyssModAttributes.WIND_BONUS.get())
+															? _livingEntity24.getAttribute(VlAbyssModAttributes.WIND_BONUS.get()).getValue()
 															: 0)
-													* (entity instanceof LivingEntity _livingEntity23 && _livingEntity23.getAttributes().hasAttribute(VlAbyssModAttributes.BONUS_ADDITIONAL_DAMAGE.get())
-															? _livingEntity23.getAttribute(VlAbyssModAttributes.BONUS_ADDITIONAL_DAMAGE.get()).getValue()
+													* (entity instanceof LivingEntity _livingEntity25 && _livingEntity25.getAttributes().hasAttribute(VlAbyssModAttributes.BONUS_ADDITIONAL_DAMAGE.get())
+															? _livingEntity25.getAttribute(VlAbyssModAttributes.BONUS_ADDITIONAL_DAMAGE.get()).getValue()
 															: 0)),
 											true, false, false, AbstractArrow.Pickup.DISALLOWED);
 									_entityToSpawn.setPos(_shootFrom.getX(), _shootFrom.getEyeY() - 0.1, _shootFrom.getZ());

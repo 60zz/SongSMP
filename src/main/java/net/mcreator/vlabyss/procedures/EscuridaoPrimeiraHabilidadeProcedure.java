@@ -33,8 +33,8 @@ public class EscuridaoPrimeiraHabilidadeProcedure {
 		if ((entity.getCapability(VlAbyssModVariables.PLAYER_VARIABLES_CAPABILITY, null).orElseGet(VlAbyssModVariables.PlayerVariables::new)).Escuridao >= 1
 				&& (entity.getCapability(VlAbyssModVariables.PLAYER_VARIABLES_CAPABILITY, null).orElseGet(VlAbyssModVariables.PlayerVariables::new)).MantraRegistrada == true
 				&& (entity.getCapability(VlAbyssModVariables.PLAYER_VARIABLES_CAPABILITY, null).orElseGet(VlAbyssModVariables.PlayerVariables::new)).habilidade1 == true) {
-			if ((entity.getCapability(VlAbyssModVariables.PLAYER_VARIABLES_CAPABILITY, null).orElseGet(VlAbyssModVariables.PlayerVariables::new)).mantra1_cooldown < 1) {
-				if ((entity.getCapability(VlAbyssModVariables.PLAYER_VARIABLES_CAPABILITY, null).orElseGet(VlAbyssModVariables.PlayerVariables::new)).mantra1_cooldown == 1) {
+			if (!((entity.getCapability(VlAbyssModVariables.PLAYER_VARIABLES_CAPABILITY, null).orElseGet(VlAbyssModVariables.PlayerVariables::new)).mantra1_cooldown > 0)) {
+				if ((entity.getCapability(VlAbyssModVariables.PLAYER_VARIABLES_CAPABILITY, null).orElseGet(VlAbyssModVariables.PlayerVariables::new)).hab1_nivel == 1) {
 					if ((entity.getCapability(VlAbyssModVariables.PLAYER_VARIABLES_CAPABILITY, null).orElseGet(VlAbyssModVariables.PlayerVariables::new)).Ethir >= 85) {
 						{
 							double _setval = (entity.getCapability(VlAbyssModVariables.PLAYER_VARIABLES_CAPABILITY, null).orElseGet(VlAbyssModVariables.PlayerVariables::new)).Ethir - 85;
@@ -44,7 +44,9 @@ public class EscuridaoPrimeiraHabilidadeProcedure {
 							});
 						}
 						{
-							double _setval = 180;
+							double _setval = Math.round(180 / (entity instanceof LivingEntity _livingEntity0 && _livingEntity0.getAttributes().hasAttribute(VlAbyssModAttributes.ABILITY_COOLDOWN_REDUCTION.get())
+									? _livingEntity0.getAttribute(VlAbyssModAttributes.ABILITY_COOLDOWN_REDUCTION.get()).getValue()
+									: 0));
 							entity.getCapability(VlAbyssModVariables.PLAYER_VARIABLES_CAPABILITY, null).ifPresent(capability -> {
 								capability.mantra1_cooldown = _setval;
 								capability.syncPlayerVariables(entity);
@@ -53,11 +55,11 @@ public class EscuridaoPrimeiraHabilidadeProcedure {
 						if (entity instanceof LivingEntity _entity && !_entity.level().isClientSide())
 							_entity.addEffect(new MobEffectInstance(VlAbyssModMobEffects.SHADOW_COPY.get(),
 									(int) (1200
-											* (entity instanceof LivingEntity _livingEntity0 && _livingEntity0.getAttributes().hasAttribute(VlAbyssModAttributes.BONUS_ADDITIONAL_DAMAGE.get())
-													? _livingEntity0.getAttribute(VlAbyssModAttributes.BONUS_ADDITIONAL_DAMAGE.get()).getValue()
+											* (entity instanceof LivingEntity _livingEntity1 && _livingEntity1.getAttributes().hasAttribute(VlAbyssModAttributes.BONUS_ADDITIONAL_DAMAGE.get())
+													? _livingEntity1.getAttribute(VlAbyssModAttributes.BONUS_ADDITIONAL_DAMAGE.get()).getValue()
 													: 0)
-											* (entity instanceof LivingEntity _livingEntity1 && _livingEntity1.getAttributes().hasAttribute(VlAbyssModAttributes.DARKNESS_BONUS.get())
-													? _livingEntity1.getAttribute(VlAbyssModAttributes.DARKNESS_BONUS.get()).getValue()
+											* (entity instanceof LivingEntity _livingEntity2 && _livingEntity2.getAttributes().hasAttribute(VlAbyssModAttributes.DARKNESS_BONUS.get())
+													? _livingEntity2.getAttribute(VlAbyssModAttributes.DARKNESS_BONUS.get()).getValue()
 													: 0)),
 									0));
 						if (world.isClientSide()) {
@@ -107,15 +109,17 @@ public class EscuridaoPrimeiraHabilidadeProcedure {
 						if (entity instanceof LivingEntity _entity && !_entity.level().isClientSide())
 							_entity.addEffect(new MobEffectInstance(VlAbyssModMobEffects.SHADOW_COPY.get(),
 									(int) (1400
-											* (entity instanceof LivingEntity _livingEntity7 && _livingEntity7.getAttributes().hasAttribute(VlAbyssModAttributes.BONUS_ADDITIONAL_DAMAGE.get())
-													? _livingEntity7.getAttribute(VlAbyssModAttributes.BONUS_ADDITIONAL_DAMAGE.get()).getValue()
+											* (entity instanceof LivingEntity _livingEntity8 && _livingEntity8.getAttributes().hasAttribute(VlAbyssModAttributes.BONUS_ADDITIONAL_DAMAGE.get())
+													? _livingEntity8.getAttribute(VlAbyssModAttributes.BONUS_ADDITIONAL_DAMAGE.get()).getValue()
 													: 0)
-											* (entity instanceof LivingEntity _livingEntity8 && _livingEntity8.getAttributes().hasAttribute(VlAbyssModAttributes.DARKNESS_BONUS.get())
-													? _livingEntity8.getAttribute(VlAbyssModAttributes.DARKNESS_BONUS.get()).getValue()
+											* (entity instanceof LivingEntity _livingEntity9 && _livingEntity9.getAttributes().hasAttribute(VlAbyssModAttributes.DARKNESS_BONUS.get())
+													? _livingEntity9.getAttribute(VlAbyssModAttributes.DARKNESS_BONUS.get()).getValue()
 													: 0)),
 									0));
 						{
-							double _setval = 180;
+							double _setval = Math.round(180 / (entity instanceof LivingEntity _livingEntity11 && _livingEntity11.getAttributes().hasAttribute(VlAbyssModAttributes.ABILITY_COOLDOWN_REDUCTION.get())
+									? _livingEntity11.getAttribute(VlAbyssModAttributes.ABILITY_COOLDOWN_REDUCTION.get()).getValue()
+									: 0));
 							entity.getCapability(VlAbyssModVariables.PLAYER_VARIABLES_CAPABILITY, null).ifPresent(capability -> {
 								capability.mantra1_cooldown = _setval;
 								capability.syncPlayerVariables(entity);

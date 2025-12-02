@@ -10,10 +10,13 @@ import net.minecraft.world.entity.player.Player;
 import net.minecraft.network.FriendlyByteBuf;
 import net.minecraft.core.BlockPos;
 
+import net.mcreator.vlabyss.procedures.ClicouTerceiraOpcaoTempestadeProcedure;
 import net.mcreator.vlabyss.procedures.ClicouTerceiraOpcaoRespiroProcedure;
 import net.mcreator.vlabyss.procedures.ClicouTerceiraOpcaoChamaProcedure;
+import net.mcreator.vlabyss.procedures.ClicouSegundaOpcaoTempestadeProcedure;
 import net.mcreator.vlabyss.procedures.ClicouSegundaOpcaoRespiroProcedure;
 import net.mcreator.vlabyss.procedures.ClicouSegundaOpcaoChamaProcedure;
+import net.mcreator.vlabyss.procedures.ClicouPrimeiraOpcaoTempestadeProcedure;
 import net.mcreator.vlabyss.procedures.ClicouPrimeiraOpcaoRespiroProcedure;
 import net.mcreator.vlabyss.procedures.ClicouPrimeiraOpcaoChamaProcedure;
 import net.mcreator.vlabyss.VlAbyssMod;
@@ -79,6 +82,18 @@ public class SegundaHabilidadeMantraButtonMessage {
 		if (buttonID == 5) {
 
 			ClicouTerceiraOpcaoChamaProcedure.execute(entity);
+		}
+		if (buttonID == 6) {
+
+			ClicouPrimeiraOpcaoTempestadeProcedure.execute(entity);
+		}
+		if (buttonID == 7) {
+
+			ClicouSegundaOpcaoTempestadeProcedure.execute(entity);
+		}
+		if (buttonID == 8) {
+
+			ClicouTerceiraOpcaoTempestadeProcedure.execute(entity);
 		}
 	}
 

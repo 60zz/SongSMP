@@ -54,4 +54,10 @@ public class VlAbyssModSounds {
 	public static final RegistryObject<SoundEvent> ENTIDADEGRITO = REGISTRY.register("entidadegrito", () -> SoundEvent.createVariableRangeEvent(ResourceLocation.fromNamespaceAndPath("vl_abyss", "entidadegrito")));
 	public static final RegistryObject<SoundEvent> MANTRAESCOLHIDA = REGISTRY.register("mantraescolhida", () -> SoundEvent.createVariableRangeEvent(ResourceLocation.fromNamespaceAndPath("vl_abyss", "mantraescolhida")));
 	public static final RegistryObject<SoundEvent> ABRESELETORMANTRAS = REGISTRY.register("abreseletormantras", () -> SoundEvent.createVariableRangeEvent(ResourceLocation.fromNamespaceAndPath("vl_abyss", "abreseletormantras")));
+	public static final RegistryObject<SoundEvent> RECONJURATIONIMPACT = REGISTRY.register("reconjurationimpact", () -> SoundEvent.createVariableRangeEvent(ResourceLocation.fromNamespaceAndPath("vl_abyss", "reconjurationimpact")));
+	public static final RegistryObject<SoundEvent> IMPACTOCYCLONE = REGISTRY.register("impactocyclone", () -> SoundEvent.createVariableRangeEvent(ResourceLocation.fromNamespaceAndPath("vl_abyss", "impactocyclone")));
+	public static final RegistryObject<SoundEvent> ATIVACLOAK_LIGHTNING = REGISTRY.register("ativacloak_lightning", () -> SoundEvent.createVariableRangeEvent(ResourceLocation.fromNamespaceAndPath("vl_abyss", "ativacloak_lightning")));
+	public static final RegistryObject<SoundEvent> ACABACLOAK_LIGHTNING = REGISTRY.register("acabacloak_lightning", () -> SoundEvent.createVariableRangeEvent(ResourceLocation.fromNamespaceAndPath("vl_abyss", "acabacloak_lightning")));
+	public static final RegistryObject<SoundEvent> DISCHARGESPARK = REGISTRY.register("dischargespark", () -> SoundEvent.createVariableRangeEvent(ResourceLocation.fromNamespaceAndPath("vl_abyss", "dischargespark")));
+	public static final RegistryObject<SoundEvent> SPARKSWAP = REGISTRY.register("sparkswap", () -> SoundEvent.createVariableRangeEvent(ResourceLocation.fromNamespaceAndPath("vl_abyss", "sparkswap")));
 }
