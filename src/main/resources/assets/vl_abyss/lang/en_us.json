@@ -275,5 +275,10 @@
   "effect.vl_abyss.paralisado": "Paralisado",
   "subtitles.dischargespark": "",
   "subtitles.sparkswap": "",
-  "effect.vl_abyss.eletric_touch": "Eletric Touch"
+  "effect.vl_abyss.eletric_touch": "Eletric Touch",
+  "effect.vl_abyss.shade_vision": "Shade Vision",
+  "subtitles.ativacaoshadevision": "",
+  "effect.vl_abyss.echo_of_shadows": "Echo Of Shadows",
+  "entity.vl_abyss.echo_of_shadow": "Echo of Shadows",
+  "subtitles.echoofshadow": ""
 }

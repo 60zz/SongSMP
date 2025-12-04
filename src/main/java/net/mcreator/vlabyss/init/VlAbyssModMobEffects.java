@@ -11,6 +11,7 @@ import net.minecraft.world.effect.MobEffect;
 
 import net.mcreator.vlabyss.potion.StormReconjurationMobEffect;
 import net.mcreator.vlabyss.potion.ShadowCopyMobEffect;
+import net.mcreator.vlabyss.potion.ShadeVisionMobEffect;
 import net.mcreator.vlabyss.potion.SangrandoMobEffect;
 import net.mcreator.vlabyss.potion.ResistenciaQuebradaMobEffect;
 import net.mcreator.vlabyss.potion.RegenMantraMobEffect;
@@ -28,6 +29,7 @@ import net.mcreator.vlabyss.potion.EssenceMantraMobEffect;
 import net.mcreator.vlabyss.potion.EnfraquecidoMobEffect;
 import net.mcreator.vlabyss.potion.ElixirMantraMobEffect;
 import net.mcreator.vlabyss.potion.EletricTouchMobEffect;
+import net.mcreator.vlabyss.potion.EchoOfShadowsMobEffect;
 import net.mcreator.vlabyss.potion.CycloneStormMobEffect;
 import net.mcreator.vlabyss.potion.CortaRegenMobEffect;
 import net.mcreator.vlabyss.potion.BurnSoulMobEffect;
@@ -57,4 +59,6 @@ public class VlAbyssModMobEffects {
 	public static final RegistryObject<MobEffect> LIGHTNING_CLOAK = REGISTRY.register("lightning_cloak", () -> new LightningCloakMobEffect());
 	public static final RegistryObject<MobEffect> PARALISADO = REGISTRY.register("paralisado", () -> new ParalisadoMobEffect());
 	public static final RegistryObject<MobEffect> ELETRIC_TOUCH = REGISTRY.register("eletric_touch", () -> new EletricTouchMobEffect());
+	public static final RegistryObject<MobEffect> SHADE_VISION = REGISTRY.register("shade_vision", () -> new ShadeVisionMobEffect());
+	public static final RegistryObject<MobEffect> ECHO_OF_SHADOWS = REGISTRY.register("echo_of_shadows", () -> new EchoOfShadowsMobEffect());
 }

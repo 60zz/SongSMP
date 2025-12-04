@@ -366,5 +366,21 @@
         "stream": false
       }
     ]
+  },
+  "ativacaoshadevision": {
+    "sounds": [
+      {
+        "name": "vl_abyss:ativacaoshadevision_1",
+        "stream": false
+      }
+    ]
+  },
+  "echoofshadow": {
+    "sounds": [
+      {
+        "name": "vl_abyss:echoofshadowsound",
+        "stream": false
+      }
+    ]
   }
 }

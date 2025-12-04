@@ -12,6 +12,7 @@ import net.minecraft.client.gui.GuiGraphics;
 import net.mcreator.vlabyss.world.inventory.SegundaHabilidadeMantraMenu;
 import net.mcreator.vlabyss.procedures.MostraOpcoesTempestadeProcedure;
 import net.mcreator.vlabyss.procedures.MostraOpcoesRespiroProcedure;
+import net.mcreator.vlabyss.procedures.MostraOpcoesEscuridaoProcedure;
 import net.mcreator.vlabyss.procedures.MostraOpcoesChamaProcedure;
 import net.mcreator.vlabyss.network.SegundaHabilidadeMantraButtonMessage;
 import net.mcreator.vlabyss.init.VlAbyssModScreens;
@@ -33,6 +34,9 @@ public class SegundaHabilidadeMantraScreen extends AbstractContainerScreen<Segun
 	ImageButton imagebutton_coracao6;
 	ImageButton imagebutton_coracao7;
 	ImageButton imagebutton_coracao8;
+	ImageButton imagebutton_coracao9;
+	ImageButton imagebutton_coracao10;
+	ImageButton imagebutton_coracao11;
 
 	public SegundaHabilidadeMantraScreen(SegundaHabilidadeMantraMenu container, Inventory inventory, Component text) {
 		super(container, inventory, text);
@@ -163,6 +167,33 @@ public class SegundaHabilidadeMantraScreen extends AbstractContainerScreen<Segun
 			}
 		});
 		this.addRenderableWidget(imagebutton_coracao8);
+		imagebutton_coracao9 = new ImageButton(this.leftPos + -21, this.topPos + 61, 32, 32, 0, 0, 32, ResourceLocation.parse("vl_abyss:textures/screens/atlas/imagebutton_coracao9.png"), 32, 64, e -> {
+			int x = SegundaHabilidadeMantraScreen.this.x;
+			int y = SegundaHabilidadeMantraScreen.this.y;
+			if (MostraOpcoesEscuridaoProcedure.execute(entity)) {
+				VlAbyssMod.PACKET_HANDLER.sendToServer(new SegundaHabilidadeMantraButtonMessage(9, x, y, z));
+				SegundaHabilidadeMantraButtonMessage.handleButtonAction(entity, 9, x, y, z);
+			}
+		});
+		this.addRenderableWidget(imagebutton_coracao9);
+		imagebutton_coracao10 = new ImageButton(this.leftPos + 69, this.topPos + 61, 32, 32, 0, 0, 32, ResourceLocation.parse("vl_abyss:textures/screens/atlas/imagebutton_coracao10.png"), 32, 64, e -> {
+			int x = SegundaHabilidadeMantraScreen.this.x;
+			int y = SegundaHabilidadeMantraScreen.this.y;
+			if (MostraOpcoesEscuridaoProcedure.execute(entity)) {
+				VlAbyssMod.PACKET_HANDLER.sendToServer(new SegundaHabilidadeMantraButtonMessage(10, x, y, z));
+				SegundaHabilidadeMantraButtonMessage.handleButtonAction(entity, 10, x, y, z);
+			}
+		});
+		this.addRenderableWidget(imagebutton_coracao10);
+		imagebutton_coracao11 = new ImageButton(this.leftPos + 159, this.topPos + 61, 32, 32, 0, 0, 32, ResourceLocation.parse("vl_abyss:textures/screens/atlas/imagebutton_coracao11.png"), 32, 64, e -> {
+			int x = SegundaHabilidadeMantraScreen.this.x;
+			int y = SegundaHabilidadeMantraScreen.this.y;
+			if (MostraOpcoesEscuridaoProcedure.execute(entity)) {
+				VlAbyssMod.PACKET_HANDLER.sendToServer(new SegundaHabilidadeMantraButtonMessage(11, x, y, z));
+				SegundaHabilidadeMantraButtonMessage.handleButtonAction(entity, 11, x, y, z);
+			}
+		});
+		this.addRenderableWidget(imagebutton_coracao11);
 	}
 
 	@Override
@@ -177,5 +208,8 @@ public class SegundaHabilidadeMantraScreen extends AbstractContainerScreen<Segun
 		this.imagebutton_coracao6.visible = MostraOpcoesTempestadeProcedure.execute(entity);
 		this.imagebutton_coracao7.visible = MostraOpcoesTempestadeProcedure.execute(entity);
 		this.imagebutton_coracao8.visible = MostraOpcoesTempestadeProcedure.execute(entity);
+		this.imagebutton_coracao9.visible = MostraOpcoesEscuridaoProcedure.execute(entity);
+		this.imagebutton_coracao10.visible = MostraOpcoesEscuridaoProcedure.execute(entity);
+		this.imagebutton_coracao11.visible = MostraOpcoesEscuridaoProcedure.execute(entity);
 	}
 }

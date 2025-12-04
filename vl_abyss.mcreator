@@ -3342,7 +3342,7 @@
           "src/main/java/net/mcreator/vlabyss/potion/ShadowCopyMobEffect.java"
         ]
       },
-      "path": "~/VL1_Abyss/Mantras/MantrasPrincipais/Escuridao/Efeito"
+      "path": "~/VL1_Abyss/Mantras/MantrasPrincipais/Escuridao/ShadowCopy/Efeito"
     },
     {
       "name": "ShadowCopyEffectStartedapplied",
@@ -3377,7 +3377,7 @@
           }
         ]
       },
-      "path": "~/VL1_Abyss/Mantras/MantrasPrincipais/Escuridao/Efeito/Procedure"
+      "path": "~/VL1_Abyss/Mantras/MantrasPrincipais/Escuridao/ShadowCopy/Efeito/Procedure"
     },
     {
       "name": "ShadowCopyEffectExpires",
@@ -3412,7 +3412,7 @@
           }
         ]
       },
-      "path": "~/VL1_Abyss/Mantras/MantrasPrincipais/Escuridao/Efeito/Procedure"
+      "path": "~/VL1_Abyss/Mantras/MantrasPrincipais/Escuridao/ShadowCopy/Efeito/Procedure"
     },
     {
       "name": "TomouHitShadowCopy",
@@ -3447,7 +3447,7 @@
           }
         ]
       },
-      "path": "~/VL1_Abyss/Mantras/MantrasPrincipais/Escuridao/Efeito/Procedure"
+      "path": "~/VL1_Abyss/Mantras/MantrasPrincipais/Escuridao/ShadowCopy/Efeito/Procedure"
     },
     {
       "name": "InstantRegenMantra",
@@ -4827,7 +4827,28 @@
       "locked_code": false,
       "registry_name": "escuridao_segunda_habilidade",
       "metadata": {
-        "dependencies": [],
+        "dependencies": [
+          {
+            "name": "entity",
+            "type": "entity"
+          },
+          {
+            "name": "x",
+            "type": "number"
+          },
+          {
+            "name": "y",
+            "type": "number"
+          },
+          {
+            "name": "z",
+            "type": "number"
+          },
+          {
+            "name": "world",
+            "type": "world"
+          }
+        ],
         "files": [
           "src/main/java/net/mcreator/vlabyss/procedures/EscuridaoSegundaHabilidadeProcedure.java"
         ]
@@ -7099,6 +7120,396 @@
         ]
       },
       "path": "~/VL1_Abyss/AbismoBosses/DropAbismoCriaturas/Procedure"
+    },
+    {
+      "name": "MostraOpcoesEscuridao",
+      "type": "procedure",
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "mostra_opcoes_escuridao",
+      "metadata": {
+        "dependencies": [
+          {
+            "name": "entity",
+            "type": "entity"
+          }
+        ],
+        "return_type": "logic",
+        "files": [
+          "src/main/java/net/mcreator/vlabyss/procedures/MostraOpcoesEscuridaoProcedure.java"
+        ]
+      },
+      "path": "~/VL1_Abyss/Alma/Mantra/DesbloqueiaHabilidades/Gui/Escuridao"
+    },
+    {
+      "name": "ClicouPrimeiraOpcaoEscuridao",
+      "type": "procedure",
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "clicou_primeira_opcao_escuridao",
+      "metadata": {
+        "dependencies": [
+          {
+            "name": "entity",
+            "type": "entity"
+          }
+        ],
+        "files": [
+          "src/main/java/net/mcreator/vlabyss/procedures/ClicouPrimeiraOpcaoEscuridaoProcedure.java"
+        ]
+      },
+      "path": "~/VL1_Abyss/Alma/Mantra/DesbloqueiaHabilidades/Gui/Escuridao"
+    },
+    {
+      "name": "ClicouSegundaOpcaoEscuridao",
+      "type": "procedure",
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "clicou_segunda_opcao_escuridao",
+      "metadata": {
+        "dependencies": [
+          {
+            "name": "entity",
+            "type": "entity"
+          }
+        ],
+        "files": [
+          "src/main/java/net/mcreator/vlabyss/procedures/ClicouSegundaOpcaoEscuridaoProcedure.java"
+        ]
+      },
+      "path": "~/VL1_Abyss/Alma/Mantra/DesbloqueiaHabilidades/Gui/Escuridao"
+    },
+    {
+      "name": "ClicouTerceiraOpcaoEscuridao",
+      "type": "procedure",
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "clicou_terceira_opcao_escuridao",
+      "metadata": {
+        "dependencies": [
+          {
+            "name": "entity",
+            "type": "entity"
+          }
+        ],
+        "files": [
+          "src/main/java/net/mcreator/vlabyss/procedures/ClicouTerceiraOpcaoEscuridaoProcedure.java"
+        ]
+      },
+      "path": "~/VL1_Abyss/Alma/Mantra/DesbloqueiaHabilidades/Gui/Escuridao"
+    },
+    {
+      "name": "ShadeVision",
+      "type": "potioneffect",
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "shade_vision",
+      "metadata": {
+        "files": [
+          "src/main/java/net/mcreator/vlabyss/potion/ShadeVisionMobEffect.java"
+        ]
+      },
+      "path": "~/VL1_Abyss/Mantras/MantrasPrincipais/Escuridao/ShadeVision"
+    },
+    {
+      "name": "ShadeVisionRender",
+      "type": "procedure",
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "shade_vision_render",
+      "metadata": {
+        "dependencies": [
+          {
+            "name": "entity",
+            "type": "entity"
+          },
+          {
+            "name": "x",
+            "type": "number"
+          },
+          {
+            "name": "y",
+            "type": "number"
+          },
+          {
+            "name": "z",
+            "type": "number"
+          },
+          {
+            "name": "world",
+            "type": "world"
+          }
+        ],
+        "files": [
+          "src/main/java/net/mcreator/vlabyss/procedures/ShadeVisionRenderProcedure.java"
+        ]
+      },
+      "path": "~/VL1_Abyss/Mantras/MantrasPrincipais/Escuridao/ShadeVision/Procedure"
+    },
+    {
+      "name": "ShadeVisionOnEffectActiveTick",
+      "type": "procedure",
+      "compiles": true,
+      "locked_code": true,
+      "registry_name": "shade_vision_on_effect_active_tick",
+      "metadata": {
+        "dependencies": [
+          {
+            "name": "entity",
+            "type": "entity"
+          },
+          {
+            "name": "x",
+            "type": "number"
+          },
+          {
+            "name": "y",
+            "type": "number"
+          },
+          {
+            "name": "z",
+            "type": "number"
+          },
+          {
+            "name": "world",
+            "type": "world"
+          }
+        ],
+        "files": [
+          "src/main/java/net/mcreator/vlabyss/procedures/ShadeVisionOnEffectActiveTickProcedure.java"
+        ]
+      },
+      "path": "~/VL1_Abyss/Mantras/MantrasPrincipais/Escuridao/ShadeVision/Procedure"
+    },
+    {
+      "name": "ShadeFogRender",
+      "type": "procedure",
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "shade_fog_render",
+      "metadata": {
+        "dependencies": [
+          {
+            "name": "entity",
+            "type": "entity"
+          }
+        ],
+        "files": [
+          "src/main/java/net/mcreator/vlabyss/procedures/ShadeFogRenderProcedure.java"
+        ]
+      },
+      "path": "~/VL1_Abyss/Mantras/MantrasPrincipais/Escuridao/ShadeVision/Procedure"
+    },
+    {
+      "name": "RenderFog",
+      "type": "procedure",
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "render_fog",
+      "metadata": {
+        "dependencies": [
+          {
+            "name": "entity",
+            "type": "entity"
+          }
+        ],
+        "files": [
+          "src/main/java/net/mcreator/vlabyss/procedures/RenderFogProcedure.java"
+        ]
+      },
+      "path": "~/VL1_Abyss/Mantras/MantrasPrincipais/Escuridao/ShadeVision/Procedure"
+    },
+    {
+      "name": "ShadeVisionEffectExpires",
+      "type": "procedure",
+      "compiles": true,
+      "locked_code": true,
+      "registry_name": "shade_vision_effect_expires",
+      "metadata": {
+        "dependencies": [
+          {
+            "name": "entity",
+            "type": "entity"
+          },
+          {
+            "name": "x",
+            "type": "number"
+          },
+          {
+            "name": "y",
+            "type": "number"
+          },
+          {
+            "name": "z",
+            "type": "number"
+          },
+          {
+            "name": "world",
+            "type": "world"
+          }
+        ],
+        "files": [
+          "src/main/java/net/mcreator/vlabyss/procedures/ShadeVisionEffectExpiresProcedure.java"
+        ]
+      },
+      "path": "~/VL1_Abyss/Mantras/MantrasPrincipais/Escuridao/ShadeVision/Procedure"
+    },
+    {
+      "name": "ShadeVisionEffectStartedapplied",
+      "type": "procedure",
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "shade_vision_effect_startedapplied",
+      "metadata": {
+        "dependencies": [
+          {
+            "name": "entity",
+            "type": "entity"
+          }
+        ],
+        "files": [
+          "src/main/java/net/mcreator/vlabyss/procedures/ShadeVisionEffectStartedappliedProcedure.java"
+        ]
+      },
+      "path": "~/VL1_Abyss/Mantras/MantrasPrincipais/Escuridao/ShadeVision/Procedure"
+    },
+    {
+      "name": "EchoOfShadows",
+      "type": "potioneffect",
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "echo_of_shadows",
+      "metadata": {
+        "files": [
+          "src/main/java/net/mcreator/vlabyss/potion/EchoOfShadowsMobEffect.java"
+        ]
+      },
+      "path": "~/VL1_Abyss/Mantras/MantrasPrincipais/Escuridao/EchoOfShadows"
+    },
+    {
+      "name": "DeuCriticoEchoOfShadows",
+      "type": "procedure",
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "deu_critico_echo_of_shadows",
+      "metadata": {
+        "dependencies": [
+          {
+            "name": "entity",
+            "type": "entity"
+          },
+          {
+            "name": "sourceentity",
+            "type": "entity"
+          },
+          {
+            "name": "damagemodifier",
+            "type": "number"
+          },
+          {
+            "name": "world",
+            "type": "world"
+          }
+        ],
+        "files": [
+          "src/main/java/net/mcreator/vlabyss/procedures/DeuCriticoEchoOfShadowsProcedure.java"
+        ]
+      },
+      "path": "~/VL1_Abyss/Mantras/MantrasPrincipais/Escuridao/EchoOfShadows/Procedure"
+    },
+    {
+      "name": "EchoOfShadow",
+      "type": "livingentity",
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "echo_of_shadow",
+      "metadata": {
+        "files": [
+          "src/main/java/net/mcreator/vlabyss/entity/EchoOfShadowEntity.java",
+          "src/main/java/net/mcreator/vlabyss/client/renderer/EchoOfShadowRenderer.java"
+        ]
+      },
+      "path": "~/VL1_Abyss/Mantras/MantrasPrincipais/Escuridao/EchoOfShadows/Procedure"
+    },
+    {
+      "name": "EchoOfShadowOnInitialEntitySpawn",
+      "type": "procedure",
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "echo_of_shadow_on_initial_entity_spawn",
+      "metadata": {
+        "dependencies": [
+          {
+            "name": "entity",
+            "type": "entity"
+          },
+          {
+            "name": "x",
+            "type": "number"
+          },
+          {
+            "name": "y",
+            "type": "number"
+          },
+          {
+            "name": "z",
+            "type": "number"
+          },
+          {
+            "name": "world",
+            "type": "world"
+          }
+        ],
+        "files": [
+          "src/main/java/net/mcreator/vlabyss/procedures/EchoOfShadowOnInitialEntitySpawnProcedure.java"
+        ]
+      },
+      "path": "~/VL1_Abyss/Mantras/MantrasPrincipais/Escuridao/EchoOfShadows/Procedure"
+    },
+    {
+      "name": "EchoOfShadowOnEntityTickUpdate",
+      "type": "procedure",
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "echo_of_shadow_on_entity_tick_update",
+      "metadata": {
+        "dependencies": [
+          {
+            "name": "x",
+            "type": "number"
+          },
+          {
+            "name": "y",
+            "type": "number"
+          },
+          {
+            "name": "z",
+            "type": "number"
+          },
+          {
+            "name": "world",
+            "type": "world"
+          }
+        ],
+        "files": [
+          "src/main/java/net/mcreator/vlabyss/procedures/EchoOfShadowOnEntityTickUpdateProcedure.java"
+        ]
+      },
+      "path": "~/VL1_Abyss/Mantras/MantrasPrincipais/Escuridao/EchoOfShadows/Procedure"
+    },
+    {
+      "name": "EchoSlashParticle",
+      "type": "particle",
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "echo_slash_particle",
+      "metadata": {
+        "files": [
+          "src/main/resources/assets/vl_abyss/particles/echo_slash_particle.json",
+          "src/main/java/net/mcreator/vlabyss/client/particle/EchoSlashParticleParticle.java"
+        ]
+      },
+      "path": "~/VL1_Abyss/Mantras/MantrasPrincipais/Escuridao/EchoOfShadows/Particula"
     }
   ],
   "variable_elements": [
@@ -7813,6 +8224,22 @@
       ],
       "category": "master",
       "subtitle": ""
+    },
+    {
+      "name": "ativacaoshadevision",
+      "files": [
+        "ativacaoshadevision_1"
+      ],
+      "category": "master",
+      "subtitle": ""
+    },
+    {
+      "name": "echoofshadow",
+      "files": [
+        "echoofshadowsound"
+      ],
+      "category": "master",
+      "subtitle": ""
     }
   ],
   "tag_elements": {
@@ -7916,7 +8343,8 @@
       "CUSTOM:MantraSoulCorrompida",
       "CUSTOM:WindVortex",
       "CUSTOM:CounterSpell",
-      "CUSTOM:Reconjuration"
+      "CUSTOM:Reconjuration",
+      "CUSTOM:EchoOfShadow"
     ]
   },
   "tab_element_order": {
@@ -8237,7 +8665,12 @@
       "effect.vl_abyss.paralisado": "Paralisado",
       "subtitles.dischargespark": "",
       "subtitles.sparkswap": "",
-      "effect.vl_abyss.eletric_touch": "Eletric Touch"
+      "effect.vl_abyss.eletric_touch": "Eletric Touch",
+      "effect.vl_abyss.shade_vision": "Shade Vision",
+      "subtitles.ativacaoshadevision": "",
+      "effect.vl_abyss.echo_of_shadows": "Echo Of Shadows",
+      "entity.vl_abyss.echo_of_shadow": "Echo of Shadows",
+      "subtitles.echoofshadow": ""
     }
   },
   "metadata": {
@@ -8247,6 +8680,7 @@
       "src/main/java/net/mcreator/vlabyss/init/VlAbyssModTabs.java",
       "src/main/resources/META-INF/accesstransformer.cfg",
       "src/main/resources/mixins.vl_abyss.json",
+      "src/main/java/net/mcreator/vlabyss/init/VlAbyssModModels.java",
       "src/main/resources/pack.mcmeta",
       "src/main/java/net/mcreator/vlabyss/network/VlAbyssModVariables.java",
       "src/main/java/net/mcreator/vlabyss/VlAbyssMod.java",
@@ -8804,10 +9238,37 @@
                     "name": "Escuridao",
                     "children": [
                       {
-                        "name": "Efeito",
+                        "name": "ShadowCopy",
+                        "children": [
+                          {
+                            "name": "Efeito",
+                            "children": [
+                              {
+                                "name": "Procedure",
+                                "children": []
+                              }
+                            ]
+                          }
+                        ]
+                      },
+                      {
+                        "name": "ShadeVision",
                         "children": [
                           {
                             "name": "Procedure",
+                            "children": []
+                          }
+                        ]
+                      },
+                      {
+                        "name": "EchoOfShadows",
+                        "children": [
+                          {
+                            "name": "Procedure",
+                            "children": []
+                          },
+                          {
+                            "name": "Particula",
                             "children": []
                           }
                         ]
@@ -9034,6 +9495,10 @@
           },
           {
             "name": "AdoracaoSongs",
+            "children": []
+          },
+          {
+            "name": "Dialogo",
             "children": []
           }
         ]

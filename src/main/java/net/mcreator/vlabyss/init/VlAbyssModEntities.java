@@ -20,6 +20,7 @@ import net.mcreator.vlabyss.entity.RespiroPrimariaEntity;
 import net.mcreator.vlabyss.entity.ReconjurationEntity;
 import net.mcreator.vlabyss.entity.MantraSoulEntity;
 import net.mcreator.vlabyss.entity.MantraSoulCorrompidaEntity;
+import net.mcreator.vlabyss.entity.EchoOfShadowEntity;
 import net.mcreator.vlabyss.entity.CounterSpellEntity;
 import net.mcreator.vlabyss.entity.CavaleiroAladoEntity;
 import net.mcreator.vlabyss.VlAbyssMod;
@@ -41,6 +42,8 @@ public class VlAbyssModEntities {
 			EntityType.Builder.<CounterSpellEntity>of(CounterSpellEntity::new, MobCategory.MISC).setCustomClientFactory(CounterSpellEntity::new).setShouldReceiveVelocityUpdates(true).setTrackingRange(64).setUpdateInterval(1).sized(0.5f, 0.5f));
 	public static final RegistryObject<EntityType<ReconjurationEntity>> RECONJURATION = register("reconjuration",
 			EntityType.Builder.<ReconjurationEntity>of(ReconjurationEntity::new, MobCategory.MISC).setCustomClientFactory(ReconjurationEntity::new).setShouldReceiveVelocityUpdates(true).setTrackingRange(64).setUpdateInterval(1).sized(0.5f, 0.5f));
+	public static final RegistryObject<EntityType<EchoOfShadowEntity>> ECHO_OF_SHADOW = register("echo_of_shadow", EntityType.Builder.<EchoOfShadowEntity>of(EchoOfShadowEntity::new, MobCategory.MONSTER).setShouldReceiveVelocityUpdates(true)
+			.setTrackingRange(1).setUpdateInterval(3).setCustomClientFactory(EchoOfShadowEntity::new).fireImmune().sized(1.8f, 2f));
 
 	// Start of user code block custom entities
 	// End of user code block custom entities
@@ -55,6 +58,7 @@ public class VlAbyssModEntities {
 			CavaleiroAladoEntity.init();
 			MantraSoulCorrompidaEntity.init();
 			WindVortexEntity.init();
+			EchoOfShadowEntity.init();
 		});
 	}
 
@@ -64,5 +68,6 @@ public class VlAbyssModEntities {
 		event.put(CAVALEIRO_ALADO.get(), CavaleiroAladoEntity.createAttributes().build());
 		event.put(MANTRA_SOUL_CORROMPIDA.get(), MantraSoulCorrompidaEntity.createAttributes().build());
 		event.put(WIND_VORTEX.get(), WindVortexEntity.createAttributes().build());
+		event.put(ECHO_OF_SHADOW.get(), EchoOfShadowEntity.createAttributes().build());
 	}
 }

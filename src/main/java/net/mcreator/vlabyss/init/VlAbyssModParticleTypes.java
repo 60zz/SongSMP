@@ -26,4 +26,5 @@ public class VlAbyssModParticleTypes {
 	public static final RegistryObject<SimpleParticleType> LIGHTNING_CLOAK_PARTICLE = REGISTRY.register("lightning_cloak_particle", () -> new SimpleParticleType(false));
 	public static final RegistryObject<SimpleParticleType> SHOCK_SWAP_PARTICLE = REGISTRY.register("shock_swap_particle", () -> new SimpleParticleType(false));
 	public static final RegistryObject<SimpleParticleType> ELETRIC_ORB_PARTICLE = REGISTRY.register("eletric_orb_particle", () -> new SimpleParticleType(false));
+	public static final RegistryObject<SimpleParticleType> ECHO_SLASH_PARTICLE = REGISTRY.register("echo_slash_particle", () -> new SimpleParticleType(false));
 }
