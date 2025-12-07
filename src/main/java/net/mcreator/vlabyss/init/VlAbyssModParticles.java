@@ -18,9 +18,11 @@ import net.mcreator.vlabyss.client.particle.Particulamorreu1Particle;
 import net.mcreator.vlabyss.client.particle.ParryDeuCertoParticle;
 import net.mcreator.vlabyss.client.particle.LightningCloakParticleParticle;
 import net.mcreator.vlabyss.client.particle.FlamingSlashParticle;
+import net.mcreator.vlabyss.client.particle.FireEruptionParticleParticle;
 import net.mcreator.vlabyss.client.particle.ExplosaoVentoParticle;
 import net.mcreator.vlabyss.client.particle.EletricOrbParticleParticle;
 import net.mcreator.vlabyss.client.particle.EchoSlashParticleParticle;
+import net.mcreator.vlabyss.client.particle.BodyFireParticleParticle;
 
 @Mod.EventBusSubscriber(bus = Mod.EventBusSubscriber.Bus.MOD, value = Dist.CLIENT)
 public class VlAbyssModParticles {
@@ -39,5 +41,7 @@ public class VlAbyssModParticles {
 		event.registerSpriteSet(VlAbyssModParticleTypes.SHOCK_SWAP_PARTICLE.get(), ShockSwapParticleParticle::provider);
 		event.registerSpriteSet(VlAbyssModParticleTypes.ELETRIC_ORB_PARTICLE.get(), EletricOrbParticleParticle::provider);
 		event.registerSpriteSet(VlAbyssModParticleTypes.ECHO_SLASH_PARTICLE.get(), EchoSlashParticleParticle::provider);
+		event.registerSpriteSet(VlAbyssModParticleTypes.BODY_FIRE_PARTICLE.get(), BodyFireParticleParticle::provider);
+		event.registerSpriteSet(VlAbyssModParticleTypes.FIRE_ERUPTION_PARTICLE.get(), FireEruptionParticleParticle::provider);
 	}
 }

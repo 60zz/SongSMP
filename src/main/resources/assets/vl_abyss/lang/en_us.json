@@ -280,5 +280,14 @@
   "subtitles.ativacaoshadevision": "",
   "effect.vl_abyss.echo_of_shadows": "Echo Of Shadows",
   "entity.vl_abyss.echo_of_shadow": "Echo of Shadows",
-  "subtitles.echoofshadow": ""
+  "subtitles.echoofshadow": "",
+  "effect.vl_abyss.shade_backstap": "Shade Backstab",
+  "subtitles.shadebackstab": "",
+  "effect.vl_abyss.body_fire": "Corpo em Chamas",
+  "effect.vl_abyss.queimadura": "Queimadura",
+  "effect.vl_abyss.burn_armor": "Queimadura da Armadura",
+  "subtitles.bodyfiremantra": "",
+  "entity.vl_abyss.fire_eruption": "Fire Eruption",
+  "subtitles.fireeruptionmantra": "",
+  "entity.vl_abyss.clone": "Clone"
 }

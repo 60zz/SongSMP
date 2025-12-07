@@ -100,27 +100,6 @@ public class ResetMantraProcedureProcedure {
 					});
 				}
 				{
-					double _setval = 1;
-					entity.getCapability(VlAbyssModVariables.PLAYER_VARIABLES_CAPABILITY, null).ifPresent(capability -> {
-						capability.hab1_nivel = _setval;
-						capability.syncPlayerVariables(entity);
-					});
-				}
-				{
-					double _setval = 1;
-					entity.getCapability(VlAbyssModVariables.PLAYER_VARIABLES_CAPABILITY, null).ifPresent(capability -> {
-						capability.hab2_nivel = _setval;
-						capability.syncPlayerVariables(entity);
-					});
-				}
-				{
-					double _setval = 1;
-					entity.getCapability(VlAbyssModVariables.PLAYER_VARIABLES_CAPABILITY, null).ifPresent(capability -> {
-						capability.hab3_nivel = _setval;
-						capability.syncPlayerVariables(entity);
-					});
-				}
-				{
 					double _setval = 0;
 					entity.getCapability(VlAbyssModVariables.PLAYER_VARIABLES_CAPABILITY, null).ifPresent(capability -> {
 						capability.mantra1_cooldown = _setval;

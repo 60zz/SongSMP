@@ -62,4 +62,7 @@ public class VlAbyssModSounds {
 	public static final RegistryObject<SoundEvent> SPARKSWAP = REGISTRY.register("sparkswap", () -> SoundEvent.createVariableRangeEvent(ResourceLocation.fromNamespaceAndPath("vl_abyss", "sparkswap")));
 	public static final RegistryObject<SoundEvent> ATIVACAOSHADEVISION = REGISTRY.register("ativacaoshadevision", () -> SoundEvent.createVariableRangeEvent(ResourceLocation.fromNamespaceAndPath("vl_abyss", "ativacaoshadevision")));
 	public static final RegistryObject<SoundEvent> ECHOOFSHADOW = REGISTRY.register("echoofshadow", () -> SoundEvent.createVariableRangeEvent(ResourceLocation.fromNamespaceAndPath("vl_abyss", "echoofshadow")));
+	public static final RegistryObject<SoundEvent> SHADEBACKSTAB = REGISTRY.register("shadebackstab", () -> SoundEvent.createVariableRangeEvent(ResourceLocation.fromNamespaceAndPath("vl_abyss", "shadebackstab")));
+	public static final RegistryObject<SoundEvent> BODYFIREMANTRA = REGISTRY.register("bodyfiremantra", () -> SoundEvent.createVariableRangeEvent(ResourceLocation.fromNamespaceAndPath("vl_abyss", "bodyfiremantra")));
+	public static final RegistryObject<SoundEvent> FIREERUPTIONMANTRA = REGISTRY.register("fireeruptionmantra", () -> SoundEvent.createVariableRangeEvent(ResourceLocation.fromNamespaceAndPath("vl_abyss", "fireeruptionmantra")));
 }

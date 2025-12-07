@@ -20,8 +20,10 @@ import net.mcreator.vlabyss.entity.RespiroPrimariaEntity;
 import net.mcreator.vlabyss.entity.ReconjurationEntity;
 import net.mcreator.vlabyss.entity.MantraSoulEntity;
 import net.mcreator.vlabyss.entity.MantraSoulCorrompidaEntity;
+import net.mcreator.vlabyss.entity.FireEruptionEntity;
 import net.mcreator.vlabyss.entity.EchoOfShadowEntity;
 import net.mcreator.vlabyss.entity.CounterSpellEntity;
+import net.mcreator.vlabyss.entity.CloneEntity;
 import net.mcreator.vlabyss.entity.CavaleiroAladoEntity;
 import net.mcreator.vlabyss.VlAbyssMod;
 
@@ -44,6 +46,10 @@ public class VlAbyssModEntities {
 			EntityType.Builder.<ReconjurationEntity>of(ReconjurationEntity::new, MobCategory.MISC).setCustomClientFactory(ReconjurationEntity::new).setShouldReceiveVelocityUpdates(true).setTrackingRange(64).setUpdateInterval(1).sized(0.5f, 0.5f));
 	public static final RegistryObject<EntityType<EchoOfShadowEntity>> ECHO_OF_SHADOW = register("echo_of_shadow", EntityType.Builder.<EchoOfShadowEntity>of(EchoOfShadowEntity::new, MobCategory.MONSTER).setShouldReceiveVelocityUpdates(true)
 			.setTrackingRange(1).setUpdateInterval(3).setCustomClientFactory(EchoOfShadowEntity::new).fireImmune().sized(1.8f, 2f));
+	public static final RegistryObject<EntityType<FireEruptionEntity>> FIRE_ERUPTION = register("fire_eruption", EntityType.Builder.<FireEruptionEntity>of(FireEruptionEntity::new, MobCategory.MONSTER).setShouldReceiveVelocityUpdates(true)
+			.setTrackingRange(1).setUpdateInterval(3).setCustomClientFactory(FireEruptionEntity::new).fireImmune().sized(0.8f, 4f));
+	public static final RegistryObject<EntityType<CloneEntity>> CLONE = register("clone",
+			EntityType.Builder.<CloneEntity>of(CloneEntity::new, MobCategory.MONSTER).setShouldReceiveVelocityUpdates(true).setTrackingRange(64).setUpdateInterval(3).setCustomClientFactory(CloneEntity::new).fireImmune().sized(0.6f, 1.8f));
 
 	// Start of user code block custom entities
 	// End of user code block custom entities
@@ -59,6 +65,8 @@ public class VlAbyssModEntities {
 			MantraSoulCorrompidaEntity.init();
 			WindVortexEntity.init();
 			EchoOfShadowEntity.init();
+			FireEruptionEntity.init();
+			CloneEntity.init();
 		});
 	}
 
@@ -69,5 +77,7 @@ public class VlAbyssModEntities {
 		event.put(MANTRA_SOUL_CORROMPIDA.get(), MantraSoulCorrompidaEntity.createAttributes().build());
 		event.put(WIND_VORTEX.get(), WindVortexEntity.createAttributes().build());
 		event.put(ECHO_OF_SHADOW.get(), EchoOfShadowEntity.createAttributes().build());
+		event.put(FIRE_ERUPTION.get(), FireEruptionEntity.createAttributes().build());
+		event.put(CLONE.get(), CloneEntity.createAttributes().build());
 	}
 }

@@ -34,130 +34,65 @@ public class EscuridaoPrimeiraHabilidadeProcedure {
 				&& (entity.getCapability(VlAbyssModVariables.PLAYER_VARIABLES_CAPABILITY, null).orElseGet(VlAbyssModVariables.PlayerVariables::new)).MantraRegistrada == true
 				&& (entity.getCapability(VlAbyssModVariables.PLAYER_VARIABLES_CAPABILITY, null).orElseGet(VlAbyssModVariables.PlayerVariables::new)).habilidade1 == true) {
 			if (!((entity.getCapability(VlAbyssModVariables.PLAYER_VARIABLES_CAPABILITY, null).orElseGet(VlAbyssModVariables.PlayerVariables::new)).mantra1_cooldown > 0)) {
-				if ((entity.getCapability(VlAbyssModVariables.PLAYER_VARIABLES_CAPABILITY, null).orElseGet(VlAbyssModVariables.PlayerVariables::new)).hab1_nivel == 1) {
-					if ((entity.getCapability(VlAbyssModVariables.PLAYER_VARIABLES_CAPABILITY, null).orElseGet(VlAbyssModVariables.PlayerVariables::new)).Ethir >= 85) {
-						{
-							double _setval = (entity.getCapability(VlAbyssModVariables.PLAYER_VARIABLES_CAPABILITY, null).orElseGet(VlAbyssModVariables.PlayerVariables::new)).Ethir - 85;
-							entity.getCapability(VlAbyssModVariables.PLAYER_VARIABLES_CAPABILITY, null).ifPresent(capability -> {
-								capability.Ethir = _setval;
-								capability.syncPlayerVariables(entity);
-							});
-						}
-						{
-							double _setval = Math.round(180 / (entity instanceof LivingEntity _livingEntity0 && _livingEntity0.getAttributes().hasAttribute(VlAbyssModAttributes.ABILITY_COOLDOWN_REDUCTION.get())
-									? _livingEntity0.getAttribute(VlAbyssModAttributes.ABILITY_COOLDOWN_REDUCTION.get()).getValue()
-									: 0));
-							entity.getCapability(VlAbyssModVariables.PLAYER_VARIABLES_CAPABILITY, null).ifPresent(capability -> {
-								capability.mantra1_cooldown = _setval;
-								capability.syncPlayerVariables(entity);
-							});
-						}
-						if (entity instanceof LivingEntity _entity && !_entity.level().isClientSide())
-							_entity.addEffect(new MobEffectInstance(VlAbyssModMobEffects.SHADOW_COPY.get(),
-									(int) (1200
-											* (entity instanceof LivingEntity _livingEntity1 && _livingEntity1.getAttributes().hasAttribute(VlAbyssModAttributes.BONUS_ADDITIONAL_DAMAGE.get())
-													? _livingEntity1.getAttribute(VlAbyssModAttributes.BONUS_ADDITIONAL_DAMAGE.get()).getValue()
-													: 0)
-											* (entity instanceof LivingEntity _livingEntity2 && _livingEntity2.getAttributes().hasAttribute(VlAbyssModAttributes.DARKNESS_BONUS.get())
-													? _livingEntity2.getAttribute(VlAbyssModAttributes.DARKNESS_BONUS.get()).getValue()
-													: 0)),
-									0));
-						if (world.isClientSide()) {
-							SetupAnimationsProcedure.setAnimationClientside((Player) entity, "shadowcopy", false);
-						}
-						if (!world.isClientSide()) {
-							if (entity instanceof Player && world instanceof ServerLevel srvLvl_) {
-								List<Connection> connections = srvLvl_.getServer().getConnection().getConnections();
-								synchronized (connections) {
-									Iterator<Connection> iterator = connections.iterator();
-									while (iterator.hasNext()) {
-										Connection connection = iterator.next();
-										if (!connection.isConnecting() && connection.isConnected())
-											VlAbyssMod.PACKET_HANDLER.sendTo(new SetupAnimationsProcedure.VlAbyssModAnimationMessage(Component.literal("shadowcopy"), entity.getId(), false), connection, NetworkDirection.PLAY_TO_CLIENT);
-									}
+				if ((entity.getCapability(VlAbyssModVariables.PLAYER_VARIABLES_CAPABILITY, null).orElseGet(VlAbyssModVariables.PlayerVariables::new)).Ethir >= 85) {
+					{
+						double _setval = (entity.getCapability(VlAbyssModVariables.PLAYER_VARIABLES_CAPABILITY, null).orElseGet(VlAbyssModVariables.PlayerVariables::new)).Ethir - 85;
+						entity.getCapability(VlAbyssModVariables.PLAYER_VARIABLES_CAPABILITY, null).ifPresent(capability -> {
+							capability.Ethir = _setval;
+							capability.syncPlayerVariables(entity);
+						});
+					}
+					{
+						double _setval = Math.round(180 / (entity instanceof LivingEntity _livingEntity0 && _livingEntity0.getAttributes().hasAttribute(VlAbyssModAttributes.ABILITY_COOLDOWN_REDUCTION.get())
+								? _livingEntity0.getAttribute(VlAbyssModAttributes.ABILITY_COOLDOWN_REDUCTION.get()).getValue()
+								: 0));
+						entity.getCapability(VlAbyssModVariables.PLAYER_VARIABLES_CAPABILITY, null).ifPresent(capability -> {
+							capability.mantra1_cooldown = _setval;
+							capability.syncPlayerVariables(entity);
+						});
+					}
+					if (entity instanceof LivingEntity _entity && !_entity.level().isClientSide())
+						_entity.addEffect(new MobEffectInstance(VlAbyssModMobEffects.SHADOW_COPY.get(),
+								(int) (1200
+										* (entity instanceof LivingEntity _livingEntity1 && _livingEntity1.getAttributes().hasAttribute(VlAbyssModAttributes.BONUS_ADDITIONAL_DAMAGE.get())
+												? _livingEntity1.getAttribute(VlAbyssModAttributes.BONUS_ADDITIONAL_DAMAGE.get()).getValue()
+												: 0)
+										* (entity instanceof LivingEntity _livingEntity2 && _livingEntity2.getAttributes().hasAttribute(VlAbyssModAttributes.DARKNESS_BONUS.get())
+												? _livingEntity2.getAttribute(VlAbyssModAttributes.DARKNESS_BONUS.get()).getValue()
+												: 0)),
+								0));
+					if (world.isClientSide()) {
+						SetupAnimationsProcedure.setAnimationClientside((Player) entity, "shadowcopy", false);
+					}
+					if (!world.isClientSide()) {
+						if (entity instanceof Player && world instanceof ServerLevel srvLvl_) {
+							List<Connection> connections = srvLvl_.getServer().getConnection().getConnections();
+							synchronized (connections) {
+								Iterator<Connection> iterator = connections.iterator();
+								while (iterator.hasNext()) {
+									Connection connection = iterator.next();
+									if (!connection.isConnecting() && connection.isConnected())
+										VlAbyssMod.PACKET_HANDLER.sendTo(new SetupAnimationsProcedure.VlAbyssModAnimationMessage(Component.literal("shadowcopy"), entity.getId(), false), connection, NetworkDirection.PLAY_TO_CLIENT);
 								}
-							}
-						}
-						if (entity instanceof Player _player) {
-							if (_player.level().isClientSide()) {
-								Minecraft _mc = Minecraft.getInstance();
-								if (_mc.player != null && _mc.player.equals(_player)) {
-									_mc.options.setCameraType(CameraType.THIRD_PERSON_BACK);
-								}
-							}
-						}
-					} else {
-						if (entity instanceof Player _player && !_player.level().isClientSide())
-							_player.displayClientMessage(Component.literal("\u00A7cSem \"ETHIR\" o suficiente"), true);
-						if (world instanceof Level _level) {
-							if (!_level.isClientSide()) {
-								_level.playSound(null, BlockPos.containing(x, y, z), ForgeRegistries.SOUND_EVENTS.getValue(ResourceLocation.parse("vl_abyss:sem_ethir_som")), SoundSource.MASTER, 1, 1);
-							} else {
-								_level.playLocalSound(x, y, z, ForgeRegistries.SOUND_EVENTS.getValue(ResourceLocation.parse("vl_abyss:sem_ethir_som")), SoundSource.MASTER, 1, 1, false);
 							}
 						}
 					}
-				} else if ((entity.getCapability(VlAbyssModVariables.PLAYER_VARIABLES_CAPABILITY, null).orElseGet(VlAbyssModVariables.PlayerVariables::new)).hab1_nivel >= 2) {
-					if ((entity.getCapability(VlAbyssModVariables.PLAYER_VARIABLES_CAPABILITY, null).orElseGet(VlAbyssModVariables.PlayerVariables::new)).Ethir >= 85) {
-						{
-							double _setval = (entity.getCapability(VlAbyssModVariables.PLAYER_VARIABLES_CAPABILITY, null).orElseGet(VlAbyssModVariables.PlayerVariables::new)).Ethir - 85;
-							entity.getCapability(VlAbyssModVariables.PLAYER_VARIABLES_CAPABILITY, null).ifPresent(capability -> {
-								capability.Ethir = _setval;
-								capability.syncPlayerVariables(entity);
-							});
-						}
-						if (entity instanceof LivingEntity _entity && !_entity.level().isClientSide())
-							_entity.addEffect(new MobEffectInstance(VlAbyssModMobEffects.SHADOW_COPY.get(),
-									(int) (1400
-											* (entity instanceof LivingEntity _livingEntity8 && _livingEntity8.getAttributes().hasAttribute(VlAbyssModAttributes.BONUS_ADDITIONAL_DAMAGE.get())
-													? _livingEntity8.getAttribute(VlAbyssModAttributes.BONUS_ADDITIONAL_DAMAGE.get()).getValue()
-													: 0)
-											* (entity instanceof LivingEntity _livingEntity9 && _livingEntity9.getAttributes().hasAttribute(VlAbyssModAttributes.DARKNESS_BONUS.get())
-													? _livingEntity9.getAttribute(VlAbyssModAttributes.DARKNESS_BONUS.get()).getValue()
-													: 0)),
-									0));
-						{
-							double _setval = Math.round(180 / (entity instanceof LivingEntity _livingEntity11 && _livingEntity11.getAttributes().hasAttribute(VlAbyssModAttributes.ABILITY_COOLDOWN_REDUCTION.get())
-									? _livingEntity11.getAttribute(VlAbyssModAttributes.ABILITY_COOLDOWN_REDUCTION.get()).getValue()
-									: 0));
-							entity.getCapability(VlAbyssModVariables.PLAYER_VARIABLES_CAPABILITY, null).ifPresent(capability -> {
-								capability.mantra1_cooldown = _setval;
-								capability.syncPlayerVariables(entity);
-							});
-						}
-						if (world.isClientSide()) {
-							SetupAnimationsProcedure.setAnimationClientside((Player) entity, "shadowcopy", false);
-						}
-						if (!world.isClientSide()) {
-							if (entity instanceof Player && world instanceof ServerLevel srvLvl_) {
-								List<Connection> connections = srvLvl_.getServer().getConnection().getConnections();
-								synchronized (connections) {
-									Iterator<Connection> iterator = connections.iterator();
-									while (iterator.hasNext()) {
-										Connection connection = iterator.next();
-										if (!connection.isConnecting() && connection.isConnected())
-											VlAbyssMod.PACKET_HANDLER.sendTo(new SetupAnimationsProcedure.VlAbyssModAnimationMessage(Component.literal("shadowcopy"), entity.getId(), false), connection, NetworkDirection.PLAY_TO_CLIENT);
-									}
-								}
+					if (entity instanceof Player _player) {
+						if (_player.level().isClientSide()) {
+							Minecraft _mc = Minecraft.getInstance();
+							if (_mc.player != null && _mc.player.equals(_player)) {
+								_mc.options.setCameraType(CameraType.THIRD_PERSON_BACK);
 							}
 						}
-						if (entity instanceof Player _player) {
-							if (_player.level().isClientSide()) {
-								Minecraft _mc = Minecraft.getInstance();
-								if (_mc.player != null && _mc.player.equals(_player)) {
-									_mc.options.setCameraType(CameraType.THIRD_PERSON_BACK);
-								}
-							}
-						}
-					} else {
-						if (entity instanceof Player _player && !_player.level().isClientSide())
-							_player.displayClientMessage(Component.literal("\u00A7cSem \"ETHIR\" o suficiente"), true);
-						if (world instanceof Level _level) {
-							if (!_level.isClientSide()) {
-								_level.playSound(null, BlockPos.containing(x, y, z), ForgeRegistries.SOUND_EVENTS.getValue(ResourceLocation.parse("vl_abyss:sem_ethir_som")), SoundSource.MASTER, 1, 1);
-							} else {
-								_level.playLocalSound(x, y, z, ForgeRegistries.SOUND_EVENTS.getValue(ResourceLocation.parse("vl_abyss:sem_ethir_som")), SoundSource.MASTER, 1, 1, false);
-							}
+					}
+				} else {
+					if (entity instanceof Player _player && !_player.level().isClientSide())
+						_player.displayClientMessage(Component.literal("\u00A7cSem \"ETHIR\" o suficiente"), true);
+					if (world instanceof Level _level) {
+						if (!_level.isClientSide()) {
+							_level.playSound(null, BlockPos.containing(x, y, z), ForgeRegistries.SOUND_EVENTS.getValue(ResourceLocation.parse("vl_abyss:sem_ethir_som")), SoundSource.MASTER, 1, 1);
+						} else {
+							_level.playLocalSound(x, y, z, ForgeRegistries.SOUND_EVENTS.getValue(ResourceLocation.parse("vl_abyss:sem_ethir_som")), SoundSource.MASTER, 1, 1, false);
 						}
 					}
 				}

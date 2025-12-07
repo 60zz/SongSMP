@@ -41,216 +41,116 @@ public class RespiroPrimeiraHabilidadeProcedure {
 				&& (entity.getCapability(VlAbyssModVariables.PLAYER_VARIABLES_CAPABILITY, null).orElseGet(VlAbyssModVariables.PlayerVariables::new)).MantraRegistrada == true
 				&& (entity.getCapability(VlAbyssModVariables.PLAYER_VARIABLES_CAPABILITY, null).orElseGet(VlAbyssModVariables.PlayerVariables::new)).habilidade1 == true) {
 			if (!((entity.getCapability(VlAbyssModVariables.PLAYER_VARIABLES_CAPABILITY, null).orElseGet(VlAbyssModVariables.PlayerVariables::new)).mantra1_cooldown > 0)) {
-				if ((entity.getCapability(VlAbyssModVariables.PLAYER_VARIABLES_CAPABILITY, null).orElseGet(VlAbyssModVariables.PlayerVariables::new)).hab1_nivel == 1) {
-					if ((entity.getCapability(VlAbyssModVariables.PLAYER_VARIABLES_CAPABILITY, null).orElseGet(VlAbyssModVariables.PlayerVariables::new)).Ethir >= 40) {
-						{
-							double _setval = (entity.getCapability(VlAbyssModVariables.PLAYER_VARIABLES_CAPABILITY, null).orElseGet(VlAbyssModVariables.PlayerVariables::new)).Ethir - 40;
-							entity.getCapability(VlAbyssModVariables.PLAYER_VARIABLES_CAPABILITY, null).ifPresent(capability -> {
-								capability.Ethir = _setval;
-								capability.syncPlayerVariables(entity);
-							});
-						}
-						{
-							double _setval = Math.round(10 / (entity instanceof LivingEntity _livingEntity0 && _livingEntity0.getAttributes().hasAttribute(VlAbyssModAttributes.ABILITY_COOLDOWN_REDUCTION.get())
-									? _livingEntity0.getAttribute(VlAbyssModAttributes.ABILITY_COOLDOWN_REDUCTION.get()).getValue()
-									: 0));
-							entity.getCapability(VlAbyssModVariables.PLAYER_VARIABLES_CAPABILITY, null).ifPresent(capability -> {
-								capability.mantra1_cooldown = _setval;
-								capability.syncPlayerVariables(entity);
-							});
-						}
-						if (world instanceof Level _level) {
-							if (!_level.isClientSide()) {
-								_level.playSound(null, BlockPos.containing(x, y, z), ForgeRegistries.SOUND_EVENTS.getValue(ResourceLocation.parse("vl_abyss:respiro_hab1")), SoundSource.MASTER, 1, 1);
-							} else {
-								_level.playLocalSound(x, y, z, ForgeRegistries.SOUND_EVENTS.getValue(ResourceLocation.parse("vl_abyss:respiro_hab1")), SoundSource.MASTER, 1, 1, false);
-							}
-						}
-						if (world instanceof Level _level) {
-							if (!_level.isClientSide()) {
-								_level.playSound(null, BlockPos.containing(x, y, z), ForgeRegistries.SOUND_EVENTS.getValue(ResourceLocation.parse("vl_abyss:respiro_hab1_1")), SoundSource.MASTER, 1, 1);
-							} else {
-								_level.playLocalSound(x, y, z, ForgeRegistries.SOUND_EVENTS.getValue(ResourceLocation.parse("vl_abyss:respiro_hab1_1")), SoundSource.MASTER, 1, 1, false);
-							}
-						}
-						if (world instanceof Level _level) {
-							if (!_level.isClientSide()) {
-								_level.playSound(null, BlockPos.containing(x, y, z), ForgeRegistries.SOUND_EVENTS.getValue(ResourceLocation.parse("vl_abyss:respiro_hab1_2")), SoundSource.MASTER, 1, 1);
-							} else {
-								_level.playLocalSound(x, y, z, ForgeRegistries.SOUND_EVENTS.getValue(ResourceLocation.parse("vl_abyss:respiro_hab1_2")), SoundSource.MASTER, 1, 1, false);
-							}
-						}
-						if (entity instanceof LivingEntity _entity) {
-							if (true) {
-								CompoundTag _data = _entity.getPersistentData();
-								if (!_data.contains("orig_speed")) {
-									_data.putDouble("orig_speed", _entity.getAttribute(net.minecraft.world.entity.ai.attributes.Attributes.MOVEMENT_SPEED).getBaseValue());
-									if (_entity.getAttribute(net.minecraft.world.entity.ai.attributes.Attributes.JUMP_STRENGTH) != null) {
-										_data.putDouble("orig_jump", _entity.getAttribute(net.minecraft.world.entity.ai.attributes.Attributes.JUMP_STRENGTH).getBaseValue());
-									}
-								}
-								_entity.setDeltaMovement(Vec3.ZERO);
-								_entity.getAttribute(net.minecraft.world.entity.ai.attributes.Attributes.MOVEMENT_SPEED).setBaseValue(0.0);
-								if (_entity.getAttribute(net.minecraft.world.entity.ai.attributes.Attributes.JUMP_STRENGTH) != null) {
-									_entity.getAttribute(net.minecraft.world.entity.ai.attributes.Attributes.JUMP_STRENGTH).setBaseValue(0.0);
-								}
-								_data.putBoolean("is_immobile", true);
-								if (_entity instanceof Mob _mob) {
-									_mob.getNavigation().stop();
-									_mob.setNoAi(true);
-								}
-							} else {
-								CompoundTag _data = _entity.getPersistentData();
-								if (_data.contains("orig_speed")) {
-									_entity.getAttribute(net.minecraft.world.entity.ai.attributes.Attributes.MOVEMENT_SPEED).setBaseValue(_data.getDouble("orig_speed"));
-									_data.remove("orig_speed");
-								}
-								if (_data.contains("orig_jump") && _entity.getAttribute(net.minecraft.world.entity.ai.attributes.Attributes.JUMP_STRENGTH) != null) {
-									_entity.getAttribute(net.minecraft.world.entity.ai.attributes.Attributes.JUMP_STRENGTH).setBaseValue(_data.getDouble("orig_jump"));
-									_data.remove("orig_jump");
-								}
-								_data.remove("is_immobile");
-								if (_entity instanceof Mob _mob) {
-									_mob.setNoAi(false);
-								}
-							}
-						}
-						if (world.isClientSide()) {
-							SetupAnimationsProcedure.setAnimationClientside((Player) entity, "mantrarespiro1", false);
-						}
-						if (!world.isClientSide()) {
-							if (entity instanceof Player && world instanceof ServerLevel srvLvl_) {
-								List<Connection> connections = srvLvl_.getServer().getConnection().getConnections();
-								synchronized (connections) {
-									Iterator<Connection> iterator = connections.iterator();
-									while (iterator.hasNext()) {
-										Connection connection = iterator.next();
-										if (!connection.isConnecting() && connection.isConnected())
-											VlAbyssMod.PACKET_HANDLER.sendTo(new SetupAnimationsProcedure.VlAbyssModAnimationMessage(Component.literal("mantrarespiro1"), entity.getId(), false), connection, NetworkDirection.PLAY_TO_CLIENT);
-									}
-								}
-							}
-						}
-						VlAbyssMod.queueServerWork(20, () -> {
-							{
-								Entity _shootFrom = entity;
-								Level projectileLevel = _shootFrom.level();
-								if (!projectileLevel.isClientSide()) {
-									Projectile _entityToSpawn = initArrowProjectile(createArrowWeaponItemStack(new RespiroPrimariaEntity(VlAbyssModEntities.RESPIRO_PRIMARIA.get(), 0, 0, 0, projectileLevel), 1, (byte) 0), entity,
-											(float) (8
-													* (entity instanceof LivingEntity _livingEntity6 && _livingEntity6.getAttributes().hasAttribute(VlAbyssModAttributes.WIND_BONUS.get())
-															? _livingEntity6.getAttribute(VlAbyssModAttributes.WIND_BONUS.get()).getValue()
-															: 0)
-													* (entity instanceof LivingEntity _livingEntity7 && _livingEntity7.getAttributes().hasAttribute(VlAbyssModAttributes.BONUS_ADDITIONAL_DAMAGE.get())
-															? _livingEntity7.getAttribute(VlAbyssModAttributes.BONUS_ADDITIONAL_DAMAGE.get()).getValue()
-															: 0)),
-											true, false, false, AbstractArrow.Pickup.DISALLOWED);
-									_entityToSpawn.setPos(_shootFrom.getX(), _shootFrom.getEyeY() - 0.1, _shootFrom.getZ());
-									_entityToSpawn.shoot(_shootFrom.getLookAngle().x, _shootFrom.getLookAngle().y, _shootFrom.getLookAngle().z, 1, 0);
-									projectileLevel.addFreshEntity(_entityToSpawn);
-								}
-							}
-							if (entity instanceof LivingEntity _entity) {
-								if (false) {
-									CompoundTag _data = _entity.getPersistentData();
-									if (!_data.contains("orig_speed")) {
-										_data.putDouble("orig_speed", _entity.getAttribute(net.minecraft.world.entity.ai.attributes.Attributes.MOVEMENT_SPEED).getBaseValue());
-										if (_entity.getAttribute(net.minecraft.world.entity.ai.attributes.Attributes.JUMP_STRENGTH) != null) {
-											_data.putDouble("orig_jump", _entity.getAttribute(net.minecraft.world.entity.ai.attributes.Attributes.JUMP_STRENGTH).getBaseValue());
-										}
-									}
-									_entity.setDeltaMovement(Vec3.ZERO);
-									_entity.getAttribute(net.minecraft.world.entity.ai.attributes.Attributes.MOVEMENT_SPEED).setBaseValue(0.0);
-									if (_entity.getAttribute(net.minecraft.world.entity.ai.attributes.Attributes.JUMP_STRENGTH) != null) {
-										_entity.getAttribute(net.minecraft.world.entity.ai.attributes.Attributes.JUMP_STRENGTH).setBaseValue(0.0);
-									}
-									_data.putBoolean("is_immobile", true);
-									if (_entity instanceof Mob _mob) {
-										_mob.getNavigation().stop();
-										_mob.setNoAi(true);
-									}
-								} else {
-									CompoundTag _data = _entity.getPersistentData();
-									if (_data.contains("orig_speed")) {
-										_entity.getAttribute(net.minecraft.world.entity.ai.attributes.Attributes.MOVEMENT_SPEED).setBaseValue(_data.getDouble("orig_speed"));
-										_data.remove("orig_speed");
-									}
-									if (_data.contains("orig_jump") && _entity.getAttribute(net.minecraft.world.entity.ai.attributes.Attributes.JUMP_STRENGTH) != null) {
-										_entity.getAttribute(net.minecraft.world.entity.ai.attributes.Attributes.JUMP_STRENGTH).setBaseValue(_data.getDouble("orig_jump"));
-										_data.remove("orig_jump");
-									}
-									_data.remove("is_immobile");
-									if (_entity instanceof Mob _mob) {
-										_mob.setNoAi(false);
-									}
-								}
-							}
+				if ((entity.getCapability(VlAbyssModVariables.PLAYER_VARIABLES_CAPABILITY, null).orElseGet(VlAbyssModVariables.PlayerVariables::new)).Ethir >= 40) {
+					{
+						double _setval = (entity.getCapability(VlAbyssModVariables.PLAYER_VARIABLES_CAPABILITY, null).orElseGet(VlAbyssModVariables.PlayerVariables::new)).Ethir - 40;
+						entity.getCapability(VlAbyssModVariables.PLAYER_VARIABLES_CAPABILITY, null).ifPresent(capability -> {
+							capability.Ethir = _setval;
+							capability.syncPlayerVariables(entity);
 						});
-						if (Minecraft.getInstance().options.keyShift.isDown()) {
-							entity.setDeltaMovement(new Vec3(0, 1, 0));
-							if (entity instanceof LivingEntity _entity && !_entity.level().isClientSide())
-								_entity.addEffect(new MobEffectInstance(MobEffects.SLOW_FALLING, 40, 2));
+					}
+					{
+						double _setval = Math.round(20 / (entity instanceof LivingEntity _livingEntity0 && _livingEntity0.getAttributes().hasAttribute(VlAbyssModAttributes.ABILITY_COOLDOWN_REDUCTION.get())
+								? _livingEntity0.getAttribute(VlAbyssModAttributes.ABILITY_COOLDOWN_REDUCTION.get()).getValue()
+								: 0));
+						entity.getCapability(VlAbyssModVariables.PLAYER_VARIABLES_CAPABILITY, null).ifPresent(capability -> {
+							capability.mantra1_cooldown = _setval;
+							capability.syncPlayerVariables(entity);
+						});
+					}
+					if (world instanceof Level _level) {
+						if (!_level.isClientSide()) {
+							_level.playSound(null, BlockPos.containing(x, y, z), ForgeRegistries.SOUND_EVENTS.getValue(ResourceLocation.parse("vl_abyss:respiro_hab1")), SoundSource.MASTER, 1, 1);
+						} else {
+							_level.playLocalSound(x, y, z, ForgeRegistries.SOUND_EVENTS.getValue(ResourceLocation.parse("vl_abyss:respiro_hab1")), SoundSource.MASTER, 1, 1, false);
 						}
-						if (entity instanceof Player _player) {
-							if (_player.level().isClientSide()) {
-								Minecraft _mc = Minecraft.getInstance();
-								if (_mc.player != null && _mc.player.equals(_player)) {
-									_mc.options.setCameraType(CameraType.THIRD_PERSON_BACK);
+					}
+					if (world instanceof Level _level) {
+						if (!_level.isClientSide()) {
+							_level.playSound(null, BlockPos.containing(x, y, z), ForgeRegistries.SOUND_EVENTS.getValue(ResourceLocation.parse("vl_abyss:respiro_hab1_1")), SoundSource.MASTER, 1, 1);
+						} else {
+							_level.playLocalSound(x, y, z, ForgeRegistries.SOUND_EVENTS.getValue(ResourceLocation.parse("vl_abyss:respiro_hab1_1")), SoundSource.MASTER, 1, 1, false);
+						}
+					}
+					if (world instanceof Level _level) {
+						if (!_level.isClientSide()) {
+							_level.playSound(null, BlockPos.containing(x, y, z), ForgeRegistries.SOUND_EVENTS.getValue(ResourceLocation.parse("vl_abyss:respiro_hab1_2")), SoundSource.MASTER, 1, 1);
+						} else {
+							_level.playLocalSound(x, y, z, ForgeRegistries.SOUND_EVENTS.getValue(ResourceLocation.parse("vl_abyss:respiro_hab1_2")), SoundSource.MASTER, 1, 1, false);
+						}
+					}
+					if (entity instanceof LivingEntity _entity) {
+						if (true) {
+							CompoundTag _data = _entity.getPersistentData();
+							if (!_data.contains("orig_speed")) {
+								_data.putDouble("orig_speed", _entity.getAttribute(net.minecraft.world.entity.ai.attributes.Attributes.MOVEMENT_SPEED).getBaseValue());
+								if (_entity.getAttribute(net.minecraft.world.entity.ai.attributes.Attributes.JUMP_STRENGTH) != null) {
+									_data.putDouble("orig_jump", _entity.getAttribute(net.minecraft.world.entity.ai.attributes.Attributes.JUMP_STRENGTH).getBaseValue());
 								}
 							}
-						}
-					} else {
-						if (entity instanceof Player _player && !_player.level().isClientSide())
-							_player.displayClientMessage(Component.literal("\u00A7cSem \"ETHIR\" o suficiente"), true);
-						if (world instanceof Level _level) {
-							if (!_level.isClientSide()) {
-								_level.playSound(null, BlockPos.containing(x, y, z), ForgeRegistries.SOUND_EVENTS.getValue(ResourceLocation.parse("vl_abyss:sem_ethir_som")), SoundSource.MASTER, 1, 1);
-							} else {
-								_level.playLocalSound(x, y, z, ForgeRegistries.SOUND_EVENTS.getValue(ResourceLocation.parse("vl_abyss:sem_ethir_som")), SoundSource.MASTER, 1, 1, false);
+							_entity.setDeltaMovement(Vec3.ZERO);
+							_entity.getAttribute(net.minecraft.world.entity.ai.attributes.Attributes.MOVEMENT_SPEED).setBaseValue(0.0);
+							if (_entity.getAttribute(net.minecraft.world.entity.ai.attributes.Attributes.JUMP_STRENGTH) != null) {
+								_entity.getAttribute(net.minecraft.world.entity.ai.attributes.Attributes.JUMP_STRENGTH).setBaseValue(0.0);
+							}
+							_data.putBoolean("is_immobile", true);
+							if (_entity instanceof Mob _mob) {
+								_mob.getNavigation().stop();
+								_mob.setNoAi(true);
+							}
+						} else {
+							CompoundTag _data = _entity.getPersistentData();
+							if (_data.contains("orig_speed")) {
+								_entity.getAttribute(net.minecraft.world.entity.ai.attributes.Attributes.MOVEMENT_SPEED).setBaseValue(_data.getDouble("orig_speed"));
+								_data.remove("orig_speed");
+							}
+							if (_data.contains("orig_jump") && _entity.getAttribute(net.minecraft.world.entity.ai.attributes.Attributes.JUMP_STRENGTH) != null) {
+								_entity.getAttribute(net.minecraft.world.entity.ai.attributes.Attributes.JUMP_STRENGTH).setBaseValue(_data.getDouble("orig_jump"));
+								_data.remove("orig_jump");
+							}
+							_data.remove("is_immobile");
+							if (_entity instanceof Mob _mob) {
+								_mob.setNoAi(false);
 							}
 						}
 					}
-				} else if ((entity.getCapability(VlAbyssModVariables.PLAYER_VARIABLES_CAPABILITY, null).orElseGet(VlAbyssModVariables.PlayerVariables::new)).hab1_nivel >= 2) {
-					if ((entity.getCapability(VlAbyssModVariables.PLAYER_VARIABLES_CAPABILITY, null).orElseGet(VlAbyssModVariables.PlayerVariables::new)).Ethir >= 40) {
-						{
-							double _setval = (entity.getCapability(VlAbyssModVariables.PLAYER_VARIABLES_CAPABILITY, null).orElseGet(VlAbyssModVariables.PlayerVariables::new)).Ethir - 50;
-							entity.getCapability(VlAbyssModVariables.PLAYER_VARIABLES_CAPABILITY, null).ifPresent(capability -> {
-								capability.Ethir = _setval;
-								capability.syncPlayerVariables(entity);
-							});
-						}
-						{
-							double _setval = Math.round(15 / (entity instanceof LivingEntity _livingEntity18 && _livingEntity18.getAttributes().hasAttribute(VlAbyssModAttributes.ABILITY_COOLDOWN_REDUCTION.get())
-									? _livingEntity18.getAttribute(VlAbyssModAttributes.ABILITY_COOLDOWN_REDUCTION.get()).getValue()
-									: 0));
-							entity.getCapability(VlAbyssModVariables.PLAYER_VARIABLES_CAPABILITY, null).ifPresent(capability -> {
-								capability.mantra1_cooldown = _setval;
-								capability.syncPlayerVariables(entity);
-							});
-						}
-						if (world instanceof Level _level) {
-							if (!_level.isClientSide()) {
-								_level.playSound(null, BlockPos.containing(x, y, z), ForgeRegistries.SOUND_EVENTS.getValue(ResourceLocation.parse("vl_abyss:respiro_hab1")), SoundSource.MASTER, 1, 1);
-							} else {
-								_level.playLocalSound(x, y, z, ForgeRegistries.SOUND_EVENTS.getValue(ResourceLocation.parse("vl_abyss:respiro_hab1")), SoundSource.MASTER, 1, 1, false);
+					if (world.isClientSide()) {
+						SetupAnimationsProcedure.setAnimationClientside((Player) entity, "mantrarespiro1", false);
+					}
+					if (!world.isClientSide()) {
+						if (entity instanceof Player && world instanceof ServerLevel srvLvl_) {
+							List<Connection> connections = srvLvl_.getServer().getConnection().getConnections();
+							synchronized (connections) {
+								Iterator<Connection> iterator = connections.iterator();
+								while (iterator.hasNext()) {
+									Connection connection = iterator.next();
+									if (!connection.isConnecting() && connection.isConnected())
+										VlAbyssMod.PACKET_HANDLER.sendTo(new SetupAnimationsProcedure.VlAbyssModAnimationMessage(Component.literal("mantrarespiro1"), entity.getId(), false), connection, NetworkDirection.PLAY_TO_CLIENT);
+								}
 							}
 						}
-						if (world instanceof Level _level) {
-							if (!_level.isClientSide()) {
-								_level.playSound(null, BlockPos.containing(x, y, z), ForgeRegistries.SOUND_EVENTS.getValue(ResourceLocation.parse("vl_abyss:respiro_hab1_1")), SoundSource.MASTER, 1, 1);
-							} else {
-								_level.playLocalSound(x, y, z, ForgeRegistries.SOUND_EVENTS.getValue(ResourceLocation.parse("vl_abyss:respiro_hab1_1")), SoundSource.MASTER, 1, 1, false);
-							}
-						}
-						if (world instanceof Level _level) {
-							if (!_level.isClientSide()) {
-								_level.playSound(null, BlockPos.containing(x, y, z), ForgeRegistries.SOUND_EVENTS.getValue(ResourceLocation.parse("vl_abyss:respiro_hab1_2")), SoundSource.MASTER, 1, 1);
-							} else {
-								_level.playLocalSound(x, y, z, ForgeRegistries.SOUND_EVENTS.getValue(ResourceLocation.parse("vl_abyss:respiro_hab1_2")), SoundSource.MASTER, 1, 1, false);
+					}
+					VlAbyssMod.queueServerWork(20, () -> {
+						{
+							Entity _shootFrom = entity;
+							Level projectileLevel = _shootFrom.level();
+							if (!projectileLevel.isClientSide()) {
+								Projectile _entityToSpawn = initArrowProjectile(createArrowWeaponItemStack(new RespiroPrimariaEntity(VlAbyssModEntities.RESPIRO_PRIMARIA.get(), 0, 0, 0, projectileLevel), 1, (byte) 0), entity,
+										(float) (8
+												* (entity instanceof LivingEntity _livingEntity6 && _livingEntity6.getAttributes().hasAttribute(VlAbyssModAttributes.WIND_BONUS.get())
+														? _livingEntity6.getAttribute(VlAbyssModAttributes.WIND_BONUS.get()).getValue()
+														: 0)
+												* (entity instanceof LivingEntity _livingEntity7 && _livingEntity7.getAttributes().hasAttribute(VlAbyssModAttributes.BONUS_ADDITIONAL_DAMAGE.get())
+														? _livingEntity7.getAttribute(VlAbyssModAttributes.BONUS_ADDITIONAL_DAMAGE.get()).getValue()
+														: 0)),
+										true, false, false, AbstractArrow.Pickup.DISALLOWED);
+								_entityToSpawn.setPos(_shootFrom.getX(), _shootFrom.getEyeY() - 0.1, _shootFrom.getZ());
+								_entityToSpawn.shoot(_shootFrom.getLookAngle().x, _shootFrom.getLookAngle().y, _shootFrom.getLookAngle().z, 1, 0);
+								projectileLevel.addFreshEntity(_entityToSpawn);
 							}
 						}
 						if (entity instanceof LivingEntity _entity) {
-							if (true) {
+							if (false) {
 								CompoundTag _data = _entity.getPersistentData();
 								if (!_data.contains("orig_speed")) {
 									_data.putDouble("orig_speed", _entity.getAttribute(net.minecraft.world.entity.ai.attributes.Attributes.MOVEMENT_SPEED).getBaseValue());
@@ -284,99 +184,28 @@ public class RespiroPrimeiraHabilidadeProcedure {
 								}
 							}
 						}
-						if (world.isClientSide()) {
-							SetupAnimationsProcedure.setAnimationClientside((Player) entity, "mantrarespiro1", false);
-						}
-						if (!world.isClientSide()) {
-							if (entity instanceof Player && world instanceof ServerLevel srvLvl_) {
-								List<Connection> connections = srvLvl_.getServer().getConnection().getConnections();
-								synchronized (connections) {
-									Iterator<Connection> iterator = connections.iterator();
-									while (iterator.hasNext()) {
-										Connection connection = iterator.next();
-										if (!connection.isConnecting() && connection.isConnected())
-											VlAbyssMod.PACKET_HANDLER.sendTo(new SetupAnimationsProcedure.VlAbyssModAnimationMessage(Component.literal("mantrarespiro1"), entity.getId(), false), connection, NetworkDirection.PLAY_TO_CLIENT);
-									}
-								}
+					});
+					if (Minecraft.getInstance().options.keyShift.isDown()) {
+						entity.setDeltaMovement(new Vec3(0, 1, 0));
+						if (entity instanceof LivingEntity _entity && !_entity.level().isClientSide())
+							_entity.addEffect(new MobEffectInstance(MobEffects.SLOW_FALLING, 40, 2));
+					}
+					if (entity instanceof Player _player) {
+						if (_player.level().isClientSide()) {
+							Minecraft _mc = Minecraft.getInstance();
+							if (_mc.player != null && _mc.player.equals(_player)) {
+								_mc.options.setCameraType(CameraType.THIRD_PERSON_BACK);
 							}
 						}
-						VlAbyssMod.queueServerWork(20, () -> {
-							{
-								Entity _shootFrom = entity;
-								Level projectileLevel = _shootFrom.level();
-								if (!projectileLevel.isClientSide()) {
-									Projectile _entityToSpawn = initArrowProjectile(createArrowWeaponItemStack(new RespiroPrimariaEntity(VlAbyssModEntities.RESPIRO_PRIMARIA.get(), 0, 0, 0, projectileLevel), 2, (byte) 0), entity,
-											(float) (12
-													* (entity instanceof LivingEntity _livingEntity24 && _livingEntity24.getAttributes().hasAttribute(VlAbyssModAttributes.WIND_BONUS.get())
-															? _livingEntity24.getAttribute(VlAbyssModAttributes.WIND_BONUS.get()).getValue()
-															: 0)
-													* (entity instanceof LivingEntity _livingEntity25 && _livingEntity25.getAttributes().hasAttribute(VlAbyssModAttributes.BONUS_ADDITIONAL_DAMAGE.get())
-															? _livingEntity25.getAttribute(VlAbyssModAttributes.BONUS_ADDITIONAL_DAMAGE.get()).getValue()
-															: 0)),
-											true, false, false, AbstractArrow.Pickup.DISALLOWED);
-									_entityToSpawn.setPos(_shootFrom.getX(), _shootFrom.getEyeY() - 0.1, _shootFrom.getZ());
-									_entityToSpawn.shoot(_shootFrom.getLookAngle().x, _shootFrom.getLookAngle().y, _shootFrom.getLookAngle().z, (float) 1.3, 0);
-									projectileLevel.addFreshEntity(_entityToSpawn);
-								}
-							}
-							if (entity instanceof LivingEntity _entity) {
-								if (false) {
-									CompoundTag _data = _entity.getPersistentData();
-									if (!_data.contains("orig_speed")) {
-										_data.putDouble("orig_speed", _entity.getAttribute(net.minecraft.world.entity.ai.attributes.Attributes.MOVEMENT_SPEED).getBaseValue());
-										if (_entity.getAttribute(net.minecraft.world.entity.ai.attributes.Attributes.JUMP_STRENGTH) != null) {
-											_data.putDouble("orig_jump", _entity.getAttribute(net.minecraft.world.entity.ai.attributes.Attributes.JUMP_STRENGTH).getBaseValue());
-										}
-									}
-									_entity.setDeltaMovement(Vec3.ZERO);
-									_entity.getAttribute(net.minecraft.world.entity.ai.attributes.Attributes.MOVEMENT_SPEED).setBaseValue(0.0);
-									if (_entity.getAttribute(net.minecraft.world.entity.ai.attributes.Attributes.JUMP_STRENGTH) != null) {
-										_entity.getAttribute(net.minecraft.world.entity.ai.attributes.Attributes.JUMP_STRENGTH).setBaseValue(0.0);
-									}
-									_data.putBoolean("is_immobile", true);
-									if (_entity instanceof Mob _mob) {
-										_mob.getNavigation().stop();
-										_mob.setNoAi(true);
-									}
-								} else {
-									CompoundTag _data = _entity.getPersistentData();
-									if (_data.contains("orig_speed")) {
-										_entity.getAttribute(net.minecraft.world.entity.ai.attributes.Attributes.MOVEMENT_SPEED).setBaseValue(_data.getDouble("orig_speed"));
-										_data.remove("orig_speed");
-									}
-									if (_data.contains("orig_jump") && _entity.getAttribute(net.minecraft.world.entity.ai.attributes.Attributes.JUMP_STRENGTH) != null) {
-										_entity.getAttribute(net.minecraft.world.entity.ai.attributes.Attributes.JUMP_STRENGTH).setBaseValue(_data.getDouble("orig_jump"));
-										_data.remove("orig_jump");
-									}
-									_data.remove("is_immobile");
-									if (_entity instanceof Mob _mob) {
-										_mob.setNoAi(false);
-									}
-								}
-							}
-						});
-						if (Minecraft.getInstance().options.keyShift.isDown()) {
-							entity.setDeltaMovement(new Vec3(0, 1.2, 0));
-							if (entity instanceof LivingEntity _entity && !_entity.level().isClientSide())
-								_entity.addEffect(new MobEffectInstance(MobEffects.SLOW_FALLING, 40, 2));
-						}
-						if (entity instanceof Player _player) {
-							if (_player.level().isClientSide()) {
-								Minecraft _mc = Minecraft.getInstance();
-								if (_mc.player != null && _mc.player.equals(_player)) {
-									_mc.options.setCameraType(CameraType.THIRD_PERSON_BACK);
-								}
-							}
-						}
-					} else {
-						if (entity instanceof Player _player && !_player.level().isClientSide())
-							_player.displayClientMessage(Component.literal("\u00A7cSem \"ETHIR\" o suficiente"), true);
-						if (world instanceof Level _level) {
-							if (!_level.isClientSide()) {
-								_level.playSound(null, BlockPos.containing(x, y, z), ForgeRegistries.SOUND_EVENTS.getValue(ResourceLocation.parse("vl_abyss:sem_ethir_som")), SoundSource.MASTER, 1, 1);
-							} else {
-								_level.playLocalSound(x, y, z, ForgeRegistries.SOUND_EVENTS.getValue(ResourceLocation.parse("vl_abyss:sem_ethir_som")), SoundSource.MASTER, 1, 1, false);
-							}
+					}
+				} else {
+					if (entity instanceof Player _player && !_player.level().isClientSide())
+						_player.displayClientMessage(Component.literal("\u00A7cSem \"ETHIR\" o suficiente"), true);
+					if (world instanceof Level _level) {
+						if (!_level.isClientSide()) {
+							_level.playSound(null, BlockPos.containing(x, y, z), ForgeRegistries.SOUND_EVENTS.getValue(ResourceLocation.parse("vl_abyss:sem_ethir_som")), SoundSource.MASTER, 1, 1);
+						} else {
+							_level.playLocalSound(x, y, z, ForgeRegistries.SOUND_EVENTS.getValue(ResourceLocation.parse("vl_abyss:sem_ethir_som")), SoundSource.MASTER, 1, 1, false);
 						}
 					}
 				}

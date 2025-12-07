@@ -3,26 +3,19 @@ package net.mcreator.vlabyss.procedures;
 import net.minecraftforge.registries.ForgeRegistries;
 import net.minecraftforge.network.NetworkDirection;
 
-import net.minecraft.world.phys.Vec3;
-import net.minecraft.world.phys.AABB;
 import net.minecraft.world.level.LevelAccessor;
 import net.minecraft.world.level.Level;
 import net.minecraft.world.entity.player.Player;
 import net.minecraft.world.entity.LivingEntity;
 import net.minecraft.world.entity.Entity;
-import net.minecraft.world.effect.MobEffects;
 import net.minecraft.world.effect.MobEffectInstance;
-import net.minecraft.world.damagesource.DamageSource;
 import net.minecraft.sounds.SoundSource;
 import net.minecraft.server.level.ServerLevel;
 import net.minecraft.resources.ResourceLocation;
-import net.minecraft.resources.ResourceKey;
 import net.minecraft.network.chat.Component;
 import net.minecraft.network.Connection;
-import net.minecraft.core.registries.Registries;
+import net.minecraft.core.particles.ParticleTypes;
 import net.minecraft.core.BlockPos;
-import net.minecraft.client.Minecraft;
-import net.minecraft.client.CameraType;
 
 import net.mcreator.vlabyss.network.VlAbyssModVariables;
 import net.mcreator.vlabyss.init.VlAbyssModMobEffects;
@@ -31,7 +24,6 @@ import net.mcreator.vlabyss.VlAbyssMod;
 
 import java.util.List;
 import java.util.Iterator;
-import java.util.Comparator;
 
 public class EscuridaoSegundaHabilidadeProcedure {
 	public static void execute(LevelAccessor world, double x, double y, double z, Entity entity) {
@@ -143,16 +135,16 @@ public class EscuridaoSegundaHabilidadeProcedure {
 						}
 					}
 				} else if ((entity.getCapability(VlAbyssModVariables.PLAYER_VARIABLES_CAPABILITY, null).orElseGet(VlAbyssModVariables.PlayerVariables::new)).opcao_mantra2 == 3) {
-					if ((entity.getCapability(VlAbyssModVariables.PLAYER_VARIABLES_CAPABILITY, null).orElseGet(VlAbyssModVariables.PlayerVariables::new)).Ethir >= 95) {
+					if ((entity.getCapability(VlAbyssModVariables.PLAYER_VARIABLES_CAPABILITY, null).orElseGet(VlAbyssModVariables.PlayerVariables::new)).Ethir >= 110) {
 						{
-							double _setval = (entity.getCapability(VlAbyssModVariables.PLAYER_VARIABLES_CAPABILITY, null).orElseGet(VlAbyssModVariables.PlayerVariables::new)).Ethir - 95;
+							double _setval = (entity.getCapability(VlAbyssModVariables.PLAYER_VARIABLES_CAPABILITY, null).orElseGet(VlAbyssModVariables.PlayerVariables::new)).Ethir - 110;
 							entity.getCapability(VlAbyssModVariables.PLAYER_VARIABLES_CAPABILITY, null).ifPresent(capability -> {
 								capability.Ethir = _setval;
 								capability.syncPlayerVariables(entity);
 							});
 						}
 						{
-							double _setval = Math.round(50 / (entity instanceof LivingEntity _livingEntity14 && _livingEntity14.getAttributes().hasAttribute(VlAbyssModAttributes.ABILITY_COOLDOWN_REDUCTION.get())
+							double _setval = Math.round(60 / (entity instanceof LivingEntity _livingEntity14 && _livingEntity14.getAttributes().hasAttribute(VlAbyssModAttributes.ABILITY_COOLDOWN_REDUCTION.get())
 									? _livingEntity14.getAttribute(VlAbyssModAttributes.ABILITY_COOLDOWN_REDUCTION.get()).getValue()
 									: 0));
 							entity.getCapability(VlAbyssModVariables.PLAYER_VARIABLES_CAPABILITY, null).ifPresent(capability -> {
@@ -160,83 +152,17 @@ public class EscuridaoSegundaHabilidadeProcedure {
 								capability.syncPlayerVariables(entity);
 							});
 						}
-						{
-							final Vec3 _center = new Vec3(x, y, z);
-							for (Entity entityiterator : world.getEntitiesOfClass(Entity.class, new AABB(_center, _center).inflate(9 / 2d), e -> true).stream().sorted(Comparator.comparingDouble(_entcnd -> _entcnd.distanceToSqr(_center))).toList()) {
-								if (!(entityiterator == entity)) {
-									entityiterator.hurt(new DamageSource(world.registryAccess().registryOrThrow(Registries.DAMAGE_TYPE).getHolderOrThrow(ResourceKey.create(Registries.DAMAGE_TYPE, ResourceLocation.parse("vl_abyss:mantra_damage")))),
-											4);
-									{
-										double _setval = 40;
-										entityiterator.getCapability(VlAbyssModVariables.PLAYER_VARIABLES_CAPABILITY, null).ifPresent(capability -> {
-											capability.Ethir = _setval;
-											capability.syncPlayerVariables(entityiterator);
-										});
-									}
-									if (entityiterator instanceof LivingEntity _entity && !_entity.level().isClientSide())
-										_entity.addEffect(new MobEffectInstance(MobEffects.WEAKNESS, 120, 0));
-									if (entityiterator instanceof LivingEntity _entity && !_entity.level().isClientSide())
-										_entity.addEffect(new MobEffectInstance(MobEffects.BLINDNESS, 120, 0));
-									if (entityiterator instanceof LivingEntity _entity && !_entity.level().isClientSide())
-										_entity.addEffect(new MobEffectInstance(MobEffects.DARKNESS, 120, 0));
-								}
-								if (entity instanceof LivingEntity _entity && !_entity.level().isClientSide())
-									_entity.addEffect(new MobEffectInstance(MobEffects.REGENERATION, 80, 1));
-								if (entity instanceof LivingEntity _entity)
-									_entity.setAbsorptionAmount(6);
-								{
-									double _setval = 55;
-									entity.getCapability(VlAbyssModVariables.PLAYER_VARIABLES_CAPABILITY, null).ifPresent(capability -> {
-										capability.Ethir = _setval;
-										capability.syncPlayerVariables(entity);
-									});
-								}
-							}
-						}
-						if (world instanceof net.minecraft.server.level.ServerLevel) {
-							net.minecraft.server.level.ServerLevel _level = (net.minecraft.server.level.ServerLevel) world;
-							int particleCount = (int) 80;
-							double centerX = x;
-							double centerY = y;
-							double centerZ = z;
-							double particleSpeed = 0.5;
-							net.minecraft.core.particles.ParticleOptions particleType = net.minecraft.core.particles.ParticleTypes.SQUID_INK;
-							for (int i = 0; i < particleCount; i++) {
-								double u = Math.random();
-								double v = Math.random();
-								double theta = 2 * Math.PI * u;
-								double phi = Math.acos(2 * v - 1);
-								double directionX = Math.sin(phi) * Math.cos(theta);
-								double directionY = Math.cos(phi);
-								double directionZ = Math.sin(phi) * Math.sin(theta);
-								double velocityX = directionX * particleSpeed;
-								double velocityY = directionY * particleSpeed;
-								double velocityZ = directionZ * particleSpeed;
-								_level.sendParticles(particleType, centerX, centerY, centerZ, 0, velocityX, velocityY, velocityZ, particleSpeed);
-							}
-						}
-						if (world.isClientSide()) {
-							SetupAnimationsProcedure.setAnimationClientside((Player) entity, "shadevision", false);
-						}
-						if (!world.isClientSide()) {
-							if (entity instanceof Player && world instanceof ServerLevel srvLvl_) {
-								List<Connection> connections = srvLvl_.getServer().getConnection().getConnections();
-								synchronized (connections) {
-									Iterator<Connection> iterator = connections.iterator();
-									while (iterator.hasNext()) {
-										Connection connection = iterator.next();
-										if (!connection.isConnecting() && connection.isConnected())
-											VlAbyssMod.PACKET_HANDLER.sendTo(new SetupAnimationsProcedure.VlAbyssModAnimationMessage(Component.literal("shadevision"), entity.getId(), false), connection, NetworkDirection.PLAY_TO_CLIENT);
-									}
-								}
-							}
-						}
-						if (entity instanceof Player _player) {
-							if (_player.level().isClientSide()) {
-								Minecraft _mc = Minecraft.getInstance();
-								if (_mc.player != null && _mc.player.equals(_player)) {
-									_mc.options.setCameraType(CameraType.THIRD_PERSON_BACK);
-								}
+						if (entity instanceof LivingEntity _entity && !_entity.level().isClientSide())
+							_entity.addEffect(new MobEffectInstance(VlAbyssModMobEffects.SHADE_BACKSTAP.get(), 600, 0));
+						if (world instanceof ServerLevel _level)
+							_level.sendParticles(ParticleTypes.CAMPFIRE_SIGNAL_SMOKE, x, y, z, 15, 0.05, 1, 0.05, 0.1);
+						if (world instanceof ServerLevel _level)
+							_level.sendParticles(ParticleTypes.CAMPFIRE_COSY_SMOKE, x, y, z, 15, 0.05, 1, 0.05, 0.1);
+						if (world instanceof Level _level) {
+							if (!_level.isClientSide()) {
+								_level.playSound(null, BlockPos.containing(x, y, z), ForgeRegistries.SOUND_EVENTS.getValue(ResourceLocation.parse("vl_abyss:shadebackstab")), SoundSource.MASTER, 1, 1);
+							} else {
+								_level.playLocalSound(x, y, z, ForgeRegistries.SOUND_EVENTS.getValue(ResourceLocation.parse("vl_abyss:shadebackstab")), SoundSource.MASTER, 1, 1, false);
 							}
 						}
 					} else {

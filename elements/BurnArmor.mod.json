@@ -1,0 +1,32 @@
+{
+  "_fv": 79,
+  "_type": "potioneffect",
+  "definition": {
+    "effectName": "Queimadura da Armadura",
+    "icon": "burning_dash",
+    "color": {
+      "value": -16777216,
+      "falpha": 0.0
+    },
+    "onAddedSound": {
+      "value": ""
+    },
+    "isInstant": false,
+    "mobEffectCategory": "HARMFUL",
+    "renderStatusInInventory": true,
+    "renderStatusInHUD": true,
+    "isCuredbyHoney": false,
+    "modifiers": [
+      {
+        "attribute": {
+          "value": "ARMOR"
+        },
+        "amount": -2.0,
+        "operation": "ADD_VALUE"
+      }
+    ],
+    "onActiveTick": {
+      "name": "BurnArmorEffectExpires"
+    }
+  }
+}

@@ -2759,7 +2759,7 @@
           }
         ]
       },
-      "path": "~/VL1_Abyss/Mantras/MantrasPrincipais/Chama"
+      "path": "~/VL1_Abyss/Mantras/MantrasPrincipais/Chama/FlamingSlash"
     },
     {
       "name": "HabilidadePrimariaOnKeyPressed",
@@ -4390,7 +4390,7 @@
           "src/main/resources/assets/vl_abyss/particles/flaming_slash.json"
         ]
       },
-      "path": "~/VL1_Abyss/Mantras/MantrasPrincipais/Chama/Corte"
+      "path": "~/VL1_Abyss/Mantras/MantrasPrincipais/Chama/FlamingSlash/Corte"
     },
     {
       "name": "FlamingCut",
@@ -4403,7 +4403,7 @@
           "src/main/java/net/mcreator/vlabyss/potion/FlamingCutMobEffect.java"
         ]
       },
-      "path": "~/VL1_Abyss/Mantras/MantrasPrincipais/Chama/Efeito"
+      "path": "~/VL1_Abyss/Mantras/MantrasPrincipais/Chama/FlamingSlash/Efeito"
     },
     {
       "name": "MantraSoulCorrompida",
@@ -4431,7 +4431,7 @@
           "src/main/java/net/mcreator/vlabyss/potion/BurnSoulMobEffect.java"
         ]
       },
-      "path": "~/VL1_Abyss/Mantras/MantrasPrincipais/Chama/Efeito"
+      "path": "~/VL1_Abyss/Mantras/MantrasPrincipais/Chama/FlamingSlash/Efeito"
     },
     {
       "name": "MantraCorrompidaSoulRightClickedOnEntity",
@@ -5744,7 +5744,7 @@
           "src/main/java/net/mcreator/vlabyss/procedures/DeuCriticoComFlamingCutProcedure.java"
         ]
       },
-      "path": "~/VL1_Abyss/Mantras/MantrasPrincipais/Chama/Efeito/Procedure"
+      "path": "~/VL1_Abyss/Mantras/MantrasPrincipais/Chama/FlamingSlash/Efeito/Procedure"
     },
     {
       "name": "CounterSpellProjectileHitsLivingEntity",
@@ -7510,6 +7510,469 @@
         ]
       },
       "path": "~/VL1_Abyss/Mantras/MantrasPrincipais/Escuridao/EchoOfShadows/Particula"
+    },
+    {
+      "name": "ShadeBackstapEffectStartedapplied",
+      "type": "procedure",
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "shade_backstap_effect_startedapplied",
+      "metadata": {
+        "dependencies": [
+          {
+            "name": "entity",
+            "type": "entity"
+          }
+        ],
+        "files": [
+          "src/main/java/net/mcreator/vlabyss/procedures/ShadeBackstapEffectStartedappliedProcedure.java"
+        ]
+      },
+      "path": "~/VL1_Abyss/Mantras/MantrasPrincipais/Escuridao/ShadeBackstap/Procedure"
+    },
+    {
+      "name": "ShadeBackstap",
+      "type": "potioneffect",
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "shade_backstap",
+      "metadata": {
+        "files": [
+          "src/main/java/net/mcreator/vlabyss/potion/ShadeBackstapMobEffect.java"
+        ]
+      },
+      "path": "~/VL1_Abyss/Mantras/MantrasPrincipais/Escuridao/ShadeBackstap"
+    },
+    {
+      "name": "CriticoNasCostasShadeBackstap",
+      "type": "procedure",
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "critico_nas_costas_shade_backstap",
+      "metadata": {
+        "dependencies": [
+          {
+            "name": "entity",
+            "type": "entity"
+          },
+          {
+            "name": "sourceentity",
+            "type": "entity"
+          },
+          {
+            "name": "world",
+            "type": "world"
+          }
+        ],
+        "files": [
+          "src/main/java/net/mcreator/vlabyss/procedures/CriticoNasCostasShadeBackstapProcedure.java"
+        ]
+      },
+      "path": "~/VL1_Abyss/Mantras/MantrasPrincipais/Escuridao/ShadeBackstap/Procedure"
+    },
+    {
+      "name": "BodyFire",
+      "type": "potioneffect",
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "body_fire",
+      "metadata": {
+        "files": [
+          "src/main/java/net/mcreator/vlabyss/potion/BodyFireMobEffect.java"
+        ]
+      },
+      "path": "~/VL1_Abyss/Mantras/MantrasPrincipais/Chama/BodyOnFire"
+    },
+    {
+      "name": "Queimadura",
+      "type": "potioneffect",
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "queimadura",
+      "metadata": {
+        "files": [
+          "src/main/java/net/mcreator/vlabyss/potion/QueimaduraMobEffect.java"
+        ]
+      },
+      "path": "~/VL1_Abyss/Mantras/MantrasPrincipais/Chama/BodyOnFire"
+    },
+    {
+      "name": "DeuCriticoBodyFire",
+      "type": "procedure",
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "deu_critico_body_fire",
+      "metadata": {
+        "dependencies": [
+          {
+            "name": "entity",
+            "type": "entity"
+          },
+          {
+            "name": "sourceentity",
+            "type": "entity"
+          }
+        ],
+        "files": [
+          "src/main/java/net/mcreator/vlabyss/procedures/DeuCriticoBodyFireProcedure.java"
+        ]
+      },
+      "path": "~/VL1_Abyss/Mantras/MantrasPrincipais/Chama/BodyOnFire/Procedure"
+    },
+    {
+      "name": "BodyFireParticle",
+      "type": "particle",
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "body_fire_particle",
+      "metadata": {
+        "files": [
+          "src/main/java/net/mcreator/vlabyss/client/particle/BodyFireParticleParticle.java",
+          "src/main/resources/assets/vl_abyss/particles/body_fire_particle.json"
+        ]
+      },
+      "path": "~/VL1_Abyss/Mantras/MantrasPrincipais/Chama/BodyOnFire/Procedure"
+    },
+    {
+      "name": "BodyFireOnEffectActiveTick",
+      "type": "procedure",
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "body_fire_on_effect_active_tick",
+      "metadata": {
+        "dependencies": [
+          {
+            "name": "x",
+            "type": "number"
+          },
+          {
+            "name": "y",
+            "type": "number"
+          },
+          {
+            "name": "z",
+            "type": "number"
+          },
+          {
+            "name": "world",
+            "type": "world"
+          }
+        ],
+        "files": [
+          "src/main/java/net/mcreator/vlabyss/procedures/BodyFireOnEffectActiveTickProcedure.java"
+        ]
+      },
+      "path": "~/VL1_Abyss/Mantras/MantrasPrincipais/Chama/BodyOnFire/Procedure"
+    },
+    {
+      "name": "BurnArmor",
+      "type": "potioneffect",
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "burn_armor",
+      "metadata": {
+        "files": [
+          "src/main/java/net/mcreator/vlabyss/potion/BurnArmorMobEffect.java"
+        ]
+      },
+      "path": "~/VL1_Abyss/Mantras/MantrasPrincipais/Chama/BodyOnFire"
+    },
+    {
+      "name": "QueimaduraOnEffectActiveTick",
+      "type": "procedure",
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "queimadura_on_effect_active_tick",
+      "metadata": {
+        "dependencies": [
+          {
+            "name": "entity",
+            "type": "entity"
+          },
+          {
+            "name": "world",
+            "type": "world"
+          }
+        ],
+        "files": [
+          "src/main/java/net/mcreator/vlabyss/procedures/QueimaduraOnEffectActiveTickProcedure.java"
+        ]
+      },
+      "path": "~/VL1_Abyss/Mantras/MantrasPrincipais/Chama/BodyOnFire/Procedure"
+    },
+    {
+      "name": "BurnArmorEffectExpires",
+      "type": "procedure",
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "burn_armor_effect_expires",
+      "metadata": {
+        "dependencies": [
+          {
+            "name": "entity",
+            "type": "entity"
+          }
+        ],
+        "files": [
+          "src/main/java/net/mcreator/vlabyss/procedures/BurnArmorEffectExpiresProcedure.java"
+        ]
+      },
+      "path": "~/VL1_Abyss/Mantras/MantrasPrincipais/Chama/BodyOnFire/Procedure"
+    },
+    {
+      "name": "ChamaSegundaHabilidade",
+      "type": "procedure",
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "chama_segunda_habilidade",
+      "metadata": {
+        "dependencies": [
+          {
+            "name": "entity",
+            "type": "entity"
+          },
+          {
+            "name": "x",
+            "type": "number"
+          },
+          {
+            "name": "y",
+            "type": "number"
+          },
+          {
+            "name": "z",
+            "type": "number"
+          },
+          {
+            "name": "world",
+            "type": "world"
+          }
+        ],
+        "files": [
+          "src/main/java/net/mcreator/vlabyss/procedures/ChamaSegundaHabilidadeProcedure.java"
+        ]
+      },
+      "path": "~/VL1_Abyss/Mantras/MantraKeyAtivacao/MantrasProcedure/SegundaHabilidade/Chama"
+    },
+    {
+      "name": "FireEruption",
+      "type": "livingentity",
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "fire_eruption",
+      "metadata": {
+        "files": [
+          "src/main/java/net/mcreator/vlabyss/entity/FireEruptionEntity.java",
+          "src/main/java/net/mcreator/vlabyss/client/renderer/FireEruptionRenderer.java"
+        ]
+      },
+      "path": "~/VL1_Abyss/Mantras/MantrasPrincipais/Chama/FireEruption"
+    },
+    {
+      "name": "FireEruptionParticle",
+      "type": "particle",
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "fire_eruption_particle",
+      "metadata": {
+        "files": [
+          "src/main/resources/assets/vl_abyss/particles/fire_eruption_particle.json",
+          "src/main/java/net/mcreator/vlabyss/client/particle/FireEruptionParticleParticle.java"
+        ]
+      },
+      "path": "~/VL1_Abyss/Mantras/MantrasPrincipais/Chama/FireEruption/Particle"
+    },
+    {
+      "name": "FireEruptionOnInitialEntitySpawn",
+      "type": "procedure",
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "fire_eruption_on_initial_entity_spawn",
+      "metadata": {
+        "dependencies": [
+          {
+            "name": "entity",
+            "type": "entity"
+          },
+          {
+            "name": "x",
+            "type": "number"
+          },
+          {
+            "name": "y",
+            "type": "number"
+          },
+          {
+            "name": "z",
+            "type": "number"
+          },
+          {
+            "name": "world",
+            "type": "world"
+          }
+        ],
+        "files": [
+          "src/main/java/net/mcreator/vlabyss/procedures/FireEruptionOnInitialEntitySpawnProcedure.java"
+        ]
+      },
+      "path": "~/VL1_Abyss/Mantras/MantrasPrincipais/Chama/FireEruption/Procedure"
+    },
+    {
+      "name": "Clone",
+      "type": "livingentity",
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "clone",
+      "metadata": {
+        "files": [
+          "src/main/java/net/mcreator/vlabyss/client/renderer/CloneRenderer.java",
+          "src/main/java/net/mcreator/vlabyss/entity/CloneEntity.java"
+        ]
+      },
+      "path": "~/VL1_Abyss/Mantras/MantrasPrincipais/Chama/FlameClone"
+    },
+    {
+      "name": "Atacoui",
+      "type": "procedure",
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "atacoui",
+      "metadata": {
+        "dependencies": [
+          {
+            "name": "sourceentity",
+            "type": "entity"
+          },
+          {
+            "name": "x",
+            "type": "number"
+          },
+          {
+            "name": "y",
+            "type": "number"
+          },
+          {
+            "name": "z",
+            "type": "number"
+          },
+          {
+            "name": "world",
+            "type": "world"
+          }
+        ],
+        "files": [
+          "src/main/java/net/mcreator/vlabyss/procedures/AtacouiProcedure.java"
+        ]
+      },
+      "path": "~/VL1_Abyss/Mantras/MantrasPrincipais/Chama/FlameClone"
+    },
+    {
+      "name": "MorreuReiniciaMantra",
+      "type": "procedure",
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "morreu_reinicia_mantra",
+      "metadata": {
+        "dependencies": [
+          {
+            "name": "entity",
+            "type": "entity"
+          }
+        ],
+        "files": [
+          "src/main/java/net/mcreator/vlabyss/procedures/MorreuReiniciaMantraProcedure.java"
+        ]
+      },
+      "path": "~/VL1_Abyss/Mantras/RespawnResetaMantra"
+    },
+    {
+      "name": "CloneOnInitialEntitySpawn",
+      "type": "procedure",
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "clone_on_initial_entity_spawn",
+      "metadata": {
+        "dependencies": [
+          {
+            "name": "entity",
+            "type": "entity"
+          },
+          {
+            "name": "x",
+            "type": "number"
+          },
+          {
+            "name": "y",
+            "type": "number"
+          },
+          {
+            "name": "z",
+            "type": "number"
+          },
+          {
+            "name": "world",
+            "type": "world"
+          }
+        ],
+        "files": [
+          "src/main/java/net/mcreator/vlabyss/procedures/CloneOnInitialEntitySpawnProcedure.java"
+        ]
+      },
+      "path": "~/VL1_Abyss/Mantras/MantrasPrincipais/Chama/FlameClone"
+    },
+    {
+      "name": "CloneEntityDies",
+      "type": "procedure",
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "clone_entity_dies",
+      "metadata": {
+        "dependencies": [
+          {
+            "name": "entity",
+            "type": "entity"
+          },
+          {
+            "name": "x",
+            "type": "number"
+          },
+          {
+            "name": "y",
+            "type": "number"
+          },
+          {
+            "name": "z",
+            "type": "number"
+          },
+          {
+            "name": "world",
+            "type": "world"
+          }
+        ],
+        "files": [
+          "src/main/java/net/mcreator/vlabyss/procedures/CloneEntityDiesProcedure.java"
+        ]
+      },
+      "path": "~/VL1_Abyss/Mantras/MantrasPrincipais/Chama/FlameClone"
+    },
+    {
+      "name": "EntityTickDespawn",
+      "type": "procedure",
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "entity_tick_despawn",
+      "metadata": {
+        "dependencies": [
+          {
+            "name": "entity",
+            "type": "entity"
+          }
+        ],
+        "files": [
+          "src/main/java/net/mcreator/vlabyss/procedures/EntityTickDespawnProcedure.java"
+        ]
+      },
+      "path": "~/VL1_Abyss/Mantras/RemoveMantraInvocacao"
     }
   ],
   "variable_elements": [
@@ -7596,24 +8059,6 @@
       "type": "logic",
       "scope": "player_persistent",
       "value": "false"
-    },
-    {
-      "name": "hab1_nivel",
-      "type": "number",
-      "scope": "player_persistent",
-      "value": "1.0"
-    },
-    {
-      "name": "hab2_nivel",
-      "type": "number",
-      "scope": "player_persistent",
-      "value": "1.0"
-    },
-    {
-      "name": "hab3_nivel",
-      "type": "number",
-      "scope": "player_persistent",
-      "value": "1.0"
     },
     {
       "name": "habilidade1",
@@ -8240,6 +8685,30 @@
       ],
       "category": "master",
       "subtitle": ""
+    },
+    {
+      "name": "shadebackstab",
+      "files": [
+        "shadebackstab"
+      ],
+      "category": "master",
+      "subtitle": ""
+    },
+    {
+      "name": "bodyfiremantra",
+      "files": [
+        "bodyfiremantra"
+      ],
+      "category": "master",
+      "subtitle": ""
+    },
+    {
+      "name": "fireeruptionmantra",
+      "files": [
+        "fireeruptionmantra"
+      ],
+      "category": "master",
+      "subtitle": ""
     }
   ],
   "tag_elements": {
@@ -8344,7 +8813,8 @@
       "CUSTOM:WindVortex",
       "CUSTOM:CounterSpell",
       "CUSTOM:Reconjuration",
-      "CUSTOM:EchoOfShadow"
+      "CUSTOM:EchoOfShadow",
+      "CUSTOM:FireEruption"
     ]
   },
   "tab_element_order": {
@@ -8670,7 +9140,16 @@
       "subtitles.ativacaoshadevision": "",
       "effect.vl_abyss.echo_of_shadows": "Echo Of Shadows",
       "entity.vl_abyss.echo_of_shadow": "Echo of Shadows",
-      "subtitles.echoofshadow": ""
+      "subtitles.echoofshadow": "",
+      "effect.vl_abyss.shade_backstap": "Shade Backstab",
+      "subtitles.shadebackstab": "",
+      "effect.vl_abyss.body_fire": "Corpo em Chamas",
+      "effect.vl_abyss.queimadura": "Queimadura",
+      "effect.vl_abyss.burn_armor": "Queimadura da Armadura",
+      "subtitles.bodyfiremantra": "",
+      "entity.vl_abyss.fire_eruption": "Fire Eruption",
+      "subtitles.fireeruptionmantra": "",
+      "entity.vl_abyss.clone": "Clone"
     }
   },
   "metadata": {
@@ -9198,17 +9677,48 @@
                     "name": "Chama",
                     "children": [
                       {
-                        "name": "Corte",
-                        "children": []
+                        "name": "FlamingSlash",
+                        "children": [
+                          {
+                            "name": "Efeito",
+                            "children": [
+                              {
+                                "name": "Procedure",
+                                "children": []
+                              }
+                            ]
+                          },
+                          {
+                            "name": "Corte",
+                            "children": []
+                          }
+                        ]
                       },
                       {
-                        "name": "Efeito",
+                        "name": "BodyOnFire",
                         "children": [
                           {
                             "name": "Procedure",
                             "children": []
                           }
                         ]
+                      },
+                      {
+                        "name": "FireEruption",
+                        "children": [
+                          {
+                            "name": "Procedure",
+                            "children": []
+                          },
+                          {
+                            "name": "Particle",
+                            "children": []
+                          }
+                        ]
+                      },
+                      {
+                        "name": "FlameClone",
+                        "children": []
                       }
                     ]
                   },
@@ -9269,6 +9779,15 @@
                           },
                           {
                             "name": "Particula",
+                            "children": []
+                          }
+                        ]
+                      },
+                      {
+                        "name": "ShadeBackstap",
+                        "children": [
+                          {
+                            "name": "Procedure",
                             "children": []
                           }
                         ]
@@ -9337,6 +9856,14 @@
                     ]
                   }
                 ]
+              },
+              {
+                "name": "RespawnResetaMantra",
+                "children": []
+              },
+              {
+                "name": "RemoveMantraInvocacao",
+                "children": []
               }
             ]
           },

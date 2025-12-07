@@ -382,5 +382,29 @@
         "stream": false
       }
     ]
+  },
+  "shadebackstab": {
+    "sounds": [
+      {
+        "name": "vl_abyss:shadebackstab",
+        "stream": false
+      }
+    ]
+  },
+  "bodyfiremantra": {
+    "sounds": [
+      {
+        "name": "vl_abyss:bodyfiremantra",
+        "stream": false
+      }
+    ]
+  },
+  "fireeruptionmantra": {
+    "sounds": [
+      {
+        "name": "vl_abyss:fireeruptionmantra",
+        "stream": false
+      }
+    ]
   }
 }

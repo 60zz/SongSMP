@@ -12,10 +12,12 @@ import net.minecraft.world.effect.MobEffect;
 import net.mcreator.vlabyss.potion.StormReconjurationMobEffect;
 import net.mcreator.vlabyss.potion.ShadowCopyMobEffect;
 import net.mcreator.vlabyss.potion.ShadeVisionMobEffect;
+import net.mcreator.vlabyss.potion.ShadeBackstapMobEffect;
 import net.mcreator.vlabyss.potion.SangrandoMobEffect;
 import net.mcreator.vlabyss.potion.ResistenciaQuebradaMobEffect;
 import net.mcreator.vlabyss.potion.RegenMantraMobEffect;
 import net.mcreator.vlabyss.potion.ReconjurarMobEffect;
+import net.mcreator.vlabyss.potion.QueimaduraMobEffect;
 import net.mcreator.vlabyss.potion.QuebraMobEffect;
 import net.mcreator.vlabyss.potion.ParalisadoMobEffect;
 import net.mcreator.vlabyss.potion.MedoMobEffect;
@@ -33,6 +35,8 @@ import net.mcreator.vlabyss.potion.EchoOfShadowsMobEffect;
 import net.mcreator.vlabyss.potion.CycloneStormMobEffect;
 import net.mcreator.vlabyss.potion.CortaRegenMobEffect;
 import net.mcreator.vlabyss.potion.BurnSoulMobEffect;
+import net.mcreator.vlabyss.potion.BurnArmorMobEffect;
+import net.mcreator.vlabyss.potion.BodyFireMobEffect;
 import net.mcreator.vlabyss.VlAbyssMod;
 
 public class VlAbyssModMobEffects {
@@ -61,4 +65,8 @@ public class VlAbyssModMobEffects {
 	public static final RegistryObject<MobEffect> ELETRIC_TOUCH = REGISTRY.register("eletric_touch", () -> new EletricTouchMobEffect());
 	public static final RegistryObject<MobEffect> SHADE_VISION = REGISTRY.register("shade_vision", () -> new ShadeVisionMobEffect());
 	public static final RegistryObject<MobEffect> ECHO_OF_SHADOWS = REGISTRY.register("echo_of_shadows", () -> new EchoOfShadowsMobEffect());
+	public static final RegistryObject<MobEffect> SHADE_BACKSTAP = REGISTRY.register("shade_backstap", () -> new ShadeBackstapMobEffect());
+	public static final RegistryObject<MobEffect> BODY_FIRE = REGISTRY.register("body_fire", () -> new BodyFireMobEffect());
+	public static final RegistryObject<MobEffect> QUEIMADURA = REGISTRY.register("queimadura", () -> new QueimaduraMobEffect());
+	public static final RegistryObject<MobEffect> BURN_ARMOR = REGISTRY.register("burn_armor", () -> new BurnArmorMobEffect());
 }

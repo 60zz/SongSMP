@@ -80,9 +80,6 @@ public class VlAbyssModVariables {
 			clone.Ethir = original.Ethir;
 			clone.fase = original.fase;
 			clone.Guerreiro = original.Guerreiro;
-			clone.hab1_nivel = original.hab1_nivel;
-			clone.hab2_nivel = original.hab2_nivel;
-			clone.hab3_nivel = original.hab3_nivel;
 			clone.habilidade1 = original.habilidade1;
 			clone.habilidade2 = original.habilidade2;
 			clone.habilidade3 = original.habilidade3;
@@ -173,9 +170,6 @@ public class VlAbyssModVariables {
 		public double Ethir = 100.0;
 		public double fase = 1.0;
 		public boolean Guerreiro = false;
-		public double hab1_nivel = 1.0;
-		public double hab2_nivel = 1.0;
-		public double hab3_nivel = 1.0;
 		public boolean habilidade1 = false;
 		public boolean habilidade2 = false;
 		public boolean habilidade3 = false;
@@ -238,9 +232,6 @@ public class VlAbyssModVariables {
 			nbt.putDouble("Ethir", Ethir);
 			nbt.putDouble("fase", fase);
 			nbt.putBoolean("Guerreiro", Guerreiro);
-			nbt.putDouble("hab1_nivel", hab1_nivel);
-			nbt.putDouble("hab2_nivel", hab2_nivel);
-			nbt.putDouble("hab3_nivel", hab3_nivel);
 			nbt.putBoolean("habilidade1", habilidade1);
 			nbt.putBoolean("habilidade2", habilidade2);
 			nbt.putBoolean("habilidade3", habilidade3);
@@ -300,9 +291,6 @@ public class VlAbyssModVariables {
 			Ethir = nbt.getDouble("Ethir");
 			fase = nbt.getDouble("fase");
 			Guerreiro = nbt.getBoolean("Guerreiro");
-			hab1_nivel = nbt.getDouble("hab1_nivel");
-			hab2_nivel = nbt.getDouble("hab2_nivel");
-			hab3_nivel = nbt.getDouble("hab3_nivel");
 			habilidade1 = nbt.getBoolean("habilidade1");
 			habilidade2 = nbt.getBoolean("habilidade2");
 			habilidade3 = nbt.getBoolean("habilidade3");
@@ -381,9 +369,6 @@ public class VlAbyssModVariables {
 					variables.Ethir = message.data.Ethir;
 					variables.fase = message.data.fase;
 					variables.Guerreiro = message.data.Guerreiro;
-					variables.hab1_nivel = message.data.hab1_nivel;
-					variables.hab2_nivel = message.data.hab2_nivel;
-					variables.hab3_nivel = message.data.hab3_nivel;
 					variables.habilidade1 = message.data.habilidade1;
 					variables.habilidade2 = message.data.habilidade2;
 					variables.habilidade3 = message.data.habilidade3;

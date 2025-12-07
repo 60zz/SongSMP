@@ -21,6 +21,7 @@ public class HabilidadePrimariaOnKeyPressedProcedure {
 			LuzSegundaHabilidadeProcedure.execute(world, x, y, z, entity);
 			TempestadeSegundaHabilidadeProcedure.execute(world, x, y, z, entity);
 			EscuridaoSegundaHabilidadeProcedure.execute(world, x, y, z, entity);
+			ChamaSegundaHabilidadeProcedure.execute(world, x, y, z, entity);
 		}
 	}
 }

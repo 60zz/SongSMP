@@ -78,7 +78,7 @@ public class RespiroSegundaHabilidadeProcedure {
 								for (Entity entityiterator : world.getEntitiesOfClass(Entity.class, new AABB(_center, _center).inflate(10 / 2d), e -> true).stream().sorted(Comparator.comparingDouble(_entcnd -> _entcnd.distanceToSqr(_center)))
 										.toList()) {
 									if (!world.getEntitiesOfClass(WindVortexEntity.class, new AABB(Vec3.ZERO, Vec3.ZERO).move(new Vec3(x, y, z)).inflate(10 / 2d), e -> true).isEmpty()) {
-										entityiterator.getPersistentData().putString("invocador", (entity.getDisplayName().getString()));
+										entityiterator.getPersistentData().putString("invocador", (entity.getStringUUID()));
 									}
 								}
 							}

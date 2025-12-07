@@ -13,7 +13,9 @@ import net.minecraft.client.renderer.entity.ThrownItemRenderer;
 import net.mcreator.vlabyss.client.renderer.WindVortexRenderer;
 import net.mcreator.vlabyss.client.renderer.MantraSoulRenderer;
 import net.mcreator.vlabyss.client.renderer.MantraSoulCorrompidaRenderer;
+import net.mcreator.vlabyss.client.renderer.FireEruptionRenderer;
 import net.mcreator.vlabyss.client.renderer.EchoOfShadowRenderer;
+import net.mcreator.vlabyss.client.renderer.CloneRenderer;
 import net.mcreator.vlabyss.client.renderer.CavaleiroAladoRenderer;
 
 @Mod.EventBusSubscriber(bus = Mod.EventBusSubscriber.Bus.MOD, value = Dist.CLIENT)
@@ -28,5 +30,7 @@ public class VlAbyssModEntityRenderers {
 		event.registerEntityRenderer(VlAbyssModEntities.COUNTER_SPELL.get(), ThrownItemRenderer::new);
 		event.registerEntityRenderer(VlAbyssModEntities.RECONJURATION.get(), ThrownItemRenderer::new);
 		event.registerEntityRenderer(VlAbyssModEntities.ECHO_OF_SHADOW.get(), EchoOfShadowRenderer::new);
+		event.registerEntityRenderer(VlAbyssModEntities.FIRE_ERUPTION.get(), FireEruptionRenderer::new);
+		event.registerEntityRenderer(VlAbyssModEntities.CLONE.get(), CloneRenderer::new);
 	}
 }
