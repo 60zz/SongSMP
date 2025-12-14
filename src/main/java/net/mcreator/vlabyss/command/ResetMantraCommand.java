@@ -32,7 +32,7 @@ public class ResetMantraCommand {
 			if (entity != null)
 				direction = entity.getDirection();
 
-			ResetMantraProcedureProcedure.execute(arguments, entity);
+			ResetMantraProcedureProcedure.execute(arguments);
 			return 0;
 		})));
 	}

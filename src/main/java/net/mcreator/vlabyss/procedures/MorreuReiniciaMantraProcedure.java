@@ -26,7 +26,7 @@ public class MorreuReiniciaMantraProcedure {
 		if (entity == null)
 			return;
 		{
-			double _setval = 0;
+			double _setval = 25;
 			entity.getCapability(VlAbyssModVariables.PLAYER_VARIABLES_CAPABILITY, null).ifPresent(capability -> {
 				capability.Ethir = _setval;
 				capability.syncPlayerVariables(entity);

@@ -85,7 +85,6 @@ public class VlAbyssModVariables {
 			clone.habilidade3 = original.habilidade3;
 			clone.habilidade4 = original.habilidade4;
 			clone.habilidade5 = original.habilidade5;
-			clone.insanidade = original.insanidade;
 			clone.Lumivivo = original.Lumivivo;
 			clone.Luz = original.Luz;
 			clone.ManaRegenTimer = original.ManaRegenTimer;
@@ -120,6 +119,8 @@ public class VlAbyssModVariables {
 			clone.posZ = original.posZ;
 			clone.opcao_mantra2 = original.opcao_mantra2;
 			clone.opcao_mantra3 = original.opcao_mantra3;
+			clone.lctrlativo = original.lctrlativo;
+			clone.lshift = original.lshift;
 			if (!event.isWasDeath()) {
 			}
 		}
@@ -175,7 +176,6 @@ public class VlAbyssModVariables {
 		public boolean habilidade3 = false;
 		public boolean habilidade4 = false;
 		public boolean habilidade5 = false;
-		public double insanidade = 0;
 		public boolean Lumivivo = false;
 		public double Luz = 0.0;
 		public double ManaRegenTimer = 0.0;
@@ -210,6 +210,8 @@ public class VlAbyssModVariables {
 		public double posZ = 0;
 		public double opcao_mantra2 = 0;
 		public double opcao_mantra3 = 0;
+		public boolean lctrlativo = false;
+		public boolean lshift = false;
 
 		public void syncPlayerVariables(Entity entity) {
 			if (entity instanceof ServerPlayer serverPlayer)
@@ -237,7 +239,6 @@ public class VlAbyssModVariables {
 			nbt.putBoolean("habilidade3", habilidade3);
 			nbt.putBoolean("habilidade4", habilidade4);
 			nbt.putBoolean("habilidade5", habilidade5);
-			nbt.putDouble("insanidade", insanidade);
 			nbt.putBoolean("Lumivivo", Lumivivo);
 			nbt.putDouble("Luz", Luz);
 			nbt.putDouble("ManaRegenTimer", ManaRegenTimer);
@@ -272,6 +273,8 @@ public class VlAbyssModVariables {
 			nbt.putDouble("posZ", posZ);
 			nbt.putDouble("opcao_mantra2", opcao_mantra2);
 			nbt.putDouble("opcao_mantra3", opcao_mantra3);
+			nbt.putBoolean("lctrlativo", lctrlativo);
+			nbt.putBoolean("lshift", lshift);
 			return nbt;
 		}
 
@@ -296,7 +299,6 @@ public class VlAbyssModVariables {
 			habilidade3 = nbt.getBoolean("habilidade3");
 			habilidade4 = nbt.getBoolean("habilidade4");
 			habilidade5 = nbt.getBoolean("habilidade5");
-			insanidade = nbt.getDouble("insanidade");
 			Lumivivo = nbt.getBoolean("Lumivivo");
 			Luz = nbt.getDouble("Luz");
 			ManaRegenTimer = nbt.getDouble("ManaRegenTimer");
@@ -331,6 +333,8 @@ public class VlAbyssModVariables {
 			posZ = nbt.getDouble("posZ");
 			opcao_mantra2 = nbt.getDouble("opcao_mantra2");
 			opcao_mantra3 = nbt.getDouble("opcao_mantra3");
+			lctrlativo = nbt.getBoolean("lctrlativo");
+			lshift = nbt.getBoolean("lshift");
 		}
 	}
 
@@ -374,7 +378,6 @@ public class VlAbyssModVariables {
 					variables.habilidade3 = message.data.habilidade3;
 					variables.habilidade4 = message.data.habilidade4;
 					variables.habilidade5 = message.data.habilidade5;
-					variables.insanidade = message.data.insanidade;
 					variables.Lumivivo = message.data.Lumivivo;
 					variables.Luz = message.data.Luz;
 					variables.ManaRegenTimer = message.data.ManaRegenTimer;
@@ -409,6 +412,8 @@ public class VlAbyssModVariables {
 					variables.posZ = message.data.posZ;
 					variables.opcao_mantra2 = message.data.opcao_mantra2;
 					variables.opcao_mantra3 = message.data.opcao_mantra3;
+					variables.lctrlativo = message.data.lctrlativo;
+					variables.lshift = message.data.lshift;
 				}
 			});
 			context.setPacketHandled(true);

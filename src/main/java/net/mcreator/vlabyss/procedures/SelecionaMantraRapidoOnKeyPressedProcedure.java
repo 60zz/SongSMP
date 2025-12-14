@@ -11,10 +11,8 @@ import net.minecraftforge.api.distmarker.Dist;
 import net.minecraft.world.entity.Entity;
 import net.minecraft.world.InteractionHand;
 import net.minecraft.network.FriendlyByteBuf;
-import net.minecraft.client.Minecraft;
 
 import net.mcreator.vlabyss.network.VlAbyssModVariables;
-import net.mcreator.vlabyss.init.VlAbyssModKeyMappings;
 import net.mcreator.vlabyss.VlAbyssMod;
 
 import javax.annotation.Nullable;
@@ -65,8 +63,8 @@ public class SelecionaMantraRapidoOnKeyPressedProcedure {
 	private static void execute(@Nullable Event event, Entity entity) {
 		if (entity == null)
 			return;
-		if (!Minecraft.getInstance().options.keyShift.isDown()) {
-			if (VlAbyssModKeyMappings.SELECIONA_MANTRA_RAPIDO.isDown()) {
+		if (!((entity.getCapability(VlAbyssModVariables.PLAYER_VARIABLES_CAPABILITY, null).orElseGet(VlAbyssModVariables.PlayerVariables::new)).lshift == true)) {
+			if ((entity.getCapability(VlAbyssModVariables.PLAYER_VARIABLES_CAPABILITY, null).orElseGet(VlAbyssModVariables.PlayerVariables::new)).lctrlativo == true) {
 				if ((entity.getCapability(VlAbyssModVariables.PLAYER_VARIABLES_CAPABILITY, null).orElseGet(VlAbyssModVariables.PlayerVariables::new)).hab_selecionada == 6) {
 					{
 						double _setval = 1;
@@ -86,7 +84,7 @@ public class SelecionaMantraRapidoOnKeyPressedProcedure {
 				}
 			}
 		} else {
-			if (VlAbyssModKeyMappings.SELECIONA_MANTRA_RAPIDO.isDown()) {
+			if ((entity.getCapability(VlAbyssModVariables.PLAYER_VARIABLES_CAPABILITY, null).orElseGet(VlAbyssModVariables.PlayerVariables::new)).lctrlativo == true) {
 				if ((entity.getCapability(VlAbyssModVariables.PLAYER_VARIABLES_CAPABILITY, null).orElseGet(VlAbyssModVariables.PlayerVariables::new)).hab_selecionada == 1) {
 					{
 						double _setval = 6;

@@ -1,0 +1,12 @@
+{
+  "_fv": 79,
+  "_type": "damagetype",
+  "definition": {
+    "exhaustion": 2.0,
+    "scaling": "never",
+    "effects": "hurt",
+    "normalDeathMessage": "%1$s morreu portando uma arma amaldiçoada",
+    "itemDeathMessage": "%1$s foi morto por %2$s usando %3$s amaldiçoado",
+    "playerDeathMessage": "%1$s morreu tentando escapar de %2$s usando um item amaldiçoado"
+  }
+}

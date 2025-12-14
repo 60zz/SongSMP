@@ -1,6 +1,19 @@
 {
   "replace": false,
   "values": [
-    "vl_abyss:adaga_assassinos"
+    "vl_abyss:lightning_sword",
+    "vl_abyss:adaga_assassinos",
+    "vl_abyss:light_sword",
+    "vl_abyss:wind_sword",
+    "vl_abyss:axe_of_angel",
+    "vl_abyss:purple_scythe",
+    "vl_abyss:astral_axe",
+    "vl_abyss:vesperian_dagger",
+    "vl_abyss:skull_crusher",
+    "vl_abyss:stone_heart",
+    "vl_abyss:darkness_sword",
+    "vl_abyss:flame_sword",
+    "vl_abyss:snowstorm_sword",
+    "vl_abyss:cold_huntress"
   ]
 }

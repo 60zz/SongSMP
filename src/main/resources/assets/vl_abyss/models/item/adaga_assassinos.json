@@ -1,15 +1,31 @@
 {
-  "parent": "minecraft:item/handheld",
   "loader": "forge:separate_transforms",
+  "gui_light": "front",
   "base": {
-    "parent": "vl_abyss:displaysettings/adaga_assassina",
-  "textures": {
-    "layer0": "vl_abyss:item/adagaassassinotxt"
-  }
-},
+    "parent": "vl_abyss:custom/shadow_dager",
+    "textures": {
+      "0": "vl_abyss:block/assassindagger",
+      "particle": "vl_abyss:item/assassindagger"
+    }
+  },
   "perspectives": {
     "gui": {
-      "parent": "vl_abyss:item/gui/adaga_assassinos"
+      "parent": "item/generated",
+      "textures": {
+        "layer0": "vl_abyss:item/adaga_assassinos"
+      }
+    },
+    "fixed": {
+      "parent": "item/generated",
+      "textures": {
+        "layer0": "vl_abyss:item/adaga_assassinos"
+      }
+    },
+    "ground": {
+      "parent": "item/generated",
+      "textures": {
+        "layer0": "vl_abyss:item/adaga_assassinos"
+      }
     }
   }
 }

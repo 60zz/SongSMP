@@ -12,14 +12,17 @@ import net.minecraft.core.BlockPos;
 
 import net.mcreator.vlabyss.procedures.ClicouTerceiraOpcaoTempestadeProcedure;
 import net.mcreator.vlabyss.procedures.ClicouTerceiraOpcaoRespiroProcedure;
+import net.mcreator.vlabyss.procedures.ClicouTerceiraOpcaoLuzProcedure;
 import net.mcreator.vlabyss.procedures.ClicouTerceiraOpcaoEscuridaoProcedure;
 import net.mcreator.vlabyss.procedures.ClicouTerceiraOpcaoChamaProcedure;
 import net.mcreator.vlabyss.procedures.ClicouSegundaOpcaoTempestadeProcedure;
 import net.mcreator.vlabyss.procedures.ClicouSegundaOpcaoRespiroProcedure;
+import net.mcreator.vlabyss.procedures.ClicouSegundaOpcaoLuzProcedure;
 import net.mcreator.vlabyss.procedures.ClicouSegundaOpcaoEscuridaoProcedure;
 import net.mcreator.vlabyss.procedures.ClicouSegundaOpcaoChamaProcedure;
 import net.mcreator.vlabyss.procedures.ClicouPrimeiraOpcaoTempestadeProcedure;
 import net.mcreator.vlabyss.procedures.ClicouPrimeiraOpcaoRespiroProcedure;
+import net.mcreator.vlabyss.procedures.ClicouPrimeiraOpcaoLuzProcedure;
 import net.mcreator.vlabyss.procedures.ClicouPrimeiraOpcaoEscuridaoProcedure;
 import net.mcreator.vlabyss.procedures.ClicouPrimeiraOpcaoChamaProcedure;
 import net.mcreator.vlabyss.VlAbyssMod;
@@ -109,6 +112,18 @@ public class SegundaHabilidadeMantraButtonMessage {
 		if (buttonID == 11) {
 
 			ClicouTerceiraOpcaoEscuridaoProcedure.execute(entity);
+		}
+		if (buttonID == 12) {
+
+			ClicouPrimeiraOpcaoLuzProcedure.execute(entity);
+		}
+		if (buttonID == 13) {
+
+			ClicouSegundaOpcaoLuzProcedure.execute(entity);
+		}
+		if (buttonID == 14) {
+
+			ClicouTerceiraOpcaoLuzProcedure.execute(entity);
 		}
 	}
 

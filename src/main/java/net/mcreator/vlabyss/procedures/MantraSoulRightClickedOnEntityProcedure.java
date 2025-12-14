@@ -136,23 +136,6 @@ public class MantraSoulRightClickedOnEntityProcedure {
 						}
 					}
 				} else {
-					if ((sourceentity.getCapability(VlAbyssModVariables.PLAYER_VARIABLES_CAPABILITY, null).orElseGet(VlAbyssModVariables.PlayerVariables::new)).Scribari == true) {
-						{
-							double _setval = (sourceentity.getCapability(VlAbyssModVariables.PLAYER_VARIABLES_CAPABILITY, null).orElseGet(VlAbyssModVariables.PlayerVariables::new)).insanidade + 0.5;
-							sourceentity.getCapability(VlAbyssModVariables.PLAYER_VARIABLES_CAPABILITY, null).ifPresent(capability -> {
-								capability.insanidade = _setval;
-								capability.syncPlayerVariables(sourceentity);
-							});
-						}
-					} else {
-						{
-							double _setval = (sourceentity.getCapability(VlAbyssModVariables.PLAYER_VARIABLES_CAPABILITY, null).orElseGet(VlAbyssModVariables.PlayerVariables::new)).insanidade + 1;
-							sourceentity.getCapability(VlAbyssModVariables.PLAYER_VARIABLES_CAPABILITY, null).ifPresent(capability -> {
-								capability.insanidade = _setval;
-								capability.syncPlayerVariables(sourceentity);
-							});
-						}
-					}
 					if (world instanceof Level _level) {
 						if (!_level.isClientSide()) {
 							_level.playSound(null, BlockPos.containing(x, y, z), ForgeRegistries.SOUND_EVENTS.getValue(ResourceLocation.parse("vl_abyss:almanaocoletada")), SoundSource.MASTER, 1, 1);

@@ -1,0 +1,7 @@
+{
+  "parent": "vl_abyss:custom/plasma_axe",
+  "textures": {
+    "0": "vl_abyss:block/astralaxe",
+    "particle": "vl_abyss:item/astralaxe"
+  }
+}

@@ -1,0 +1,42 @@
+{
+  "_fv": 79,
+  "_type": "tool",
+  "definition": {
+    "toolType": "Sword",
+    "renderType": 1,
+    "blockingRenderType": 0,
+    "texture": "demoncarmesim",
+    "customModelName": "blade_fan:default",
+    "blockingModelName": "Normal blocking",
+    "guiTexture": "",
+    "name": "§e紅妖の厄乱扇",
+    "specialInformation": {
+      "fixedValue": []
+    },
+    "creativeTabs": [
+      {
+        "value": "CUSTOM:VlAbyssArmas"
+      }
+    ],
+    "efficiency": 8.0,
+    "attackSpeed": 1.5,
+    "enchantability": 10,
+    "damageVsEntity": 9.0,
+    "usageCount": 0,
+    "glowCondition": {
+      "fixedValue": false
+    },
+    "repairItems": [],
+    "immuneToFire": true,
+    "blockDropsTier": "DIAMOND",
+    "blocksAffected": [],
+    "stayInGridWhenCrafting": false,
+    "damageOnCrafting": false,
+    "onEntityHitWith": {
+      "name": "CrimsonDemonLivingEntityIsHitWithTool"
+    },
+    "onItemInInventoryTick": {
+      "name": "PurpleScytheToolInInventoryTick"
+    }
+  }
+}

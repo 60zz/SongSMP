@@ -5,9 +5,14 @@ import net.minecraftforge.network.NetworkHooks;
 
 import net.minecraft.world.level.ServerLevelAccessor;
 import net.minecraft.world.level.Level;
+import net.minecraft.world.item.crafting.Ingredient;
+import net.minecraft.world.item.SpawnEggItem;
+import net.minecraft.world.item.ItemStack;
+import net.minecraft.world.item.Item;
 import net.minecraft.world.entity.projectile.ThrownPotion;
 import net.minecraft.world.entity.player.Player;
-import net.minecraft.world.entity.monster.Monster;
+import net.minecraft.world.entity.ai.goal.target.OwnerHurtTargetGoal;
+import net.minecraft.world.entity.ai.goal.target.OwnerHurtByTargetGoal;
 import net.minecraft.world.entity.ai.goal.target.NearestAttackableTargetGoal;
 import net.minecraft.world.entity.ai.goal.target.HurtByTargetGoal;
 import net.minecraft.world.entity.ai.goal.RandomStrollGoal;
@@ -16,6 +21,7 @@ import net.minecraft.world.entity.ai.goal.MeleeAttackGoal;
 import net.minecraft.world.entity.ai.goal.FloatGoal;
 import net.minecraft.world.entity.ai.attributes.Attributes;
 import net.minecraft.world.entity.ai.attributes.AttributeSupplier;
+import net.minecraft.world.entity.TamableAnimal;
 import net.minecraft.world.entity.SpawnGroupData;
 import net.minecraft.world.entity.MobType;
 import net.minecraft.world.entity.MobSpawnType;
@@ -24,9 +30,13 @@ import net.minecraft.world.entity.LivingEntity;
 import net.minecraft.world.entity.EntityType;
 import net.minecraft.world.entity.Entity;
 import net.minecraft.world.entity.AreaEffectCloud;
+import net.minecraft.world.entity.AgeableMob;
 import net.minecraft.world.damagesource.DamageTypes;
 import net.minecraft.world.damagesource.DamageSource;
+import net.minecraft.world.InteractionResult;
+import net.minecraft.world.InteractionHand;
 import net.minecraft.world.DifficultyInstance;
+import net.minecraft.server.level.ServerLevel;
 import net.minecraft.network.syncher.SynchedEntityData;
 import net.minecraft.network.syncher.EntityDataSerializers;
 import net.minecraft.network.syncher.EntityDataAccessor;
@@ -34,13 +44,15 @@ import net.minecraft.network.protocol.game.ClientGamePacketListener;
 import net.minecraft.network.protocol.Packet;
 import net.minecraft.nbt.CompoundTag;
 
+import net.mcreator.vlabyss.procedures.NaoAtacaOwnerProcedure;
 import net.mcreator.vlabyss.procedures.CloneOnInitialEntitySpawnProcedure;
+import net.mcreator.vlabyss.procedures.CloneOnEntityTickUpdateProcedure;
 import net.mcreator.vlabyss.procedures.CloneEntityDiesProcedure;
 import net.mcreator.vlabyss.init.VlAbyssModEntities;
 
 import javax.annotation.Nullable;
 
-public class CloneEntity extends Monster {
+public class CloneEntity extends TamableAnimal {
 	public static final EntityDataAccessor<String> DATA_invocador = SynchedEntityData.defineId(CloneEntity.class, EntityDataSerializers.STRING);
 
 	public CloneEntity(PlayMessages.SpawnEntity packet, Level world) {
@@ -68,18 +80,59 @@ public class CloneEntity extends Monster {
 	@Override
 	protected void registerGoals() {
 		super.registerGoals();
-		this.targetSelector.addGoal(1, new NearestAttackableTargetGoal(this, Player.class, true, false));
-		this.targetSelector.addGoal(2, new NearestAttackableTargetGoal(this, LivingEntity.class, false, true));
-		this.goalSelector.addGoal(3, new MeleeAttackGoal(this, 1.1, false) {
+		this.targetSelector.addGoal(1, new NearestAttackableTargetGoal(this, Player.class, true, false) {
+			@Override
+			public boolean canUse() {
+				double x = CloneEntity.this.getX();
+				double y = CloneEntity.this.getY();
+				double z = CloneEntity.this.getZ();
+				Entity entity = CloneEntity.this;
+				Level world = CloneEntity.this.level();
+				return super.canUse() && NaoAtacaOwnerProcedure.execute(entity);
+			}
+
+			@Override
+			public boolean canContinueToUse() {
+				double x = CloneEntity.this.getX();
+				double y = CloneEntity.this.getY();
+				double z = CloneEntity.this.getZ();
+				Entity entity = CloneEntity.this;
+				Level world = CloneEntity.this.level();
+				return super.canContinueToUse() && NaoAtacaOwnerProcedure.execute(entity);
+			}
+		});
+		this.goalSelector.addGoal(2, new MeleeAttackGoal(this, 1.1, false) {
 			@Override
 			protected double getAttackReachSqr(LivingEntity entity) {
 				return 4;
 			}
 		});
-		this.targetSelector.addGoal(4, new HurtByTargetGoal(this));
-		this.goalSelector.addGoal(5, new RandomStrollGoal(this, 1));
-		this.goalSelector.addGoal(6, new RandomLookAroundGoal(this));
-		this.goalSelector.addGoal(7, new FloatGoal(this));
+		this.targetSelector.addGoal(3, new HurtByTargetGoal(this) {
+			@Override
+			public boolean canUse() {
+				double x = CloneEntity.this.getX();
+				double y = CloneEntity.this.getY();
+				double z = CloneEntity.this.getZ();
+				Entity entity = CloneEntity.this;
+				Level world = CloneEntity.this.level();
+				return super.canUse() && NaoAtacaOwnerProcedure.execute(entity);
+			}
+
+			@Override
+			public boolean canContinueToUse() {
+				double x = CloneEntity.this.getX();
+				double y = CloneEntity.this.getY();
+				double z = CloneEntity.this.getZ();
+				Entity entity = CloneEntity.this;
+				Level world = CloneEntity.this.level();
+				return super.canContinueToUse() && NaoAtacaOwnerProcedure.execute(entity);
+			}
+		});
+		this.targetSelector.addGoal(4, new OwnerHurtTargetGoal(this));
+		this.goalSelector.addGoal(5, new OwnerHurtByTargetGoal(this));
+		this.goalSelector.addGoal(6, new RandomStrollGoal(this, 1));
+		this.goalSelector.addGoal(7, new RandomLookAroundGoal(this));
+		this.goalSelector.addGoal(8, new FloatGoal(this));
 	}
 
 	@Override
@@ -125,7 +178,7 @@ public class CloneEntity extends Monster {
 	@Override
 	public SpawnGroupData finalizeSpawn(ServerLevelAccessor world, DifficultyInstance difficulty, MobSpawnType reason, @Nullable SpawnGroupData livingdata, @Nullable CompoundTag tag) {
 		SpawnGroupData retval = super.finalizeSpawn(world, difficulty, reason, livingdata, tag);
-		CloneOnInitialEntitySpawnProcedure.execute(world, this.getX(), this.getY(), this.getZ(), this);
+		CloneOnInitialEntitySpawnProcedure.execute(world, this);
 		return retval;
 	}
 
@@ -140,6 +193,67 @@ public class CloneEntity extends Monster {
 		super.readAdditionalSaveData(compound);
 		if (compound.contains("Datainvocador"))
 			this.entityData.set(DATA_invocador, compound.getString("Datainvocador"));
+	}
+
+	@Override
+	public InteractionResult mobInteract(Player sourceentity, InteractionHand hand) {
+		ItemStack itemstack = sourceentity.getItemInHand(hand);
+		InteractionResult retval = InteractionResult.sidedSuccess(this.level().isClientSide());
+		Item item = itemstack.getItem();
+		if (itemstack.getItem() instanceof SpawnEggItem) {
+			retval = super.mobInteract(sourceentity, hand);
+		} else if (this.level().isClientSide()) {
+			retval = (this.isTame() && this.isOwnedBy(sourceentity) || this.isFood(itemstack)) ? InteractionResult.sidedSuccess(this.level().isClientSide()) : InteractionResult.PASS;
+		} else {
+			if (this.isTame()) {
+				if (this.isOwnedBy(sourceentity)) {
+					if (item.isEdible() && this.isFood(itemstack) && this.getHealth() < this.getMaxHealth()) {
+						this.usePlayerItem(sourceentity, hand, itemstack);
+						this.heal((float) item.getFoodProperties().getNutrition());
+						retval = InteractionResult.sidedSuccess(this.level().isClientSide());
+					} else if (this.isFood(itemstack) && this.getHealth() < this.getMaxHealth()) {
+						this.usePlayerItem(sourceentity, hand, itemstack);
+						this.heal(4);
+						retval = InteractionResult.sidedSuccess(this.level().isClientSide());
+					} else {
+						retval = super.mobInteract(sourceentity, hand);
+					}
+				}
+			} else if (this.isFood(itemstack)) {
+				this.usePlayerItem(sourceentity, hand, itemstack);
+				if (this.random.nextInt(3) == 0 && !net.minecraftforge.event.ForgeEventFactory.onAnimalTame(this, sourceentity)) {
+					this.tame(sourceentity);
+					this.level().broadcastEntityEvent(this, (byte) 7);
+				} else {
+					this.level().broadcastEntityEvent(this, (byte) 6);
+				}
+				this.setPersistenceRequired();
+				retval = InteractionResult.sidedSuccess(this.level().isClientSide());
+			} else {
+				retval = super.mobInteract(sourceentity, hand);
+				if (retval == InteractionResult.SUCCESS || retval == InteractionResult.CONSUME)
+					this.setPersistenceRequired();
+			}
+		}
+		return retval;
+	}
+
+	@Override
+	public void baseTick() {
+		super.baseTick();
+		CloneOnEntityTickUpdateProcedure.execute(this.level(), this.getX(), this.getY(), this.getZ(), this);
+	}
+
+	@Override
+	public AgeableMob getBreedOffspring(ServerLevel serverWorld, AgeableMob ageable) {
+		CloneEntity retval = VlAbyssModEntities.CLONE.get().create(serverWorld);
+		retval.finalizeSpawn(serverWorld, serverWorld.getCurrentDifficultyAt(retval.blockPosition()), MobSpawnType.BREEDING, null, null);
+		return retval;
+	}
+
+	@Override
+	public boolean isFood(ItemStack stack) {
+		return Ingredient.of().test(stack);
 	}
 
 	@Override

@@ -1,0 +1,7 @@
+{
+  "parent": "vl_abyss:custom/dark_flamberge",
+  "textures": {
+    "0": "vl_abyss:block/carvedsword",
+    "particle": "vl_abyss:item/carvedsword"
+  }
+}

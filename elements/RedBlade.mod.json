@@ -1,0 +1,36 @@
+{
+  "_fv": 79,
+  "_type": "tool",
+  "definition": {
+    "toolType": "Sword",
+    "renderType": 1,
+    "blockingRenderType": 0,
+    "texture": "redblade",
+    "customModelName": "great_katana:default",
+    "blockingModelName": "Normal blocking",
+    "guiTexture": "",
+    "name": "§cLâmina Vermelha",
+    "specialInformation": {
+      "fixedValue": []
+    },
+    "creativeTabs": [
+      {
+        "value": "CUSTOM:VlAbyssArmas"
+      }
+    ],
+    "efficiency": 9.0,
+    "attackSpeed": 0.9,
+    "enchantability": 10,
+    "damageVsEntity": 16.0,
+    "usageCount": 1561,
+    "glowCondition": {
+      "fixedValue": false
+    },
+    "repairItems": [],
+    "immuneToFire": false,
+    "blockDropsTier": "NETHERITE",
+    "blocksAffected": [],
+    "stayInGridWhenCrafting": false,
+    "damageOnCrafting": false
+  }
+}

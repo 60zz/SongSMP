@@ -1,0 +1,39 @@
+{
+  "_fv": 79,
+  "_type": "tool",
+  "definition": {
+    "toolType": "Axe",
+    "renderType": 1,
+    "blockingRenderType": 0,
+    "texture": "machadoanjo",
+    "customModelName": "runed_axe:default",
+    "blockingModelName": "Normal blocking",
+    "guiTexture": "",
+    "name": "§dMachado do Anjo Caído",
+    "specialInformation": {
+      "fixedValue": []
+    },
+    "creativeTabs": [
+      {
+        "value": "CUSTOM:VlAbyssArmas"
+      }
+    ],
+    "efficiency": 9.0,
+    "attackSpeed": 1.3,
+    "enchantability": 15,
+    "damageVsEntity": 16.0,
+    "usageCount": 0,
+    "glowCondition": {
+      "fixedValue": false
+    },
+    "repairItems": [],
+    "immuneToFire": false,
+    "blockDropsTier": "NETHERITE",
+    "blocksAffected": [],
+    "stayInGridWhenCrafting": false,
+    "damageOnCrafting": false,
+    "onRightClickedInAir": {
+      "name": "AxeOfAngelRightclicked"
+    }
+  }
+}

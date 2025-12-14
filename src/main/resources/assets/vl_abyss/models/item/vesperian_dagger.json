@@ -1,0 +1,7 @@
+{
+  "parent": "vl_abyss:custom/kopesh",
+  "textures": {
+    "0": "vl_abyss:block/vesperiandagger",
+    "particle": "vl_abyss:item/vesperiandagger"
+  }
+}

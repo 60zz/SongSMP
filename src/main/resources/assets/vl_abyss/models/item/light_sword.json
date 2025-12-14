@@ -1,0 +1,7 @@
+{
+  "parent": "vl_abyss:custom/elemental_sword_lightning",
+  "textures": {
+    "2": "vl_abyss:block/lightningsword",
+    "particle": "vl_abyss:item/lightningsword"
+  }
+}

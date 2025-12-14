@@ -62,6 +62,29 @@ public class VlAbyssModTabs {
 	public static final RegistryObject<CreativeModeTab> VL_ABYSS_ARMAS = REGISTRY.register("vl_abyss_armas",
 			() -> CreativeModeTab.builder().title(Component.translatable("item_group.vl_abyss.vl_abyss_armas")).icon(() -> new ItemStack(VlAbyssModItems.ADAGA_ASSASSINOS.get())).displayItems((parameters, tabData) -> {
 				tabData.accept(VlAbyssModItems.ADAGA_ASSASSINOS.get());
+				tabData.accept(VlAbyssModItems.STONE_HEART.get());
+				tabData.accept(VlAbyssModItems.ASTRAL_AXE.get());
+				tabData.accept(VlAbyssModItems.BLOODING_SCYTHE.get());
+				tabData.accept(VlAbyssModItems.AXE_OF_ANGEL.get());
+				tabData.accept(VlAbyssModItems.SPEAR_OF_IMPERATOR.get());
+				tabData.accept(VlAbyssModItems.SKULL_CRUSHER.get());
+				tabData.accept(VlAbyssModItems.RED_DEATH.get());
+				tabData.accept(VlAbyssModItems.SWORD_OF_PURE_PROTECTOR.get());
+				tabData.accept(VlAbyssModItems.RED_BLADE.get());
+				tabData.accept(VlAbyssModItems.HEROS_BLADE.get());
+				tabData.accept(VlAbyssModItems.ABYSSION_DAGGER.get());
+				tabData.accept(VlAbyssModItems.VESPERIAN_DAGGER.get());
+				tabData.accept(VlAbyssModItems.COLD_HUNTRESS.get());
+				tabData.accept(VlAbyssModItems.CARVED_SWORD.get());
+				tabData.accept(VlAbyssModItems.SOUL_SLAYER.get());
+				tabData.accept(VlAbyssModItems.DARKNESS_SWORD.get());
+				tabData.accept(VlAbyssModItems.FLAME_SWORD.get());
+				tabData.accept(VlAbyssModItems.LIGHTNING_SWORD.get());
+				tabData.accept(VlAbyssModItems.WIND_SWORD.get());
+				tabData.accept(VlAbyssModItems.SNOWSTORM_SWORD.get());
+				tabData.accept(VlAbyssModItems.LIGHT_SWORD.get());
+				tabData.accept(VlAbyssModItems.PURPLE_SCYTHE.get());
+				tabData.accept(VlAbyssModItems.CRIMSON_DEMON.get());
 			}).withTabsBefore(VL_ABYSS.getId()).build());
 	public static final RegistryObject<CreativeModeTab> VL_ABYSS_POTIONS = REGISTRY.register("vl_abyss_potions",
 			() -> CreativeModeTab.builder().title(Component.translatable("item_group.vl_abyss.vl_abyss_potions")).icon(() -> new ItemStack(VlAbyssModItems.INFINITY_ESSENCE_POTION.get())).displayItems((parameters, tabData) -> {

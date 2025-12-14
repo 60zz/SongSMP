@@ -14,7 +14,7 @@
         "type": "imagebutton",
         "data": {
           "name": "imagebutton_coracao",
-          "image": "guerreiro.png",
+          "image": "tanquecarta.png",
           "hoveredImage": "",
           "onClick": {
             "name": "TanqueClasseGui"
@@ -28,7 +28,7 @@
         "type": "imagebutton",
         "data": {
           "name": "imagebutton_coracao1",
-          "image": "guerreiro.png",
+          "image": "assassinocarta.png",
           "hoveredImage": "",
           "onClick": {
             "name": "AssassinoClasseGui"
@@ -56,7 +56,7 @@
         "type": "imagebutton",
         "data": {
           "name": "imagebutton_coracao3",
-          "image": "guerreiro.png",
+          "image": "berserkercarta.png",
           "hoveredImage": "",
           "onClick": {
             "name": "BerserkerClasseGui"

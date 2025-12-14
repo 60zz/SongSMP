@@ -38,16 +38,13 @@ public class PoucaVidaSomProcedure {
 				if ((entity instanceof LivingEntity _livEnt ? _livEnt.getHealth() : -1) <= 9) {
 					if (entity instanceof LivingEntity _entity && !_entity.level().isClientSide())
 						_entity.addEffect(new MobEffectInstance(VlAbyssModMobEffects.INSANO.get(), 12000, 0));
-					entity.getPersistentData().putBoolean("insanidade", true);
 				} else if ((entity instanceof LivingEntity _livEnt ? _livEnt.getHealth() : -1) >= 10) {
 					if (entity instanceof LivingEntity _entity)
 						_entity.removeEffect(VlAbyssModMobEffects.INSANO.get());
-					entity.getPersistentData().remove("insanidade");
 				}
 			} else {
 				if (entity instanceof LivingEntity _entity)
 					_entity.removeEffect(VlAbyssModMobEffects.INSANO.get());
-				entity.getPersistentData().remove("insanidade");
 			}
 		}
 	}

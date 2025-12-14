@@ -489,41 +489,6 @@
       "path": "~/VL1_Abyss/CoracaoTela"
     },
     {
-      "name": "MorreuSanidade",
-      "type": "procedure",
-      "compiles": true,
-      "locked_code": false,
-      "registry_name": "morreu_sanidade",
-      "metadata": {
-        "files": [
-          "src/main/java/net/mcreator/vlabyss/procedures/MorreuSanidadeProcedure.java"
-        ],
-        "dependencies": [
-          {
-            "name": "entity",
-            "type": "entity"
-          },
-          {
-            "name": "x",
-            "type": "number"
-          },
-          {
-            "name": "y",
-            "type": "number"
-          },
-          {
-            "name": "z",
-            "type": "number"
-          },
-          {
-            "name": "world",
-            "type": "world"
-          }
-        ]
-      },
-      "path": "~/VL1_Abyss/Insanidade"
-    },
-    {
       "name": "JEIMapa",
       "type": "jeiinformation",
       "compiles": true,
@@ -1909,10 +1874,6 @@
           {
             "name": "arguments",
             "type": "cmdcontext"
-          },
-          {
-            "name": "entity",
-            "type": "entity"
           }
         ]
       },
@@ -2884,22 +2845,6 @@
         ]
       },
       "path": "~/VL1_Abyss/Mantras/MantrasPrincipais/Respiro/AstralWind/Projetil"
-    },
-    {
-      "name": "AdagaAssassinos",
-      "type": "animateditem",
-      "compiles": true,
-      "locked_code": true,
-      "registry_name": "adaga_assassinos",
-      "metadata": {
-        "files": [
-          "src/main/java/net/mcreator/vlabyss/item/model/AdagaAssassinosItemModel.java",
-          "src/main/java/net/mcreator/vlabyss/item/AdagaAssassinosItem.java",
-          "src/main/resources/assets/vl_abyss/models/item/adaga_assassinos.json",
-          "src/main/java/net/mcreator/vlabyss/item/renderer/AdagaAssassinosItemRenderer.java"
-        ]
-      },
-      "path": "~/VL1_Abyss/Armas/AdagaAssassinos"
     },
     {
       "name": "AdagaAssassinoOculto",
@@ -3917,10 +3862,10 @@
       "registry_name": "cavaleiro_alado",
       "metadata": {
         "files": [
+          "src/main/java/net/mcreator/vlabyss/entity/model/CavaleiroAladoModel.java",
           "src/main/resources/assets/vl_abyss/models/item/cavaleiro_alado_spawn_egg.json",
-          "src/main/java/net/mcreator/vlabyss/client/renderer/CavaleiroAladoRenderer.java",
           "src/main/java/net/mcreator/vlabyss/entity/CavaleiroAladoEntity.java",
-          "src/main/java/net/mcreator/vlabyss/entity/model/CavaleiroAladoModel.java"
+          "src/main/java/net/mcreator/vlabyss/client/renderer/CavaleiroAladoRenderer.java"
         ]
       },
       "path": "~/VL1_Abyss/AbismoBosses/CavaleiroAlado"
@@ -4273,8 +4218,8 @@
       "registry_name": "artifacts_bundle",
       "metadata": {
         "files": [
-          "src/main/java/net/mcreator/vlabyss/item/ArtifactsBundleItem.java",
-          "src/main/resources/assets/vl_abyss/models/item/artifacts_bundle.json"
+          "src/main/resources/assets/vl_abyss/models/item/artifacts_bundle.json",
+          "src/main/java/net/mcreator/vlabyss/item/ArtifactsBundleItem.java"
         ]
       },
       "path": "~/VL1_Abyss/AbismoBosses/DropAbismoCriaturas"
@@ -6580,10 +6525,6 @@
           {
             "name": "entity",
             "type": "entity"
-          },
-          {
-            "name": "world",
-            "type": "world"
           }
         ],
         "files": [
@@ -6603,10 +6544,6 @@
           {
             "name": "entity",
             "type": "entity"
-          },
-          {
-            "name": "world",
-            "type": "world"
           }
         ],
         "files": [
@@ -7864,7 +7801,7 @@
           "src/main/java/net/mcreator/vlabyss/procedures/AtacouiProcedure.java"
         ]
       },
-      "path": "~/VL1_Abyss/Mantras/MantrasPrincipais/Chama/FlameClone"
+      "path": "~/VL1_Abyss/Mantras/MantrasPrincipais/Chama/FlameClone/Procedure"
     },
     {
       "name": "MorreuReiniciaMantra",
@@ -7898,18 +7835,6 @@
             "type": "entity"
           },
           {
-            "name": "x",
-            "type": "number"
-          },
-          {
-            "name": "y",
-            "type": "number"
-          },
-          {
-            "name": "z",
-            "type": "number"
-          },
-          {
             "name": "world",
             "type": "world"
           }
@@ -7918,7 +7843,7 @@
           "src/main/java/net/mcreator/vlabyss/procedures/CloneOnInitialEntitySpawnProcedure.java"
         ]
       },
-      "path": "~/VL1_Abyss/Mantras/MantrasPrincipais/Chama/FlameClone"
+      "path": "~/VL1_Abyss/Mantras/MantrasPrincipais/Chama/FlameClone/Procedure"
     },
     {
       "name": "CloneEntityDies",
@@ -7953,7 +7878,7 @@
           "src/main/java/net/mcreator/vlabyss/procedures/CloneEntityDiesProcedure.java"
         ]
       },
-      "path": "~/VL1_Abyss/Mantras/MantrasPrincipais/Chama/FlameClone"
+      "path": "~/VL1_Abyss/Mantras/MantrasPrincipais/Chama/FlameClone/Procedure"
     },
     {
       "name": "EntityTickDespawn",
@@ -7966,6 +7891,22 @@
           {
             "name": "entity",
             "type": "entity"
+          },
+          {
+            "name": "x",
+            "type": "number"
+          },
+          {
+            "name": "y",
+            "type": "number"
+          },
+          {
+            "name": "z",
+            "type": "number"
+          },
+          {
+            "name": "world",
+            "type": "world"
           }
         ],
         "files": [
@@ -7973,6 +7914,1164 @@
         ]
       },
       "path": "~/VL1_Abyss/Mantras/RemoveMantraInvocacao"
+    },
+    {
+      "name": "CloneOnEntityTickUpdate",
+      "type": "procedure",
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "clone_on_entity_tick_update",
+      "metadata": {
+        "dependencies": [
+          {
+            "name": "entity",
+            "type": "entity"
+          },
+          {
+            "name": "x",
+            "type": "number"
+          },
+          {
+            "name": "y",
+            "type": "number"
+          },
+          {
+            "name": "z",
+            "type": "number"
+          },
+          {
+            "name": "world",
+            "type": "world"
+          }
+        ],
+        "files": [
+          "src/main/java/net/mcreator/vlabyss/procedures/CloneOnEntityTickUpdateProcedure.java"
+        ]
+      },
+      "path": "~/VL1_Abyss/Mantras/MantrasPrincipais/Chama/FlameClone/Procedure"
+    },
+    {
+      "name": "NaoAtacaOwner",
+      "type": "procedure",
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "nao_ataca_owner",
+      "metadata": {
+        "dependencies": [
+          {
+            "name": "entity",
+            "type": "entity"
+          }
+        ],
+        "return_type": "logic",
+        "files": [
+          "src/main/java/net/mcreator/vlabyss/procedures/NaoAtacaOwnerProcedure.java"
+        ]
+      },
+      "path": "~/VL1_Abyss/Mantras/MantrasPrincipais/Chama/FlameClone/Procedure"
+    },
+    {
+      "name": "SemMantraSuficienteTick",
+      "type": "procedure",
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "sem_mantra_suficiente_tick",
+      "metadata": {
+        "dependencies": [
+          {
+            "name": "entity",
+            "type": "entity"
+          }
+        ],
+        "files": [
+          "src/main/java/net/mcreator/vlabyss/procedures/SemMantraSuficienteTickProcedure.java"
+        ]
+      },
+      "path": "~/VL1_Abyss/Mantras/SemMantra"
+    },
+    {
+      "name": "MostraOpcoesLuz",
+      "type": "procedure",
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "mostra_opcoes_luz",
+      "metadata": {
+        "dependencies": [
+          {
+            "name": "entity",
+            "type": "entity"
+          }
+        ],
+        "return_type": "logic",
+        "files": [
+          "src/main/java/net/mcreator/vlabyss/procedures/MostraOpcoesLuzProcedure.java"
+        ]
+      },
+      "path": "~/VL1_Abyss/Alma/Mantra/DesbloqueiaHabilidades/Gui/Luz"
+    },
+    {
+      "name": "ClicouPrimeiraOpcaoLuz",
+      "type": "procedure",
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "clicou_primeira_opcao_luz",
+      "metadata": {
+        "dependencies": [
+          {
+            "name": "entity",
+            "type": "entity"
+          }
+        ],
+        "files": [
+          "src/main/java/net/mcreator/vlabyss/procedures/ClicouPrimeiraOpcaoLuzProcedure.java"
+        ]
+      },
+      "path": "~/VL1_Abyss/Alma/Mantra/DesbloqueiaHabilidades/Gui/Luz"
+    },
+    {
+      "name": "ClicouSegundaOpcaoLuz",
+      "type": "procedure",
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "clicou_segunda_opcao_luz",
+      "metadata": {
+        "dependencies": [
+          {
+            "name": "entity",
+            "type": "entity"
+          }
+        ],
+        "files": [
+          "src/main/java/net/mcreator/vlabyss/procedures/ClicouSegundaOpcaoLuzProcedure.java"
+        ]
+      },
+      "path": "~/VL1_Abyss/Alma/Mantra/DesbloqueiaHabilidades/Gui/Luz"
+    },
+    {
+      "name": "ClicouTerceiraOpcaoLuz",
+      "type": "procedure",
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "clicou_terceira_opcao_luz",
+      "metadata": {
+        "dependencies": [
+          {
+            "name": "entity",
+            "type": "entity"
+          }
+        ],
+        "files": [
+          "src/main/java/net/mcreator/vlabyss/procedures/ClicouTerceiraOpcaoLuzProcedure.java"
+        ]
+      },
+      "path": "~/VL1_Abyss/Alma/Mantra/DesbloqueiaHabilidades/Gui/Luz"
+    },
+    {
+      "name": "StoneHeart",
+      "type": "tool",
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "stone_heart",
+      "metadata": {
+        "files": [
+          "src/main/java/net/mcreator/vlabyss/item/StoneHeartItem.java",
+          "src/main/resources/assets/vl_abyss/models/item/stone_heart.json"
+        ]
+      },
+      "path": "~/VL1_Abyss/Armas/CoracaoPedra"
+    },
+    {
+      "name": "AstralAxe",
+      "type": "tool",
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "astral_axe",
+      "metadata": {
+        "files": [
+          "src/main/java/net/mcreator/vlabyss/item/AstralAxeItem.java",
+          "src/main/resources/assets/vl_abyss/models/item/astral_axe.json"
+        ]
+      },
+      "path": "~/VL1_Abyss/Armas/AstralAxe"
+    },
+    {
+      "name": "BloodingScythe",
+      "type": "tool",
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "blooding_scythe",
+      "metadata": {
+        "files": [
+          "src/main/resources/assets/vl_abyss/models/item/blooding_scythe.json",
+          "src/main/java/net/mcreator/vlabyss/item/BloodingScytheItem.java"
+        ]
+      },
+      "path": "~/VL1_Abyss/Armas/BloodingScythe"
+    },
+    {
+      "name": "AxeOfAngel",
+      "type": "tool",
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "axe_of_angel",
+      "metadata": {
+        "files": [
+          "src/main/java/net/mcreator/vlabyss/item/AxeOfAngelItem.java",
+          "src/main/resources/assets/vl_abyss/models/item/axe_of_angel.json"
+        ]
+      },
+      "path": "~/VL1_Abyss/Armas/MachadoAnjoCaido"
+    },
+    {
+      "name": "SpearOfImperator",
+      "type": "tool",
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "spear_of_imperator",
+      "metadata": {
+        "files": [
+          "src/main/java/net/mcreator/vlabyss/item/SpearOfImperatorItem.java",
+          "src/main/resources/assets/vl_abyss/models/item/spear_of_imperator.json"
+        ]
+      },
+      "path": "~/VL1_Abyss/Armas/SpearOfImperator"
+    },
+    {
+      "name": "SkullCrusher",
+      "type": "tool",
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "skull_crusher",
+      "metadata": {
+        "files": [
+          "src/main/java/net/mcreator/vlabyss/item/SkullCrusherItem.java",
+          "src/main/resources/assets/vl_abyss/models/item/skull_crusher.json"
+        ]
+      },
+      "path": "~/VL1_Abyss/Armas/SkullCrusher"
+    },
+    {
+      "name": "RedDeath",
+      "type": "tool",
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "red_death",
+      "metadata": {
+        "files": [
+          "src/main/resources/assets/vl_abyss/models/item/red_death.json",
+          "src/main/java/net/mcreator/vlabyss/item/RedDeathItem.java"
+        ]
+      },
+      "path": "~/VL1_Abyss/Armas/RedDeath"
+    },
+    {
+      "name": "SwordOfPureProtector",
+      "type": "tool",
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "sword_of_pure_protector",
+      "metadata": {
+        "files": [
+          "src/main/resources/assets/vl_abyss/models/item/sword_of_pure_protector.json",
+          "src/main/java/net/mcreator/vlabyss/item/SwordOfPureProtectorItem.java"
+        ]
+      },
+      "path": "~/VL1_Abyss/Armas/SwordPureProtector"
+    },
+    {
+      "name": "RedBlade",
+      "type": "tool",
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "red_blade",
+      "metadata": {
+        "files": [
+          "src/main/java/net/mcreator/vlabyss/item/RedBladeItem.java",
+          "src/main/resources/assets/vl_abyss/models/item/red_blade.json"
+        ]
+      },
+      "path": "~/VL1_Abyss/Armas/RedBlade"
+    },
+    {
+      "name": "HerosBlade",
+      "type": "tool",
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "heros_blade",
+      "metadata": {
+        "files": [
+          "src/main/java/net/mcreator/vlabyss/item/HerosBladeItem.java",
+          "src/main/resources/assets/vl_abyss/models/item/heros_blade.json"
+        ]
+      },
+      "path": "~/VL1_Abyss/Armas/HerosBlade"
+    },
+    {
+      "name": "AdagaAssassinos",
+      "type": "tool",
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "adaga_assassinos",
+      "metadata": {
+        "files": [
+          "src/main/resources/assets/vl_abyss/models/item/adaga_assassinos.json",
+          "src/main/java/net/mcreator/vlabyss/item/AdagaAssassinosItem.java"
+        ]
+      },
+      "path": "~/VL1_Abyss/Armas/AdagaAssassinos"
+    },
+    {
+      "name": "AbyssionDagger",
+      "type": "tool",
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "abyssion_dagger",
+      "metadata": {
+        "files": [
+          "src/main/resources/assets/vl_abyss/models/item/abyssion_dagger.json",
+          "src/main/java/net/mcreator/vlabyss/item/AbyssionDaggerItem.java"
+        ]
+      },
+      "path": "~/VL1_Abyss/Armas/AbyssionDagger"
+    },
+    {
+      "name": "VesperianDagger",
+      "type": "tool",
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "vesperian_dagger",
+      "metadata": {
+        "files": [
+          "src/main/java/net/mcreator/vlabyss/item/VesperianDaggerItem.java",
+          "src/main/resources/assets/vl_abyss/models/item/vesperian_dagger.json"
+        ]
+      },
+      "path": "~/VL1_Abyss/Armas/VesperianDagger"
+    },
+    {
+      "name": "ColdHuntress",
+      "type": "tool",
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "cold_huntress",
+      "metadata": {
+        "files": [
+          "src/main/java/net/mcreator/vlabyss/item/ColdHuntressItem.java",
+          "src/main/resources/assets/vl_abyss/models/item/cold_huntress.json"
+        ]
+      },
+      "path": "~/VL1_Abyss/Armas/ColdHuntress"
+    },
+    {
+      "name": "CarvedSword",
+      "type": "tool",
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "carved_sword",
+      "metadata": {
+        "files": [
+          "src/main/resources/assets/vl_abyss/models/item/carved_sword.json",
+          "src/main/java/net/mcreator/vlabyss/item/CarvedSwordItem.java"
+        ]
+      },
+      "path": "~/VL1_Abyss/Armas/CarvedSword"
+    },
+    {
+      "name": "SoulSlayer",
+      "type": "tool",
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "soul_slayer",
+      "metadata": {
+        "files": [
+          "src/main/java/net/mcreator/vlabyss/item/SoulSlayerItem.java",
+          "src/main/resources/assets/vl_abyss/models/item/soul_slayer.json"
+        ]
+      },
+      "path": "~/VL1_Abyss/Armas/SoulSlayer"
+    },
+    {
+      "name": "DarknessSword",
+      "type": "tool",
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "darkness_sword",
+      "metadata": {
+        "files": [
+          "src/main/java/net/mcreator/vlabyss/item/DarknessSwordItem.java",
+          "src/main/resources/assets/vl_abyss/models/item/darkness_sword.json"
+        ]
+      },
+      "path": "~/VL1_Abyss/Armas/ElementalSwords"
+    },
+    {
+      "name": "FlameSword",
+      "type": "tool",
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "flame_sword",
+      "metadata": {
+        "files": [
+          "src/main/java/net/mcreator/vlabyss/item/FlameSwordItem.java",
+          "src/main/resources/assets/vl_abyss/models/item/flame_sword.json"
+        ]
+      },
+      "path": "~/VL1_Abyss/Armas/ElementalSwords"
+    },
+    {
+      "name": "LightningSword",
+      "type": "tool",
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "lightning_sword",
+      "metadata": {
+        "files": [
+          "src/main/resources/assets/vl_abyss/models/item/lightning_sword.json",
+          "src/main/java/net/mcreator/vlabyss/item/LightningSwordItem.java"
+        ]
+      },
+      "path": "~/VL1_Abyss/Armas/ElementalSwords"
+    },
+    {
+      "name": "WindSword",
+      "type": "tool",
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "wind_sword",
+      "metadata": {
+        "files": [
+          "src/main/resources/assets/vl_abyss/models/item/wind_sword.json",
+          "src/main/java/net/mcreator/vlabyss/item/WindSwordItem.java"
+        ]
+      },
+      "path": "~/VL1_Abyss/Armas/ElementalSwords"
+    },
+    {
+      "name": "SnowstormSword",
+      "type": "tool",
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "snowstorm_sword",
+      "metadata": {
+        "files": [
+          "src/main/java/net/mcreator/vlabyss/item/SnowstormSwordItem.java",
+          "src/main/resources/assets/vl_abyss/models/item/snowstorm_sword.json"
+        ]
+      },
+      "path": "~/VL1_Abyss/Armas/ElementalSwords"
+    },
+    {
+      "name": "LightSword",
+      "type": "tool",
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "light_sword",
+      "metadata": {
+        "files": [
+          "src/main/java/net/mcreator/vlabyss/item/LightSwordItem.java",
+          "src/main/resources/assets/vl_abyss/models/item/light_sword.json"
+        ]
+      },
+      "path": "~/VL1_Abyss/Armas/ElementalSwords"
+    },
+    {
+      "name": "SpearOfImperatorToolInInventoryTick",
+      "type": "procedure",
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "spear_of_imperator_tool_in_inventory_tick",
+      "metadata": {
+        "dependencies": [
+          {
+            "name": "entity",
+            "type": "entity"
+          }
+        ],
+        "files": [
+          "src/main/java/net/mcreator/vlabyss/procedures/SpearOfImperatorToolInInventoryTickProcedure.java"
+        ]
+      },
+      "path": "~/VL1_Abyss/Armas/SpearOfImperator/Procedure"
+    },
+    {
+      "name": "ElementalToolInInventoryTick",
+      "type": "procedure",
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "elemental_tool_in_inventory_tick",
+      "metadata": {
+        "dependencies": [
+          {
+            "name": "entity",
+            "type": "entity"
+          }
+        ],
+        "files": [
+          "src/main/java/net/mcreator/vlabyss/procedures/ElementalToolInInventoryTickProcedure.java"
+        ]
+      },
+      "path": "~/VL1_Abyss/Armas/ElementalSwords/Procedure"
+    },
+    {
+      "name": "InfoEspadasElementares",
+      "type": "procedure",
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "info_espadas_elementares",
+      "metadata": {
+        "dependencies": [
+          {
+            "name": "itemstack",
+            "type": "itemstack"
+          },
+          {
+            "name": "tooltip",
+            "type": "tooltip"
+          }
+        ],
+        "files": [
+          "src/main/java/net/mcreator/vlabyss/procedures/InfoEspadasElementaresProcedure.java"
+        ]
+      },
+      "path": "~/VL1_Abyss/Armas/ElementalSwords/Procedure"
+    },
+    {
+      "name": "BloodingScytheLivingEntityIsHitWithTool",
+      "type": "procedure",
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "blooding_scythe_living_entity_is_hit_with_tool",
+      "metadata": {
+        "dependencies": [
+          {
+            "name": "entity",
+            "type": "entity"
+          },
+          {
+            "name": "sourceentity",
+            "type": "entity"
+          }
+        ],
+        "files": [
+          "src/main/java/net/mcreator/vlabyss/procedures/BloodingScytheLivingEntityIsHitWithToolProcedure.java"
+        ]
+      },
+      "path": "~/VL1_Abyss/Armas/BloodingScythe/Procedure"
+    },
+    {
+      "name": "PurpleScythe",
+      "type": "tool",
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "purple_scythe",
+      "metadata": {
+        "files": [
+          "src/main/java/net/mcreator/vlabyss/item/PurpleScytheItem.java",
+          "src/main/resources/assets/vl_abyss/models/item/purple_scythe.json"
+        ]
+      },
+      "path": "~/VL1_Abyss/ArmasPlayers/Floppa"
+    },
+    {
+      "name": "InfoSaoriScythe",
+      "type": "procedure",
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "info_saori_scythe",
+      "metadata": {
+        "dependencies": [
+          {
+            "name": "itemstack",
+            "type": "itemstack"
+          },
+          {
+            "name": "tooltip",
+            "type": "tooltip"
+          }
+        ],
+        "files": [
+          "src/main/java/net/mcreator/vlabyss/procedures/InfoSaoriScytheProcedure.java"
+        ]
+      },
+      "path": "~/VL1_Abyss/ArmasPlayers/Floppa/Procedure"
+    },
+    {
+      "name": "InsanoEffectStartedapplied",
+      "type": "procedure",
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "insano_effect_startedapplied",
+      "metadata": {
+        "dependencies": [
+          {
+            "name": "entity",
+            "type": "entity"
+          }
+        ],
+        "files": [
+          "src/main/java/net/mcreator/vlabyss/procedures/InsanoEffectStartedappliedProcedure.java"
+        ]
+      },
+      "path": "~/VL1_Abyss/CoracaoTela/Efeito"
+    },
+    {
+      "name": "InsanoEffectExpires",
+      "type": "procedure",
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "insano_effect_expires",
+      "metadata": {
+        "dependencies": [
+          {
+            "name": "entity",
+            "type": "entity"
+          }
+        ],
+        "files": [
+          "src/main/java/net/mcreator/vlabyss/procedures/InsanoEffectExpiresProcedure.java"
+        ]
+      },
+      "path": "~/VL1_Abyss/CoracaoTela/Efeito"
+    },
+    {
+      "name": "InfoCarvedSword",
+      "type": "procedure",
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "info_carved_sword",
+      "metadata": {
+        "dependencies": [
+          {
+            "name": "itemstack",
+            "type": "itemstack"
+          },
+          {
+            "name": "tooltip",
+            "type": "tooltip"
+          }
+        ],
+        "files": [
+          "src/main/java/net/mcreator/vlabyss/procedures/InfoCarvedSwordProcedure.java"
+        ]
+      },
+      "path": "~/VL1_Abyss/Armas/CarvedSword/Procedure"
+    },
+    {
+      "name": "SpearOfImperatorToolInHandTick",
+      "type": "procedure",
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "spear_of_imperator_tool_in_hand_tick",
+      "metadata": {
+        "dependencies": [
+          {
+            "name": "entity",
+            "type": "entity"
+          }
+        ],
+        "files": [
+          "src/main/java/net/mcreator/vlabyss/procedures/SpearOfImperatorToolInHandTickProcedure.java"
+        ]
+      },
+      "path": "~/VL1_Abyss/Armas/SpearOfImperator/Procedure"
+    },
+    {
+      "name": "DropaPerde",
+      "type": "procedure",
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "dropa_perde",
+      "metadata": {
+        "dependencies": [
+          {
+            "name": "entity",
+            "type": "entity"
+          },
+          {
+            "name": "itemstack",
+            "type": "itemstack"
+          }
+        ],
+        "files": [
+          "src/main/java/net/mcreator/vlabyss/procedures/DropaPerdeProcedure.java"
+        ]
+      },
+      "path": "~/VL1_Abyss/Armas/SpearOfImperator/Procedure"
+    },
+    {
+      "name": "InfoSeparOfImperator",
+      "type": "procedure",
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "info_separ_of_imperator",
+      "metadata": {
+        "dependencies": [
+          {
+            "name": "itemstack",
+            "type": "itemstack"
+          },
+          {
+            "name": "tooltip",
+            "type": "tooltip"
+          }
+        ],
+        "files": [
+          "src/main/java/net/mcreator/vlabyss/procedures/InfoSeparOfImperatorProcedure.java"
+        ]
+      },
+      "path": "~/VL1_Abyss/Armas/SpearOfImperator/Procedure"
+    },
+    {
+      "name": "InfoBloodingScythe",
+      "type": "procedure",
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "info_blooding_scythe",
+      "metadata": {
+        "dependencies": [
+          {
+            "name": "itemstack",
+            "type": "itemstack"
+          },
+          {
+            "name": "tooltip",
+            "type": "tooltip"
+          }
+        ],
+        "files": [
+          "src/main/java/net/mcreator/vlabyss/procedures/InfoBloodingScytheProcedure.java"
+        ]
+      },
+      "path": "~/VL1_Abyss/Armas/BloodingScythe/Procedure"
+    },
+    {
+      "name": "SpearOfImperatorLivingEntityIsHitWithTool",
+      "type": "procedure",
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "spear_of_imperator_living_entity_is_hit_with_tool",
+      "metadata": {
+        "dependencies": [
+          {
+            "name": "sourceentity",
+            "type": "entity"
+          }
+        ],
+        "files": [
+          "src/main/java/net/mcreator/vlabyss/procedures/SpearOfImperatorLivingEntityIsHitWithToolProcedure.java"
+        ]
+      },
+      "path": "~/VL1_Abyss/Armas/SpearOfImperator/Procedure"
+    },
+    {
+      "name": "InfoAbyssionDagger",
+      "type": "procedure",
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "info_abyssion_dagger",
+      "metadata": {
+        "dependencies": [
+          {
+            "name": "itemstack",
+            "type": "itemstack"
+          },
+          {
+            "name": "tooltip",
+            "type": "tooltip"
+          }
+        ],
+        "files": [
+          "src/main/java/net/mcreator/vlabyss/procedures/InfoAbyssionDaggerProcedure.java"
+        ]
+      },
+      "path": "~/VL1_Abyss/Armas/AbyssionDagger/Procedure"
+    },
+    {
+      "name": "AbyssionDaggerRightclicked",
+      "type": "procedure",
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "abyssion_dagger_rightclicked",
+      "metadata": {
+        "dependencies": [
+          {
+            "name": "entity",
+            "type": "entity"
+          },
+          {
+            "name": "itemstack",
+            "type": "itemstack"
+          },
+          {
+            "name": "x",
+            "type": "number"
+          },
+          {
+            "name": "y",
+            "type": "number"
+          },
+          {
+            "name": "z",
+            "type": "number"
+          },
+          {
+            "name": "world",
+            "type": "world"
+          }
+        ],
+        "files": [
+          "src/main/java/net/mcreator/vlabyss/procedures/AbyssionDaggerRightclickedProcedure.java"
+        ]
+      },
+      "path": "~/VL1_Abyss/Armas/AbyssionDagger/Procedure"
+    },
+    {
+      "name": "InfoVesperianDagger",
+      "type": "procedure",
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "info_vesperian_dagger",
+      "metadata": {
+        "dependencies": [
+          {
+            "name": "itemstack",
+            "type": "itemstack"
+          },
+          {
+            "name": "tooltip",
+            "type": "tooltip"
+          }
+        ],
+        "files": [
+          "src/main/java/net/mcreator/vlabyss/procedures/InfoVesperianDaggerProcedure.java"
+        ]
+      },
+      "path": "~/VL1_Abyss/Armas/VesperianDagger/Procedure"
+    },
+    {
+      "name": "AxeOfAngelRightclicked",
+      "type": "procedure",
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "axe_of_angel_rightclicked",
+      "metadata": {
+        "dependencies": [
+          {
+            "name": "entity",
+            "type": "entity"
+          },
+          {
+            "name": "itemstack",
+            "type": "itemstack"
+          },
+          {
+            "name": "x",
+            "type": "number"
+          },
+          {
+            "name": "y",
+            "type": "number"
+          },
+          {
+            "name": "z",
+            "type": "number"
+          },
+          {
+            "name": "world",
+            "type": "world"
+          }
+        ],
+        "files": [
+          "src/main/java/net/mcreator/vlabyss/procedures/AxeOfAngelRightclickedProcedure.java"
+        ]
+      },
+      "path": "~/VL1_Abyss/Armas/MachadoAnjoCaido/Procedure"
+    },
+    {
+      "name": "CrimsonDemon",
+      "type": "tool",
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "crimson_demon",
+      "metadata": {
+        "files": [
+          "src/main/java/net/mcreator/vlabyss/item/CrimsonDemonItem.java",
+          "src/main/resources/assets/vl_abyss/models/item/crimson_demon.json"
+        ]
+      },
+      "path": "~/VL1_Abyss/ArmasPlayers/DemonCarmesim"
+    },
+    {
+      "name": "PurpleScytheHasItemGlowingEffect",
+      "type": "procedure",
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "purple_scythe_has_item_glowing_effect",
+      "metadata": {
+        "dependencies": [
+          {
+            "name": "itemstack",
+            "type": "itemstack"
+          }
+        ],
+        "return_type": "logic",
+        "files": [
+          "src/main/java/net/mcreator/vlabyss/procedures/PurpleScytheHasItemGlowingEffectProcedure.java"
+        ]
+      },
+      "path": "~/VL1_Abyss/ArmasPlayers/Floppa/Procedure"
+    },
+    {
+      "name": "PurpleScytheLivingEntityIsHitWithTool",
+      "type": "procedure",
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "purple_scythe_living_entity_is_hit_with_tool",
+      "metadata": {
+        "dependencies": [
+          {
+            "name": "entity",
+            "type": "entity"
+          },
+          {
+            "name": "sourceentity",
+            "type": "entity"
+          },
+          {
+            "name": "itemstack",
+            "type": "itemstack"
+          },
+          {
+            "name": "world",
+            "type": "world"
+          }
+        ],
+        "files": [
+          "src/main/java/net/mcreator/vlabyss/procedures/PurpleScytheLivingEntityIsHitWithToolProcedure.java"
+        ]
+      },
+      "path": "~/VL1_Abyss/ArmasPlayers/Floppa/Procedure"
+    },
+    {
+      "name": "DanoMaldicao",
+      "type": "damagetype",
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "dano_maldicao",
+      "metadata": {
+        "files": [
+          "src/main/resources/data/vl_abyss/damage_type/dano_maldicao.json"
+        ]
+      },
+      "path": "~/VL1_Abyss/ArmasPlayers/DanoMaldicao"
+    },
+    {
+      "name": "PurpleScytheToolInInventoryTick",
+      "type": "procedure",
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "purple_scythe_tool_in_inventory_tick",
+      "metadata": {
+        "dependencies": [
+          {
+            "name": "entity",
+            "type": "entity"
+          },
+          {
+            "name": "itemstack",
+            "type": "itemstack"
+          },
+          {
+            "name": "world",
+            "type": "world"
+          }
+        ],
+        "files": [
+          "src/main/java/net/mcreator/vlabyss/procedures/PurpleScytheToolInInventoryTickProcedure.java"
+        ]
+      },
+      "path": "~/VL1_Abyss/ArmasPlayers/Floppa/Procedure"
+    },
+    {
+      "name": "CrimsonDemonLivingEntityIsHitWithTool",
+      "type": "procedure",
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "crimson_demon_living_entity_is_hit_with_tool",
+      "metadata": {
+        "dependencies": [
+          {
+            "name": "entity",
+            "type": "entity"
+          },
+          {
+            "name": "sourceentity",
+            "type": "entity"
+          }
+        ],
+        "files": [
+          "src/main/java/net/mcreator/vlabyss/procedures/CrimsonDemonLivingEntityIsHitWithToolProcedure.java"
+        ]
+      },
+      "path": "~/VL1_Abyss/ArmasPlayers/DemonCarmesim/Procedure"
+    },
+    {
+      "name": "InfoDemonCarmesim",
+      "type": "procedure",
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "info_demon_carmesim",
+      "metadata": {
+        "dependencies": [
+          {
+            "name": "itemstack",
+            "type": "itemstack"
+          },
+          {
+            "name": "tooltip",
+            "type": "tooltip"
+          }
+        ],
+        "files": [
+          "src/main/java/net/mcreator/vlabyss/procedures/InfoDemonCarmesimProcedure.java"
+        ]
+      },
+      "path": "~/VL1_Abyss/ArmasPlayers/DemonCarmesim/Procedure"
+    },
+    {
+      "name": "DropaArmaElemental",
+      "type": "procedure",
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "dropa_arma_elemental",
+      "metadata": {
+        "dependencies": [
+          {
+            "name": "entity",
+            "type": "entity"
+          },
+          {
+            "name": "itemstack",
+            "type": "itemstack"
+          }
+        ],
+        "files": [
+          "src/main/java/net/mcreator/vlabyss/procedures/DropaArmaElementalProcedure.java"
+        ]
+      },
+      "path": "~/VL1_Abyss/Armas/ElementalSwords/Procedure"
+    },
+    {
+      "name": "InfoAxeOfAngel",
+      "type": "procedure",
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "info_axe_of_angel",
+      "metadata": {
+        "dependencies": [
+          {
+            "name": "itemstack",
+            "type": "itemstack"
+          },
+          {
+            "name": "tooltip",
+            "type": "tooltip"
+          }
+        ],
+        "files": [
+          "src/main/java/net/mcreator/vlabyss/procedures/InfoAxeOfAngelProcedure.java"
+        ]
+      },
+      "path": "~/VL1_Abyss/Armas/MachadoAnjoCaido/Procedure"
+    },
+    {
+      "name": "SelecionaMantraRapidoOnKeyPressedo",
+      "type": "procedure",
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "seleciona_mantra_rapido_on_key_pressedo",
+      "metadata": {
+        "dependencies": [
+          {
+            "name": "entity",
+            "type": "entity"
+          }
+        ],
+        "files": [
+          "src/main/java/net/mcreator/vlabyss/procedures/SelecionaMantraRapidoOnKeyPressedoProcedure.java"
+        ]
+      },
+      "path": "~/VL1_Abyss/Mantras/MantraKeyAtivacao/Key/Procedure"
+    },
+    {
+      "name": "SelecionaMantraRapidoOnKeyReleased",
+      "type": "procedure",
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "seleciona_mantra_rapido_on_key_released",
+      "metadata": {
+        "dependencies": [
+          {
+            "name": "entity",
+            "type": "entity"
+          }
+        ],
+        "files": [
+          "src/main/java/net/mcreator/vlabyss/procedures/SelecionaMantraRapidoOnKeyReleasedProcedure.java"
+        ]
+      },
+      "path": "~/VL1_Abyss/Mantras/MantraKeyAtivacao/Key/Procedure"
+    },
+    {
+      "name": "ShiftOnKeyPressed",
+      "type": "procedure",
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "shift_on_key_pressed",
+      "metadata": {
+        "dependencies": [
+          {
+            "name": "entity",
+            "type": "entity"
+          }
+        ],
+        "files": [
+          "src/main/java/net/mcreator/vlabyss/procedures/ShiftOnKeyPressedProcedure.java"
+        ]
+      },
+      "path": "~/VL1_Abyss/Mantras/MantraKeyAtivacao/Key/Procedure"
+    },
+    {
+      "name": "ShiftOnKeyReleased",
+      "type": "procedure",
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "shift_on_key_released",
+      "metadata": {
+        "dependencies": [
+          {
+            "name": "entity",
+            "type": "entity"
+          }
+        ],
+        "files": [
+          "src/main/java/net/mcreator/vlabyss/procedures/ShiftOnKeyReleasedProcedure.java"
+        ]
+      },
+      "path": "~/VL1_Abyss/Mantras/MantraKeyAtivacao/Key/Procedure"
+    },
+    {
+      "name": "Shift",
+      "type": "keybind",
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "shift",
+      "metadata": {
+        "files": [
+          "src/main/java/net/mcreator/vlabyss/network/ShiftMessage.java"
+        ]
+      },
+      "path": "~/VL1_Abyss/Mantras/MantraKeyAtivacao/Key"
     }
   ],
   "variable_elements": [
@@ -8089,12 +9188,6 @@
       "type": "logic",
       "scope": "player_persistent",
       "value": "false"
-    },
-    {
-      "name": "insanidade",
-      "type": "number",
-      "scope": "player_persistent",
-      "value": "0"
     },
     {
       "name": "Lumivivo",
@@ -8299,6 +9392,18 @@
       "type": "number",
       "scope": "player_persistent",
       "value": "0"
+    },
+    {
+      "name": "lctrlativo",
+      "type": "logic",
+      "scope": "player_persistent",
+      "value": "false"
+    },
+    {
+      "name": "lshift",
+      "type": "logic",
+      "scope": "player_persistent",
+      "value": "false"
     }
   ],
   "sound_elements": [
@@ -8718,19 +9823,24 @@
       "CUSTOM:AbyssionIngot",
       "CUSTOM:AbyssionNugget",
       "CUSTOM:ArtifactsBundle",
-      "CUSTOM:SeletorClasses"
+      "CUSTOM:SeletorClasses",
+      "CUSTOM:SwordOfPureProtector",
+      "CUSTOM:HerosBlade",
+      "CUSTOM:SoulSlayer"
     ],
     "DAMAGE_TYPES:minecraft:bypasses_enchantments": [
       "CUSTOM:AbsorveAlmaDamage",
       "CUSTOM:SangramentoDamage",
       "CUSTOM:MantraDamage",
-      "CUSTOM:Danoabismoboss"
+      "CUSTOM:Danoabismoboss",
+      "CUSTOM:DanoMaldicao"
     ],
     "DAMAGE_TYPES:minecraft:bypasses_armor": [
       "CUSTOM:AbsorveAlmaDamage",
       "CUSTOM:SangramentoDamage",
       "CUSTOM:MantraDamage",
-      "CUSTOM:Danoabismoboss"
+      "CUSTOM:Danoabismoboss",
+      "CUSTOM:DanoMaldicao"
     ],
     "ITEMS:vl_abyss:light_purple": [
       "CUSTOM:FragmentoPrimordial",
@@ -8746,7 +9856,8 @@
     "DAMAGE_TYPES:minecraft:bypasses_effects": [
       "CUSTOM:AbsorveAlmaDamage",
       "CUSTOM:SangramentoDamage",
-      "CUSTOM:Danoabismoboss"
+      "CUSTOM:Danoabismoboss",
+      "CUSTOM:DanoMaldicao"
     ],
     "ITEMS:minecraft:tools": [
       "CUSTOM:AdagaAssassinos"
@@ -8776,23 +9887,55 @@
     ],
     "ITEMS:vl_abyss:white": [
       "CUSTOM:EssenciaAbismo",
-      "CUSTOM:Runas"
+      "CUSTOM:Runas",
+      "CUSTOM:CarvedSword"
     ],
     "ITEMS:minecraft:swords": [
+      "~CUSTOM:CrimsonDemon",
+      "~CUSTOM:PurpleScythe",
+      "~CUSTOM:LightSword",
+      "~CUSTOM:SnowstormSword",
+      "~CUSTOM:WindSword",
+      "~CUSTOM:LightningSword",
+      "~CUSTOM:FlameSword",
+      "~CUSTOM:DarknessSword",
+      "~CUSTOM:SoulSlayer",
+      "~CUSTOM:CarvedSword",
+      "~CUSTOM:VesperianDagger",
+      "~CUSTOM:AbyssionDagger",
+      "~CUSTOM:HerosBlade",
+      "~CUSTOM:RedBlade",
+      "~CUSTOM:SwordOfPureProtector",
+      "~CUSTOM:RedDeath",
+      "~CUSTOM:SpearOfImperator",
       "CUSTOM:AdagaAssassinos"
     ],
     "DAMAGE_TYPES:minecraft:bypasses_shield": [
       "CUSTOM:AbsorveAlmaDamage",
       "CUSTOM:SangramentoDamage",
       "CUSTOM:MantraDamage",
-      "CUSTOM:Danoabismoboss"
+      "CUSTOM:Danoabismoboss",
+      "CUSTOM:DanoMaldicao"
     ],
     "BLOCKS:forge:needs_netherite_tool": [],
     "ITEMS:minecraft:fishes": [
       "CUSTOM:AnelEnferrujado"
     ],
     "ITEMS:vl_abyss:dark_purple": [
-      "CUSTOM:AdagaAssassinos"
+      "CUSTOM:AdagaAssassinos",
+      "CUSTOM:StoneHeart",
+      "CUSTOM:AstralAxe",
+      "CUSTOM:AxeOfAngel",
+      "CUSTOM:SkullCrusher",
+      "CUSTOM:DarknessSword",
+      "CUSTOM:FlameSword",
+      "CUSTOM:LightningSword",
+      "CUSTOM:WindSword",
+      "CUSTOM:SnowstormSword",
+      "CUSTOM:LightSword",
+      "CUSTOM:PurpleScythe",
+      "CUSTOM:ColdHuntress",
+      "CUSTOM:VesperianDagger"
     ],
     "BLOCKS:minecraft:needs_diamond_tool": [
       "~CUSTOM:AbyssionIngotBlock",
@@ -8815,6 +9958,28 @@
       "CUSTOM:Reconjuration",
       "CUSTOM:EchoOfShadow",
       "CUSTOM:FireEruption"
+    ],
+    "ITEMS:minecraft:axes": [
+      "~CUSTOM:SkullCrusher",
+      "~CUSTOM:AxeOfAngel",
+      "~CUSTOM:AstralAxe",
+      "~CUSTOM:StoneHeart"
+    ],
+    "ITEMS:vl_abyss:dark_red": [
+      "CUSTOM:BloodingScythe",
+      "CUSTOM:RedDeath",
+      "CUSTOM:RedBlade",
+      "CUSTOM:AbyssionDagger"
+    ],
+    "ITEMS:minecraft:hoes": [
+      "~CUSTOM:BloodingScythe"
+    ],
+    "ITEMS:vl_abyss:gold": [
+      "CUSTOM:SpearOfImperator",
+      "CUSTOM:CrimsonDemon"
+    ],
+    "ITEMS:minecraft:pickaxes": [
+      "~CUSTOM:ColdHuntress"
     ]
   },
   "tab_element_order": {
@@ -8855,6 +10020,32 @@
       "VelmorraBannerPattern",
       "TombstoneAbyss",
       "CavaleiroAlado"
+    ],
+    "CUSTOM:VlAbyssArmas": [
+      "AdagaAssassinos",
+      "StoneHeart",
+      "AstralAxe",
+      "BloodingScythe",
+      "AxeOfAngel",
+      "SpearOfImperator",
+      "SkullCrusher",
+      "RedDeath",
+      "SwordOfPureProtector",
+      "RedBlade",
+      "HerosBlade",
+      "AbyssionDagger",
+      "VesperianDagger",
+      "ColdHuntress",
+      "CarvedSword",
+      "SoulSlayer",
+      "DarknessSword",
+      "FlameSword",
+      "LightningSword",
+      "WindSword",
+      "SnowstormSword",
+      "LightSword",
+      "PurpleScythe",
+      "CrimsonDemon"
     ]
   },
   "language_map": {
@@ -8961,7 +10152,6 @@
       "entity.minecraft.villager.vl_abyss.mestre_mantra_profession": "Mestre da Mantra",
       "item_group.vl_abyss.vl_abyss": "§5Song SMP",
       "item.vl_abyss.amuleto_vesperian": "Amuleto de Vesperian",
-      "item.vl_abyss.adaga_assassinos": "Adaga dos Assassinos",
       "effect.vl_abyss.resistencia_quebrada": "Resistência Quebrada",
       "key.vl_abyss.planar": "Planar",
       "death.attack.adaga_assassino_oculto": "Desconhecido morreu",
@@ -9149,7 +10339,35 @@
       "subtitles.bodyfiremantra": "",
       "entity.vl_abyss.fire_eruption": "Fire Eruption",
       "subtitles.fireeruptionmantra": "",
-      "entity.vl_abyss.clone": "Clone"
+      "entity.vl_abyss.clone": "Clone",
+      "item.vl_abyss.stone_heart": "§dCoração de Pedra",
+      "item.vl_abyss.astral_axe": "§dMachado Astral",
+      "item.vl_abyss.blooding_scythe": "§cFoice Sangrenta",
+      "item.vl_abyss.axe_of_angel": "§dMachado do Anjo Caído",
+      "item.vl_abyss.spear_of_imperator": "§eLança do Imperador",
+      "item.vl_abyss.skull_crusher": "§dQuebradora de Crânios",
+      "item.vl_abyss.red_death": "§cMorte Vermelha",
+      "item.vl_abyss.sword_of_pure_protector": "§bEspada do Puro Protetor",
+      "item.vl_abyss.red_blade": "§cLâmina Vermelha",
+      "item.vl_abyss.heros_blade": "§bLâmina do Herói",
+      "item.vl_abyss.adaga_assassinos": "§dAdaga Assassinos",
+      "item.vl_abyss.abyssion_dagger": "§cAdaga de Abyssion",
+      "item.vl_abyss.vesperian_dagger": "§dAdaga de Vesperian",
+      "item.vl_abyss.cold_huntress": "§dCaçadora Fria",
+      "item.vl_abyss.carved_sword": "§fEspada Lapidada",
+      "item.vl_abyss.soul_slayer": "§bAbatedora de Almas",
+      "item.vl_abyss.darkness_sword": "§dLâmina da Escuridão",
+      "item.vl_abyss.flame_sword": "§dLâmina da Chama",
+      "item.vl_abyss.lightning_sword": "§dLâmina da Tempestade",
+      "item.vl_abyss.wind_sword": "§dLâmina do Respiro",
+      "item.vl_abyss.snowstorm_sword": "§dLâmina da Nevasca",
+      "item.vl_abyss.light_sword": "§dLâmina da Luz",
+      "item.vl_abyss.purple_scythe": "§dFoice Sáori",
+      "item.vl_abyss.crimson_demon": "§e紅妖の厄乱扇",
+      "death.attack.dano_maldicao.item": "%1$s foi morto por %2$s usando %3$s amaldiçoado",
+      "death.attack.dano_maldicao.player": "%1$s morreu tentando escapar de %2$s usando um item amaldiçoado",
+      "death.attack.dano_maldicao": "%1$s morreu portando uma arma amaldiçoada",
+      "key.vl_abyss.shift": "Tecla de Alteração Reversa"
     }
   },
   "metadata": {
@@ -9157,7 +10375,6 @@
       "src/main/resources/META-INF/mods.toml",
       "src/main/resources/assets/vl_abyss/sounds.json",
       "src/main/java/net/mcreator/vlabyss/init/VlAbyssModTabs.java",
-      "src/main/resources/META-INF/accesstransformer.cfg",
       "src/main/resources/mixins.vl_abyss.json",
       "src/main/java/net/mcreator/vlabyss/init/VlAbyssModModels.java",
       "src/main/resources/pack.mcmeta",
@@ -9166,8 +10383,6 @@
       "src/main/java/net/mcreator/vlabyss/init/VlAbyssModSounds.java",
       "src/main/java/net/mcreator/vlabyss/block/listener/ClientListener.java",
       "src/main/java/net/mcreator/vlabyss/init/EntityAnimationFactory.java",
-      "src/main/java/net/mcreator/vlabyss/utils/AnimUtils.java",
-      "src/main/java/net/mcreator/vlabyss/init/ItemAnimationFactory.java",
       "src/main/java/net/mcreator/vlabyss/init/VlAbyssModAttributes.java",
       "src/main/java/net/mcreator/vlabyss/init/VlAbyssModBannerPatterns.java",
       "src/main/java/net/mcreator/vlabyss/init/VlAbyssModConfigs.java",
@@ -9576,7 +10791,12 @@
                   },
                   {
                     "name": "Key",
-                    "children": []
+                    "children": [
+                      {
+                        "name": "Procedure",
+                        "children": []
+                      }
+                    ]
                   },
                   {
                     "name": "ProcedureKey",
@@ -9718,7 +10938,12 @@
                       },
                       {
                         "name": "FlameClone",
-                        "children": []
+                        "children": [
+                          {
+                            "name": "Procedure",
+                            "children": []
+                          }
+                        ]
                       }
                     ]
                   },
@@ -9864,6 +11089,10 @@
               {
                 "name": "RemoveMantraInvocacao",
                 "children": []
+              },
+              {
+                "name": "SemMantra",
+                "children": []
               }
             ]
           },
@@ -9901,6 +11130,105 @@
                   },
                   {
                     "name": "Morte",
+                    "children": []
+                  }
+                ]
+              },
+              {
+                "name": "CoracaoPedra",
+                "children": []
+              },
+              {
+                "name": "AstralAxe",
+                "children": []
+              },
+              {
+                "name": "BloodingScythe",
+                "children": [
+                  {
+                    "name": "Procedure",
+                    "children": []
+                  }
+                ]
+              },
+              {
+                "name": "MachadoAnjoCaido",
+                "children": [
+                  {
+                    "name": "Procedure",
+                    "children": []
+                  }
+                ]
+              },
+              {
+                "name": "SpearOfImperator",
+                "children": [
+                  {
+                    "name": "Procedure",
+                    "children": []
+                  }
+                ]
+              },
+              {
+                "name": "SkullCrusher",
+                "children": []
+              },
+              {
+                "name": "RedDeath",
+                "children": []
+              },
+              {
+                "name": "SwordPureProtector",
+                "children": []
+              },
+              {
+                "name": "RedBlade",
+                "children": []
+              },
+              {
+                "name": "HerosBlade",
+                "children": []
+              },
+              {
+                "name": "AbyssionDagger",
+                "children": [
+                  {
+                    "name": "Procedure",
+                    "children": []
+                  }
+                ]
+              },
+              {
+                "name": "VesperianDagger",
+                "children": [
+                  {
+                    "name": "Procedure",
+                    "children": []
+                  }
+                ]
+              },
+              {
+                "name": "ColdHuntress",
+                "children": []
+              },
+              {
+                "name": "CarvedSword",
+                "children": [
+                  {
+                    "name": "Procedure",
+                    "children": []
+                  }
+                ]
+              },
+              {
+                "name": "SoulSlayer",
+                "children": []
+              },
+              {
+                "name": "ElementalSwords",
+                "children": [
+                  {
+                    "name": "Procedure",
                     "children": []
                   }
                 ]
@@ -10027,6 +11355,33 @@
           {
             "name": "Dialogo",
             "children": []
+          },
+          {
+            "name": "ArmasPlayers",
+            "children": [
+              {
+                "name": "Floppa",
+                "children": [
+                  {
+                    "name": "Procedure",
+                    "children": []
+                  }
+                ]
+              },
+              {
+                "name": "DemonCarmesim",
+                "children": [
+                  {
+                    "name": "Procedure",
+                    "children": []
+                  }
+                ]
+              },
+              {
+                "name": "DanoMaldicao",
+                "children": []
+              }
+            ]
           }
         ]
       },
@@ -10077,7 +11432,7 @@
   "workspaceSettings": {
     "modid": "vl_abyss",
     "modName": "SSMP | S1",
-    "version": "1.3.1",
+    "version": "2.0.1",
     "author": "SSMP | S1",
     "websiteURL": "https://discord.gg/vlmp",
     "license": "All Rights Reserved",

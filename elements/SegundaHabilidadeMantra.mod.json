@@ -213,6 +213,57 @@
           "y": 98,
           "locked": false
         }
+      },
+      {
+        "type": "imagebutton",
+        "data": {
+          "name": "imagebutton_coracao12",
+          "image": "coracao.png",
+          "hoveredImage": "",
+          "onClick": {
+            "name": "ClicouPrimeiraOpcaoLuz"
+          },
+          "displayCondition": {
+            "name": "MostraOpcoesLuz"
+          },
+          "x": 105,
+          "y": 98,
+          "locked": false
+        }
+      },
+      {
+        "type": "imagebutton",
+        "data": {
+          "name": "imagebutton_coracao13",
+          "image": "coracao.png",
+          "hoveredImage": "",
+          "onClick": {
+            "name": "ClicouSegundaOpcaoLuz"
+          },
+          "displayCondition": {
+            "name": "MostraOpcoesLuz"
+          },
+          "x": 195,
+          "y": 98,
+          "locked": false
+        }
+      },
+      {
+        "type": "imagebutton",
+        "data": {
+          "name": "imagebutton_coracao14",
+          "image": "coracao.png",
+          "hoveredImage": "",
+          "onClick": {
+            "name": "ClicouTerceiraOpcaoLuz"
+          },
+          "displayCondition": {
+            "name": "MostraOpcoesLuz"
+          },
+          "x": 285,
+          "y": 98,
+          "locked": false
+        }
       }
     ],
     "onOpen": {

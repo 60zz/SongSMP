@@ -1,0 +1,43 @@
+{
+  "_fv": 79,
+  "_type": "tool",
+  "definition": {
+    "toolType": "Sword",
+    "renderType": 1,
+    "blockingRenderType": 0,
+    "texture": "saoriscythe",
+    "customModelName": "purple_sythe:default",
+    "blockingModelName": "Normal blocking",
+    "guiTexture": "",
+    "name": "§dFoice Sáori",
+    "specialInformation": {
+      "fixedValue": []
+    },
+    "creativeTabs": [
+      {
+        "value": "CUSTOM:VlAbyssArmas"
+      }
+    ],
+    "efficiency": 4.0,
+    "attackSpeed": 1.2,
+    "enchantability": 10,
+    "damageVsEntity": 14.0,
+    "usageCount": 0,
+    "glowCondition": {
+      "fixedValue": false,
+      "name": "PurpleScytheHasItemGlowingEffect"
+    },
+    "repairItems": [],
+    "immuneToFire": true,
+    "blockDropsTier": "DIAMOND",
+    "blocksAffected": [],
+    "stayInGridWhenCrafting": false,
+    "damageOnCrafting": false,
+    "onEntityHitWith": {
+      "name": "PurpleScytheLivingEntityIsHitWithTool"
+    },
+    "onItemInInventoryTick": {
+      "name": "PurpleScytheToolInInventoryTick"
+    }
+  }
+}

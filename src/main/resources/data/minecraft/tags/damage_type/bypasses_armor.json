@@ -1,6 +1,7 @@
 {
   "replace": false,
   "values": [
+    "vl_abyss:dano_maldicao",
     "vl_abyss:danoabismoboss",
     "vl_abyss:absorve_alma_damage",
     "vl_abyss:sangramento_damage",

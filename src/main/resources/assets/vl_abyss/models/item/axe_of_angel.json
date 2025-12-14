@@ -1,0 +1,7 @@
+{
+  "parent": "vl_abyss:custom/runed_axe",
+  "textures": {
+    "0": "vl_abyss:block/machadoanjo",
+    "particle": "vl_abyss:item/machadoanjo"
+  }
+}

@@ -1,6 +1,23 @@
 {
   "replace": false,
   "values": [
-    "vl_abyss:adaga_assassinos"
+    "vl_abyss:red_blade",
+    "vl_abyss:lightning_sword",
+    "vl_abyss:adaga_assassinos",
+    "vl_abyss:red_death",
+    "vl_abyss:heros_blade",
+    "vl_abyss:light_sword",
+    "vl_abyss:wind_sword",
+    "vl_abyss:purple_scythe",
+    "vl_abyss:vesperian_dagger",
+    "vl_abyss:sword_of_pure_protector",
+    "vl_abyss:darkness_sword",
+    "vl_abyss:flame_sword",
+    "vl_abyss:spear_of_imperator",
+    "vl_abyss:crimson_demon",
+    "vl_abyss:carved_sword",
+    "vl_abyss:soul_slayer",
+    "vl_abyss:abyssion_dagger",
+    "vl_abyss:snowstorm_sword"
   ]
 }

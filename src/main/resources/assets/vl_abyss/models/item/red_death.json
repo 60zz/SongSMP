@@ -1,0 +1,7 @@
+{
+  "parent": "vl_abyss:custom/fancy_greatsword",
+  "textures": {
+    "1": "vl_abyss:block/reddeath",
+    "particle": "vl_abyss:item/reddeath"
+  }
+}

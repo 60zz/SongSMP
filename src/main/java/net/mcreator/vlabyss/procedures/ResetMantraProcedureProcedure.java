@@ -10,9 +10,7 @@ import com.mojang.brigadier.exceptions.CommandSyntaxException;
 import com.mojang.brigadier.context.CommandContext;
 
 public class ResetMantraProcedureProcedure {
-	public static void execute(CommandContext<CommandSourceStack> arguments, Entity entity) {
-		if (entity == null)
-			return;
+	public static void execute(CommandContext<CommandSourceStack> arguments) {
 		try {
 			for (Entity entityiterator : EntityArgument.getEntities(arguments, "entity")) {
 				{
@@ -59,107 +57,107 @@ public class ResetMantraProcedureProcedure {
 				}
 				{
 					double _setval = 0;
-					entity.getCapability(VlAbyssModVariables.PLAYER_VARIABLES_CAPABILITY, null).ifPresent(capability -> {
+					entityiterator.getCapability(VlAbyssModVariables.PLAYER_VARIABLES_CAPABILITY, null).ifPresent(capability -> {
 						capability.Chama = _setval;
-						capability.syncPlayerVariables(entity);
+						capability.syncPlayerVariables(entityiterator);
 					});
 				}
 				{
 					double _setval = 0;
-					entity.getCapability(VlAbyssModVariables.PLAYER_VARIABLES_CAPABILITY, null).ifPresent(capability -> {
+					entityiterator.getCapability(VlAbyssModVariables.PLAYER_VARIABLES_CAPABILITY, null).ifPresent(capability -> {
 						capability.Respiro = _setval;
-						capability.syncPlayerVariables(entity);
+						capability.syncPlayerVariables(entityiterator);
 					});
 				}
 				{
 					double _setval = 0;
-					entity.getCapability(VlAbyssModVariables.PLAYER_VARIABLES_CAPABILITY, null).ifPresent(capability -> {
+					entityiterator.getCapability(VlAbyssModVariables.PLAYER_VARIABLES_CAPABILITY, null).ifPresent(capability -> {
 						capability.Nevasca = _setval;
-						capability.syncPlayerVariables(entity);
+						capability.syncPlayerVariables(entityiterator);
 					});
 				}
 				{
 					double _setval = 0;
-					entity.getCapability(VlAbyssModVariables.PLAYER_VARIABLES_CAPABILITY, null).ifPresent(capability -> {
+					entityiterator.getCapability(VlAbyssModVariables.PLAYER_VARIABLES_CAPABILITY, null).ifPresent(capability -> {
 						capability.Tempestade = _setval;
-						capability.syncPlayerVariables(entity);
+						capability.syncPlayerVariables(entityiterator);
 					});
 				}
 				{
 					double _setval = 0;
-					entity.getCapability(VlAbyssModVariables.PLAYER_VARIABLES_CAPABILITY, null).ifPresent(capability -> {
+					entityiterator.getCapability(VlAbyssModVariables.PLAYER_VARIABLES_CAPABILITY, null).ifPresent(capability -> {
 						capability.Escuridao = _setval;
-						capability.syncPlayerVariables(entity);
+						capability.syncPlayerVariables(entityiterator);
 					});
 				}
 				{
 					double _setval = 0;
-					entity.getCapability(VlAbyssModVariables.PLAYER_VARIABLES_CAPABILITY, null).ifPresent(capability -> {
+					entityiterator.getCapability(VlAbyssModVariables.PLAYER_VARIABLES_CAPABILITY, null).ifPresent(capability -> {
 						capability.Luz = _setval;
-						capability.syncPlayerVariables(entity);
+						capability.syncPlayerVariables(entityiterator);
 					});
 				}
 				{
 					double _setval = 0;
-					entity.getCapability(VlAbyssModVariables.PLAYER_VARIABLES_CAPABILITY, null).ifPresent(capability -> {
+					entityiterator.getCapability(VlAbyssModVariables.PLAYER_VARIABLES_CAPABILITY, null).ifPresent(capability -> {
 						capability.mantra1_cooldown = _setval;
-						capability.syncPlayerVariables(entity);
+						capability.syncPlayerVariables(entityiterator);
 					});
 				}
 				{
 					double _setval = 0;
-					entity.getCapability(VlAbyssModVariables.PLAYER_VARIABLES_CAPABILITY, null).ifPresent(capability -> {
+					entityiterator.getCapability(VlAbyssModVariables.PLAYER_VARIABLES_CAPABILITY, null).ifPresent(capability -> {
 						capability.mantra2_cooldown = _setval;
-						capability.syncPlayerVariables(entity);
+						capability.syncPlayerVariables(entityiterator);
 					});
 				}
 				{
 					double _setval = 0;
-					entity.getCapability(VlAbyssModVariables.PLAYER_VARIABLES_CAPABILITY, null).ifPresent(capability -> {
+					entityiterator.getCapability(VlAbyssModVariables.PLAYER_VARIABLES_CAPABILITY, null).ifPresent(capability -> {
 						capability.mantra3_cooldown = _setval;
-						capability.syncPlayerVariables(entity);
+						capability.syncPlayerVariables(entityiterator);
 					});
 				}
 				{
 					double _setval = 0;
-					entity.getCapability(VlAbyssModVariables.PLAYER_VARIABLES_CAPABILITY, null).ifPresent(capability -> {
+					entityiterator.getCapability(VlAbyssModVariables.PLAYER_VARIABLES_CAPABILITY, null).ifPresent(capability -> {
 						capability.mantra4_cooldown = _setval;
-						capability.syncPlayerVariables(entity);
+						capability.syncPlayerVariables(entityiterator);
 					});
 				}
 				{
 					double _setval = 0;
-					entity.getCapability(VlAbyssModVariables.PLAYER_VARIABLES_CAPABILITY, null).ifPresent(capability -> {
+					entityiterator.getCapability(VlAbyssModVariables.PLAYER_VARIABLES_CAPABILITY, null).ifPresent(capability -> {
 						capability.mantra5_cooldown = _setval;
-						capability.syncPlayerVariables(entity);
+						capability.syncPlayerVariables(entityiterator);
 					});
 				}
 				{
 					double _setval = 100;
-					entity.getCapability(VlAbyssModVariables.PLAYER_VARIABLES_CAPABILITY, null).ifPresent(capability -> {
+					entityiterator.getCapability(VlAbyssModVariables.PLAYER_VARIABLES_CAPABILITY, null).ifPresent(capability -> {
 						capability.MaxEthir = _setval;
-						capability.syncPlayerVariables(entity);
+						capability.syncPlayerVariables(entityiterator);
 					});
 				}
 				{
 					double _setval = 100;
-					entity.getCapability(VlAbyssModVariables.PLAYER_VARIABLES_CAPABILITY, null).ifPresent(capability -> {
+					entityiterator.getCapability(VlAbyssModVariables.PLAYER_VARIABLES_CAPABILITY, null).ifPresent(capability -> {
 						capability.Ethir = _setval;
-						capability.syncPlayerVariables(entity);
+						capability.syncPlayerVariables(entityiterator);
 					});
 				}
 				{
 					double _setval = 0;
-					entity.getCapability(VlAbyssModVariables.PLAYER_VARIABLES_CAPABILITY, null).ifPresent(capability -> {
+					entityiterator.getCapability(VlAbyssModVariables.PLAYER_VARIABLES_CAPABILITY, null).ifPresent(capability -> {
 						capability.opcao_mantra2 = _setval;
-						capability.syncPlayerVariables(entity);
+						capability.syncPlayerVariables(entityiterator);
 					});
 				}
 				{
 					double _setval = 0;
-					entity.getCapability(VlAbyssModVariables.PLAYER_VARIABLES_CAPABILITY, null).ifPresent(capability -> {
+					entityiterator.getCapability(VlAbyssModVariables.PLAYER_VARIABLES_CAPABILITY, null).ifPresent(capability -> {
 						capability.opcao_mantra3 = _setval;
-						capability.syncPlayerVariables(entity);
+						capability.syncPlayerVariables(entityiterator);
 					});
 				}
 			}

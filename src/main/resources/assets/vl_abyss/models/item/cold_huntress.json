@@ -1,0 +1,7 @@
+{
+  "parent": "vl_abyss:custom/gun",
+  "textures": {
+    "0": "vl_abyss:block/coldhunter",
+    "particle": "vl_abyss:item/coldhunter"
+  }
+}

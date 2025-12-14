@@ -1,0 +1,7 @@
+{
+  "parent": "vl_abyss:custom/great_katana",
+  "textures": {
+    "0": "vl_abyss:block/redblade",
+    "particle": "vl_abyss:item/redblade"
+  }
+}

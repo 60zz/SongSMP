@@ -16,8 +16,8 @@ import net.mcreator.vlabyss.client.model.Modelechoofshadows;
 public class VlAbyssModModels {
 	@SubscribeEvent
 	public static void registerLayerDefinitions(EntityRenderersEvent.RegisterLayerDefinitions event) {
-		event.registerLayerDefinition(Modelechoofshadows.LAYER_LOCATION, Modelechoofshadows::createBodyLayer);
-		event.registerLayerDefinition(Modelfireeruptionentity.LAYER_LOCATION, Modelfireeruptionentity::createBodyLayer);
 		event.registerLayerDefinition(Modelstivi.LAYER_LOCATION, Modelstivi::createBodyLayer);
+		event.registerLayerDefinition(Modelfireeruptionentity.LAYER_LOCATION, Modelfireeruptionentity::createBodyLayer);
+		event.registerLayerDefinition(Modelechoofshadows.LAYER_LOCATION, Modelechoofshadows::createBodyLayer);
 	}
 }

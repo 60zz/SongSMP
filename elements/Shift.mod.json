@@ -1,0 +1,15 @@
+{
+  "_fv": 79,
+  "_type": "keybind",
+  "definition": {
+    "triggerKey": "LSHIFT",
+    "keyBindingName": "Tecla de Alteração Reversa",
+    "keyBindingCategoryKey": "mantra",
+    "onKeyPressed": {
+      "name": "ShiftOnKeyPressed"
+    },
+    "onKeyReleased": {
+      "name": "ShiftOnKeyReleased"
+    }
+  }
+}

@@ -1,0 +1,7 @@
+{
+  "parent": "vl_abyss:custom/bone_dagger",
+  "textures": {
+    "0": "vl_abyss:block/abyssiondagger",
+    "particle": "vl_abyss:item/abyssiondagger"
+  }
+}

@@ -1,0 +1,7 @@
+{
+  "parent": "vl_abyss:custom/elemental_sword_dark",
+  "textures": {
+    "2": "vl_abyss:block/darknesssword",
+    "particle": "vl_abyss:item/darknesssword"
+  }
+}

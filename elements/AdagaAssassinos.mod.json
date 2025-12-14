@@ -1,53 +1,36 @@
 {
   "_fv": 79,
-  "_type": "animateditem",
+  "_type": "tool",
   "definition": {
-    "renderType": 0,
-    "texture": "adagaassassinotxt",
-    "name": "Adaga dos Assassinos",
-    "idle": "model.animation.0",
-    "rarity": "EPIC",
-    "displaySettings": "adaga_assassina.json",
-    "leftArm": "",
-    "rightArm": "",
-    "creativeTab": {
-      "value": "CUSTOM:VlAbyssArmas"
-    },
-    "creativeTabs": [],
-    "firstPersonArms": false,
-    "stackSize": 1,
-    "enchantability": 10,
-    "useDuration": 0,
-    "toolType": 1.0,
-    "damageCount": 1853,
-    "recipeRemainder": {
-      "value": ""
-    },
-    "destroyAnyBlock": false,
-    "immuneToFire": false,
-    "stayInGridWhenCrafting": false,
-    "enableArmPose": false,
-    "damageOnCrafting": false,
-    "enableMeleeDamage": true,
-    "damageVsEntity": 9.0,
+    "toolType": "Sword",
+    "renderType": 1,
+    "blockingRenderType": 0,
+    "texture": "assassindagger",
+    "customModelName": "shadow_dager:default",
+    "blockingModelName": "Normal blocking",
+    "guiTexture": "adaga_assassinos",
+    "name": "§dAdaga Assassinos",
     "specialInformation": {
       "fixedValue": []
     },
-    "hasGlow": false,
-    "guiBoundTo": "<NONE>",
-    "inventorySize": 9,
-    "inventoryStackSize": 64,
-    "isFood": false,
-    "nutritionalValue": 4,
-    "saturation": 0.3,
-    "eatResultItem": {
-      "value": ""
+    "creativeTabs": [
+      {
+        "value": "CUSTOM:VlAbyssArmas"
+      }
+    ],
+    "efficiency": 4.0,
+    "attackSpeed": 2.0,
+    "enchantability": 10,
+    "damageVsEntity": 10.0,
+    "usageCount": 1853,
+    "glowCondition": {
+      "fixedValue": false
     },
-    "isMeat": false,
-    "isAlwaysEdible": false,
-    "animation": "none",
-    "normal": "adaga_assassina.geo.json",
-    "armPoseList": [],
-    "disableSwing": false
+    "repairItems": [],
+    "immuneToFire": false,
+    "blockDropsTier": "DIAMOND",
+    "blocksAffected": [],
+    "stayInGridWhenCrafting": false,
+    "damageOnCrafting": false
   }
 }

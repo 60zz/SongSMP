@@ -1,0 +1,7 @@
+{
+  "parent": "vl_abyss:custom/stone_sword",
+  "textures": {
+    "0": "vl_abyss:block/soulslayer",
+    "particle": "vl_abyss:item/soulslayer"
+  }
+}

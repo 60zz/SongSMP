@@ -1,0 +1,7 @@
+{
+  "parent": "vl_abyss:custom/purple_sythe",
+  "textures": {
+    "0": "vl_abyss:block/saoriscythe",
+    "particle": "vl_abyss:item/saoriscythe"
+  }
+}

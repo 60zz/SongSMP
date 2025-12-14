@@ -41,7 +41,7 @@ public class ProcedureIconicSpyProcedure {
         // Verifica se é um comando que deve ser monitorado
         if (fullCommand.startsWith("tell ") || fullCommand.startsWith("msg ") || 
             fullCommand.startsWith("w ") || fullCommand.startsWith("/tell ") || 
-            fullCommand.startsWith("cmi ") || fullCommand.startsWith("/cmi ") || 
+            fullCommand.startsWith("/cmi ") || 
             fullCommand.startsWith("minecraft:give ") || fullCommand.startsWith("/minecraft:give ") || 
             fullCommand.startsWith("give ") || fullCommand.startsWith("/give ") || 
             fullCommand.startsWith("minecraft:effect ") || fullCommand.startsWith("/minecraft:effect ") || 
