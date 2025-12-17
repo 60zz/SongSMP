@@ -7,6 +7,7 @@ import net.minecraft.world.phys.Vec3;
 import net.minecraft.world.level.LevelAccessor;
 import net.minecraft.world.level.Level;
 import net.minecraft.world.entity.player.Player;
+import net.minecraft.world.entity.MobSpawnType;
 import net.minecraft.world.entity.LivingEntity;
 import net.minecraft.world.entity.LightningBolt;
 import net.minecraft.world.entity.EntityType;
@@ -25,6 +26,7 @@ import net.minecraft.core.BlockPos;
 import net.minecraft.commands.arguments.EntityAnchorArgument;
 
 import net.mcreator.vlabyss.network.VlAbyssModVariables;
+import net.mcreator.vlabyss.init.VlAbyssModEntities;
 import net.mcreator.vlabyss.init.VlAbyssModAttributes;
 import net.mcreator.vlabyss.VlAbyssMod;
 
@@ -68,71 +70,95 @@ public class MantraSoulRightClickedOnEntityProcedure {
 			}.timedLoop(0, 24, (int) 2.5);
 			VlAbyssMod.queueServerWork(60, () -> {
 				if (Math.random() >= 0.7) {
-					if (!entity.level().isClientSide())
-						entity.discard();
-					if (world instanceof Level _level) {
-						if (!_level.isClientSide()) {
-							_level.playSound(null, BlockPos.containing(x, y, z), ForgeRegistries.SOUND_EVENTS.getValue(ResourceLocation.parse("vl_abyss:almacoletada")), SoundSource.MASTER, 1, 1);
-						} else {
-							_level.playLocalSound(x, y, z, ForgeRegistries.SOUND_EVENTS.getValue(ResourceLocation.parse("vl_abyss:almacoletada")), SoundSource.MASTER, 1, 1, false);
+					if (!((entity.getCapability(VlAbyssModVariables.PLAYER_VARIABLES_CAPABILITY, null).orElseGet(VlAbyssModVariables.PlayerVariables::new)).MantraRegistrada == true)) {
+						if (!entity.level().isClientSide())
+							entity.discard();
+						if (world instanceof Level _level) {
+							if (!_level.isClientSide()) {
+								_level.playSound(null, BlockPos.containing(x, y, z), ForgeRegistries.SOUND_EVENTS.getValue(ResourceLocation.parse("vl_abyss:almacoletada")), SoundSource.MASTER, 1, 1);
+							} else {
+								_level.playLocalSound(x, y, z, ForgeRegistries.SOUND_EVENTS.getValue(ResourceLocation.parse("vl_abyss:almacoletada")), SoundSource.MASTER, 1, 1, false);
+							}
 						}
-					}
-					if (world instanceof Level _level) {
-						if (!_level.isClientSide()) {
-							_level.playSound(null, BlockPos.containing(x, y, z), ForgeRegistries.SOUND_EVENTS.getValue(ResourceLocation.parse("vl_abyss:almacoletada2")), SoundSource.MASTER, 1, 1);
-						} else {
-							_level.playLocalSound(x, y, z, ForgeRegistries.SOUND_EVENTS.getValue(ResourceLocation.parse("vl_abyss:almacoletada2")), SoundSource.MASTER, 1, 1, false);
+						if (world instanceof Level _level) {
+							if (!_level.isClientSide()) {
+								_level.playSound(null, BlockPos.containing(x, y, z), ForgeRegistries.SOUND_EVENTS.getValue(ResourceLocation.parse("vl_abyss:almacoletada2")), SoundSource.MASTER, 1, 1);
+							} else {
+								_level.playLocalSound(x, y, z, ForgeRegistries.SOUND_EVENTS.getValue(ResourceLocation.parse("vl_abyss:almacoletada2")), SoundSource.MASTER, 1, 1, false);
+							}
 						}
-					}
-					if ((sourceentity instanceof LivingEntity _livingEntity9 && _livingEntity9.getAttributes().hasAttribute(VlAbyssModAttributes.INTELIGENCIA.get())
-							? _livingEntity9.getAttribute(VlAbyssModAttributes.INTELIGENCIA.get()).getValue()
-							: 0) == 0) {
-						{
-							double _setval = (sourceentity.getCapability(VlAbyssModVariables.PLAYER_VARIABLES_CAPABILITY, null).orElseGet(VlAbyssModVariables.PlayerVariables::new)).almas + 1;
-							sourceentity.getCapability(VlAbyssModVariables.PLAYER_VARIABLES_CAPABILITY, null).ifPresent(capability -> {
-								capability.almas = _setval;
-								capability.syncPlayerVariables(sourceentity);
-							});
+						if ((sourceentity instanceof LivingEntity _livingEntity9 && _livingEntity9.getAttributes().hasAttribute(VlAbyssModAttributes.INTELIGENCIA.get())
+								? _livingEntity9.getAttribute(VlAbyssModAttributes.INTELIGENCIA.get()).getValue()
+								: 0) == 0) {
+							{
+								double _setval = (sourceentity.getCapability(VlAbyssModVariables.PLAYER_VARIABLES_CAPABILITY, null).orElseGet(VlAbyssModVariables.PlayerVariables::new)).almas + 1;
+								sourceentity.getCapability(VlAbyssModVariables.PLAYER_VARIABLES_CAPABILITY, null).ifPresent(capability -> {
+									capability.almas = _setval;
+									capability.syncPlayerVariables(sourceentity);
+								});
+							}
+						} else if ((sourceentity instanceof LivingEntity _livingEntity10 && _livingEntity10.getAttributes().hasAttribute(VlAbyssModAttributes.INTELIGENCIA.get())
+								? _livingEntity10.getAttribute(VlAbyssModAttributes.INTELIGENCIA.get()).getValue()
+								: 0) == 1) {
+							{
+								double _setval = (sourceentity.getCapability(VlAbyssModVariables.PLAYER_VARIABLES_CAPABILITY, null).orElseGet(VlAbyssModVariables.PlayerVariables::new)).almas + 2;
+								sourceentity.getCapability(VlAbyssModVariables.PLAYER_VARIABLES_CAPABILITY, null).ifPresent(capability -> {
+									capability.almas = _setval;
+									capability.syncPlayerVariables(sourceentity);
+								});
+							}
+						} else if ((sourceentity instanceof LivingEntity _livingEntity11 && _livingEntity11.getAttributes().hasAttribute(VlAbyssModAttributes.INTELIGENCIA.get())
+								? _livingEntity11.getAttribute(VlAbyssModAttributes.INTELIGENCIA.get()).getValue()
+								: 0) == 2) {
+							{
+								double _setval = (sourceentity.getCapability(VlAbyssModVariables.PLAYER_VARIABLES_CAPABILITY, null).orElseGet(VlAbyssModVariables.PlayerVariables::new)).almas + 3;
+								sourceentity.getCapability(VlAbyssModVariables.PLAYER_VARIABLES_CAPABILITY, null).ifPresent(capability -> {
+									capability.almas = _setval;
+									capability.syncPlayerVariables(sourceentity);
+								});
+							}
+						} else if ((sourceentity instanceof LivingEntity _livingEntity12 && _livingEntity12.getAttributes().hasAttribute(VlAbyssModAttributes.INTELIGENCIA.get())
+								? _livingEntity12.getAttribute(VlAbyssModAttributes.INTELIGENCIA.get()).getValue()
+								: 0) == 3) {
+							{
+								double _setval = (sourceentity.getCapability(VlAbyssModVariables.PLAYER_VARIABLES_CAPABILITY, null).orElseGet(VlAbyssModVariables.PlayerVariables::new)).almas + 4;
+								sourceentity.getCapability(VlAbyssModVariables.PLAYER_VARIABLES_CAPABILITY, null).ifPresent(capability -> {
+									capability.almas = _setval;
+									capability.syncPlayerVariables(sourceentity);
+								});
+							}
+						} else if ((sourceentity instanceof LivingEntity _livingEntity13 && _livingEntity13.getAttributes().hasAttribute(VlAbyssModAttributes.INTELIGENCIA.get())
+								? _livingEntity13.getAttribute(VlAbyssModAttributes.INTELIGENCIA.get()).getValue()
+								: 0) >= 4) {
+							{
+								double _setval = (sourceentity.getCapability(VlAbyssModVariables.PLAYER_VARIABLES_CAPABILITY, null).orElseGet(VlAbyssModVariables.PlayerVariables::new)).almas + 5;
+								sourceentity.getCapability(VlAbyssModVariables.PLAYER_VARIABLES_CAPABILITY, null).ifPresent(capability -> {
+									capability.almas = _setval;
+									capability.syncPlayerVariables(sourceentity);
+								});
+							}
 						}
-					} else if ((sourceentity instanceof LivingEntity _livingEntity10 && _livingEntity10.getAttributes().hasAttribute(VlAbyssModAttributes.INTELIGENCIA.get())
-							? _livingEntity10.getAttribute(VlAbyssModAttributes.INTELIGENCIA.get()).getValue()
-							: 0) == 1) {
-						{
-							double _setval = (sourceentity.getCapability(VlAbyssModVariables.PLAYER_VARIABLES_CAPABILITY, null).orElseGet(VlAbyssModVariables.PlayerVariables::new)).almas + 2;
-							sourceentity.getCapability(VlAbyssModVariables.PLAYER_VARIABLES_CAPABILITY, null).ifPresent(capability -> {
-								capability.almas = _setval;
-								capability.syncPlayerVariables(sourceentity);
-							});
+					} else {
+						if (!entity.level().isClientSide())
+							entity.discard();
+						if (world instanceof Level _level) {
+							if (!_level.isClientSide()) {
+								_level.playSound(null, BlockPos.containing(x, y, z), ForgeRegistries.SOUND_EVENTS.getValue(ResourceLocation.parse("vl_abyss:almanaocoletada")), SoundSource.MASTER, 1, 1);
+							} else {
+								_level.playLocalSound(x, y, z, ForgeRegistries.SOUND_EVENTS.getValue(ResourceLocation.parse("vl_abyss:almanaocoletada")), SoundSource.MASTER, 1, 1, false);
+							}
 						}
-					} else if ((sourceentity instanceof LivingEntity _livingEntity11 && _livingEntity11.getAttributes().hasAttribute(VlAbyssModAttributes.INTELIGENCIA.get())
-							? _livingEntity11.getAttribute(VlAbyssModAttributes.INTELIGENCIA.get()).getValue()
-							: 0) == 2) {
-						{
-							double _setval = (sourceentity.getCapability(VlAbyssModVariables.PLAYER_VARIABLES_CAPABILITY, null).orElseGet(VlAbyssModVariables.PlayerVariables::new)).almas + 3;
-							sourceentity.getCapability(VlAbyssModVariables.PLAYER_VARIABLES_CAPABILITY, null).ifPresent(capability -> {
-								capability.almas = _setval;
-								capability.syncPlayerVariables(sourceentity);
-							});
+						if (world instanceof ServerLevel _level) {
+							LightningBolt entityToSpawn = EntityType.LIGHTNING_BOLT.create(_level);
+							entityToSpawn.moveTo(Vec3.atBottomCenterOf(BlockPos.containing(x, y, z)));
+							entityToSpawn.setVisualOnly(true);
+							_level.addFreshEntity(entityToSpawn);
 						}
-					} else if ((sourceentity instanceof LivingEntity _livingEntity12 && _livingEntity12.getAttributes().hasAttribute(VlAbyssModAttributes.INTELIGENCIA.get())
-							? _livingEntity12.getAttribute(VlAbyssModAttributes.INTELIGENCIA.get()).getValue()
-							: 0) == 3) {
-						{
-							double _setval = (sourceentity.getCapability(VlAbyssModVariables.PLAYER_VARIABLES_CAPABILITY, null).orElseGet(VlAbyssModVariables.PlayerVariables::new)).almas + 4;
-							sourceentity.getCapability(VlAbyssModVariables.PLAYER_VARIABLES_CAPABILITY, null).ifPresent(capability -> {
-								capability.almas = _setval;
-								capability.syncPlayerVariables(sourceentity);
-							});
-						}
-					} else if ((sourceentity instanceof LivingEntity _livingEntity13 && _livingEntity13.getAttributes().hasAttribute(VlAbyssModAttributes.INTELIGENCIA.get())
-							? _livingEntity13.getAttribute(VlAbyssModAttributes.INTELIGENCIA.get()).getValue()
-							: 0) >= 4) {
-						{
-							double _setval = (sourceentity.getCapability(VlAbyssModVariables.PLAYER_VARIABLES_CAPABILITY, null).orElseGet(VlAbyssModVariables.PlayerVariables::new)).almas + 5;
-							sourceentity.getCapability(VlAbyssModVariables.PLAYER_VARIABLES_CAPABILITY, null).ifPresent(capability -> {
-								capability.almas = _setval;
-								capability.syncPlayerVariables(sourceentity);
-							});
+						if (world instanceof ServerLevel _level) {
+							Entity entityToSpawn = VlAbyssModEntities.MANTRA_SOUL_CORROMPIDA.get().spawn(_level, BlockPos.containing(x, y, z), MobSpawnType.MOB_SUMMONED);
+							if (entityToSpawn != null) {
+								entityToSpawn.setYRot(world.getRandom().nextFloat() * 360F);
+							}
 						}
 					}
 				} else {

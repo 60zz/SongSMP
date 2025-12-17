@@ -120,7 +120,7 @@ public class VlAbyssModVariables {
 			clone.opcao_mantra2 = original.opcao_mantra2;
 			clone.opcao_mantra3 = original.opcao_mantra3;
 			clone.lctrlativo = original.lctrlativo;
-			clone.lshift = original.lshift;
+			clone.procurado = original.procurado;
 			if (!event.isWasDeath()) {
 			}
 		}
@@ -211,7 +211,7 @@ public class VlAbyssModVariables {
 		public double opcao_mantra2 = 0;
 		public double opcao_mantra3 = 0;
 		public boolean lctrlativo = false;
-		public boolean lshift = false;
+		public boolean procurado = false;
 
 		public void syncPlayerVariables(Entity entity) {
 			if (entity instanceof ServerPlayer serverPlayer)
@@ -274,7 +274,7 @@ public class VlAbyssModVariables {
 			nbt.putDouble("opcao_mantra2", opcao_mantra2);
 			nbt.putDouble("opcao_mantra3", opcao_mantra3);
 			nbt.putBoolean("lctrlativo", lctrlativo);
-			nbt.putBoolean("lshift", lshift);
+			nbt.putBoolean("procurado", procurado);
 			return nbt;
 		}
 
@@ -334,7 +334,7 @@ public class VlAbyssModVariables {
 			opcao_mantra2 = nbt.getDouble("opcao_mantra2");
 			opcao_mantra3 = nbt.getDouble("opcao_mantra3");
 			lctrlativo = nbt.getBoolean("lctrlativo");
-			lshift = nbt.getBoolean("lshift");
+			procurado = nbt.getBoolean("procurado");
 		}
 	}
 
@@ -413,7 +413,7 @@ public class VlAbyssModVariables {
 					variables.opcao_mantra2 = message.data.opcao_mantra2;
 					variables.opcao_mantra3 = message.data.opcao_mantra3;
 					variables.lctrlativo = message.data.lctrlativo;
-					variables.lshift = message.data.lshift;
+					variables.procurado = message.data.procurado;
 				}
 			});
 			context.setPacketHandled(true);

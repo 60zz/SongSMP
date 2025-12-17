@@ -34,7 +34,7 @@ public class InfoSaoriScytheProcedure {
 			return;
 		if (itemstack.getItem() == VlAbyssModItems.PURPLE_SCYTHE.get()) {
 			if (Screen.hasShiftDown()) {
-				tooltip.add(1, Component.literal("\u00A78\u2014 S\u00C1ORI, uma foice embutida com a forca do vazio, podendo ser uma arma muito perigosa em m\u00E3os erradas..."));
+				tooltip.add(1, Component.literal("\u00A78\u2014 S\u00C1ORI, uma foice embutida com a for\u00E7a do vazio, podendo ser uma arma muito perigosa em m\u00E3os erradas..."));
 			} else {
 				tooltip.add(1, Component.literal("\u00A78Segure SHIFT para mais informa\u00E7\u00F5es"));
 			}

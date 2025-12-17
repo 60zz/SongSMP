@@ -56,19 +56,19 @@ public class SeletorDeClassesGuiButtonMessage {
 			return;
 		if (buttonID == 0) {
 
-			TanqueClasseGuiProcedure.execute(entity);
+			TanqueClasseGuiProcedure.execute(world, x, y, z, entity);
 		}
 		if (buttonID == 1) {
 
-			AssassinoClasseGuiProcedure.execute(entity);
+			AssassinoClasseGuiProcedure.execute(world, x, y, z, entity);
 		}
 		if (buttonID == 2) {
 
-			GuerreiroClasseGuiProcedure.execute(entity);
+			GuerreiroClasseGuiProcedure.execute(world, x, y, z, entity);
 		}
 		if (buttonID == 3) {
 
-			BerserkerClasseGuiProcedure.execute(entity);
+			BerserkerClasseGuiProcedure.execute(world, x, y, z, entity);
 		}
 	}
 

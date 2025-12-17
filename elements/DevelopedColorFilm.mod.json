@@ -13,37 +13,37 @@
     "recipeShapeless": false,
     "recipeSlots": [
       {
-        "value": ""
+        "value": "Blocks.STONE#4"
       },
       {
-        "value": "CUSTOM:EssenciaAbismo"
-      },
-      {
-        "value": ""
-      },
-      {
-        "value": "CUSTOM:EssenciaAbismo"
-      },
-      {
-        "value": "Items.LEATHER"
-      },
-      {
-        "value": "CUSTOM:EssenciaAbismo"
+        "value": "Items.GUNPOWDER"
       },
       {
         "value": ""
       },
       {
-        "value": "CUSTOM:EssenciaAbismo"
+        "value": ""
+      },
+      {
+        "value": "Blocks.STONE#2"
+      },
+      {
+        "value": ""
+      },
+      {
+        "value": ""
+      },
+      {
+        "value": ""
       },
       {
         "value": ""
       }
     ],
     "recipeReturnStack": {
-      "value": "CUSTOM:ArtifactsBundle"
+      "value": "Blocks.POLISHED_DIORITE_STAIRS"
     },
-    "name": "essencia_abismo",
+    "name": "developed_color_film",
     "namespace": "mod"
   }
 }

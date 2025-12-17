@@ -65,4 +65,6 @@ public class VlAbyssModSounds {
 	public static final RegistryObject<SoundEvent> SHADEBACKSTAB = REGISTRY.register("shadebackstab", () -> SoundEvent.createVariableRangeEvent(ResourceLocation.fromNamespaceAndPath("vl_abyss", "shadebackstab")));
 	public static final RegistryObject<SoundEvent> BODYFIREMANTRA = REGISTRY.register("bodyfiremantra", () -> SoundEvent.createVariableRangeEvent(ResourceLocation.fromNamespaceAndPath("vl_abyss", "bodyfiremantra")));
 	public static final RegistryObject<SoundEvent> FIREERUPTIONMANTRA = REGISTRY.register("fireeruptionmantra", () -> SoundEvent.createVariableRangeEvent(ResourceLocation.fromNamespaceAndPath("vl_abyss", "fireeruptionmantra")));
+	public static final RegistryObject<SoundEvent> PURGESOUND = REGISTRY.register("purgesound", () -> SoundEvent.createVariableRangeEvent(ResourceLocation.fromNamespaceAndPath("vl_abyss", "purgesound")));
+	public static final RegistryObject<SoundEvent> LIGHTTELEPORT = REGISTRY.register("lightteleport", () -> SoundEvent.createVariableRangeEvent(ResourceLocation.fromNamespaceAndPath("vl_abyss", "lightteleport")));
 }

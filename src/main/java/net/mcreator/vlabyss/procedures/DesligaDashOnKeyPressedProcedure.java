@@ -8,7 +8,6 @@ import net.minecraft.server.level.ServerPlayer;
 import net.minecraft.resources.ResourceLocation;
 import net.minecraft.network.protocol.game.ClientboundUpdateAdvancementsPacket;
 import net.minecraft.network.chat.Component;
-import net.minecraft.client.Minecraft;
 import net.minecraft.advancements.critereon.ImpossibleTrigger;
 import net.minecraft.advancements.FrameType;
 import net.minecraft.advancements.DisplayInfo;
@@ -27,7 +26,7 @@ public class DesligaDashOnKeyPressedProcedure {
 		if (entity == null)
 			return;
 		if ((entity.getCapability(VlAbyssModVariables.PLAYER_VARIABLES_CAPABILITY, null).orElseGet(VlAbyssModVariables.PlayerVariables::new)).dash_reto == true) {
-			if (Minecraft.getInstance().options.keyShift.isDown()) {
+			if (entity.isShiftKeyDown()) {
 				if ((entity.getCapability(VlAbyssModVariables.PLAYER_VARIABLES_CAPABILITY, null).orElseGet(VlAbyssModVariables.PlayerVariables::new)).desligadash == true) {
 					{
 						boolean _setval = false;
@@ -39,7 +38,7 @@ public class DesligaDashOnKeyPressedProcedure {
 					{
 						Entity _entity = entity;
 						if (_entity instanceof ServerPlayer _player) {
-							ItemStack _icon = new ItemStack(ForgeRegistries.ITEMS.getValue(ResourceLocation.tryParse("vl_abyss:liberacao_mantra")));
+							ItemStack _icon = new ItemStack(ForgeRegistries.ITEMS.getValue(ResourceLocation.tryParse("vl_abyss:desbloqueio_esquiva")));
 							Component _title = Component.literal("title");
 							Component _description = Component.literal("Dash Desligado");
 							ResourceLocation _advId = ResourceLocation.tryParse("custom:toast_" + System.currentTimeMillis());
@@ -72,7 +71,7 @@ public class DesligaDashOnKeyPressedProcedure {
 					{
 						Entity _entity = entity;
 						if (_entity instanceof ServerPlayer _player) {
-							ItemStack _icon = new ItemStack(ForgeRegistries.ITEMS.getValue(ResourceLocation.tryParse("vl_abyss:liberacao_mantra")));
+							ItemStack _icon = new ItemStack(ForgeRegistries.ITEMS.getValue(ResourceLocation.tryParse("vl_abyss:desbloqueio_esquiva")));
 							Component _title = Component.literal("title");
 							Component _description = Component.literal("Dash Ligado");
 							ResourceLocation _advId = ResourceLocation.tryParse("custom:toast_" + System.currentTimeMillis());
@@ -99,7 +98,7 @@ public class DesligaDashOnKeyPressedProcedure {
 				{
 					Entity _entity = entity;
 					if (_entity instanceof ServerPlayer _player) {
-						ItemStack _icon = new ItemStack(ForgeRegistries.ITEMS.getValue(ResourceLocation.tryParse("vl_abyss:liberacao_mantra")));
+						ItemStack _icon = new ItemStack(ForgeRegistries.ITEMS.getValue(ResourceLocation.tryParse("vl_abyss:desbloqueio_esquiva")));
 						Component _title = Component.literal("title");
 						Component _description = Component.literal("Segure SHIFT para funcionar");
 						ResourceLocation _advId = ResourceLocation.tryParse("custom:toast_" + System.currentTimeMillis());

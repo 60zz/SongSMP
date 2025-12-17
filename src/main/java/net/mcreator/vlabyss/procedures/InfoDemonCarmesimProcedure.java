@@ -34,7 +34,7 @@ public class InfoDemonCarmesimProcedure {
 			return;
 		if (itemstack.getItem() == VlAbyssModItems.CRIMSON_DEMON.get()) {
 			if (Screen.hasShiftDown()) {
-				tooltip.add(1, Component.literal("\u00A78\u2014 "));
+				tooltip.add(1, Component.literal("\u00A78\u2014 \u201CRubro vento, riso velado, a raposa espreita o condenado. Quem o abre chama a sorte, quem o fecha engana a morte.\u201D"));
 			} else {
 				tooltip.add(1, Component.literal("\u00A78Segure SHIFT para mais informa\u00E7\u00F5es"));
 			}

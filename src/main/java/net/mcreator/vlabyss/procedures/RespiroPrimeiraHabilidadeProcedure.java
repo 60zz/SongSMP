@@ -185,7 +185,7 @@ public class RespiroPrimeiraHabilidadeProcedure {
 							}
 						}
 					});
-					if (Minecraft.getInstance().options.keyShift.isDown()) {
+					if (entity.isShiftKeyDown()) {
 						entity.setDeltaMovement(new Vec3(0, 1, 0));
 						if (entity instanceof LivingEntity _entity && !_entity.level().isClientSide())
 							_entity.addEffect(new MobEffectInstance(MobEffects.SLOW_FALLING, 40, 2));

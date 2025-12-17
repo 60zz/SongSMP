@@ -60,7 +60,7 @@ public class PlayerDeuRespawnProcedure {
             return;
         }
         
-        if ((entity.getCapability(VlAbyssModVariables.PLAYER_VARIABLES_CAPABILITY, null).orElse(new VlAbyssModVariables.PlayerVariables())).vidas == 0) {
+        if ((entity.getCapability(VlAbyssModVariables.PLAYER_VARIABLES_CAPABILITY, null).orElse(new VlAbyssModVariables.PlayerVariables())).vidas == -1) {
             String playerName = entity.getName().getString();
             
             CompletableFuture.runAsync(() -> sendDiscordWebhook(playerName));

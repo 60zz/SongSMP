@@ -406,5 +406,21 @@
         "stream": false
       }
     ]
+  },
+  "purgesound": {
+    "sounds": [
+      {
+        "name": "vl_abyss:expurgoativo",
+        "stream": false
+      }
+    ]
+  },
+  "lightteleport": {
+    "sounds": [
+      {
+        "name": "vl_abyss:teleportlight",
+        "stream": false
+      }
+    ]
   }
 }

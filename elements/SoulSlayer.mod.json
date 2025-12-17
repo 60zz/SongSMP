@@ -24,13 +24,20 @@
     "damageVsEntity": 15.0,
     "usageCount": 1561,
     "glowCondition": {
-      "fixedValue": false
+      "fixedValue": false,
+      "name": "SoulSlayerHasItemGlowingEffect"
     },
     "repairItems": [],
     "immuneToFire": false,
     "blockDropsTier": "DIAMOND",
     "blocksAffected": [],
     "stayInGridWhenCrafting": false,
-    "damageOnCrafting": false
+    "damageOnCrafting": false,
+    "onRightClickedInAir": {
+      "name": "SoulSlayerRightclicked"
+    },
+    "onEntityHitWith": {
+      "name": "SoulSlayerLivingEntityIsHitWithTool"
+    }
   }
 }

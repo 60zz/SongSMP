@@ -39,127 +39,227 @@ public class LuzSegundaHabilidadeProcedure {
 				&& (entity.getCapability(VlAbyssModVariables.PLAYER_VARIABLES_CAPABILITY, null).orElseGet(VlAbyssModVariables.PlayerVariables::new)).MantraRegistrada == true
 				&& (entity.getCapability(VlAbyssModVariables.PLAYER_VARIABLES_CAPABILITY, null).orElseGet(VlAbyssModVariables.PlayerVariables::new)).habilidade2 == true) {
 			if (!((entity.getCapability(VlAbyssModVariables.PLAYER_VARIABLES_CAPABILITY, null).orElseGet(VlAbyssModVariables.PlayerVariables::new)).mantra2_cooldown > 0)) {
-				if ((entity.getCapability(VlAbyssModVariables.PLAYER_VARIABLES_CAPABILITY, null).orElseGet(VlAbyssModVariables.PlayerVariables::new)).Ethir >= 130) {
-					if (Minecraft.getInstance().options.keyShift.isDown()) {
-						if (!world.getEntitiesOfClass(LivingEntity.class, new AABB(Vec3.ZERO, Vec3.ZERO).move(new Vec3(
-								(entity.level().clip(new ClipContext(entity.getEyePosition(1f), entity.getEyePosition(1f).add(entity.getViewVector(1f).scale(5)), ClipContext.Block.OUTLINE, ClipContext.Fluid.NONE, entity)).getBlockPos().getX()),
-								(entity.level().clip(new ClipContext(entity.getEyePosition(1f), entity.getEyePosition(1f).add(entity.getViewVector(1f).scale(5)), ClipContext.Block.OUTLINE, ClipContext.Fluid.NONE, entity)).getBlockPos().getY()),
-								(entity.level().clip(new ClipContext(entity.getEyePosition(1f), entity.getEyePosition(1f).add(entity.getViewVector(1f).scale(5)), ClipContext.Block.OUTLINE, ClipContext.Fluid.NONE, entity)).getBlockPos().getZ())))
-								.inflate(5 / 2d), e -> true).isEmpty()) {
-							target = findEntityInWorldRange(world, LivingEntity.class,
+				if ((entity.getCapability(VlAbyssModVariables.PLAYER_VARIABLES_CAPABILITY, null).orElseGet(VlAbyssModVariables.PlayerVariables::new)).opcao_mantra2 == 1) {
+					if ((entity.getCapability(VlAbyssModVariables.PLAYER_VARIABLES_CAPABILITY, null).orElseGet(VlAbyssModVariables.PlayerVariables::new)).Ethir >= 130) {
+						if (entity.isShiftKeyDown()) {
+							if (!world.getEntitiesOfClass(LivingEntity.class, new AABB(Vec3.ZERO, Vec3.ZERO).move(new Vec3(
 									(entity.level().clip(new ClipContext(entity.getEyePosition(1f), entity.getEyePosition(1f).add(entity.getViewVector(1f).scale(5)), ClipContext.Block.OUTLINE, ClipContext.Fluid.NONE, entity)).getBlockPos().getX()),
 									(entity.level().clip(new ClipContext(entity.getEyePosition(1f), entity.getEyePosition(1f).add(entity.getViewVector(1f).scale(5)), ClipContext.Block.OUTLINE, ClipContext.Fluid.NONE, entity)).getBlockPos().getY()),
-									(entity.level().clip(new ClipContext(entity.getEyePosition(1f), entity.getEyePosition(1f).add(entity.getViewVector(1f).scale(5)), ClipContext.Block.OUTLINE, ClipContext.Fluid.NONE, entity)).getBlockPos().getZ()),
-									5);
-							if (!(target == null)) {
-								if (target instanceof LivingEntity _entity && !_entity.level().isClientSide())
-									_entity.addEffect(new MobEffectInstance(VlAbyssModMobEffects.LAST_HOPE.get(), 160, 0));
-								{
-									double _setval = Math.round(40 / (entity instanceof LivingEntity _livingEntity11 && _livingEntity11.getAttributes().hasAttribute(VlAbyssModAttributes.ABILITY_COOLDOWN_REDUCTION.get())
-											? _livingEntity11.getAttribute(VlAbyssModAttributes.ABILITY_COOLDOWN_REDUCTION.get()).getValue()
-											: 0));
-									entity.getCapability(VlAbyssModVariables.PLAYER_VARIABLES_CAPABILITY, null).ifPresent(capability -> {
-										capability.mantra2_cooldown = _setval;
-										capability.syncPlayerVariables(entity);
-									});
-								}
-								if (world.isClientSide()) {
-									SetupAnimationsProcedure.setAnimationClientside((Player) entity, "luzprimeira", false);
-								}
-								if (!world.isClientSide()) {
-									if (entity instanceof Player && world instanceof ServerLevel srvLvl_) {
-										List<Connection> connections = srvLvl_.getServer().getConnection().getConnections();
-										synchronized (connections) {
-											Iterator<Connection> iterator = connections.iterator();
-											while (iterator.hasNext()) {
-												Connection connection = iterator.next();
-												if (!connection.isConnecting() && connection.isConnected())
-													VlAbyssMod.PACKET_HANDLER.sendTo(new SetupAnimationsProcedure.VlAbyssModAnimationMessage(Component.literal("luzprimeira"), entity.getId(), false), connection, NetworkDirection.PLAY_TO_CLIENT);
+									(entity.level().clip(new ClipContext(entity.getEyePosition(1f), entity.getEyePosition(1f).add(entity.getViewVector(1f).scale(5)), ClipContext.Block.OUTLINE, ClipContext.Fluid.NONE, entity)).getBlockPos().getZ())))
+									.inflate(5 / 2d), e -> true).isEmpty()) {
+								target = findEntityInWorldRange(world, LivingEntity.class,
+										(entity.level().clip(new ClipContext(entity.getEyePosition(1f), entity.getEyePosition(1f).add(entity.getViewVector(1f).scale(5)), ClipContext.Block.OUTLINE, ClipContext.Fluid.NONE, entity)).getBlockPos()
+												.getX()),
+										(entity.level().clip(new ClipContext(entity.getEyePosition(1f), entity.getEyePosition(1f).add(entity.getViewVector(1f).scale(5)), ClipContext.Block.OUTLINE, ClipContext.Fluid.NONE, entity)).getBlockPos()
+												.getY()),
+										(entity.level().clip(new ClipContext(entity.getEyePosition(1f), entity.getEyePosition(1f).add(entity.getViewVector(1f).scale(5)), ClipContext.Block.OUTLINE, ClipContext.Fluid.NONE, entity)).getBlockPos()
+												.getZ()),
+										5);
+								if (!(target == null)) {
+									if (target instanceof LivingEntity _entity && !_entity.level().isClientSide())
+										_entity.addEffect(new MobEffectInstance(VlAbyssModMobEffects.LAST_HOPE.get(), 160, 0));
+									{
+										double _setval = Math.round(40 / (entity instanceof LivingEntity _livingEntity11 && _livingEntity11.getAttributes().hasAttribute(VlAbyssModAttributes.ABILITY_COOLDOWN_REDUCTION.get())
+												? _livingEntity11.getAttribute(VlAbyssModAttributes.ABILITY_COOLDOWN_REDUCTION.get()).getValue()
+												: 0));
+										entity.getCapability(VlAbyssModVariables.PLAYER_VARIABLES_CAPABILITY, null).ifPresent(capability -> {
+											capability.mantra2_cooldown = _setval;
+											capability.syncPlayerVariables(entity);
+										});
+									}
+									if (world.isClientSide()) {
+										SetupAnimationsProcedure.setAnimationClientside((Player) entity, "luzprimeira", false);
+									}
+									if (!world.isClientSide()) {
+										if (entity instanceof Player && world instanceof ServerLevel srvLvl_) {
+											List<Connection> connections = srvLvl_.getServer().getConnection().getConnections();
+											synchronized (connections) {
+												Iterator<Connection> iterator = connections.iterator();
+												while (iterator.hasNext()) {
+													Connection connection = iterator.next();
+													if (!connection.isConnecting() && connection.isConnected())
+														VlAbyssMod.PACKET_HANDLER.sendTo(new SetupAnimationsProcedure.VlAbyssModAnimationMessage(Component.literal("luzprimeira"), entity.getId(), false), connection, NetworkDirection.PLAY_TO_CLIENT);
+												}
 											}
 										}
 									}
+									if (entity instanceof Player _player) {
+										if (_player.level().isClientSide()) {
+											Minecraft _mc = Minecraft.getInstance();
+											if (_mc.player != null && _mc.player.equals(_player)) {
+												_mc.options.setCameraType(CameraType.THIRD_PERSON_BACK);
+											}
+										}
+									}
+									if (world instanceof Level _level) {
+										if (!_level.isClientSide()) {
+											_level.playSound(null, BlockPos.containing(x, y, z), ForgeRegistries.SOUND_EVENTS.getValue(ResourceLocation.parse("vl_abyss:usamantraluzum")), SoundSource.MASTER, 1, 1);
+										} else {
+											_level.playLocalSound(x, y, z, ForgeRegistries.SOUND_EVENTS.getValue(ResourceLocation.parse("vl_abyss:usamantraluzum")), SoundSource.MASTER, 1, 1, false);
+										}
+									}
+									if (world instanceof net.minecraft.server.level.ServerLevel) {
+										net.minecraft.server.level.ServerLevel _level = (net.minecraft.server.level.ServerLevel) world;
+										int particleCount = (int) 40;
+										double centerX = (target.getX());
+										double centerY = (target.getY());
+										double centerZ = (target.getZ());
+										double particleSpeed = 0.8;
+										net.minecraft.core.particles.ParticleOptions particleType = net.minecraft.core.particles.ParticleTypes.CLOUD;
+										for (int i = 0; i < particleCount; i++) {
+											double u = Math.random();
+											double v = Math.random();
+											double theta = 2 * Math.PI * u;
+											double phi = Math.acos(2 * v - 1);
+											double directionX = Math.sin(phi) * Math.cos(theta);
+											double directionY = Math.cos(phi);
+											double directionZ = Math.sin(phi) * Math.sin(theta);
+											double velocityX = directionX * particleSpeed;
+											double velocityY = directionY * particleSpeed;
+											double velocityZ = directionZ * particleSpeed;
+											_level.sendParticles(particleType, centerX, centerY, centerZ, 0, velocityX, velocityY, velocityZ, particleSpeed);
+										}
+									}
+									{
+										double _setval = (entity.getCapability(VlAbyssModVariables.PLAYER_VARIABLES_CAPABILITY, null).orElseGet(VlAbyssModVariables.PlayerVariables::new)).Ethir - 130;
+										entity.getCapability(VlAbyssModVariables.PLAYER_VARIABLES_CAPABILITY, null).ifPresent(capability -> {
+											capability.Ethir = _setval;
+											capability.syncPlayerVariables(entity);
+										});
+									}
 								}
-								if (entity instanceof Player _player) {
-									if (_player.level().isClientSide()) {
-										Minecraft _mc = Minecraft.getInstance();
-										if (_mc.player != null && _mc.player.equals(_player)) {
-											_mc.options.setCameraType(CameraType.THIRD_PERSON_BACK);
+							}
+						} else {
+							if (entity instanceof LivingEntity _entity && !_entity.level().isClientSide())
+								_entity.addEffect(new MobEffectInstance(VlAbyssModMobEffects.LAST_HOPE.get(), 160, 0));
+							{
+								double _setval = Math.round(40 / (entity instanceof LivingEntity _livingEntity20 && _livingEntity20.getAttributes().hasAttribute(VlAbyssModAttributes.ABILITY_COOLDOWN_REDUCTION.get())
+										? _livingEntity20.getAttribute(VlAbyssModAttributes.ABILITY_COOLDOWN_REDUCTION.get()).getValue()
+										: 0));
+								entity.getCapability(VlAbyssModVariables.PLAYER_VARIABLES_CAPABILITY, null).ifPresent(capability -> {
+									capability.mantra2_cooldown = _setval;
+									capability.syncPlayerVariables(entity);
+								});
+							}
+							if (world.isClientSide()) {
+								SetupAnimationsProcedure.setAnimationClientside((Player) entity, "luzprimeira", false);
+							}
+							if (!world.isClientSide()) {
+								if (entity instanceof Player && world instanceof ServerLevel srvLvl_) {
+									List<Connection> connections = srvLvl_.getServer().getConnection().getConnections();
+									synchronized (connections) {
+										Iterator<Connection> iterator = connections.iterator();
+										while (iterator.hasNext()) {
+											Connection connection = iterator.next();
+											if (!connection.isConnecting() && connection.isConnected())
+												VlAbyssMod.PACKET_HANDLER.sendTo(new SetupAnimationsProcedure.VlAbyssModAnimationMessage(Component.literal("luzprimeira"), entity.getId(), false), connection, NetworkDirection.PLAY_TO_CLIENT);
 										}
 									}
 								}
-								if (world instanceof Level _level) {
-									if (!_level.isClientSide()) {
-										_level.playSound(null, BlockPos.containing(x, y, z), ForgeRegistries.SOUND_EVENTS.getValue(ResourceLocation.parse("vl_abyss:usamantraluzum")), SoundSource.MASTER, 1, 1);
-									} else {
-										_level.playLocalSound(x, y, z, ForgeRegistries.SOUND_EVENTS.getValue(ResourceLocation.parse("vl_abyss:usamantraluzum")), SoundSource.MASTER, 1, 1, false);
+							}
+							if (entity instanceof Player _player) {
+								if (_player.level().isClientSide()) {
+									Minecraft _mc = Minecraft.getInstance();
+									if (_mc.player != null && _mc.player.equals(_player)) {
+										_mc.options.setCameraType(CameraType.THIRD_PERSON_BACK);
 									}
 								}
-								if (world instanceof net.minecraft.server.level.ServerLevel) {
-									net.minecraft.server.level.ServerLevel _level = (net.minecraft.server.level.ServerLevel) world;
-									int particleCount = (int) 40;
-									double centerX = (target.getX());
-									double centerY = (target.getY());
-									double centerZ = (target.getZ());
-									double particleSpeed = 0.8;
-									net.minecraft.core.particles.ParticleOptions particleType = net.minecraft.core.particles.ParticleTypes.CLOUD;
-									for (int i = 0; i < particleCount; i++) {
-										double u = Math.random();
-										double v = Math.random();
-										double theta = 2 * Math.PI * u;
-										double phi = Math.acos(2 * v - 1);
-										double directionX = Math.sin(phi) * Math.cos(theta);
-										double directionY = Math.cos(phi);
-										double directionZ = Math.sin(phi) * Math.sin(theta);
-										double velocityX = directionX * particleSpeed;
-										double velocityY = directionY * particleSpeed;
-										double velocityZ = directionZ * particleSpeed;
-										_level.sendParticles(particleType, centerX, centerY, centerZ, 0, velocityX, velocityY, velocityZ, particleSpeed);
-									}
+							}
+							if (world instanceof Level _level) {
+								if (!_level.isClientSide()) {
+									_level.playSound(null, BlockPos.containing(x, y, z), ForgeRegistries.SOUND_EVENTS.getValue(ResourceLocation.parse("vl_abyss:usamantraluzum")), SoundSource.MASTER, 1, 1);
+								} else {
+									_level.playLocalSound(x, y, z, ForgeRegistries.SOUND_EVENTS.getValue(ResourceLocation.parse("vl_abyss:usamantraluzum")), SoundSource.MASTER, 1, 1, false);
 								}
-								{
-									double _setval = (entity.getCapability(VlAbyssModVariables.PLAYER_VARIABLES_CAPABILITY, null).orElseGet(VlAbyssModVariables.PlayerVariables::new)).Ethir - 130;
-									entity.getCapability(VlAbyssModVariables.PLAYER_VARIABLES_CAPABILITY, null).ifPresent(capability -> {
-										capability.Ethir = _setval;
-										capability.syncPlayerVariables(entity);
-									});
+							}
+							if (world instanceof net.minecraft.server.level.ServerLevel) {
+								net.minecraft.server.level.ServerLevel _level = (net.minecraft.server.level.ServerLevel) world;
+								int particleCount = (int) 40;
+								double centerX = (entity.getX());
+								double centerY = (entity.getY());
+								double centerZ = (entity.getZ());
+								double particleSpeed = 0.8;
+								net.minecraft.core.particles.ParticleOptions particleType = net.minecraft.core.particles.ParticleTypes.CLOUD;
+								for (int i = 0; i < particleCount; i++) {
+									double u = Math.random();
+									double v = Math.random();
+									double theta = 2 * Math.PI * u;
+									double phi = Math.acos(2 * v - 1);
+									double directionX = Math.sin(phi) * Math.cos(theta);
+									double directionY = Math.cos(phi);
+									double directionZ = Math.sin(phi) * Math.sin(theta);
+									double velocityX = directionX * particleSpeed;
+									double velocityY = directionY * particleSpeed;
+									double velocityZ = directionZ * particleSpeed;
+									_level.sendParticles(particleType, centerX, centerY, centerZ, 0, velocityX, velocityY, velocityZ, particleSpeed);
 								}
+							}
+							{
+								double _setval = (entity.getCapability(VlAbyssModVariables.PLAYER_VARIABLES_CAPABILITY, null).orElseGet(VlAbyssModVariables.PlayerVariables::new)).Ethir - 130;
+								entity.getCapability(VlAbyssModVariables.PLAYER_VARIABLES_CAPABILITY, null).ifPresent(capability -> {
+									capability.Ethir = _setval;
+									capability.syncPlayerVariables(entity);
+								});
 							}
 						}
 					} else {
-						if (entity instanceof LivingEntity _entity && !_entity.level().isClientSide())
-							_entity.addEffect(new MobEffectInstance(VlAbyssModMobEffects.LAST_HOPE.get(), 160, 0));
+						if (entity instanceof Player _player && !_player.level().isClientSide())
+							_player.displayClientMessage(Component.literal("\u00A7cSem \"ETHIR\" o suficiente"), true);
+						if (world instanceof Level _level) {
+							if (!_level.isClientSide()) {
+								_level.playSound(null, BlockPos.containing(x, y, z), ForgeRegistries.SOUND_EVENTS.getValue(ResourceLocation.parse("vl_abyss:sem_ethir_som")), SoundSource.MASTER, 1, 1);
+							} else {
+								_level.playLocalSound(x, y, z, ForgeRegistries.SOUND_EVENTS.getValue(ResourceLocation.parse("vl_abyss:sem_ethir_som")), SoundSource.MASTER, 1, 1, false);
+							}
+						}
+					}
+				} else if ((entity.getCapability(VlAbyssModVariables.PLAYER_VARIABLES_CAPABILITY, null).orElseGet(VlAbyssModVariables.PlayerVariables::new)).opcao_mantra2 == 2) {
+					if (world instanceof Level _level) {
+						if (!_level.isClientSide()) {
+							_level.playSound(null, BlockPos.containing(x, y, z), ForgeRegistries.SOUND_EVENTS.getValue(ResourceLocation.parse("vl_abyss:usamantraluzum")), SoundSource.MASTER, 1, 1);
+						} else {
+							_level.playLocalSound(x, y, z, ForgeRegistries.SOUND_EVENTS.getValue(ResourceLocation.parse("vl_abyss:usamantraluzum")), SoundSource.MASTER, 1, 1, false);
+						}
+					}
+				} else if ((entity.getCapability(VlAbyssModVariables.PLAYER_VARIABLES_CAPABILITY, null).orElseGet(VlAbyssModVariables.PlayerVariables::new)).opcao_mantra2 == 3) {
+					if ((entity.getCapability(VlAbyssModVariables.PLAYER_VARIABLES_CAPABILITY, null).orElseGet(VlAbyssModVariables.PlayerVariables::new)).Ethir >= 110) {
+						entity.getPersistentData().putBoolean("holyplace", true);
 						{
-							double _setval = Math.round(40 / (entity instanceof LivingEntity _livingEntity20 && _livingEntity20.getAttributes().hasAttribute(VlAbyssModAttributes.ABILITY_COOLDOWN_REDUCTION.get())
-									? _livingEntity20.getAttribute(VlAbyssModAttributes.ABILITY_COOLDOWN_REDUCTION.get()).getValue()
+							double _setval = entity.getX();
+							entity.getCapability(VlAbyssModVariables.PLAYER_VARIABLES_CAPABILITY, null).ifPresent(capability -> {
+								capability.posX = _setval;
+								capability.syncPlayerVariables(entity);
+							});
+						}
+						{
+							double _setval = entity.getY();
+							entity.getCapability(VlAbyssModVariables.PLAYER_VARIABLES_CAPABILITY, null).ifPresent(capability -> {
+								capability.posY = _setval;
+								capability.syncPlayerVariables(entity);
+							});
+						}
+						{
+							double _setval = entity.getZ();
+							entity.getCapability(VlAbyssModVariables.PLAYER_VARIABLES_CAPABILITY, null).ifPresent(capability -> {
+								capability.posZ = _setval;
+								capability.syncPlayerVariables(entity);
+							});
+						}
+						{
+							double _setval = (entity.getCapability(VlAbyssModVariables.PLAYER_VARIABLES_CAPABILITY, null).orElseGet(VlAbyssModVariables.PlayerVariables::new)).Ethir - 110;
+							entity.getCapability(VlAbyssModVariables.PLAYER_VARIABLES_CAPABILITY, null).ifPresent(capability -> {
+								capability.Ethir = _setval;
+								capability.syncPlayerVariables(entity);
+							});
+						}
+						{
+							double _setval = Math.round(80 / (entity instanceof LivingEntity _livingEntity35 && _livingEntity35.getAttributes().hasAttribute(VlAbyssModAttributes.ABILITY_COOLDOWN_REDUCTION.get())
+									? _livingEntity35.getAttribute(VlAbyssModAttributes.ABILITY_COOLDOWN_REDUCTION.get()).getValue()
 									: 0));
 							entity.getCapability(VlAbyssModVariables.PLAYER_VARIABLES_CAPABILITY, null).ifPresent(capability -> {
 								capability.mantra2_cooldown = _setval;
 								capability.syncPlayerVariables(entity);
 							});
-						}
-						if (world.isClientSide()) {
-							SetupAnimationsProcedure.setAnimationClientside((Player) entity, "luzprimeira", false);
-						}
-						if (!world.isClientSide()) {
-							if (entity instanceof Player && world instanceof ServerLevel srvLvl_) {
-								List<Connection> connections = srvLvl_.getServer().getConnection().getConnections();
-								synchronized (connections) {
-									Iterator<Connection> iterator = connections.iterator();
-									while (iterator.hasNext()) {
-										Connection connection = iterator.next();
-										if (!connection.isConnecting() && connection.isConnected())
-											VlAbyssMod.PACKET_HANDLER.sendTo(new SetupAnimationsProcedure.VlAbyssModAnimationMessage(Component.literal("luzprimeira"), entity.getId(), false), connection, NetworkDirection.PLAY_TO_CLIENT);
-									}
-								}
-							}
-						}
-						if (entity instanceof Player _player) {
-							if (_player.level().isClientSide()) {
-								Minecraft _mc = Minecraft.getInstance();
-								if (_mc.player != null && _mc.player.equals(_player)) {
-									_mc.options.setCameraType(CameraType.THIRD_PERSON_BACK);
-								}
-							}
 						}
 						if (world instanceof Level _level) {
 							if (!_level.isClientSide()) {
@@ -168,44 +268,15 @@ public class LuzSegundaHabilidadeProcedure {
 								_level.playLocalSound(x, y, z, ForgeRegistries.SOUND_EVENTS.getValue(ResourceLocation.parse("vl_abyss:usamantraluzum")), SoundSource.MASTER, 1, 1, false);
 							}
 						}
-						if (world instanceof net.minecraft.server.level.ServerLevel) {
-							net.minecraft.server.level.ServerLevel _level = (net.minecraft.server.level.ServerLevel) world;
-							int particleCount = (int) 40;
-							double centerX = (entity.getX());
-							double centerY = (entity.getY());
-							double centerZ = (entity.getZ());
-							double particleSpeed = 0.8;
-							net.minecraft.core.particles.ParticleOptions particleType = net.minecraft.core.particles.ParticleTypes.CLOUD;
-							for (int i = 0; i < particleCount; i++) {
-								double u = Math.random();
-								double v = Math.random();
-								double theta = 2 * Math.PI * u;
-								double phi = Math.acos(2 * v - 1);
-								double directionX = Math.sin(phi) * Math.cos(theta);
-								double directionY = Math.cos(phi);
-								double directionZ = Math.sin(phi) * Math.sin(theta);
-								double velocityX = directionX * particleSpeed;
-								double velocityY = directionY * particleSpeed;
-								double velocityZ = directionZ * particleSpeed;
-								_level.sendParticles(particleType, centerX, centerY, centerZ, 0, velocityX, velocityY, velocityZ, particleSpeed);
+					} else {
+						if (entity instanceof Player _player && !_player.level().isClientSide())
+							_player.displayClientMessage(Component.literal("\u00A7cSem \"ETHIR\" o suficiente"), true);
+						if (world instanceof Level _level) {
+							if (!_level.isClientSide()) {
+								_level.playSound(null, BlockPos.containing(x, y, z), ForgeRegistries.SOUND_EVENTS.getValue(ResourceLocation.parse("vl_abyss:sem_ethir_som")), SoundSource.MASTER, 1, 1);
+							} else {
+								_level.playLocalSound(x, y, z, ForgeRegistries.SOUND_EVENTS.getValue(ResourceLocation.parse("vl_abyss:sem_ethir_som")), SoundSource.MASTER, 1, 1, false);
 							}
-						}
-						{
-							double _setval = (entity.getCapability(VlAbyssModVariables.PLAYER_VARIABLES_CAPABILITY, null).orElseGet(VlAbyssModVariables.PlayerVariables::new)).Ethir - 130;
-							entity.getCapability(VlAbyssModVariables.PLAYER_VARIABLES_CAPABILITY, null).ifPresent(capability -> {
-								capability.Ethir = _setval;
-								capability.syncPlayerVariables(entity);
-							});
-						}
-					}
-				} else {
-					if (entity instanceof Player _player && !_player.level().isClientSide())
-						_player.displayClientMessage(Component.literal("\u00A7cSem \"ETHIR\" o suficiente"), true);
-					if (world instanceof Level _level) {
-						if (!_level.isClientSide()) {
-							_level.playSound(null, BlockPos.containing(x, y, z), ForgeRegistries.SOUND_EVENTS.getValue(ResourceLocation.parse("vl_abyss:sem_ethir_som")), SoundSource.MASTER, 1, 1);
-						} else {
-							_level.playLocalSound(x, y, z, ForgeRegistries.SOUND_EVENTS.getValue(ResourceLocation.parse("vl_abyss:sem_ethir_som")), SoundSource.MASTER, 1, 1, false);
 						}
 					}
 				}

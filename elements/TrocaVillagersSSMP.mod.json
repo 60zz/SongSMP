@@ -23,7 +23,7 @@
             "countOffer": 1,
             "level": 1,
             "maxTrades": 10,
-            "xp": 5,
+            "xp": 1,
             "priceMultiplier": 0.05
           },
           {
@@ -41,8 +41,26 @@
             "countOffer": 1,
             "level": 2,
             "maxTrades": 5,
-            "xp": 30,
+            "xp": 10,
             "priceMultiplier": 0.05
+          },
+          {
+            "price1": {
+              "value": "CUSTOM:EssenciaAbismo"
+            },
+            "countPrice1": 4,
+            "price2": {
+              "value": "Items.LEATHER"
+            },
+            "countPrice2": 1,
+            "offer": {
+              "value": "CUSTOM:ArtifactsBundle"
+            },
+            "countOffer": 1,
+            "level": 2,
+            "maxTrades": 3,
+            "xp": 1,
+            "priceMultiplier": 0.1
           }
         ]
       },
@@ -66,8 +84,33 @@
             "countOffer": 1,
             "level": 1,
             "maxTrades": 3,
-            "xp": 5,
+            "xp": 1,
             "priceMultiplier": 0.05
+          }
+        ]
+      },
+      {
+        "villagerProfession": {
+          "value": "CUSTOM:FerreiroProfession"
+        },
+        "entries": [
+          {
+            "price1": {
+              "value": "CUSTOM:AbyssionIngot"
+            },
+            "countPrice1": 2,
+            "price2": {
+              "value": "Items.DIAMOND"
+            },
+            "countPrice2": 32,
+            "offer": {
+              "value": "CUSTOM:VesperianDagger"
+            },
+            "countOffer": 1,
+            "level": 1,
+            "maxTrades": 10,
+            "xp": 1,
+            "priceMultiplier": 0.1
           }
         ]
       }

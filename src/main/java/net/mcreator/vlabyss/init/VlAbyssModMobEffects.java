@@ -23,9 +23,11 @@ import net.mcreator.vlabyss.potion.ParalisadoMobEffect;
 import net.mcreator.vlabyss.potion.MedoMobEffect;
 import net.mcreator.vlabyss.potion.LightningCloakMobEffect;
 import net.mcreator.vlabyss.potion.LastHopeMobEffect;
+import net.mcreator.vlabyss.potion.InstantResetCooldownMobEffect;
 import net.mcreator.vlabyss.potion.InstantRegenMantraMobEffect;
 import net.mcreator.vlabyss.potion.InsanoMobEffect;
 import net.mcreator.vlabyss.potion.InsanidadeMobEffect;
+import net.mcreator.vlabyss.potion.HolyPurgeMobEffect;
 import net.mcreator.vlabyss.potion.FlamingCutMobEffect;
 import net.mcreator.vlabyss.potion.EssenceMantraMobEffect;
 import net.mcreator.vlabyss.potion.EnfraquecidoMobEffect;
@@ -69,4 +71,6 @@ public class VlAbyssModMobEffects {
 	public static final RegistryObject<MobEffect> BODY_FIRE = REGISTRY.register("body_fire", () -> new BodyFireMobEffect());
 	public static final RegistryObject<MobEffect> QUEIMADURA = REGISTRY.register("queimadura", () -> new QueimaduraMobEffect());
 	public static final RegistryObject<MobEffect> BURN_ARMOR = REGISTRY.register("burn_armor", () -> new BurnArmorMobEffect());
+	public static final RegistryObject<MobEffect> HOLY_PURGE = REGISTRY.register("holy_purge", () -> new HolyPurgeMobEffect());
+	public static final RegistryObject<MobEffect> INSTANT_RESET_COOLDOWN = REGISTRY.register("instant_reset_cooldown", () -> new InstantResetCooldownMobEffect());
 }

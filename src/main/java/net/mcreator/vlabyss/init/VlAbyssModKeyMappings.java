@@ -14,7 +14,6 @@ import net.minecraftforge.api.distmarker.Dist;
 import net.minecraft.client.Minecraft;
 import net.minecraft.client.KeyMapping;
 
-import net.mcreator.vlabyss.network.ShiftMessage;
 import net.mcreator.vlabyss.network.SelecionaMantraRapidoMessage;
 import net.mcreator.vlabyss.network.PlanarMessage;
 import net.mcreator.vlabyss.network.ParryMessage;
@@ -141,27 +140,8 @@ public class VlAbyssModKeyMappings {
 			isDownOld = isDown;
 		}
 	};
-	public static final KeyMapping SHIFT = new KeyMapping("key.vl_abyss.shift", GLFW.GLFW_KEY_LEFT_SHIFT, "key.categories.mantra") {
-		private boolean isDownOld = false;
-
-		@Override
-		public void setDown(boolean isDown) {
-			super.setDown(isDown);
-			if (isDownOld != isDown && isDown) {
-				VlAbyssMod.PACKET_HANDLER.sendToServer(new ShiftMessage(0, 0));
-				ShiftMessage.pressAction(Minecraft.getInstance().player, 0, 0);
-				SHIFT_LASTPRESS = System.currentTimeMillis();
-			} else if (isDownOld != isDown && !isDown) {
-				int dt = (int) (System.currentTimeMillis() - SHIFT_LASTPRESS);
-				VlAbyssMod.PACKET_HANDLER.sendToServer(new ShiftMessage(1, dt));
-				ShiftMessage.pressAction(Minecraft.getInstance().player, 1, dt);
-			}
-			isDownOld = isDown;
-		}
-	};
 	private static long PLANAR_LASTPRESS = 0;
 	private static long SELECIONA_MANTRA_RAPIDO_LASTPRESS = 0;
-	private static long SHIFT_LASTPRESS = 0;
 
 	@SubscribeEvent
 	public static void registerKeyMappings(RegisterKeyMappingsEvent event) {
@@ -173,7 +153,6 @@ public class VlAbyssModKeyMappings {
 		event.register(DASH_FRENTE);
 		event.register(DESLIGA_DASH);
 		event.register(SELECIONA_MANTRA_RAPIDO);
-		event.register(SHIFT);
 	}
 
 	@Mod.EventBusSubscriber({Dist.CLIENT})
@@ -189,7 +168,6 @@ public class VlAbyssModKeyMappings {
 				DASH_FRENTE.consumeClick();
 				DESLIGA_DASH.consumeClick();
 				SELECIONA_MANTRA_RAPIDO.consumeClick();
-				SHIFT.consumeClick();
 			}
 		}
 	}

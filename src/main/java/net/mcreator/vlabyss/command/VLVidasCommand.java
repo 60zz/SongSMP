@@ -9,7 +9,6 @@ import net.minecraft.world.level.Level;
 import net.minecraft.world.entity.Entity;
 import net.minecraft.server.level.ServerLevel;
 import net.minecraft.core.Direction;
-import net.minecraft.commands.arguments.EntityArgument;
 import net.minecraft.commands.Commands;
 
 import net.mcreator.vlabyss.procedures.ContadorVidasProcedure;
@@ -20,7 +19,7 @@ public class VLVidasCommand {
 	public static void registerCommand(RegisterCommandsEvent event) {
 		event.getDispatcher().register(Commands.literal("vidas")
 
-				.then(Commands.argument("entity", EntityArgument.player()).executes(arguments -> {
+				.executes(arguments -> {
 					Level world = arguments.getSource().getUnsidedLevel();
 					double x = arguments.getSource().getPosition().x();
 					double y = arguments.getSource().getPosition().y();
@@ -32,9 +31,9 @@ public class VLVidasCommand {
 					if (entity != null)
 						direction = entity.getDirection();
 
-					ContadorVidasProcedure.execute(arguments, entity);
+					ContadorVidasProcedure.execute(entity);
 					return 0;
-				})));
+				}));
 	}
 
 }

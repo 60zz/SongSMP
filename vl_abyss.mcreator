@@ -186,10 +186,6 @@
         ],
         "dependencies": [
           {
-            "name": "arguments",
-            "type": "cmdcontext"
-          },
-          {
             "name": "entity",
             "type": "entity"
           }
@@ -759,15 +755,7 @@
         ],
         "dependencies": [
           {
-            "name": "damagesource",
-            "type": "damagesource"
-          },
-          {
             "name": "entity",
-            "type": "entity"
-          },
-          {
-            "name": "sourceentity",
             "type": "entity"
           },
           {
@@ -3987,19 +3975,6 @@
       "path": "~/VL1_Abyss/AbismoBosses/CavaleiroAlado/Procedure"
     },
     {
-      "name": "Essenciaabismocraft",
-      "type": "recipe",
-      "compiles": true,
-      "locked_code": false,
-      "registry_name": "essenciaabismocraft",
-      "metadata": {
-        "files": [
-          "src/main/resources/data/vl_abyss/recipes/essencia_abismo.json"
-        ]
-      },
-      "path": "~/VL1_Abyss/AbismoBosses/DropAbismoCriaturas/Craft"
-    },
-    {
       "name": "PortaAbyssSlave",
       "type": "block",
       "compiles": true,
@@ -5447,8 +5422,8 @@
       "registry_name": "seletor_classes",
       "metadata": {
         "files": [
-          "src/main/resources/assets/vl_abyss/models/item/seletor_classes.json",
-          "src/main/java/net/mcreator/vlabyss/item/SeletorClassesItem.java"
+          "src/main/java/net/mcreator/vlabyss/item/SeletorClassesItem.java",
+          "src/main/resources/assets/vl_abyss/models/item/seletor_classes.json"
         ]
       },
       "path": "~/VL1_Abyss/ClassesPersonagens"
@@ -5464,6 +5439,22 @@
           {
             "name": "entity",
             "type": "entity"
+          },
+          {
+            "name": "x",
+            "type": "number"
+          },
+          {
+            "name": "y",
+            "type": "number"
+          },
+          {
+            "name": "z",
+            "type": "number"
+          },
+          {
+            "name": "world",
+            "type": "world"
           }
         ],
         "files": [
@@ -5498,6 +5489,22 @@
           {
             "name": "entity",
             "type": "entity"
+          },
+          {
+            "name": "x",
+            "type": "number"
+          },
+          {
+            "name": "y",
+            "type": "number"
+          },
+          {
+            "name": "z",
+            "type": "number"
+          },
+          {
+            "name": "world",
+            "type": "world"
           }
         ],
         "files": [
@@ -5517,6 +5524,22 @@
           {
             "name": "entity",
             "type": "entity"
+          },
+          {
+            "name": "x",
+            "type": "number"
+          },
+          {
+            "name": "y",
+            "type": "number"
+          },
+          {
+            "name": "z",
+            "type": "number"
+          },
+          {
+            "name": "world",
+            "type": "world"
           }
         ],
         "files": [
@@ -5536,6 +5559,22 @@
           {
             "name": "entity",
             "type": "entity"
+          },
+          {
+            "name": "x",
+            "type": "number"
+          },
+          {
+            "name": "y",
+            "type": "number"
+          },
+          {
+            "name": "z",
+            "type": "number"
+          },
+          {
+            "name": "world",
+            "type": "world"
           }
         ],
         "files": [
@@ -9023,11 +9062,83 @@
       "path": "~/VL1_Abyss/Mantras/MantraKeyAtivacao/Key/Procedure"
     },
     {
-      "name": "ShiftOnKeyPressed",
+      "name": "HolyPurge",
+      "type": "potioneffect",
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "holy_purge",
+      "metadata": {
+        "files": [
+          "src/main/java/net/mcreator/vlabyss/potion/HolyPurgeMobEffect.java"
+        ]
+      },
+      "path": "~/VL1_Abyss/Mantras/MantrasPrincipais/Luz/HolyPlace"
+    },
+    {
+      "name": "DireitoComHolyPlace",
       "type": "procedure",
       "compiles": true,
       "locked_code": false,
-      "registry_name": "shift_on_key_pressed",
+      "registry_name": "direito_com_holy_place",
+      "metadata": {
+        "dependencies": [
+          {
+            "name": "entity",
+            "type": "entity"
+          },
+          {
+            "name": "world",
+            "type": "world"
+          }
+        ],
+        "files": [
+          "src/main/java/net/mcreator/vlabyss/procedures/DireitoComHolyPlaceProcedure.java"
+        ]
+      },
+      "path": "~/VL1_Abyss/Mantras/MantrasPrincipais/Luz/HolyPlace/Procedure"
+    },
+    {
+      "name": "EsquerdoComHolyPlace",
+      "type": "procedure",
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "esquerdo_com_holy_place",
+      "metadata": {
+        "dependencies": [
+          {
+            "name": "entity",
+            "type": "entity"
+          },
+          {
+            "name": "world",
+            "type": "world"
+          }
+        ],
+        "files": [
+          "src/main/java/net/mcreator/vlabyss/procedures/EsquerdoComHolyPlaceProcedure.java"
+        ]
+      },
+      "path": "~/VL1_Abyss/Mantras/MantrasPrincipais/Luz/HolyPlace/Procedure"
+    },
+    {
+      "name": "InstantResetCooldown",
+      "type": "potioneffect",
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "instant_reset_cooldown",
+      "metadata": {
+        "files": [
+          "src/main/java/net/mcreator/vlabyss/potion/InstantResetCooldownMobEffect.java"
+        ]
+      },
+      "path": "~/VL1_Abyss/Mantras/Pocoes/InstantRegenMantra"
+    },
+    {
+      "name": "InstantResetCooldownEffectStartedapplied",
+      "type": "procedure",
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "instant_reset_cooldown_effect_startedapplied",
       "metadata": {
         "dependencies": [
           {
@@ -9036,17 +9147,220 @@
           }
         ],
         "files": [
-          "src/main/java/net/mcreator/vlabyss/procedures/ShiftOnKeyPressedProcedure.java"
+          "src/main/java/net/mcreator/vlabyss/procedures/InstantResetCooldownEffectStartedappliedProcedure.java"
         ]
       },
-      "path": "~/VL1_Abyss/Mantras/MantraKeyAtivacao/Key/Procedure"
+      "path": "~/VL1_Abyss/Mantras/Pocoes/InstantRegenMantra/Procedure"
     },
     {
-      "name": "ShiftOnKeyReleased",
+      "name": "SetProcuradoProcedure",
       "type": "procedure",
       "compiles": true,
       "locked_code": false,
-      "registry_name": "shift_on_key_released",
+      "registry_name": "set_procurado_procedure",
+      "metadata": {
+        "dependencies": [
+          {
+            "name": "arguments",
+            "type": "cmdcontext"
+          }
+        ],
+        "files": [
+          "src/main/java/net/mcreator/vlabyss/procedures/SetProcuradoProcedureProcedure.java"
+        ]
+      },
+      "path": "~/ComandosStaff/Procurado"
+    },
+    {
+      "name": "SetProcurado",
+      "type": "command",
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "set_procurado",
+      "metadata": {
+        "files": [
+          "src/main/java/net/mcreator/vlabyss/command/SetProcuradoCommand.java"
+        ]
+      },
+      "path": "~/ComandosStaff/Procurado"
+    },
+    {
+      "name": "ProcuradoMorreu",
+      "type": "procedure",
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "procurado_morreu",
+      "metadata": {
+        "dependencies": [
+          {
+            "name": "entity",
+            "type": "entity"
+          },
+          {
+            "name": "sourceentity",
+            "type": "entity"
+          }
+        ],
+        "files": [
+          "src/main/java/net/mcreator/vlabyss/procedures/ProcuradoMorreuProcedure.java"
+        ]
+      },
+      "path": "~/ComandosStaff/Procurado"
+    },
+    {
+      "name": "InfoCabecaProcurado",
+      "type": "procedure",
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "info_cabeca_procurado",
+      "metadata": {
+        "dependencies": [
+          {
+            "name": "itemstack",
+            "type": "itemstack"
+          },
+          {
+            "name": "tooltip",
+            "type": "tooltip"
+          }
+        ],
+        "files": [
+          "src/main/java/net/mcreator/vlabyss/procedures/InfoCabecaProcuradoProcedure.java"
+        ]
+      },
+      "path": "~/ComandosStaff/Procurado"
+    },
+    {
+      "name": "MorreParaSoulSlayer",
+      "type": "procedure",
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "morre_para_soul_slayer",
+      "metadata": {
+        "dependencies": [
+          {
+            "name": "sourceentity",
+            "type": "entity"
+          }
+        ],
+        "files": [
+          "src/main/java/net/mcreator/vlabyss/procedures/MorreParaSoulSlayerProcedure.java"
+        ]
+      },
+      "path": "~/VL1_Abyss/Armas/SoulSlayer/Procedure"
+    },
+    {
+      "name": "SoulSlayerRightclicked",
+      "type": "procedure",
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "soul_slayer_rightclicked",
+      "metadata": {
+        "dependencies": [
+          {
+            "name": "itemstack",
+            "type": "itemstack"
+          }
+        ],
+        "files": [
+          "src/main/java/net/mcreator/vlabyss/procedures/SoulSlayerRightclickedProcedure.java"
+        ]
+      },
+      "path": "~/VL1_Abyss/Armas/SoulSlayer/Procedure"
+    },
+    {
+      "name": "SoulSlayerHasItemGlowingEffect",
+      "type": "procedure",
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "soul_slayer_has_item_glowing_effect",
+      "metadata": {
+        "dependencies": [
+          {
+            "name": "itemstack",
+            "type": "itemstack"
+          }
+        ],
+        "return_type": "logic",
+        "files": [
+          "src/main/java/net/mcreator/vlabyss/procedures/SoulSlayerHasItemGlowingEffectProcedure.java"
+        ]
+      },
+      "path": "~/VL1_Abyss/Armas/SoulSlayer/Procedure"
+    },
+    {
+      "name": "SoulSlayerLivingEntityIsHitWithTool",
+      "type": "procedure",
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "soul_slayer_living_entity_is_hit_with_tool",
+      "metadata": {
+        "dependencies": [
+          {
+            "name": "entity",
+            "type": "entity"
+          },
+          {
+            "name": "sourceentity",
+            "type": "entity"
+          },
+          {
+            "name": "itemstack",
+            "type": "itemstack"
+          },
+          {
+            "name": "world",
+            "type": "world"
+          }
+        ],
+        "files": [
+          "src/main/java/net/mcreator/vlabyss/procedures/SoulSlayerLivingEntityIsHitWithToolProcedure.java"
+        ]
+      },
+      "path": "~/VL1_Abyss/Armas/SoulSlayer/Procedure"
+    },
+    {
+      "name": "InfoSoulSlayer",
+      "type": "procedure",
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "info_soul_slayer",
+      "metadata": {
+        "dependencies": [
+          {
+            "name": "itemstack",
+            "type": "itemstack"
+          },
+          {
+            "name": "tooltip",
+            "type": "tooltip"
+          }
+        ],
+        "files": [
+          "src/main/java/net/mcreator/vlabyss/procedures/InfoSoulSlayerProcedure.java"
+        ]
+      },
+      "path": "~/VL1_Abyss/Armas/SoulSlayer/Procedure"
+    },
+    {
+      "name": "DevelopedColorFilm",
+      "type": "recipe",
+      "compiles": true,
+      "locked_code": true,
+      "registry_name": "developed_color_film",
+      "metadata": {
+        "files": [
+          "src/main/resources/data/vl_abyss/recipes/developed_color_film.json"
+        ]
+      },
+      "path": "~/CraftsAleatorios"
+    },
+    {
+      "name": "SkullCrusherToolInHandTick",
+      "type": "procedure",
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "skull_crusher_tool_in_hand_tick",
       "metadata": {
         "dependencies": [
           {
@@ -9055,23 +9369,56 @@
           }
         ],
         "files": [
-          "src/main/java/net/mcreator/vlabyss/procedures/ShiftOnKeyReleasedProcedure.java"
+          "src/main/java/net/mcreator/vlabyss/procedures/SkullCrusherToolInHandTickProcedure.java"
         ]
       },
-      "path": "~/VL1_Abyss/Mantras/MantraKeyAtivacao/Key/Procedure"
+      "path": "~/VL1_Abyss/Armas/SkullCrusher/Procedure"
     },
     {
-      "name": "Shift",
-      "type": "keybind",
+      "name": "DropSkullCrusher",
+      "type": "procedure",
       "compiles": true,
       "locked_code": false,
-      "registry_name": "shift",
+      "registry_name": "drop_skull_crusher",
       "metadata": {
+        "dependencies": [
+          {
+            "name": "entity",
+            "type": "entity"
+          },
+          {
+            "name": "itemstack",
+            "type": "itemstack"
+          }
+        ],
         "files": [
-          "src/main/java/net/mcreator/vlabyss/network/ShiftMessage.java"
+          "src/main/java/net/mcreator/vlabyss/procedures/DropSkullCrusherProcedure.java"
         ]
       },
-      "path": "~/VL1_Abyss/Mantras/MantraKeyAtivacao/Key"
+      "path": "~/VL1_Abyss/Armas/SkullCrusher/Procedure"
+    },
+    {
+      "name": "InfoSkullCrusher",
+      "type": "procedure",
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "info_skull_crusher",
+      "metadata": {
+        "dependencies": [
+          {
+            "name": "itemstack",
+            "type": "itemstack"
+          },
+          {
+            "name": "tooltip",
+            "type": "tooltip"
+          }
+        ],
+        "files": [
+          "src/main/java/net/mcreator/vlabyss/procedures/InfoSkullCrusherProcedure.java"
+        ]
+      },
+      "path": "~/VL1_Abyss/Armas/SkullCrusher/Procedure"
     }
   ],
   "variable_elements": [
@@ -9400,7 +9747,7 @@
       "value": "false"
     },
     {
-      "name": "lshift",
+      "name": "procurado",
       "type": "logic",
       "scope": "player_persistent",
       "value": "false"
@@ -9814,6 +10161,22 @@
       ],
       "category": "master",
       "subtitle": ""
+    },
+    {
+      "name": "purgesound",
+      "files": [
+        "expurgoativo"
+      ],
+      "category": "master",
+      "subtitle": ""
+    },
+    {
+      "name": "lightteleport",
+      "files": [
+        "teleportlight"
+      ],
+      "category": "master",
+      "subtitle": ""
     }
   ],
   "tag_elements": {
@@ -9980,6 +10343,9 @@
     ],
     "ITEMS:minecraft:pickaxes": [
       "~CUSTOM:ColdHuntress"
+    ],
+    "ENTITIES:vl_abyss:bosses": [
+      "CUSTOM:CavaleiroAlado"
     ]
   },
   "tab_element_order": {
@@ -10367,7 +10733,10 @@
       "death.attack.dano_maldicao.item": "%1$s foi morto por %2$s usando %3$s amaldiçoado",
       "death.attack.dano_maldicao.player": "%1$s morreu tentando escapar de %2$s usando um item amaldiçoado",
       "death.attack.dano_maldicao": "%1$s morreu portando uma arma amaldiçoada",
-      "key.vl_abyss.shift": "Tecla de Alteração Reversa"
+      "effect.vl_abyss.holy_purge": "Expurgo",
+      "effect.vl_abyss.instant_reset_cooldown": "Instant Reset Cooldown",
+      "subtitles.purgesound": "",
+      "subtitles.lightteleport": ""
     }
   },
   "metadata": {
@@ -10966,6 +11335,15 @@
                       {
                         "name": "CounterSpells",
                         "children": []
+                      },
+                      {
+                        "name": "HolyPlace",
+                        "children": [
+                          {
+                            "name": "Procedure",
+                            "children": []
+                          }
+                        ]
                       }
                     ]
                   },
@@ -11171,7 +11549,12 @@
               },
               {
                 "name": "SkullCrusher",
-                "children": []
+                "children": [
+                  {
+                    "name": "Procedure",
+                    "children": []
+                  }
+                ]
               },
               {
                 "name": "RedDeath",
@@ -11222,7 +11605,12 @@
               },
               {
                 "name": "SoulSlayer",
-                "children": []
+                "children": [
+                  {
+                    "name": "Procedure",
+                    "children": []
+                  }
+                ]
               },
               {
                 "name": "ElementalSwords",
@@ -11307,10 +11695,6 @@
                 "name": "DropAbismoCriaturas",
                 "children": [
                   {
-                    "name": "Craft",
-                    "children": []
-                  },
-                  {
                     "name": "Procedure",
                     "children": []
                   }
@@ -11382,6 +11766,10 @@
                 "children": []
               }
             ]
+          },
+          {
+            "name": "Livros",
+            "children": []
           }
         ]
       },
@@ -11420,11 +11808,19 @@
           {
             "name": "RemoveNBT",
             "children": []
+          },
+          {
+            "name": "Procurado",
+            "children": []
           }
         ]
       },
       {
         "name": "Configuracao",
+        "children": []
+      },
+      {
+        "name": "CraftsAleatorios",
         "children": []
       }
     ]
@@ -11432,7 +11828,7 @@
   "workspaceSettings": {
     "modid": "vl_abyss",
     "modName": "SSMP | S1",
-    "version": "2.0.1",
+    "version": "2.0.5",
     "author": "SSMP | S1",
     "websiteURL": "https://discord.gg/vlmp",
     "license": "All Rights Reserved",

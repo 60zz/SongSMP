@@ -316,5 +316,8 @@
   "death.attack.dano_maldicao.item": "%1$s foi morto por %2$s usando %3$s amaldiçoado",
   "death.attack.dano_maldicao.player": "%1$s morreu tentando escapar de %2$s usando um item amaldiçoado",
   "death.attack.dano_maldicao": "%1$s morreu portando uma arma amaldiçoada",
-  "key.vl_abyss.shift": "Tecla de Alteração Reversa"
+  "effect.vl_abyss.holy_purge": "Expurgo",
+  "effect.vl_abyss.instant_reset_cooldown": "Instant Reset Cooldown",
+  "subtitles.purgesound": "",
+  "subtitles.lightteleport": ""
 }

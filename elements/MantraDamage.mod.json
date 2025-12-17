@@ -2,7 +2,7 @@
   "_fv": 79,
   "_type": "damagetype",
   "definition": {
-    "exhaustion": 1.0,
+    "exhaustion": 3.0,
     "scaling": "never",
     "effects": "hurt",
     "normalDeathMessage": "%1$s morreu para mantra",

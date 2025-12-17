@@ -25,6 +25,7 @@ import net.minecraft.core.BlockPos;
 
 import net.mcreator.vlabyss.init.VlAbyssModParticleTypes;
 import net.mcreator.vlabyss.init.VlAbyssModMobEffects;
+import net.mcreator.vlabyss.init.VlAbyssModItems;
 import net.mcreator.vlabyss.VlAbyssMod;
 
 import javax.annotation.Nullable;
@@ -52,132 +53,142 @@ public class TomouHitParryProcedure {
 						|| (entity instanceof LivingEntity _livEnt ? _livEnt.getMainHandItem() : ItemStack.EMPTY).is(ItemTags.create(ResourceLocation.parse("minecraft:axes")))
 						|| (entity instanceof LivingEntity _livEnt ? _livEnt.getOffhandItem() : ItemStack.EMPTY).is(ItemTags.create(ResourceLocation.parse("minecraft:axes")))) {
 					if (entity.getPersistentData().getBoolean("perry") == true) {
-						if (!(sourceentity instanceof LivingEntity _livEnt5 && _livEnt5.hasEffect(VlAbyssModMobEffects.RESISTENCIA_QUEBRADA.get()))) {
-							if (!(sourceentity instanceof LivingEntity _livEnt6 && _livEnt6.hasEffect(VlAbyssModMobEffects.QUEBRA.get()))) {
-								if (sourceentity instanceof LivingEntity _entity && !_entity.level().isClientSide())
-									_entity.addEffect(new MobEffectInstance(VlAbyssModMobEffects.QUEBRA.get(), 600, 0));
-								sourceentity.getPersistentData().putBoolean("quebra1", true);
-								VlAbyssMod.queueServerWork(600, () -> {
+						if (!((entity instanceof LivingEntity _livEnt ? _livEnt.getMainHandItem() : ItemStack.EMPTY).getItem() == VlAbyssModItems.SKULL_CRUSHER.get())) {
+							if (!(sourceentity instanceof LivingEntity _livEnt7 && _livEnt7.hasEffect(VlAbyssModMobEffects.RESISTENCIA_QUEBRADA.get()))) {
+								if (!(sourceentity instanceof LivingEntity _livEnt8 && _livEnt8.hasEffect(VlAbyssModMobEffects.QUEBRA.get()))) {
+									if (sourceentity instanceof LivingEntity _entity && !_entity.level().isClientSide())
+										_entity.addEffect(new MobEffectInstance(VlAbyssModMobEffects.QUEBRA.get(), 600, 0));
+									sourceentity.getPersistentData().putBoolean("quebra1", true);
+									VlAbyssMod.queueServerWork(600, () -> {
+										sourceentity.getPersistentData().remove("quebra1");
+									});
+								} else if (sourceentity.getPersistentData().getBoolean("quebra1")) {
+									if (sourceentity instanceof LivingEntity _entity && !_entity.level().isClientSide())
+										_entity.addEffect(new MobEffectInstance(VlAbyssModMobEffects.QUEBRA.get(), 1200, 1));
+									sourceentity.getPersistentData().putBoolean("quebra2", true);
 									sourceentity.getPersistentData().remove("quebra1");
-								});
-							} else if (sourceentity.getPersistentData().getBoolean("quebra1")) {
-								if (sourceentity instanceof LivingEntity _entity && !_entity.level().isClientSide())
-									_entity.addEffect(new MobEffectInstance(VlAbyssModMobEffects.QUEBRA.get(), 1200, 1));
-								sourceentity.getPersistentData().putBoolean("quebra2", true);
-								sourceentity.getPersistentData().remove("quebra1");
-								VlAbyssMod.queueServerWork(1200, () -> {
+									VlAbyssMod.queueServerWork(1200, () -> {
+										sourceentity.getPersistentData().remove("quebra2");
+									});
+								} else if (sourceentity.getPersistentData().getBoolean("quebra2")) {
+									if (sourceentity instanceof LivingEntity _entity && !_entity.level().isClientSide())
+										_entity.addEffect(new MobEffectInstance(VlAbyssModMobEffects.QUEBRA.get(), 2400, 2));
+									sourceentity.getPersistentData().putBoolean("quebra3", true);
 									sourceentity.getPersistentData().remove("quebra2");
-								});
-							} else if (sourceentity.getPersistentData().getBoolean("quebra2")) {
-								if (sourceentity instanceof LivingEntity _entity && !_entity.level().isClientSide())
-									_entity.addEffect(new MobEffectInstance(VlAbyssModMobEffects.QUEBRA.get(), 2400, 2));
-								sourceentity.getPersistentData().putBoolean("quebra3", true);
-								sourceentity.getPersistentData().remove("quebra2");
-								VlAbyssMod.queueServerWork(2400, () -> {
+									VlAbyssMod.queueServerWork(2400, () -> {
+										sourceentity.getPersistentData().remove("quebra3");
+									});
+								} else if (sourceentity.getPersistentData().getBoolean("quebra3")) {
+									sourceentity.getPersistentData().putBoolean("quebra4", true);
+									if (sourceentity instanceof LivingEntity _entity && !_entity.level().isClientSide())
+										_entity.addEffect(new MobEffectInstance(VlAbyssModMobEffects.QUEBRA.get(), 3600, 3));
 									sourceentity.getPersistentData().remove("quebra3");
-								});
-							} else if (sourceentity.getPersistentData().getBoolean("quebra3")) {
-								sourceentity.getPersistentData().putBoolean("quebra4", true);
-								if (sourceentity instanceof LivingEntity _entity && !_entity.level().isClientSide())
-									_entity.addEffect(new MobEffectInstance(VlAbyssModMobEffects.QUEBRA.get(), 3600, 3));
-								sourceentity.getPersistentData().remove("quebra3");
-								VlAbyssMod.queueServerWork(3600, () -> {
+									VlAbyssMod.queueServerWork(3600, () -> {
+										sourceentity.getPersistentData().remove("quebra4");
+									});
+								} else if (sourceentity.getPersistentData().getBoolean("quebra4")) {
 									sourceentity.getPersistentData().remove("quebra4");
-								});
-							} else if (sourceentity.getPersistentData().getBoolean("quebra4")) {
-								sourceentity.getPersistentData().remove("quebra4");
-								if (sourceentity instanceof LivingEntity _entity && !_entity.level().isClientSide())
-									_entity.addEffect(new MobEffectInstance(VlAbyssModMobEffects.RESISTENCIA_QUEBRADA.get(), 200, 0));
-								if (sourceentity instanceof LivingEntity _entity)
-									_entity.removeEffect(VlAbyssModMobEffects.QUEBRA.get());
+									if (sourceentity instanceof LivingEntity _entity && !_entity.level().isClientSide())
+										_entity.addEffect(new MobEffectInstance(VlAbyssModMobEffects.RESISTENCIA_QUEBRADA.get(), 200, 0));
+									if (sourceentity instanceof LivingEntity _entity)
+										_entity.removeEffect(VlAbyssModMobEffects.QUEBRA.get());
+								}
 							}
-						}
-						{
-							ItemStack _ist = (entity instanceof LivingEntity _livEnt ? _livEnt.getMainHandItem() : ItemStack.EMPTY);
-							if (_ist.hurt(520, RandomSource.create(), null)) {
-								_ist.shrink(1);
-								_ist.setDamageValue(0);
+							{
+								ItemStack _ist = (entity instanceof LivingEntity _livEnt ? _livEnt.getMainHandItem() : ItemStack.EMPTY);
+								if (_ist.hurt(520, RandomSource.create(), null)) {
+									_ist.shrink(1);
+									_ist.setDamageValue(0);
+								}
 							}
-						}
-						if (world instanceof ServerLevel _level)
-							_level.sendParticles((SimpleParticleType) (VlAbyssModParticleTypes.PARRY_DEU_CERTO.get()), x, y, z, 15, 0.5, 0.5, 0.5, 0.1);
-						entity.getPersistentData().remove("perry");
-						if (world instanceof Level _level) {
-							if (!_level.isClientSide()) {
-								_level.playSound(null, BlockPos.containing(x, y, z), ForgeRegistries.SOUND_EVENTS.getValue(ResourceLocation.parse("vl_abyss:parry")), SoundSource.PLAYERS, 1, 1);
-							} else {
-								_level.playLocalSound(x, y, z, ForgeRegistries.SOUND_EVENTS.getValue(ResourceLocation.parse("vl_abyss:parry")), SoundSource.PLAYERS, 1, 1, false);
+							if (world instanceof ServerLevel _level)
+								_level.sendParticles((SimpleParticleType) (VlAbyssModParticleTypes.PARRY_DEU_CERTO.get()), x, y, z, 15, 0.5, 0.5, 0.5, 0.1);
+							entity.getPersistentData().remove("perry");
+							if (world instanceof Level _level) {
+								if (!_level.isClientSide()) {
+									_level.playSound(null, BlockPos.containing(x, y, z), ForgeRegistries.SOUND_EVENTS.getValue(ResourceLocation.parse("vl_abyss:parry")), SoundSource.PLAYERS, 1, 1);
+								} else {
+									_level.playLocalSound(x, y, z, ForgeRegistries.SOUND_EVENTS.getValue(ResourceLocation.parse("vl_abyss:parry")), SoundSource.PLAYERS, 1, 1, false);
+								}
 							}
-						}
-						entity.getPersistentData().putBoolean("cooldown", true);
-						VlAbyssMod.queueServerWork(30, () -> {
-							entity.getPersistentData().remove("cooldown");
-						});
-						if (event != null && event.isCancelable()) {
-							event.setCanceled(true);
+							entity.getPersistentData().putBoolean("cooldown", true);
+							VlAbyssMod.queueServerWork(30, () -> {
+								entity.getPersistentData().remove("cooldown");
+							});
+							if (event != null && event.isCancelable()) {
+								event.setCanceled(true);
+							}
+						} else {
+							if (sourceentity instanceof LivingEntity _entity && !_entity.level().isClientSide())
+								_entity.addEffect(new MobEffectInstance(VlAbyssModMobEffects.RESISTENCIA_QUEBRADA.get(), 200, 0));
 						}
 					}
 				} else {
 					if (entity.getPersistentData().getBoolean("perry") == true) {
-						if (!(sourceentity instanceof LivingEntity _livEnt42 && _livEnt42.hasEffect(VlAbyssModMobEffects.RESISTENCIA_QUEBRADA.get()))) {
-							if (!(sourceentity instanceof LivingEntity _livEnt43 && _livEnt43.hasEffect(VlAbyssModMobEffects.QUEBRA.get()))) {
-								if (sourceentity instanceof LivingEntity _entity && !_entity.level().isClientSide())
-									_entity.addEffect(new MobEffectInstance(VlAbyssModMobEffects.QUEBRA.get(), 600, 0));
-								sourceentity.getPersistentData().putBoolean("quebra1", true);
-								VlAbyssMod.queueServerWork(600, () -> {
+						if (!((entity instanceof LivingEntity _livEnt ? _livEnt.getMainHandItem() : ItemStack.EMPTY).getItem() == VlAbyssModItems.SKULL_CRUSHER.get())) {
+							if (!(sourceentity instanceof LivingEntity _livEnt47 && _livEnt47.hasEffect(VlAbyssModMobEffects.RESISTENCIA_QUEBRADA.get()))) {
+								if (!(sourceentity instanceof LivingEntity _livEnt48 && _livEnt48.hasEffect(VlAbyssModMobEffects.QUEBRA.get()))) {
+									if (sourceentity instanceof LivingEntity _entity && !_entity.level().isClientSide())
+										_entity.addEffect(new MobEffectInstance(VlAbyssModMobEffects.QUEBRA.get(), 600, 0));
+									sourceentity.getPersistentData().putBoolean("quebra1", true);
+									VlAbyssMod.queueServerWork(600, () -> {
+										sourceentity.getPersistentData().remove("quebra1");
+									});
+								} else if (sourceentity.getPersistentData().getBoolean("quebra1")) {
+									if (sourceentity instanceof LivingEntity _entity && !_entity.level().isClientSide())
+										_entity.addEffect(new MobEffectInstance(VlAbyssModMobEffects.QUEBRA.get(), 1200, 1));
+									sourceentity.getPersistentData().putBoolean("quebra2", true);
 									sourceentity.getPersistentData().remove("quebra1");
-								});
-							} else if (sourceentity.getPersistentData().getBoolean("quebra1")) {
-								if (sourceentity instanceof LivingEntity _entity && !_entity.level().isClientSide())
-									_entity.addEffect(new MobEffectInstance(VlAbyssModMobEffects.QUEBRA.get(), 1200, 1));
-								sourceentity.getPersistentData().putBoolean("quebra2", true);
-								sourceentity.getPersistentData().remove("quebra1");
-								VlAbyssMod.queueServerWork(1200, () -> {
+									VlAbyssMod.queueServerWork(1200, () -> {
+										sourceentity.getPersistentData().remove("quebra2");
+									});
+								} else if (sourceentity.getPersistentData().getBoolean("quebra2")) {
+									if (sourceentity instanceof LivingEntity _entity && !_entity.level().isClientSide())
+										_entity.addEffect(new MobEffectInstance(VlAbyssModMobEffects.QUEBRA.get(), 2400, 2));
+									sourceentity.getPersistentData().putBoolean("quebra3", true);
 									sourceentity.getPersistentData().remove("quebra2");
-								});
-							} else if (sourceentity.getPersistentData().getBoolean("quebra2")) {
-								if (sourceentity instanceof LivingEntity _entity && !_entity.level().isClientSide())
-									_entity.addEffect(new MobEffectInstance(VlAbyssModMobEffects.QUEBRA.get(), 2400, 2));
-								sourceentity.getPersistentData().putBoolean("quebra3", true);
-								sourceentity.getPersistentData().remove("quebra2");
-								VlAbyssMod.queueServerWork(2400, () -> {
+									VlAbyssMod.queueServerWork(2400, () -> {
+										sourceentity.getPersistentData().remove("quebra3");
+									});
+								} else if (sourceentity.getPersistentData().getBoolean("quebra3")) {
+									sourceentity.getPersistentData().putBoolean("quebra4", true);
+									if (sourceentity instanceof LivingEntity _entity && !_entity.level().isClientSide())
+										_entity.addEffect(new MobEffectInstance(VlAbyssModMobEffects.QUEBRA.get(), 3600, 3));
 									sourceentity.getPersistentData().remove("quebra3");
-								});
-							} else if (sourceentity.getPersistentData().getBoolean("quebra3")) {
-								sourceentity.getPersistentData().putBoolean("quebra4", true);
-								if (sourceentity instanceof LivingEntity _entity && !_entity.level().isClientSide())
-									_entity.addEffect(new MobEffectInstance(VlAbyssModMobEffects.QUEBRA.get(), 3600, 3));
-								sourceentity.getPersistentData().remove("quebra3");
-								VlAbyssMod.queueServerWork(3600, () -> {
+									VlAbyssMod.queueServerWork(3600, () -> {
+										sourceentity.getPersistentData().remove("quebra4");
+									});
+								} else if (sourceentity.getPersistentData().getBoolean("quebra4")) {
 									sourceentity.getPersistentData().remove("quebra4");
-								});
-							} else if (sourceentity.getPersistentData().getBoolean("quebra4")) {
-								sourceentity.getPersistentData().remove("quebra4");
-								if (sourceentity instanceof LivingEntity _entity && !_entity.level().isClientSide())
-									_entity.addEffect(new MobEffectInstance(VlAbyssModMobEffects.RESISTENCIA_QUEBRADA.get(), 200, 0));
-								if (sourceentity instanceof LivingEntity _entity)
-									_entity.removeEffect(VlAbyssModMobEffects.QUEBRA.get());
+									if (sourceentity instanceof LivingEntity _entity && !_entity.level().isClientSide())
+										_entity.addEffect(new MobEffectInstance(VlAbyssModMobEffects.RESISTENCIA_QUEBRADA.get(), 200, 0));
+									if (sourceentity instanceof LivingEntity _entity)
+										_entity.removeEffect(VlAbyssModMobEffects.QUEBRA.get());
+								}
 							}
-						}
-						if (world instanceof ServerLevel _level)
-							_level.sendParticles((SimpleParticleType) (VlAbyssModParticleTypes.PARRY_DEU_CERTO.get()), x, y, z, 15, 0.5, 0.5, 0.5, 0.1);
-						entity.getPersistentData().remove("perry");
-						if (world instanceof Level _level) {
-							if (!_level.isClientSide()) {
-								_level.playSound(null, BlockPos.containing(x, y, z), ForgeRegistries.SOUND_EVENTS.getValue(ResourceLocation.parse("vl_abyss:parry_hands")), SoundSource.PLAYERS, 1, 1);
-							} else {
-								_level.playLocalSound(x, y, z, ForgeRegistries.SOUND_EVENTS.getValue(ResourceLocation.parse("vl_abyss:parry_hands")), SoundSource.PLAYERS, 1, 1, false);
+							if (world instanceof ServerLevel _level)
+								_level.sendParticles((SimpleParticleType) (VlAbyssModParticleTypes.PARRY_DEU_CERTO.get()), x, y, z, 15, 0.5, 0.5, 0.5, 0.1);
+							entity.getPersistentData().remove("perry");
+							if (world instanceof Level _level) {
+								if (!_level.isClientSide()) {
+									_level.playSound(null, BlockPos.containing(x, y, z), ForgeRegistries.SOUND_EVENTS.getValue(ResourceLocation.parse("vl_abyss:parry_hands")), SoundSource.PLAYERS, 1, 1);
+								} else {
+									_level.playLocalSound(x, y, z, ForgeRegistries.SOUND_EVENTS.getValue(ResourceLocation.parse("vl_abyss:parry_hands")), SoundSource.PLAYERS, 1, 1, false);
+								}
 							}
-						}
-						entity.hurt(new DamageSource(world.registryAccess().registryOrThrow(Registries.DAMAGE_TYPE).getHolderOrThrow(DamageTypes.PLAYER_ATTACK)),
-								(float) ((sourceentity instanceof LivingEntity _attributeContext ? _attributeContext.getAttributeValue(net.minecraft.world.entity.ai.attributes.Attributes.ATTACK_DAMAGE) : 0.0D)
-										- (sourceentity instanceof LivingEntity _attributeContext ? _attributeContext.getAttributeValue(net.minecraft.world.entity.ai.attributes.Attributes.ATTACK_DAMAGE) : 0.0D) / 1.3));
-						entity.getPersistentData().putBoolean("cooldown", true);
-						VlAbyssMod.queueServerWork(30, () -> {
-							entity.getPersistentData().remove("cooldown");
-						});
-						if (event != null && event.isCancelable()) {
-							event.setCanceled(true);
+							entity.hurt(new DamageSource(world.registryAccess().registryOrThrow(Registries.DAMAGE_TYPE).getHolderOrThrow(DamageTypes.PLAYER_ATTACK), sourceentity),
+									(float) ((sourceentity instanceof LivingEntity _attributeContext ? _attributeContext.getAttributeValue(net.minecraft.world.entity.ai.attributes.Attributes.ATTACK_DAMAGE) : 0.0D)
+											- (sourceentity instanceof LivingEntity _attributeContext ? _attributeContext.getAttributeValue(net.minecraft.world.entity.ai.attributes.Attributes.ATTACK_DAMAGE) : 0.0D) / 1.3));
+							entity.getPersistentData().putBoolean("cooldown", true);
+							VlAbyssMod.queueServerWork(30, () -> {
+								entity.getPersistentData().remove("cooldown");
+							});
+							if (event != null && event.isCancelable()) {
+								event.setCanceled(true);
+							}
+						} else {
+							if (sourceentity instanceof LivingEntity _entity && !_entity.level().isClientSide())
+								_entity.addEffect(new MobEffectInstance(VlAbyssModMobEffects.RESISTENCIA_QUEBRADA.get(), 200, 0));
 						}
 					}
 				}

@@ -99,7 +99,7 @@ public class ArkanthiClasseProcedure {
 					if (entity instanceof Player _player && !_player.level().isClientSide())
 						_player.displayClientMessage(Component.literal(("\u00A7bVoc\u00EA removeu " + entityiterator.getDisplayName().getString() + " na classe \u00A73ARKANTHI")), false);
 					{
-						Entity _entity = entity;
+						Entity _entity = entityiterator;
 						if (_entity instanceof LivingEntity _livingEntity) {
 							Attribute _attribute = ForgeRegistries.ATTRIBUTES.getValue(new ResourceLocation("vl_abyss:inteligencia"));
 							if (_attribute != null) {

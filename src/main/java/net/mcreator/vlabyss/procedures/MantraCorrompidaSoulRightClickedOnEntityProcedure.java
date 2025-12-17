@@ -126,29 +126,9 @@ public class MantraCorrompidaSoulRightClickedOnEntityProcedure {
 						}
 					} else if ((sourceentity instanceof LivingEntity _livingEntity12 && _livingEntity12.getAttributes().hasAttribute(VlAbyssModAttributes.INTELIGENCIA.get())
 							? _livingEntity12.getAttribute(VlAbyssModAttributes.INTELIGENCIA.get()).getValue()
-							: 0) == 2) {
+							: 0) >= 2) {
 						{
 							double _setval = (sourceentity.getCapability(VlAbyssModVariables.PLAYER_VARIABLES_CAPABILITY, null).orElseGet(VlAbyssModVariables.PlayerVariables::new)).almas_corrompidas + 3;
-							sourceentity.getCapability(VlAbyssModVariables.PLAYER_VARIABLES_CAPABILITY, null).ifPresent(capability -> {
-								capability.almas_corrompidas = _setval;
-								capability.syncPlayerVariables(sourceentity);
-							});
-						}
-					} else if ((sourceentity instanceof LivingEntity _livingEntity13 && _livingEntity13.getAttributes().hasAttribute(VlAbyssModAttributes.INTELIGENCIA.get())
-							? _livingEntity13.getAttribute(VlAbyssModAttributes.INTELIGENCIA.get()).getValue()
-							: 0) == 3) {
-						{
-							double _setval = (sourceentity.getCapability(VlAbyssModVariables.PLAYER_VARIABLES_CAPABILITY, null).orElseGet(VlAbyssModVariables.PlayerVariables::new)).almas_corrompidas + 4;
-							sourceentity.getCapability(VlAbyssModVariables.PLAYER_VARIABLES_CAPABILITY, null).ifPresent(capability -> {
-								capability.almas_corrompidas = _setval;
-								capability.syncPlayerVariables(sourceentity);
-							});
-						}
-					} else if ((sourceentity instanceof LivingEntity _livingEntity14 && _livingEntity14.getAttributes().hasAttribute(VlAbyssModAttributes.INTELIGENCIA.get())
-							? _livingEntity14.getAttribute(VlAbyssModAttributes.INTELIGENCIA.get()).getValue()
-							: 0) >= 4) {
-						{
-							double _setval = (sourceentity.getCapability(VlAbyssModVariables.PLAYER_VARIABLES_CAPABILITY, null).orElseGet(VlAbyssModVariables.PlayerVariables::new)).almas_corrompidas + 5;
 							sourceentity.getCapability(VlAbyssModVariables.PLAYER_VARIABLES_CAPABILITY, null).ifPresent(capability -> {
 								capability.almas_corrompidas = _setval;
 								capability.syncPlayerVariables(sourceentity);
