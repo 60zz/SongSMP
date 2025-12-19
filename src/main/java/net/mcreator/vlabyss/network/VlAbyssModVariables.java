@@ -121,6 +121,13 @@ public class VlAbyssModVariables {
 			clone.opcao_mantra3 = original.opcao_mantra3;
 			clone.lctrlativo = original.lctrlativo;
 			clone.procurado = original.procurado;
+			clone.song_escuridao = original.song_escuridao;
+			clone.song_respiro = original.song_respiro;
+			clone.song_nevasca = original.song_nevasca;
+			clone.song_chama = original.song_chama;
+			clone.song_luz = original.song_luz;
+			clone.song_tempestade = original.song_tempestade;
+			clone.song_esquecimento = original.song_esquecimento;
 			if (!event.isWasDeath()) {
 			}
 		}
@@ -212,6 +219,13 @@ public class VlAbyssModVariables {
 		public double opcao_mantra3 = 0;
 		public boolean lctrlativo = false;
 		public boolean procurado = false;
+		public boolean song_escuridao = false;
+		public boolean song_respiro = false;
+		public boolean song_nevasca = false;
+		public boolean song_chama = false;
+		public boolean song_luz = false;
+		public boolean song_tempestade = false;
+		public boolean song_esquecimento = false;
 
 		public void syncPlayerVariables(Entity entity) {
 			if (entity instanceof ServerPlayer serverPlayer)
@@ -275,6 +289,13 @@ public class VlAbyssModVariables {
 			nbt.putDouble("opcao_mantra3", opcao_mantra3);
 			nbt.putBoolean("lctrlativo", lctrlativo);
 			nbt.putBoolean("procurado", procurado);
+			nbt.putBoolean("song_escuridao", song_escuridao);
+			nbt.putBoolean("song_respiro", song_respiro);
+			nbt.putBoolean("song_nevasca", song_nevasca);
+			nbt.putBoolean("song_chama", song_chama);
+			nbt.putBoolean("song_luz", song_luz);
+			nbt.putBoolean("song_tempestade", song_tempestade);
+			nbt.putBoolean("song_esquecimento", song_esquecimento);
 			return nbt;
 		}
 
@@ -335,6 +356,13 @@ public class VlAbyssModVariables {
 			opcao_mantra3 = nbt.getDouble("opcao_mantra3");
 			lctrlativo = nbt.getBoolean("lctrlativo");
 			procurado = nbt.getBoolean("procurado");
+			song_escuridao = nbt.getBoolean("song_escuridao");
+			song_respiro = nbt.getBoolean("song_respiro");
+			song_nevasca = nbt.getBoolean("song_nevasca");
+			song_chama = nbt.getBoolean("song_chama");
+			song_luz = nbt.getBoolean("song_luz");
+			song_tempestade = nbt.getBoolean("song_tempestade");
+			song_esquecimento = nbt.getBoolean("song_esquecimento");
 		}
 	}
 
@@ -414,6 +442,13 @@ public class VlAbyssModVariables {
 					variables.opcao_mantra3 = message.data.opcao_mantra3;
 					variables.lctrlativo = message.data.lctrlativo;
 					variables.procurado = message.data.procurado;
+					variables.song_escuridao = message.data.song_escuridao;
+					variables.song_respiro = message.data.song_respiro;
+					variables.song_nevasca = message.data.song_nevasca;
+					variables.song_chama = message.data.song_chama;
+					variables.song_luz = message.data.song_luz;
+					variables.song_tempestade = message.data.song_tempestade;
+					variables.song_esquecimento = message.data.song_esquecimento;
 				}
 			});
 			context.setPacketHandled(true);

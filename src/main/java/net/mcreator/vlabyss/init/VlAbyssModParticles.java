@@ -17,6 +17,8 @@ import net.mcreator.vlabyss.client.particle.Particulamorreu2Particle;
 import net.mcreator.vlabyss.client.particle.Particulamorreu1Particle;
 import net.mcreator.vlabyss.client.particle.ParryDeuCertoParticle;
 import net.mcreator.vlabyss.client.particle.LightningCloakParticleParticle;
+import net.mcreator.vlabyss.client.particle.LastResistanceParticleParticle;
+import net.mcreator.vlabyss.client.particle.GiantBladeParticleParticle;
 import net.mcreator.vlabyss.client.particle.FlamingSlashParticle;
 import net.mcreator.vlabyss.client.particle.FireEruptionParticleParticle;
 import net.mcreator.vlabyss.client.particle.ExplosaoVentoParticle;
@@ -43,5 +45,7 @@ public class VlAbyssModParticles {
 		event.registerSpriteSet(VlAbyssModParticleTypes.ECHO_SLASH_PARTICLE.get(), EchoSlashParticleParticle::provider);
 		event.registerSpriteSet(VlAbyssModParticleTypes.BODY_FIRE_PARTICLE.get(), BodyFireParticleParticle::provider);
 		event.registerSpriteSet(VlAbyssModParticleTypes.FIRE_ERUPTION_PARTICLE.get(), FireEruptionParticleParticle::provider);
+		event.registerSpriteSet(VlAbyssModParticleTypes.LAST_RESISTANCE_PARTICLE.get(), LastResistanceParticleParticle::provider);
+		event.registerSpriteSet(VlAbyssModParticleTypes.GIANT_BLADE_PARTICLE.get(), GiantBladeParticleParticle::provider);
 	}
 }

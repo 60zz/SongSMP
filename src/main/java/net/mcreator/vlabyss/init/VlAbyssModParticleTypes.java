@@ -29,4 +29,6 @@ public class VlAbyssModParticleTypes {
 	public static final RegistryObject<SimpleParticleType> ECHO_SLASH_PARTICLE = REGISTRY.register("echo_slash_particle", () -> new SimpleParticleType(false));
 	public static final RegistryObject<SimpleParticleType> BODY_FIRE_PARTICLE = REGISTRY.register("body_fire_particle", () -> new SimpleParticleType(false));
 	public static final RegistryObject<SimpleParticleType> FIRE_ERUPTION_PARTICLE = REGISTRY.register("fire_eruption_particle", () -> new SimpleParticleType(false));
+	public static final RegistryObject<SimpleParticleType> LAST_RESISTANCE_PARTICLE = REGISTRY.register("last_resistance_particle", () -> new SimpleParticleType(false));
+	public static final RegistryObject<SimpleParticleType> GIANT_BLADE_PARTICLE = REGISTRY.register("giant_blade_particle", () -> new SimpleParticleType(false));
 }

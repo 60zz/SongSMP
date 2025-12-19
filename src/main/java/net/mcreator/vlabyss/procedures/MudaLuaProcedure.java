@@ -493,7 +493,7 @@ public class MudaLuaProcedure {
 		if (dimension == Level.OVERWORLD) {
 			RenderSystem.defaultBlendFunc();
 			RenderSystem.setShaderTexture(0, new ResourceLocation(("vl_abyss" + ":textures/" + "luaaa" + ".png")));
-			renderMoon(60, 255 << 24 | 255 << 16 | 255 << 8 | 255, false, false);
+			renderMoon(90, 255 << 24 | 255 << 16 | 255 << 8 | 255, false, false);
 		}
 	}
 }

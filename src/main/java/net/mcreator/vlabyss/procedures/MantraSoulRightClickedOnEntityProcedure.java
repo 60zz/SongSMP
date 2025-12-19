@@ -70,7 +70,7 @@ public class MantraSoulRightClickedOnEntityProcedure {
 			}.timedLoop(0, 24, (int) 2.5);
 			VlAbyssMod.queueServerWork(60, () -> {
 				if (Math.random() >= 0.7) {
-					if (!((entity.getCapability(VlAbyssModVariables.PLAYER_VARIABLES_CAPABILITY, null).orElseGet(VlAbyssModVariables.PlayerVariables::new)).MantraRegistrada == true)) {
+					if ((sourceentity.getCapability(VlAbyssModVariables.PLAYER_VARIABLES_CAPABILITY, null).orElseGet(VlAbyssModVariables.PlayerVariables::new)).MantraRegistrada == false) {
 						if (!entity.level().isClientSide())
 							entity.discard();
 						if (world instanceof Level _level) {
@@ -139,6 +139,12 @@ public class MantraSoulRightClickedOnEntityProcedure {
 							}
 						}
 					} else {
+						if (world instanceof ServerLevel _level) {
+							Entity entityToSpawn = VlAbyssModEntities.MANTRA_SOUL_CORROMPIDA.get().spawn(_level, BlockPos.containing(x, y, z), MobSpawnType.MOB_SUMMONED);
+							if (entityToSpawn != null) {
+								entityToSpawn.setYRot(world.getRandom().nextFloat() * 360F);
+							}
+						}
 						if (!entity.level().isClientSide())
 							entity.discard();
 						if (world instanceof Level _level) {
@@ -153,12 +159,6 @@ public class MantraSoulRightClickedOnEntityProcedure {
 							entityToSpawn.moveTo(Vec3.atBottomCenterOf(BlockPos.containing(x, y, z)));
 							entityToSpawn.setVisualOnly(true);
 							_level.addFreshEntity(entityToSpawn);
-						}
-						if (world instanceof ServerLevel _level) {
-							Entity entityToSpawn = VlAbyssModEntities.MANTRA_SOUL_CORROMPIDA.get().spawn(_level, BlockPos.containing(x, y, z), MobSpawnType.MOB_SUMMONED);
-							if (entityToSpawn != null) {
-								entityToSpawn.setYRot(world.getRandom().nextFloat() * 360F);
-							}
 						}
 					}
 				} else {

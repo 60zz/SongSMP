@@ -38,7 +38,7 @@ public class CrimsonDemonItem extends SwordItem {
 			public Ingredient getRepairIngredient() {
 				return Ingredient.of();
 			}
-		}, 3, -2.5f, new Item.Properties().fireResistant());
+		}, 3, -2.4f, new Item.Properties().fireResistant());
 	}
 
 	@Override

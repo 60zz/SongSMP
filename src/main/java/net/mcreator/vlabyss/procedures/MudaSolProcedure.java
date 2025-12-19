@@ -493,7 +493,7 @@ public class MudaSolProcedure {
 		if (dimension == Level.OVERWORLD) {
 			RenderSystem.defaultBlendFunc();
 			RenderSystem.setShaderTexture(0, new ResourceLocation(("vl_abyss" + ":textures/" + "souuu" + ".png")));
-			renderSun(60, 255 << 24 | 255 << 16 | 255 << 8 | 255, false);
+			renderSun(90, 255 << 24 | 255 << 16 | 255 << 8 | 255, false);
 		}
 	}
 }

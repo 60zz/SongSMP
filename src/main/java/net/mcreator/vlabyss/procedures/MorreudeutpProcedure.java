@@ -45,8 +45,97 @@ public class MorreudeutpProcedure {
 	private static void execute(@Nullable Event event, LevelAccessor world, double x, double y, double z, DamageSource damagesource, Entity entity) {
 		if (damagesource == null || entity == null)
 			return;
-		if (damagesource.is(ResourceKey.create(Registries.DAMAGE_TYPE, ResourceLocation.parse("vl_abyss:danoabismoboss")))) {
-			if ((entity.getCapability(VlAbyssModVariables.PLAYER_VARIABLES_CAPABILITY, null).orElseGet(VlAbyssModVariables.PlayerVariables::new)).vidas >= 2) {
+		if (!((entity.getCapability(VlAbyssModVariables.PLAYER_VARIABLES_CAPABILITY, null).orElseGet(VlAbyssModVariables.PlayerVariables::new)).Songs == true)) {
+			if (damagesource.is(ResourceKey.create(Registries.DAMAGE_TYPE, ResourceLocation.parse("vl_abyss:danoabismoboss")))) {
+				if ((entity.getCapability(VlAbyssModVariables.PLAYER_VARIABLES_CAPABILITY, null).orElseGet(VlAbyssModVariables.PlayerVariables::new)).vidas >= 2) {
+					{
+						double _setval = (entity.getCapability(VlAbyssModVariables.PLAYER_VARIABLES_CAPABILITY, null).orElseGet(VlAbyssModVariables.PlayerVariables::new)).vidas - 1;
+						entity.getCapability(VlAbyssModVariables.PLAYER_VARIABLES_CAPABILITY, null).ifPresent(capability -> {
+							capability.vidas = _setval;
+							capability.syncPlayerVariables(entity);
+						});
+					}
+				} else if ((entity.getCapability(VlAbyssModVariables.PLAYER_VARIABLES_CAPABILITY, null).orElseGet(VlAbyssModVariables.PlayerVariables::new)).vidas == 1) {
+					if (event != null && event.isCancelable()) {
+						event.setCanceled(true);
+					}
+					if (entity instanceof LivingEntity _entity)
+						_entity.setHealth(entity instanceof LivingEntity _livEnt ? _livEnt.getMaxHealth() : -1);
+					{
+						double _setval = 0;
+						entity.getCapability(VlAbyssModVariables.PLAYER_VARIABLES_CAPABILITY, null).ifPresent(capability -> {
+							capability.vidas = _setval;
+							capability.syncPlayerVariables(entity);
+						});
+					}
+					if (entity instanceof ServerPlayer _player && !_player.level().isClientSide()) {
+						ResourceKey<Level> destinationType = ResourceKey.create(Registries.DIMENSION, ResourceLocation.parse("vl_abyss:abismo"));
+						if (_player.level().dimension() == destinationType)
+							return;
+						ServerLevel nextLevel = _player.server.getLevel(destinationType);
+						if (nextLevel != null) {
+							_player.connection.send(new ClientboundGameEventPacket(ClientboundGameEventPacket.WIN_GAME, 0));
+							_player.teleportTo(nextLevel, _player.getX(), _player.getY(), _player.getZ(), _player.getYRot(), _player.getXRot());
+							_player.connection.send(new ClientboundPlayerAbilitiesPacket(_player.getAbilities()));
+							for (MobEffectInstance _effectinstance : _player.getActiveEffects())
+								_player.connection.send(new ClientboundUpdateMobEffectPacket(_player.getId(), _effectinstance));
+							_player.connection.send(new ClientboundLevelEventPacket(1032, BlockPos.ZERO, 0, false));
+						}
+					}
+					VlAbyssMod.queueServerWork(10, () -> {
+						{
+							try {
+								net.minecraft.world.entity.Entity targetEntity = entity;
+								double teleportX = x;
+								double teleportY = (y + 100);
+								double teleportZ = z;
+								if (targetEntity != null) {
+									if (targetEntity instanceof net.minecraft.server.level.ServerPlayer _player && !_player.level().isClientSide()) {
+										_player.connection.teleport(teleportX, teleportY, teleportZ, _player.getYRot(), _player.getXRot());
+									} else {
+										targetEntity.teleportTo(teleportX, teleportY, teleportZ);
+									}
+								}
+							} catch (Exception e) {
+							}
+						}
+					});
+				} else if ((entity.getCapability(VlAbyssModVariables.PLAYER_VARIABLES_CAPABILITY, null).orElseGet(VlAbyssModVariables.PlayerVariables::new)).vidas == 0) {
+					{
+						double _setval = (entity.getCapability(VlAbyssModVariables.PLAYER_VARIABLES_CAPABILITY, null).orElseGet(VlAbyssModVariables.PlayerVariables::new)).vidas - 1;
+						entity.getCapability(VlAbyssModVariables.PLAYER_VARIABLES_CAPABILITY, null).ifPresent(capability -> {
+							capability.vidas = _setval;
+							capability.syncPlayerVariables(entity);
+						});
+					}
+					{
+						Entity _ent = entity;
+						if (!_ent.level().isClientSide() && _ent.getServer() != null) {
+							_ent.getServer().getCommands().performPrefixedCommand(new CommandSourceStack(CommandSource.NULL, _ent.position(), _ent.getRotationVector(), _ent.level() instanceof ServerLevel ? (ServerLevel) _ent.level() : null, 4,
+									_ent.getName().getString(), _ent.getDisplayName(), _ent.level().getServer(), _ent), ("easywl remove " + (new Object() {
+										public String getRealName(Entity entity) {
+											if (entity == null)
+												return "";
+											if (entity instanceof net.minecraft.world.entity.player.Player _player)
+												return _player.getGameProfile().getName();
+											return entity.getType().getDescription().getString();
+										}
+									}.getRealName(entity))));
+						}
+					}
+					VlAbyssMod.queueServerWork(100, () -> {
+						{
+							Entity _ent = entity;
+							if (!_ent.level().isClientSide() && _ent.getServer() != null) {
+								_ent.getServer().getCommands().performPrefixedCommand(new CommandSourceStack(CommandSource.NULL, _ent.position(), _ent.getRotationVector(), _ent.level() instanceof ServerLevel ? (ServerLevel) _ent.level() : null, 4,
+										_ent.getName().getString(), _ent.getDisplayName(), _ent.level().getServer(), _ent), "minecraft:kick @s Voc\u00EA perdeu TODAS as suas vidas e sucumbiu ao abismo.");
+							}
+						}
+					});
+				}
+			}
+		} else {
+			if ((entity.getCapability(VlAbyssModVariables.PLAYER_VARIABLES_CAPABILITY, null).orElseGet(VlAbyssModVariables.PlayerVariables::new)).vidas == 2) {
 				{
 					double _setval = (entity.getCapability(VlAbyssModVariables.PLAYER_VARIABLES_CAPABILITY, null).orElseGet(VlAbyssModVariables.PlayerVariables::new)).vidas - 1;
 					entity.getCapability(VlAbyssModVariables.PLAYER_VARIABLES_CAPABILITY, null).ifPresent(capability -> {
@@ -55,53 +144,8 @@ public class MorreudeutpProcedure {
 					});
 				}
 			} else if ((entity.getCapability(VlAbyssModVariables.PLAYER_VARIABLES_CAPABILITY, null).orElseGet(VlAbyssModVariables.PlayerVariables::new)).vidas == 1) {
-				if (event != null && event.isCancelable()) {
-					event.setCanceled(true);
-				}
-				if (entity instanceof LivingEntity _entity)
-					_entity.setHealth(entity instanceof LivingEntity _livEnt ? _livEnt.getMaxHealth() : -1);
 				{
 					double _setval = 0;
-					entity.getCapability(VlAbyssModVariables.PLAYER_VARIABLES_CAPABILITY, null).ifPresent(capability -> {
-						capability.vidas = _setval;
-						capability.syncPlayerVariables(entity);
-					});
-				}
-				if (entity instanceof ServerPlayer _player && !_player.level().isClientSide()) {
-					ResourceKey<Level> destinationType = ResourceKey.create(Registries.DIMENSION, ResourceLocation.parse("vl_abyss:abismo"));
-					if (_player.level().dimension() == destinationType)
-						return;
-					ServerLevel nextLevel = _player.server.getLevel(destinationType);
-					if (nextLevel != null) {
-						_player.connection.send(new ClientboundGameEventPacket(ClientboundGameEventPacket.WIN_GAME, 0));
-						_player.teleportTo(nextLevel, _player.getX(), _player.getY(), _player.getZ(), _player.getYRot(), _player.getXRot());
-						_player.connection.send(new ClientboundPlayerAbilitiesPacket(_player.getAbilities()));
-						for (MobEffectInstance _effectinstance : _player.getActiveEffects())
-							_player.connection.send(new ClientboundUpdateMobEffectPacket(_player.getId(), _effectinstance));
-						_player.connection.send(new ClientboundLevelEventPacket(1032, BlockPos.ZERO, 0, false));
-					}
-				}
-				VlAbyssMod.queueServerWork(10, () -> {
-					{
-						try {
-							net.minecraft.world.entity.Entity targetEntity = entity;
-							double teleportX = x;
-							double teleportY = (y + 100);
-							double teleportZ = z;
-							if (targetEntity != null) {
-								if (targetEntity instanceof net.minecraft.server.level.ServerPlayer _player && !_player.level().isClientSide()) {
-									_player.connection.teleport(teleportX, teleportY, teleportZ, _player.getYRot(), _player.getXRot());
-								} else {
-									targetEntity.teleportTo(teleportX, teleportY, teleportZ);
-								}
-							}
-						} catch (Exception e) {
-						}
-					}
-				});
-			} else if ((entity.getCapability(VlAbyssModVariables.PLAYER_VARIABLES_CAPABILITY, null).orElseGet(VlAbyssModVariables.PlayerVariables::new)).vidas == 0) {
-				{
-					double _setval = (entity.getCapability(VlAbyssModVariables.PLAYER_VARIABLES_CAPABILITY, null).orElseGet(VlAbyssModVariables.PlayerVariables::new)).vidas - 1;
 					entity.getCapability(VlAbyssModVariables.PLAYER_VARIABLES_CAPABILITY, null).ifPresent(capability -> {
 						capability.vidas = _setval;
 						capability.syncPlayerVariables(entity);
@@ -111,7 +155,15 @@ public class MorreudeutpProcedure {
 					Entity _ent = entity;
 					if (!_ent.level().isClientSide() && _ent.getServer() != null) {
 						_ent.getServer().getCommands().performPrefixedCommand(new CommandSourceStack(CommandSource.NULL, _ent.position(), _ent.getRotationVector(), _ent.level() instanceof ServerLevel ? (ServerLevel) _ent.level() : null, 4,
-								_ent.getName().getString(), _ent.getDisplayName(), _ent.level().getServer(), _ent), ("easywl remove " + entity.getDisplayName().getString()));
+								_ent.getName().getString(), _ent.getDisplayName(), _ent.level().getServer(), _ent), ("easywl remove " + (new Object() {
+									public String getRealName(Entity entity) {
+										if (entity == null)
+											return "";
+										if (entity instanceof net.minecraft.world.entity.player.Player _player)
+											return _player.getGameProfile().getName();
+										return entity.getType().getDescription().getString();
+									}
+								}.getRealName(entity))));
 					}
 				}
 				VlAbyssMod.queueServerWork(100, () -> {
@@ -119,7 +171,7 @@ public class MorreudeutpProcedure {
 						Entity _ent = entity;
 						if (!_ent.level().isClientSide() && _ent.getServer() != null) {
 							_ent.getServer().getCommands().performPrefixedCommand(new CommandSourceStack(CommandSource.NULL, _ent.position(), _ent.getRotationVector(), _ent.level() instanceof ServerLevel ? (ServerLevel) _ent.level() : null, 4,
-									_ent.getName().getString(), _ent.getDisplayName(), _ent.level().getServer(), _ent), "minecraft:kick @s Voc\u00EA perdeu TODAS as suas vidas e sucumbiu ao abismo.");
+									_ent.getName().getString(), _ent.getDisplayName(), _ent.level().getServer(), _ent), "minecraft:kick @s Voc\u00EA perdeu todas suas vidas...");
 						}
 					}
 				});

@@ -57,50 +57,52 @@ public class AbyssionDaggerRightclickedProcedure {
 					_player.getCooldowns().addCooldown(VlAbyssModItems.ABYSSION_DAGGER.get(), 24000);
 				VlAbyssMod.queueServerWork(20, () -> {
 					if (itemstack.getItem() == (entity instanceof LivingEntity _livEnt ? _livEnt.getMainHandItem() : ItemStack.EMPTY).getItem()) {
-						{
-							double _setval = 0;
-							entity.getCapability(VlAbyssModVariables.PLAYER_VARIABLES_CAPABILITY, null).ifPresent(capability -> {
-								capability.vidas = _setval;
-								capability.syncPlayerVariables(entity);
-							});
-						}
-						entity.hurt(new DamageSource(world.registryAccess().registryOrThrow(Registries.DAMAGE_TYPE).getHolderOrThrow(DamageTypes.GENERIC)), 1);
-						if (entity instanceof LivingEntity _entity)
-							_entity.setHealth(2);
-						if (entity instanceof ServerPlayer _player && !_player.level().isClientSide()) {
-							ResourceKey<Level> destinationType = ResourceKey.create(Registries.DIMENSION, ResourceLocation.parse("vl_abyss:abismo"));
-							if (_player.level().dimension() == destinationType)
-								return;
-							ServerLevel nextLevel = _player.server.getLevel(destinationType);
-							if (nextLevel != null) {
-								_player.connection.send(new ClientboundGameEventPacket(ClientboundGameEventPacket.WIN_GAME, 0));
-								_player.teleportTo(nextLevel, _player.getX(), _player.getY(), _player.getZ(), _player.getYRot(), _player.getXRot());
-								_player.connection.send(new ClientboundPlayerAbilitiesPacket(_player.getAbilities()));
-								for (MobEffectInstance _effectinstance : _player.getActiveEffects())
-									_player.connection.send(new ClientboundUpdateMobEffectPacket(_player.getId(), _effectinstance));
-								_player.connection.send(new ClientboundLevelEventPacket(1032, BlockPos.ZERO, 0, false));
+						if (!((entity.getCapability(VlAbyssModVariables.PLAYER_VARIABLES_CAPABILITY, null).orElseGet(VlAbyssModVariables.PlayerVariables::new)).Songs == true)) {
+							{
+								double _setval = 0;
+								entity.getCapability(VlAbyssModVariables.PLAYER_VARIABLES_CAPABILITY, null).ifPresent(capability -> {
+									capability.vidas = _setval;
+									capability.syncPlayerVariables(entity);
+								});
 							}
-						}
-						VlAbyssMod.queueServerWork(10, () -> {
-							if (itemstack.getItem() == (entity instanceof LivingEntity _livEnt ? _livEnt.getMainHandItem() : ItemStack.EMPTY).getItem()) {
-								{
-									try {
-										net.minecraft.world.entity.Entity targetEntity = entity;
-										double teleportX = x;
-										double teleportY = (y + 100);
-										double teleportZ = z;
-										if (targetEntity != null) {
-											if (targetEntity instanceof net.minecraft.server.level.ServerPlayer _player && !_player.level().isClientSide()) {
-												_player.connection.teleport(teleportX, teleportY, teleportZ, _player.getYRot(), _player.getXRot());
-											} else {
-												targetEntity.teleportTo(teleportX, teleportY, teleportZ);
-											}
-										}
-									} catch (Exception e) {
-									}
+							if (entity instanceof ServerPlayer _player && !_player.level().isClientSide()) {
+								ResourceKey<Level> destinationType = ResourceKey.create(Registries.DIMENSION, ResourceLocation.parse("vl_abyss:abismo"));
+								if (_player.level().dimension() == destinationType)
+									return;
+								ServerLevel nextLevel = _player.server.getLevel(destinationType);
+								if (nextLevel != null) {
+									_player.connection.send(new ClientboundGameEventPacket(ClientboundGameEventPacket.WIN_GAME, 0));
+									_player.teleportTo(nextLevel, _player.getX(), _player.getY(), _player.getZ(), _player.getYRot(), _player.getXRot());
+									_player.connection.send(new ClientboundPlayerAbilitiesPacket(_player.getAbilities()));
+									for (MobEffectInstance _effectinstance : _player.getActiveEffects())
+										_player.connection.send(new ClientboundUpdateMobEffectPacket(_player.getId(), _effectinstance));
+									_player.connection.send(new ClientboundLevelEventPacket(1032, BlockPos.ZERO, 0, false));
 								}
 							}
-						});
+							VlAbyssMod.queueServerWork(10, () -> {
+								if (itemstack.getItem() == (entity instanceof LivingEntity _livEnt ? _livEnt.getMainHandItem() : ItemStack.EMPTY).getItem()) {
+									{
+										try {
+											net.minecraft.world.entity.Entity targetEntity = entity;
+											double teleportX = x;
+											double teleportY = (y + 100);
+											double teleportZ = z;
+											if (targetEntity != null) {
+												if (targetEntity instanceof net.minecraft.server.level.ServerPlayer _player && !_player.level().isClientSide()) {
+													_player.connection.teleport(teleportX, teleportY, teleportZ, _player.getYRot(), _player.getXRot());
+												} else {
+													targetEntity.teleportTo(teleportX, teleportY, teleportZ);
+												}
+											}
+										} catch (Exception e) {
+										}
+									}
+								}
+							});
+						}
+						if (entity instanceof LivingEntity _entity)
+							_entity.setHealth(2);
+						entity.hurt(new DamageSource(world.registryAccess().registryOrThrow(Registries.DAMAGE_TYPE).getHolderOrThrow(DamageTypes.GENERIC)), 1);
 					}
 				});
 			}

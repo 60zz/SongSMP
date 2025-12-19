@@ -1471,8 +1471,8 @@
       "registry_name": "botas_vazio_abyssal",
       "metadata": {
         "files": [
-          "src/main/resources/assets/vl_abyss/models/item/botas_vazio_abyssal.json",
-          "src/main/java/net/mcreator/vlabyss/item/BotasVazioAbyssalItem.java"
+          "src/main/java/net/mcreator/vlabyss/item/BotasVazioAbyssalItem.java",
+          "src/main/resources/assets/vl_abyss/models/item/botas_vazio_abyssal.json"
         ]
       },
       "path": "~/VL1_Abyss/Artefatos"
@@ -2987,8 +2987,8 @@
       "registry_name": "pocao_rejuvenescimento",
       "metadata": {
         "files": [
-          "src/main/resources/assets/vl_abyss/models/item/pocao_rejuvenescimento.json",
-          "src/main/java/net/mcreator/vlabyss/item/PocaoRejuvenescimentoItem.java"
+          "src/main/java/net/mcreator/vlabyss/item/PocaoRejuvenescimentoItem.java",
+          "src/main/resources/assets/vl_abyss/models/item/pocao_rejuvenescimento.json"
         ]
       },
       "path": "~/VL1_Abyss/Pocoes/Item"
@@ -8201,7 +8201,7 @@
           "src/main/java/net/mcreator/vlabyss/item/RedDeathItem.java"
         ]
       },
-      "path": "~/VL1_Abyss/Armas/RedDeath"
+      "path": "~/VL1_Abyss/Armas/CarmesimSword"
     },
     {
       "name": "SwordOfPureProtector",
@@ -8229,7 +8229,7 @@
           "src/main/resources/assets/vl_abyss/models/item/red_blade.json"
         ]
       },
-      "path": "~/VL1_Abyss/Armas/RedBlade"
+      "path": "~/VL1_Abyss/Armas/GiantSword"
     },
     {
       "name": "HerosBlade",
@@ -9419,6 +9419,832 @@
         ]
       },
       "path": "~/VL1_Abyss/Armas/SkullCrusher/Procedure"
+    },
+    {
+      "name": "PureProtector",
+      "type": "potioneffect",
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "pure_protector",
+      "metadata": {
+        "files": [
+          "src/main/java/net/mcreator/vlabyss/potion/PureProtectorMobEffect.java"
+        ]
+      },
+      "path": "~/VL1_Abyss/Armas/HerosBlade/Effect"
+    },
+    {
+      "name": "SwordOfPureProtectorRightclicked",
+      "type": "procedure",
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "sword_of_pure_protector_rightclicked",
+      "metadata": {
+        "dependencies": [
+          {
+            "name": "entity",
+            "type": "entity"
+          },
+          {
+            "name": "x",
+            "type": "number"
+          },
+          {
+            "name": "y",
+            "type": "number"
+          },
+          {
+            "name": "z",
+            "type": "number"
+          },
+          {
+            "name": "world",
+            "type": "world"
+          }
+        ],
+        "files": [
+          "src/main/java/net/mcreator/vlabyss/procedures/SwordOfPureProtectorRightclickedProcedure.java"
+        ]
+      },
+      "path": "~/VL1_Abyss/Armas/HerosBlade/Procedure"
+    },
+    {
+      "name": "InfoSwordPureProtector",
+      "type": "procedure",
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "info_sword_pure_protector",
+      "metadata": {
+        "dependencies": [
+          {
+            "name": "itemstack",
+            "type": "itemstack"
+          },
+          {
+            "name": "tooltip",
+            "type": "tooltip"
+          }
+        ],
+        "files": [
+          "src/main/java/net/mcreator/vlabyss/procedures/InfoSwordPureProtectorProcedure.java"
+        ]
+      },
+      "path": "~/VL1_Abyss/Armas/HerosBlade/Procedure"
+    },
+    {
+      "name": "AstralAxeLivingEntityIsHitWithTool",
+      "type": "procedure",
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "astral_axe_living_entity_is_hit_with_tool",
+      "metadata": {
+        "dependencies": [
+          {
+            "name": "entity",
+            "type": "entity"
+          },
+          {
+            "name": "sourceentity",
+            "type": "entity"
+          },
+          {
+            "name": "world",
+            "type": "world"
+          }
+        ],
+        "files": [
+          "src/main/java/net/mcreator/vlabyss/procedures/AstralAxeLivingEntityIsHitWithToolProcedure.java"
+        ]
+      },
+      "path": "~/VL1_Abyss/Armas/AstralAxe/Procedure"
+    },
+    {
+      "name": "InfoAstralAxe",
+      "type": "procedure",
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "info_astral_axe",
+      "metadata": {
+        "dependencies": [
+          {
+            "name": "itemstack",
+            "type": "itemstack"
+          },
+          {
+            "name": "tooltip",
+            "type": "tooltip"
+          }
+        ],
+        "files": [
+          "src/main/java/net/mcreator/vlabyss/procedures/InfoAstralAxeProcedure.java"
+        ]
+      },
+      "path": "~/VL1_Abyss/Armas/AstralAxe/Procedure"
+    },
+    {
+      "name": "LastResistance",
+      "type": "potioneffect",
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "last_resistance",
+      "metadata": {
+        "files": [
+          "src/main/java/net/mcreator/vlabyss/potion/LastResistanceMobEffect.java"
+        ]
+      },
+      "path": "~/VL1_Abyss/Armas/SwordPureProtector/Effect"
+    },
+    {
+      "name": "TentaRecuperarVida",
+      "type": "procedure",
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "tenta_recuperar_vida",
+      "metadata": {
+        "dependencies": [
+          {
+            "name": "entity",
+            "type": "entity"
+          }
+        ],
+        "files": [
+          "src/main/java/net/mcreator/vlabyss/procedures/TentaRecuperarVidaProcedure.java"
+        ]
+      },
+      "path": "~/VL1_Abyss/Armas/SwordPureProtector/Procedure"
+    },
+    {
+      "name": "SwordOfPureProtectorToolInHandTick",
+      "type": "procedure",
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "sword_of_pure_protector_tool_in_hand_tick",
+      "metadata": {
+        "dependencies": [
+          {
+            "name": "entity",
+            "type": "entity"
+          }
+        ],
+        "files": [
+          "src/main/java/net/mcreator/vlabyss/procedures/SwordOfPureProtectorToolInHandTickProcedure.java"
+        ]
+      },
+      "path": "~/VL1_Abyss/Armas/SwordPureProtector/Procedure"
+    },
+    {
+      "name": "ImpedeMorte",
+      "type": "procedure",
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "impede_morte",
+      "metadata": {
+        "dependencies": [
+          {
+            "name": "entity",
+            "type": "entity"
+          },
+          {
+            "name": "x",
+            "type": "number"
+          },
+          {
+            "name": "y",
+            "type": "number"
+          },
+          {
+            "name": "z",
+            "type": "number"
+          },
+          {
+            "name": "world",
+            "type": "world"
+          }
+        ],
+        "files": [
+          "src/main/java/net/mcreator/vlabyss/procedures/ImpedeMorteProcedure.java"
+        ]
+      },
+      "path": "~/VL1_Abyss/Armas/SwordPureProtector/Procedure"
+    },
+    {
+      "name": "SwordOfPureProtectorHasItemGlowingEffect",
+      "type": "procedure",
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "sword_of_pure_protector_has_item_glowing_effect",
+      "metadata": {
+        "dependencies": [
+          {
+            "name": "entity",
+            "type": "entity"
+          },
+          {
+            "name": "itemstack",
+            "type": "itemstack"
+          }
+        ],
+        "return_type": "logic",
+        "files": [
+          "src/main/java/net/mcreator/vlabyss/procedures/SwordOfPureProtectorHasItemGlowingEffectProcedure.java"
+        ]
+      },
+      "path": "~/VL1_Abyss/Armas/SwordPureProtector/Procedure"
+    },
+    {
+      "name": "InfoSwordOfPureProtector",
+      "type": "procedure",
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "info_sword_of_pure_protector",
+      "metadata": {
+        "dependencies": [
+          {
+            "name": "itemstack",
+            "type": "itemstack"
+          },
+          {
+            "name": "tooltip",
+            "type": "tooltip"
+          }
+        ],
+        "files": [
+          "src/main/java/net/mcreator/vlabyss/procedures/InfoSwordOfPureProtectorProcedure.java"
+        ]
+      },
+      "path": "~/VL1_Abyss/Armas/SwordPureProtector/Procedure"
+    },
+    {
+      "name": "LastResistanceParticle",
+      "type": "particle",
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "last_resistance_particle",
+      "metadata": {
+        "files": [
+          "src/main/java/net/mcreator/vlabyss/client/particle/LastResistanceParticleParticle.java",
+          "src/main/resources/assets/vl_abyss/particles/last_resistance_particle.json"
+        ]
+      },
+      "path": "~/VL1_Abyss/Armas/SwordPureProtector/Particle"
+    },
+    {
+      "name": "LastResistanceOnEffectActiveTick",
+      "type": "procedure",
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "last_resistance_on_effect_active_tick",
+      "metadata": {
+        "dependencies": [
+          {
+            "name": "x",
+            "type": "number"
+          },
+          {
+            "name": "y",
+            "type": "number"
+          },
+          {
+            "name": "z",
+            "type": "number"
+          },
+          {
+            "name": "world",
+            "type": "world"
+          }
+        ],
+        "files": [
+          "src/main/java/net/mcreator/vlabyss/procedures/LastResistanceOnEffectActiveTickProcedure.java"
+        ]
+      },
+      "path": "~/VL1_Abyss/Armas/SwordPureProtector/Procedure"
+    },
+    {
+      "name": "SwordOfPureProtectorToolInInventoryTick",
+      "type": "procedure",
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "sword_of_pure_protector_tool_in_inventory_tick",
+      "metadata": {
+        "dependencies": [
+          {
+            "name": "entity",
+            "type": "entity"
+          },
+          {
+            "name": "itemstack",
+            "type": "itemstack"
+          }
+        ],
+        "files": [
+          "src/main/java/net/mcreator/vlabyss/procedures/SwordOfPureProtectorToolInInventoryTickProcedure.java"
+        ]
+      },
+      "path": "~/VL1_Abyss/Armas/SwordPureProtector/Procedure"
+    },
+    {
+      "name": "StoneResistance",
+      "type": "potioneffect",
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "stone_resistance",
+      "metadata": {
+        "files": [
+          "src/main/java/net/mcreator/vlabyss/potion/StoneResistanceMobEffect.java"
+        ]
+      },
+      "path": "~/VL1_Abyss/Armas/CoracaoPedra/Effect"
+    },
+    {
+      "name": "StoneResistanceEffectExpires",
+      "type": "procedure",
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "stone_resistance_effect_expires",
+      "metadata": {
+        "dependencies": [
+          {
+            "name": "entity",
+            "type": "entity"
+          }
+        ],
+        "files": [
+          "src/main/java/net/mcreator/vlabyss/procedures/StoneResistanceEffectExpiresProcedure.java"
+        ]
+      },
+      "path": "~/VL1_Abyss/Armas/CoracaoPedra/Procedure"
+    },
+    {
+      "name": "RecebeuDanoComCoracaoPedra",
+      "type": "procedure",
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "recebeu_dano_com_coracao_pedra",
+      "metadata": {
+        "dependencies": [
+          {
+            "name": "entity",
+            "type": "entity"
+          }
+        ],
+        "files": [
+          "src/main/java/net/mcreator/vlabyss/procedures/RecebeuDanoComCoracaoPedraProcedure.java"
+        ]
+      },
+      "path": "~/VL1_Abyss/Armas/CoracaoPedra/Procedure"
+    },
+    {
+      "name": "InfoStoneHeart",
+      "type": "procedure",
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "info_stone_heart",
+      "metadata": {
+        "dependencies": [
+          {
+            "name": "itemstack",
+            "type": "itemstack"
+          },
+          {
+            "name": "tooltip",
+            "type": "tooltip"
+          }
+        ],
+        "files": [
+          "src/main/java/net/mcreator/vlabyss/procedures/InfoStoneHeartProcedure.java"
+        ]
+      },
+      "path": "~/VL1_Abyss/Armas/CoracaoPedra/Procedure"
+    },
+    {
+      "name": "RedDeathLivingEntityIsHitWithTool",
+      "type": "procedure",
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "red_death_living_entity_is_hit_with_tool",
+      "metadata": {
+        "dependencies": [
+          {
+            "name": "sourceentity",
+            "type": "entity"
+          },
+          {
+            "name": "itemstack",
+            "type": "itemstack"
+          }
+        ],
+        "files": [
+          "src/main/java/net/mcreator/vlabyss/procedures/RedDeathLivingEntityIsHitWithToolProcedure.java"
+        ]
+      },
+      "path": "~/VL1_Abyss/Armas/CarmesimSword/Procedure"
+    },
+    {
+      "name": "RedDeathRightclicked",
+      "type": "procedure",
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "red_death_rightclicked",
+      "metadata": {
+        "dependencies": [
+          {
+            "name": "entity",
+            "type": "entity"
+          },
+          {
+            "name": "itemstack",
+            "type": "itemstack"
+          }
+        ],
+        "files": [
+          "src/main/java/net/mcreator/vlabyss/procedures/RedDeathRightclickedProcedure.java"
+        ]
+      },
+      "path": "~/VL1_Abyss/Armas/CarmesimSword/Procedure"
+    },
+    {
+      "name": "InfoCrimsomSword",
+      "type": "procedure",
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "info_crimsom_sword",
+      "metadata": {
+        "dependencies": [
+          {
+            "name": "itemstack",
+            "type": "itemstack"
+          },
+          {
+            "name": "tooltip",
+            "type": "tooltip"
+          }
+        ],
+        "files": [
+          "src/main/java/net/mcreator/vlabyss/procedures/InfoCrimsomSwordProcedure.java"
+        ]
+      },
+      "path": "~/VL1_Abyss/Armas/CarmesimSword/Procedure"
+    },
+    {
+      "name": "GiantBladeParticle",
+      "type": "particle",
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "giant_blade_particle",
+      "metadata": {
+        "files": [
+          "src/main/java/net/mcreator/vlabyss/client/particle/GiantBladeParticleParticle.java",
+          "src/main/resources/assets/vl_abyss/particles/giant_blade_particle.json"
+        ]
+      },
+      "path": "~/VL1_Abyss/Armas/GiantSword/Effect"
+    },
+    {
+      "name": "RedBladeToolInInventoryTick",
+      "type": "procedure",
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "red_blade_tool_in_inventory_tick",
+      "metadata": {
+        "dependencies": [
+          {
+            "name": "entity",
+            "type": "entity"
+          }
+        ],
+        "files": [
+          "src/main/java/net/mcreator/vlabyss/procedures/RedBladeToolInInventoryTickProcedure.java"
+        ]
+      },
+      "path": "~/VL1_Abyss/Armas/GiantSword/Procedure"
+    },
+    {
+      "name": "DropPerdeAttribute",
+      "type": "procedure",
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "drop_perde_attribute",
+      "metadata": {
+        "dependencies": [
+          {
+            "name": "entity",
+            "type": "entity"
+          },
+          {
+            "name": "itemstack",
+            "type": "itemstack"
+          }
+        ],
+        "files": [
+          "src/main/java/net/mcreator/vlabyss/procedures/DropPerdeAttributeProcedure.java"
+        ]
+      },
+      "path": "~/VL1_Abyss/Armas/GiantSword/Procedure"
+    },
+    {
+      "name": "RedBladeRightclicked",
+      "type": "procedure",
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "red_blade_rightclicked",
+      "metadata": {
+        "dependencies": [
+          {
+            "name": "entity",
+            "type": "entity"
+          },
+          {
+            "name": "x",
+            "type": "number"
+          },
+          {
+            "name": "y",
+            "type": "number"
+          },
+          {
+            "name": "z",
+            "type": "number"
+          },
+          {
+            "name": "world",
+            "type": "world"
+          }
+        ],
+        "files": [
+          "src/main/java/net/mcreator/vlabyss/procedures/RedBladeRightclickedProcedure.java"
+        ]
+      },
+      "path": "~/VL1_Abyss/Armas/GiantSword/Procedure"
+    },
+    {
+      "name": "InfoGiantSword",
+      "type": "procedure",
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "info_giant_sword",
+      "metadata": {
+        "dependencies": [
+          {
+            "name": "itemstack",
+            "type": "itemstack"
+          },
+          {
+            "name": "tooltip",
+            "type": "tooltip"
+          }
+        ],
+        "files": [
+          "src/main/java/net/mcreator/vlabyss/procedures/InfoGiantSwordProcedure.java"
+        ]
+      },
+      "path": "~/VL1_Abyss/Armas/GiantSword/Procedure"
+    },
+    {
+      "name": "AbyssBannerPainting",
+      "type": "painting",
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "abyss_banner_painting",
+      "metadata": {
+        "files": []
+      },
+      "path": "~/VL1_Abyss/Painting"
+    },
+    {
+      "name": "EthirPainting",
+      "type": "painting",
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "ethir_painting",
+      "metadata": {
+        "files": []
+      },
+      "path": "~/VL1_Abyss/Painting"
+    },
+    {
+      "name": "DoorPainting",
+      "type": "painting",
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "door_painting",
+      "metadata": {
+        "files": []
+      },
+      "path": "~/VL1_Abyss/Painting"
+    },
+    {
+      "name": "ExplorationPainting",
+      "type": "painting",
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "exploration_painting",
+      "metadata": {
+        "files": []
+      },
+      "path": "~/VL1_Abyss/Painting"
+    },
+    {
+      "name": "EntrouArrumaVidaSongs",
+      "type": "procedure",
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "entrou_arruma_vida_songs",
+      "metadata": {
+        "dependencies": [
+          {
+            "name": "entity",
+            "type": "entity"
+          }
+        ],
+        "files": [
+          "src/main/java/net/mcreator/vlabyss/procedures/EntrouArrumaVidaSongsProcedure.java"
+        ]
+      },
+      "path": "~/VL1_Abyss/Vidas"
+    },
+    {
+      "name": "SetSongCommand",
+      "type": "procedure",
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "set_song_command",
+      "metadata": {
+        "dependencies": [
+          {
+            "name": "arguments",
+            "type": "cmdcontext"
+          }
+        ],
+        "files": [
+          "src/main/java/net/mcreator/vlabyss/procedures/SetSongCommandProcedure.java"
+        ]
+      },
+      "path": "~/ComandosStaff/SetSong"
+    },
+    {
+      "name": "SetSongCommand2",
+      "type": "procedure",
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "set_song_command_2",
+      "metadata": {
+        "dependencies": [
+          {
+            "name": "arguments",
+            "type": "cmdcontext"
+          }
+        ],
+        "files": [
+          "src/main/java/net/mcreator/vlabyss/procedures/SetSongCommand2Procedure.java"
+        ]
+      },
+      "path": "~/ComandosStaff/SetSong"
+    },
+    {
+      "name": "SetSongCommand3",
+      "type": "procedure",
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "set_song_command_3",
+      "metadata": {
+        "dependencies": [
+          {
+            "name": "arguments",
+            "type": "cmdcontext"
+          }
+        ],
+        "files": [
+          "src/main/java/net/mcreator/vlabyss/procedures/SetSongCommand3Procedure.java"
+        ]
+      },
+      "path": "~/ComandosStaff/SetSong"
+    },
+    {
+      "name": "SetSongCommand4",
+      "type": "procedure",
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "set_song_command_4",
+      "metadata": {
+        "dependencies": [
+          {
+            "name": "arguments",
+            "type": "cmdcontext"
+          }
+        ],
+        "files": [
+          "src/main/java/net/mcreator/vlabyss/procedures/SetSongCommand4Procedure.java"
+        ]
+      },
+      "path": "~/ComandosStaff/SetSong"
+    },
+    {
+      "name": "SetSongCommand5",
+      "type": "procedure",
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "set_song_command_5",
+      "metadata": {
+        "dependencies": [
+          {
+            "name": "arguments",
+            "type": "cmdcontext"
+          }
+        ],
+        "files": [
+          "src/main/java/net/mcreator/vlabyss/procedures/SetSongCommand5Procedure.java"
+        ]
+      },
+      "path": "~/ComandosStaff/SetSong"
+    },
+    {
+      "name": "SetSongCommand6",
+      "type": "procedure",
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "set_song_command_6",
+      "metadata": {
+        "dependencies": [
+          {
+            "name": "arguments",
+            "type": "cmdcontext"
+          }
+        ],
+        "files": [
+          "src/main/java/net/mcreator/vlabyss/procedures/SetSongCommand6Procedure.java"
+        ]
+      },
+      "path": "~/ComandosStaff/SetSong"
+    },
+    {
+      "name": "SetSongCommand7",
+      "type": "procedure",
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "set_song_command_7",
+      "metadata": {
+        "dependencies": [
+          {
+            "name": "arguments",
+            "type": "cmdcontext"
+          }
+        ],
+        "files": [
+          "src/main/java/net/mcreator/vlabyss/procedures/SetSongCommand7Procedure.java"
+        ]
+      },
+      "path": "~/ComandosStaff/SetSong"
+    },
+    {
+      "name": "SetSong",
+      "type": "command",
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "set_song",
+      "metadata": {
+        "files": [
+          "src/main/java/net/mcreator/vlabyss/command/SetSongCommand.java"
+        ]
+      },
+      "path": "~/ComandosStaff/SetSong"
+    },
+    {
+      "name": "EntrouServidor",
+      "type": "procedure",
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "entrou_servidor",
+      "metadata": {
+        "dependencies": [
+          {
+            "name": "entity",
+            "type": "entity"
+          }
+        ],
+        "files": [
+          "src/main/java/net/mcreator/vlabyss/procedures/EntrouServidorProcedure.java"
+        ]
+      },
+      "path": "~/VL1_Abyss/Songs"
+    },
+    {
+      "name": "RespawnRecebeBuffs",
+      "type": "procedure",
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "respawn_recebe_buffs",
+      "metadata": {
+        "dependencies": [
+          {
+            "name": "entity",
+            "type": "entity"
+          }
+        ],
+        "files": [
+          "src/main/java/net/mcreator/vlabyss/procedures/RespawnRecebeBuffsProcedure.java"
+        ]
+      },
+      "path": "~/VL1_Abyss/Songs"
     }
   ],
   "variable_elements": [
@@ -9748,6 +10574,48 @@
     },
     {
       "name": "procurado",
+      "type": "logic",
+      "scope": "player_persistent",
+      "value": "false"
+    },
+    {
+      "name": "song_escuridao",
+      "type": "logic",
+      "scope": "player_persistent",
+      "value": "false"
+    },
+    {
+      "name": "song_respiro",
+      "type": "logic",
+      "scope": "player_persistent",
+      "value": "false"
+    },
+    {
+      "name": "song_nevasca",
+      "type": "logic",
+      "scope": "player_persistent",
+      "value": "false"
+    },
+    {
+      "name": "song_chama",
+      "type": "logic",
+      "scope": "player_persistent",
+      "value": "false"
+    },
+    {
+      "name": "song_luz",
+      "type": "logic",
+      "scope": "player_persistent",
+      "value": "false"
+    },
+    {
+      "name": "song_tempestade",
+      "type": "logic",
+      "scope": "player_persistent",
+      "value": "false"
+    },
+    {
+      "name": "song_esquecimento",
       "type": "logic",
       "scope": "player_persistent",
       "value": "false"
@@ -10712,9 +11580,9 @@
       "item.vl_abyss.axe_of_angel": "§dMachado do Anjo Caído",
       "item.vl_abyss.spear_of_imperator": "§eLança do Imperador",
       "item.vl_abyss.skull_crusher": "§dQuebradora de Crânios",
-      "item.vl_abyss.red_death": "§cMorte Vermelha",
+      "item.vl_abyss.red_death": "§cLâmina Carmesim",
       "item.vl_abyss.sword_of_pure_protector": "§bEspada do Puro Protetor",
-      "item.vl_abyss.red_blade": "§cLâmina Vermelha",
+      "item.vl_abyss.red_blade": "§cEspada Longa",
       "item.vl_abyss.heros_blade": "§bLâmina do Herói",
       "item.vl_abyss.adaga_assassinos": "§dAdaga Assassinos",
       "item.vl_abyss.abyssion_dagger": "§cAdaga de Abyssion",
@@ -10736,7 +11604,18 @@
       "effect.vl_abyss.holy_purge": "Expurgo",
       "effect.vl_abyss.instant_reset_cooldown": "Instant Reset Cooldown",
       "subtitles.purgesound": "",
-      "subtitles.lightteleport": ""
+      "subtitles.lightteleport": "",
+      "effect.vl_abyss.pure_protector": "Herói Protetor",
+      "effect.vl_abyss.last_resistance": "§bÚltima Resistência",
+      "effect.vl_abyss.stone_resistance": "Resistência de Pedra",
+      "painting.vl_abyss.abyss_banner_painting.author": "@sophii1105",
+      "painting.vl_abyss.abyss_banner_painting.title": "Old City Painting",
+      "painting.vl_abyss.ethir_painting.title": "Ethir Painting",
+      "painting.vl_abyss.ethir_painting.author": "@sophii1105",
+      "painting.vl_abyss.door_painting.author": "@sophii1105",
+      "painting.vl_abyss.door_painting.title": "Songs Painting",
+      "painting.vl_abyss.exploration_painting.author": "@sophii1105",
+      "painting.vl_abyss.exploration_painting.title": "Noctharis Painting"
     }
   },
   "metadata": {
@@ -11514,11 +12393,25 @@
               },
               {
                 "name": "CoracaoPedra",
-                "children": []
+                "children": [
+                  {
+                    "name": "Procedure",
+                    "children": []
+                  },
+                  {
+                    "name": "Effect",
+                    "children": []
+                  }
+                ]
               },
               {
                 "name": "AstralAxe",
-                "children": []
+                "children": [
+                  {
+                    "name": "Procedure",
+                    "children": []
+                  }
+                ]
               },
               {
                 "name": "BloodingScythe",
@@ -11557,20 +12450,56 @@
                 ]
               },
               {
-                "name": "RedDeath",
-                "children": []
-              },
-              {
-                "name": "SwordPureProtector",
-                "children": []
-              },
-              {
-                "name": "RedBlade",
-                "children": []
+                "name": "CarmesimSword",
+                "children": [
+                  {
+                    "name": "Procedure",
+                    "children": []
+                  }
+                ]
               },
               {
                 "name": "HerosBlade",
-                "children": []
+                "children": [
+                  {
+                    "name": "Procedure",
+                    "children": []
+                  },
+                  {
+                    "name": "Effect",
+                    "children": []
+                  }
+                ]
+              },
+              {
+                "name": "GiantSword",
+                "children": [
+                  {
+                    "name": "Effect",
+                    "children": []
+                  },
+                  {
+                    "name": "Procedure",
+                    "children": []
+                  }
+                ]
+              },
+              {
+                "name": "SwordPureProtector",
+                "children": [
+                  {
+                    "name": "Procedure",
+                    "children": []
+                  },
+                  {
+                    "name": "Effect",
+                    "children": []
+                  },
+                  {
+                    "name": "Particle",
+                    "children": []
+                  }
+                ]
               },
               {
                 "name": "AbyssionDagger",
@@ -11770,6 +12699,10 @@
           {
             "name": "Livros",
             "children": []
+          },
+          {
+            "name": "Songs",
+            "children": []
           }
         ]
       },
@@ -11806,11 +12739,11 @@
             "children": []
           },
           {
-            "name": "RemoveNBT",
+            "name": "Procurado",
             "children": []
           },
           {
-            "name": "Procurado",
+            "name": "SetSong",
             "children": []
           }
         ]

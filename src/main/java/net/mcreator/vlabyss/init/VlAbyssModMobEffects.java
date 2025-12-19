@@ -10,6 +10,7 @@ import net.minecraftforge.registries.DeferredRegister;
 import net.minecraft.world.effect.MobEffect;
 
 import net.mcreator.vlabyss.potion.StormReconjurationMobEffect;
+import net.mcreator.vlabyss.potion.StoneResistanceMobEffect;
 import net.mcreator.vlabyss.potion.ShadowCopyMobEffect;
 import net.mcreator.vlabyss.potion.ShadeVisionMobEffect;
 import net.mcreator.vlabyss.potion.ShadeBackstapMobEffect;
@@ -19,9 +20,11 @@ import net.mcreator.vlabyss.potion.RegenMantraMobEffect;
 import net.mcreator.vlabyss.potion.ReconjurarMobEffect;
 import net.mcreator.vlabyss.potion.QueimaduraMobEffect;
 import net.mcreator.vlabyss.potion.QuebraMobEffect;
+import net.mcreator.vlabyss.potion.PureProtectorMobEffect;
 import net.mcreator.vlabyss.potion.ParalisadoMobEffect;
 import net.mcreator.vlabyss.potion.MedoMobEffect;
 import net.mcreator.vlabyss.potion.LightningCloakMobEffect;
+import net.mcreator.vlabyss.potion.LastResistanceMobEffect;
 import net.mcreator.vlabyss.potion.LastHopeMobEffect;
 import net.mcreator.vlabyss.potion.InstantResetCooldownMobEffect;
 import net.mcreator.vlabyss.potion.InstantRegenMantraMobEffect;
@@ -73,4 +76,7 @@ public class VlAbyssModMobEffects {
 	public static final RegistryObject<MobEffect> BURN_ARMOR = REGISTRY.register("burn_armor", () -> new BurnArmorMobEffect());
 	public static final RegistryObject<MobEffect> HOLY_PURGE = REGISTRY.register("holy_purge", () -> new HolyPurgeMobEffect());
 	public static final RegistryObject<MobEffect> INSTANT_RESET_COOLDOWN = REGISTRY.register("instant_reset_cooldown", () -> new InstantResetCooldownMobEffect());
+	public static final RegistryObject<MobEffect> PURE_PROTECTOR = REGISTRY.register("pure_protector", () -> new PureProtectorMobEffect());
+	public static final RegistryObject<MobEffect> LAST_RESISTANCE = REGISTRY.register("last_resistance", () -> new LastResistanceMobEffect());
+	public static final RegistryObject<MobEffect> STONE_RESISTANCE = REGISTRY.register("stone_resistance", () -> new StoneResistanceMobEffect());
 }

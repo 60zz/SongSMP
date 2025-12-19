@@ -1,9 +1,18 @@
 package net.mcreator.vlabyss.item;
 
+import net.minecraft.world.level.Level;
 import net.minecraft.world.item.crafting.Ingredient;
 import net.minecraft.world.item.Tier;
 import net.minecraft.world.item.SwordItem;
+import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.item.Item;
+import net.minecraft.world.entity.player.Player;
+import net.minecraft.world.entity.LivingEntity;
+import net.minecraft.world.InteractionResultHolder;
+import net.minecraft.world.InteractionHand;
+
+import net.mcreator.vlabyss.procedures.RedDeathRightclickedProcedure;
+import net.mcreator.vlabyss.procedures.RedDeathLivingEntityIsHitWithToolProcedure;
 
 public class RedDeathItem extends SwordItem {
 	public RedDeathItem() {
@@ -32,5 +41,19 @@ public class RedDeathItem extends SwordItem {
 				return Ingredient.of();
 			}
 		}, 3, -2.6f, new Item.Properties());
+	}
+
+	@Override
+	public boolean hurtEnemy(ItemStack itemstack, LivingEntity entity, LivingEntity sourceentity) {
+		boolean retval = super.hurtEnemy(itemstack, entity, sourceentity);
+		RedDeathLivingEntityIsHitWithToolProcedure.execute(sourceentity, itemstack);
+		return retval;
+	}
+
+	@Override
+	public InteractionResultHolder<ItemStack> use(Level world, Player entity, InteractionHand hand) {
+		InteractionResultHolder<ItemStack> ar = super.use(world, entity, hand);
+		RedDeathRightclickedProcedure.execute(entity, ar.getObject());
+		return ar;
 	}
 }

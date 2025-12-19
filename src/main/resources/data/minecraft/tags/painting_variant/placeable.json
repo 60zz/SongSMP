@@ -1,6 +1,10 @@
 {
   "replace": false,
   "values": [
-    "vl_abyss:abyss_painting"
+    "vl_abyss:abyss_painting",
+    "vl_abyss:abyss_banner_painting",
+    "vl_abyss:ethir_painting",
+    "vl_abyss:door_painting",
+    "vl_abyss:exploration_painting"
   ]
 }

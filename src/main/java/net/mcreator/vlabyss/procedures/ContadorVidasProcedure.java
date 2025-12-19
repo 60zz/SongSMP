@@ -21,7 +21,7 @@ public class ContadorVidasProcedure {
 						Component.literal(("\u00A74Voc\u00EA ainda possui \u00A7c" + (entity.getCapability(VlAbyssModVariables.PLAYER_VARIABLES_CAPABILITY, null).orElseGet(VlAbyssModVariables.PlayerVariables::new)).vidas + " \u00A74vidas")), false);
 		} else if ((entity.getCapability(VlAbyssModVariables.PLAYER_VARIABLES_CAPABILITY, null).orElseGet(VlAbyssModVariables.PlayerVariables::new)).vidas == 0) {
 			if (entity instanceof Player _player && !_player.level().isClientSide())
-				_player.displayClientMessage(Component.literal("\u00A7bVoc\u00EA n\u00E3o possui \u00A7cVIDAS"), false);
+				_player.displayClientMessage(Component.literal("\u00A74Voc\u00EA n\u00E3o possui \u00A7cVIDAS"), false);
 		}
 	}
 }
